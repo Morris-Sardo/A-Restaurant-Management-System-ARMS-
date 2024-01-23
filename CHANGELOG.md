@@ -1,0 +1,1 @@
+This file wil be use to comunicate what each group have change.
