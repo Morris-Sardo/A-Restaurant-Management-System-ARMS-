@@ -20,28 +20,28 @@ stages:
 build-job:
   stage: build
   script:
-    - cd retaurantProject
+    - cd restaurant
     - mvn clean compile
 
 test-job:
   stage: test
   script:
-    - cd retaurantProject
+    - cd restaurant
     - mvn test
 
 checkstyle-job:
   stage: validation
   script:
-    - cd retaurantProject
+    - cd restaurant
     - mvn checkstyle:check
 
 package-job:
   stage: package
   script:
-    - cd retaurantProject
+    - cd restaurant
     - mvn package
   artifacts:
     when: on_success
     expire_in: 30 days
     paths:
-      - "retaurant.project/target/*.jar"
+      - "restaurant/target/*.jar"
