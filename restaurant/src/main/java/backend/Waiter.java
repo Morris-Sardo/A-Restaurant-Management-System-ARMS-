@@ -2,50 +2,99 @@ package backend;
 
 import java.sql.Connection;
 
+/**
+ * Contains the methods needed for the 'Customer' role.
+ * @author xaviernoel
+ */
 public class Waiter {
   int waiterID;
+  Connection connection = null;
   
-  public int[] ViewMenu(Connection connection) {
+  /**
+   * Finds all items on the menu.
+   * @return the IDs of all items on the menu
+   */
+  public int[] viewMenu() {
     return null;
   }
   
-  public void ChangeMenu(Connection connection, int item) {
+  /**
+   * Toggles the availability of the item.
+   * @param item the item to be changed
+   */
+  public void changeMenu(int item) {
     
   }
   
-  public String[] ViewOrders(Connection connection) {
+  /**
+   * Finds all orders with 'Requested' status.
+   * @return the list of the information for orders
+   */
+  public String[] viewOrders() {
     return null;
   }
   
-  public void ConfirmOrder(Connection connection, int orderNumber) {
+  /**
+   * Changes the status of the order to 'Confirmed'.
+   * @param orderNumber the number of the order to be changed
+   */
+  public void confirmOrder(int orderNumber) {
   
   }
   
-  public void DeliveredOrder(Connection connection, int orderNumber) {
+  /**
+   * Changes the status of the order to 'Delivered'.
+   * @param orderNumber the number of the order to be changed
+   */
+  public void deliveredOrder(int orderNumber) {
     
   }
   
-  public void CancelOrder(Connection connection, int orderNumber) {
+  /**
+   * Changes the status of this order to 'Canceled'.
+   * @param orderNumber the number of the order to be changed
+   */
+  public void cancelOrder(int orderNumber) {
     
   }
   
-  public String[] ReadyOrders(Connection connection) {
+  /**
+   * Finds all orders with 'Ready' status.
+   * @return the list of the information for orders
+   */
+  public String[] readyOrders() {
     return null;
   }
   
-  public String[] ViewBillRequests(Connection connection) {
+  /**
+   * Finds all bill requests.
+   * @return the list of the information for bill requests
+   */
+  public String[] viewBillRequests() {
     return null;
   }
   
-  public int[] ViewComplaints(Connection connection) {
+  /**
+   * Finds all complaints.
+   * @return the list of table numbers with a current complaint
+   */
+  public int[] viewComplaints() {
     return null;
   }
   
-  public void ConcludeBill(Connection connection, int tableNumber) {
+  /**
+   * Sets the status of a bill to 'Completed'.
+   * @param tableNumber the table number of the bill to be changed
+   */
+  public void concludeBill(int tableNumber) {
     
   }
   
-  public void ConcludeComplaint(Connection connection, int tableNumber) {
+  /**
+   * Sets the status of a complaint to 'Completed'.
+   * @param tableNumber the table number of the complaint to be changed
+   */
+  public void concludeComplaint(int tableNumber) {
     
   }
 }

@@ -1,5 +1,11 @@
 package backend;
 
+/**
+ * Represents and contains the data and methods for a menu item.
+ * 
+ * @author xaviernoel
+ * 
+ */
 public class Item {
 
   private int itemNumber;
@@ -7,13 +13,26 @@ public class Item {
   private float price;
   private String[] allergies;
   private float calories;
-  
-  public Item(int itemNumber, String name, float price, String[] allergies, float calories) {
+  private boolean available;
+
+  /**
+   * The constructor for a new item.
+   * 
+   * @param itemNumber the unique identifying number for the item
+   * @param name the displayed name for the item
+   * @param price the displayed price for the item
+   * @param allergies the allergies related to this item
+   * @param calories the calories for this item
+   * @param available the availability status of the item
+   */
+  public Item(int itemNumber, String name, float price, String[] allergies, float calories,
+      boolean available) {
     this.itemNumber = itemNumber;
     this.name = name;
     this.price = price;
     this.allergies = allergies;
     this.calories = calories;
+    this.available = available;
   }
 
   public int getItemNumber() {
@@ -34,5 +53,9 @@ public class Item {
 
   public float getCalories() {
     return calories;
+  }
+
+  public boolean isAvailable() {
+    return available;
   }
 }
