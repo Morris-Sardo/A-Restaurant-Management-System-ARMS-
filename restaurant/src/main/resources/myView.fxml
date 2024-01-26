@@ -1,27 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@myView.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <AnchorPane prefHeight="400.0" prefWidth="300.0">
+            <AnchorPane prefHeight="400.0" prefWidth="300.0" styleClass="gradient">
                <children>
-                  <ImageView fitHeight="136.0" fitWidth="200.0" layoutX="50.0" layoutY="57.0">
-                     <image>
-                        <Image url="@image/bg-1.png" />
-                     </image>
-                  </ImageView>
-               </children></AnchorPane>
-            <AnchorPane layoutX="304.0" prefHeight="400.0" prefWidth="300.0">
+                  <Label layoutX="72.0" layoutY="54.0" prefHeight="18.0" prefWidth="126.0" text="Register" textFill="#10100f">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="45.0" layoutY="134.0" text="UserName">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="45.0" layoutY="179.0" text="Password">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="117.0" layoutY="131.0" promptText="Username" />
+                  <PasswordField layoutX="117.0" layoutY="175.0" promptText="Password" />
+                  <Button layoutX="45.0" layoutY="279.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="210.0" text="Register">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+               <stylesheets>
+                  <URL value="@myView.css" />
+                  <URL value="@myView.css" />
+               </stylesheets></AnchorPane>
+            <AnchorPane layoutX="304.0" prefHeight="400.0" prefWidth="300.0" styleClass="white-from">
                <children>
                   <TextField layoutX="117.0" layoutY="131.0" promptText="Username" AnchorPane.bottomAnchor="245.8" AnchorPane.rightAnchor="33.400000000000034" AnchorPane.topAnchor="131.0">
                      <font>
@@ -35,12 +57,18 @@
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></Label>
-                  <Label layoutX="72.0" layoutY="54.0" text="Login Account" textFill="#cf431c">
+                  <Label layoutX="72.0" layoutY="54.0" text="Login Account" textFill="#232222">
                      <font>
                         <Font name="System Bold" size="23.0" />
                      </font>
                   </Label>
                   <PasswordField layoutX="117.0" layoutY="175.0" promptText="Password" AnchorPane.bottomAnchor="199.4" AnchorPane.leftAnchor="117.00000000000003" AnchorPane.rightAnchor="33.400000000000006" AnchorPane.topAnchor="175.0" />
+                  <Button layoutX="45.0" layoutY="279.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="210.0" text="Login">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Hyperlink layoutX="45.0" layoutY="238.0" text="Forgot Password?" />
                </children>
             </AnchorPane>
          </children>

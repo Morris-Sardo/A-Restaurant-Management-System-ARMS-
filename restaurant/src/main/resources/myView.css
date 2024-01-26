@@ -1,3 +1,12 @@
+/*
 .button {
-    -fx-background-color: red;
+    -fx-background-color: rgb(246, 239, 239);
+}
+*/
+.gradient {
+    -fx-background-color: linear-gradient(to bottom left,#cf431c, rgb(21, 0, 255));
+}
+
+.white-from{
+    -fx-backgrounf-color: #fff;
 }
