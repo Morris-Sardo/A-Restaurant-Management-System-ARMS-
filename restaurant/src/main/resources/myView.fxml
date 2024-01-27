@@ -6,6 +6,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
@@ -46,11 +48,11 @@
                               <Font name="System Bold" size="23.0" />
                            </font>
                         </Label>
-                        <Label layoutX="44.0" layoutY="43.0" prefHeight="90.0" prefWidth="210.0" text="Restaurant &#10;Manager System">
-                           <font>
-                              <Font name="System Bold" size="23.0" />
-                           </font>
-                        </Label>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="50.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/restaurant-logo-.jpg" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </children></AnchorPane>
