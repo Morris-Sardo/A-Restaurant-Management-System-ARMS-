@@ -4,7 +4,7 @@
 }
 */
 .gradient {
-    -fx-background-color: linear-gradient(to bottom left,#cf431c, rgb(21, 0, 255));
+    -fx-background-color: linear-gradient(to bottom left,#cf431c, rgb(3, 2, 15));
 }
 
 .white-from{

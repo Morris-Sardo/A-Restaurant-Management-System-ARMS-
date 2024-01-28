@@ -33,8 +33,17 @@
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-fxml</artifactId>
 			<version>13</version>
-
+			
+			
 		</dependency>
+		
+			<!--dipendencies for fontaesome -->
+			<dependency>
+    			<groupId>de.jensd</groupId>
+    			<artifactId>fontawesomefx</artifactId>
+    			<version>8.2</version>
+			</dependency>
+			<!--dipendencies for fontaesome -->
     </dependencies>
     <build>
 		<plugins>

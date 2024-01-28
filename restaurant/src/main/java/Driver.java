@@ -5,12 +5,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * This is the test.
- *
+ * This class run use to run application.
+ * 
  * @author papap
  *
  */
-
 public class Driver extends Application {
 
   public static void main(String[] args) {
@@ -21,6 +20,8 @@ public class Driver extends Application {
   public void start(Stage primaryStage) throws Exception {
 
     Parent root = FXMLLoader.load(getClass().getResource("myView.fxml"));
+
+
     Scene scene = new Scene(root, 600, 400);
 
     primaryStage.setTitle("Login  Interface");
