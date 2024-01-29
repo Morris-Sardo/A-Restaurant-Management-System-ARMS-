@@ -1,4 +1,13 @@
+
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import javafx.animation.TranslateTransition;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -60,6 +69,35 @@ public class MyView {
   private TextField suUsername;
 
 
+  private Connection connect; // connection to database table.
+  private PreparedStatement prepare; // use to compiled database.
+  private ResultSet result; // result database.
+  private ObservableList listData; // use to add list of questions at combox question.
+  // list question asked during registration.
+  private String question1 = "What is your favorite color?";
+  private String question2 = "What is your favory food?";
+  private String question3 = "What is your birth date?";
+
+  // array use to store the questions.
+  private String[] questionList = {question1, question2, question2};
+
+  /**
+   * This method used to store the question list that will printout by GUI.
+   */
+  public void regQuestionList() {
+    List<String> listQ = new ArrayList<>();
+
+    for (String data : questionList) {
+      listQ.add(data);
+    }
+
+    listData = FXCollections.observableArrayList(listQ);
+
+
+    suQuestion.setItems(listData); // press button question it will appear the questions.
+
+  }
+
   /**
    * This method is responsible of translate the windows between login and register.
    * 
@@ -80,6 +118,7 @@ public class MyView {
         sideCreateBtnAlreadyHave.setVisible(true);
         sideCreateBtn.setVisible(false);
 
+        regQuestionList();
       });
       slider.play();
 
