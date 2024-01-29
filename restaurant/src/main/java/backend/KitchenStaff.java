@@ -14,7 +14,7 @@ public class KitchenStaff {
   
   /**
    * Finds the list of orders marked as confirmed, based on how long ago they were made.
-   * @return the list of orders
+   * @return the list of the information for orders
    */
   public String[] viewOrders() {
     return null;
