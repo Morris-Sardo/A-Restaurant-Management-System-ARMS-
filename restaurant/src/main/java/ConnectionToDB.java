@@ -21,7 +21,7 @@ public class ConnectionToDB {
   /**
    * Creates a new connection to the database.
    * 
-   * @return the connection created
+   * @return the connection created.
    */
   public static Connection connectToDatabase() // MAKE SURE TO CLOSE THE CONNECTION.
       throws SQLException {

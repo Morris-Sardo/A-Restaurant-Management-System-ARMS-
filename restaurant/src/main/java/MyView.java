@@ -1,8 +1,7 @@
-
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.animation.TranslateTransition;
@@ -10,6 +9,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
@@ -73,10 +74,10 @@ public class MyView {
   private PreparedStatement prepare; // use to compiled database.
   private ResultSet result; // result database.
   private ObservableList listData; // use to add list of questions at combox question.
-  // list question asked during registration.
-  private String question1 = "What is your favorite color?";
-  private String question2 = "What is your favory food?";
-  private String question3 = "What is your birth date?";
+  private String question1 = "What is your favorite color?"; // secret question.
+  private String question2 = "What is your favory food?"; // secret question.
+  private String question3 = "What is your birth date?"; // secret question.
+  private Alert alert; // use to pop up and warming.
 
   // array use to store the questions.
   private String[] questionList = {question1, question2, question2};
@@ -95,6 +96,57 @@ public class MyView {
 
 
     suQuestion.setItems(listData); // press button question it will appear the questions.
+
+  }
+
+  /**
+   * This method responsible to register user. Pop up warming if field is empty. If the registration
+   * go well it all data are saved into the database.
+   */
+  public void regBtn() {
+
+    if (suUsername.getText().isEmpty() || suPassword.getText().isEmpty()
+        || suQuestion.getSelectionModel().getSelectedItem() == null
+        || suAnswer.getText().isEmpty()) {
+      alert = new Alert(AlertType.ERROR);
+      alert.setTitle("Error Message");
+      alert.setHeaderText(null);
+      alert.setContentText("Please fill all the blank fields");
+      alert.showAndWait();
+
+    } else {
+      String regData =
+          "INSERT INTO login (username, password, question, answer) " + "VALUES(?, ?, ?, ?)";
+
+      try {
+        connect = ConnectionToDB.connectToDatabase();
+
+        prepare = connect.prepareStatement(regData);
+        prepare.setString(1, suUsername.getText());
+        prepare.setString(2, suPassword.getText());
+        prepare.setString(3, (String) suQuestion.getSelectionModel().getSelectedItem());
+        prepare.setString(4, suAnswer.getText());
+        prepare.executeUpdate();
+        
+        alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Information Message");
+        alert.setHeaderText(null);
+        alert.setContentText("Successfully registered Account!");
+        alert.showAndWait();
+        
+        suUsername.setText("");
+        suPassword.setText("");
+        suQuestion.getSelectionModel().clearSelection();
+        suAnswer.setText("");
+        
+        
+
+      } catch (SQLException e) {
+
+        e.printStackTrace();
+      }
+
+    }
 
   }
 
