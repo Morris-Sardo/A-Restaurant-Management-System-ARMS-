@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 
 
 class CustomerTest {
@@ -38,12 +39,14 @@ class CustomerTest {
    */
   
   @Test
+  @Tag("ConnectionNeeded")
   void ReturnTest() throws Exception {
     assertEquals(1,testCustomer.viewMenu().get(0));
     assertEquals(3,testCustomer.viewMenu().get(1));
   }
   
   @Test
+  @Tag("ConnectionNeeded")
   void OrderTest() throws Exception {
     assertEquals(1,testCustomer.viewMenu().get(0));
     assertEquals(3,testCustomer.viewMenu().get(1));
