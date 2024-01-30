@@ -103,7 +103,11 @@ public class MyView {
    * This method responsible to register user. Pop up warming if field is empty. If the registration
    * go well it all data are saved into the database.
    */
+
   public void regBtn() {
+
+    // Initialize the ResultSet here
+    ResultSet rs = null;
 
     if (suUsername.getText().isEmpty() || suPassword.getText().isEmpty()
         || suQuestion.getSelectionModel().getSelectedItem() == null
@@ -113,42 +117,117 @@ public class MyView {
       alert.setHeaderText(null);
       alert.setContentText("Please fill all the blank fields");
       alert.showAndWait();
-
     } else {
+      // Check if the username already exists in the database
+      String checkUser = "SELECT COUNT(*) FROM login WHERE username = ?";
       String regData =
-          "INSERT INTO login (username, password, question, answer) " + "VALUES(?, ?, ?, ?)";
+          "INSERT INTO login (username, password, question, answer) VALUES(?, ?, ?, ?)";
 
       try {
         connect = ConnectionToDB.connectToDatabase();
 
-        prepare = connect.prepareStatement(regData);
+        // Prepare and execute the checkUser statement
+        prepare = connect.prepareStatement(checkUser);
         prepare.setString(1, suUsername.getText());
-        prepare.setString(2, suPassword.getText());
-        prepare.setString(3, (String) suQuestion.getSelectionModel().getSelectedItem());
-        prepare.setString(4, suAnswer.getText());
-        prepare.executeUpdate();
-        
-        alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Information Message");
-        alert.setHeaderText(null);
-        alert.setContentText("Successfully registered Account!");
-        alert.showAndWait();
-        
-        suUsername.setText("");
-        suPassword.setText("");
-        suQuestion.getSelectionModel().clearSelection();
-        suAnswer.setText("");
-        
-        
+        rs = prepare.executeQuery();
 
+        // Move to the first record in the result set (should be only one record due to COUNT)
+        if (rs.next()) {
+          // If the count is zero, the username does not exist yet
+          if (rs.getInt(1) == 0) {
+            // Username is unique, proceed with registration
+            prepare = connect.prepareStatement(regData);
+            prepare.setString(1, suUsername.getText());
+            prepare.setString(2, suPassword.getText());
+            prepare.setString(3, (String) suQuestion.getSelectionModel().getSelectedItem());
+            prepare.setString(4, suAnswer.getText());
+            prepare.executeUpdate();
+
+            alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Information Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Successfully registered Account!");
+            alert.showAndWait();
+
+            suUsername.setText("");
+            suPassword.setText("");
+            suQuestion.getSelectionModel().clearSelection();
+            suAnswer.setText("");
+          } else {
+            // Username already exists, show error message
+            alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Registration Error");
+            alert.setHeaderText(null);
+            alert.setContentText("No valid username. The username already exists.");
+            alert.showAndWait();
+          }
+        }
       } catch (SQLException e) {
-
         e.printStackTrace();
+      } finally {
+        try {
+          if (connect != null) {
+            connect.close();
+          }
+          if (prepare != null) {
+            prepare.close();
+          }
+          if (rs != null) {
+            rs.close();
+          }
+        } catch (SQLException e) {
+          e.printStackTrace();
+        }
       }
-
     }
-
   }
+
+  // public void regBtn() {
+  //
+  // if (suUsername.getText().isEmpty() || suPassword.getText().isEmpty()
+  // || suQuestion.getSelectionModel().getSelectedItem() == null
+  // || suAnswer.getText().isEmpty()) {
+  // alert = new Alert(AlertType.ERROR);
+  // alert.setTitle("Error Message");
+  // alert.setHeaderText(null);
+  // alert.setContentText("Please fill all the blank fields");
+  // alert.showAndWait();
+  //
+  // } else {
+  // String regData =
+  // "INSERT INTO login (username, password, question, answer) " + "VALUES(?, ?, ?, ?)";
+  //
+  // try {
+  // connect = ConnectionToDB.connectToDatabase();
+  //
+  // prepare = connect.prepareStatement(regData);
+  // prepare.setString(1, suUsername.getText());
+  // prepare.setString(2, suPassword.getText());
+  // prepare.setString(3, (String) suQuestion.getSelectionModel().getSelectedItem());
+  // prepare.setString(4, suAnswer.getText());
+  // prepare.executeUpdate();
+  //
+  // alert = new Alert(AlertType.INFORMATION);
+  // alert.setTitle("Information Message");
+  // alert.setHeaderText(null);
+  // alert.setContentText("Successfully registered Account!");
+  // alert.showAndWait();
+  //
+  // suUsername.setText("");
+  // suPassword.setText("");
+  // suQuestion.getSelectionModel().clearSelection();
+  // suAnswer.setText("");
+  //
+  //
+  //
+  // } catch (SQLException e) {
+  //
+  // e.printStackTrace();
+  // }
+  //
+  // }
+  //
+  // }
 
   /**
    * This method is responsible of translate the windows between login and register.

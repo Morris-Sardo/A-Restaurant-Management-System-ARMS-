@@ -41,7 +41,7 @@ public class ConnectionToDB {
     System.out.println("Creating login table");
 
     try (PreparedStatement statement = connection.prepareStatement("CREATE TABLE login (\n"
-        + "username varchar(100), \n" + "password varchar(100), \n"
+        + "username varchar(100) PRIMARY KEY, \n" + "password varchar(100), \n"
         + "question varchar(100)," + "answer varchar(100)," + "date DATE);");) {
       statement.execute();
     }
@@ -132,7 +132,7 @@ public class ConnectionToDB {
     try (Scanner scanner = new Scanner(System.in);) {
       connection = ConnectionToDB.connectToDatabase();
 
-      //dropUserTable(connection);
+      dropUserTable(connection);
       createLoginTable(connection);
       insertIntoLoginTableFromFile(connection, "users.csv");
 
