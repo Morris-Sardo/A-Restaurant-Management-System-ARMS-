@@ -39,7 +39,7 @@ package-job:
   stage: package
   script:
     - cd restaurant
-    - mvn package
+    - mvn package -Dgroups=\!ConnectionNeeded
   artifacts:
     when: on_success
     expire_in: 30 days
