@@ -27,7 +27,7 @@ test-job:
   stage: test
   script:
     - cd restaurant
-    - mvn test
+    - mvn test -Dgroups=\!ConnectionNeeded
 
 checkstyle-job:
   stage: validation
