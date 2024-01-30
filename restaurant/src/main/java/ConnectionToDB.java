@@ -41,8 +41,8 @@ public class ConnectionToDB {
     System.out.println("Creating login table");
 
     try (PreparedStatement statement = connection.prepareStatement("CREATE TABLE login (\n"
-        + "userID int PRIMARY KEY, \n" + "username varchar(20), \n" + "password varchar(20), \n"
-        + "question varchar(20)," + "answer varchar(20)," + "date DATE);");) {
+        + "username varchar(100), \n" + "password varchar(100), \n"
+        + "question varchar(100)," + "answer varchar(100)," + "date DATE);");) {
       statement.execute();
     }
   }
@@ -59,7 +59,7 @@ public class ConnectionToDB {
       throws IOException, SQLException {
 
     System.out.println("Inserting data into login table");
-    String insert = "INSERT INTO login VALUES (?, ?, ?, ?, ?, ?)";
+    String insert = "INSERT INTO login VALUES (?, ?, ?, ?, ?)";
 
     try (InputStream loginFile = ConnectionToDB.class.getClassLoader().getResourceAsStream(file);
         BufferedReader br =
@@ -132,7 +132,7 @@ public class ConnectionToDB {
     try (Scanner scanner = new Scanner(System.in);) {
       connection = ConnectionToDB.connectToDatabase();
 
-      dropUserTable(connection);
+      //dropUserTable(connection);
       createLoginTable(connection);
       insertIntoLoginTableFromFile(connection, "users.csv");
 
