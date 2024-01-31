@@ -18,7 +18,7 @@ public class Customer {
   @SuppressWarnings("unused")
   private int tableNumber;
   @SuppressWarnings("unused")
-  private int customerID;
+  private int customerID = 999;
   @SuppressWarnings("unused")
   private int[] order = null;
   @SuppressWarnings("unused")
@@ -54,7 +54,7 @@ public class Customer {
       ResultSet resultSet = statement.executeQuery();
       while (resultSet.next()) {
         results.add(resultSet.getInt(1));
-      } 
+      }
     }
     if (results.isEmpty()) {
       throw new DatabaseInformationException("No available menu items found");
@@ -97,8 +97,12 @@ public class Customer {
   /**
    * Adds a complaint to the database.
    */
-  public void requestHelp() {
-
+  public void requestHelp() throws PSQLException, SQLException {
+    String addition = "INSERT INTO complaints VALUES(" + Integer.toString(customerID) + ", "
+        + Integer.toString(tableNumber) + ", 'Requested')";
+    try (PreparedStatement statement = connection.prepareStatement(addition);) {
+      statement.executeUpdate();
+    }
   }
 
 
