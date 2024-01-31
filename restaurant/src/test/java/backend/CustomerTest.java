@@ -9,7 +9,6 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
 
-
 class CustomerTest {
   private static Customer testCustomer = null;
 
@@ -52,6 +51,15 @@ class CustomerTest {
     assertEquals(1,testCustomer.viewMenu().get(0));
     assertEquals(3,testCustomer.viewMenu().get(1));
     assertEquals(4,testCustomer.viewMenu().get(2));
+  }
+  /*
+   * Test 1: Method adds a entry to the complaints table
+   * Can't be faked;
+   */
+  @Test
+  @Tag("ConnectionNeeded")
+  void AdditionTest() throws Exception {
+    assertDoesNotThrow(() -> testCustomer.requestHelp());
   }
   
  
