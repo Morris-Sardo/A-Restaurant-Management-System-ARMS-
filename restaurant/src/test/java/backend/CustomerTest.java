@@ -26,6 +26,7 @@ class CustomerTest {
   }
 
   /*
+   * 
    * Test 1: Method returns a list of integers. 
    * Solved by faking; returning {1, 3} (changed from {1, 2} to fit actual data
    * 
