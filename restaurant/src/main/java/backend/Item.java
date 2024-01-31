@@ -1,6 +1,5 @@
 package backend;
 
-import java.text.DecimalFormat;
 
 /**
  * Represents and contains the data and methods for a menu item.
@@ -16,7 +15,7 @@ public class Item {
   private String[] allergies;
   private float calories;
   private boolean available;
-  private static final DecimalFormat df = new DecimalFormat("0.00");
+  
 
   /**
    * The constructor for a new item.
