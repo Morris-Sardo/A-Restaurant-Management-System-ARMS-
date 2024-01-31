@@ -15,7 +15,7 @@ public class Item {
   private String[] allergies;
   private float calories;
   private boolean available;
-  
+
 
   /**
    * The constructor for a new item.
