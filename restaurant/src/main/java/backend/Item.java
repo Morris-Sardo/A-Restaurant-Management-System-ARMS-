@@ -1,5 +1,7 @@
 package backend;
 
+import java.text.DecimalFormat;
+
 /**
  * Represents and contains the data and methods for a menu item.
  * 
@@ -14,6 +16,7 @@ public class Item {
   private String[] allergies;
   private float calories;
   private boolean available;
+  private static final DecimalFormat df = new DecimalFormat("0.00");
 
   /**
    * The constructor for a new item.
@@ -25,13 +28,13 @@ public class Item {
    * @param calories the calories for this item
    * @param available the availability status of the item
    */
-  public Item(int itemNumber, String name, float price, String[] allergies, float calories,
+  public Item(int itemNumber, String name, float price, String allergies, float calories,
       boolean available) {
     this.itemNumber = itemNumber;
     this.name = name;
-    this.price = price;
-    this.allergies = allergies;
-    this.calories = calories;
+    this.price = (float) (Math.round(price * 100.0) / 100.0);
+    this.allergies = allergies.split(",");
+    this.calories = (float) (Math.round(calories * 100.0) / 100.0);
     this.available = available;
   }
 
