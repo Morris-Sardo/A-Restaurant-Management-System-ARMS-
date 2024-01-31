@@ -36,6 +36,7 @@ public class ConnectionToDB {
    * Create the login table.
    * 
    * @param connection a database connection
+   * @deprecated with won t use this part of code now.
    */
   public static void createLoginTable(Connection connection) throws SQLException {
     System.out.println("Creating login table");

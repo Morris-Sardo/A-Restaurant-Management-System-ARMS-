@@ -82,6 +82,7 @@ public class MyView {
   // array use to store the questions.
   private String[] questionList = {question1, question2, question2};
 
+
   /**
    * This method used to store the question list that will printout by GUI.
    */
@@ -98,6 +99,71 @@ public class MyView {
     suQuestion.setItems(listData); // press button question it will appear the questions.
 
   }
+  
+
+  /**
+   * This methods is responsible to login the users. If login is not correct of wrong it will pop up
+   * an alert text.
+   */
+  public void loginBtn() {
+    if (siUsername.getText().isEmpty() || siPassword.getText().isEmpty()) {
+      alert = new Alert(AlertType.ERROR);
+      alert.setTitle("Error Message");
+      alert.setHeaderText(null);
+      alert.setContentText("Please fill all the blank fields");
+      alert.showAndWait();
+    } else {
+
+      String selectData =
+          "SELECT username, password FROM login WHERE username = ? and password = ?";
+
+      try {
+
+        connect = ConnectionToDB.connectToDatabase();
+
+        // Prepare and execute the selectData statement
+        prepare = connect.prepareStatement(selectData);
+        prepare.setString(1, siUsername.getText());
+        prepare.setString(2, siPassword.getText());
+        result = prepare.executeQuery();
+
+        // If login is successfully, then go to another form.(Main Form).
+        // For now it will pop up an alert the the login has been gone with success.
+        if (result.next()) {
+          alert = new Alert(AlertType.INFORMATION);
+          alert.setTitle("Information Message");
+          alert.setHeaderText(null);
+          alert.setContentText("Successfully Login!");
+          alert.showAndWait();
+
+        } else { // if not, then message error.
+          alert = new Alert(AlertType.ERROR);
+          alert.setTitle("Error Message");
+          alert.setHeaderText(null);
+          alert.setContentText("Incorrect Username/passowrd!");
+          alert.showAndWait();
+
+        }
+      } catch (SQLException e) {
+        e.printStackTrace();
+      } finally {
+        try {
+          if (connect != null) {
+            connect.close();
+          }
+          if (prepare != null) {
+            prepare.close();
+          }
+          if (result != null) {
+            result.close();
+          }
+        } catch (SQLException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+
+  }
 
   /**
    * This method responsible to register user. Pop up warming if field is empty. If the registration
@@ -107,7 +173,6 @@ public class MyView {
   public void regBtn() {
 
     // Initialize the ResultSet here
-    ResultSet rs = null;
 
     if (suUsername.getText().isEmpty() || suPassword.getText().isEmpty()
         || suQuestion.getSelectionModel().getSelectedItem() == null
@@ -129,12 +194,12 @@ public class MyView {
         // Prepare and execute the checkUser statement
         prepare = connect.prepareStatement(checkUser);
         prepare.setString(1, suUsername.getText());
-        rs = prepare.executeQuery();
+        result = prepare.executeQuery();
 
         // Move to the first record in the result set (should be only one record due to COUNT)
-        if (rs.next()) {
+        if (result.next()) {
           // If the count is zero, the username does not exist yet
-          if (rs.getInt(1) == 0) {
+          if (result.getInt(1) == 0) {
             // Username is unique, proceed with registration
             prepare = connect.prepareStatement(regData);
             prepare.setString(1, suUsername.getText());
@@ -172,8 +237,8 @@ public class MyView {
           if (prepare != null) {
             prepare.close();
           }
-          if (rs != null) {
-            rs.close();
+          if (result != null) {
+            result.close();
           }
         } catch (SQLException e) {
           e.printStackTrace();
@@ -182,52 +247,6 @@ public class MyView {
     }
   }
 
-  // public void regBtn() {
-  //
-  // if (suUsername.getText().isEmpty() || suPassword.getText().isEmpty()
-  // || suQuestion.getSelectionModel().getSelectedItem() == null
-  // || suAnswer.getText().isEmpty()) {
-  // alert = new Alert(AlertType.ERROR);
-  // alert.setTitle("Error Message");
-  // alert.setHeaderText(null);
-  // alert.setContentText("Please fill all the blank fields");
-  // alert.showAndWait();
-  //
-  // } else {
-  // String regData =
-  // "INSERT INTO login (username, password, question, answer) " + "VALUES(?, ?, ?, ?)";
-  //
-  // try {
-  // connect = ConnectionToDB.connectToDatabase();
-  //
-  // prepare = connect.prepareStatement(regData);
-  // prepare.setString(1, suUsername.getText());
-  // prepare.setString(2, suPassword.getText());
-  // prepare.setString(3, (String) suQuestion.getSelectionModel().getSelectedItem());
-  // prepare.setString(4, suAnswer.getText());
-  // prepare.executeUpdate();
-  //
-  // alert = new Alert(AlertType.INFORMATION);
-  // alert.setTitle("Information Message");
-  // alert.setHeaderText(null);
-  // alert.setContentText("Successfully registered Account!");
-  // alert.showAndWait();
-  //
-  // suUsername.setText("");
-  // suPassword.setText("");
-  // suQuestion.getSelectionModel().clearSelection();
-  // suAnswer.setText("");
-  //
-  //
-  //
-  // } catch (SQLException e) {
-  //
-  // e.printStackTrace();
-  // }
-  //
-  // }
-  //
-  // }
 
   /**
    * This method is responsible of translate the windows between login and register.
