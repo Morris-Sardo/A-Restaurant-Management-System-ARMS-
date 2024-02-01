@@ -48,6 +48,21 @@ public class ConnectionToDB {
   }
   
   /**
+   * Create the ratings table.
+   * 
+   * @param connection a database connection
+   */
+  public static void createRatingTable(Connection connection) throws SQLException {
+    System.out.println("Creating rating table");
+
+    try (PreparedStatement statement = connection
+        .prepareStatement("CREATE TABLE rating (\n" + "username varchar(20) PRIMARY KEY, \n"
+            + "rating int, \n" + "comment varchar(200));");) {
+      statement.execute();
+    }
+  }
+  
+  /**
    * Insert data into the login table.
    * 
    * @param connection a database connection
@@ -121,6 +136,21 @@ public class ConnectionToDB {
   }
   
   /**
+   * drops all tables.
+   * 
+   * @param connection To connect to the DB
+   * @throws SQLException Exception is thrown
+   */
+  public static void dropRatingTable(Connection connection) throws SQLException {
+    System.out.println("Dropping ratings table");
+    try (PreparedStatement st =
+        connection.prepareStatement("DROP TABLE IF EXISTS rating CASCADE");) {
+      st.execute();
+    }
+    
+  }
+  
+  /**
    * Main method.
    * 
    * @param args any command line arguments
@@ -133,7 +163,11 @@ public class ConnectionToDB {
       connection = ConnectionToDB.connectToDatabase();
 
       dropUserTable(connection);
+      dropRatingTable(connection);
+
       createLoginTable(connection);
+      createRatingTable(connection);
+
       insertIntoLoginTableFromFile(connection, "users.csv");
       
       
