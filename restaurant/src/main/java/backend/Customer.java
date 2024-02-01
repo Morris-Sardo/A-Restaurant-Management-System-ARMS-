@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import org.postgresql.util.PSQLException;
 
 /**
@@ -15,14 +16,12 @@ import org.postgresql.util.PSQLException;
  */
 
 public class Customer {
-  @SuppressWarnings("unused")
   private int tableNumber;
-  @SuppressWarnings("unused")
   private int customerID = 999;
   @SuppressWarnings("unused")
   private int[] order = null;
-  @SuppressWarnings("unused")
   private Connection connection = null;
+  private ArrayList<Item> items = null;
 
   public int getCustomerID() {
     return customerID;
@@ -36,9 +35,19 @@ public class Customer {
     return connection;
   }
 
+  /**
+   * Constructor for a Customer object.
+   * @param table the tableNumber of the customer
+   * @param connection the connection to the database that will be used
+   */
   public Customer(int table, Connection connection) {
     tableNumber = table;
     this.connection = connection;
+    try {
+      items = ConnectionManager.loadItems(connection);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -87,11 +96,48 @@ public class Customer {
 
   }
 
+  /*
+   * Get find all orders where table matches foreach item in orders find the corresponding item in
+   * local add the price to the price sum send it
+   */
   /**
    * Adds a request for a bill to the database.
    */
-  public void requestBill() {
+  public void requestBill() throws PSQLException, SQLException, DatabaseInformationException {
+    ArrayList<String> result = new ArrayList<String>();
+    int sum = 0;
+    String query = "SELECT items FROM orders WHERE table_number = " + Integer.toString(customerID)
+        + " AND (status != 'Canceled' OR 'Paid' OR 'Requested'";
+    try (PreparedStatement selection = connection.prepareStatement(query);) {
+      ResultSet resultSet = selection.executeQuery();
+      while (resultSet.next()) {
+        result.addAll(Arrays.asList(resultSet.getString(3).trim().split(",")));
 
+      }
+    }
+    if (!result.isEmpty()) {
+      String cancel =
+          "UPDATE orders SET status = 'Canceled' WHERE(status ='Requested' OR status ='Confirmed')";
+      try (PreparedStatement cancelation = connection.prepareStatement(cancel)) {
+        cancelation.executeUpdate();
+      }
+      for (String item : result) {
+        for (Item menuItem : items) {
+          if (Integer.toString(menuItem.getItemNumber()).equals(item)) {
+            sum += Math.round(menuItem.getPrice());
+          }
+        }
+      }
+      String addition = "INSERT INTO bills VALUES(" + Integer.toString(customerID) + ", "
+          + Integer.toString(tableNumber) + ","
+          + result.toString().replace("[", "").replace("]",  "") + "," + Integer.toString(sum)
+          + ",'Requested')";
+      try (PreparedStatement write = connection.prepareStatement(addition);) {
+        write.executeUpdate();
+      }
+    } else {
+      throw new DatabaseInformationException("No valid orders exist for this table");
+    }
   }
 
   /**
