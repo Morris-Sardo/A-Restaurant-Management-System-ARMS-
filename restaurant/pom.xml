@@ -145,7 +145,7 @@
 				<artifactId>javafx-maven-plugin</artifactId>
 				<version>0.0.8</version>
 				<configuration>
-					<mainClass>Driver</mainClass>
+					<mainClass>appication.Driver</mainClass>
 				</configuration>
 				<executions>
 					<execution>
@@ -170,7 +170,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>Driver</mainClass>
+							<mainClass>appication.Driver</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
