@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 /**
  * This is the test.
  *
- * @author papap
+ * @author faiq 
  *
  */
 
