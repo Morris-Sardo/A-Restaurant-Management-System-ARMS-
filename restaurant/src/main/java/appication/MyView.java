@@ -7,10 +7,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.animation.TranslateTransition;
+import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -19,6 +23,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 
@@ -28,7 +33,7 @@ import javafx.util.Duration;
  * @author papap
  *
  */
-public class MyView {
+public class MyView extends Application implements View {
 
   @FXML
   private Hyperlink siForgotPass;
@@ -86,6 +91,36 @@ public class MyView {
   private String[] questionList = {question1, question2, question3};
 
 
+  public void addLoginObserver(Runnable f) {
+    siLoginBtn.setOnAction(event -> f.run());
+  }
+
+  /**
+   * This class it return the username.
+   * 
+   * @return username.
+   */
+  public String getUserNameLogin() {
+    if (siUsername == null) {
+      return "";
+    }
+    return siUsername.getText();
+
+  }
+
+  /**
+   * This methods return password.
+   * 
+   * @return password.
+   */
+  public String getPassowrdLogin() {
+    if (siPassword == null) {
+      return "";
+    }
+    return siPassword.getText();
+  }
+
+
   /**
    * This method used to store the question list that will printout by GUI.
    */
@@ -103,70 +138,68 @@ public class MyView {
 
   }
 
-
   /**
-   * This methods is responsible to login the users. If login is not correct of wrong it will pop up
-   * an alert text.
+   * This methos pup up the Blank field login.
    */
-  public void loginBtn() {
-    if (siUsername.getText().isEmpty() || siPassword.getText().isEmpty()) {
-      alert = new Alert(AlertType.ERROR);
-      alert.setTitle("Error Message");
-      alert.setHeaderText(null);
-      alert.setContentText("Please fill all the blank fields");
-      alert.showAndWait();
-    } else {
+  public void blankField(AlertType type, String title, String contentText) {
 
-      String selectData =
-          "SELECT username, password FROM login WHERE username = ? and password = ?";
-
-      try {
-
-        connect = ConnectionToDB.connectToDatabase();
-
-        // Prepare and execute the selectData statement
-        prepare = connect.prepareStatement(selectData);
-        prepare.setString(1, siUsername.getText());
-        prepare.setString(2, siPassword.getText());
-        result = prepare.executeQuery();
-
-        // If login is successfully, then go to another form.(Main Form).
-        // For now it will pop up an alert the the login has been gone with success.
-        if (result.next()) {
-          alert = new Alert(AlertType.INFORMATION);
-          alert.setTitle("Information Message");
-          alert.setHeaderText(null);
-          alert.setContentText("Successfully Login!");
-          alert.showAndWait();
-
-        } else { // if not, then message error.
-          alert = new Alert(AlertType.ERROR);
-          alert.setTitle("Error Message");
-          alert.setHeaderText(null);
-          alert.setContentText("Incorrect Username/passowrd!");
-          alert.showAndWait();
-
-        }
-      } catch (SQLException e) {
-        e.printStackTrace();
-      } finally {
-        try {
-          if (connect != null) {
-            connect.close();
-          }
-          if (prepare != null) {
-            prepare.close();
-          }
-          if (result != null) {
-            result.close();
-          }
-        } catch (SQLException e) {
-          e.printStackTrace();
-        }
-      }
-    }
+    alert = new Alert(type);
+    alert.setTitle(title);
+    alert.setHeaderText(null);
+    alert.setContentText(contentText);
+    alert.showAndWait();
 
   }
+
+  // public void loginBtn() {
+  // if (siUsername.getText().isEmpty() || siPassword.getText().isEmpty()) {
+  // blankField(AlertType.ERROR, "Error Message", "Please fill all the blank fields");
+  //
+  // } else {
+  //
+  // String selectData =
+  // "SELECT username, password FROM login WHERE username = ? and password = ?";
+  //
+  // try {
+  //
+  // connect = ConnectionToDB.connectToDatabase();
+  //
+  // // Prepare and execute the selectData statement
+  // prepare = connect.prepareStatement(selectData);
+  // prepare.setString(1, siUsername.getText());
+  // prepare.setString(2, siPassword.getText());
+  // result = prepare.executeQuery();
+  //
+  // // If login is successfully, then go to another form.(Main Form).
+  // // For now it will pop up an alert the the login has been gone with success.
+  // if (result.next()) {
+  //
+  // blankField(AlertType.INFORMATION, "Information Message", "Successfully Login!");
+  //
+  // } else {
+  // blankField(AlertType.ERROR, "Error Message", "Incorrect Username/passowrd!");
+  //
+  // }
+  // } catch (SQLException e) {
+  // e.printStackTrace();
+  // } finally {
+  // try {
+  // if (connect != null) {
+  // connect.close();
+  // }
+  // if (prepare != null) {
+  // prepare.close();
+  // }
+  // if (result != null) {
+  // result.close();
+  // }
+  // } catch (SQLException e) {
+  // e.printStackTrace();
+  // }
+  // }
+  // }
+  //
+  // }
 
   /**
    * This method responsible to register user. Pop up warming if field is empty. If the registration
@@ -290,4 +323,53 @@ public class MyView {
     }
 
   }
+
+  @Override
+  public void start(Stage primaryStage) throws Exception {
+
+    Parent root = FXMLLoader.load(getClass().getResource("myView.fxml"));
+
+
+    Scene scene = new Scene(root, 600, 400);
+
+    primaryStage.setTitle("Login  Interface");
+    primaryStage.setScene(scene);
+    primaryStage.show();
+
+
+  }
+
+  // DO NOT CHANGE ANYTHING BELOW THIS COMMENT
+  /////////////////////////////////////////////////////////////////////////////////
+  // Block for creating an instance variable for others to use.
+  //
+  // Make it a JavaFX singleton. Instance is set by the javafx "initialize" method
+  private static volatile MyView instance = null;
+
+  @FXML
+  void initialize() {
+    instance = this;
+  }
+
+  /**
+   * This is a Singleton View constructed by the JavaaFX Thread and made available through this
+   * method.
+   * 
+   * @return the single object representing this view
+   */
+  public static synchronized MyView getInstance() {
+    if (instance == null) {
+      new Thread(() -> Application.launch(MyView.class)).start();
+      // Wait until the instance is ready since initialize has executed.
+      while (instance == null) {// empty body
+      }
+    }
+
+    return instance;
+  }
+  // End of special block
+  /////////////////////////////////////////////////////////////////////////////////
+
+
+
 }

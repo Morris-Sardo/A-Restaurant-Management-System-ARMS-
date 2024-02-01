@@ -1,10 +1,6 @@
 package appication;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+
 
 /**
  * This class run use to run application.
@@ -12,25 +8,34 @@ import javafx.stage.Stage;
  * @author papap
  *
  */
-public class Driver extends Application {
+public class Driver {
 
+  /**
+   * tihds is the main.
+   * 
+   * @param args is is string.
+   */
   public static void main(String[] args) {
-    launch(args);
-  }
-
-  @Override
-  public void start(Stage primaryStage) throws Exception {
-
-    Parent root = FXMLLoader.load(getClass().getResource("myView.fxml"));
-
-
-    Scene scene = new Scene(root, 600, 400);
-
-    primaryStage.setTitle("Login  Interface");
-    primaryStage.setScene(scene);
-    primaryStage.show();
-
+    MyView view = MyView.getInstance();
+    LoginController h = new LoginController(view);
 
   }
+  // launch(args);
+  // }
+
+  // @Override
+  // public void start(Stage primaryStage) throws Exception {
+  //
+  // Parent root = FXMLLoader.load(getClass().getResource("myView.fxml"));
+  //
+  //
+  // Scene scene = new Scene(root, 600, 400);
+  //
+  // primaryStage.setTitle("Login Interface");
+  // primaryStage.setScene(scene);
+  // primaryStage.show();
+  //
+  //
+  // }
 
 }
