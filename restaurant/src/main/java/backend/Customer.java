@@ -15,13 +15,10 @@ import org.postgresql.util.PSQLException;
  */
 
 public class Customer {
-  @SuppressWarnings("unused")
   private int tableNumber;
-  @SuppressWarnings("unused")
   private int customerID = 999;
   @SuppressWarnings("unused")
   private int[] order = null;
-  @SuppressWarnings("unused")
   private Connection connection = null;
 
   public int getCustomerID() {

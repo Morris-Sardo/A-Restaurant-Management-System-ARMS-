@@ -1,5 +1,5 @@
 CREATE TABLE orders
-(order_number int PRIMARY KEY,
+(order_number int,
 customer_id int NOT NULL,
 table_number int NOT NULL,
 items nchar(100) NOT NULL,
@@ -8,7 +8,7 @@ order_time nchar(24) NOT NULL,
 status nchar(20) NOT NULL);
 
 CREATE TABLE items
-(item_number int PRIMARY KEY,
+(item_number int,
 item_name nchar(50) NOT NULL,
 price float(24) NOT NULL,
 allergies nchar(100) NOT NULL,
@@ -29,7 +29,7 @@ price  float(24) NOT NULL,
 status nchar(20) NOT NULL);
 
 CREATE TABLE tables
-(table_number int PRIMARY KEY,
+(table_number int,
 available boolean NOT NULL);
 
 
