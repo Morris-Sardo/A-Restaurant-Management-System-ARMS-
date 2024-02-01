@@ -62,6 +62,23 @@ class CustomerTest {
     assertDoesNotThrow(() -> testCustomer.requestHelp());
   }
   
+  @Test
+  void testAddItem() throws Exception {
+      // Assuming there is an item with item_number = 1 in the items table
+      testCustomer.addItem(1);
+
+      // Verify that the order was updated with the new item
+      String verifyItemQuery = "SELECT items FROM orders WHERE customer_id = ? AND table_number = ? AND status = 'Pending'";
+      try (var statement = connection.prepareStatement(verifyItemQuery)) {
+          statement.setInt(1, testCustomer.getCustomerID());
+          statement.setInt(2, testCustomer.getTableNumber());
+          var resultSet = statement.executeQuery();
+          assertTrue(resultSet.next());
+          String items = resultSet.getString("items");
+          assertTrue(items.contains(",1")); // Assuming items are stored as comma-separated strings
+      }
+  }
+  
  
   
 

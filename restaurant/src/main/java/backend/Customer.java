@@ -75,17 +75,25 @@ public class Customer {
    * Adds a new item to the current order.
    * 
    * @param item the item being added to the order
+   * @throws SQLException 
    */
-  public void addItem(int item) {
-
+  public void addItem(int item) throws SQLException {
+	 String Query_addItem = "UPDATE orders SET items = items + item || ? WHERE customer_id = ? ";
+	 
+	 try(PreparedStatement addItem = connection.prepareStatement(Query_addItem)) {
+		 addItem.setString(1, "," + item);
+		 addItem.setInt(2, customerID);
+		 addItem.executeUpdate();
+	 }
+  
   }
 
   /**
    * Adds the order to the database.
    */
   public void submitOrder() {
-
-  }
+   
+  } 
 
   /**
    * Adds a request for a bill to the database.
