@@ -37,6 +37,7 @@ public class Customer {
 
   /**
    * Constructor for a Customer object.
+   * 
    * @param table the tableNumber of the customer
    * @param connection the connection to the database that will be used
    */
@@ -117,7 +118,8 @@ public class Customer {
     }
     if (!result.isEmpty()) {
       String cancel =
-          "UPDATE orders SET status = 'Canceled' WHERE(status ='Requested' OR status ='Confirmed')";
+          "UPDATE orders SET status = 'Canceled' WHERE(status ='Requested' OR status ='Confirmed') "
+          + "AND table_number = " + Integer.toString(customerID);
       try (PreparedStatement cancelation = connection.prepareStatement(cancel)) {
         cancelation.executeUpdate();
       }
@@ -130,7 +132,7 @@ public class Customer {
       }
       String addition = "INSERT INTO bills VALUES(" + Integer.toString(customerID) + ", "
           + Integer.toString(tableNumber) + ","
-          + result.toString().replace("[", "").replace("]",  "") + "," + Integer.toString(sum)
+          + result.toString().replace("[", "").replace("]", "") + "," + Integer.toString(sum)
           + ",'Requested')";
       try (PreparedStatement write = connection.prepareStatement(addition);) {
         write.executeUpdate();
