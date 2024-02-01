@@ -19,6 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
+
 /**
  * This is class act as controller between the View interface and back model.
  *
@@ -80,7 +81,7 @@ public class MyView {
   private Alert alert; // use to pop up and warming.
 
   // array use to store the questions.
-  private String[] questionList = {question1, question2, question2};
+  private String[] questionList = {question1, question2, question3};
 
 
   /**
@@ -99,7 +100,7 @@ public class MyView {
     suQuestion.setItems(listData); // press button question it will appear the questions.
 
   }
-  
+
 
   /**
    * This methods is responsible to login the users. If login is not correct of wrong it will pop up
