@@ -79,6 +79,23 @@ class CustomerTest {
       }
   }
   
+  @Test
+  void testSubmitOrder() throws Exception {
+      // Assuming there is a pending order for the customer in the orders table
+      testCustomer.submitOrder();
+
+      // Verify that the order status is updated to 'Submitted'
+      // You should replace "orders" with your actual order-related table
+      // and check if the status is set to 'Submitted' for the specific order
+      String verifyStatusQuery = "SELECT status FROM orders WHERE customer_id = ? AND table_number = ?";
+      try (var statement = connection.prepareStatement(verifyStatusQuery)) {
+          statement.setInt(1, testCustomer.getCustomerID());
+          statement.setInt(2, testCustomer.getTableNumber());
+          var resultSet = statement.executeQuery();
+          assertTrue(resultSet.next());
+          assertEquals("Submitted", resultSet.getString("status"));
+      }
+  }
  
   
 

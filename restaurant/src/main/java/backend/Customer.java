@@ -91,9 +91,14 @@ public class Customer {
   /**
    * Adds the order to the database.
    */
-  public void submitOrder() {
-   
-  } 
+  public void submitOrder() throws SQLException {
+      String updateOrderStatusQuery = "UPDATE orders SET status = 'Submitted' WHERE customer_id = ?";
+
+      try (PreparedStatement updateOrderStatusStatement = connection.prepareStatement(updateOrderStatusQuery)) {
+          updateOrderStatusStatement.setInt(1, customerID);
+          updateOrderStatusStatement.executeUpdate();
+      }
+  }
 
   /**
    * Adds a request for a bill to the database.
