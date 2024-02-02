@@ -1,6 +1,7 @@
 package backend;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 
 /**
  * Contains the methods needed for the 'Customer' role.
@@ -62,7 +63,7 @@ public class Waiter {
    * Finds all orders with 'Ready' status.
    * @return the list of the information for orders
    */
-  public String[] readyOrders() {
+  public ArrayList<String> readyOrders() {
     return null;
   }
   
@@ -70,7 +71,7 @@ public class Waiter {
    * Finds all bill requests.
    * @return the list of the information for bill requests
    */
-  public String[] viewBillRequests() {
+  public ArrayList<String> viewBillRequests() {
     return null;
   }
   
@@ -78,7 +79,7 @@ public class Waiter {
    * Finds all complaints.
    * @return the list of table numbers with a current complaint
    */
-  public int[] viewComplaints() {
+  public ArrayList<Integer> viewComplaints() {
     return null;
   }
   
