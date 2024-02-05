@@ -36,16 +36,18 @@ public class ConnectionToDB {
    * Create the login table.
    * 
    * @param connection a database connection
+   * @deprecated with won t use this part of code now.
    */
   public static void createLoginTable(Connection connection) throws SQLException {
     System.out.println("Creating login table");
 
-    try (PreparedStatement statement = connection
-        .prepareStatement("CREATE TABLE login (\n" + "userID int PRIMARY KEY, \n"
-            + "username varchar(20), \n" + "password varchar(20), \n" + "answer varchar(20));");) {
+    try (PreparedStatement statement = connection.prepareStatement("CREATE TABLE login (\n"
+        + "username varchar(100) PRIMARY KEY, \n" + "password varchar(100), \n"
+        + "question varchar(100)," + "answer varchar(100)," + "date DATE);");) {
       statement.execute();
     }
   }
+
   
   /**
    * Create the ratings table.
@@ -57,10 +59,11 @@ public class ConnectionToDB {
 
     try (PreparedStatement statement = connection
         .prepareStatement("CREATE TABLE rating (\n" + "username varchar(20) PRIMARY KEY, \n"
-            + "rating int, \n" + "comment varchar(200));");) {
+            + "rating int, \n" + "comment varchar(500));");) {
       statement.execute();
     }
   }
+  
   
   /**
    * Insert data into the login table.
@@ -70,18 +73,18 @@ public class ConnectionToDB {
    * @throws IOException if the file cannot be accessed
    * @throws SQLException if the data cannot be inserted
    */
-  public static void insertIntoLoginTableFromFile(Connection connection, String file)
+  /*public static void insertIntoLoginTableFromFile(Connection connection, String file)
       throws IOException, SQLException {
 
     System.out.println("Inserting data into login table");
-    String insert = "INSERT INTO login VALUES (?, ?, ?, ?)";
+    String insert = "INSERT INTO login VALUES (?, ?, ?, ?, ?)";
 
     try (InputStream loginFile = ConnectionToDB.class.getClassLoader().getResourceAsStream(file);
         BufferedReader br =
             new BufferedReader(new InputStreamReader(loginFile, StandardCharsets.UTF_8));
 
-        PreparedStatement statement = connection.prepareStatement(insert);   
-        
+        PreparedStatement statement = connection.prepareStatement(insert);
+
 
     ) {
 
@@ -118,7 +121,7 @@ public class ConnectionToDB {
     } catch (NumberFormatException e) {
       return false;
     }
-  }
+  } */
 
   /**
    * drops all tables.
@@ -168,7 +171,7 @@ public class ConnectionToDB {
       createLoginTable(connection);
       createRatingTable(connection);
 
-      insertIntoLoginTableFromFile(connection, "users.csv");
+      //insertIntoLoginTableFromFile(connection, "users.csv");
       
       
 
