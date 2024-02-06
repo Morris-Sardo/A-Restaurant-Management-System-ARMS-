@@ -25,7 +25,7 @@
                   </Label>
                   <TextField fx:id="suUsername" layoutX="57.0" layoutY="131.0" prefHeight="26.0" prefWidth="210.0" promptText="Username" />
                   <PasswordField fx:id="suPassword" layoutX="57.0" layoutY="175.0" prefHeight="26.0" prefWidth="210.0" promptText="Password" />
-                  <Button fx:id="suSignupBtn" layoutX="57.0" layoutY="335.0" mnemonicParsing="false" onAction="#regBtn" prefHeight="26.0" prefWidth="210.0" text="Sign Up">
+                  <Button fx:id="suSignupBtn" layoutX="57.0" layoutY="335.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="210.0" text="Sign Up">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -35,12 +35,12 @@
                </children></AnchorPane>
             <AnchorPane fx:id="siLoginForm" layoutX="304.0" layoutY="1.0" prefHeight="400.0" prefWidth="300.0" styleClass="white-from">
                <children>
-                  <TextField fx:id="siUsername" layoutX="57.0" layoutY="131.0" prefHeight="26.0" prefWidth="210.0" promptText="Username">
+                  <TextField fx:id="siUsername" layoutX="57.0" layoutY="131.0" prefHeight="26.0" prefWidth="210.0" promptText="Username" AnchorPane.bottomAnchor="242.6" AnchorPane.leftAnchor="56.99999999999997" AnchorPane.rightAnchor="32.599999999999994" AnchorPane.topAnchor="131.0">
                      <font>
                         <Font name="Arial" size="12.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="72.0" layoutY="54.0" text="Login Account" textFill="#232222" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="72.0">
+                  <Label layoutX="72.0" layoutY="54.0" text="Login Account" textFill="#232222" AnchorPane.bottomAnchor="311.6" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="72.0" AnchorPane.topAnchor="54.0">
                      <font>
                         <Font name="System Bold" size="23.0" />
                      </font>
@@ -51,12 +51,12 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Hyperlink fx:id="siForgotPass" layoutX="45.0" layoutY="238.0" text="Forgot Password?" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="152.6" />
+                  <Hyperlink fx:id="siForgotPass" layoutX="45.0" layoutY="238.0" text="Forgot Password?" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="sideForm" prefHeight="400.0" prefWidth="300.0" styleClass="gradient" stylesheets="@myView.css">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="86.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="86.0">
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="86.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@image/g15%20logo.png" />
                      </image>
@@ -66,12 +66,12 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="sideCreateBtn" layoutX="45.0" layoutY="279.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="26.0" prefWidth="210.0" text="Create Account" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="44.60000000000002">
+                  <Button fx:id="sideCreateBtn" layoutX="45.0" layoutY="279.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="26.0" prefWidth="210.0" text="Create Account" AnchorPane.bottomAnchor="94.6" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="44.60000000000002" AnchorPane.topAnchor="279.0">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Label layoutX="75.0" layoutY="229.0" prefHeight="34.0" prefWidth="177.0" text="Create Account" textFill="#efe9e8" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="51.0">
+                  <Label layoutX="72.0" layoutY="232.0" prefHeight="34.0" prefWidth="177.0" text="Create Account" textFill="#efe9e8">
                      <font>
                         <Font name="System Bold" size="23.0" />
                      </font>

@@ -33,7 +33,7 @@ import javafx.util.Duration;
  * @author papap
  *
  */
-public class MyView extends Application implements View {
+public class MyView extends Application implements ViewInterface {
 
   @FXML
   private Hyperlink siForgotPass;
@@ -90,6 +90,12 @@ public class MyView extends Application implements View {
   // array use to store the questions.
   private String[] questionList = {question1, question2, question3};
 
+  // private String sUsername;
+
+
+  public void addRegistrationObserver(Runnable f) {
+    suSignupBtn.setOnAction(event -> f.run());
+  }
 
   public void addLoginObserver(Runnable f) {
     siLoginBtn.setOnAction(event -> f.run());
@@ -122,6 +128,45 @@ public class MyView extends Application implements View {
 
 
   /**
+   * This method the username for registration.
+   * 
+   * @return username
+   */
+  public String getUserNameRegistration() {
+    if (suUsername == null) {
+      return "";
+    }
+    return suUsername.getText();
+
+  }
+
+
+  /**
+   * This method the password for registration.
+   * 
+   * @return password.
+   */
+  public String getPassowrdRegistration() {
+    if (suPassword == null) {
+      return "";
+    }
+    return suPassword.getText();
+  }
+
+  /**
+   * Setup the enstry to empty.
+   */
+  public void emptyRegistrationFields() {
+
+    suUsername.setText("");
+    suPassword.setText("");
+    suQuestion.getSelectionModel().clearSelection();
+    suAnswer.setText("");
+  }
+
+
+
+  /**
    * This method used to store the question list that will printout by GUI.
    */
   public void regQuestionList() {
@@ -139,9 +184,30 @@ public class MyView extends Application implements View {
   }
 
   /**
+   * This method is use to get the question from form cubox.
+   */
+  public Object getSelectedQuestion() {
+
+
+    return suQuestion.getSelectionModel().getSelectedItem();
+  }
+
+  /**
+   * This method is use to get the answer in the regiastration.
+   * 
+   * @return the answer.
+   */
+  public String getAnswer() {
+    if (suAnswer == null) {
+      return "";
+    }
+    return suAnswer.getText();
+  }
+
+  /**
    * This methos pup up the Blank field login.
    */
-  public void blankField(AlertType type, String title, String contentText) {
+  public void alert(AlertType type, String title, String contentText) {
 
     alert = new Alert(type);
     alert.setTitle(title);
@@ -149,138 +215,6 @@ public class MyView extends Application implements View {
     alert.setContentText(contentText);
     alert.showAndWait();
 
-  }
-
-  // public void loginBtn() {
-  // if (siUsername.getText().isEmpty() || siPassword.getText().isEmpty()) {
-  // blankField(AlertType.ERROR, "Error Message", "Please fill all the blank fields");
-  //
-  // } else {
-  //
-  // String selectData =
-  // "SELECT username, password FROM login WHERE username = ? and password = ?";
-  //
-  // try {
-  //
-  // connect = ConnectionToDB.connectToDatabase();
-  //
-  // // Prepare and execute the selectData statement
-  // prepare = connect.prepareStatement(selectData);
-  // prepare.setString(1, siUsername.getText());
-  // prepare.setString(2, siPassword.getText());
-  // result = prepare.executeQuery();
-  //
-  // // If login is successfully, then go to another form.(Main Form).
-  // // For now it will pop up an alert the the login has been gone with success.
-  // if (result.next()) {
-  //
-  // blankField(AlertType.INFORMATION, "Information Message", "Successfully Login!");
-  //
-  // } else {
-  // blankField(AlertType.ERROR, "Error Message", "Incorrect Username/passowrd!");
-  //
-  // }
-  // } catch (SQLException e) {
-  // e.printStackTrace();
-  // } finally {
-  // try {
-  // if (connect != null) {
-  // connect.close();
-  // }
-  // if (prepare != null) {
-  // prepare.close();
-  // }
-  // if (result != null) {
-  // result.close();
-  // }
-  // } catch (SQLException e) {
-  // e.printStackTrace();
-  // }
-  // }
-  // }
-  //
-  // }
-
-  /**
-   * This method responsible to register user. Pop up warming if field is empty. If the registration
-   * go well it all data are saved into the database.
-   */
-
-  public void regBtn() {
-
-    // Initialize the ResultSet here
-
-    if (suUsername.getText().isEmpty() || suPassword.getText().isEmpty()
-        || suQuestion.getSelectionModel().getSelectedItem() == null
-        || suAnswer.getText().isEmpty()) {
-      alert = new Alert(AlertType.ERROR);
-      alert.setTitle("Error Message");
-      alert.setHeaderText(null);
-      alert.setContentText("Please fill all the blank fields");
-      alert.showAndWait();
-    } else {
-      // Check if the username already exists in the database
-      String checkUser = "SELECT COUNT(*) FROM login WHERE username = ?";
-      String regData =
-          "INSERT INTO login (username, password, question, answer) VALUES(?, ?, ?, ?)";
-
-      try {
-        connect = ConnectionToDB.connectToDatabase();
-
-        // Prepare and execute the checkUser statement
-        prepare = connect.prepareStatement(checkUser);
-        prepare.setString(1, suUsername.getText());
-        result = prepare.executeQuery();
-
-        // Move to the first record in the result set (should be only one record due to COUNT)
-        if (result.next()) {
-          // If the count is zero, the username does not exist yet
-          if (result.getInt(1) == 0) {
-            // Username is unique, proceed with registration
-            prepare = connect.prepareStatement(regData);
-            prepare.setString(1, suUsername.getText());
-            prepare.setString(2, suPassword.getText());
-            prepare.setString(3, (String) suQuestion.getSelectionModel().getSelectedItem());
-            prepare.setString(4, suAnswer.getText());
-            prepare.executeUpdate();
-
-            alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Information Message");
-            alert.setHeaderText(null);
-            alert.setContentText("Successfully registered Account!");
-            alert.showAndWait();
-
-            suUsername.setText("");
-            suPassword.setText("");
-            suQuestion.getSelectionModel().clearSelection();
-            suAnswer.setText("");
-          } else {
-            // Username already exists, show error message
-            alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Registration Error");
-            alert.setHeaderText(null);
-            alert.setContentText("No valid username. The username already exists.");
-            alert.showAndWait();
-          }
-        }
-      } catch (SQLException e) {
-        e.printStackTrace();
-      } finally {
-        try {
-          if (connect != null) {
-            connect.close();
-          }
-          if (prepare != null) {
-            prepare.close();
-          }
-          if (result != null) {
-            result.close();
-          }
-        } catch (SQLException e) {
-          e.printStackTrace();
-        }
-      }
-    }
   }
 
 

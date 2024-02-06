@@ -17,25 +17,11 @@ public class Driver {
    */
   public static void main(String[] args) {
     MyView view = MyView.getInstance();
-    LoginController h = new LoginController(view);
+    DataBaseModel con = new DataBaseModel();
+    LoginController h = new LoginController(view, con);
+    
 
   }
-  // launch(args);
-  // }
 
-  // @Override
-  // public void start(Stage primaryStage) throws Exception {
-  //
-  // Parent root = FXMLLoader.load(getClass().getResource("myView.fxml"));
-  //
-  //
-  // Scene scene = new Scene(root, 600, 400);
-  //
-  // primaryStage.setTitle("Login Interface");
-  // primaryStage.setScene(scene);
-  // primaryStage.show();
-  //
-  //
-  // }
 
 }
