@@ -73,7 +73,7 @@ public class ConnectionToDB {
    * @throws IOException if the file cannot be accessed
    * @throws SQLException if the data cannot be inserted
    */
-  /*public static void insertIntoLoginTableFromFile(Connection connection, String file)
+  public static void insertIntoLoginTableFromFile(Connection connection, String file)
       throws IOException, SQLException {
 
     System.out.println("Inserting data into login table");
@@ -95,15 +95,11 @@ public class ConnectionToDB {
         brokenLine = currentLine.split(",");
         int i;
         for (i = 0; i < brokenLine.length; i++) {
-          if (isInteger(brokenLine[i])) {
-            // If it's an integer, use setInt
-            statement.setInt(i + 1, Integer.parseInt(brokenLine[i]));
-          } else {
-            // If it's not an integer, use setString
-            statement.setString(i + 1, brokenLine[i]);
-          }
+          statement.setString(i + 1, brokenLine[i]);
         }
+
         statement.addBatch();
+
       }
 
       statement.executeBatch();
@@ -113,6 +109,50 @@ public class ConnectionToDB {
     }
 
   }
+  
+  /**
+   * Insert data into the rating table.
+   * 
+   * @param connection a database connection
+   * @param file the file containing the data
+   * @throws IOException if the file cannot be accessed
+   * @throws SQLException if the data cannot be inserted
+   */
+  public static void insertIntoRatingTableFromFile(Connection connection, String file)
+      throws IOException, SQLException {
+
+    System.out.println("Inserting data into rating table");
+    String insert = "INSERT INTO rating VALUES (?, ?, ?)";
+
+    try (InputStream loginFile = ConnectionToDB.class.getClassLoader().getResourceAsStream(file);
+         BufferedReader br = new BufferedReader(new InputStreamReader(loginFile, StandardCharsets.UTF_8));
+         PreparedStatement statement = connection.prepareStatement(insert);
+    ) {
+        String currentLine;
+        while ((currentLine = br.readLine()) != null) {
+            String[] brokenLine = currentLine.split(",");
+            if (brokenLine.length == 3) { // Assuming 3 columns in the rating table
+                statement.setString(1, brokenLine[0]); // Assuming first column is varchar
+                try {
+                    int rating = Integer.parseInt(brokenLine[1].trim()); // Assuming second column is an integer
+                    statement.setInt(2, rating);
+                } catch (NumberFormatException e) {
+                    // Handle parsing error
+                    System.err.println("Invalid rating format for line: " + currentLine);
+                    continue; // Skip this line
+                }
+                statement.setString(3, brokenLine[2]); // Assuming third column is varchar
+                statement.addBatch();
+            } else {
+                System.out.println("Invalid line: " + currentLine);
+            }
+        }
+        statement.executeBatch();
+    } catch (SQLException e) {
+        throw e;
+    }
+}
+
 
   private static boolean isInteger(String string) {
     try {
@@ -121,7 +161,7 @@ public class ConnectionToDB {
     } catch (NumberFormatException e) {
       return false;
     }
-  } */
+  } 
 
   /**
    * drops all tables.
@@ -165,13 +205,14 @@ public class ConnectionToDB {
     try (Scanner scanner = new Scanner(System.in);) {
       connection = ConnectionToDB.connectToDatabase();
 
-      dropUserTable(connection);
+      //dropUserTable(connection);
       dropRatingTable(connection);
 
-      createLoginTable(connection);
+      //createLoginTable(connection);
       createRatingTable(connection);
 
       //insertIntoLoginTableFromFile(connection, "users.csv");
+      insertIntoRatingTableFromFile(connection, "ratings.csv");
       
       
 
