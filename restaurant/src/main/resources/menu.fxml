@@ -48,7 +48,7 @@
                               <Button layoutX="6.0" layoutY="287.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="INVENTORY" textFill="WHITE" />
                               <Button layoutX="6.0" layoutY="346.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MENU" textFill="#f8f8f8" />
                               <Button layoutX="6.0" layoutY="405.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="CUSTOMER" textFill="#f8f8f8" />
-                              <Button layoutX="14.0" layoutY="549.0" mnemonicParsing="false" stylesheets="@MenuDesign.css" AnchorPane.bottomAnchor="12.0">
+                              <Button layoutX="14.0" layoutY="549.0" mnemonicParsing="false" stylesheets="@MenuDesign.css" textFill="#ebddd7" AnchorPane.bottomAnchor="12.0">
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -82,7 +82,7 @@
                                     <String fx:value="white-background" />
                                  </styleClass>
                                  <children>
-                                    <TableView layoutX="10.0" layoutY="7.0" prefHeight="297.0" prefWidth="826.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="7.0">
+                                    <TableView layoutX="10.0" layoutY="7.0" prefHeight="297.0" prefWidth="826.0" stylesheets="@MenuDesign.css" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="7.0">
                                       <columns>
                                         <TableColumn prefWidth="75.0" text="Product ID" />
                                         <TableColumn prefWidth="103.32192993164062" text="Product Name" />
@@ -93,6 +93,10 @@
                                        <columnResizePolicy>
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                        </columnResizePolicy>
+                                       <styleClass>
+                                          <String fx:value="table-design" />
+                                          <String fx:value="column-header" />
+                                       </styleClass>
                                     </TableView>
                                  </children>
                               </AnchorPane>
@@ -104,15 +108,26 @@
                                  </styleClass>
                                  <children>
                                     <Label layoutX="41.0" layoutY="26.0" text="Product ID:" />
-                                    <TextField layoutX="114.0" layoutY="21.0" prefHeight="25.0" prefWidth="141.0" />
+                                    <TextField layoutX="114.0" layoutY="21.0" prefHeight="26.0" prefWidth="170.0" />
                                     <Label layoutX="21.0" layoutY="63.0" text="Product Name:" />
-                                    <TextField layoutX="114.0" layoutY="58.0" prefHeight="26.0" prefWidth="141.0" />
+                                    <TextField layoutX="114.0" layoutY="58.0" prefHeight="26.0" prefWidth="171.0" />
                                     <Label layoutX="72.0" layoutY="104.0" text="Type:" />
                                     <ComboBox layoutX="112.0" layoutY="101.0" prefHeight="26.0" prefWidth="144.0" />
-                                    <Label layoutX="338.0" layoutY="25.0" text="Stock:" />
-                                    <TextField layoutX="386.0" layoutY="21.0" prefHeight="25.0" prefWidth="141.0" />
-                                    <Label layoutX="328.0" layoutY="63.0" text="Price(£):" />
-                                    <TextField layoutX="387.0" layoutY="57.0" prefHeight="25.0" prefWidth="141.0" />
+                                    <Label layoutX="375.0" layoutY="26.0" text="Stock:" />
+                                    <TextField layoutX="427.0" layoutY="22.0" prefHeight="25.0" prefWidth="141.0" promptText="0" />
+                                    <Label layoutX="369.0" layoutY="63.0" text="Price(£):" />
+                                    <TextField layoutX="427.0" layoutY="58.0" prefHeight="25.0" prefWidth="141.0" promptText="£0.0" />
+                                    <AnchorPane layoutX="723.0" layoutY="13.0" prefHeight="121.0" prefWidth="117.0" AnchorPane.rightAnchor="14.0">
+                                       <styleClass>
+                                          <String fx:value="white-background" />
+                                          <String fx:value="shadow-drop" />
+                                       </styleClass>
+                                    </AnchorPane>
+                                    <Button layoutX="730.0" layoutY="146.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" styleClass="invt-btn" text="Import" AnchorPane.rightAnchor="22.0" />
+                                    <Button layoutX="75.0" layoutY="165.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="122.0" styleClass="invt-btn" text="Add" AnchorPane.bottomAnchor="25.0" />
+                                    <Button layoutX="224.0" layoutY="165.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="122.0" styleClass="invt-btn" text="Update" AnchorPane.bottomAnchor="25.0" />
+                                    <Button layoutX="392.0" layoutY="165.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="122.0" styleClass="invt-btn" text="Clear" AnchorPane.bottomAnchor="25.0" />
+                                    <Button layoutX="541.0" layoutY="165.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="122.0" styleClass="invt-btn" text="Delete" AnchorPane.bottomAnchor="25.0" />
                                  </children>
                               </AnchorPane>
                               <Separator layoutX="15.0" layoutY="336.0" prefHeight="2.0" prefWidth="848.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
