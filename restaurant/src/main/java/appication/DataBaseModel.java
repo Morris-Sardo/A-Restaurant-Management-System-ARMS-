@@ -1,18 +1,12 @@
 package appication;
 
-//import java.io.BufferedReader;
-//import java.io.IOException;
-//import java.io.InputStream;
-//import java.io.InputStreamReader;
-//import java.nio.charset.StandardCharsets;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-//import java.util.Scanner;
-//import javafx.scene.control.Alert;
-//import javafx.scene.control.Alert.AlertType;
+
 
 
 /**
@@ -40,7 +34,7 @@ public class DataBaseModel {
   public DataBaseModel() {
 
     try {
-      this.connect = connectToDatabase();
+      DataBaseModel.connect = connectToDatabase();
 
     } catch (SQLException e) {
       e.printStackTrace();

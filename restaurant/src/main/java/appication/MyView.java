@@ -1,9 +1,5 @@
 package appication;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.animation.TranslateTransition;
@@ -78,9 +74,7 @@ public class MyView extends Application implements ViewInterface {
   private TextField suUsername;
 
 
-  //private Connection connect; // connection to database table.
-  //private PreparedStatement prepare; // use to compiled database.
-  //private ResultSet result; // result database.
+  @SuppressWarnings("rawtypes") //his supper the warming coused by ObservableList.
   private ObservableList listData; // use to add list of questions at combox question.
   private String question1 = "What is your favorite color?"; // secret question.
   private String question2 = "What is your favory food?"; // secret question.
@@ -168,7 +162,9 @@ public class MyView extends Application implements ViewInterface {
 
   /**
    * This method used to store the question list that will printout by GUI.
+   * 
    */
+  @SuppressWarnings("unchecked")//his supper the warming coused by ObservableList.
   public void regQuestionList() {
     List<String> listQ = new ArrayList<>();
 

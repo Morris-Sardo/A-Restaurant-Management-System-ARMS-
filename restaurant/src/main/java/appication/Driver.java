@@ -18,6 +18,7 @@ public class Driver {
   public static void main(String[] args) {
     MyView view = MyView.getInstance();
     DataBaseModel con = new DataBaseModel();
+    @SuppressWarnings("unused") //suppress wamring not used.
     LoginController h = new LoginController(view, con);
     
 
