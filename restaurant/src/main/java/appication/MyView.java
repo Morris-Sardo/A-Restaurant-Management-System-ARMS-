@@ -30,6 +30,38 @@ import javafx.util.Duration;
  *
  */
 public class MyView extends Application implements ViewInterface {
+  
+  
+  
+  @FXML
+  private TextField fpAnswer;
+
+  @FXML
+  private Button fpBack;
+
+  @FXML
+  private Button fpProceedBtn;
+
+  @FXML
+  private ComboBox<?> fpQuestionForm;
+
+  @FXML
+  private Button npBack;
+
+  @FXML
+  private Button npChangePassBtn;
+
+  @FXML
+  private PasswordField npNewPassConfimation;
+
+  @FXML
+  private AnchorPane npNewPassForm;
+
+  @FXML
+  private PasswordField npNewPassword;
+
+  @FXML
+  private AnchorPane fpquestionForm;
 
   @FXML
   private Hyperlink siForgotPass;
@@ -211,6 +243,19 @@ public class MyView extends Application implements ViewInterface {
     alert.setContentText(contentText);
     alert.showAndWait();
 
+  }
+  
+  /**
+   * this method will switch form when forgot password will press.
+   */
+  public void switchForgotPass() {
+   
+    siLoginForm.setVisible(false);
+    fpquestionForm.setVisible(true);
+    
+    
+    
+    
   }
 
 

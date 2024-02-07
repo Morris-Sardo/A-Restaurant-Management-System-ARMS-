@@ -11,11 +11,22 @@ import javafx.scene.control.Alert.AlertType;
  */
 public interface ViewInterface {
 
-  public void regQuestionList();
 
   public String getUserNameLogin();
 
   public String getPassowrdLogin();
+  
+  public String getUserNameRegistration();
+  
+  public String getPassowrdRegistration();
+  
+  public void emptyRegistrationFields();
+  
+  public void regQuestionList();
+  
+  public Object getSelectedQuestion();
+  
+  public String getAnswer();
 
   public void alert(AlertType type, String title, String contentText);
 
