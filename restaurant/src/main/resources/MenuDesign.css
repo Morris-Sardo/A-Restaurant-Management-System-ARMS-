@@ -33,10 +33,6 @@
 	-fx-effect: dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.5), 5.0,0.0,0.0,0.0);
 }
 
-.white-background{
-	-fx-background-color: linear-gradient(bottom to up,#cf431c, rgb(3, 2, 15));
-}
-
 .radius{
 	-fx-background-radius: 8.0px;
 }
