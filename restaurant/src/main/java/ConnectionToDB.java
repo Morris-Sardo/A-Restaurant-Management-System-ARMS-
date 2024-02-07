@@ -18,9 +18,10 @@ import java.util.Scanner;
  */
 
 public class ConnectionToDB {
-  
+
   /**
    * Creates a new connection to the database.
+   * 
    * @return the connection created
    */
   public static Connection connectToDatabase() // MAKE SURE TO CLOSE THE CONNECTION.
@@ -31,7 +32,7 @@ public class ConnectionToDB {
     return connection;
 
   }
-  
+
   /**
    * Create the login table.
    * 
@@ -48,7 +49,7 @@ public class ConnectionToDB {
     }
   }
 
-  
+
   /**
    * Create the ratings table.
    * 
@@ -57,14 +58,13 @@ public class ConnectionToDB {
   public static void createRatingTable(Connection connection) throws SQLException {
     System.out.println("Creating rating table");
 
-    try (PreparedStatement statement = connection
-        .prepareStatement("CREATE TABLE rating (\n" + "username varchar(20) PRIMARY KEY, \n"
-            + "rating int, \n" + "comment varchar(500));");) {
+    try (PreparedStatement statement = connection.prepareStatement("CREATE TABLE rating (\n"
+        + "username varchar(20) PRIMARY KEY, \n" + "rating int, \n" + "comment varchar(500));");) {
       statement.execute();
     }
   }
-  
-  
+
+
   /**
    * Insert data into the login table.
    * 
@@ -109,7 +109,7 @@ public class ConnectionToDB {
     }
 
   }
-  
+
   /**
    * Insert data into the rating table.
    * 
@@ -125,33 +125,34 @@ public class ConnectionToDB {
     String insert = "INSERT INTO rating VALUES (?, ?, ?)";
 
     try (InputStream loginFile = ConnectionToDB.class.getClassLoader().getResourceAsStream(file);
-         BufferedReader br = new BufferedReader(new InputStreamReader(loginFile, StandardCharsets.UTF_8));
-         PreparedStatement statement = connection.prepareStatement(insert);
-    ) {
-        String currentLine;
-        while ((currentLine = br.readLine()) != null) {
-            String[] brokenLine = currentLine.split(",");
-            if (brokenLine.length == 3) { // Assuming 3 columns in the rating table
-                statement.setString(1, brokenLine[0]); // Assuming first column is varchar
-                try {
-                    int rating = Integer.parseInt(brokenLine[1].trim()); // Assuming second column is an integer
-                    statement.setInt(2, rating);
-                } catch (NumberFormatException e) {
-                    // Handle parsing error
-                    System.err.println("Invalid rating format for line: " + currentLine);
-                    continue; // Skip this line
-                }
-                statement.setString(3, brokenLine[2]); // Assuming third column is varchar
-                statement.addBatch();
-            } else {
-                System.out.println("Invalid line: " + currentLine);
-            }
+        BufferedReader br =
+            new BufferedReader(new InputStreamReader(loginFile, StandardCharsets.UTF_8));
+        PreparedStatement statement = connection.prepareStatement(insert);) {
+      String currentLine;
+      while ((currentLine = br.readLine()) != null) {
+        String[] brokenLine = currentLine.split(",");
+        if (brokenLine.length == 3) { // Assuming 3 columns in the rating table
+          statement.setString(1, brokenLine[0]); // Assuming first column is varchar
+          try {
+            int rating = Integer.parseInt(brokenLine[1].trim()); // Assuming second column is an
+            // integer
+            statement.setInt(2, rating);
+          } catch (NumberFormatException e) {
+            // Handle parsing error
+            System.err.println("Invalid rating format for line: " + currentLine);
+            continue; // Skip this line
+          }
+          statement.setString(3, brokenLine[2]); // Assuming third column is varchar
+          statement.addBatch();
+        } else {
+          System.out.println("Invalid line: " + currentLine);
         }
-        statement.executeBatch();
+      }
+      statement.executeBatch();
     } catch (SQLException e) {
-        throw e;
+      throw e;
     }
-}
+  }
 
 
   private static boolean isInteger(String string) {
@@ -161,7 +162,7 @@ public class ConnectionToDB {
     } catch (NumberFormatException e) {
       return false;
     }
-  } 
+  }
 
   /**
    * drops all tables.
@@ -171,13 +172,13 @@ public class ConnectionToDB {
    */
   public static void dropUserTable(Connection connection) throws SQLException {
     System.out.println("Dropping login table");
-    try (PreparedStatement st =
-        connection.prepareStatement("DROP TABLE IF EXISTS login CASCADE");) {
+    try (
+        PreparedStatement st = connection.prepareStatement("DROP TABLE IF EXISTS login CASCADE");) {
       st.execute();
     }
-    
+
   }
-  
+
   /**
    * drops all tables.
    * 
@@ -190,9 +191,9 @@ public class ConnectionToDB {
         connection.prepareStatement("DROP TABLE IF EXISTS rating CASCADE");) {
       st.execute();
     }
-    
+
   }
-  
+
   /**
    * Main method.
    * 
@@ -205,16 +206,16 @@ public class ConnectionToDB {
     try (Scanner scanner = new Scanner(System.in);) {
       connection = ConnectionToDB.connectToDatabase();
 
-      //dropUserTable(connection);
+      // dropUserTable(connection);
       dropRatingTable(connection);
 
-      //createLoginTable(connection);
+      // createLoginTable(connection);
       createRatingTable(connection);
 
-      //insertIntoLoginTableFromFile(connection, "users.csv");
+      // insertIntoLoginTableFromFile(connection, "users.csv");
       insertIntoRatingTableFromFile(connection, "ratings.csv");
-      
-      
+
+
 
     } catch (Exception e) {
       e.printStackTrace();
