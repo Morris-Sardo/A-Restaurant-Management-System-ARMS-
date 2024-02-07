@@ -78,9 +78,9 @@ public class MyView extends Application implements ViewInterface {
   private TextField suUsername;
 
 
-  private Connection connect; // connection to database table.
-  private PreparedStatement prepare; // use to compiled database.
-  private ResultSet result; // result database.
+  //private Connection connect; // connection to database table.
+  //private PreparedStatement prepare; // use to compiled database.
+  //private ResultSet result; // result database.
   private ObservableList listData; // use to add list of questions at combox question.
   private String question1 = "What is your favorite color?"; // secret question.
   private String question2 = "What is your favory food?"; // secret question.
