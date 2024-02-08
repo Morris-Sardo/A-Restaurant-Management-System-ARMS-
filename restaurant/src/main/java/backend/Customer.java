@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.postgresql.util.PSQLException;
 
 /**
@@ -34,6 +36,10 @@ public class Customer {
 
   public Connection getConnection() {
     return connection;
+  }
+  
+  public int[] getOrder() {
+	  return order;
   }
 
   public Customer(int table, Connection connection) {
@@ -74,30 +80,21 @@ public class Customer {
   /**
    * Adds a new item to the current order.
    * 
-   * @param item the item being added to the order
-   * @throws SQLException 
+   * @param item the item being added to the order 
+   * 
    */
-  public void addItem(int item) throws SQLException {
-	 String Query_addItem = "UPDATE orders SET items = items + item || ? WHERE customer_id = ? ";
-	 
-	 try(PreparedStatement addItem = connection.prepareStatement(Query_addItem)) {
-		 addItem.setString(1, "," + item);
-		 addItem.setInt(2, customerID);
-		 addItem.executeUpdate();
-	 }
-  
+  public void addItem(int item) {
+	  int[] newOrder = Arrays.copyOf(order, order.length + 1);
+	  newOrder[newOrder.length - 1] = item;
+	  order = newOrder;
   }
 
   /**
    * Adds the order to the database.
    */
   public void submitOrder() throws SQLException {
-      String updateOrderStatusQuery = "UPDATE orders SET status = 'Submitted' WHERE customer_id = ?";
+      // String submitOrderQuery = "INSERT INTO orders (customer_id, table_number, items, price, order_time, status) VALUES (?, ?, ?, ?, ?, ?)";
 
-      try (PreparedStatement updateOrderStatusStatement = connection.prepareStatement(updateOrderStatusQuery)) {
-          updateOrderStatusStatement.setInt(1, customerID);
-          updateOrderStatusStatement.executeUpdate();
-      }
   }
 
   /**

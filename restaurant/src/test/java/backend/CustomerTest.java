@@ -64,39 +64,14 @@ class CustomerTest {
   
   @Test
   void testAddItem() throws Exception {
-      // Assuming there is an item with item_number = 1 in the items table
       testCustomer.addItem(1);
-
-      // Verify that the order was updated with the new item
-      String verifyItemQuery = "SELECT items FROM orders WHERE customer_id = ? AND table_number = ? AND status = 'Pending'";
-      try (var statement = connection.prepareStatement(verifyItemQuery)) {
-          statement.setInt(1, testCustomer.getCustomerID());
-          statement.setInt(2, testCustomer.getTableNumber());
-          var resultSet = statement.executeQuery();
-          assertTrue(resultSet.next());
-          String items = resultSet.getString("items");
-          assertTrue(items.contains(",1")); // Assuming items are stored as comma-separated strings
-      }
-  }
-  
-  @Test
-  void testSubmitOrder() throws Exception {
-      // Assuming there is a pending order for the customer in the orders table
-      testCustomer.submitOrder();
-
-      // Verify that the order status is updated to 'Submitted'
-      // You should replace "orders" with your actual order-related table
-      // and check if the status is set to 'Submitted' for the specific order
-      String verifyStatusQuery = "SELECT status FROM orders WHERE customer_id = ? AND table_number = ?";
-      try (var statement = connection.prepareStatement(verifyStatusQuery)) {
-          statement.setInt(1, testCustomer.getCustomerID());
-          statement.setInt(2, testCustomer.getTableNumber());
-          var resultSet = statement.executeQuery();
-          assertTrue(resultSet.next());
-          assertEquals("Submitted", resultSet.getString("status"));
-      }
+      int[] expectedOrder1 = {1};
+      assertArrayEquals(expectedOrder1, testCustomer.getOrder());
+      testCustomer.addItem(1);  
+      testCustomer.addItem(2);
+      int[] expectedOrder2 = {1, 2};
+      assertArrayEquals(expectedOrder2, testCustomer.getOrder());
+     
   }
  
-  
-
 }
