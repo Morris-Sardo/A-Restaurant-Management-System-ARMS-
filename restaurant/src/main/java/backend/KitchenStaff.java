@@ -1,6 +1,8 @@
 package backend;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 /**
  * Contains the methods needed for the 'Kitchen Staff' role.
@@ -23,8 +25,15 @@ public class KitchenStaff {
   /**
    * Sets an order as ready to collect.
    * @param orderNumber the ID number of the order 
+   * @throws SQLException 
    */
-  public void readyOrder(int orderNumber) {
-    
+  public void readyOrder(int orderNumber) throws SQLException {
+    String readyOrderQuery = "UPDATE orders SET status = ? WHERE order_number = ?";
+    try (PreparedStatement statement = connection.prepareStatement(readyOrderQuery)) {
+    	statement.setString(1, "Ready");
+    	statement.setInt(2, orderNumber);
+    	
+    	statement.executeUpdate();
+    }
   }
 }
