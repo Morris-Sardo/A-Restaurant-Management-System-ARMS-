@@ -93,8 +93,29 @@ public class Customer {
    * Adds the order to the database.
    */
   public void submitOrder() throws SQLException {
-      // String submitOrderQuery = "INSERT INTO orders (customer_id, table_number, items, price, order_time, status) VALUES (?, ?, ?, ?, ?, ?)";
-
+      String submitOrderQuery = "INSERT INTO orders (order_ number, customer_id, table_number, items, price, order_time, status) VALUES (DEFAULT, ?, ?, ?, ?, ?, ?)";
+      float totalPrice = calculateTotalPrice();
+      String orderTime = getCurrentTime();
+      
+      try (PreparedStatement statement = connection.prepareStatement(submitOrderQuery)) {
+    	  statement.setInt(1, customerID);
+    	  statement.setInt(2, tableNumber);
+    	  statement.setString(3, order.toString());
+    	  statement.setFloat(4, totalPrice);
+    	  statement.setString(5, orderTime);
+    	  statement.setString(6, "Requested");
+    	  
+    	  statement.executeUpdate();
+      }
+      
+  }
+  
+  private float calculateTotalPrice() {
+	  return 0.0f; // Placeholder
+  }
+  
+  private String getCurrentTime(){
+	  return ""; // PlaceHolder
   }
 
   /**
