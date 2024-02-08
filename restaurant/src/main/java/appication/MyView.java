@@ -16,6 +16,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -30,9 +31,10 @@ import javafx.util.Duration;
  *
  */
 public class MyView extends Application implements ViewInterface {
-  
-  
-  
+
+  @FXML
+  private Label askSecurityQuestion;
+
   @FXML
   private TextField fpAnswer;
 
@@ -106,15 +108,18 @@ public class MyView extends Application implements ViewInterface {
   private TextField suUsername;
 
 
-  @SuppressWarnings("rawtypes") //his supper the warming coused by ObservableList.
+  @SuppressWarnings("rawtypes") // his supper the warming coused by ObservableList.
   private ObservableList listData; // use to add list of questions at combox question.
   private String question1 = "What is your favorite color?"; // secret question.
   private String question2 = "What is your favory food?"; // secret question.
   private String question3 = "What is your birth date?"; // secret question.
   private Alert alert; // use to pop up and warming.
 
+
   // array use to store the questions.
   private String[] questionList = {question1, question2, question3};
+
+  
 
   // private String sUsername;
 
@@ -125,6 +130,10 @@ public class MyView extends Application implements ViewInterface {
 
   public void addLoginObserver(Runnable f) {
     siLoginBtn.setOnAction(event -> f.run());
+  }
+
+  public void addForgotPasswordObserver(Runnable f) {
+    siForgotPass.setOnAction(event -> f.run());
   }
 
   /**
@@ -190,13 +199,24 @@ public class MyView extends Application implements ViewInterface {
     suAnswer.setText("");
   }
 
+  /**
+   * Setup new question, password, confirm password and answer .
+   */
+  public void emptyForgotPasswordFields() {
+
+    fpAnswer.setText("");
+    npNewPassword.setText("");
+    npNewPassConfimation.setText("");
+    suQuestion.getSelectionModel().clearSelection();
+
+  }
 
 
   /**
    * This method used to store the question list that will printout by GUI.
    * 
    */
-  @SuppressWarnings("unchecked")//his supper the warming coused by ObservableList.
+  @SuppressWarnings("unchecked") // his supper the warming coused by ObservableList.
   public void regQuestionList() {
     List<String> listQ = new ArrayList<>();
 
@@ -244,18 +264,30 @@ public class MyView extends Application implements ViewInterface {
     alert.showAndWait();
 
   }
-  
+
   /**
    * this method will switch form when forgot password will press.
    */
-  public void switchForgotPass() {
-   
+  public void switchForgotPass(String question) {
+
+    askSecurityQuestion.setText(question);
     siLoginForm.setVisible(false);
     fpquestionForm.setVisible(true);
-    
-    
-    
-    
+
+    regQuestionList();
+
+
+  }
+
+  /**
+   * This method swapt back to the loginForm.
+   */
+  public void backLoginForm() {
+
+    fpquestionForm.setVisible(false);
+    siLoginForm.setVisible(true);
+
+
   }
 
 

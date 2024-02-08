@@ -23,7 +23,8 @@ public class DataBaseModel {
   private static Connection connect; // connection to database table.
   private static PreparedStatement prepare; // use to compiled database.
   private static ResultSet result; // result database.
-  
+
+
 
 
   /**
@@ -159,4 +160,65 @@ public class DataBaseModel {
 
   }
 
+  /**
+   * This method get the question from the table.
+   * 
+   * @param username usermane.
+   * @return table.
+   */
+  public static String getUsersQuestion(String username) {
+
+    String query = "SELECT question FROM login WHERE username = ?";
+    try {
+      prepare = connect.prepareStatement(query);
+      prepare.setString(1, username);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return prepare.getResultSet().getString(1);
+      }
+    } catch (SQLException e) {
+
+      e.printStackTrace();
+    }
+    return "";
+
+  }
+
+  /**
+   * This method check if the username is in the table.
+   * 
+   * @param username login username.
+   * @return true is user deas not exisit.
+   */
+  public static boolean checkUserName(String username) {
+    String checkUser = "SELECT COUNT(*) FROM login WHERE username  = ?";
+
+
+    // Prepare and execute the checkUser statement
+    try {
+      prepare = connect.prepareStatement(checkUser);
+
+      prepare.setString(1, username);
+      result = prepare.executeQuery();
+
+      // Move to the first record in the result set (should be only one record due to COUNT)
+      if (result.next()) {
+        // If the count is zero, the username does not exist yet
+        if (result.getInt(1) == 0) {
+
+          return false;
+        } else {
+
+          return true;
+        }
+      } else {
+        return false;
+      }
+    } catch (SQLException e) {
+      return false;
+    }
+  }
 }
+
+

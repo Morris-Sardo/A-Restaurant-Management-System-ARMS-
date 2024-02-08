@@ -29,6 +29,7 @@ public class LoginController {
 
     view.addLoginObserver(this::hanldeLogin);
     view.addRegistrationObserver(this::handleSignUp);
+    view.addForgotPasswordObserver(this::handleForgotPass);
 
 
   }
@@ -85,8 +86,20 @@ public class LoginController {
 
 
   /**
-   * this method will handle the forgot passwrod.
+   * this method will handle the forgot password.
    */
-  void handleForgotPass() {}
+  void handleForgotPass() {
+    if (view.getUserNameLogin().isEmpty()) {
+      view.alert(AlertType.ERROR, "Error Message", "Please fill the username field");
+    } else if (DataBaseModel.checkUserName(view.getUserNameLogin())) {
+      view.switchForgotPass(DataBaseModel.getUsersQuestion(view.getUserNameLogin()));
+
+
+    } else {
+      view.alert(AlertType.ERROR, "Registration Error",
+          "No valid username. The username does not exists.");
+    }
+
+  }
 
 }
