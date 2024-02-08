@@ -8,11 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Waiter {
-  private int waiteriD;
   private Connection connection;
 
-  public Waiter(int waiteriD, Connection connection) {
-    this.waiteriD = waiteriD;
+  public Waiter(Connection connection) {
     this.connection = connection;
   }
 
@@ -40,7 +38,7 @@ public class Waiter {
     
   
     try {
-      String query = "Update items set available = NOT available WHERE item_number = ?";
+      String query = "Update items set available = NOT available where item_number = ?";
       PreparedStatement preparedStatement = connection.prepareStatement(query);
       preparedStatement.setInt(1, itemNumber);
       preparedStatement.executeUpdate();
@@ -74,14 +72,37 @@ public class Waiter {
     }
 
     return orders.toArray(new String[0]);
-  }
+  } 
+  
+  public void deliveredOrder(int orderNumber) {
+    try {
+        String query = "UPDATE orders SET status = 'Delivered' WHERE order_number = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, orderNumber);
+        preparedStatement.executeUpdate();
+        System.out.println("Order number " + orderNumber + " marked as Delivered.");
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
+
+public void confirmOrder(int orderNumber) {
+    try {
+        String query = "UPDATE orders set status = 'Confirmed' where order_number = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, orderNumber);
+        preparedStatement.executeUpdate();
+        System.out.println("Order number " + orderNumber + " confirmed.");
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
+
 
 
 
   // i have to Implement the remaining methods according to the provided specification.
 
 
-  // after that i need to handle database interactions for methods like deliveredOrder,
-  // confirmOrder, etc.
 
 }
