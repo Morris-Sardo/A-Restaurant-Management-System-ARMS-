@@ -119,7 +119,7 @@ public class MyView extends Application implements ViewInterface {
   // array use to store the questions.
   private String[] questionList = {question1, question2, question3};
 
-  
+
 
   // private String sUsername;
 
@@ -134,6 +134,10 @@ public class MyView extends Application implements ViewInterface {
 
   public void addForgotPasswordObserver(Runnable f) {
     siForgotPass.setOnAction(event -> f.run());
+  }
+
+  public void addChangePassword(Runnable f) {
+    fpProceedBtn.setOnAction(event -> f.run());
   }
 
   /**
@@ -252,6 +256,23 @@ public class MyView extends Application implements ViewInterface {
     return suAnswer.getText();
   }
 
+
+  /**
+   * This method is use to get the answer typed into feald ForgotPass form.
+   * 
+   * @return answer.
+   */
+  public String getSnswerChangePassword() {
+    if (fpAnswer == null) {
+      return "";
+
+    } else {
+      System.out.println(fpAnswer.getText());
+      return fpAnswer.getText();
+    }
+
+  }
+
   /**
    * This methos pup up the Blank field login.
    */
@@ -277,6 +298,16 @@ public class MyView extends Application implements ViewInterface {
     regQuestionList();
 
 
+  }
+
+  /**
+   * This swap the from.
+   */
+  public void switchChangePassword() {
+
+
+    fpquestionForm.setVisible(false);
+    npNewPassForm.setVisible(true);
   }
 
   /**

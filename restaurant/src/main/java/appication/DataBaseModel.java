@@ -26,7 +26,6 @@ public class DataBaseModel {
 
 
 
-
   /**
    * Create a connection.
    * 
@@ -184,6 +183,40 @@ public class DataBaseModel {
     return "";
 
   }
+
+
+  // check the if the answatre if provide is the same saved in the databese.
+  /**
+   * This method check if the asnwer if same to the one insert.
+   * 
+   * @param username login username.
+   * @param answer is security answer.
+   * @return true is the answer match whith one in the system.
+   */
+  public static boolean checkAnswer(String username, String answer) {
+
+    String checkAnswer = "SELECT answer FROM login WHERE username = ? AND answer = ?";
+    try {
+      prepare = connect.prepareStatement(checkAnswer);
+      prepare.setString(1, username);
+      prepare.setString(2, answer);
+      result = prepare.executeQuery();
+      if (result.next()) {
+        if (result.getString(1).equals(answer)) {
+          return true;
+        }
+      } else {
+        return false;
+      }
+    } catch (SQLException e) {
+
+      e.printStackTrace();
+    }
+    return false;
+
+  }
+
+
 
   /**
    * This method check if the username is in the table.
