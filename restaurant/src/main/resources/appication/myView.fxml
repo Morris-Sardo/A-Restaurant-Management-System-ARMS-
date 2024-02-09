@@ -87,7 +87,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="npBack" layoutX="130.0" layoutY="336.0" mnemonicParsing="false" text="Back" />
+                  <Button fx:id="npBack" layoutX="130.0" layoutY="336.0" mnemonicParsing="false" onAction="#backLoginFormFromChangePasswordForm" text="Back" />
                   <PasswordField fx:id="npNewPassword" layoutX="44.0" layoutY="143.0" prefHeight="26.0" prefWidth="210.0" promptText="New Password" />
                   <PasswordField fx:id="npNewPassConfimation" layoutX="44.0" layoutY="187.0" prefHeight="26.0" prefWidth="210.0" promptText="Confirmation Password" />
                </children>

@@ -1,7 +1,6 @@
 package appication;
 
 import java.sql.SQLException;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 /**
@@ -87,7 +86,7 @@ public class LoginController {
 
 
   /**
-   * This method swapt form Login form to security answer form.  .
+   * This method swapt form Login form to security answer form. .
    */
   void handleForgotPass() {
     if (view.getUserNameLogin().isEmpty()) {
@@ -104,7 +103,7 @@ public class LoginController {
   }
 
   /**
-   *This method swap from security answer to change password.
+   * This method swap from security answer to change password.
    */
   void handleAnswer() {
     if (view.getSnswerChangePassword().isEmpty()) {
@@ -120,6 +119,14 @@ public class LoginController {
 
 
   }
+  
+  /**
+   * This method change the password.
+   */
+  void handleChangePassowrd() {
+    
+  }
+  
 
 
 

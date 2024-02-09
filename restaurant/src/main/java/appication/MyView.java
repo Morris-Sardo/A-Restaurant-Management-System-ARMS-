@@ -320,6 +320,17 @@ public class MyView extends Application implements ViewInterface {
 
 
   }
+  
+  /**
+   * This method swapt back to the loginForm from ChangePasswordForm.
+   */
+  public void backLoginFormFromChangePasswordForm() {
+
+    npNewPassForm.setVisible(false);
+    siLoginForm.setVisible(true);
+
+
+  }
 
 
   /**
