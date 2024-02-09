@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -107,6 +108,35 @@ public class MyView extends Application implements ViewInterface {
   @FXML
   private TextField suUsername;
 
+  @FXML
+  private TextField passText;
+
+  @FXML
+  private CheckBox passToggle;
+
+  @FXML
+  private TextField passTextSu;
+
+  @FXML
+  private CheckBox passToggleSu;
+
+  @FXML
+  private TextField passTextNewPass;
+
+  @FXML
+  private CheckBox passToggleNewPass;
+
+  @FXML
+  private TextField passTextConfPass;
+
+  @FXML
+  private CheckBox passToggleConfPass;
+
+  @FXML
+  private TextField passTextSecAns;
+
+  @FXML
+  private CheckBox passToggleSecAns;
 
   @SuppressWarnings("rawtypes") // his supper the warming coused by ObservableList.
   private ObservableList listData; // use to add list of questions at combox question.
@@ -141,10 +171,103 @@ public class MyView extends Application implements ViewInterface {
   }
 
   /**
+   * Controls the visibility of the Password field.
+   * 
+   * @param event When the user wants to see their password
+   */
+  @FXML
+  public void togglevisiblePassword(ActionEvent event) {
+    if (passToggle.isSelected()) {
+      passText.setText(siPassword.getText());
+      passText.setVisible(true);
+      siPassword.setVisible(false);
+      return;
+    }
+    siPassword.setText(passText.getText());
+    siPassword.setVisible(true);
+    passText.setVisible(false);
+  }
+
+
+  /**
+   * Controls the visibility of the Password field.
+   * 
+   * @param event When the user wants to see their password
+   */
+  @FXML
+  public void togglevisiblePasswordSignUp(ActionEvent event) {
+    if (passToggleSu.isSelected()) {
+      passTextSu.setText(suPassword.getText());
+      passTextSu.setVisible(true);
+      suPassword.setVisible(false);
+      return;
+    }
+    suPassword.setText(passTextSu.getText());
+    suPassword.setVisible(true);
+    passTextSu.setVisible(false);
+  }
+
+
+  /**
+   * Controls the visibility of the Password field.
+   * 
+   * @param event When the user wants to see their password
+   */
+  @FXML
+  public void togglevisiblePasswordChangeNewPass(ActionEvent event) {
+    if (passToggleNewPass.isSelected()) {
+      passTextNewPass.setText(npNewPassword.getText());
+      passTextNewPass.setVisible(true);
+      npNewPassword.setVisible(false);
+      return;
+    }
+    npNewPassword.setText(passTextNewPass.getText());
+    npNewPassword.setVisible(true);
+    passTextNewPass.setVisible(false);
+  }
+
+  /**
+   * Controls the visibility of the Password field.
+   * 
+   * @param event When the user wants to see their password
+   */
+  @FXML
+  public void togglevisiblePasswordConfirmChangeNewPass(ActionEvent event) {
+    if (passToggleConfPass.isSelected()) {
+      passTextConfPass.setText(npNewPassConfimation.getText());
+      passTextConfPass.setVisible(true);
+      npNewPassConfimation.setVisible(false);
+      return;
+    }
+    npNewPassConfimation.setText(passTextConfPass.getText());
+    npNewPassConfimation.setVisible(true);
+    passTextConfPass.setVisible(false);
+  }
+
+  
+  /**
+   * Controls the visibility of the Password field.
+   * 
+   * @param event When the user wants to see their password
+   */
+  @FXML
+  public void togglevisibleAnswer(ActionEvent event) {
+    if (passToggleSecAns.isSelected()) {
+      passTextSecAns.setText(suAnswer.getText());
+      passTextSecAns.setVisible(true);
+      suAnswer.setVisible(false);
+      return;
+    }
+    suAnswer.setText(passTextSecAns.getText());
+    suAnswer.setVisible(true);
+    passTextSecAns.setVisible(false);
+  }
+  /**
    * This class it return the username.
    * 
    * @return username.
    */
+
   public String getUserNameLogin() {
     if (siUsername == null) {
       return "";
@@ -320,7 +443,7 @@ public class MyView extends Application implements ViewInterface {
 
 
   }
-  
+
   /**
    * This method swapt back to the loginForm from ChangePasswordForm.
    */
@@ -382,6 +505,7 @@ public class MyView extends Application implements ViewInterface {
     Scene scene = new Scene(root, 600, 400);
 
     primaryStage.setTitle("Login  Interface");
+
     primaryStage.setScene(scene);
     primaryStage.show();
 

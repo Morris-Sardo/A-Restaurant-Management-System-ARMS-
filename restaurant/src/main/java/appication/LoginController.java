@@ -119,14 +119,21 @@ public class LoginController {
 
 
   }
-  
+
   /**
    * This method change the password.
    */
+
   void handleChangePassowrd() {
+
+    // if feal are empty pop up txt is empty.
+    // if the feald are filled up check set new password with username. pop up text password has
+    // been change
     
+    
+
+
   }
-  
 
 
 

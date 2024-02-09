@@ -252,6 +252,13 @@ public class DataBaseModel {
       return false;
     }
   }
+
+
+  // public static void overridePassword(String username) {
+  // //check the password with username into database.
+  //
+  //
+  // }
 }
 
 
