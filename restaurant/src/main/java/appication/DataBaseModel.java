@@ -253,12 +253,36 @@ public class DataBaseModel {
     }
   }
 
+  /**
+   * This method check is username exist if so it will update the password.
+   * 
+   * @param username username of user.
+   * @param password the new password.
+   */
+  public static void overridePassword(String username, String password) {
+    // if the username exist upadate the password with new password.
+    if (checkUserName(username)) {
+      String upDatePassword = "UPDATE login SET password = ? WHERE username = ?";
+      try {
+        prepare = connect.prepareStatement(upDatePassword);
 
-  // public static void overridePassword(String username) {
-  // //check the password with username into database.
-  //
-  //
-  // }
+
+        prepare.setString(1, password);
+        prepare.setString(2, username);
+        int result = prepare.executeUpdate();
+
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    } else {
+
+      System.out.println("Error");
+
+    }
+
+   
+
+  }
 }
 
 

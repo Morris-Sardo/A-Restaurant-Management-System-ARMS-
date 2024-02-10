@@ -31,6 +31,7 @@ public class LoginController {
     view.addRegistrationObserver(this::handleSignUp);
     view.addForgotPasswordObserver(this::handleForgotPass);
     view.addChangePassword(this::handleAnswer);
+    view.addConfirmNewPasswordObserver(this::handleChangePassword);
 
   }
 
@@ -124,13 +125,24 @@ public class LoginController {
    * This method change the password.
    */
 
-  void handleChangePassowrd() {
+  void handleChangePassword() {
 
     // if feal are empty pop up txt is empty.
-    // if the feald are filled up check set new password with username. pop up text password has
-    // been change
-    
-    
+    if (view.getNewPassword().isEmpty() || view.getConfirmationNewPassword().isEmpty()) {
+      view.alert(AlertType.ERROR, "Error Message",
+          "Please fill the new password and confirm new password in the fields");
+      // two password are equal.
+    } else if (view.getNewPassword().equals(view.getConfirmationNewPassword())) {
+
+
+      DataBaseModel.overridePassword(view.getUserNameLogin(), view.getNewPassword());
+      view.alert(AlertType.INFORMATION, "Information Message",
+          "Password has been succeffuly Update");
+
+    } else {
+      view.alert(AlertType.ERROR, "Error Message", "Please insert the same password");
+    }
+
 
 
   }

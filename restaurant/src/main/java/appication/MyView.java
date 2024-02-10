@@ -138,6 +138,8 @@ public class MyView extends Application implements ViewInterface {
   @FXML
   private CheckBox passToggleSecAns;
 
+
+
   @SuppressWarnings("rawtypes") // his supper the warming coused by ObservableList.
   private ObservableList listData; // use to add list of questions at combox question.
   private String question1 = "What is your favorite color?"; // secret question.
@@ -168,6 +170,10 @@ public class MyView extends Application implements ViewInterface {
 
   public void addChangePassword(Runnable f) {
     fpProceedBtn.setOnAction(event -> f.run());
+  }
+  
+  public void addConfirmNewPasswordObserver(Runnable f) {
+    npChangePassBtn.setOnAction(event -> f.run());
   }
 
   /**
@@ -244,7 +250,7 @@ public class MyView extends Application implements ViewInterface {
     passTextConfPass.setVisible(false);
   }
 
-  
+
   /**
    * Controls the visibility of the Password field.
    * 
@@ -262,6 +268,34 @@ public class MyView extends Application implements ViewInterface {
     suAnswer.setVisible(true);
     passTextSecAns.setVisible(false);
   }
+
+  /**
+   * This method return password insert in the field newPasswrod.
+   * 
+   * @return new passwrd.
+   */
+  public String getNewPassword() {
+    if (npNewPassword == null) {
+      return "";
+    } else {
+      return npNewPassword.getText();
+    }
+  }
+
+  /**
+   * This method return password insert in the field newConfimationPasswrod.
+   * 
+   * @return new password.
+   */
+  public String getConfirmationNewPassword() {
+    if (npNewPassConfimation == null) {
+      return "";
+    } else {
+      return npNewPassConfimation.getText();
+    }
+
+  }
+
   /**
    * This class it return the username.
    * 
