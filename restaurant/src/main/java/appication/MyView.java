@@ -26,7 +26,7 @@ import javafx.util.Duration;
 
 
 /**
- * This is class is the GUI interface and  interact with the user.
+ * This is class is the GUI interface and interact with the user.
  *
  * @author papap
  *
@@ -155,8 +155,8 @@ public class MyView extends Application implements ViewInterface {
 
   // private String sUsername;
 
-  //All those follwing methods act has obsever. 
-  //observeing the input from the user and connect with the model and reverse.
+  // All those follwing methods act has obsever.
+  // observeing the input from the user and connect with the model and reverse.
   public void addRegistrationObserver(Runnable f) {
     suSignupBtn.setOnAction(event -> f.run());
   }
@@ -172,7 +172,7 @@ public class MyView extends Application implements ViewInterface {
   public void addChangePasswordObserver(Runnable f) {
     fpProceedBtn.setOnAction(event -> f.run());
   }
-  
+
   public void addConfirmNewPasswordObserver(Runnable f) {
     npChangePassBtn.setOnAction(event -> f.run());
   }
@@ -231,6 +231,17 @@ public class MyView extends Application implements ViewInterface {
     npNewPassword.setText(passTextNewPass.getText());
     npNewPassword.setVisible(true);
     passTextNewPass.setVisible(false);
+  }
+  
+  /**
+   * Used to swapt the Scene when the button login is pressed.
+   * 
+   * @return button.
+   */
+  public Button getSiButton() {
+    
+    return siLoginBtn;
+    
   }
 
   /**
@@ -530,6 +541,7 @@ public class MyView extends Application implements ViewInterface {
     }
 
   }
+
 
   @Override
   public void start(Stage primaryStage) throws Exception {

@@ -1,6 +1,7 @@
 package appication;
 
 import java.sql.SQLException;
+import javafx.event.ActionEvent;
 import javafx.scene.control.Alert.AlertType;
 
 /**
@@ -15,6 +16,7 @@ public class LoginController {
   private MyView view;
   @SuppressWarnings("unused") // suppress wamrming about not use.
   private DataBaseModel connection;
+  
 
 
 
@@ -46,8 +48,11 @@ public class LoginController {
       try {
         if (DataBaseModel.getRightLogin(view.getUserNameLogin(), view.getPassowrdLogin())) {
 
-          view.alert(AlertType.INFORMATION, "Information Message", "Successfully Login!");
-
+         
+          MyViewMainPage mainPage = new MyViewMainPage();
+          mainPage.start();
+          MainPageController mainPageController = new MainPageController(mainPage, connection);
+          view.getSiButton().getScene().getWindow().hide();
 
         } else {
           view.alert(AlertType.ERROR, "Error Message", "Incorrect Username/passowrd!");
@@ -56,7 +61,7 @@ public class LoginController {
         }
 
 
-      } catch (SQLException e) {
+      } catch (Exception e) {
         e.printStackTrace();
       }
     }
