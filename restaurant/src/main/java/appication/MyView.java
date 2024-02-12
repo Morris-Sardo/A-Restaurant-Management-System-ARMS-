@@ -26,7 +26,7 @@ import javafx.util.Duration;
 
 
 /**
- * This is class act as controller between the View interface and back model.
+ * This is class is the GUI interface and  interact with the user.
  *
  * @author papap
  *
@@ -155,7 +155,8 @@ public class MyView extends Application implements ViewInterface {
 
   // private String sUsername;
 
-
+  //All those follwing methods act has obsever. 
+  //observeing the input from the user and connect with the model and reverse.
   public void addRegistrationObserver(Runnable f) {
     suSignupBtn.setOnAction(event -> f.run());
   }
@@ -168,7 +169,7 @@ public class MyView extends Application implements ViewInterface {
     siForgotPass.setOnAction(event -> f.run());
   }
 
-  public void addChangePassword(Runnable f) {
+  public void addChangePasswordObserver(Runnable f) {
     fpProceedBtn.setOnAction(event -> f.run());
   }
   

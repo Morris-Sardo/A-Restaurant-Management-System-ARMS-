@@ -30,7 +30,7 @@ public class LoginController {
     view.addLoginObserver(this::hanldeLogin);
     view.addRegistrationObserver(this::handleSignUp);
     view.addForgotPasswordObserver(this::handleForgotPass);
-    view.addChangePassword(this::handleAnswer);
+    view.addChangePasswordObserver(this::handleAnswer);
     view.addConfirmNewPasswordObserver(this::handleChangePassword);
 
   }
