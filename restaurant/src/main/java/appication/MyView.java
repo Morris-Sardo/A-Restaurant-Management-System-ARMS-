@@ -371,6 +371,17 @@ public class MyView extends Application implements ViewInterface {
     suQuestion.getSelectionModel().clearSelection();
     suAnswer.setText("");
   }
+  
+  /**
+   * Setup the enstry to empty.
+   */
+  public void emptyLoginFields() {
+
+    siUsername.setText("");
+    siPassword.setText("");
+    //suQuestion.getSelectionModel().clearSelection();
+    //suAnswer.setText("");
+  }
 
   /**
    * Setup new question, password, confirm password and answer .
@@ -486,6 +497,7 @@ public class MyView extends Application implements ViewInterface {
 
     fpquestionForm.setVisible(false);
     siLoginForm.setVisible(true);
+    fpAnswer.setText("");
 
 
   }
@@ -525,7 +537,9 @@ public class MyView extends Application implements ViewInterface {
         regQuestionList();
       });
       slider.play();
-
+      emptyRegistrationFields();
+      
+      
 
     } else if (event.getSource() == sideCreateBtnAlreadyHave) {
       slider.setNode(sideForm);
@@ -536,8 +550,12 @@ public class MyView extends Application implements ViewInterface {
       slider.setOnFinished((ActionEvent e) -> {
         sideCreateBtnAlreadyHave.setVisible(false);
         sideCreateBtn.setVisible(true);
+        
       });
       slider.play();
+      emptyLoginFields();
+      
+      
     }
 
   }

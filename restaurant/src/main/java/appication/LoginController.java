@@ -56,8 +56,8 @@ public class LoginController {
 
         } else {
           view.alert(AlertType.ERROR, "Error Message", "Incorrect Username/passowrd!");
-
-
+          
+    
         }
 
 
@@ -86,8 +86,11 @@ public class LoginController {
       } else {
         view.alert(AlertType.ERROR, "Registration Error",
             "No valid username. The username already exists.");
+        
       }
     }
+    
+   
   }
 
 
