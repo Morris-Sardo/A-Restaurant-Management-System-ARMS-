@@ -207,13 +207,13 @@ public class ConnectionToDB {
       connection = ConnectionToDB.connectToDatabase();
 
       // dropUserTable(connection);
-      dropRatingTable(connection);
+      // dropRatingTable(connection);
 
       // createLoginTable(connection);
-      createRatingTable(connection);
+      // createRatingTable(connection);
 
       // insertIntoLoginTableFromFile(connection, "users.csv");
-      insertIntoRatingTableFromFile(connection, "ratings.csv");
+      // insertIntoRatingTableFromFile(connection, "ratings.csv");
 
 
 
