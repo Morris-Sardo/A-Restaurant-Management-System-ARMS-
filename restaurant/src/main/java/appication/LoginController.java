@@ -16,8 +16,8 @@ public class LoginController {
   private MyView view;
   @SuppressWarnings("unused") // suppress wamrming about not use.
   private DataBaseModel connection;
-  
 
+  private String currentUsername;
 
 
   /**
@@ -48,7 +48,7 @@ public class LoginController {
       try {
         if (DataBaseModel.getRightLogin(view.getUserNameLogin(), view.getPassowrdLogin())) {
 
-         
+
           MyViewMainPage mainPage = new MyViewMainPage();
           mainPage.start();
           MainPageController mainPageController = new MainPageController(mainPage, connection);
@@ -56,8 +56,8 @@ public class LoginController {
 
         } else {
           view.alert(AlertType.ERROR, "Error Message", "Incorrect Username/passowrd!");
-          
-    
+
+
         }
 
 
@@ -86,11 +86,11 @@ public class LoginController {
       } else {
         view.alert(AlertType.ERROR, "Registration Error",
             "No valid username. The username already exists.");
-        
+
       }
     }
-    
-   
+
+
   }
 
 
@@ -101,7 +101,8 @@ public class LoginController {
     if (view.getUserNameLogin().isEmpty()) {
       view.alert(AlertType.ERROR, "Error Message", "Please fill the username field");
     } else if (DataBaseModel.checkUserName(view.getUserNameLogin())) {
-      view.switchForgotPass(DataBaseModel.getUsersQuestion(view.getUserNameLogin()));
+      currentUsername = view.getUserNameLogin();
+      view.switchForgotPass(DataBaseModel.getUsersQuestion(currentUsername));
 
 
     } else {
@@ -117,7 +118,7 @@ public class LoginController {
   void handleAnswer() {
     if (view.getSnswerChangePassword().isEmpty()) {
       view.alert(AlertType.ERROR, "Error Message", "Please fill the answer in the fields");
-    } else if (DataBaseModel.checkAnswer(view.getUserNameLogin(), view.getSnswerChangePassword())) {
+    } else if (DataBaseModel.checkAnswer(currentUsername, view.getSnswerChangePassword())) {
       view.switchChangePassword();
 
 
@@ -143,9 +144,10 @@ public class LoginController {
     } else if (view.getNewPassword().equals(view.getConfirmationNewPassword())) {
 
 
-      DataBaseModel.overridePassword(view.getUserNameLogin(), view.getNewPassword());
+      DataBaseModel.overridePassword(currentUsername, view.getNewPassword());
       view.alert(AlertType.INFORMATION, "Information Message",
           "Password has been succeffuly Update");
+      view.backLoginFormFromChangePasswordForm();
 
     } else {
       view.alert(AlertType.ERROR, "Error Message", "Please insert the same password");

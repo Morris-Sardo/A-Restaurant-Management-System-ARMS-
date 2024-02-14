@@ -379,8 +379,12 @@ public class MyView extends Application implements ViewInterface {
 
     siUsername.setText("");
     siPassword.setText("");
-    //suQuestion.getSelectionModel().clearSelection();
-    //suAnswer.setText("");
+    fpAnswer.setText("");
+    npNewPassword.setText("");
+    npNewPassConfimation.setText("");
+    
+    
+   
   }
 
   /**
@@ -470,11 +474,11 @@ public class MyView extends Application implements ViewInterface {
    * this method will switch form when forgot password will press.
    */
   public void switchForgotPass(String question) {
-
+    emptyLoginFields();
     askSecurityQuestion.setText(question);
     siLoginForm.setVisible(false);
     fpquestionForm.setVisible(true);
-
+    
     regQuestionList();
 
 
