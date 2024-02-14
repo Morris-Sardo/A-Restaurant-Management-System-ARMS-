@@ -1,7 +1,11 @@
 import javafx.application.Application;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
@@ -85,9 +89,39 @@ public class menuView extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		// TODO Auto-generated method stub
-		
+		Parent root = FXMLLoader.load(getClass().getResource("foodMenu.fxml"));
+		Scene scene = new Scene(root,800,500);
+		primaryStage.setTitle("windows menu");
+		primaryStage.setScene(scene);
+		primaryStage.show();
 	}
+	
+	private static volatile menuView instance = null;
+    
+    @FXML
+    void initialize() {
+    	instance = this;
+    }
+    
+    public static synchronized menuView getInstance() {
+    	if(instance == null) {
+    		new Thread(() -> Application.launch(menuView.class)).start();
+    	}
+    	while (instance == null) {
+    		
+    	}
+    	return instance;
+    }
+    
+    public void alert(AlertType information, String string, String string2) {
+    	alert = new Alert(information);
+    	alert.setHeaderText(null);
+    	alert.setTitle(string);
+    	alert.setContentText(string2);
+    	alert.showAndWait();
+    }
+    
+    
     
     
 }
