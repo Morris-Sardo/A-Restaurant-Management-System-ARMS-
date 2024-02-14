@@ -19,7 +19,7 @@ public class Driver extends Application {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
-    Parent root = FXMLLoader.load(getClass().getResource("myView.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
     Scene scene = new Scene(root, 800, 500);
     primaryStage.setScene(scene);
     primaryStage.show();
