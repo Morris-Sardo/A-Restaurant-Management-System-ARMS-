@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.10-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <BorderPane prefHeight="400.0" prefWidth="644.0">
+               <left>
+                  <AnchorPane prefHeight="400.0" prefWidth="143.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="112.0" prefWidth="140.0">
+                           <children>
+                              <AnchorPane layoutX="8.0" prefHeight="100.0" prefWidth="123.0">
+                                 <children>
+                                    <Label layoutX="53.0" layoutY="42.0" prefHeight="16.0" prefWidth="104.0" text="restaraunt " />
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                        <Button fx:id="customer" layoutX="14.0" layoutY="297.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" text="customer" />
+                        <Button fx:id="inventory" layoutX="18.0" layoutY="200.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" text="inventory" />
+                        <Button fx:id="review" layoutX="18.0" layoutY="149.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" text="review" />
+                        <Button fx:id="menu" layoutX="18.0" layoutY="252.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" text="menu" />
+                        <Button fx:id="logout" layoutX="20.0" layoutY="365.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="68.0" text="logout" />
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <ScrollPane pannable="true" prefHeight="200.0" prefWidth="200.0" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">
+                     <content>
+                        <AnchorPane prefHeight="125.0" prefWidth="127.0">
+                           <children>
+                              <AnchorPane layoutX="2.0" layoutY="-273.0" prefHeight="644.0" prefWidth="473.0" style="-fx-background-color: pink;">
+                                 <children>
+                                    <AnchorPane layoutX="13.0" layoutY="14.0" prefHeight="141.0" prefWidth="178.0">
+                                       <children>
+                                          <Button fx:id="Increases1" layoutX="118.0" layoutY="95.0" mnemonicParsing="false" text="+" />
+                                          <Button fx:id="Deacreaes1" layoutX="33.0" layoutY="94.0" mnemonicParsing="false" text="-" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="11.0" layoutY="171.0" prefHeight="141.0" prefWidth="178.0">
+                                       <children>
+                                          <Button fx:id="Increases2" layoutX="115.0" layoutY="100.0" mnemonicParsing="false" text="+" />
+                                          <Button fx:id="Deacreaes2" layoutX="19.0" layoutY="93.0" mnemonicParsing="false" text="-" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="8.0" layoutY="325.0" prefHeight="141.0" prefWidth="178.0">
+                                       <children>
+                                          <Button fx:id="Increases21" layoutX="126.0" layoutY="88.0" mnemonicParsing="false" text="+" />
+                                          <Button fx:id="Deacreaes5" layoutX="30.0" layoutY="91.0" mnemonicParsing="false" text="-" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="219.0" layoutY="20.0" prefHeight="141.0" prefWidth="178.0">
+                                       <children>
+                                          <Button fx:id="Deacreaes" layoutX="14.0" layoutY="95.0" mnemonicParsing="false" text="-" />
+                                          <Button fx:id="Increases" layoutX="96.0" layoutY="95.0" mnemonicParsing="false" text="+" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="225.0" layoutY="178.0" prefHeight="141.0" prefWidth="178.0">
+                                       <children>
+                                          <Button fx:id="Increases3" layoutX="114.0" layoutY="93.0" mnemonicParsing="false" text="+" />
+                                          <Button fx:id="Deacreaes3" layoutX="20.0" layoutY="96.0" mnemonicParsing="false" text="-" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="231.0" layoutY="331.0" prefHeight="141.0" prefWidth="178.0">
+                                       <children>
+                                          <Button fx:id="Increases22" layoutX="114.0" layoutY="88.0" mnemonicParsing="false" text="+" />
+                                          <Button fx:id="Deacreaes4" layoutX="31.0" layoutY="84.0" mnemonicParsing="false" text="-" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="10.0" layoutY="488.0" prefHeight="141.0" prefWidth="178.0">
+                                       <children>
+                                          <Button fx:id="Increases11" layoutX="123.0" layoutY="102.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" text="+" />
+                                          <Button fx:id="Deacreaes6" layoutX="23.0" layoutY="100.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" text="-" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="236.0" layoutY="489.0" prefHeight="141.0" prefWidth="178.0">
+                                       <children>
+                                          <Button fx:id="IncreasePasta" layoutX="117.0" layoutY="102.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" text="+" />
+                                          <Button fx:id="decreasePasta" layoutX="19.0" layoutY="106.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" text="-" />
+                                          <ImageView fitHeight="75.0" fitWidth="111.0" layoutX="32.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@image/11691-tomato-and-garlic-pasta-ddmfs-3x4-1-bf607984a23541f4ad936b33b22c9074.jpg" />
+                                             </image></ImageView>
+                                          <TextField layoutX="48.0" layoutY="104.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </center>
+            </BorderPane>
+            <TableView layoutX="689.0" layoutY="21.0" prefHeight="200.0" prefWidth="276.0">
+              <columns>
+                <TableColumn prefWidth="100.0" text="Product" />
+                <TableColumn prefWidth="115.0" text="Quantity" />
+                  <TableColumn prefWidth="108.0" text="Price" />
+              </columns>
+            </TableView>
+            <AnchorPane layoutX="644.0" layoutY="223.0" prefHeight="170.0" prefWidth="324.0">
+               <children>
+                  <Button fx:id="removeButton" layoutX="53.0" layoutY="124.0" mnemonicParsing="false" text="remove" />
+                  <Button fx:id="receiptButton" layoutX="218.0" layoutY="124.0" mnemonicParsing="false" text="receipt" />
+                  <Button fx:id="PayButton" layoutX="50.0" layoutY="72.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Pay" />
+                  <TextField layoutX="111.0" layoutY="22.0" />
+                  <Label layoutX="57.0" layoutY="27.0" prefHeight="16.0" prefWidth="47.0" text="Total" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
