@@ -13,6 +13,7 @@ import javafx.scene.control.Alert.AlertType;
 public class LoginController {
 
 
+  private static final ActionEvent ActionEvent = null;
   private MyView view;
   @SuppressWarnings("unused") // suppress wamrming about not use.
   private DataBaseModel connection;
@@ -83,6 +84,7 @@ public class LoginController {
           view.getSelectedQuestion(), view.getAnswer())) {
         view.alert(AlertType.INFORMATION, "Information Message",
             "Successfully registered Account!");
+        view.switFormAfterSignUp();
       } else {
         view.alert(AlertType.ERROR, "Registration Error",
             "No valid username. The username already exists.");

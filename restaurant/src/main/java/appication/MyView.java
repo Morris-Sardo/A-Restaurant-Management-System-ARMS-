@@ -232,16 +232,16 @@ public class MyView extends Application implements ViewInterface {
     npNewPassword.setVisible(true);
     passTextNewPass.setVisible(false);
   }
-  
+
   /**
    * Used to swapt the Scene when the button login is pressed.
    * 
    * @return button.
    */
   public Button getSiButton() {
-    
+
     return siLoginBtn;
-    
+
   }
 
   /**
@@ -371,7 +371,7 @@ public class MyView extends Application implements ViewInterface {
     suQuestion.getSelectionModel().clearSelection();
     suAnswer.setText("");
   }
-  
+
   /**
    * Setup the enstry to empty.
    */
@@ -382,9 +382,9 @@ public class MyView extends Application implements ViewInterface {
     fpAnswer.setText("");
     npNewPassword.setText("");
     npNewPassConfimation.setText("");
-    
-    
-   
+
+
+
   }
 
   /**
@@ -478,7 +478,7 @@ public class MyView extends Application implements ViewInterface {
     askSecurityQuestion.setText(question);
     siLoginForm.setVisible(false);
     fpquestionForm.setVisible(true);
-    
+
     regQuestionList();
 
 
@@ -542,8 +542,8 @@ public class MyView extends Application implements ViewInterface {
       });
       slider.play();
       emptyRegistrationFields();
-      
-      
+
+
 
     } else if (event.getSource() == sideCreateBtnAlreadyHave) {
       slider.setNode(sideForm);
@@ -554,13 +554,33 @@ public class MyView extends Application implements ViewInterface {
       slider.setOnFinished((ActionEvent e) -> {
         sideCreateBtnAlreadyHave.setVisible(false);
         sideCreateBtn.setVisible(true);
-        
+
       });
       slider.play();
       emptyLoginFields();
-      
-      
+
+
     }
+
+  }
+
+  /**
+   * This method move the sideForm to the defauld side after confimed a new user.
+   * 
+   * 
+   */
+  public void switFormAfterSignUp() {
+    TranslateTransition slider = new TranslateTransition();
+    slider.setNode(sideForm);
+    slider.setToX(0);
+    slider.setDuration(Duration.seconds(.5));
+    
+    slider.setOnFinished((ActionEvent e) -> {
+      sideCreateBtnAlreadyHave.setVisible(false);
+      sideCreateBtn.setVisible(true);
+      
+    });
+    slider.play();
 
   }
 
