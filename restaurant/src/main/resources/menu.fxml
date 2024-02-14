@@ -29,8 +29,8 @@
                               <String fx:value="white-background" />
                            </styleClass>
                            <children>
-                              <Button layoutX="523.0" layoutY="319.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="CUSTOMER" />
-                              <Label alignment="TOP_CENTER" layoutX="179.0" layoutY="112.0" prefHeight="70.0" prefWidth="542.0" stylesheets="@dash.css" text="MEX EAT RESTAURANT">
+                              <Button layoutX="523.0" layoutY="319.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="CUSTOMER" textFill="WHITE" />
+                              <Label alignment="TOP_CENTER" layoutX="181.0" layoutY="95.0" prefHeight="70.0" prefWidth="542.0" stylesheets="@dash.css" text="MEX EAT RESTAURANT" textFill="WHITE">
                                  <font>
                                     <Font name="Bauhaus 93" size="48.0" />
                                  </font>
@@ -39,9 +39,9 @@
                                     <String fx:value="restaurant-title" />
                                  </styleClass>
                               </Label>
-                              <Button layoutX="179.0" layoutY="319.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="REVIEW" />
-                              <Button layoutX="523.0" layoutY="378.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="INVENTORY" />
-                              <Button layoutX="179.0" layoutY="378.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MENU" />
+                              <Button layoutX="179.0" layoutY="319.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="REVIEW" textFill="WHITE" />
+                              <Button layoutX="523.0" layoutY="378.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="INVENTORY" textFill="WHITE" />
+                              <Button layoutX="179.0" layoutY="378.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MENU" textFill="WHITE" />
                               <Button layoutX="84.0" layoutY="513.0" mnemonicParsing="false" stylesheets="@MenuDesign.css">
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
@@ -59,6 +59,33 @@
                                  <font>
                                     <Font size="15.0" />
                                  </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" layoutX="63.0" layoutY="173.0" prefHeight="34.0" prefWidth="775.0" stylesheets="@dash.css" text="Welcome to our proud restaurant of authentic Mexican flavors! We take pride in serving up" textFill="WHITE">
+                                 <font>
+                                    <Font name="Humnst777 BT Roman" size="18.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="restaurant-title" />
+                                    <String fx:value="restaurant-title" />
+                                 </styleClass>
+                              </Label>
+                              <Label alignment="TOP_CENTER" layoutX="53.0" layoutY="199.0" prefHeight="34.0" prefWidth="799.0" stylesheets="@dash.css" text="traditional dishes that celebrate the rich culinary heritage of Mexico. We're thrilled to introduce" textFill="WHITE">
+                                 <font>
+                                    <Font name="Humnst777 BT Roman" size="18.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="restaurant-title" />
+                                    <String fx:value="restaurant-title" />
+                                 </styleClass>
+                              </Label>
+                              <Label alignment="TOP_CENTER" layoutX="53.0" layoutY="224.0" prefHeight="34.0" prefWidth="799.0" stylesheets="@dash.css" text="our brand new digital system, making it easier than ever to savor our delicious plates!" textFill="WHITE">
+                                 <font>
+                                    <Font name="Humnst777 BT Roman" size="18.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="restaurant-title" />
+                                    <String fx:value="restaurant-title" />
+                                 </styleClass>
                               </Label>
                            </children>
                         </AnchorPane>
