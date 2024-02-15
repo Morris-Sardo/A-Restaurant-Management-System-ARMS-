@@ -15,10 +15,21 @@ import org.postgresql.util.PSQLException;
 public class Waiter {
   int waiterID;
   Connection connection = null;
+  ArrayList<Item> items;
 
-  public Waiter(int waiterID, Connection connection) {
-    this.waiterID = waiterID;
+  /**
+   * The constructor for the Waiter object.
+   * @param connection the connection to the database that will be used
+   * @param waiterID the ID number of the Waiter
+   */
+  public Waiter(Connection connection, int waiterID) {
     this.connection = connection;
+    this.waiterID = waiterID;
+    try {
+      items = ConnectionManager.loadItems(connection);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -47,8 +58,14 @@ public class Waiter {
    * 
    * @param item the item to be changed
    */
-  public void changeMenu(int item) {
-
+  public void changeMenu(int item) throws SQLException {
+    Predicate<Item> findItem = p -> item == p.getItemNumber();
+    Boolean available = items.stream().filter(findItem).findFirst().get().isAvailable();
+    String updateAvailable =
+        "UPDATE items SET available = " + !available + " WHERE item_number == " + item;
+    try (PreparedStatement update = connection.prepareStatement(updateAvailable)) {
+      update.executeUpdate();
+    }
   }
 
   /**
