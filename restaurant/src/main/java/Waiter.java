@@ -141,6 +141,28 @@ public void confirmOrder(int orderNumber) {
             return billRequests;
         }
 
+public ArrayList<Integer> ViewComplaints() {
+  ArrayList<Integer> complaints = new ArrayList<>();
+
+  try {
+      String query = "select table_number from the complaints where status = 'Requested'";
+      PreparedStatement preparedStatement = connection.prepareStatement(query);
+      ResultSet resultSet = preparedStatement.executeQuery();
+
+      while (resultSet.next()) {
+          int tableNumber = resultSet.getInt("table_number");
+          complaints.add(tableNumber);
+      }
+  } catch (SQLException e) {
+      e.printStackTrace();
+  }
+
+  return complaints;
+}
+
+//  i will implement up next:
+void ConcludeBill(int tableNumber) {
+}
 }
 
 
