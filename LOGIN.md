@@ -1,5 +1,6 @@
 This branch this feautre is responsible:
 
+    #all done.
     register user interfaces:
     register new user asking username and password.
     pop up test if the registration well gone.
@@ -7,7 +8,8 @@ This branch this feautre is responsible:
     pop up warning if the user digit a wrong password.
     pop up warning if the user digit s wrong username.
     If the regiastration goeas well it the data it will saved into database.
- 
+    
+    #all done.
     login the user interfaces:
     login asking username and password.
     pop up warming text if user doeas no exist.
