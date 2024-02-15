@@ -8,3 +8,8 @@ refactor code to make the security higher.
     when trhe user press procees in secret answer form the secret answerf field must be cleaned up.
     when the user pconfirm the new password the system must to comeback to login form clean up the new passerod field wirh login and passrod fields empty.
     change the usern must be an email.
+
+
+15/02/2024
+merge into login branch to keep save the project.
+Use loginTest branch to implement test and adding the backend database. 
