@@ -163,10 +163,21 @@ public ArrayList<Integer> ViewComplaints() {
   return complaints;
 }
 
-//  i will implement up next:
-void ConcludeBill(int tableNumber) {
+
+public void ConcludeBill(int tableNumber) {
+  try {
+    String query = "update tables set available = false where table_number = ?";
+    PreparedStatement preparedStatement = connection.prepareStatement(query);
+    preparedStatement.setInt(1, tableNumber);
+    preparedStatement.executeUpdate();
+    System.out.println("Table number " + tableNumber + " availability set to false.");
+} catch (SQLException e) {
+    e.printStackTrace();
 }
 }
+  
+}
+
 
 
 
