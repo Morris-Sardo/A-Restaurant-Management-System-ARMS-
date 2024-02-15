@@ -16,6 +16,6 @@ public class Driver {
   public static void main(String[] args) {
     menuView view = menuView.getInstance();
     menuModelDatabase mmd = new menuModelDatabase();
-    menuController mc = new menuController(view,mmd);
+    menuController mc = new menuController(view, mmd);
   }
 }
