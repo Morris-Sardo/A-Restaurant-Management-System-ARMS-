@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import org.postgresql.util.PSQLException;
 
 /**
@@ -94,7 +93,8 @@ public class Customer {
    */
   public void submitOrder() throws SQLException {
     String submitOrderQuery = "INSERT INTO orders "
-        + "(order_ number, customer_id, table_number, items, price, order_time, status) VALUES (DEFAULT, ?, ?, ?, ?, ?, ?)";
+        + "(order_ number, customer_id, table_number, items, price, order_time, status)"
+        + "VALUES (DEFAULT, ?, ?, ?, ?, ?, ?)";
     float totalPrice = calculateTotalPrice();
     String orderTime = getCurrentTime();
 
