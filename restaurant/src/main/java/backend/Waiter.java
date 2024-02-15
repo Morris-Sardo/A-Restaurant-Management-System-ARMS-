@@ -77,8 +77,13 @@ public class Waiter {
    * 
    * @param orderNumber the number of the order to be changed
    */
-  public void confirmOrder(int orderNumber) {
-
+  public void confirmOrder(int orderNumber) 
+      throws PSQLException, SQLException, DatabaseInformationException {
+    String change = "UPDATE orders SET STATUS = 'Confirmed' WHERE order_number == "
+        + Integer.toString(orderNumber); 
+    try (PreparedStatement update = connection.prepareStatement(change);) {
+      update.executeUpdate();
+    }
   }
 
   /**
