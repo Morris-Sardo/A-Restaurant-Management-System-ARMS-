@@ -38,7 +38,7 @@ public class Waiter {
     
   
     try {
-      String query = "pdate items set available = NOT available where item_number = ?";
+      String query = "update items set available = not available where item_number = ?";
       PreparedStatement preparedStatement = connection.prepareStatement(query);
       preparedStatement.setInt(1, itemNumber);
       preparedStatement.executeUpdate();
@@ -76,7 +76,7 @@ public class Waiter {
   
   public void deliveredOrder(int orderNumber) {
     try {
-        String query = "update  orders SET status = 'delivered' where order_number = ?";
+        String query = "update  orders set status = 'delivered' where order_number = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setInt(1, orderNumber);
         preparedStatement.executeUpdate();
@@ -102,7 +102,7 @@ public void confirmOrder(int orderNumber) {
             ArrayList<String> readyOrders = new ArrayList<>();
 
             try {
-                String query = "SELECT order_number, table_number, items from orders Where status = 'Ready'";
+                String query = "select order_number, table_number, items from orders where status = 'Ready'";
                 PreparedStatement preparedStatement = connection.prepareStatement(query);
                 ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -124,7 +124,7 @@ public void confirmOrder(int orderNumber) {
             ArrayList<String> billRequests = new ArrayList<>();
 
             try {
-                String query = "select bill_number, table_number from bills WHERE status = 'Requested'";
+                String query = "select bill_number, table_number from bills where status = 'Requested'";
                 PreparedStatement preparedStatement = connection.prepareStatement(query);
                 ResultSet resultSet = preparedStatement.executeQuery();
 
