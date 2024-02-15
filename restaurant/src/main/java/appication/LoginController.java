@@ -1,7 +1,7 @@
 package appication;
 
-import java.sql.SQLException;
-import javafx.event.ActionEvent;
+//import java.sql.SQLException;
+//import javafx.event.ActionEvent;
 import javafx.scene.control.Alert.AlertType;
 
 /**
@@ -13,7 +13,7 @@ import javafx.scene.control.Alert.AlertType;
 public class LoginController {
 
 
-  private static final ActionEvent ActionEvent = null;
+  
   private MyView view;
   @SuppressWarnings("unused") // suppress wamrming about not use.
   private DataBaseModel connection;
