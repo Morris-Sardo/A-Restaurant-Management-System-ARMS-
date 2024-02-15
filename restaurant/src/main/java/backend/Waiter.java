@@ -78,10 +78,10 @@ public class Waiter {
    * 
    * @param orderNumber the number of the order to be changed
    */
-  public void confirmOrder(int orderNumber) 
+  public void confirmOrder(int orderNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
     String change = "UPDATE orders SET STATUS = 'Confirmed' WHERE order_number == "
-        + Integer.toString(orderNumber); 
+        + Integer.toString(orderNumber);
     try (PreparedStatement update = connection.prepareStatement(change);) {
       update.executeUpdate();
     }
@@ -92,10 +92,10 @@ public class Waiter {
    * 
    * @param orderNumber the number of the order to be changed
    */
-  public void deliveredOrder(int orderNumber) 
+  public void deliveredOrder(int orderNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
     String change = "UPDATE orders SET STATUS = 'Delivered' WHERE order_number == "
-        + Integer.toString(orderNumber); 
+        + Integer.toString(orderNumber);
     try (PreparedStatement update = connection.prepareStatement(change);) {
       update.executeUpdate();
     }
@@ -106,10 +106,10 @@ public class Waiter {
    * 
    * @param orderNumber the number of the order to be changed
    */
-  public void cancelOrder(int orderNumber) 
+  public void cancelOrder(int orderNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
     String change = "UPDATE orders SET STATUS = 'Canceled' WHERE order_number == "
-        + Integer.toString(orderNumber); 
+        + Integer.toString(orderNumber);
     try (PreparedStatement update = connection.prepareStatement(change);) {
       update.executeUpdate();
     }
@@ -140,9 +140,18 @@ public class Waiter {
    * 
    * @return the list of the information for bill requests
    */
-  public ArrayList<String> viewBillRequests() 
-    throws PSQLException, SQLException, DatabaseInformationException {
-
+  public ArrayList<String> viewBillRequests()
+      throws PSQLException, SQLException, DatabaseInformationException {
+    ArrayList<String> results = new ArrayList<String>();
+    String query = "SELECT * FROM bills WHERE status == 'Requested'";
+    try (PreparedStatement statement = connection.prepareStatement(query);) {
+      ResultSet resultSet = statement.executeQuery();
+      while (resultSet.next()) {
+        results.add("Table Number:" + resultSet.getString(2) + ", Items:" + resultSet.getString(3)
+            + ", Price: " + resultSet.getString(4));
+      }
+    }
+    return results;
   }
 
   /**
