@@ -27,6 +27,23 @@ public class menuModelDatabase {
     return connection;
   }
 
-
-
+public static boolean increaseQuantity() {
+  String selectData = "SELECT quantity FROM menu WHERE quantity = ?";
+  try {
+    prepare = connect.prepareStatement(selectData);
+    prepare.setString(0, selectData);
+    result = prepare.executeQuery();
+    
+    if (result.next()) {
+      return true;
+    }else {
+      return false;
+    }
+  }
+    catch(SQLException e) {
+     return false;
+    }
+  }
 }
+
+
