@@ -88,13 +88,13 @@ public class Waiter {
   }
 
   /**
-   * Changes the status of the order to 'Delivered'.
+   * Changes the status of the order to 'Completed'.
    * 
    * @param orderNumber the number of the order to be changed
    */
   public void deliveredOrder(int orderNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
-    String change = "UPDATE orders SET STATUS = 'Delivered' WHERE order_number == "
+    String change = "UPDATE orders SET STATUS = 'Completed' WHERE order_number == "
         + Integer.toString(orderNumber);
     try (PreparedStatement update = connection.prepareStatement(change);) {
       update.executeUpdate();
@@ -177,8 +177,13 @@ public class Waiter {
    * 
    * @param tableNumber the table number of the bill to be changed
    */
-  public void concludeBill(int tableNumber) {
-
+  public void concludeBill(int tableNumber) 
+      throws PSQLException, SQLException, DatabaseInformationException {
+    String change = "UPDATE bills SET status = 'Completed' WHERE (table_number == "
+        + Integer.toString(tableNumber) + " AND status == 'Requested'";
+    try (PreparedStatement update = connection.prepareStatement(change);) {
+      update.executeUpdate();
+    }
   }
 
   /**
