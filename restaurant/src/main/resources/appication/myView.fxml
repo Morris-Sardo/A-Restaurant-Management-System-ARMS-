@@ -25,7 +25,7 @@
                         <Font name="System Bold" size="23.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="suUsername" layoutX="57.0" layoutY="131.0" prefHeight="26.0" prefWidth="210.0" promptText="Username" />
+                  <TextField fx:id="suUsername" layoutX="57.0" layoutY="131.0" prefHeight="26.0" prefWidth="210.0" promptText="Email Address" />
 <TextField fx:id="passTextSu" layoutX="57.0" layoutY="175.0" prefHeight="26.0" prefWidth="210.0" promptText="Password" />
                   <PasswordField fx:id="suPassword" layoutX="57.0" layoutY="175.0" prefHeight="26.0" prefWidth="210.0" promptText="Password" />
                   <Button fx:id="suSignupBtn" layoutX="57.0" layoutY="335.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="210.0" text="Sign Up">
@@ -42,12 +42,12 @@
                </children></AnchorPane>
             <AnchorPane fx:id="siLoginForm" layoutX="304.0" layoutY="-8.0" prefHeight="400.0" prefWidth="300.0" styleClass="white-from" stylesheets="@myView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <TextField fx:id="siUsername" layoutX="57.0" layoutY="131.0" prefHeight="26.0" prefWidth="210.0" promptText="Username" AnchorPane.bottomAnchor="242.6" AnchorPane.leftAnchor="56.99999999999997" AnchorPane.rightAnchor="32.599999999999994" AnchorPane.topAnchor="131.0">
+                  <TextField fx:id="siUsername" layoutX="57.0" layoutY="131.0" prefHeight="26.0" prefWidth="210.0" promptText="Email Address">
                      <font>
                         <Font name="Arial" size="12.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="72.0" layoutY="54.0" text="Login Account" textFill="#232222" AnchorPane.bottomAnchor="311.6" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="72.0" AnchorPane.topAnchor="54.0">
+                  <Label layoutX="72.0" layoutY="54.0" text="Login Account" textFill="#232222">
                      <font>
                         <Font name="System Bold" size="23.0" />
                      </font>

@@ -47,7 +47,7 @@ public class LoginController {
       view.alert(AlertType.ERROR, "Error Message", "Please fill all the blank fields");
 
     } else if (!view.getUserNameLogin().contains("@")) {
-      view.alert(AlertType.ERROR, "Error Message", "Please type a valid email");
+      view.alert(AlertType.ERROR, "Error Message", "Please type a valid Email");
     } else {
       try {
         if (DataBaseModel.getRightLogin(view.getUserNameLogin(), view.getPassowrdLogin())) {
@@ -59,7 +59,7 @@ public class LoginController {
           view.getSiButton().getScene().getWindow().hide();
 
         } else {
-          view.alert(AlertType.ERROR, "Error Message", "Incorrect Username/passowrd!");
+          view.alert(AlertType.ERROR, "Error Message", "Incorrect Email Adderss/passowrd!");
 
 
         }
@@ -92,7 +92,7 @@ public class LoginController {
         view.switFormAfterSignUp();
       } else {
         view.alert(AlertType.ERROR, "Registration Error",
-            "No valid username. The username already exists.");
+            "No valid Email Address. This Email already exists.");
 
       }
     }
@@ -114,7 +114,7 @@ public class LoginController {
 
     } else {
       view.alert(AlertType.ERROR, "Registration Error",
-          "No valid username. The username does not exists.");
+          "No valid Email Address. This Email does not exists.");
     }
 
   }

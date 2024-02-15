@@ -132,12 +132,15 @@ public class DataBaseModel {
   /**
    * Create the login table.
    * 
-   * @param connection
    * 
    * 
    */
-  public static void createLoginTable(Connection connection) throws SQLException {
+  public static void createLoginTable() throws SQLException {
     System.out.println("Creating login table");
+
+    Connection connection = connectToDatabase();
+
+
 
     try (PreparedStatement statement = connection.prepareStatement("CREATE TABLE login (\n"
         + "username varchar(100) PRIMARY KEY, \n" + "password varchar(100), \n"
@@ -150,18 +153,19 @@ public class DataBaseModel {
   /**
    * drops all tables.
    * 
-   * @param connection
    * 
    * @throws SQLException Exception is thrown
    */
-  public static void dropUserTable(Connection connection) throws SQLException {
+  public static void dropUserTable() throws SQLException {
     System.out.println("Dropping login table");
-    try (
-        PreparedStatement st = connection.prepareStatement("DROP TABLE IF EXISTS login CASCADE");) {
-      st.execute();
+    Connection connection = connectToDatabase();
+    String dropTable = "DROP TABLE IF EXISTS login CASCADE";
+    try (PreparedStatement prepare = connection.prepareStatement(dropTable)) {
+      prepare.execute();
     }
-
   }
+
+
 
   /**
    * This method get the question from the table.
@@ -322,11 +326,9 @@ public class DataBaseModel {
    */
   public static void main(String[] args) {
     try {
-      Connection connection = connectToDatabase();
-      dropUserTable(connection);
-      createLoginTable(connection);
+      dropUserTable();
+      createLoginTable();
     } catch (SQLException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
 
