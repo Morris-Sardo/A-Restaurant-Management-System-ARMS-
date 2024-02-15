@@ -1,9 +1,12 @@
 package backend;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.postgresql.util.PSQLException;
@@ -115,8 +118,12 @@ public class Customer {
     return 0.0f; // Placeholder
   }
 
-  private String getCurrentTime() {
-    return ""; // PlaceHolder
+  private static String getCurrentTime() {
+    LocalTime currentTime = LocalTime.now();
+    DateTimeFormatter format = DateTimeFormatter.ofPattern("HH:mm");
+    String formattedTime = currentTime.format(format);
+    
+    return formattedTime;
   }
 
   /**
