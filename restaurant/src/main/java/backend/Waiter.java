@@ -120,8 +120,19 @@ public class Waiter {
    * 
    * @return the list of the information for orders
    */
-  public ArrayList<String> readyOrders() {
-    return null;
+  public ArrayList<String> readyOrders()
+      throws PSQLException, SQLException, DatabaseInformationException {
+    ArrayList<String> results = new ArrayList<String>();
+    String query = "SELECT * FROM orders WHERE status == 'Ready' ";
+    try (PreparedStatement statement = connection.prepareStatement(query);) {
+      ResultSet resultSet = statement.executeQuery();
+      while (resultSet.next()) {
+        results.add(
+            "Order Number: " + resultSet.getString(1) + ", Table Number: " + resultSet.getString(2)
+                + ", Items: " + resultSet.getString(3) + ", Order Time: " + resultSet.getString(5));
+      }
+    }
+    return results;
   }
 
   /**
@@ -129,8 +140,9 @@ public class Waiter {
    * 
    * @return the list of the information for bill requests
    */
-  public ArrayList<String> viewBillRequests() {
-    return null;
+  public ArrayList<String> viewBillRequests() 
+    throws PSQLException, SQLException, DatabaseInformationException {
+
   }
 
   /**
