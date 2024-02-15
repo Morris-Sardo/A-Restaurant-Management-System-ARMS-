@@ -72,6 +72,7 @@ public class Waiter {
     return results;
   }
 
+  // Consider changing these to booleans and checking the order's status beforehand.
   /**
    * Changes the status of the order to 'Confirmed'.
    * 
@@ -93,7 +94,7 @@ public class Waiter {
    */
   public void deliveredOrder(int orderNumber) 
       throws PSQLException, SQLException, DatabaseInformationException {
-    String change = "UPDATE orders SET STATUS = 'Confirmed' WHERE order_number == "
+    String change = "UPDATE orders SET STATUS = 'Delivered' WHERE order_number == "
         + Integer.toString(orderNumber); 
     try (PreparedStatement update = connection.prepareStatement(change);) {
       update.executeUpdate();
@@ -105,8 +106,13 @@ public class Waiter {
    * 
    * @param orderNumber the number of the order to be changed
    */
-  public void cancelOrder(int orderNumber) {
-
+  public void cancelOrder(int orderNumber) 
+      throws PSQLException, SQLException, DatabaseInformationException {
+    String change = "UPDATE orders SET STATUS = 'Canceled' WHERE order_number == "
+        + Integer.toString(orderNumber); 
+    try (PreparedStatement update = connection.prepareStatement(change);) {
+      update.executeUpdate();
+    }
   }
 
   /**
