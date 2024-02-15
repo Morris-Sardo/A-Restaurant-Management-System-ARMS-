@@ -38,7 +38,7 @@ public class Waiter {
     
   
     try {
-      String query = "Update items set available = NOT available where item_number = ?";
+      String query = "pdate items set available = NOT available where item_number = ?";
       PreparedStatement preparedStatement = connection.prepareStatement(query);
       preparedStatement.setInt(1, itemNumber);
       preparedStatement.executeUpdate();
@@ -76,7 +76,7 @@ public class Waiter {
   
   public void deliveredOrder(int orderNumber) {
     try {
-        String query = "UPDATE orders SET status = 'Delivered' WHERE order_number = ?";
+        String query = "update  orders SET status = 'delivered' where order_number = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setInt(1, orderNumber);
         preparedStatement.executeUpdate();
@@ -86,9 +86,9 @@ public class Waiter {
     }
 }
 
-public void confirmOrder(int orderNumber) {
+public void confirmOrder(int orderNumber) { 
     try {
-        String query = "UPDATE orders set status = 'Confirmed' where order_number = ?";
+        String query = "update orders set status = 'confirmed' where order_number = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setInt(1, orderNumber);
         preparedStatement.executeUpdate();
@@ -98,12 +98,51 @@ public void confirmOrder(int orderNumber) {
     }
 }
 
+        public ArrayList<String> ReadyOrders () {
+            ArrayList<String> readyOrders = new ArrayList<>();
 
+            try {
+                String query = "SELECT order_number, table_number, items from orders Where status = 'Ready'";
+                PreparedStatement preparedStatement = connection.prepareStatement(query);
+                ResultSet resultSet = preparedStatement.executeQuery();
 
+                while (resultSet.next()) {
+                    int orderNumber = resultSet.getInt("order_number");
+                    int tableNumber = resultSet.getInt("table_number");
+                    String items = resultSet.getString("items");
 
+                    readyOrders.add("Order Number: " + orderNumber + ", Table Number: " + tableNumber + ", Items: " + items);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
 
-  // i have to Implement the remaining methods according to the provided specification.
+            return readyOrders;
+        }
 
+        public ArrayList<String> ViewBillRequests() {
+            ArrayList<String> billRequests = new ArrayList<>();
 
+            try {
+                String query = "select bill_number, table_number from bills WHERE status = 'Requested'";
+                PreparedStatement preparedStatement = connection.prepareStatement(query);
+                ResultSet resultSet = preparedStatement.executeQuery();
+
+                while (resultSet.next()) {
+                    int billNumber = resultSet.getInt("bill_number");
+                    int tableNumber = resultSet.getInt("table_number");
+
+                    billRequests.add("Bill Number: " + billNumber + ", Table Number: " + tableNumber);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            return billRequests;
+        }
 
 }
+
+
+
+
