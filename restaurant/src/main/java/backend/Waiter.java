@@ -159,7 +159,16 @@ public class Waiter {
    * 
    * @return the list of table numbers with a current complaint
    */
-  public ArrayList<Integer> viewComplaints() {
+  public ArrayList<Integer> viewComplaints()
+      throws PSQLException, SQLException, DatabaseInformationException {
+    ArrayList<Integer> results = new ArrayList<Integer>();
+    String query = "SELECT * FROM complaints WHERE status = 'Requested'";
+    try (PreparedStatement statement = connection.prepareStatement(query);) {
+      ResultSet resultSet = statement.executeQuery();
+      while (resultSet.next()) {
+        results.add(resultSet.getInt(2));
+      }
+    }
     return null;
   }
 
