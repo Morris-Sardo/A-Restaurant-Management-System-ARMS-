@@ -27,21 +27,38 @@ public class menuModelDatabase {
     return connection;
   }
 
-public static boolean increaseQuantity() {
-  String selectData = "SELECT quantity FROM menu WHERE quantity = ?";
-  try {
-    prepare = connect.prepareStatement(selectData);
-    prepare.setString(0, selectData);
-    result = prepare.executeQuery();
-    
-    if (result.next()) {
-      return true;
-    }else {
+  public static boolean increaseQuantity() {
+    String selectData = "SELECT quantity FROM menu WHERE quantity = ?";
+    try {
+      prepare = connect.prepareStatement(selectData);
+      prepare.setString(0, selectData);
+      result = prepare.executeQuery();
+
+      if (result.next()) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (SQLException e) {
       return false;
     }
   }
-    catch(SQLException e) {
-     return false;
+
+  public int getQuantity() {
+    return 0;
+  }
+
+
+  public static boolean updateQuantity() {
+    String selectData =
+        "UPDATE menu" + "SET menu.quantity = menu.quantity - 1 " + "return quantity ";
+    try {
+      prepare = connect.prepareStatement(selectData);
+      prepare.setString(0, selectData);
+      result = prepare.executeQuery();
+      return true;
+    } catch (SQLException e) {
+      return false;
     }
   }
 }
