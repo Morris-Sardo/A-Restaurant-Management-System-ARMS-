@@ -1,7 +1,11 @@
 package backend;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import org.postgresql.util.PSQLException;
 
 /**
  * Contains the methods needed for the 'Customer' role.
@@ -11,12 +15,29 @@ public class Waiter {
   int waiterID;
   Connection connection = null;
   
+  public Waiter(int waiterID, Connection connection) {
+    this.waiterID = waiterID;
+    this.connection = connection;
+  }
+  
   /**
    * Finds all items on the menu.
    * @return the IDs of all items on the menu
    */
-  public int[] viewMenu() {
-    return null;
+  public ArrayList<Integer> viewMenu()
+      throws PSQLException, SQLException, DatabaseInformationException {
+    ArrayList<Integer> results = new ArrayList<Integer>();
+    String query = "SELECT item_number FROM items";
+    try (PreparedStatement statement = connection.prepareStatement(query);) {
+      ResultSet resultSet = statement.executeQuery();
+      while (resultSet.next()) {
+        results.add(resultSet.getInt(1));
+      }
+    }
+    if (results.isEmpty()) {
+      throw new DatabaseInformationException("No available menu items found");
+    }
+    return results;
   }
   
   /**
@@ -40,7 +61,7 @@ public class Waiter {
    * @param orderNumber the number of the order to be changed
    */
   public void confirmOrder(int orderNumber) {
-  
+    
   }
   
   /**
