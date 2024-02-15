@@ -1,4 +1,5 @@
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -72,14 +73,32 @@ public class ReviewController {
 	private void handleSubmitButtonClicked() {
 		// Get data from UI elements
 		String reviewText = reviewTextArea.getText();
-		String starsText = starsTextField.getText();
+		float stars = Float.parseFloat(starsTextField.getText());
+
 		try {
+			
 			Connection connection = ConnectionToDB.connectToDatabase();
-			// Perform database operations (inserting data, etc.)
-			// Close the connection when done
+
+			
+			String insertQuery = "INSERT INTO rating (username, rating, comment) VALUES (?, ?, ?)";
+
+			try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
+				
+				preparedStatement.setString(1, "view.getUsernameLogin"); 
+				preparedStatement.setFloat(2, stars);
+				preparedStatement.setString(3, reviewText);
+
+				
+				preparedStatement.executeUpdate();
+			}
+
+			showAlertReview("Review submitted successfully!");
+
+			
 			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace(); // Handle the exception appropriately
+			showAlertReview("Error submitting review. Please try again.");
 		}
 	}
 
