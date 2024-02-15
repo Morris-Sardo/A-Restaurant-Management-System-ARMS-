@@ -25,6 +25,7 @@ public class Customer {
   private int customerID = 999;
   @SuppressWarnings("unused")
   private int[] order = null;
+  private ArrayList<Item> items = null;
   @SuppressWarnings("unused")
   private Connection connection = null;
 
@@ -114,15 +115,32 @@ public class Customer {
 
   }
 
-  private float calculateTotalPrice() {
-    return 0.0f; // Placeholder
+  private int calculateTotalPrice() throws SQLException {
+    ArrayList<String> result = new ArrayList<String>();
+    int sum = 0;
+    String query = "SELECT items FROM orders WHERE table_number = " + Integer.toString(customerID)
+        + "AND status != 'Canceled' OR 'Paid' OR 'Requested'";
+    try (PreparedStatement selection = connection.prepareStatement(query)) {
+      ResultSet resultSet = selection.executeQuery();
+      while (resultSet.next()) {
+        result.addAll(Arrays.asList(resultSet.getString(3).trim().split(",")));
+      }
+    }
+    for (String item : result) {
+      for (Item menuItem : items) {
+        if (Integer.toString(menuItem.getItemNumber()).equals(item)) {
+          sum += Math.round(menuItem.getPrice());
+        }
+      }
+    }
+    return sum;
   }
 
   private static String getCurrentTime() {
     LocalTime currentTime = LocalTime.now();
     DateTimeFormatter format = DateTimeFormatter.ofPattern("HH:mm");
     String formattedTime = currentTime.format(format);
-    
+
     return formattedTime;
   }
 
