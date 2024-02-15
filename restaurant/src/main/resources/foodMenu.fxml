@@ -14,61 +14,61 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0">
          <children>
             <BorderPane prefHeight="800.0" prefWidth="667.0">
                <center>
-                  <ScrollPane pannable="true" prefHeight="572.0" prefWidth="467.0" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">
+                  <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="572.0" prefWidth="467.0" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">
                      <content>
                         <AnchorPane prefHeight="781.0" prefWidth="503.0">
                            <children>
                               <AnchorPane layoutX="-3.0" layoutY="-1.0" prefHeight="782.0" prefWidth="479.0">
                                  <children>
-                                    <AnchorPane layoutX="10.0" layoutY="14.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane layoutX="14.0" layoutY="40.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button fx:id="Increases1" layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <Button fx:id="Deacreaes1" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="10.0" layoutY="171.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane layoutX="14.0" layoutY="205.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button fx:id="Increases2" layoutX="120.0" layoutY="105.0" mnemonicParsing="false" text="+" />
                                           <Button fx:id="Deacreaes2" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="10.0" layoutY="325.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane layoutX="14.0" layoutY="370.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button fx:id="Increases21" layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <Button fx:id="Deacreaes5" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="240.0" layoutY="14.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane layoutX="244.0" layoutY="40.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button fx:id="Deacreaes" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                           <Button fx:id="Increases" layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="240.0" layoutY="178.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane layoutX="244.0" layoutY="205.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button fx:id="Increases3" layoutX="120.0" layoutY="105.0" mnemonicParsing="false" text="+" />
                                           <Button fx:id="Deacreaes3" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="240.0" layoutY="331.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane layoutX="244.0" layoutY="370.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button fx:id="Increases22" layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <Button fx:id="Deacreaes4" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="10.0" layoutY="490.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane layoutX="14.0" layoutY="535.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button fx:id="Increases11" layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <Button fx:id="Deacreaes6" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="240.0" layoutY="497.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane layoutX="244.0" layoutY="535.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button fx:id="IncreasePasta" layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <Button fx:id="decreasePasta" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
