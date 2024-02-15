@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import org.postgresql.util.PSQLException;
 
 
 
@@ -130,7 +132,8 @@ public class DataBaseModel {
   /**
    * Create the login table.
    * 
-   * @param connection a database connection
+   * @param connection
+   * 
    * 
    */
   public static void createLoginTable(Connection connection) throws SQLException {
@@ -147,7 +150,8 @@ public class DataBaseModel {
   /**
    * drops all tables.
    * 
-   * @param connection To connect to the DB
+   * @param connection
+   * 
    * @throws SQLException Exception is thrown
    */
   public static void dropUserTable(Connection connection) throws SQLException {
@@ -281,8 +285,55 @@ public class DataBaseModel {
     }
 
 
+  }
+
+
+  /**
+   * Creates an ArrayList of Item objects corresponding to every item in the item table of the
+   * database.
+   * 
+   * @param connection the connection to the database
+   * @return the ArrayList of Item objects
+   */
+  public static ArrayList<Item> loadItems(Connection connection)
+      throws SQLException, PSQLException, DatabaseInformationException {
+    ArrayList<Item> results = new ArrayList<Item>();
+    if (connection != null) {
+      String query = "SELECT * FROM items";
+      try (PreparedStatement statement = connection.prepareStatement(query);) {
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()) {
+          results.add(
+              new Item(resultSet.getInt(1), resultSet.getString(2).trim(), resultSet.getFloat(3),
+                  resultSet.getString(4).trim(), resultSet.getFloat(5), resultSet.getBoolean(6)));
+        }
+      }
+      if (results.isEmpty()) {
+        throw new DatabaseInformationException("No menu items found in database");
+      }
+    }
+    return results;
+  }
+
+  /**
+   * Main method has made only for testing.
+   * 
+   * @param args args
+   */
+  public static void main(String[] args) {
+    try {
+      Connection connection = connectToDatabase();
+      dropUserTable(connection);
+      createLoginTable(connection);
+    } catch (SQLException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+
 
   }
+
+
 }
 
 

@@ -28,7 +28,7 @@ public class MyViewMainPage {
    */
   public void start() throws Exception {
     Stage stage = new Stage();
-    root = FXMLLoader.load(getClass().getResource("myViewMainPage.fxml"));
+    root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
     scene = new Scene(root, 600, 400);
     stage.setTitle("This is the main view page");
     stage.setScene(scene);

@@ -32,6 +32,8 @@ public interface ViewInterface {
 
   public void switchForm(ActionEvent event);
 
+  public Object getSiButton();
+
 
 
 }

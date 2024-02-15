@@ -8,5 +8,12 @@
 }
 
 .white-from{
-    -fx-backgrounf-color: #fff;
+    -fx-background-color: #fff;
 }
+
+.root {
+    -fx-background-image: url('./image/MexicanCuisine.jpg');
+    -fx-background-size: cover;
+  }
+  
+    

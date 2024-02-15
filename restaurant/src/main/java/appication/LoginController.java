@@ -1,7 +1,7 @@
 package appication;
 
-//import java.sql.SQLException;
-//import javafx.event.ActionEvent;
+// import java.sql.SQLException;
+// import javafx.event.ActionEvent;
 import javafx.scene.control.Alert.AlertType;
 
 /**
@@ -13,12 +13,13 @@ import javafx.scene.control.Alert.AlertType;
 public class LoginController {
 
 
-  
+
   private MyView view;
   @SuppressWarnings("unused") // suppress wamrming about not use.
   private DataBaseModel connection;
 
   private String currentUsername;
+
 
 
   /**
@@ -45,6 +46,8 @@ public class LoginController {
     if (view.getUserNameLogin().isEmpty() || view.getPassowrdLogin().isEmpty()) {
       view.alert(AlertType.ERROR, "Error Message", "Please fill all the blank fields");
 
+    } else if (!view.getUserNameLogin().contains("@")) {
+      view.alert(AlertType.ERROR, "Error Message", "Please type a valid email");
     } else {
       try {
         if (DataBaseModel.getRightLogin(view.getUserNameLogin(), view.getPassowrdLogin())) {
@@ -77,6 +80,8 @@ public class LoginController {
         || view.getSelectedQuestion() == null || view.getAnswer().isEmpty()) {
       view.alert(AlertType.ERROR, "Error Message", "Please fill all the blank fields");
 
+    } else if (!view.getUserNameRegistration().contains("@")) {
+      view.alert(AlertType.ERROR, "Error Message", "Please type a valid email");
     } else {
 
 
