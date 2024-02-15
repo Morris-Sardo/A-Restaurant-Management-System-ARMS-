@@ -1,3 +1,5 @@
+package appication;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -5,11 +7,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * This is the test.
- *
- * @author papap
- *
- */
+ 
+This is the test.*
+@author papap
+**/
 
 public class Driver extends Application {
 
