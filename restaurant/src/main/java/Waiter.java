@@ -119,27 +119,30 @@ public void confirmOrder(int orderNumber) {
 
             return readyOrders;
         }
+        public ArrayList<String> viewBillRequests() {
+          ArrayList<String> billRequests = new ArrayList<>();
 
-        public ArrayList<String> ViewBillRequests() {
-            ArrayList<String> billRequests = new ArrayList<>();
+          try {
+              String query = "select bill_number, table_number from bills where status = 'Requested'";
+              try (PreparedStatement preparedStatement = connection.prepareStatement(query);
+                   ResultSet resultSet = preparedStatement.executeQuery()) {
 
-            try {
-                String query = "select bill_number, table_number from bills where status = 'Requested'";
-                PreparedStatement preparedStatement = connection.prepareStatement(query);
-                ResultSet resultSet = preparedStatement.executeQuery();
+                  while (resultSet.next()) {
+                      int billNumber = resultSet.getInt("bill_number");
+                      int tableNumber = resultSet.getInt("table_number");
 
-                while (resultSet.next()) {
-                    int billNumber = resultSet.getInt("bill_number");
-                    int tableNumber = resultSet.getInt("table_number");
+                      billRequests.add("Bill Number: " + billNumber + ", Table Number: " + tableNumber);
+                  }
+              }
+          } catch (SQLException e) {
+           
+              e.printStackTrace();
+          }
 
-                    billRequests.add("Bill Number: " + billNumber + ", Table Number: " + tableNumber);
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+          return billRequests;
+      }
 
-            return billRequests;
-        }
+        
 
 public ArrayList<Integer> ViewComplaints() {
   ArrayList<Integer> complaints = new ArrayList<>();
