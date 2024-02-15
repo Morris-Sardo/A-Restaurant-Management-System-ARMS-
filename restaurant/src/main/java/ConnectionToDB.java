@@ -193,42 +193,5 @@ public class ConnectionToDB {
     }
 
   }
-
-  /**
-   * Main method.
-   * 
-   * @param args any command line arguments
-   */
-  public static void main(String[] args) {
-
-    Connection connection = null;
-
-    try (Scanner scanner = new Scanner(System.in);) {
-      connection = ConnectionToDB.connectToDatabase();
-
-      // dropUserTable(connection);
-      dropRatingTable(connection);
-
-      // createLoginTable(connection);
-      createRatingTable(connection);
-
-      // insertIntoLoginTableFromFile(connection, "users.csv");
-      insertIntoRatingTableFromFile(connection, "ratings.csv");
-
-
-
-    } catch (Exception e) {
-      e.printStackTrace();
-    } finally {
-      try {
-        if (connection != null) {
-          connection.close();
-        }
-      } catch (SQLException e) {
-        e.printStackTrace();
-      }
-    }
-
-  }
 }
 
