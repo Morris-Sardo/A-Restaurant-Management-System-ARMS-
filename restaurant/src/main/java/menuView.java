@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class menuView extends Application {
@@ -82,6 +84,12 @@ public class menuView extends Application {
 
   @FXML
   private Button review;
+  
+  @FXML
+  private ImageView out_btn;
+  
+  @FXML
+  private Label username;
 
   private Alert alert;
 
@@ -128,7 +136,7 @@ public class menuView extends Application {
   public void setIncreasePasta(Button increasePasta) {
     IncreasePasta = increasePasta;
   }
-  
+
   public void HandleIncreases(Runnable f) {
     IncreasePasta.setOnAction(event -> f.run());
   }
