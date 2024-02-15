@@ -191,7 +191,12 @@ public class Waiter {
    * 
    * @param tableNumber the table number of the complaint to be changed
    */
-  public void concludeComplaint(int tableNumber) {
-
+  public void concludeComplaint(int tableNumber) 
+      throws PSQLException, SQLException, DatabaseInformationException {
+    String change = "UPDATE complaints SET status = 'Completed' WHERE (table_number == "
+        + Integer.toString(tableNumber) + " AND status == 'Requested'";
+    try (PreparedStatement update = connection.prepareStatement(change);) {
+      update.executeUpdate();
+    }
   }
 }
