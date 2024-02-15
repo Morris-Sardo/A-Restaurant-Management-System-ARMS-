@@ -99,7 +99,7 @@ public class menuView extends Application {
   public void start(Stage primaryStage) throws Exception {
     Parent root = FXMLLoader.load(getClass().getResource("foodMenu.fxml"));
     Scene scene = new Scene(root, 1000, 800);
-    primaryStage.setTitle("windows menu");
+    primaryStage.setTitle("Food Menu");
     primaryStage.setScene(scene);
     primaryStage.show();
   }
