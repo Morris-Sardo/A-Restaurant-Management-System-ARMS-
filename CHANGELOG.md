@@ -29,3 +29,4 @@ public static void createLoginTable(Connection connection) throws SQLException {
 #Fixed bug in change password in changwe password form.
 
 the bug was couse in hnadleChangePasswrd() the overridepassword used to get has argument the paramenter from the view but the fielad was alredy cleaned ehen i type forgot password in Login form. to fixed i used a viariable used ot save the username in loging form such the when the system cuold use the variable to match the new password with the user 
+
