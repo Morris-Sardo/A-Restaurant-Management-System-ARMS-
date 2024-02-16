@@ -63,7 +63,7 @@ public class Waiter {
     Predicate<Item> findItem = p -> item == p.getItemNumber();
     Boolean available = items.stream().filter(findItem).findFirst().get().isAvailable();
     String updateAvailable =
-        "UPDATE items SET available = " + !available + " WHERE item_number == " + item;
+        "UPDATE items SET available = " + !available + " WHERE item_number = " + item;
     try (PreparedStatement update = connection.prepareStatement(updateAvailable)) {
       update.executeUpdate();
     }
@@ -78,7 +78,7 @@ public class Waiter {
   public ArrayList<String> viewOrders()
       throws PSQLException, SQLException, DatabaseInformationException {
     ArrayList<String> results = new ArrayList<String>();
-    String query = "SELECT * FROM orders WHERE status == 'Requested' ";
+    String query = "SELECT * FROM orders WHERE status = 'Requested' ";
     try (PreparedStatement statement = connection.prepareStatement(query);) {
       ResultSet resultSet = statement.executeQuery();
       while (resultSet.next()) {
@@ -98,7 +98,7 @@ public class Waiter {
    */
   public void confirmOrder(int orderNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
-    String change = "UPDATE orders SET STATUS = 'Confirmed' WHERE order_number == "
+    String change = "UPDATE orders SET STATUS = 'Confirmed' WHERE order_number = "
         + Integer.toString(orderNumber);
     try (PreparedStatement update = connection.prepareStatement(change);) {
       update.executeUpdate();
@@ -112,7 +112,7 @@ public class Waiter {
    */
   public void deliveredOrder(int orderNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
-    String change = "UPDATE orders SET STATUS = 'Completed' WHERE order_number == "
+    String change = "UPDATE orders SET STATUS = 'Completed' WHERE order_number = "
         + Integer.toString(orderNumber);
     try (PreparedStatement update = connection.prepareStatement(change);) {
       update.executeUpdate();
@@ -126,7 +126,7 @@ public class Waiter {
    */
   public void cancelOrder(int orderNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
-    String change = "UPDATE orders SET STATUS = 'Canceled' WHERE order_number == "
+    String change = "UPDATE orders SET STATUS = 'Canceled' WHERE order_number = "
         + Integer.toString(orderNumber);
     try (PreparedStatement update = connection.prepareStatement(change);) {
       update.executeUpdate();
@@ -141,7 +141,7 @@ public class Waiter {
   public ArrayList<String> readyOrders()
       throws PSQLException, SQLException, DatabaseInformationException {
     ArrayList<String> results = new ArrayList<String>();
-    String query = "SELECT * FROM orders WHERE status == 'Ready' ";
+    String query = "SELECT * FROM orders WHERE status = 'Ready' ";
     try (PreparedStatement statement = connection.prepareStatement(query);) {
       ResultSet resultSet = statement.executeQuery();
       while (resultSet.next()) {
@@ -161,7 +161,7 @@ public class Waiter {
   public ArrayList<String> viewBillRequests()
       throws PSQLException, SQLException, DatabaseInformationException {
     ArrayList<String> results = new ArrayList<String>();
-    String query = "SELECT * FROM bills WHERE status == 'Requested'";
+    String query = "SELECT * FROM bills WHERE status = 'Requested'";
     try (PreparedStatement statement = connection.prepareStatement(query);) {
       ResultSet resultSet = statement.executeQuery();
       while (resultSet.next()) {
@@ -197,7 +197,7 @@ public class Waiter {
    */
   public void concludeBill(int tableNumber) 
       throws PSQLException, SQLException, DatabaseInformationException {
-    String change = "UPDATE bills SET status = 'Completed' WHERE (table_number == "
+    String change = "UPDATE bills SET status = 'Completed' WHERE (table_number = "
         + Integer.toString(tableNumber) + " AND status == 'Requested'";
     try (PreparedStatement update = connection.prepareStatement(change);) {
       update.executeUpdate();
@@ -211,7 +211,7 @@ public class Waiter {
    */
   public void concludeComplaint(int tableNumber) 
       throws PSQLException, SQLException, DatabaseInformationException {
-    String change = "UPDATE complaints SET status = 'Completed' WHERE (table_number == "
+    String change = "UPDATE complaints SET status = 'Completed' WHERE (table_number = "
         + Integer.toString(tableNumber) + " AND status == 'Requested'";
     try (PreparedStatement update = connection.prepareStatement(change);) {
       update.executeUpdate();
