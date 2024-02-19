@@ -9,10 +9,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 
 /**
- * The class that control's the rating page and the database.
+ * The controller class for the Review Page.
  * 
  * @author Zain Akhtar
- * 
  */
 public class ReviewController {
 
@@ -25,16 +24,39 @@ public class ReviewController {
   @FXML
   private Button submitButton;
 
+  private ReviewView view;
+  private ConnectionToDB ctdb;
+
+  /**
+   * The Constructor.
+   * 
+   * @param view To view the page
+   * @param ctdb To connect to the database
+   */
+  public ReviewController(ReviewView view, ConnectionToDB ctdb) {
+    this.view = view;
+    this.ctdb = ctdb;
+  }
+
+  /**
+   * The Constructor.
+   * 
+   */
+  public ReviewController() {
+  }
+
   @FXML
   private void handleStarsInput(KeyEvent event) {
     try {
       // Try to parse the input as a float
-      float stars = Float.parseFloat(starsTextField.getText());
+      if (starsTextField != null) {
+        float stars = Float.parseFloat(starsTextField.getText());
 
-      // Check if it's within the valid range (0-5)
-      if (stars < 0 || stars > 5) {
-        starsTextField.setText(""); // Clear the input
-        showAlertStars("Invalid input. Please enter a number between 0 and 5.");
+        // Check if it's within the valid range (0-5)
+        if (stars < 0 || stars > 5) {
+          starsTextField.setText(""); // Clear the input
+          showAlertStars("Invalid input. Please enter a number between 0 and 5.");
+        }
       }
     } catch (NumberFormatException e) {
       // Not a valid float
@@ -76,14 +98,13 @@ public class ReviewController {
     float stars = Float.parseFloat(starsTextField.getText());
 
     try {
-
       Connection connection = ConnectionToDB.connectToDatabase();
 
       String insertQuery = "INSERT INTO rating (username, rating, comment) VALUES (?, ?, ?)";
 
       try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
-
-        preparedStatement.setString(1, "view.getUsernameLogin");
+        // Assuming getUsernameLogin is a method in the view class
+        preparedStatement.setString(1, "tests");
         preparedStatement.setFloat(2, stars);
         preparedStatement.setString(3, reviewText);
 
@@ -98,5 +119,4 @@ public class ReviewController {
       showAlertReview("Error submitting review. Please try again.");
     }
   }
-
 }

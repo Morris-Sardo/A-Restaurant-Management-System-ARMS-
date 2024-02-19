@@ -13,8 +13,13 @@ import javafx.stage.Stage;
 
 public class Driver {
 
+  /**
+   * Main method.
+   * 
+   * @param args args 
+   */
   public static void main(String[] args) {
-    ReviewView view = reviewView.getInstance();
+    ReviewView view = ReviewView.getInstance();
     ConnectionToDB ctdb = new ConnectionToDB();
     ReviewController rc = new ReviewController(view, ctdb);
   
