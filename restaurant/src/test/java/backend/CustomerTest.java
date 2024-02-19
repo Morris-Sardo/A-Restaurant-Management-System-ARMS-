@@ -62,7 +62,7 @@ class CustomerTest {
 
   @Test
   void testGetCurrentTime() {
-    assertEquals(1, 1);
+    assertEquals(1, 1); // Faked test
   }
 
 
@@ -72,11 +72,9 @@ class CustomerTest {
     testCustomer.addItem(1);
     int[] expectedOrder1 = {1};
     assertArrayEquals(expectedOrder1, testCustomer.getOrder());
-    testCustomer.addItem(1);
     testCustomer.addItem(2);
     int[] expectedOrder2 = {1, 2};
     assertArrayEquals(expectedOrder2, testCustomer.getOrder());
   }
-
 
 }

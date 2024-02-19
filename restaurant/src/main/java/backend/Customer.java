@@ -24,7 +24,7 @@ public class Customer {
   @SuppressWarnings("unused")
   private int customerID = 999;
   @SuppressWarnings("unused")
-  private int[] order = null;
+  private int[] order = {};
   private ArrayList<Item> items = null;
   @SuppressWarnings("unused")
   private Connection connection = null;
@@ -133,7 +133,7 @@ public class Customer {
         }
       }
     }
-    return sum;
+    return sum; // Re-used code from request bill method
   }
 
   private static String getCurrentTime() {
