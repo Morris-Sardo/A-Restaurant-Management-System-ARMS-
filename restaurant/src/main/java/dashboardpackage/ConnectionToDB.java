@@ -1,4 +1,4 @@
-package dashboardPackage;
+package dashboardpackage;
 
 import java.io.BufferedReader;
 import java.io.IOException;
