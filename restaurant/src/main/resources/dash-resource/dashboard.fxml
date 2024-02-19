@@ -12,7 +12,7 @@
 
 <StackPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" opacity="0.75" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@dash.css" />
+      <AnchorPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" opacity="0.8" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@dash.css" />
       <AnchorPane prefHeight="600.0" prefWidth="900.0">
          <children>
             <BorderPane prefHeight="600.0" prefWidth="900.0">
