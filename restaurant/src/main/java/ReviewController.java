@@ -104,7 +104,7 @@ public class ReviewController {
 
       try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
         // Assuming getUsernameLogin is a method in the view class
-        preparedStatement.setString(1, "tests");
+        preparedStatement.setString(1, "Testy McTest");
         preparedStatement.setFloat(2, stars);
         preparedStatement.setString(3, reviewText);
 
