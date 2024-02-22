@@ -22,6 +22,7 @@ public class KitchenStaff {
    * @return the list of the information for orders
    */
   // Will also need refactoring and talking with frontend in the future
+  // Will need the time sorting
   public ArrayList<String> viewOrders()
       throws PSQLException, SQLException, DatabaseInformationException {
     ArrayList<String> results = new ArrayList<String>();
