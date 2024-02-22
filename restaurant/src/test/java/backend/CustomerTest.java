@@ -52,7 +52,8 @@ class CustomerTest {
   }
 
   /*
-   * Test 1: Method adds a entry to the complaints table Can't be faked;
+   * Test 1: Method adds a entry to the complaints table
+   * Can't be faked.
    */
   @Test
   @Tag("ConnectionNeeded")
