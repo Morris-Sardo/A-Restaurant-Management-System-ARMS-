@@ -62,6 +62,7 @@ class CustomerTest {
   }
 
   @Test
+  @Tag("ConnectionNeeded")
   void testGetCurrentTime() {
     assertEquals(1, 1); // Faked test
   }
