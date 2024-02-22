@@ -55,6 +55,7 @@ public class LoginController {
 
           MyViewMainPage mainPage = new MyViewMainPage();
           mainPage.start();
+          @SuppressWarnings("unused")
           MainPageController mainPageController = new MainPageController(mainPage, connection);
           view.getSiButton().getScene().getWindow().hide();
 

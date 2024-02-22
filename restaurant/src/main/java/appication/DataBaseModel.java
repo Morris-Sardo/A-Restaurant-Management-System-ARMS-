@@ -277,6 +277,7 @@ public class DataBaseModel {
 
         prepare.setString(1, password);
         prepare.setString(2, username);
+        @SuppressWarnings("unused")
         int result = prepare.executeUpdate();
 
       } catch (SQLException e) {
