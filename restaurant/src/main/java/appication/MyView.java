@@ -1,9 +1,9 @@
 package appication;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.animation.TranslateTransition;
-import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -21,7 +21,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 
@@ -31,7 +30,38 @@ import javafx.util.Duration;
  * @author papap
  *
  */
-public class MyView extends Application implements ViewInterface {
+public class MyView implements ViewInterface {
+
+  /**
+   * Creates & returns the scene to be used for this page.
+   * 
+   * @return The Login scene.
+   */
+  public Scene start() {
+    Parent root;
+    try {
+      root = FXMLLoader.load(getClass().getResource("MyView.fxml"));
+      Scene scene = new Scene(root, 600, 400);
+      return scene;
+    } catch (IOException e) {
+      e.printStackTrace();
+      return null;
+    }
+  }
+
+  /**
+   * Creates the relevant controller & sets up button actions.
+   */
+  @FXML
+  public void initialize() {
+    LoginController loginController = new LoginController(this);
+    //replacements for observers - assumes controller has the relevant methods
+    siLoginBtn.setOnAction(event -> loginController.hanldeLogin());
+    suSignupBtn.setOnAction(event -> loginController.handleSignUp());
+    siForgotPass.setOnAction(event -> loginController.handleForgotPass());
+    fpProceedBtn.setOnAction(event -> loginController.handleAnswer());
+    npChangePassBtn.setOnAction(event -> loginController.handleChangePassword());
+  }
 
   @FXML
   private Label askSecurityQuestion;
@@ -150,32 +180,6 @@ public class MyView extends Application implements ViewInterface {
 
   // array use to store the questions.
   private String[] questionList = {question1, question2, question3};
-
-
-
-  // private String sUsername;
-
-  // All those follwing methods act has obsever.
-  // observeing the input from the user and connect with the model and reverse.
-  public void addRegistrationObserver(Runnable f) {
-    suSignupBtn.setOnAction(event -> f.run());
-  }
-
-  public void addLoginObserver(Runnable f) {
-    siLoginBtn.setOnAction(event -> f.run());
-  }
-
-  public void addForgotPasswordObserver(Runnable f) {
-    siForgotPass.setOnAction(event -> f.run());
-  }
-
-  public void addChangePasswordObserver(Runnable f) {
-    fpProceedBtn.setOnAction(event -> f.run());
-  }
-
-  public void addConfirmNewPasswordObserver(Runnable f) {
-    npChangePassBtn.setOnAction(event -> f.run());
-  }
 
   /**
    * Controls the visibility of the Password field.
@@ -574,64 +578,14 @@ public class MyView extends Application implements ViewInterface {
     slider.setNode(sideForm);
     slider.setToX(0);
     slider.setDuration(Duration.seconds(.5));
-    
+
     slider.setOnFinished((ActionEvent e) -> {
       sideCreateBtnAlreadyHave.setVisible(false);
       sideCreateBtn.setVisible(true);
-      
+
     });
     slider.play();
 
   }
-
-
-  @Override
-  public void start(Stage primaryStage) throws Exception {
-
-    Parent root = FXMLLoader.load(getClass().getResource("myView.fxml"));
-
-
-    Scene scene = new Scene(root, 600, 400);
-
-    primaryStage.setTitle("Login  Interface");
-
-    primaryStage.setScene(scene);
-    primaryStage.show();
-
-
-  }
-
-  // DO NOT CHANGE ANYTHING BELOW THIS COMMENT
-  /////////////////////////////////////////////////////////////////////////////////
-  // Block for creating an instance variable for others to use.
-  //
-  // Make it a JavaFX singleton. Instance is set by the javafx "initialize" method
-  private static volatile MyView instance = null;
-
-  @FXML
-  void initialize() {
-    instance = this;
-  }
-
-  /**
-   * This is a Singleton View constructed by the JavaaFX Thread and made available through this
-   * method.
-   * 
-   * @return the single object representing this view
-   */
-  public static synchronized MyView getInstance() {
-    if (instance == null) {
-      new Thread(() -> Application.launch(MyView.class)).start();
-      // Wait until the instance is ready since initialize has executed.
-      while (instance == null) {// empty body
-      }
-    }
-
-    return instance;
-  }
-  // End of special block
-  /////////////////////////////////////////////////////////////////////////////////
-
-
 
 }

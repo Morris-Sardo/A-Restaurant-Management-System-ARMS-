@@ -27,16 +27,9 @@ public class LoginController {
    * 
    * @param view the objected form view that handle the loginBtn.
    */
-  public LoginController(MyView view, DataBaseModel con) {
+  public LoginController(MyView view) {
     this.view = view;
-    this.connection = con; /// added
-
-    view.addLoginObserver(this::hanldeLogin);
-    view.addRegistrationObserver(this::handleSignUp);
-    view.addForgotPasswordObserver(this::handleForgotPass);
-    view.addChangePasswordObserver(this::handleAnswer);
-    view.addConfirmNewPasswordObserver(this::handleChangePassword);
-
+    this.connection = Driver.getDBconnection();
   }
 
   /**
@@ -53,10 +46,9 @@ public class LoginController {
         if (DataBaseModel.getRightLogin(view.getUserNameLogin(), view.getPassowrdLogin())) {
 
 
-          MyViewMainPage mainPage = new MyViewMainPage();
-          mainPage.start();
-          MainPageController mainPageController = new MainPageController(mainPage, connection);
-          view.getSiButton().getScene().getWindow().hide();
+          DashBoardMyView mainPage = new DashBoardMyView();
+          DashBoardController mainPageController = new DashBoardController(mainPage);
+          Driver.setScene(mainPage.start());
 
         } else {
           view.alert(AlertType.ERROR, "Error Message", "Incorrect Email Adderss/passowrd!");

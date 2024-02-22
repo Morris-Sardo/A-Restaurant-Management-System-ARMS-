@@ -1,6 +1,8 @@
 package appication;
 
-
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * This class run use to run application.
@@ -8,24 +10,32 @@ package appication;
  * @author papap
  *
  */
-public class Driver {
-
-  /**
-   * tihds is the main.
-   * 
-   * @param args is is string.
-   */
-  public static void main(String[] args) {
-
-
-    MyView view = MyView.getInstance();
-    DataBaseModel con = new DataBaseModel();
-    @SuppressWarnings("unused") // suppress wamring not used.
-    LoginController h = new LoginController(view, con);
-    
-
-
+public class Driver extends Application {
+  
+  private static Stage stage;
+  private static DataBaseModel connection; 
+  
+  @Override
+  public void start(Stage stage) throws Exception {
+    this.stage = stage;
+    // create default view
+    MyView view = new MyView();
+    //ready to show
+    Driver.setScene(view.start());
+    stage.show();
   }
-
+  
+  public static void setScene(Scene scene) {
+    stage.setScene(scene);
+  }
+  
+  public static DataBaseModel getDBconnection() {
+    return connection;
+  }
+  
+  public static void main(String[] args) {
+    connection = new DataBaseModel();
+    Application.launch(args);
+  }
 
 }
