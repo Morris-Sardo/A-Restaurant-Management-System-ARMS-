@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -29,7 +30,11 @@
                               <String fx:value="white-background" />
                            </styleClass>
                            <children>
-                              <Button layoutX="523.0" layoutY="319.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="CUSTOMER" textFill="WHITE" />
+                              <Button layoutX="523.0" layoutY="319.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" text="CUSTOMER" textFill="WHITE">
+                                 <stylesheets>
+                                    <URL value="@MenuDesign.css" />
+                                    <URL value="@dash.css" />
+                                 </stylesheets></Button>
                               <Label alignment="TOP_CENTER" layoutX="181.0" layoutY="95.0" prefHeight="70.0" prefWidth="542.0" stylesheets="@dash.css" text="MEX EAT RESTAURANT" textFill="WHITE">
                                  <font>
                                     <Font name="Bauhaus 93" size="48.0" />
@@ -39,9 +44,21 @@
                                     <String fx:value="restaurant-title" />
                                  </styleClass>
                               </Label>
-                              <Button layoutX="179.0" layoutY="319.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="REVIEW" textFill="WHITE" />
-                              <Button layoutX="523.0" layoutY="378.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="INVENTORY" textFill="WHITE" />
-                              <Button layoutX="179.0" layoutY="378.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MENU" textFill="WHITE" />
+                              <Button layoutX="179.0" layoutY="319.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" text="REVIEW" textFill="WHITE">
+                                 <stylesheets>
+                                    <URL value="@MenuDesign.css" />
+                                    <URL value="@dash.css" />
+                                 </stylesheets></Button>
+                              <Button layoutX="523.0" layoutY="378.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" text="INVENTORY" textFill="WHITE">
+                                 <stylesheets>
+                                    <URL value="@MenuDesign.css" />
+                                    <URL value="@dash.css" />
+                                 </stylesheets></Button>
+                              <Button layoutX="179.0" layoutY="378.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" text="MENU" textFill="WHITE">
+                                 <stylesheets>
+                                    <URL value="@MenuDesign.css" />
+                                    <URL value="@dash.css" />
+                                 </stylesheets></Button>
                               <Button layoutX="84.0" layoutY="513.0" mnemonicParsing="false" stylesheets="@MenuDesign.css">
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
