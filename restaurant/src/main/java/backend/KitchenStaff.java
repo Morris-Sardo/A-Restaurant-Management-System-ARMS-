@@ -16,9 +16,10 @@ public class KitchenStaff {
   int kitchenID;
   @SuppressWarnings("unused")
   private Connection connection = null;
-  
+
   /**
    * Finds the list of orders marked as confirmed, based on how long ago they were made.
+   * 
    * @return the list of the information for orders
    */
   // Will also need refactoring and talking with frontend in the future
@@ -37,12 +38,20 @@ public class KitchenStaff {
     }
     return results;
   }
-  
+
   /**
    * Sets an order as ready to collect.
-   * @param orderNumber the ID number of the order 
+   * 
+   * @param orderNumber the ID number of the order
+   * @throws SQLException when unable to executeUpdate
    */
-  public void readyOrder(int orderNumber) {
-    
+  public void readyOrder(int orderNumber) throws SQLException {
+    String readyOrderQuery = "UPDATE orders SET status = ? WHERE order_number = ?";
+    try (PreparedStatement statement = connection.prepareStatement(readyOrderQuery)) {
+      statement.setString(1, "Ready");
+      statement.setInt(2, orderNumber);
+
+      statement.executeUpdate();
+    }
   }
 }

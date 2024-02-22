@@ -1,9 +1,12 @@
 package backend;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.postgresql.util.PSQLException;
@@ -19,7 +22,9 @@ public class Customer {
   private int tableNumber;
   private int customerID = 999;
   @SuppressWarnings("unused")
-  private int[] order = null;
+  private int[] order = {};
+  private ArrayList<Item> items = null;
+  @SuppressWarnings("unused")
   private Connection connection = null;
   private ArrayList<Item> items = null;
 
@@ -85,9 +90,12 @@ public class Customer {
    * Adds a new item to the current order.
    * 
    * @param item the item being added to the order
+   * 
    */
   public void addItem(int item) {
-
+    int[] newOrder = Arrays.copyOf(order, order.length + 1);
+    newOrder[newOrder.length - 1] = item;
+    order = newOrder;
   }
 
   /*
@@ -101,8 +109,53 @@ public class Customer {
   /**
    * Adds the order to the database.
    */
-  public void submitOrder() {
+  public void submitOrder() throws SQLException {
+    String submitOrderQuery = "INSERT INTO orders "
+        + "(order_ number, customer_id, table_number, items, price, order_time, status)"
+        + "VALUES (DEFAULT, ?, ?, ?, ?, ?, ?)";
+    float totalPrice = calculateTotalPrice();
+    String orderTime = getCurrentTime();
 
+    try (PreparedStatement statement = connection.prepareStatement(submitOrderQuery)) {
+      statement.setInt(1, customerID);
+      statement.setInt(2, tableNumber);
+      statement.setString(3, order.toString());
+      statement.setFloat(4, totalPrice);
+      statement.setString(5, orderTime);
+      statement.setString(6, "Requested");
+
+      statement.executeUpdate();
+    }
+
+  }
+
+  private int calculateTotalPrice() throws SQLException {
+    ArrayList<String> result = new ArrayList<String>();
+    int sum = 0;
+    String query = "SELECT items FROM orders WHERE table_number = " + Integer.toString(customerID)
+        + "AND status != 'Canceled' OR 'Paid' OR 'Requested'";
+    try (PreparedStatement selection = connection.prepareStatement(query)) {
+      ResultSet resultSet = selection.executeQuery();
+      while (resultSet.next()) {
+        result.addAll(Arrays.asList(resultSet.getString(3).trim().split(",")));
+      }
+    }
+    for (String item : result) {
+      for (Item menuItem : items) {
+        if (Integer.toString(menuItem.getItemNumber()).equals(item)) {
+          sum += Math.round(menuItem.getPrice());
+        }
+      }
+    }
+    return sum; // Re-used code from request bill method
+  }
+
+  private static String getCurrentTime() {
+    LocalTime currentTime = LocalTime.now();
+    DateTimeFormatter format = DateTimeFormatter.ofPattern("HH:mm");
+    String formattedTime = currentTime.format(format);
+
+    return formattedTime;
   }
 
   /*
@@ -160,6 +213,5 @@ public class Customer {
       statement.executeUpdate();
     }
   }
-
 
 }
