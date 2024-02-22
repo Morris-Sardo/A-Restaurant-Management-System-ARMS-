@@ -21,7 +21,7 @@ public class Driver extends Application {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
-    Parent root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("dash-resource/dashboard.fxml"));
     Scene scene = new Scene(root, 900, 600);
     primaryStage.setScene(scene);
     primaryStage.show();

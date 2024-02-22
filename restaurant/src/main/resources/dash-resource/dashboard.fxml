@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="670.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" opacity="0.8" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@dash.css" />
+      <AnchorPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" opacity="0.75" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@dash.css" />
       <AnchorPane prefHeight="600.0" prefWidth="900.0">
          <children>
             <BorderPane prefHeight="600.0" prefWidth="900.0">
@@ -22,7 +22,7 @@
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@MenuDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane prefHeight="688.0" prefWidth="900.0" stylesheets="@MenuDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <styleClass>
                               <String fx:value="shadow-drop" />
                               <String fx:value="radius" />
@@ -46,7 +46,7 @@
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../../../../Downloads/sign-out.png" />
+                                          <Image url="@../../../../../Downloads/sign-out.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -86,6 +86,31 @@
                                     <String fx:value="restaurant-title" />
                                     <String fx:value="restaurant-title" />
                                  </styleClass>
+                              </Label>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="677.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@socials.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="693.0" layoutY="514.0" prefHeight="19.0" prefWidth="170.0" text="All socials: MexEatOnline" textAlignment="CENTER" underline="true">
+                                 <font>
+                                    <Font name="Arial Nova Light" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="722.0" layoutY="535.0" prefHeight="19.0" prefWidth="111.0" text="123 Main Street" textAlignment="CENTER" underline="true">
+                                 <font>
+                                    <Font name="Arial Nova Light" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="723.0" layoutY="554.0" prefHeight="19.0" prefWidth="111.0" text="Anytown, USA" textAlignment="CENTER" underline="true">
+                                 <font>
+                                    <Font name="Arial Nova Light" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="713.0" layoutY="577.0" prefHeight="19.0" prefWidth="128.0" text="+1 (555) 123-4567" textAlignment="CENTER" underline="true">
+                                 <font>
+                                    <Font name="Arial Nova Light" size="15.0" />
+                                 </font>
                               </Label>
                            </children>
                         </AnchorPane>
