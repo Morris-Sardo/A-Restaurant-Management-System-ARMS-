@@ -1,7 +1,6 @@
 package backend;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,7 +22,6 @@ public class Customer {
   private int customerID = 999;
   @SuppressWarnings("unused")
   private int[] order = {};
-  private ArrayList<Item> items = null;
   @SuppressWarnings("unused")
   private Connection connection = null;
   private ArrayList<Item> items = null;
@@ -38,6 +36,10 @@ public class Customer {
 
   public Connection getConnection() {
     return connection;
+  }
+  
+  public int[] getOrder() {
+    return order;
   }
 
   /**
