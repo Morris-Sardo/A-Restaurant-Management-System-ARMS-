@@ -38,6 +38,7 @@ public class DashBoardMyView {
 
   /**
    * Creates & returns the scene to be used for this page.
+   * 
    * @return The dashboard scene.
    */
   public Scene start() {
@@ -52,11 +53,16 @@ public class DashBoardMyView {
     }
   }
   
+  /**
+   * this isniziliaze all button.
+   */
   @FXML
   public void initialize() {
     DashBoardController dashController = new DashBoardController(this);
     signOutBtn.setOnAction(event -> dashController.handleSignOut());
     menuBtn.setOnAction(event -> dashController.handleMenu());
+    inventoryBtn.setOnAction(event -> dashController.handleInventory());
+    
   }
 
 }

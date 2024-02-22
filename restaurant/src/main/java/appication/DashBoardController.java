@@ -41,8 +41,12 @@ public class DashBoardController {
    * Thismethods handle inventory page.
    */
   void handleInventory() {
+    InventoryView viewI = new InventoryView();
+    InventoryController inventoyController = new InventoryController(viewI);
+    Driver.setScene(viewI.start());
+    
   }
-
+  
   void handleMenu() {}
 
   void handleReview() {}
