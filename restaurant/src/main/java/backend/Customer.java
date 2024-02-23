@@ -20,9 +20,7 @@ import org.postgresql.util.PSQLException;
 public class Customer {
   private int tableNumber;
   private int customerID = 999;
-  @SuppressWarnings("unused")
   private int[] order = {};
-  @SuppressWarnings("unused")
   private Connection connection = null;
   private ArrayList<Item> items = null;
 

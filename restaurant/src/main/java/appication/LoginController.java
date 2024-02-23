@@ -15,7 +15,6 @@ public class LoginController {
 
 
   private MyView view;
-  @SuppressWarnings("unused") // suppress wamrming about not use.
   private DataBaseModel connection;
 
   private String currentUsername;
