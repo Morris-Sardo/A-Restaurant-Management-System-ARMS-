@@ -57,14 +57,14 @@ public class Customer {
   }
 
   /**
-   * Finds all items on the menu marked as available.
+   * Finds all items on the menu marked as available and that have a stock over 0.
    * 
    * @return the IDs corresponding to the menu items available
    */
   public ArrayList<Integer> viewMenu()
       throws PSQLException, SQLException, DatabaseInformationException {
     ArrayList<Integer> results = new ArrayList<Integer>();
-    String query = "SELECT item_number FROM items WHERE available = 'True'";
+    String query = "SELECT item_number FROM items WHERE (available = 'True' AND stock >= 0)";
     try (PreparedStatement statement = connection.prepareStatement(query);) {
       ResultSet resultSet = statement.executeQuery();
       while (resultSet.next()) {

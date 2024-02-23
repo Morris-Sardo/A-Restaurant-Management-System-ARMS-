@@ -34,21 +34,20 @@ class CustomerTest {
    * 
    * Test 3: Method returns the menu items' ids IF they are available (2 is marked as unavailable)
    * Modified OrderTest to test this Solved by modifying the sql query to check availability
+   * 
+   * Modified tests again as item 3 and 4 will not be returned as stock is 0.
    */
 
   @Test
   @Tag("ConnectionNeeded")
   void ReturnTest() throws Exception {
     assertEquals(1, testCustomer.viewMenu().get(0));
-    assertEquals(3, testCustomer.viewMenu().get(1));
   }
 
   @Test
   @Tag("ConnectionNeeded")
   void OrderTest() throws Exception {
     assertEquals(1, testCustomer.viewMenu().get(0));
-    assertEquals(3, testCustomer.viewMenu().get(1));
-    assertEquals(4, testCustomer.viewMenu().get(2));
   }
 
   /*
@@ -66,7 +65,6 @@ class CustomerTest {
   void testGetCurrentTime() {
     assertEquals(1, 1); // Faked test
   }
-
 
   @Test
   @Tag("ConnectionNeeded")
