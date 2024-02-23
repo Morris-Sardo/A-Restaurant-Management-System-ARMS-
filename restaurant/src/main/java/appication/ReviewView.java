@@ -1,5 +1,6 @@
 package appication;
 
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +17,7 @@ import javafx.stage.Stage;
  * @author papap
  *
  */
-public class ReviewPageView {
+public class ReviewView {
 
   @FXML
   private Button backBtn;
@@ -40,28 +41,33 @@ public class ReviewPageView {
 
   private Scene scene;
 
-  @FXML
-  void handleReviewInput(ActionEvent event) {
 
-  }
-
-  @FXML
-  void handleStarsInput(ActionEvent event) {
-
-  }
 
   /**
    * This is another.
    * 
    * @throws Exception this will throw exception.
    */
-  public void start() throws Exception {
-    Stage stage = new Stage();
-    root = FXMLLoader.load(getClass().getResource("ReviewPage.fxml"));
-    scene = new Scene(root, 110, 600);
-    stage.setTitle("This is the reviewPage.");
-    stage.setScene(scene);
-    stage.show();
+  public Scene start() {
+    Parent root;
+    try {
+      root = FXMLLoader.load(getClass().getResource("ReviewPage.fxml"));
+      scene = new Scene(root, 1100, 600);
+
+      return scene;
+
+    } catch (IOException e) {
+
+      e.printStackTrace();
+      return null;
+    }
+
+  }
+
+  @FXML
+  public void initialize() {
+    ReviewController review = new ReviewController(this);
+    backBtn.setOnAction(event -> review.handleSignOut());
   }
 
 }

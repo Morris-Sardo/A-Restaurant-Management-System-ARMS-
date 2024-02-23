@@ -45,7 +45,7 @@ public class DashBoardMyView {
     Parent root;
     try {
       root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
-      Scene scene = new Scene(root, 600, 400);
+      Scene scene = new Scene(root, 900, 600);
       return scene;
     } catch (IOException e) {
       e.printStackTrace();
@@ -62,6 +62,8 @@ public class DashBoardMyView {
     signOutBtn.setOnAction(event -> dashController.handleSignOut());
     menuBtn.setOnAction(event -> dashController.handleMenu());
     inventoryBtn.setOnAction(event -> dashController.handleInventory());
+    reviewBtn.setOnAction(event -> dashController.handleReview());
+    
     
   }
 

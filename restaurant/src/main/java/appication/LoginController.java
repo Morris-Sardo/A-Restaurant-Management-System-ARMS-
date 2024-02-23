@@ -48,7 +48,7 @@ public class LoginController {
 
           DashBoardMyView mainPage = new DashBoardMyView();
           DashBoardController mainPageController = new DashBoardController(mainPage);
-          Driver.setScene(mainPage.start());
+          Driver.setScene(mainPage.start(), "DashboardPage");
 
         } else {
           view.alert(AlertType.ERROR, "Error Message", "Incorrect Email Adderss/passowrd!");

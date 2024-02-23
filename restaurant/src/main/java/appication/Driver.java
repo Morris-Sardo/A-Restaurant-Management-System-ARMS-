@@ -11,28 +11,36 @@ import javafx.stage.Stage;
  *
  */
 public class Driver extends Application {
-  
+
   private static Stage stage;
-  private static DataBaseModel connection; 
-  
+  private static DataBaseModel connection;
+
   @Override
   public void start(Stage stage) throws Exception {
     this.stage = stage;
     // create default view
     MyView view = new MyView();
-    //ready to show
-    Driver.setScene(view.start());
+    // ready to show
+    Driver.setScene(view.start(), "LoginPage");
     stage.show();
   }
-  
-  public static void setScene(Scene scene) {
+
+  /**
+   * This method set new scene.
+   * 
+   * @param scene new scene.
+   * @param title of the the scene.
+   */
+  public static void setScene(Scene scene, String title) {
     stage.setScene(scene);
+    stage.setTitle(title);
+    stage.centerOnScreen();
   }
-  
+
   public static DataBaseModel getDBconnection() {
     return connection;
   }
-  
+
   public static void main(String[] args) {
     connection = new DataBaseModel();
     Application.launch(args);

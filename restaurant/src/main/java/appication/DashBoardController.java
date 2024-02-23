@@ -32,24 +32,29 @@ public class DashBoardController {
    */
   void handleSignOut() {
     MyView viewL = new MyView();
-    LoginController loginPageController = new LoginController(viewL);
-    Driver.setScene(viewL.start());
+    Driver.setScene(viewL.start(), "LoginPage");
   }
 
 
   /**
-   * Thismethods handle inventory page.
+   * This methods handle inventory page.
    */
   void handleInventory() {
     InventoryView viewI = new InventoryView();
-    InventoryController inventoyController = new InventoryController(viewI);
-    Driver.setScene(viewI.start());
-    
+    Driver.setScene(viewI.start(), "InventoryPage");
+
   }
-  
+
   void handleMenu() {}
 
-  void handleReview() {}
+  /**
+   * This methos handle review page.
+   */
+  void handleReview() {
+    ReviewView viewR = new ReviewView();
+    Driver.setScene(viewR.start(), "ReviewPage");
+
+  }
 
 
 
