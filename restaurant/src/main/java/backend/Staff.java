@@ -9,23 +9,23 @@ import java.util.function.Predicate;
 import org.postgresql.util.PSQLException;
 
 /**
- * Contains the methods needed for the 'Customer' role.
+ * Contains the methods needed for the 'Staff' role.
  * 
  * @author xaviernoel
  */
-public class Waiter {
-  int waiterID;
+public class Staff {
+  int staffUsername;
   Connection connection = null;
   ArrayList<Item> items;
 
   /**
-   * The constructor for the Waiter object.
+   * The constructor for the Staff object.
    * @param connection the connection to the database that will be used
-   * @param waiterID the ID number of the Waiter
+   * @param staffUsername the username of the Staff
    */
-  public Waiter(Connection connection, int waiterID) {
+  public Staff(Connection connection, int staffUsername) {
     this.connection = connection;
-    this.waiterID = waiterID;
+    this.staffUsername = staffUsername;
     try {
       items = ConnectionManager.loadItems(connection);
     } catch (Exception e) {
@@ -78,7 +78,7 @@ public class Waiter {
   public ArrayList<String> viewOrders()
       throws PSQLException, SQLException, DatabaseInformationException {
     ArrayList<String> results = new ArrayList<String>();
-    String query = "SELECT * FROM orders WHERE status = 'Requested' ";
+    String query = "SELECT * FROM orders WHERE (status != 'Complete' or status != 'Canceled')";
     try (PreparedStatement statement = connection.prepareStatement(query);) {
       ResultSet resultSet = statement.executeQuery();
       while (resultSet.next()) {
@@ -215,6 +215,22 @@ public class Waiter {
         + Integer.toString(tableNumber) + " AND status == 'Requested'";
     try (PreparedStatement update = connection.prepareStatement(change);) {
       update.executeUpdate();
+    }
+  }
+  
+  /**
+   * Sets an order as ready to collect.
+   * 
+   * @param orderNumber the ID number of the order
+   * @throws SQLException when unable to executeUpdate
+   */
+  public void readyOrder(int orderNumber) throws SQLException {
+    String readyOrderQuery = "UPDATE orders SET status = ? WHERE order_number = ?";
+    try (PreparedStatement statement = connection.prepareStatement(readyOrderQuery)) {
+      statement.setString(1, "Ready");
+      statement.setInt(2, orderNumber);
+
+      statement.executeUpdate();
     }
   }
 }
