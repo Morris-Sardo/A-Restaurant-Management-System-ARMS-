@@ -13,7 +13,7 @@ class CustomerTest {
 
   @BeforeAll
   static void setUpBeforeClass() throws Exception {
-    testCustomer = new Customer(1, ConnectionManager.connectToDatabase());
+    testCustomer = new Customer(ConnectionManager.connectToDatabase());
   }
 
   @AfterAll

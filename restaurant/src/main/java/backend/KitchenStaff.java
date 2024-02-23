@@ -14,7 +14,6 @@ import org.postgresql.util.PSQLException;
  */
 public class KitchenStaff {
   int kitchenID;
-  @SuppressWarnings("unused")
   private Connection connection = null;
 
   /**
