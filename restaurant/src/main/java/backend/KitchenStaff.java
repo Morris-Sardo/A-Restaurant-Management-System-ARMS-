@@ -13,8 +13,13 @@ import org.postgresql.util.PSQLException;
  * @author xaviernoel
  */
 public class KitchenStaff {
-  int kitchenID;
+  String kitchenUsername = null;
   private Connection connection = null;
+
+  public KitchenStaff(Connection connection, String kitchenUsername) {
+    this.kitchenUsername = kitchenUsername;
+    this.connection = connection;
+  }
 
   /**
    * Finds the list of orders marked as confirmed, based on how long ago they were made.

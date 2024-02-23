@@ -108,6 +108,7 @@ public class Customer {
    * Adds the order to the database.
    */
   public void submitOrder(int tableNumber) throws SQLException {
+    this.tableNumber = tableNumber;
     String submitOrderQuery = "INSERT INTO orders "
         + "(order_ number, customer_id, table_number, items, price, order_time, status)"
         + "VALUES (DEFAULT, ?, ?, ?, ?, ?, ?)";

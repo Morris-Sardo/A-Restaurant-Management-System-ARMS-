@@ -14,18 +14,18 @@ import org.postgresql.util.PSQLException;
  * @author xaviernoel
  */
 public class Waiter {
-  int waiterID;
+  String waiterUsername = null;
   Connection connection = null;
   ArrayList<Item> items;
 
   /**
    * The constructor for the Waiter object.
    * @param connection the connection to the database that will be used
-   * @param waiterID the ID number of the Waiter
+   * @param waiterUsername the username of the Waiter
    */
-  public Waiter(Connection connection, int waiterID) {
+  public Waiter(Connection connection, String waiterUsername) {
     this.connection = connection;
-    this.waiterID = waiterID;
+    this.waiterUsername = waiterUsername;
     try {
       items = ConnectionManager.loadItems(connection);
     } catch (Exception e) {
