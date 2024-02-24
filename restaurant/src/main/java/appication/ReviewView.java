@@ -64,10 +64,14 @@ public class ReviewView {
 
   }
 
+  /**
+   * This methos initilaize all the button.
+   */
   @FXML
   public void initialize() {
     ReviewController review = new ReviewController(this);
     backBtn.setOnAction(event -> review.handleSignOut());
+    inventoryBtn.setOnAction(event -> review.handleInventory());
   }
 
 }

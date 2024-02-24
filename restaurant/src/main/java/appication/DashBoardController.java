@@ -45,7 +45,13 @@ public class DashBoardController {
 
   }
 
-  void handleMenu() {}
+  /**
+   * This method handle menu page.
+   */
+  void handleMenu() {
+    MenuView viewM = new MenuView();
+    Driver.setScene(viewM.start(), "MenuPage");
+  }
 
   /**
    * This methos handle review page.

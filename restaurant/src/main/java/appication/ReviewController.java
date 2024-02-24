@@ -12,7 +12,7 @@ public class ReviewController {
 
   private ReviewView viewR;
   @SuppressWarnings("unused")
-  private DataBaseModel connectrion;
+  private DataBaseModel connection;
 
   /**
    * This method is the constructor controller between Giu adn Model.
@@ -21,7 +21,7 @@ public class ReviewController {
    */
   public ReviewController(ReviewView viewR) {
     this.viewR = viewR;
-    this.connectrion = Driver.getDBconnection();
+    this.connection = Driver.getDBconnection();
 
 
 
@@ -34,6 +34,15 @@ public class ReviewController {
     MyView view = new MyView();
     LoginController loginPageController = new LoginController(view);
     Driver.setScene(view.start(), "LoginPage");
+  }
+
+  /**
+   * This hanlde inventoryBtn.
+   */
+  void handleInventory() {
+    InventoryView viewI = new InventoryView();
+    InventoryController inventoryController = new InventoryController(viewI);
+    Driver.setScene(viewI.start(), "InventroyPage");
   }
 
 

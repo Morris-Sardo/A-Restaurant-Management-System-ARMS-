@@ -86,7 +86,7 @@ public class InventoryView {
   private Label username;
 
   /**
-   * This method start the started the inventoryPage.
+   * This method start the inventoryPage.
    * 
    * @return The inventoy scene.
    */
@@ -101,11 +101,16 @@ public class InventoryView {
       return null;
     }
   }
-  
+
+  /**
+   * This method initialise the button to handle the events.
+   */
   @FXML
   public void initialize() {
     InventoryController inventoryController = new InventoryController(this);
     signOutBtn.setOnAction(event -> inventoryController.handleSignOut());
+    menuBtn.setOnAction(event ->inventoryController.handleMenu());
+    reviewBtn.setOnAction(event -> inventoryController.handleReview());
   }
 
 

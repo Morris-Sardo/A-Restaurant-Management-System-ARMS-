@@ -28,4 +28,22 @@ public class InventoryController {
 
   }
 
+  /**
+   * This method open link to menu page.
+   */
+  void handleMenu() {
+    MenuView viewM = new MenuView();
+    Driver.setScene(viewM.start(), "MenuPage");
+
+  }
+
+  /**
+   * This method open link to menu page.
+   */
+  void handleReview() {
+    ReviewView viewR = new ReviewView();
+    Driver.setScene(viewR.start(), "MenuPage");
+
+  }
+
 }

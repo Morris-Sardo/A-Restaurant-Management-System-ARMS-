@@ -25,7 +25,7 @@ public class LoginController {
   /**
    * This is the constructor is controlloer between GUI nad Model.
    * 
-   * @param view the objected form view that handle the loginBtn.
+   * @param view the objected form view that handle all the buttons' event.
    */
   public LoginController(MyView view) {
     this.view = view;
