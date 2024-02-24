@@ -7,31 +7,50 @@ package appication;
  *
  */
 public class MenuController {
+  /**
+   * This constructor.
+   * 
+   * @param menuView object menuView.
+   */
+  public MenuController(MenuView menuView) {
 
-
-
+  }
 
   /**
-   * This constructor is controlelr between GUI and Model.
+   * This method handle the SignOut page.
    * 
-   * @param viewM is the object of menu view the handle all buttons' event.
+   * 
    */
-  public MenuController(MenuView viewM) {
-   
-
-  }
-
   void handleSignOut() {
-    MyView viewM = new MyView();
-    Driver.setScene(viewM.start(), "LoginPage");
-
-
-
+    MyView viewL = new MyView();
+    Driver.setScene(viewL.start(), "LoginPage");
   }
 
+  /**
+   * This method handle the inventory page.
+   */
   void handleInventory() {
     InventoryView viewI = new InventoryView();
     Driver.setScene(viewI.start(), "InventoryPage");
+
   }
+
+  /**
+   * This method handle the review page.
+   */
+  void handleReview() {
+    ReviewView viewR = new ReviewView();
+    Driver.setScene(viewR.start(), "ReviewPage");
+  }
+
+  /**
+   * This method handle the review list page.
+   */
+  void handleReviewList() {
+    ReviewListView viewLR = new ReviewListView();
+    Driver.setScene(viewLR.start(), "ReviewListPage");
+  }
+
+
 
 }

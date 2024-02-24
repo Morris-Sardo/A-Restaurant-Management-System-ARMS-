@@ -2,17 +2,12 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appication.MenuView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appication.MenuView">
    <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <Button fx:id="dashboardBtn" layoutX="23.0" layoutY="90.0" mnemonicParsing="false" text="dashborad" />
-            <Button fx:id="reviewBtn" layoutX="23.0" layoutY="132.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="73.0" text="review" />
-            <Button fx:id="inventoryBtn" layoutX="23.0" layoutY="175.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="74.0" text="inventory" />
-            <Button fx:id="signOutBtn" layoutX="23.0" layoutY="337.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="74.0" text="SignOut" />
-         </children>
-      </AnchorPane>
+      <Button fx:id="signuotBtn" layoutX="261.0" layoutY="181.0" mnemonicParsing="false" text="SignOut" />
+      <Button fx:id="inventoryBtn" layoutX="265.0" layoutY="222.0" mnemonicParsing="false" text="inventory" />
+      <Button fx:id="reviewListBtn" layoutX="265.0" layoutY="271.0" mnemonicParsing="false" text="reviewList" />
+      <Button fx:id="reviewBtn" layoutX="261.0" layoutY="325.0" mnemonicParsing="false" text="review" />
    </children>
-</StackPane>
+</AnchorPane>

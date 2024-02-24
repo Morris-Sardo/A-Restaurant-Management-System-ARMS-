@@ -16,7 +16,7 @@ import javafx.scene.control.Button;
 public class MenuView {
 
   @FXML
-  private Button dashboardBtn;
+  private Button signuotBtn;
 
   @FXML
   private Button inventoryBtn;
@@ -25,38 +25,35 @@ public class MenuView {
   private Button reviewBtn;
 
   @FXML
-  private Button signOutBtn;
+  private Button reviewListBtn;
 
 
   /**
-   * This method start the menu page scene.
+   * Creates & returns the scene to be used for this page.
    * 
-   * @return the scene.
+   * @return The dashboard scene.
    */
   public Scene start() {
     Parent root;
     try {
       root = FXMLLoader.load(getClass().getResource("menuPage.fxml"));
-      Scene scene = new Scene(root, 1100, 600);
+      Scene scene = new Scene(root, 600, 400);
       return scene;
     } catch (IOException e) {
       e.printStackTrace();
       return null;
-
     }
-
   }
 
   /**
-   * This method initialize the buttons event.
+   * this isniziliaze all button.
    */
   @FXML
-  public void initilaize() {
+  public void initialize() {
     MenuController menuController = new MenuController(this);
-    signOutBtn.setOnAction(event -> menuController.handleSignOut());
+    signuotBtn.setOnAction(event -> menuController.handleSignOut());
     inventoryBtn.setOnAction(event -> menuController.handleInventory());
+    reviewBtn.setOnAction(event -> menuController.handleReview());
+    reviewListBtn.setOnAction(event -> menuController.handleReviewList());
   }
-
-
-
 }
