@@ -54,11 +54,11 @@ public class DashBoardController {
   }
 
   /**
-   * This methos handle review page.
+   * This methos handle review list page.
    */
   void handleReview() {
-    ReviewView viewR = new ReviewView();
-    Driver.setScene(viewR.start(), "ReviewPage");
+    ReviewListView viewLR = new ReviewListView();
+    Driver.setScene(viewLR.start(), "ReviewPage");
 
   }
 
