@@ -33,7 +33,7 @@ public class ReviewController {
   void handleSignOut() {
     MyView view = new MyView();
     LoginController loginPageController = new LoginController(view);
-    Driver.setScene(view.start(), "LoginPage");
+    Driver.setScene(view.start(), TitlePage.LOGIN_PAGE);
   }
 
   /**
@@ -42,7 +42,7 @@ public class ReviewController {
   void handleInventory() {
     InventoryView viewI = new InventoryView();
     InventoryController inventoryController = new InventoryController(viewI);
-    Driver.setScene(viewI.start(), "InventroyPage");
+    Driver.setScene(viewI.start(), TitlePage.INVENTROY_PAGE);
   }
 
 

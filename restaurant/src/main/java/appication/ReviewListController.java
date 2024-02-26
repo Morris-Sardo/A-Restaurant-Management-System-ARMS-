@@ -22,7 +22,7 @@ public class ReviewListController {
    */
   void handleSignOut() {
     MyView view = new MyView();
-    Driver.setScene(view.start(), "Login Page");
+    Driver.setScene(view.start(), TitlePage.LOGIN_PAGE);
   }
 
 

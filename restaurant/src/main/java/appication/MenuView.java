@@ -53,7 +53,6 @@ public class MenuView {
     MenuController menuController = new MenuController(this);
     signuotBtn.setOnAction(event -> menuController.handleSignOut());
     inventoryBtn.setOnAction(event -> menuController.handleInventory());
-    reviewBtn.setOnAction(event -> menuController.handleReview());
     reviewListBtn.setOnAction(event -> menuController.handleReviewList());
   }
 }

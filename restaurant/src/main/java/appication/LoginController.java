@@ -48,7 +48,7 @@ public class LoginController {
 
           DashBoardMyView mainPage = new DashBoardMyView();
           DashBoardController mainPageController = new DashBoardController(mainPage);
-          Driver.setScene(mainPage.start(), "DashboardPage");
+          Driver.setScene(mainPage.start(), TitlePage.DASHBOARD_PAGE);
 
         } else {
           view.alert(AlertType.ERROR, "Error Message", "Incorrect Email Adderss/passowrd!");
@@ -152,6 +152,16 @@ public class LoginController {
       view.alert(AlertType.ERROR, "Error Message", "Please insert the same password");
     }
 
+
+
+  }
+
+  /**
+   * This method handle menu button for customer.
+   */
+  void handleCusotmerMenu() {
+    MenuCostumerView viewMC = new MenuCostumerView();
+    Driver.setScene(viewMC.start(), TitlePage.MENU_PAGE_COSTUMER);
 
 
   }

@@ -21,7 +21,7 @@ public class Driver extends Application {
     // create default view
     MyView view = new MyView();
     // ready to show
-    Driver.setScene(view.start(), "LoginPage");
+    Driver.setScene(view.start(), TitlePage.LOGIN_PAGE);
     stage.show();
   }
 
@@ -29,11 +29,11 @@ public class Driver extends Application {
    * This method set new scene.
    * 
    * @param scene new scene.
-   * @param title of the the scene.
+   * @param title of the the scene
    */
-  public static void setScene(Scene scene, String title) {
+  public static void setScene(Scene scene, TitlePage title) {
     stage.setScene(scene);
-    stage.setTitle(title);
+    stage.setTitle(title.toString());
     stage.centerOnScreen();
   }
 

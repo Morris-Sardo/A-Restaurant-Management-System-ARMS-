@@ -23,7 +23,7 @@ public class MenuController {
    */
   void handleSignOut() {
     MyView viewL = new MyView();
-    Driver.setScene(viewL.start(), "LoginPage");
+    Driver.setScene(viewL.start(), TitlePage.LOGIN_PAGE);
   }
 
   /**
@@ -31,24 +31,17 @@ public class MenuController {
    */
   void handleInventory() {
     InventoryView viewI = new InventoryView();
-    Driver.setScene(viewI.start(), "InventoryPage");
+    Driver.setScene(viewI.start(), TitlePage.INVENTROY_PAGE);
 
   }
 
-  /**
-   * This method handle the review page.
-   */
-  void handleReview() {
-    ReviewView viewR = new ReviewView();
-    Driver.setScene(viewR.start(), "ReviewPage");
-  }
 
   /**
    * This method handle the review list page.
    */
   void handleReviewList() {
     ReviewListView viewLR = new ReviewListView();
-    Driver.setScene(viewLR.start(), "ReviewListPage");
+    Driver.setScene(viewLR.start(), TitlePage.REVIEW_PAGE);
   }
 
 

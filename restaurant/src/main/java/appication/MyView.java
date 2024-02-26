@@ -55,16 +55,20 @@ public class MyView implements ViewInterface {
   @FXML
   public void initialize() {
     LoginController loginController = new LoginController(this);
-    //replacements for observers - assumes controller has the relevant methods
+    // replacements for observers - assumes controller has the relevant methods
     siLoginBtn.setOnAction(event -> loginController.hanldeLogin());
     suSignupBtn.setOnAction(event -> loginController.handleSignUp());
     siForgotPass.setOnAction(event -> loginController.handleForgotPass());
     fpProceedBtn.setOnAction(event -> loginController.handleAnswer());
     npChangePassBtn.setOnAction(event -> loginController.handleChangePassword());
+    customerBtn.setOnAction(event -> loginController.handleCusotmerMenu());
   }
 
   @FXML
   private Label askSecurityQuestion;
+
+  @FXML
+  private Button customerBtn;
 
   @FXML
   private TextField fpAnswer;

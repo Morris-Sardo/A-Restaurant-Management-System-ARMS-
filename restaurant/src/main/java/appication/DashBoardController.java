@@ -32,7 +32,7 @@ public class DashBoardController {
    */
   void handleSignOut() {
     MyView viewL = new MyView();
-    Driver.setScene(viewL.start(), "LoginPage");
+    Driver.setScene(viewL.start(), TitlePage.LOGIN_PAGE);
   }
 
 
@@ -41,7 +41,7 @@ public class DashBoardController {
    */
   void handleInventory() {
     InventoryView viewI = new InventoryView();
-    Driver.setScene(viewI.start(), "InventoryPage");
+    Driver.setScene(viewI.start(), TitlePage.INVENTROY_PAGE);
 
   }
 
@@ -50,7 +50,7 @@ public class DashBoardController {
    */
   void handleMenu() {
     MenuView viewM = new MenuView();
-    Driver.setScene(viewM.start(), "MenuPage");
+    Driver.setScene(viewM.start(), TitlePage.MENU_PAGE);
   }
 
   /**
@@ -58,7 +58,7 @@ public class DashBoardController {
    */
   void handleReview() {
     ReviewListView viewLR = new ReviewListView();
-    Driver.setScene(viewLR.start(), "ReviewPage");
+    Driver.setScene(viewLR.start(), TitlePage.REVIEW_PAGE);
 
   }
 

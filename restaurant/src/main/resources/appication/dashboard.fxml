@@ -28,7 +28,6 @@
                               <String fx:value="white-background" />
                            </styleClass>
                            <children>
-                              <Button fx:id="costumerBtn" layoutX="523.0" layoutY="319.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" text="CUSTOMER" textFill="WHITE" />
                               <Label alignment="TOP_CENTER" layoutX="181.0" layoutY="95.0" prefHeight="70.0" prefWidth="542.0" text="MEX EAT RESTAURANT" textFill="WHITE">
                                  <font>
                                     <Font name="Bauhaus 93" size="48.0" />

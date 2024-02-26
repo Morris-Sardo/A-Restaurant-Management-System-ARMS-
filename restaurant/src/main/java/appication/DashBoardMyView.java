@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
 /**
- * This class is the vaiew of the main page application.
+ * This class is the view of the main page application.
  * 
  * @author papap
  *
@@ -52,9 +52,9 @@ public class DashBoardMyView {
       return null;
     }
   }
-  
+
   /**
-   * this isniziliaze all button.
+   * This iniziliaze all button.
    */
   @FXML
   public void initialize() {
@@ -63,8 +63,8 @@ public class DashBoardMyView {
     menuBtn.setOnAction(event -> dashController.handleMenu());
     inventoryBtn.setOnAction(event -> dashController.handleInventory());
     reviewBtn.setOnAction(event -> dashController.handleReview());
-    
-    
+
+
   }
 
 }
