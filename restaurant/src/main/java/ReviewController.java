@@ -20,6 +20,9 @@ public class ReviewController {
 
   @FXML
   private TextArea reviewTextArea;
+  
+  @FXML
+  private TextField username;
 
   @FXML
   private Button submitButton;
@@ -74,6 +77,23 @@ public class ReviewController {
       showAlertReview("Maximum character limit (500) reached.");
     }
   }
+  
+  @FXML
+  private void handleUsername(KeyEvent event) {
+    // Check validity of the name
+    if(username == null) {
+      showAlertNullUsername("Please Enter a Username:");
+    }
+  }
+  
+  private void showAlertNullUsername(String message) {
+    Alert alert = new Alert(Alert.AlertType.WARNING);
+    alert.setTitle("Empty Username box");
+    alert.setHeaderText(null);
+    alert.setContentText(message);
+    alert.showAndWait();
+    
+  }
 
   private void showAlertStars(String message) {
     Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -96,6 +116,7 @@ public class ReviewController {
     // Get data from UI elements
     String reviewText = reviewTextArea.getText();
     float stars = Float.parseFloat(starsTextField.getText());
+    String userName = username.getText();
 
     try {
       Connection connection = ConnectionToDB.connectToDatabase();
@@ -104,7 +125,7 @@ public class ReviewController {
 
       try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
         // Assuming getUsernameLogin is a method in the view class
-        preparedStatement.setString(1, "Testy McTest");
+        preparedStatement.setString(1, userName);
         preparedStatement.setFloat(2, stars);
         preparedStatement.setString(3, reviewText);
 

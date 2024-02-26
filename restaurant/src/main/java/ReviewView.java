@@ -21,6 +21,9 @@ public class ReviewView extends Application {
 
   @FXML
   private TextArea reviewTextArea;
+  
+  @FXML
+  private TextField username;
 
   @FXML
   private Button submitButton;
