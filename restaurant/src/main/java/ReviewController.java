@@ -20,7 +20,7 @@ public class ReviewController {
 
   @FXML
   private TextArea reviewTextArea;
-  
+
   @FXML
   private TextField username;
 
@@ -45,8 +45,7 @@ public class ReviewController {
    * The Constructor.
    * 
    */
-  public ReviewController() {
-  }
+  public ReviewController() {}
 
   @FXML
   private void handleStarsInput(KeyEvent event) {
@@ -77,22 +76,30 @@ public class ReviewController {
       showAlertReview("Maximum character limit (500) reached.");
     }
   }
-  
+
   @FXML
   private void handleUsername(KeyEvent event) {
-    // Check validity of the name
     if(username == null) {
       showAlertNullUsername("Please Enter a Username:");
     }
   }
-  
+
+  private void showAlertName(String message) {
+    Alert alert = new Alert(Alert.AlertType.WARNING);
+    alert.setTitle("Username Already Taken");
+    alert.setHeaderText(null);
+    alert.setContentText(message);
+    alert.showAndWait();
+    
+  }
+
   private void showAlertNullUsername(String message) {
     Alert alert = new Alert(Alert.AlertType.WARNING);
     alert.setTitle("Empty Username box");
     alert.setHeaderText(null);
     alert.setContentText(message);
     alert.showAndWait();
-    
+
   }
 
   private void showAlertStars(String message) {
@@ -137,7 +144,7 @@ public class ReviewController {
       connection.close();
     } catch (SQLException e) {
       e.printStackTrace(); // Handle the exception appropriately
-      showAlertReview("Error submitting review. Please try again.");
+      showAlertName("Please choose another username, perhaps " + userName + (int)Math.random() );
     }
   }
 }
