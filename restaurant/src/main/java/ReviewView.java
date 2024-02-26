@@ -21,7 +21,7 @@ public class ReviewView extends Application {
 
   @FXML
   private TextArea reviewTextArea;
-  
+
   @FXML
   private TextField username;
 
@@ -44,8 +44,8 @@ public class ReviewView extends Application {
     primaryStage.setScene(scene);
     primaryStage.show();
   }
-  
-  
+
+
 
   private static volatile ReviewView instance = null;
 

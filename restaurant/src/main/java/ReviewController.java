@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import java.util.Random;
 
 /**
  * The controller class for the Review Page.
@@ -79,7 +80,7 @@ public class ReviewController {
 
   @FXML
   private void handleUsername(KeyEvent event) {
-    if(username == null) {
+    if (username == null) {
       showAlertNullUsername("Please Enter a Username:");
     }
   }
@@ -90,7 +91,7 @@ public class ReviewController {
     alert.setHeaderText(null);
     alert.setContentText(message);
     alert.showAndWait();
-    
+
   }
 
   private void showAlertNullUsername(String message) {
@@ -143,8 +144,10 @@ public class ReviewController {
 
       connection.close();
     } catch (SQLException e) {
+      Random random = new Random();
       e.printStackTrace(); // Handle the exception appropriately
-      showAlertName("Please choose another username, perhaps " + userName + (int)Math.random() );
+      showAlertName("Please choose another username, perhaps " + userName + random.nextInt(999));
+
     }
   }
 }

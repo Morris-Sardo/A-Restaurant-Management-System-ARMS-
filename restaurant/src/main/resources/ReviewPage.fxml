@@ -111,8 +111,9 @@
 								<TextField fx:id="starsTextField" layoutX="116.0"
 									layoutY="195.0" onKeyTyped="#handleStarsInput"
 									promptText="How many Stars? (1-5)" />
-								<TextField fx:id="username" layoutX="116.0" layoutY="143.0"
-									prefHeight="25.0" prefWidth="210.0" promptText="Name..." />
+								<TextField fx:id="username" layoutX="116.0"
+									layoutY="143.0" prefHeight="25.0" prefWidth="210.0"
+									promptText="Name..." />
 							</children>
 						</AnchorPane>
 					</center>
