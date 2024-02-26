@@ -20,6 +20,7 @@ public class Staff {
 
   /**
    * The constructor for the Staff object.
+   * 
    * @param connection the connection to the database that will be used
    * @param staffUsername the username of the Staff
    */
@@ -195,7 +196,7 @@ public class Staff {
    * 
    * @param tableNumber the table number of the bill to be changed
    */
-  public void concludeBill(int tableNumber) 
+  public void concludeBill(int tableNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
     String change = "UPDATE bills SET status = 'Completed' WHERE (table_number = "
         + Integer.toString(tableNumber) + " AND status == 'Requested'";
@@ -209,7 +210,7 @@ public class Staff {
    * 
    * @param tableNumber the table number of the complaint to be changed
    */
-  public void concludeComplaint(int tableNumber) 
+  public void concludeComplaint(int tableNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
     String change = "UPDATE complaints SET status = 'Completed' WHERE (table_number = "
         + Integer.toString(tableNumber) + " AND status == 'Requested'";
@@ -217,7 +218,7 @@ public class Staff {
       update.executeUpdate();
     }
   }
-  
+
   /**
    * Sets an order as ready to collect.
    * 
@@ -233,4 +234,46 @@ public class Staff {
       statement.executeUpdate();
     }
   }
+
+  /**
+   * Adds a new item to the database.
+   * 
+   * @param itemNumber the unique ID number of the item
+   * @param item the name of the item
+   * @param price the price of the item
+   * @param allergies the possible allergies of the item
+   * @param calories the calories of the item
+   * @param tags any features of the item to be searcheds
+   * @param stock the number of items preparable
+   * @throws SQLException when an error with insertion occurs
+   */
+  public void addItem(int itemNumber, String item, float price, String allergies, float calories,
+      String tags, int stock) throws SQLException {
+    String newItem = "INSERT INTO items VALUES (?, '?', ?, '?', ?, ?, '?', ?);";
+    try (PreparedStatement insertion = connection.prepareStatement(newItem)) {
+      insertion.setInt(1, itemNumber);
+      insertion.setString(2, item);
+      insertion.setFloat(3, price);
+      insertion.setString(4, allergies);
+      insertion.setFloat(5, calories);
+      insertion.setString(6, tags);
+      insertion.setInt(7, stock);
+
+      insertion.executeUpdate();
+    }
+  }
+
+  public void deleteItem(int itemNumber) {
+
+  }
+
+  public void updateItem(int itemNumber, String item, float price, String allergies, float calories,
+      String tags, int stock) {
+
+  }
+
+  public Boolean itemCheck(int itemNumber) {
+    return false;
+  }
+
 }
