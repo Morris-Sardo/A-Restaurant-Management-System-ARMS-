@@ -14,6 +14,9 @@ import javafx.scene.control.Button;
  *
  */
 public class MenuView {
+  
+  @FXML
+  private Button dashboardBtn;
 
   @FXML
   private Button signuotBtn;
@@ -54,5 +57,6 @@ public class MenuView {
     signuotBtn.setOnAction(event -> menuController.handleSignOut());
     inventoryBtn.setOnAction(event -> menuController.handleInventory());
     reviewListBtn.setOnAction(event -> menuController.handleReviewList());
+    dashboardBtn.setOnAction(event -> menuController.handledashboard());
   }
 }

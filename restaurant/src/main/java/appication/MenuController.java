@@ -43,6 +43,14 @@ public class MenuController {
     ReviewListView viewLR = new ReviewListView();
     Driver.setScene(viewLR.start(), TitlePage.REVIEW_PAGE);
   }
+  
+  /**
+   * This method handle the dashboard page.
+   */
+  void handledashboard() {
+    DashBoardMyView viewD = new DashBoardMyView();
+    Driver.setScene(viewD.start(), TitlePage.DASHBOARD_PAGE);
+  }
 
 
 
