@@ -263,8 +263,17 @@ public class Staff {
     }
   }
 
-  public void deleteItem(int itemNumber) {
-
+  /**
+   * Deletes an item from the database.
+   * 
+   * @param itemNumber the unique ID number of the item to be deleted
+   * @throws SQLException when an error with deletion occurs
+   */
+  public void deleteItem(int itemNumber) throws SQLException {
+    String deletedItem = "DELETE FROM items WHERE item_number = " + Integer.toString(itemNumber);
+    try (PreparedStatement deletion = connection.prepareStatement(deletedItem)) {
+      deletion.executeUpdate();
+    }
   }
 
   public void updateItem(int itemNumber, String item, float price, String allergies, float calories,
