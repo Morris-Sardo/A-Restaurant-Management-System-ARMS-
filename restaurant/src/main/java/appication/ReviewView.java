@@ -22,11 +22,9 @@ public class ReviewView {
   @FXML
   private Button backBtn;
 
-  @FXML
-  private Button inventoryBtn;
 
   @FXML
-  private Button menuBtn;
+  private Button menuCostumerBtn;
 
   @FXML
   private TextField stratField;
@@ -71,7 +69,8 @@ public class ReviewView {
   public void initialize() {
     ReviewController review = new ReviewController(this);
     backBtn.setOnAction(event -> review.handleSignOut());
-    inventoryBtn.setOnAction(event -> review.handleInventory());
+    menuCostumerBtn.setOnAction(event -> review.handleMenuCostument());
+    
   }
 
 }

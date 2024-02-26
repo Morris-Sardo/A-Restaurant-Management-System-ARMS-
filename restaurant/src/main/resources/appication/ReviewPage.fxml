@@ -43,8 +43,7 @@
 										</Label>
 										<Button layoutX="6.0" layoutY="223.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="REVIEW" textFill="WHITE" />
 										<Button fx:id="inventoryBtn" layoutX="6.0" layoutY="287.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="INVENTORY" textFill="WHITE" />
-										<Button fx:id="menuBtn" layoutX="6.0" layoutY="346.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MENU" textFill="#f8f8f8" />
-										<Button layoutX="6.0" layoutY="405.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="CUSTOMER" textFill="#f8f8f8" />
+										<Button fx:id="menuCostumerBtn" layoutX="6.0" layoutY="346.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MENU" textFill="#f8f8f8" />
 										<Button fx:id="backBtn" layoutX="14.0" layoutY="549.0" mnemonicParsing="false" stylesheets="@MenuDesign.css" AnchorPane.bottomAnchor="12.0">
 											<graphic>
 												<ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">

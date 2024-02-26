@@ -37,13 +37,13 @@ public class ReviewController {
   }
 
   /**
-   * This hanlde inventoryBtn.
+   * This method handle menu costumer button.
    */
-  void handleInventory() {
-    InventoryView viewI = new InventoryView();
-    InventoryController inventoryController = new InventoryController(viewI);
-    Driver.setScene(viewI.start(), TitlePage.INVENTROY_PAGE);
+  void handleMenuCostument() {
+    MenuCostumerView viewMC = new MenuCostumerView();
+    Driver.setScene(viewMC.start(), TitlePage.MENU_PAGE_COSTUMER);
   }
+
 
 
 }
