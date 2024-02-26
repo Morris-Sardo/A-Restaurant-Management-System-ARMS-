@@ -21,9 +21,8 @@ import javafx.scene.layout.AnchorPane;
 public class InventoryView {
 
 
-
   @FXML
-  private AnchorPane inventoryPage;
+  private Button dashboardBtn;
 
   @FXML
   private Button customerBtn;
@@ -111,6 +110,7 @@ public class InventoryView {
     signOutBtn.setOnAction(event -> inventoryController.handleSignOut());
     menuBtn.setOnAction(event ->inventoryController.handleMenu());
     reviewBtn.setOnAction(event -> inventoryController.handleReview());
+    dashboardBtn.setOnAction(event -> inventoryController.handledashboard());
   }
 
 
