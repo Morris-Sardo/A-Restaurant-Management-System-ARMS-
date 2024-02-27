@@ -249,7 +249,7 @@ public class Staff {
    */
   public void addItem(int itemNumber, String item, float price, String allergies, float calories,
       String tags, int stock) throws SQLException {
-    String newItem = "INSERT INTO items VALUES (?, '?', ?, '?', ?, ?, '?', ?);";
+    String newItem = "INSERT INTO items VALUES (?, '?', ?, '?', ?, ?, '?', ?)";
     try (PreparedStatement insertion = connection.prepareStatement(newItem)) {
       insertion.setInt(1, itemNumber);
       insertion.setString(2, item);
@@ -292,8 +292,7 @@ public class Staff {
       String tags, int stock) throws SQLException {
     String updatedItem =
         "UPDATE items SET item_number = ?, item_name = ?, price = ?, allergies = ?, calories = ?, "
-        + "tags = ?, stock = ? WHERE item_number = "
-            + Integer.toString(itemNumber);
+            + "tags = ?, stock = ? WHERE item_number = " + Integer.toString(itemNumber);
     try (PreparedStatement update = connection.prepareStatement(updatedItem)) {
       update.setInt(1, itemNumber);
       update.setString(2, item);
@@ -307,8 +306,20 @@ public class Staff {
     }
   }
 
-  public Boolean itemCheck(int itemNumber) {
-    return false;
+  /**
+   * Finds if an item with the itemNumber already exists.
+   * 
+   * @param itemNumber the unique ID number of the item
+   * @return whether the item is already in the database
+   * @throws SQLException when an error with searching occurs
+   */
+  public Boolean itemCheck(int itemNumber) throws SQLException {
+    String itemSearch =
+        "SELECT item_number FROM items WHERE item_number =" + Integer.toString(itemNumber);
+    try (PreparedStatement search = connection.prepareStatement(itemSearch)) {
+      ResultSet resultSet = search.executeQuery();
+      return resultSet.isBeforeFirst();
+    }
   }
 
 }
