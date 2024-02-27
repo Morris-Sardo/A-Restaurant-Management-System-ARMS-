@@ -276,9 +276,35 @@ public class Staff {
     }
   }
 
+  /**
+   * Updates the information for an intem in the database.
+   * 
+   * @param itemNumber the unique ID number of the item to be updated
+   * @param item the new name for the item
+   * @param price the new price for the item
+   * @param allergies the new allergies for the item
+   * @param calories the new amount of calories for the item
+   * @param tags the new tags for the item
+   * @param stock the new amount of stock for the item
+   * @throws SQLException when an error with updating the database occurs
+   */
   public void updateItem(int itemNumber, String item, float price, String allergies, float calories,
-      String tags, int stock) {
+      String tags, int stock) throws SQLException {
+    String updatedItem =
+        "UPDATE items SET item_number = ?, item_name = ?, price = ?, allergies = ?, calories = ?, "
+        + "tags = ?, stock = ? WHERE item_number = "
+            + Integer.toString(itemNumber);
+    try (PreparedStatement update = connection.prepareStatement(updatedItem)) {
+      update.setInt(1, itemNumber);
+      update.setString(2, item);
+      update.setFloat(3, price);
+      update.setString(4, allergies);
+      update.setFloat(5, calories);
+      update.setString(6, tags);
+      update.setInt(7, stock);
 
+      update.executeUpdate();
+    }
   }
 
   public Boolean itemCheck(int itemNumber) {
