@@ -14,14 +14,17 @@ import javafx.stage.Stage;
 /**
  * This this class.
  * 
- * @author papap
+ * @author papap, Zain Akhtar.
  *
  */
 public class ReviewView {
 
+
+  @FXML
+  private TextField nickName;
+
   @FXML
   private Button backBtn;
-
 
   @FXML
   private Button menuCostumerBtn;
@@ -39,6 +42,8 @@ public class ReviewView {
 
   private Scene scene;
 
+
+  MyView view = new MyView();
 
 
   /**
@@ -70,8 +75,71 @@ public class ReviewView {
     ReviewController review = new ReviewController(this);
     backBtn.setOnAction(event -> review.handleSignOut());
     menuCostumerBtn.setOnAction(event -> review.handleMenuCostument());
-    
+    submitBtn.setOnAction(event -> review.handleSubmissionButton());
+
   }
+
+
+  /**
+   * This method clean up all the the fielad after used.
+   */
+  public void setAllFieldReviewClean() {
+    stratField.setText("");
+    textReview.setText("");
+    nickName.setText("");
+  }
+
+
+  /**
+   * This method return starts form the field.
+   * 
+   * @return nickname.
+   */
+
+  public String getNickNameTextField() {
+    if (nickName == null) {
+      return "";
+    } else {
+      return nickName.getText();
+    }
+  }
+
+  /**
+   * This method return starts form the field.
+   * 
+   * @return starts.
+   */
+
+  public int getStarTestField() {
+    if (stratField == null) {
+      return -1;
+    } else {
+      try {
+        return Integer.parseInt(stratField.getText());
+      } catch (Exception e) {
+        return -1;
+      }
+      
+    }
+  }
+
+  /**
+   * This method retrive the review text field.
+   * 
+   * @return text.
+   */
+
+  public String getTextReview() {
+    if (textReview == null) {
+      return "";
+
+    } else {
+      return textReview.getText();
+    }
+
+  }
+
+
 
 }
 

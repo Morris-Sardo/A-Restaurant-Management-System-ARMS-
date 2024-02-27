@@ -2,6 +2,8 @@ package appication;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 /**
@@ -39,6 +41,20 @@ public class Driver extends Application {
 
   public static DataBaseModel getDBconnection() {
     return connection;
+  }
+  
+  /**
+   * Method for all aler.
+   * @param type of dialogue.
+   * @param title of the window.
+   * @param contentText content of alert.
+   */
+  public static void alert(AlertType type, String title, String contentText) {
+    Alert alert = new Alert(type);
+    alert.setTitle(title);
+    alert.setHeaderText(null);
+    alert.setContentText(contentText);
+    alert.showAndWait();
   }
 
   public static void main(String[] args) {

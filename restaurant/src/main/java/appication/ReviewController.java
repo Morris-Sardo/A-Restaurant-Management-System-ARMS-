@@ -1,16 +1,20 @@
 package appication;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
 /**
  * This class it will the controlloer between GUI review page the model and the other page.
  * 
- * @author papap
+ * @author papap Zain Akhtar.
  *
  */
 
 public class ReviewController {
 
-
+  private MyView view;
   private ReviewView viewR;
+  private ReviewModel reviewModel;
   @SuppressWarnings("unused")
   private DataBaseModel connection;
 
@@ -21,6 +25,7 @@ public class ReviewController {
    */
   public ReviewController(ReviewView viewR) {
     this.viewR = viewR;
+    this.reviewModel = new ReviewModel();
     this.connection = Driver.getDBconnection();
 
 
@@ -42,6 +47,28 @@ public class ReviewController {
   void handleMenuCostument() {
     MenuCostumerView viewMC = new MenuCostumerView();
     Driver.setScene(viewMC.start(), TitlePage.MENU_PAGE_COSTUMER);
+  }
+
+  /**
+   * This method handle the submission button for the review.
+   */
+  void handleSubmissionButton() {
+    if (viewR.getTextReview().isEmpty() || viewR.getNickNameTextField().isEmpty()) {
+      Driver.alert(Alert.AlertType.ERROR, "Error Message", "Please fill all the blank fields");
+    } else if (viewR.getTextReview().length() > 500) {
+      Driver.alert(Alert.AlertType.ERROR, "Error Message", "Text must be maximum 10 characters");
+    } else if (viewR.getStarTestField() > 5 || viewR.getStarTestField() < 0) {
+      Driver.alert(Alert.AlertType.ERROR, "Error Message", "Insert a correct stars");
+    } else {
+      reviewModel.handleSubmitButtonClicked(viewR.getNickNameTextField(),
+          viewR.getStarTestField() + "", viewR.getTextReview());
+      Driver.alert(AlertType.INFORMATION, "Information Message", "Review submitted successfully!");
+      viewR.setAllFieldReviewClean();
+
+    }
+
+
+
   }
 
 
