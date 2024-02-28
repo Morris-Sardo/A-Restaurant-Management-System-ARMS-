@@ -71,10 +71,10 @@ public class menuView extends Application {
   private Button inventory;
 
   @FXML
-  private Button logout;
+  private Button menu;
 
   @FXML
-  private Button menu;
+  private ImageView out_btn;
 
   @FXML
   private Button receiptButton;
@@ -84,12 +84,12 @@ public class menuView extends Application {
 
   @FXML
   private Button review;
-  
-  @FXML
-  private ImageView out_btn;
-  
+
   @FXML
   private Label username;
+
+
+
 
   private Alert alert;
 
