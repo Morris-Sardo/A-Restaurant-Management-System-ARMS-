@@ -1,33 +1,51 @@
 package main.java.backend;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class featuretable {
-    private final Connection connection;
 
-    public featuretable(int waiterID, Connection connection) {
-        this.connection = connection;
+    private Connection connect() {
+        // Placeholder for our database connection details
+        String url = "jdbc:postgresql://localhost:5432/teamproject15";
+        String user = "teamproject15";
+        String password = "quogai";
+
+        try {
+            return DriverManager.getConnection(url, user, password);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
-    // Method to view tables marked as available
-    public ArrayList<Integer> viewTables() throws SQLException {
-        ArrayList<Integer> availableTables = new ArrayList<>();
-        String query = "SELECT table_number from Tables where available = true";
+    public List<Integer> viewAvailableTables() {
+        List<Integer> availableTables = new ArrayList<>();
+        String SQL = "SELECT table_number frrom tables where available = TRUE";
 
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query);
-             ResultSet resultSet = preparedStatement.executeQuery()) {
-            while (resultSet.next()) {
-                int tableNumber = resultSet.getInt("table_number");
-                availableTables.add(tableNumber);
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(SQL);
+             ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+                availableTables.add(rs.getInt("table_number"));
             }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         return availableTables;
     }
+
+
+public void concludeBill(int tableNumber) {
+  String updateBillSQL="update set satutus ='Paid'";
+}
 }
     
 
