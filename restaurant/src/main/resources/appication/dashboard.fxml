@@ -12,7 +12,7 @@
 
 <StackPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" opacity="0.75" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@myView.css" />
+      <AnchorPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" opacity="0.75" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@../dash-resource/dash.css" />
       <AnchorPane prefHeight="600.0" prefWidth="900.0">
          <children>
             <BorderPane prefHeight="600.0" prefWidth="900.0">
@@ -29,7 +29,7 @@
                               <String fx:value="white-background" />
                            </styleClass>
                            <children>
-                              <Button layoutX="523.0" layoutY="319.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="CUSTOMER" textFill="WHITE" />
+                              <Button layoutX="523.0" layoutY="319.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@../dash-resource/dash.css" text="CUSTOMER" textFill="WHITE" />
                               <Label alignment="TOP_CENTER" layoutX="181.0" layoutY="95.0" prefHeight="70.0" prefWidth="542.0" stylesheets="@dash.css" text="MEX EAT RESTAURANT" textFill="WHITE">
                                  <font>
                                     <Font name="Bauhaus 93" size="48.0" />
@@ -39,9 +39,9 @@
                                     <String fx:value="restaurant-title" />
                                  </styleClass>
                               </Label>
-                              <Button layoutX="179.0" layoutY="319.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="REVIEW" textFill="WHITE" />
-                              <Button layoutX="523.0" layoutY="378.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="INVENTORY" textFill="WHITE" />
-                              <Button layoutX="179.0" layoutY="378.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MENU" textFill="WHITE" />
+                              <Button layoutX="179.0" layoutY="319.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@../dash-resource/dash.css" text="REVIEW" textFill="WHITE" />
+                              <Button layoutX="523.0" layoutY="378.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@../dash-resource/dash.css" text="INVENTORY" textFill="WHITE" />
+                              <Button layoutX="179.0" layoutY="378.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@../dash-resource/dash.css" text="MENU" textFill="WHITE" />
                               <Button layoutX="84.0" layoutY="513.0" mnemonicParsing="false" stylesheets="@MenuDesign.css">
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
