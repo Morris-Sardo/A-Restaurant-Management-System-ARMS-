@@ -1,11 +1,16 @@
 package appication;
 
+
 import java.io.IOException;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * This class is the view of review list page.
@@ -15,8 +20,27 @@ import javafx.scene.control.Button;
  */
 public class ReviewListView {
 
+
+
+  @FXML
+  private TableColumn<Review, String> commentTable;
+
+  @FXML
+  private TableColumn<Review, Integer> idTable;
+
+  @FXML
+  private TableColumn<Review, String> nameTable;
+
   @FXML
   private Button signOutBtn;
+  //
+  @FXML
+  private TableColumn<Review, Integer> starsTable;
+  //
+  @FXML
+  private TableView<Review> tableView;
+
+
 
   /**
    * This method start the ReviewListPage.
@@ -40,9 +64,15 @@ public class ReviewListView {
    */
   @FXML
   public void initialize() {
-    ReviewListController inventoryController = new ReviewListController(this);
-    signOutBtn.setOnAction(event -> inventoryController.handleSignOut());
-
+    ReviewListController reviewListController = new ReviewListController(this);
+    signOutBtn.setOnAction(event -> reviewListController.handleSignOut());
+    idTable.setCellValueFactory(new PropertyValueFactory("ID"));
+    nameTable.setCellValueFactory(new PropertyValueFactory("name"));
+    starsTable.setCellValueFactory(new PropertyValueFactory("stars"));
+    commentTable.setCellValueFactory(new PropertyValueFactory("comment"));
+    tableView.setItems(ReviewListModel.getRating1Table());
   }
+
+
 
 }

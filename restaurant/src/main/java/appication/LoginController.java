@@ -37,10 +37,10 @@ public class LoginController {
    */
   public void hanldeLogin() {
     if (view.getUserNameLogin().isEmpty() || view.getPassowrdLogin().isEmpty()) {
-      view.alert(AlertType.ERROR, "Error Message", "Please fill all the blank fields");
+      Driver.alert(AlertType.ERROR, "Error Message", "Please fill all the blank fields");
 
     } else if (!view.getUserNameLogin().contains("@")) {
-      view.alert(AlertType.ERROR, "Error Message", "Please type a valid Email");
+      Driver.alert(AlertType.ERROR, "Error Message", "Please type a valid Email");
     } else {
       try {
         if (DataBaseModel.getRightLogin(view.getUserNameLogin(), view.getPassowrdLogin())) {
@@ -51,7 +51,7 @@ public class LoginController {
           Driver.setScene(mainPage.start(), TitlePage.DASHBOARD_PAGE);
 
         } else {
-          view.alert(AlertType.ERROR, "Error Message", "Incorrect Email Adderss/passowrd!");
+          Driver.alert(AlertType.ERROR, "Error Message", "Incorrect Email Adderss/passowrd!");
 
 
         }
@@ -70,20 +70,20 @@ public class LoginController {
   void handleSignUp() {
     if (view.getUserNameRegistration().isEmpty() || view.getPassowrdRegistration().isEmpty()
         || view.getSelectedQuestion() == null || view.getAnswer().isEmpty()) {
-      view.alert(AlertType.ERROR, "Error Message", "Please fill all the blank fields");
+      Driver.alert(AlertType.ERROR, "Error Message", "Please fill all the blank fields");
 
     } else if (!view.getUserNameRegistration().contains("@")) {
-      view.alert(AlertType.ERROR, "Error Message", "Please type a valid email");
+      Driver.alert(AlertType.ERROR, "Error Message", "Please type a valid email");
     } else {
 
 
       if (DataBaseModel.registerUser(view.getUserNameRegistration(), view.getPassowrdRegistration(),
           view.getSelectedQuestion(), view.getAnswer())) {
-        view.alert(AlertType.INFORMATION, "Information Message",
+        Driver.alert(AlertType.INFORMATION, "Information Message",
             "Successfully registered Account!");
         view.switFormAfterSignUp();
       } else {
-        view.alert(AlertType.ERROR, "Registration Error",
+        Driver.alert(AlertType.ERROR, "Registration Error",
             "No valid Email Address. This Email already exists.");
 
       }

@@ -1,7 +1,9 @@
 package appication;
 
+import javafx.collections.ObservableList;
+
 /**
- * This class is the controller the change pages between review list and menu and sign out..
+ * This class is the controller the change pages between review list and menu and sign out.
  * 
  * @author papap
  *
@@ -15,6 +17,8 @@ public class ReviewListController {
    */
   public ReviewListController(ReviewListView viewRL) {
 
+
+
   }
 
   /**
@@ -25,5 +29,13 @@ public class ReviewListController {
     Driver.setScene(view.start(), TitlePage.LOGIN_PAGE);
   }
 
+  /**
+   * This method .
+   * 
+   * @return list create filled from table.
+   */
+  static ObservableList<Review> handleList() {
 
+    return ReviewListModel.getRating1Table();
+  }
 }

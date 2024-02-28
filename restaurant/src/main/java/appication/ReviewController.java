@@ -11,6 +11,8 @@ import javafx.scene.control.Alert.AlertType;
  */
 
 public class ReviewController {
+  
+  //add list. 
 
   private MyView view;
   private ReviewView viewR;
@@ -69,6 +71,14 @@ public class ReviewController {
 
 
 
+  }
+
+  /**
+   * This method handle the event to switch at review List page.
+   */
+  void handleReviewListButton() {
+    ReviewListView viewRL = new ReviewListView();
+    Driver.setScene(viewRL.start(), TitlePage.REVIEW_PAGE);
   }
 
 

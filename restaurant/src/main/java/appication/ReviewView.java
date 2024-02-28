@@ -19,7 +19,9 @@ import javafx.stage.Stage;
  */
 public class ReviewView {
 
-
+  @FXML
+  private Button reviewListBtn;
+  
   @FXML
   private TextField nickName;
 
@@ -76,6 +78,7 @@ public class ReviewView {
     backBtn.setOnAction(event -> review.handleSignOut());
     menuCostumerBtn.setOnAction(event -> review.handleMenuCostument());
     submitBtn.setOnAction(event -> review.handleSubmissionButton());
+    reviewListBtn.setOnAction(event -> review.handleReviewListButton());
 
   }
 
