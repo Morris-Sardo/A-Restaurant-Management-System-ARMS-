@@ -23,6 +23,9 @@ public class ReviewModel {
   public boolean handleSubmitButtonClicked(String username, String star, String review) {
     float stars = Float.parseFloat(star);
 
+    // Split the comment into multiple lines after every 10 characters
+    String formattedReview = insertNewLines(review, 30);
+
     String insertQuery = "INSERT INTO rating1 (username, rating, comment) VALUES (?, ?, ?)";
 
 
@@ -32,7 +35,8 @@ public class ReviewModel {
       prepare = connection.prepareStatement(insertQuery);
       prepare.setString(1, username);
       prepare.setFloat(2, stars);
-      prepare.setString(3, review);
+      // prepare.setString(3, review);
+      prepare.setString(3, formattedReview);
       prepare.execute();
       return true;
 
@@ -42,6 +46,25 @@ public class ReviewModel {
       return false;
 
     }
+  }
+
+  /**
+   * Inserts new line characters into a string after every N characters.
+   * 
+   * @param text The original text to be formatted.
+   * @param interval The interval (number of characters) after which to insert a new line.
+   * @return The formatted text with new lines.
+   */
+  private static String insertNewLines(String text, int interval) {
+    StringBuilder sb = new StringBuilder(text);
+
+    int i = interval;
+    while (i < sb.length()) {
+      sb.insert(i, "\n");
+      i += interval + 1; // Move past the inserted newline character
+    }
+
+    return sb.toString();
   }
 
 
@@ -61,7 +84,7 @@ public class ReviewModel {
 
     try (PreparedStatement statement =
         connection.prepareStatement("CREATE TABLE rating1 (\n" + "ID serial PRIMARY KEY, \n"
-            + "username varchar(100),\n" + "rating integer, \n" + "comment varchar(500));");) {
+            + "username varchar(100),\n" + "rating integer, \n" + "comment varchar(100);");) {
       statement.execute();
     }
   }

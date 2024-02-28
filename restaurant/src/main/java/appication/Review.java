@@ -115,7 +115,7 @@ public class Review {
   /**
    * This method set comment done onto commmentporperty.
    * 
-   * @param calcue hold the comment.
+   * @param value hold the comment.
    */
   public void setComment(String value) {
     commentProperty().set(value);

@@ -8,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -70,6 +72,8 @@ public class ReviewListView {
     nameTable.setCellValueFactory(new PropertyValueFactory("name"));
     starsTable.setCellValueFactory(new PropertyValueFactory("stars"));
     commentTable.setCellValueFactory(new PropertyValueFactory("comment"));
+
+
     tableView.setItems(ReviewListModel.getRating1Table());
   }
 
