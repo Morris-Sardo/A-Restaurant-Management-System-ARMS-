@@ -40,7 +40,7 @@ public class ReviewView extends Application {
   @Override
   public void start(Stage primaryStage) throws Exception {
     Parent root = FXMLLoader.load(getClass().getResource("ReviewPage.fxml"));
-    Scene scene = new Scene(root, 800, 500);
+    Scene scene = new Scene(root, 1100, 600);
     primaryStage.setScene(scene);
     primaryStage.show();
   }
