@@ -14,11 +14,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appication.MenuView">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appication.MenuView">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane prefHeight="650.0" prefWidth="600.0">
          <children>
-            <BorderPane prefHeight="600.0" prefWidth="667.0">
+            <BorderPane prefHeight="650.0" prefWidth="667.0">
                <center>
                   <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="572.0" prefWidth="467.0" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">
                      <content>
@@ -287,7 +287,7 @@
                   </AnchorPane>
                </left>
             </BorderPane>
-            <AnchorPane layoutX="664.0" prefHeight="600.0" prefWidth="342.0" style="-fx-background-color: linear-gradient(to bottom right, #d7aa84, #8b4513)linear-gradient(to bottom right, #d7aa84, #8b4513); -fx-border-color: linear-gradient(to bottom right, #d7aa84, #8b4513); -fx-border-radius: 5px; -fx-border-width: 1.5px;">
+            <AnchorPane layoutX="664.0" prefHeight="650.0" prefWidth="342.0" style="-fx-background-color: linear-gradient(to bottom right, #d7aa84, #8b4513)linear-gradient(to bottom right, #d7aa84, #8b4513); -fx-border-color: linear-gradient(to bottom right, #d7aa84, #8b4513); -fx-border-radius: 5px; -fx-border-width: 1.5px;">
                <children>
                   <TableView layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="304.0">
                     <columns>

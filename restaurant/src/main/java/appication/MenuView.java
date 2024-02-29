@@ -105,7 +105,7 @@ public class MenuView {
     Parent root;
     try {
       root = FXMLLoader.load(getClass().getResource("foodMenuStaff.fxml"));
-      Scene scene = new Scene(root, 1000, 600);
+      Scene scene = new Scene(root, 1000, 650);
       return scene;
     } catch (IOException e) {
       e.printStackTrace();
