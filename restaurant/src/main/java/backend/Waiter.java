@@ -20,6 +20,7 @@ public class Waiter {
 
   /**
    * The constructor for the Waiter object.
+   * 
    * @param connection the connection to the database that will be used
    * @param waiterUsername the username of the Waiter
    */
@@ -195,7 +196,7 @@ public class Waiter {
    * 
    * @param tableNumber the table number of the bill to be changed
    */
-  public void concludeBill(int tableNumber) 
+  public void concludeBill(int tableNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
     String change = "UPDATE bills SET status = 'Completed' WHERE (table_number = "
         + Integer.toString(tableNumber) + " AND status == 'Requested'";
@@ -209,12 +210,31 @@ public class Waiter {
    * 
    * @param tableNumber the table number of the complaint to be changed
    */
-  public void concludeComplaint(int tableNumber) 
+  public void concludeComplaint(int tableNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
     String change = "UPDATE complaints SET status = 'Completed' WHERE (table_number = "
         + Integer.toString(tableNumber) + " AND status == 'Requested'";
     try (PreparedStatement update = connection.prepareStatement(change);) {
       update.executeUpdate();
+    }
+  }
+  
+  /**
+   * Inserts card information - Reused from customer class.
+   */
+  public void insertCardInformation(int orderNumber, String nameOnCard, String cardNumber,
+      String expiryDate, String securityPin) throws SQLException {
+    String insertQuery =
+        "INSERT INTO cardInformation (order_number, name_on_card, card_number, "
+        + "expiry_date, security_pin) VALUES (?, ?, ?, ?, ?)";
+    try (PreparedStatement statement = connection.prepareStatement(insertQuery)) {
+      statement.setInt(1, orderNumber);
+      statement.setString(2, nameOnCard);
+      statement.setString(3, cardNumber);
+      statement.setString(4, expiryDate);
+      statement.setString(5, securityPin);
+
+      statement.executeUpdate();
     }
   }
 }
