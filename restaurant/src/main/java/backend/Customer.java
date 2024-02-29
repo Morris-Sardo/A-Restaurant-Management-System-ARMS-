@@ -35,7 +35,7 @@ public class Customer {
   public Connection getConnection() {
     return connection;
   }
-  
+
   public int[] getOrder() {
     return order;
   }
@@ -97,12 +97,9 @@ public class Customer {
   }
 
   /*
-   * Figure out how to generate custom id
-   * Yeet tablenumber from the top
-   * get items from int order
-   * sum price with a for loop, looking in the arraylist of items
-   * order time: get current time
-   * status: set status to requested
+   * Figure out how to generate custom id Yeet tablenumber from the top get items from int order sum
+   * price with a for loop, looking in the arraylist of items order time: get current time status:
+   * set status to requested
    */
   /**
    * Adds the order to the database.
@@ -179,7 +176,7 @@ public class Customer {
     if (!result.isEmpty()) {
       String cancel =
           "UPDATE orders SET status = 'Canceled' WHERE(status ='Requested' OR status ='Confirmed') "
-          + "AND table_number = " + Integer.toString(customerID);
+              + "AND table_number = " + Integer.toString(customerID);
       try (PreparedStatement cancelation = connection.prepareStatement(cancel)) {
         cancelation.executeUpdate();
       }
@@ -212,13 +209,13 @@ public class Customer {
       statement.executeUpdate();
     }
   }
-  
-  /*
+
+  /**
    * Marks order status as paid.
    */
   public void markAsPaid(int orderNumber) throws SQLException {
     String markAsPaid = "UPDATE order SET status = ? WHERE order_number = ?";
-    try (PreparedStatement statement = connection.prepareStatement(markAsPaid)){
+    try (PreparedStatement statement = connection.prepareStatement(markAsPaid)) {
       statement.setString(1, Status.PAID.toString());
       statement.setInt(2, orderNumber);
       int marked = statement.executeUpdate();
@@ -229,7 +226,24 @@ public class Customer {
       }
     }
   }
-  
-  
+
+  /**
+   * Inserts card information into cardInfo table.
+   */
+  public void insertCardInformation(int orderNumber, String nameOnCard, String cardNumber,
+      String expiryDate, String securityPin) throws SQLException {
+    String insertQuery = "INSERT INTO cardInformation (order_number, name_on_card, "
+        + "card_number, expiry_date, security_pin) " + "VALUES (?, ?, ?, ?, ?)";
+    try (PreparedStatement statement = connection.prepareStatement(insertQuery)) {
+      statement.setInt(1, orderNumber);
+      statement.setString(2, nameOnCard);
+      statement.setString(3, cardNumber);
+      statement.setString(4, expiryDate);
+      statement.setString(5, securityPin);
+
+      statement.executeUpdate();
+    }
+  }
+
 
 }
