@@ -30,11 +30,6 @@
                               <String fx:value="white-background" />
                            </styleClass>
                            <children>
-                              <Button layoutX="674.0" layoutY="29.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" text="CUSTOMER" textFill="WHITE">
-                                 <stylesheets>
-                                    <URL value="@MenuDesign.css" />
-                                    <URL value="@dash.css" />
-                                 </stylesheets></Button>
                               <Label alignment="TOP_CENTER" layoutX="107.0" layoutY="57.0" prefHeight="86.0" prefWidth="290.0" stylesheets="@dash.css" text="MEX EAT" textFill="WHITE">
                                  <font>
                                     <Font name="Bauhaus 93" size="75.0" />
