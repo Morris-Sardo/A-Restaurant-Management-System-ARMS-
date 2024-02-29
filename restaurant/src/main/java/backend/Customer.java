@@ -111,10 +111,17 @@ public class Customer {
    */
   public void submitOrder() throws SQLException {
     String submitOrderQuery = "INSERT INTO orders "
-        + "(order_ number, customer_id, table_number, items, price, order_time, status)"
+        + "(order_number, customer_id, table_number, items, price, order_time, status)"
         + "VALUES (DEFAULT, ?, ?, ?, ?, ?, ?)";
     float totalPrice = calculateTotalPrice();
     String orderTime = getCurrentTime();
+    String reduceItem = "UPDATE items SET stock = stock - 1 WHERE item_number = ?";
+    try (PreparedStatement update = connection.prepareStatement(reduceItem)) {
+      for (int item : order) {
+        update.setInt(1, item);
+        update.executeUpdate();
+      } 
+    }
 
     try (PreparedStatement statement = connection.prepareStatement(submitOrderQuery)) {
       statement.setInt(1, customerID);
