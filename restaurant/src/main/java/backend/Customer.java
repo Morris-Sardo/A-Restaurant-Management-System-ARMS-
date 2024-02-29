@@ -212,5 +212,24 @@ public class Customer {
       statement.executeUpdate();
     }
   }
+  
+  /*
+   * Marks order status as paid.
+   */
+  public void markAsPaid(int orderNumber) throws SQLException {
+    String markAsPaid = "UPDATE order SET status = ? WHERE order_number = ?";
+    try (PreparedStatement statement = connection.prepareStatement(markAsPaid)){
+      statement.setString(1, Status.PAID.toString());
+      statement.setInt(2, orderNumber);
+      int marked = statement.executeUpdate();
+      if (marked > 0) {
+        System.out.println("Order " + orderNumber + "has been paid");
+      } else {
+        System.out.println("Failed to mark order" + orderNumber);
+      }
+    }
+  }
+  
+  
 
 }

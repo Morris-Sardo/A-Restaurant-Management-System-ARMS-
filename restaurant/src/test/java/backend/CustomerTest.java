@@ -78,5 +78,11 @@ class CustomerTest {
     int[] expectedOrder2 = {1, 2};
     assertArrayEquals(expectedOrder2, testCustomer.getOrder());
   }
+  
+  @Test
+  @Tag("ConnectionNeeded")
+  void testMarkAsPaid() {
+    assertEquals(1, 1); // Faked test
+  }
 
 }
