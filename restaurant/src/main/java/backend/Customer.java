@@ -1,5 +1,6 @@
 package backend;
 
+import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -211,6 +212,23 @@ public class Customer {
     try (PreparedStatement statement = connection.prepareStatement(addition);) {
       statement.executeUpdate();
     }
+  }
+  
+  /**
+   * Returns order status
+   * @throws SQLException 
+   */
+  public String trackOrder(int orderNumber) throws SQLException {
+    String status = null;
+    String trackOrder = "SELECT status FROM orders WHERE customer_id = ?";
+    try (PreparedStatement statement = connection.prepareStatement(trackOrder)) {
+      statement.setInt(1, orderNumber);
+      ResultSet resultSet = statement.executeQuery();
+      if (resultSet.next()) {
+        status = resultSet.getString("status");
+      }
+    }
+    return status;
   }
 
 }
