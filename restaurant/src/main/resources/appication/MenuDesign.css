@@ -22,7 +22,7 @@
 }
 
 .logout{
-	-fx-background-color: #ebddd7;
+	-fx-background-color: #DE9687;
 	-fx-padding: 5px;
 	-fx-cursor: hand;
 	-fx-background-radius: 50px;
@@ -55,7 +55,7 @@
 
 .table-design .column-header-background{
 	
-	-fx-background-color: linear-gradient(to bottom left,#cf431c, rgb(3, 2, 15));
+	-fx-background-color: linear-gradient(to bottom right,#cf431c, rgb(3, 2, 15));
 	-fx-background: 5px 5px 0 0 ;
 	-fx-background-insets: 0 0 0 0;
 	

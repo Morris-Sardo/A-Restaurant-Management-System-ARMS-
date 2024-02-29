@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyView1">
    <children>
       <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -45,14 +45,13 @@
                                  </font>
                               </Label>
                               <Button fx:id="review_btn" layoutX="6.0" layoutY="223.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="REVIEW" textFill="WHITE" />
-                              <Button fx:id="inventory_btn" layoutX="6.0" layoutY="287.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="INVENTORY" textFill="WHITE" />
+                              <Button fx:id="inventory_btn" layoutX="6.0" layoutY="287.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="DASHBOARD" textFill="WHITE" />
                               <Button fx:id="menu_btn" layoutX="6.0" layoutY="346.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MENU" textFill="#f8f8f8" />
-                              <Button fx:id="customer_btn" layoutX="6.0" layoutY="405.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="CUSTOMER" textFill="#f8f8f8" />
                               <Button layoutX="14.0" layoutY="549.0" mnemonicParsing="false" stylesheets="@MenuDesign.css" textFill="#ebddd7" AnchorPane.bottomAnchor="12.0">
                                  <graphic>
                                     <ImageView fx:id="out_btn" fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../../../../../Downloads/sign-out.png" />
+                                          <Image url="@image/sign-out.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -117,16 +116,6 @@
                                     <TextField layoutX="427.0" layoutY="22.0" prefHeight="25.0" prefWidth="141.0" promptText="0" />
                                     <Label layoutX="369.0" layoutY="63.0" text="Price(£):" />
                                     <TextField layoutX="427.0" layoutY="58.0" prefHeight="25.0" prefWidth="141.0" promptText="£0.0" />
-                                    <AnchorPane layoutX="723.0" layoutY="13.0" prefHeight="121.0" prefWidth="117.0" AnchorPane.rightAnchor="14.0">
-                                       <styleClass>
-                                          <String fx:value="white-background" />
-                                          <String fx:value="shadow-drop" />
-                                       </styleClass>
-                                       <children>
-                                          <ImageView fx:id="inventory_image_view" fitHeight="121.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true" />
-                                       </children>
-                                    </AnchorPane>
-                                    <Button fx:id="inventory_import_btn" layoutX="730.0" layoutY="146.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" styleClass="invt-btn" text="Import" AnchorPane.rightAnchor="22.0" />
                                     <Button fx:id="inventory_add_btn" layoutX="75.0" layoutY="165.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="122.0" styleClass="invt-btn" text="Add" AnchorPane.bottomAnchor="25.0" />
                                     <Button fx:id="inventory_update_btn" layoutX="224.0" layoutY="165.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="122.0" styleClass="invt-btn" text="Update" AnchorPane.bottomAnchor="25.0" />
                                     <Button fx:id="inventory_clear_btn" layoutX="392.0" layoutY="165.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="122.0" styleClass="invt-btn" text="Clear" AnchorPane.bottomAnchor="25.0" />
