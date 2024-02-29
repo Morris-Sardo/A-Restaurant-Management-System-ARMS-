@@ -42,24 +42,24 @@ public class featuretable {
       return availableTables;
   }
 
-  public void concludeBill(int tableNumber) {
-    String updateBillSQL = "UPDATE Bills set status = 'Paid' where table_number = ? and  status != 'Paid'";
-    String updateTableSQL = "update Tables set available = true where table_number = ?";
+  public void ConcludeBill(int tableNum) {
+    String setBillPaidSQL = "Update bills SET status = 'Paid' Where table_number = ? and status 'Paid'";
+    String setTableAvailableSQL = "update Tables SET available = true where table_number = ?";
 
-    try (Connection conn = connect();
-         PreparedStatement updateBillStmt = conn.prepareStatement(updateBillSQL);
-         PreparedStatement updateTableStmt = conn.prepareStatement(updateTableSQL)) {
+    try (Connection connection = connect();
+         PreparedStatement billStatement = connection.prepareStatement(setBillPaidSQL);
+         PreparedStatement tableStatement = connection.prepareStatement(setTableAvailableSQL)) {
 
-        //  this Mark the bill as paid
-        updateBillStmt.setInt(1, tableNumber);
-        updateBillStmt.executeUpdate();
+        // it set the bill's status to Paid
+        billStatement.setInt(1, tableNum);
+        billStatement.executeUpdate();
 
-        // this Make the table available again
-        updateTableStmt.setInt(1, tableNumber);
-        updateTableStmt.executeUpdate();
+        // it mark the table as available
+        tableStatement.setInt(1, tableNum);
+        tableStatement.executeUpdate();
 
-    } catch (Exception e) {
-        e.printStackTrace();
+    } catch (Exception exception) {
+        exception.printStackTrace();
     }
 }
 }
