@@ -12,7 +12,7 @@
 }
 
 .root {
-    -fx-background-image: url('./image/MexicanCuisine.jpg');
+    -fx-background-image: url('./image/DarkBackground.png');
     -fx-background-size: cover;
   }
   

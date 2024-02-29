@@ -15,11 +15,6 @@ import javafx.scene.control.Button;
  */
 
 public class DashBoardMyView {
-  @FXML
-  private Button signOutBtn;
-
-  @FXML
-  private Button costumerBtn;
 
   @FXML
   private Button inventoryBtn;
@@ -29,6 +24,9 @@ public class DashBoardMyView {
 
   @FXML
   private Button reviewBtn;
+
+  @FXML
+  private Button signOutBtn;
 
 
 
