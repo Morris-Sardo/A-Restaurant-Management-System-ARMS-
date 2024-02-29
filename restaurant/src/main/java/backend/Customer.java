@@ -116,7 +116,7 @@ public class Customer {
     float totalPrice = calculateTotalPrice();
     String orderTime = getCurrentTime();
     String reduceItem = "UPDATE items SET stock = stock - 1 WHERE item_number = ?";
-    try (PreparedStatement update = connection.prepareStatement(reduceItem)) {
+    try (PreparedStatement update = connection.prepareStatement(reduceItem);) {
       for (int item : order) {
         update.setInt(1, item);
         update.executeUpdate();

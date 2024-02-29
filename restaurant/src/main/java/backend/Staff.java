@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.function.Predicate;
 import org.postgresql.util.PSQLException;
 
@@ -127,8 +128,24 @@ public class Staff {
    */
   public void cancelOrder(int orderNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
-    String change = "UPDATE orders SET STATUS = 'Canceled' WHERE order_number = "
-        + Integer.toString(orderNumber);
+    String findOrder = "SELECT items FROM orders WHERE order_number = " + orderNumber;
+    ArrayList<String> items = new ArrayList<String>();
+    try (PreparedStatement find = connection.prepareStatement(findOrder);) {
+      ResultSet resultSet = find.executeQuery();
+      if (resultSet.next()) {
+        items.addAll(Arrays.asList(resultSet.getString(3).trim().split(",")));
+      }
+    }
+    if (!items.isEmpty()) {
+      String updateStock = "UPDATE items SET stock = stock -1 WHERE item_number = ?";
+      try (PreparedStatement update = connection.prepareStatement(updateStock);) {
+        for (String item : items) {
+          update.setInt(1, Integer.parseInt(item));
+          update.executeUpdate();
+        }
+      }
+    }
+    String change = "UPDATE orders SET STATUS = 'Canceled' WHERE order_number = " + orderNumber;
     try (PreparedStatement update = connection.prepareStatement(change);) {
       update.executeUpdate();
     }
