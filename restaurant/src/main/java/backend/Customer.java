@@ -55,14 +55,14 @@ public class Customer {
   }
 
   /**
-   * Finds all items on the menu marked as available.
+   * Finds all items on the menu marked as available and that have a stock over 0.
    * 
    * @return the IDs corresponding to the menu items available
    */
   public ArrayList<Integer> viewMenu()
       throws PSQLException, SQLException, DatabaseInformationException {
     ArrayList<Integer> results = new ArrayList<Integer>();
-    String query = "SELECT item_number FROM items WHERE available = 'True'";
+    String query = "SELECT item_number FROM items WHERE (available = 'True' AND stock >= 0)";
     try (PreparedStatement statement = connection.prepareStatement(query);) {
       ResultSet resultSet = statement.executeQuery();
       while (resultSet.next()) {
@@ -110,10 +110,17 @@ public class Customer {
   public void submitOrder(int tableNumber) throws SQLException {
     this.tableNumber = tableNumber;
     String submitOrderQuery = "INSERT INTO orders "
-        + "(order_ number, customer_id, table_number, items, price, order_time, status)"
+        + "(order_number, customer_id, table_number, items, price, order_time, status)"
         + "VALUES (DEFAULT, ?, ?, ?, ?, ?, ?)";
     float totalPrice = calculateTotalPrice();
     String orderTime = getCurrentTime();
+    String reduceItem = "UPDATE items SET stock = stock - 1 WHERE item_number = ?";
+    try (PreparedStatement update = connection.prepareStatement(reduceItem);) {
+      for (int item : order) {
+        update.setInt(1, item);
+        update.executeUpdate();
+      } 
+    }
 
     try (PreparedStatement statement = connection.prepareStatement(submitOrderQuery)) {
       statement.setInt(1, customerID);

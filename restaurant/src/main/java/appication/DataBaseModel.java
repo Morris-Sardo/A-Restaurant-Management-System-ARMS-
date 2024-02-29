@@ -308,9 +308,9 @@ public class DataBaseModel {
       try (PreparedStatement statement = connection.prepareStatement(query);) {
         ResultSet resultSet = statement.executeQuery();
         while (resultSet.next()) {
-          results.add(
-              new Item(resultSet.getInt(1), resultSet.getString(2).trim(), resultSet.getFloat(3),
-                  resultSet.getString(4).trim(), resultSet.getFloat(5), resultSet.getBoolean(6)));
+          results.add(new Item(resultSet.getInt(1), resultSet.getString(2).trim(),
+              resultSet.getFloat(3), resultSet.getString(4).trim(), resultSet.getFloat(5),
+              resultSet.getBoolean(6), resultSet.getInt(7)));
         }
       }
       if (results.isEmpty()) {

@@ -14,7 +14,8 @@ price float(24) NOT NULL,
 allergies nchar(100) NOT NULL,
 calories float(24) NOT NULL,
 available boolean NOT NULL,
-tags nchar(100) NOT NULL);
+tags nchar(100) NOT NULL,
+stock int NOT NULL);
 
 CREATE TABLE complaints
 (customer_id int,
