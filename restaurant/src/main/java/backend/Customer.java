@@ -36,7 +36,7 @@ public class Customer {
   public Connection getConnection() {
     return connection;
   }
-  
+
   public int[] getOrder() {
     return order;
   }
@@ -98,12 +98,9 @@ public class Customer {
   }
 
   /*
-   * Figure out how to generate custom id
-   * Yeet tablenumber from the top
-   * get items from int order
-   * sum price with a for loop, looking in the arraylist of items
-   * order time: get current time
-   * status: set status to requested
+   * Figure out how to generate custom id Yeet tablenumber from the top get items from int order sum
+   * price with a for loop, looking in the arraylist of items order time: get current time status:
+   * set status to requested
    */
   /**
    * Adds the order to the database.
@@ -180,7 +177,7 @@ public class Customer {
     if (!result.isEmpty()) {
       String cancel =
           "UPDATE orders SET status = 'Canceled' WHERE(status ='Requested' OR status ='Confirmed') "
-          + "AND table_number = " + Integer.toString(customerID);
+              + "AND table_number = " + Integer.toString(customerID);
       try (PreparedStatement cancelation = connection.prepareStatement(cancel)) {
         cancelation.executeUpdate();
       }
@@ -213,10 +210,11 @@ public class Customer {
       statement.executeUpdate();
     }
   }
-  
+
   /**
-   * Returns order status
-   * @throws SQLException 
+   * Returns order status.
+   * 
+   * @throws SQLException if statement fails
    */
   public String trackOrder(int orderNumber) throws SQLException {
     String status = null;
