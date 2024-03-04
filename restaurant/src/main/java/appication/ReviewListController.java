@@ -3,19 +3,24 @@ package appication;
 import javafx.collections.ObservableList;
 
 /**
- * This class is the controller the change pages between review list and menu and sign out.
+ * This class is the controller the change pages between review list and menu costumer and sign out.
  * 
  * @author papap
  *
  */
 public class ReviewListController {
 
+  //private ReviewListView viewRL;
+  //private DataBaseModel connection; 
+
   /**
    * Constructor controller between GUI and Model.
    * 
-   * @param viewRL object if review list.
+   * @param viewRL object of review list.
    */
   public ReviewListController(ReviewListView viewRL) {
+    //this.viewRL = viewRL;
+    //this.connection = Driver.getDBconnection();
 
 
 

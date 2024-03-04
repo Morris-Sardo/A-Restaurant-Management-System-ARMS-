@@ -41,11 +41,11 @@ public class InventoryController {
    * This method open link to menu page.
    */
   void handleReview() {
-    ReviewListView viewR = new ReviewListView();
+    ReviewListViewStaff viewR = new ReviewListViewStaff();
     Driver.setScene(viewR.start(), TitlePage.REVIEW_PAGE);
 
   }
-  
+
   /**
    * This method handle the dashboard page.
    */

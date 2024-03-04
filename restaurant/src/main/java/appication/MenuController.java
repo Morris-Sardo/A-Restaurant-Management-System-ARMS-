@@ -40,8 +40,8 @@ public class MenuController {
    * This method handle the review list page.
    */
   void handleReviewList() {
-    ReviewListView viewLR = new ReviewListView();
-    Driver.setScene(viewLR.start(), TitlePage.REVIEW_PAGE);
+    ReviewListViewStaff viewLRS = new ReviewListViewStaff();
+    Driver.setScene(viewLRS.start(), TitlePage.REVIEW_PAGE);
   }
   
   /**

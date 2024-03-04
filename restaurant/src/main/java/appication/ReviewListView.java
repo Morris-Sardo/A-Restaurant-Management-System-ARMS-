@@ -64,14 +64,15 @@ public class ReviewListView {
   /**
    * This method initialise the button to handle the events.
    */
+  //@SuppressWarnings({"unchecked", "rawtypes"}) // suppres warming.
   @FXML
   public void initialize() {
     ReviewListController reviewListController = new ReviewListController(this);
     signOutBtn.setOnAction(event -> reviewListController.handleSignOut());
-    idTable.setCellValueFactory(new PropertyValueFactory("ID"));
-    nameTable.setCellValueFactory(new PropertyValueFactory("name"));
-    starsTable.setCellValueFactory(new PropertyValueFactory("stars"));
-    commentTable.setCellValueFactory(new PropertyValueFactory("comment"));
+    idTable.setCellValueFactory(new PropertyValueFactory<Review, Integer>("ID"));
+    nameTable.setCellValueFactory(new PropertyValueFactory<Review, String>("name"));
+    starsTable.setCellValueFactory(new PropertyValueFactory<Review, Integer>("stars"));
+    commentTable.setCellValueFactory(new PropertyValueFactory<Review, String>("comment"));
 
 
     tableView.setItems(ReviewListModel.getRating1Table());
