@@ -10,9 +10,9 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appication.ReviewListView">
    <children>
       <Button fx:id="signOutBtn" layoutX="14.0" layoutY="360.0" mnemonicParsing="false" text="sign Out" />
-      <Text layoutX="222.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Review List" textAlignment="CENTER" wrappingWidth="205.336669921875">
+      <Text layoutX="222.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Review List Costumer" textAlignment="CENTER" wrappingWidth="205.336669921875">
          <font>
-            <Font size="24.0" />
+            <Font size="16.0" />
          </font>
       </Text>
       <TableView id="TablaView" fx:id="tableView" layoutY="61.0" prefHeight="289.0" prefWidth="600.0">
@@ -23,5 +23,7 @@
             <TableColumn fx:id="commentTable" minWidth="0.0" prefWidth="226.39996337890625" text="Comment" />
         </columns>
       </TableView>
+      <Button fx:id="mewnuCostumerBtn" layoutX="116.0" layoutY="360.0" mnemonicParsing="false" text="menuCostumer" />
+      <Button fx:id="makeReviewBtn" layoutX="254.0" layoutY="360.0" mnemonicParsing="false" text="makereview" />
    </children>
 </AnchorPane>

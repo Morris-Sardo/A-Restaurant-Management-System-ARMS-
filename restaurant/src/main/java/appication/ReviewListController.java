@@ -10,8 +10,8 @@ import javafx.collections.ObservableList;
  */
 public class ReviewListController {
 
-  //private ReviewListView viewRL;
-  //private DataBaseModel connection; 
+  // private ReviewListView viewRL;
+  // private DataBaseModel connection;
 
   /**
    * Constructor controller between GUI and Model.
@@ -19,8 +19,8 @@ public class ReviewListController {
    * @param viewRL object of review list.
    */
   public ReviewListController(ReviewListView viewRL) {
-    //this.viewRL = viewRL;
-    //this.connection = Driver.getDBconnection();
+    // this.viewRL = viewRL;
+    // this.connection = Driver.getDBconnection();
 
 
 
@@ -42,5 +42,21 @@ public class ReviewListController {
   static ObservableList<Review> handleList() {
 
     return ReviewListModel.getRating1Table();
+  }
+
+  /**
+   * This method link back to menu page costumer.
+   */
+  void handleMenuCostumer() {
+    MenuCostumerView viewC = new MenuCostumerView();
+    Driver.setScene(viewC.start(), TitlePage.MENU_PAGE_COSTUMER);
+  }
+  
+  /**
+   * This method link back to make review page.
+   */
+  void handleMakeReview() {
+    ReviewView viewR = new ReviewView();
+    Driver.setScene(viewR.start(), TitlePage.MAKE_REVIEW_PAGE);
   }
 }

@@ -34,7 +34,13 @@ public class ReviewListView {
   private TableColumn<Review, String> nameTable;
 
   @FXML
+  private Button makeReviewBtn;
+
+  @FXML
   private Button signOutBtn;
+
+  @FXML
+  private Button mewnuCostumerBtn;
   //
   @FXML
   private TableColumn<Review, Integer> starsTable;
@@ -64,11 +70,13 @@ public class ReviewListView {
   /**
    * This method initialise the button to handle the events.
    */
-  //@SuppressWarnings({"unchecked", "rawtypes"}) // suppres warming.
+  // @SuppressWarnings({"unchecked", "rawtypes"}) // suppres warming.
   @FXML
   public void initialize() {
     ReviewListController reviewListController = new ReviewListController(this);
     signOutBtn.setOnAction(event -> reviewListController.handleSignOut());
+    mewnuCostumerBtn.setOnAction(event -> reviewListController.handleMenuCostumer());
+    makeReviewBtn.setOnAction(event -> reviewListController.handleMakeReview());
     idTable.setCellValueFactory(new PropertyValueFactory<Review, Integer>("ID"));
     nameTable.setCellValueFactory(new PropertyValueFactory<Review, String>("name"));
     starsTable.setCellValueFactory(new PropertyValueFactory<Review, Integer>("stars"));
