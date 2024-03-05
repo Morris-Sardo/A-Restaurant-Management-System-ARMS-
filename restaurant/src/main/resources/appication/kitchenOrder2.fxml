@@ -75,8 +75,9 @@
                   </font>
                 </Label>
                 <TextArea layoutX="87.0" layoutY="200.0" onKeyTyped="#handleReviewInput" prefHeight="296.0" prefWidth="640.0" promptText="Testing" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #004225); " />
-                <Button layoutX="654.0" layoutY="546.0" mnemonicParsing="false" onAction="#handleSubmitButtonClicked" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@../dash-resource/dash.css" text="Submit" textFill="#00ff22" />
                         <Button layoutX="743.0" layoutY="200.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="DELIVERED" textFill="#f8f8f8" />
+                        <Button layoutX="743.0" layoutY="254.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="ACCEPT ORDER" textFill="#f8f8f8" />
+                        <Button layoutX="743.0" layoutY="308.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="CANCEL ORDER" textFill="#f8f8f8" />
               </children>
             </AnchorPane>
           </center>
