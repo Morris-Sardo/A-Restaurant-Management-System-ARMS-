@@ -3,7 +3,8 @@
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -61,6 +62,7 @@
                         <Font size="15.0" />
                       </font>
                     </Label>
+                              <Button layoutX="6.0" layoutY="401.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="DASHBOARD" textFill="#f8f8f8" />
                   </children>
                 </AnchorPane>
               </children>
@@ -74,10 +76,15 @@
                     <Font size="75.0" />
                   </font>
                 </Label>
-                <TextArea layoutX="87.0" layoutY="200.0" onKeyTyped="#handleReviewInput" prefHeight="296.0" prefWidth="640.0" promptText="Testing" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #004225); " />
                         <Button layoutX="743.0" layoutY="200.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="DELIVERED" textFill="#f8f8f8" />
                         <Button layoutX="743.0" layoutY="254.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="ACCEPT ORDER" textFill="#f8f8f8" />
                         <Button layoutX="743.0" layoutY="308.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="CANCEL ORDER" textFill="#f8f8f8" />
+                        <TableView layoutX="39.0" layoutY="140.0" prefHeight="431.0" prefWidth="683.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
               </children>
             </AnchorPane>
           </center>
