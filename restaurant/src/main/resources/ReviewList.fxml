@@ -16,7 +16,8 @@
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity"
 	minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
 	prefWidth="1100.0" xmlns="http://javafx.com/javafx/21"
-	xmlns:fx="http://javafx.com/fxml/1" fx:controller="ReviewListController">
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="ReviewListController">
 	<children>
 		<AnchorPane prefHeight="200.0" prefWidth="200.0">
 			<children>
@@ -87,13 +88,13 @@
 											prefHeight="40.0" prefWidth="210.0"
 											style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);"
 											styleClass="nav-btn" stylesheets="@MenuDesign.css"
-											text="Dashboard" textFill="#00e9ff" />
+											text="Menu" textFill="#00e9ff" />
 										<Button layoutX="6.0" layoutY="300.0"
 											mnemonicParsing="false" onAction="#handleSubmitButtonClicked"
 											prefHeight="40.0" prefWidth="210.0"
 											style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);"
 											styleClass="nav-btn" stylesheets="@MenuDesign.css"
-											text="Previous Reviews" textFill="#00e9ff" />
+											text="Make a Review" textFill="#00e9ff" />
 									</children>
 								</AnchorPane>
 							</children>
@@ -104,21 +105,22 @@
 							style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);"
 							stylesheets="@MenuDesign.css" BorderPane.alignment="CENTER">
 							<children>
-								<Text layoutX="101.0" layoutY="78.0" strokeType="OUTSIDE"
-									strokeWidth="0.0" text="Previous Reviews:">
+								<Text layoutX="210.0" layoutY="96.0" strokeType="OUTSIDE"
+									strokeWidth="0.0" text="Previous Reviews:" underline="true">
 									<font>
-										<Font name="Broadway" size="70.0" />
+										<Font name="French Script MT" size="88.0" />
 									</font>
 								</Text>
 								<TableView id="TablaView" fx:id="tableView"
-									layoutY="61.0" prefHeight="289.0" prefWidth="600.0">
+									layoutX="89.0" layoutY="137.0" prefHeight="400.0"
+									prefWidth="700.0">
 									<columns>
 										<TableColumn fx:id="nameTable"
 											prefWidth="149.5999755859375" text="Name" />
 										<TableColumn fx:id="starsTable"
 											prefWidth="146.40003967285156" text="Stars" />
 										<TableColumn fx:id="commentTable" minWidth="0.0"
-											prefWidth="226.39996337890625" text="Comment" />
+											prefWidth="389.0" text="Comment" />
 									</columns>
 								</TableView>
 							</children>
