@@ -19,19 +19,19 @@ import javafx.scene.control.cell.PropertyValueFactory;
  */
 
 public class ReviewListViewStaff {
-  
+
   @FXML
   private Button dashboardBtn;
-  
+
   @FXML
   private Button inventroyBtn;
-  
+
   @FXML
   private Button signOutBtn;
-  
+
   @FXML
   private Button menuStaffBtn;
-  
+
   @FXML
   private TableColumn<Review, String> commentTable;
 
@@ -66,25 +66,24 @@ public class ReviewListViewStaff {
       return null;
     }
   }
-  
+
   /**
    * This method initialize all the button to handle the event related of them.
    */
-  @SuppressWarnings({"rawtypes", "unchecked"})
   @FXML
   public void initialize() {
-    
+
     ReviewListControllerStaff reviewListControllerStaff = new ReviewListControllerStaff(this);
     signOutBtn.setOnAction(event -> reviewListControllerStaff.handleSignOut());
     dashboardBtn.setOnAction(event -> reviewListControllerStaff.handleDashboard());
     inventroyBtn.setOnAction(event -> reviewListControllerStaff.handleInventory());
     menuStaffBtn.setOnAction(event -> reviewListControllerStaff.handleMenuStaff());
-    
-    idTable.setCellValueFactory(new PropertyValueFactory("ID"));
-    nameTable.setCellValueFactory(new PropertyValueFactory("name"));
-    starsTable.setCellValueFactory(new PropertyValueFactory("stars"));
-    commentTable.setCellValueFactory(new PropertyValueFactory("comment"));
-    
+
+    idTable.setCellValueFactory(new PropertyValueFactory<>("ID"));
+    nameTable.setCellValueFactory(new PropertyValueFactory<>("name"));
+    starsTable.setCellValueFactory(new PropertyValueFactory<>("stars"));
+    commentTable.setCellValueFactory(new PropertyValueFactory<>("comment"));
+
     tableView.setItems(ReviewListModel.getRating1Table());
   }
 

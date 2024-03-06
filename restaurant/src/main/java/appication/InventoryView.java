@@ -1,14 +1,21 @@
 package appication;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
@@ -20,18 +27,14 @@ import javafx.scene.layout.AnchorPane;
  */
 public class InventoryView {
 
+  @FXML
+  private TextField expe;
 
   @FXML
   private Button dashboardBtn;
 
   @FXML
-  private Button customerBtn;
-
-  @FXML
   private Button inventoryAddBtn;
-
-  @FXML
-  private Button inventoryBtn;
 
   @FXML
   private Button inventoryClearBtn;
@@ -46,7 +49,10 @@ public class InventoryView {
   private Button inventoryImportBtn;
 
   @FXML
-  private TableView<?> inventoryTable;
+  private AnchorPane inventoryPage;
+
+  @FXML
+  private TableView<Inventory> inventoryTable;
 
   @FXML
   private Button inventoryUpdateBtn;
@@ -61,28 +67,54 @@ public class InventoryView {
   private ImageView outImage;
 
   @FXML
+  private TextField prizeField;
+
+  @FXML
+  private TextField productIdField;
+
+  @FXML
+  private TextField productNameField;
+
+  @FXML
+  private ComboBox<String> productTypeField;
+
+  @FXML
   private Button reviewBtn;
 
   @FXML
   private Button signOutBtn;
 
   @FXML
-  private TableColumn<?, ?> tableColPrice;
+  private TextField stockField;
 
   @FXML
-  private TableColumn<?, ?> tableColProdId;
+  private TableColumn<Inventory, Float> tableColPrice;
 
   @FXML
-  private TableColumn<?, ?> tableColProdName;
+  private TableColumn<Inventory, Integer> tableColProdId;
 
   @FXML
-  private TableColumn<?, ?> tableColStock;
+  private TableColumn<Inventory, String> tableColProdName;
 
   @FXML
-  private TableColumn<?, ?> tableColType;
+  private TableColumn<Inventory, Integer> tableColStock;
+
+  @FXML
+  private TableColumn<Inventory, String> tableColType;
 
   @FXML
   private Label username;
+
+
+  @SuppressWarnings("rawtypes")
+  private ObservableList<?> listData;
+  private String type1 = "Drink";
+  private String type2 = "Pasta";
+  private String type3 = "Caffe";
+
+  private String[] typeProductList = {type1, type2, type3};
+
+
 
   /**
    * This method start the inventoryPage.
@@ -108,11 +140,147 @@ public class InventoryView {
   public void initialize() {
     InventoryController inventoryController = new InventoryController(this);
     signOutBtn.setOnAction(event -> inventoryController.handleSignOut());
-    menuBtn.setOnAction(event ->inventoryController.handleMenu());
+    menuBtn.setOnAction(event -> inventoryController.handleMenu());
     reviewBtn.setOnAction(event -> inventoryController.handleReview());
     dashboardBtn.setOnAction(event -> inventoryController.handledashboard());
+    inventoryAddBtn.setOnAction(event -> inventoryController.handleAddInvetory());
+
+    // inizialize the column of the table.
+    tableColProdId.setCellValueFactory(new PropertyValueFactory<>("product_ID"));
+    tableColProdName.setCellValueFactory(new PropertyValueFactory<>("product_name"));
+    tableColType.setCellValueFactory(new PropertyValueFactory<>("type"));
+    tableColStock.setCellValueFactory(new PropertyValueFactory<>("stock"));
+    tableColPrice.setCellValueFactory(new PropertyValueFactory<>("prize"));
+
+    // inizialize all imtes column of table
+    inventoryTable.setItems(InventoryModel.getInventoryTable());
+
+    // inizilaize list of product type
+    regTypeList();
+
   }
 
+  /**
+   * This method clean up all the the field after used. //
+   */
+  public void setAllFieldClean() {
+    productIdField.setText("");
+    productNameField.setText("");
+    productTypeField.getSelectionModel().clearSelection();
+    stockField.setText("");
+    prizeField.setText("");
+
+  }
+
+  /**
+   * This method set the table with new items.
+   * 
+   * @param list inventory table.
+   */
+  public void steTableItems(ObservableList<Inventory> list) {
+    inventoryTable.setItems(list);
+  }
+
+
+  /**
+   * This method return product_ID form field.
+   * 
+   * @return priduct_ID.
+   */
+
+  public Integer getProductIdField() {
+    if (productIdField == null) {
+      return -1;
+    } else {
+      try {
+        return Integer.parseInt(productIdField.getText());
+      } catch (Exception e) {
+        return -1;
+      }
+    }
+  }
+
+
+  /**
+   * This method return product_ID form field.
+   * 
+   * @return priduct_Name.
+   */
+
+  public String getProductNameField() {
+    if (productNameField == null) {
+      return "";
+    } else {
+
+      return productNameField.getText();
+    }
+  }
+
+  /**
+   * This method is use to get products' type from cubox.
+   */
+  public Object getProductType() {
+
+
+    return productTypeField.getSelectionModel().getSelectedItem();
+  }
+
+  /**
+   * This method return stock form field.
+   * 
+   * @return stock.
+   */
+
+  public Integer getStockField() {
+    if (stockField == null) {
+
+      return -1;
+    } else {
+      try {
+
+        return Integer.parseInt(stockField.getText());
+      } catch (Exception e) {
+        return -1;
+      }
+    }
+  }
+
+  /**
+   * This method return products' prize form field.
+   * 
+   * @return prixze hold hold by field.
+   */
+
+  public float getPrizeField() {
+    if (prizeField == null) {
+      return -1;
+    } else {
+      try {
+        return Float.parseFloat(prizeField.getText());
+      } catch (Exception e) {
+        return -1;
+      }
+    }
+  }
+
+  /**
+   * This method used to store the list that will printout by GUI.
+   *
+   */
+  @SuppressWarnings("unchecked") // his supper the warming coused by ObservableList.
+  public void regTypeList() {
+
+
+    ObservableList<String> listQ = FXCollections.observableArrayList();
+
+    for (String data : typeProductList) {
+      listQ.add(data);
+    }
+
+
+    productTypeField.setItems(listQ); // press button typeList it will appear the questions.
+
+  }
 
 
 }

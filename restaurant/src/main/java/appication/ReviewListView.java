@@ -2,14 +2,11 @@ package appication;
 
 
 import java.io.IOException;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -70,17 +67,16 @@ public class ReviewListView {
   /**
    * This method initialise the button to handle the events.
    */
-  // @SuppressWarnings({"unchecked", "rawtypes"}) // suppres warming.
   @FXML
   public void initialize() {
     ReviewListController reviewListController = new ReviewListController(this);
     signOutBtn.setOnAction(event -> reviewListController.handleSignOut());
     mewnuCostumerBtn.setOnAction(event -> reviewListController.handleMenuCostumer());
     makeReviewBtn.setOnAction(event -> reviewListController.handleMakeReview());
-    idTable.setCellValueFactory(new PropertyValueFactory<Review, Integer>("ID"));
-    nameTable.setCellValueFactory(new PropertyValueFactory<Review, String>("name"));
-    starsTable.setCellValueFactory(new PropertyValueFactory<Review, Integer>("stars"));
-    commentTable.setCellValueFactory(new PropertyValueFactory<Review, String>("comment"));
+    idTable.setCellValueFactory(new PropertyValueFactory<>("ID"));
+    nameTable.setCellValueFactory(new PropertyValueFactory<>("name"));
+    starsTable.setCellValueFactory(new PropertyValueFactory<>("stars"));
+    commentTable.setCellValueFactory(new PropertyValueFactory<>("comment"));
 
 
     tableView.setItems(ReviewListModel.getRating1Table());
