@@ -88,19 +88,19 @@
 											prefHeight="40.0" prefWidth="210.0"
 											style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);"
 											styleClass="nav-btn" stylesheets="@MenuDesign.css"
-											text="Dashboard" textFill="#00e9ff" />
+											text="Dashboard" textFill="WHITE" />
 										<Button layoutX="6.0" layoutY="300.0"
 											mnemonicParsing="false" onAction="#handleSubmitButtonClicked"
 											prefHeight="40.0" prefWidth="210.0"
 											style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);"
 											styleClass="nav-btn" stylesheets="@MenuDesign.css"
-											text="Menu" textFill="#00e9ff" />
+											text="Menu" textFill="WHITE" />
 										<Button layoutX="6.0" layoutY="375.0"
 											mnemonicParsing="false" onAction="#handleSubmitButtonClicked"
 											prefHeight="40.0" prefWidth="210.0"
 											style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);"
 											styleClass="nav-btn" stylesheets="@MenuDesign.css"
-											text="Inventory" textFill="#00e9ff" />
+											text="Inventory" textFill="WHITE" />
 									</children>
 								</AnchorPane>
 							</children>
