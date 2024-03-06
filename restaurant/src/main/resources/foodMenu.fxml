@@ -24,7 +24,7 @@
                      <content>
                         <AnchorPane prefHeight="781.0" prefWidth="503.0">
                            <children>
-                              <AnchorPane layoutX="-3.0" layoutY="-41.0" prefHeight="1346.0" prefWidth="479.0">
+                              <AnchorPane layoutX="-3.0" layoutY="4.0" prefHeight="1346.0" prefWidth="479.0">
                                  <children>
                                     <AnchorPane layoutX="14.0" layoutY="40.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
@@ -233,6 +233,7 @@
                                           </ImageView>
                                        </children>
                                     </AnchorPane>
+                                    <Button layoutX="327.0" layoutY="8.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Vegetarian" />
                                  </children>
                               </AnchorPane>
                            </children>
