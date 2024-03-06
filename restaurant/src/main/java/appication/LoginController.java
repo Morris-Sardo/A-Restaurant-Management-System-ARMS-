@@ -29,8 +29,9 @@ public class LoginController {
   public LoginController(MyView view, DataBaseModel con) {
     this.view = view;
     this.connection = con; /// added
+    
 
-    view.addLoginObserver(this::hanldeLogin);
+    view.addLoginObserver(this::handleLogin);
     view.addRegistrationObserver(this::handleSignUp);
     view.addForgotPasswordObserver(this::handleForgotPass);
     view.addChangePasswordObserver(this::handleAnswer);
@@ -41,7 +42,7 @@ public class LoginController {
   /**
    * This method will handle the login.
    */
-  public void hanldeLogin() {
+  public void handleLogin() {
     if (view.getUserNameLogin().isEmpty() || view.getPassowrdLogin().isEmpty()) {
       view.alert(AlertType.ERROR, "Error Message", "Please fill all the blank fields");
 

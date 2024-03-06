@@ -35,7 +35,7 @@ public class Customer {
   public Connection getConnection() {
     return connection;
   }
-  
+
   public int[] getOrder() {
     return order;
   }
@@ -97,12 +97,9 @@ public class Customer {
   }
 
   /*
-   * Figure out how to generate custom id
-   * Yeet tablenumber from the top
-   * get items from int order
-   * sum price with a for loop, looking in the arraylist of items
-   * order time: get current time
-   * status: set status to requested
+   * Figure out how to generate custom id Yeet tablenumber from the top get items from int order sum
+   * price with a for loop, looking in the arraylist of items order time: get current time status:
+   * set status to requested
    */
   /**
    * Adds the order to the database.
@@ -119,7 +116,7 @@ public class Customer {
       for (int item : order) {
         update.setInt(1, item);
         update.executeUpdate();
-      } 
+      }
     }
 
     try (PreparedStatement statement = connection.prepareStatement(submitOrderQuery)) {
@@ -171,7 +168,8 @@ public class Customer {
   /**
    * Adds a request for a bill to the database.
    */
-  public void requestBill() throws PSQLException, SQLException, DatabaseInformationException {
+  public ArrayList<String> requestBill()
+      throws PSQLException, SQLException, DatabaseInformationException {
     ArrayList<String> result = new ArrayList<String>();
     int sum = 0;
     String query = "SELECT items FROM orders WHERE table_number = " + Integer.toString(customerID)
@@ -186,7 +184,7 @@ public class Customer {
     if (!result.isEmpty()) {
       String cancel =
           "UPDATE orders SET status = 'Canceled' WHERE(status ='Requested' OR status ='Confirmed') "
-          + "AND table_number = " + Integer.toString(customerID);
+              + "AND table_number = " + Integer.toString(customerID);
       try (PreparedStatement cancelation = connection.prepareStatement(cancel)) {
         cancelation.executeUpdate();
       }
@@ -207,6 +205,12 @@ public class Customer {
     } else {
       throw new DatabaseInformationException("No valid orders exist for this table");
     }
+    ArrayList<String> bills = new ArrayList<String>();
+    bills.add(Integer.toString(customerID));
+    bills.add(Integer.toString(tableNumber));
+    bills.add(result.toString().replace("[", "").replace("]", ""));
+    bills.add(Integer.toString(sum));
+    return bills;
   }
 
   /**
