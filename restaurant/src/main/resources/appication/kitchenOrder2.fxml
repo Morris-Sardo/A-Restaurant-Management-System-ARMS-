@@ -41,7 +41,7 @@
                         <Font size="18.0" />
                       </font>
                     </Label>
-                    <Button layoutX="6.0" layoutY="223.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="REVIEW" textFill="WHITE" />
+                    <Button layoutX="6.0" layoutY="237.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="REVIEW LIST" textFill="WHITE" />
                     <Button layoutX="6.0" layoutY="287.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="INVENTORY" textFill="WHITE" />
                     <Button layoutX="6.0" layoutY="346.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MENU" textFill="#f8f8f8" />
                     <Button layoutX="14.0" layoutY="549.0" mnemonicParsing="false" stylesheets="@MenuDesign.css" AnchorPane.bottomAnchor="12.0">
@@ -73,7 +73,7 @@
               <children>
                 <Label layoutX="170.0" layoutY="23.0" text="Kitchen Orders">
                   <font>
-                    <Font size="75.0" />
+                    <Font name="French Script MT" size="75.0" />
                   </font>
                 </Label>
                         <Button layoutX="743.0" layoutY="200.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="DELIVERED" textFill="#f8f8f8" />
@@ -81,8 +81,12 @@
                         <Button layoutX="743.0" layoutY="308.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="CANCEL ORDER" textFill="#f8f8f8" />
                         <TableView layoutX="39.0" layoutY="140.0" prefHeight="431.0" prefWidth="683.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="C1" />
-                            <TableColumn prefWidth="75.0" text="C2" />
+                            <TableColumn prefWidth="75.0" text="Order n." />
+                            <TableColumn prefWidth="119.0" text="Table n." />
+                              <TableColumn prefWidth="129.0" text="Items" />
+                              <TableColumn prefWidth="124.0" text="Price (£)" />
+                              <TableColumn prefWidth="122.0" text="Order Time" />
+                              <TableColumn prefWidth="113.0" text="Status" />
                           </columns>
                         </TableView>
               </children>
