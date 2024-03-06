@@ -86,13 +86,13 @@
 											prefHeight="40.0" prefWidth="210.0"
 											style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);"
 											styleClass="nav-btn" stylesheets="@MenuDesign.css"
-											text="Dashboard" textFill="#00e9ff" />
+											text="Dashboard" textFill="WHITE" />
 										<Button layoutX="6.0" layoutY="300.0"
 											mnemonicParsing="false" onAction="#handleSubmitButtonClicked"
 											prefHeight="40.0" prefWidth="210.0"
 											style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);"
 											styleClass="nav-btn" stylesheets="@MenuDesign.css"
-											text="Previous Reviews" textFill="#00e9ff" />
+											text="Previous Reviews" textFill="WHITE" />
 									</children>
 								</AnchorPane>
 							</children>
@@ -124,7 +124,7 @@
 									prefHeight="40.0" prefWidth="210.0"
 									style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);"
 									styleClass="nav-btn" stylesheets="@MenuDesign.css"
-									text="Submit" textFill="#00ff22" />
+									text="Submit" textFill="WHITE" />
 								<TextField fx:id="starsTextField" layoutX="595.0"
 									layoutY="158.0" onKeyTyped="#handleStarsInput"
 									promptText="How many Stars? (1-5)" />
