@@ -23,6 +23,8 @@ public class InventoryController {
    */
   public InventoryController(InventoryView viewI) {
     this.viewI = viewI;
+
+
   }
 
   /**
@@ -87,15 +89,48 @@ public class InventoryController {
       inventoryModel.handleSubmitButtonClicked(viewI.getProductIdField(),
           viewI.getProductNameField(), viewI.getProductType(), viewI.getStockField(),
           viewI.getPrizeField());
-      
-      //viewI.getItems();
-      //viewI.inventoryTable.setItems(InventoryModel.getInventoryTable());
+
+      // viewI.getItems();
+      // viewI.inventoryTable.setItems(InventoryModel.getInventoryTable());
       viewI.setAllFieldClean();
       viewI.steTableItems(InventoryModel.getInventoryTable());
 
     }
 
   }
+
+  /**
+   * This is.
+   * 
+   * @param idP didudf.
+   * @param nameP fubundve.
+   * @param typeP vibdcdfvc.
+   * @param stockP sdcjodobcd.
+   * @param prizeP vouebrfve.
+   */
+  public void handleUpdate(int idP, String nameP, String typeP, int stockP, float prizeP) {
+    if (inventoryModel.handleUpdate(idP, nameP, typeP, stockP, prizeP)) {
+      Driver.alert(AlertType.INFORMATION, "Successfully Update data into dataBase",
+          "Data added into Inventory Table");
+      viewI.setAllFieldClean();
+      viewI.steTableItems(InventoryModel.getInventoryTable());
+
+    } else {
+      Driver.alert(AlertType.ERROR, "Data are not been update in the table",
+          "Data are not been  added into Inventory Table");
+    }
+  }
+
+  // /**
+  // * This method update table.
+  // */
+  // void handleUpdate() {
+  //
+  // viewI.getPrizeField();
+  //
+  //
+  //
+  // }
 
 
 

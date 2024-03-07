@@ -17,6 +17,8 @@ public class Driver extends Application {
   private static Stage stage;
   private static DataBaseModel connection;
 
+
+
   @Override
   public void start(Stage stage) throws Exception {
     this.stage = stage;
@@ -42,9 +44,10 @@ public class Driver extends Application {
   public static DataBaseModel getDBconnection() {
     return connection;
   }
-  
+
   /**
    * Method for all aler.
+   * 
    * @param type of dialogue.
    * @param title of the window.
    * @param contentText content of alert.
@@ -57,9 +60,17 @@ public class Driver extends Application {
     alert.showAndWait();
   }
 
+  /**
+   * Thisd tis main method.
+   * 
+   * @param args argument main.
+   */
   public static void main(String[] args) {
     connection = new DataBaseModel();
+
     Application.launch(args);
+
+
   }
 
 }

@@ -97,6 +97,7 @@ public class InventoryModel {
   }
 
 
+
   /**
    * This method is use to get all data of inventory table from database to populate the interface
    * inventory table.s
@@ -136,6 +137,41 @@ public class InventoryModel {
     return membersTable;
   }
 
+
+  /**
+   * This is the new method able to udate the column.
+   * 
+   * @param productId product id.
+   * @param newName is product name.
+   * @return update the name.
+   */
+  public boolean handleUpdate(Integer productId, String newName, String newType, Integer newStock,
+      Float newPrize) {
+    // Define the SQL query to update the product name
+    String sql = "UPDATE Inventory SET Product_Name = ?, type = ?, stock = ?,  "
+        + "prize = ? WHERE Product_ID = ?";
+
+    // Try-with-resources statement to auto-close resources
+    try (Connection conn = DataBaseModel.connectToDatabase();
+        PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+      // Set the parameters for the prepared statement
+      pstmt.setString(1, newName);
+      pstmt.setString(2, newType);
+      pstmt.setInt(3, newStock);
+      pstmt.setFloat(4, newPrize);
+      pstmt.setInt(5, productId);
+
+      // Execute the update
+      int affectedRows = pstmt.executeUpdate();
+
+      // Return true if the update was successful (one row affected)
+      return affectedRows == 1;
+    } catch (SQLException e) {
+      System.err.println("Update failed: " + e.getMessage());
+      return false;
+    }
+  }
 
 
   /**

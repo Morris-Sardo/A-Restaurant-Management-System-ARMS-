@@ -116,16 +116,7 @@
                                     <TextField fx:id="stockField" layoutX="427.0" layoutY="22.0" prefHeight="25.0" prefWidth="141.0" promptText="0" />
                                     <Label layoutX="369.0" layoutY="63.0" text="Price(£):" />
                                     <TextField fx:id="prizeField" layoutX="427.0" layoutY="58.0" prefHeight="25.0" prefWidth="141.0" promptText="£0.0" />
-                                    <AnchorPane layoutX="723.0" layoutY="13.0" prefHeight="121.0" prefWidth="117.0" AnchorPane.rightAnchor="14.0">
-                                       <styleClass>
-                                          <String fx:value="white-background" />
-                                          <String fx:value="shadow-drop" />
-                                       </styleClass>
-                                       <children>
-                                          <ImageView fx:id="inventoryImageView" fitHeight="121.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true" />
-                                       </children>
-                                    </AnchorPane>
-                                    <Button fx:id="inventoryImportBtn" layoutX="730.0" layoutY="146.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" styleClass="invt-btn" text="Import" AnchorPane.rightAnchor="22.0" />
+                                    <Button fx:id="selectItemBtn" layoutX="737.0" layoutY="20.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" styleClass="invt-btn" text="Select" AnchorPane.rightAnchor="14.200000000000045" />
                                     <Button fx:id="inventoryAddBtn" layoutX="72.0" layoutY="176.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="122.0" styleClass="invt-btn" text="Add" AnchorPane.bottomAnchor="14.0" />
                                     <Button fx:id="inventoryUpdateBtn" layoutX="224.0" layoutY="165.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="122.0" styleClass="invt-btn" text="Update" AnchorPane.bottomAnchor="25.0" />
                                     <Button fx:id="inventoryClearBtn" layoutX="392.0" layoutY="165.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="122.0" styleClass="invt-btn" text="Clear" AnchorPane.bottomAnchor="25.0" />

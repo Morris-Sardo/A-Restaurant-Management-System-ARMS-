@@ -13,11 +13,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.converter.FloatStringConverter;
+import javafx.util.converter.IntegerStringConverter;
 
 /**
  * This class is the Gui of inventory form.
@@ -27,8 +31,6 @@ import javafx.scene.layout.AnchorPane;
  */
 public class InventoryView {
 
-  @FXML
-  private TextField expe;
 
   @FXML
   private Button dashboardBtn;
@@ -105,6 +107,12 @@ public class InventoryView {
   @FXML
   private Label username;
 
+  private ObservableList<Inventory> list = InventoryModel.getInventoryTable();
+
+  @FXML
+  private Button selectItemBtn;
+
+
 
   @SuppressWarnings("rawtypes")
   private ObservableList<?> listData;
@@ -144,7 +152,15 @@ public class InventoryView {
     reviewBtn.setOnAction(event -> inventoryController.handleReview());
     dashboardBtn.setOnAction(event -> inventoryController.handledashboard());
     inventoryAddBtn.setOnAction(event -> inventoryController.handleAddInvetory());
-
+    selectItemBtn.setOnAction(event -> handleSelect());
+    inventoryUpdateBtn.setOnAction(event -> {
+      inventoryController.handleUpdate(Integer.parseInt(productIdField.getText()),
+          productNameField.getText(), productTypeField.getSelectionModel().getSelectedItem(),
+          Integer.parseInt(stockField.getText()), Float.parseFloat(prizeField.getText()));
+      productIdField.setDisable(false);
+    });
+    
+    inventoryClearBtn.setOnAction(event -> setAllFieldCleanButton());
     // inizialize the column of the table.
     tableColProdId.setCellValueFactory(new PropertyValueFactory<>("product_ID"));
     tableColProdName.setCellValueFactory(new PropertyValueFactory<>("product_name"));
@@ -153,10 +169,11 @@ public class InventoryView {
     tableColPrice.setCellValueFactory(new PropertyValueFactory<>("prize"));
 
     // inizialize all imtes column of table
-    inventoryTable.setItems(InventoryModel.getInventoryTable());
+    inventoryTable.setItems(list);
 
-    // inizilaize list of product type
+
     regTypeList();
+
 
   }
 
@@ -181,6 +198,24 @@ public class InventoryView {
     inventoryTable.setItems(list);
   }
 
+  /**
+   * Test Observable list..
+   * 
+   * @return table.
+   */
+  public Inventory getSelectedTableItem() {
+    return inventoryTable.getSelectionModel().getSelectedItem();
+  }
+
+
+  /**
+   * Test the table.
+   * 
+   * @return table.
+   */
+  public ObservableList<Inventory> getListTable() {
+    return list;
+  }
 
   /**
    * This method return product_ID form field.
@@ -281,6 +316,45 @@ public class InventoryView {
     productTypeField.setItems(listQ); // press button typeList it will appear the questions.
 
   }
+
+
+  /**
+   * This method update table.
+   */
+  @FXML
+  public void handleSelect() {
+    Inventory selectedItem = inventoryTable.getSelectionModel().getSelectedItem();
+    int num = inventoryTable.getSelectionModel().getSelectedIndex();
+
+    if ((num - 1) < -1) {
+      return;
+    }
+
+    productIdField.setText("" + selectedItem.getProduct_ID());
+    productIdField.setDisable(true);
+    productNameField.setText(selectedItem.getName());
+    stockField.setText("" + selectedItem.getStock());
+    prizeField.setText("" + selectedItem.getPrize());
+    productTypeField.setValue(selectedItem.getType());
+
+
+
+  }
+  
+
+  /**
+   * This method clean up all the the field after used. //
+   */
+  public void setAllFieldCleanButton() {
+    productIdField.setDisable(false);
+    productIdField.setText("");
+    productNameField.setText("");
+    productTypeField.getSelectionModel().clearSelection();
+    stockField.setText("");
+    prizeField.setText("");
+
+  }
+  
 
 
 }
