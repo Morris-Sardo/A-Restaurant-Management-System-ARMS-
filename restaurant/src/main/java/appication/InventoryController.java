@@ -89,9 +89,6 @@ public class InventoryController {
       inventoryModel.handleSubmitButtonClicked(viewI.getProductIdField(),
           viewI.getProductNameField(), viewI.getProductType(), viewI.getStockField(),
           viewI.getPrizeField());
-
-      // viewI.getItems();
-      // viewI.inventoryTable.setItems(InventoryModel.getInventoryTable());
       viewI.setAllFieldClean();
       viewI.steTableItems(InventoryModel.getInventoryTable());
 
@@ -100,38 +97,37 @@ public class InventoryController {
   }
 
   /**
-   * This is.
-   * 
-   * @param idP didudf.
-   * @param nameP fubundve.
-   * @param typeP vibdcdfvc.
-   * @param stockP sdcjodobcd.
-   * @param prizeP vouebrfve.
+   * This is method handle the update button.
    */
-  public void handleUpdate(int idP, String nameP, String typeP, int stockP, float prizeP) {
-    if (inventoryModel.handleUpdate(idP, nameP, typeP, stockP, prizeP)) {
+  public void handleUpdate() {
+
+
+    if (viewI.getProductIdField() == -1 || viewI.getProductNameField().isEmpty()
+        || viewI.getProductType() == null || viewI.getStockField() == -1
+        || viewI.getPrizeField() == -1) {
+      Driver.alert(AlertType.ERROR, "Error Message", "Please fill insert a valids input");
+    } else if (viewI.getPrizeField() > 9999999.99 || viewI.getPrizeField() < 0) {
+      Driver.alert(AlertType.ERROR, "Error message", "Prize no  correct");
+      viewI.setAllFieldClean();
+
+    } else if (viewI.getProductIdField() < 0) {
+      Driver.alert(AlertType.ERROR, "Error message", "Product ID no correct");
+    } else if (viewI.getStockField() < 0) {
+      Driver.alert(AlertType.ERROR, "Error message", "Stock no valid");
+    } else {
+
+
+      inventoryModel.handleUpdate(viewI.getProductIdField(), viewI.getProductNameField(),
+          viewI.getProductType(), viewI.getStockField(), viewI.getPrizeField());
       Driver.alert(AlertType.INFORMATION, "Successfully Update data into dataBase",
           "Data added into Inventory Table");
       viewI.setAllFieldClean();
       viewI.steTableItems(InventoryModel.getInventoryTable());
 
-    } else {
-      Driver.alert(AlertType.ERROR, "Data are not been update in the table",
-          "Data are not been  added into Inventory Table");
     }
   }
-
-  // /**
-  // * This method update table.
-  // */
-  // void handleUpdate() {
-  //
-  // viewI.getPrizeField();
-  //
-  //
-  //
-  // }
 
 
 
 }
+

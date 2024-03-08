@@ -154,9 +154,7 @@ public class InventoryView {
     inventoryAddBtn.setOnAction(event -> inventoryController.handleAddInvetory());
     selectItemBtn.setOnAction(event -> handleSelect());
     inventoryUpdateBtn.setOnAction(event -> {
-      inventoryController.handleUpdate(Integer.parseInt(productIdField.getText()),
-          productNameField.getText(), productTypeField.getSelectionModel().getSelectedItem(),
-          Integer.parseInt(stockField.getText()), Float.parseFloat(prizeField.getText()));
+      inventoryController.handleUpdate();
       productIdField.setDisable(false);
     });
     
@@ -254,7 +252,7 @@ public class InventoryView {
   /**
    * This method is use to get products' type from cubox.
    */
-  public Object getProductType() {
+  public String getProductType() {
 
 
     return productTypeField.getSelectionModel().getSelectedItem();
