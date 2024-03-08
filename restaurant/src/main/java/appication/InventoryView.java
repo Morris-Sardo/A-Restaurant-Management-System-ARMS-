@@ -157,8 +157,11 @@ public class InventoryView {
       inventoryController.handleUpdate();
       productIdField.setDisable(false);
     });
-    
+
     inventoryClearBtn.setOnAction(event -> setAllFieldCleanButton());
+
+    inventoryDeleteBnt.setOnAction(event -> inventoryController
+        .handleDeleteItems(inventoryTable.getSelectionModel().getSelectedItem().getProduct_ID()));
     // inizialize the column of the table.
     tableColProdId.setCellValueFactory(new PropertyValueFactory<>("product_ID"));
     tableColProdName.setCellValueFactory(new PropertyValueFactory<>("product_name"));
@@ -338,7 +341,7 @@ public class InventoryView {
 
 
   }
-  
+
 
   /**
    * This method clean up all the the field after used. //
@@ -352,7 +355,7 @@ public class InventoryView {
     prizeField.setText("");
 
   }
-  
+
 
 
 }

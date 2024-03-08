@@ -127,6 +127,25 @@ public class InventoryController {
     }
   }
 
+  /**
+   * This method hanlde the delete button.
+   * 
+   * @param produtID is the item(PK of database) selected on the table.
+   */
+  void handleDeleteItems(Integer produtID) {
+
+    if (!InventoryModel.deleteItems(produtID)) {
+      Driver.alert(AlertType.ERROR, "Error Message", "Item has not been deleted");
+    } else {
+      viewI.setAllFieldClean();
+      viewI.steTableItems(InventoryModel.getInventoryTable());
+      Driver.alert(AlertType.INFORMATION, "Successfully action",
+          "The Items has been delete successfully");
+
+    }
+
+  }
+
 
 
 }

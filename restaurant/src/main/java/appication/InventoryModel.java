@@ -63,6 +63,31 @@ public class InventoryModel {
 
   }
 
+  /**
+   * This method drop a primary key into into Database.
+   * 
+   * @throws SQLException if there is not conection.
+   */
+  public static boolean deleteItems(Integer productId) {
+
+
+
+    String query = "Delete from inventory WHERE product_id = ?";
+
+    try (Connection connection = DataBaseModel.connectToDatabase();
+        PreparedStatement statement = connection.prepareStatement(query)) {
+      
+      statement.setInt(1, productId);
+      statement.executeUpdate();
+      return true;
+    } catch (SQLException e) {
+      e.printStackTrace();
+      return false;
+    }
+
+
+  }
+
 
 
   /**
@@ -172,6 +197,7 @@ public class InventoryModel {
       return false;
     }
   }
+
 
 
   /**
