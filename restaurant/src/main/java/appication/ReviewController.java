@@ -11,10 +11,7 @@ import javafx.scene.control.Alert.AlertType;
  */
 
 public class ReviewController {
-  
-  //add list. 
 
-  private MyView view;
   private ReviewView viewR;
   private ReviewModel reviewModel;
   @SuppressWarnings("unused")
@@ -39,7 +36,6 @@ public class ReviewController {
    */
   void handleSignOut() {
     MyView view = new MyView();
-    LoginController loginPageController = new LoginController(view);
     Driver.setScene(view.start(), TitlePage.LOGIN_PAGE);
   }
 
@@ -56,15 +52,16 @@ public class ReviewController {
    */
   void handleSubmissionButton() {
     if (viewR.getTextReview().isEmpty() || viewR.getNickNameTextField().isEmpty()) {
-      Driver.alert(Alert.AlertType.ERROR, "Error Message", "Please fill all the blank fields");
+      AlertText.alert(Alert.AlertType.ERROR, "Error Message", "Please fill all the blank fields");
     } else if (viewR.getTextReview().length() > 500) {
-      Driver.alert(Alert.AlertType.ERROR, "Error Message", "Text must be maximum 10 characters");
+      AlertText.alert(Alert.AlertType.ERROR, "Error Message", "Text must be maximum 10 characters");
     } else if (viewR.getStarTestField() > 5 || viewR.getStarTestField() < 0) {
-      Driver.alert(Alert.AlertType.ERROR, "Error Message", "Insert a correct stars");
+      AlertText.alert(Alert.AlertType.ERROR, "Error Message", "Insert a correct stars");
     } else {
       reviewModel.handleSubmitButtonClicked(viewR.getNickNameTextField(),
           viewR.getStarTestField() + "", viewR.getTextReview());
-      Driver.alert(AlertType.INFORMATION, "Information Message", "Review submitted successfully!");
+      AlertText.alert(AlertType.INFORMATION, "Information Message",
+          "Review submitted successfully!");
       viewR.setAllFieldReviewClean();
 
     }

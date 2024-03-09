@@ -37,10 +37,10 @@ public class LoginController {
    */
   public void hanldeLogin() {
     if (view.getUserNameLogin().isEmpty() || view.getPassowrdLogin().isEmpty()) {
-      Driver.alert(AlertType.ERROR, "Error Message", "Please fill all the blank fields");
+      AlertText.alert(AlertType.ERROR, "Error Message", "Please fill all the blank fields");
 
     } else if (!view.getUserNameLogin().contains("@")) {
-      Driver.alert(AlertType.ERROR, "Error Message", "Please type a valid Email");
+      AlertText.alert(AlertType.ERROR, "Error Message", "Please type a valid Email");
     } else {
       try {
         if (DataBaseModel.getRightLogin(view.getUserNameLogin(), view.getPassowrdLogin())) {
@@ -51,7 +51,7 @@ public class LoginController {
           Driver.setScene(mainPage.start(), TitlePage.DASHBOARD_PAGE);
 
         } else {
-          Driver.alert(AlertType.ERROR, "Error Message", "Incorrect Email Adderss/passowrd!");
+          AlertText.alert(AlertType.ERROR, "Error Message", "Incorrect Email Adderss/passowrd!");
 
 
         }
@@ -70,20 +70,20 @@ public class LoginController {
   void handleSignUp() {
     if (view.getUserNameRegistration().isEmpty() || view.getPassowrdRegistration().isEmpty()
         || view.getSelectedQuestion() == null || view.getAnswer().isEmpty()) {
-      Driver.alert(AlertType.ERROR, "Error Message", "Please fill all the blank fields");
+      AlertText.alert(AlertType.ERROR, "Error Message", "Please fill all the blank fields");
 
     } else if (!view.getUserNameRegistration().contains("@")) {
-      Driver.alert(AlertType.ERROR, "Error Message", "Please type a valid email");
+      AlertText.alert(AlertType.ERROR, "Error Message", "Please type a valid email");
     } else {
 
 
       if (DataBaseModel.registerUser(view.getUserNameRegistration(), view.getPassowrdRegistration(),
           view.getSelectedQuestion(), view.getAnswer())) {
-        Driver.alert(AlertType.INFORMATION, "Information Message",
+        AlertText.alert(AlertType.INFORMATION, "Information Message",
             "Successfully registered Account!");
         view.switFormAfterSignUp();
       } else {
-        Driver.alert(AlertType.ERROR, "Registration Error",
+        AlertText.alert(AlertType.ERROR, "Registration Error",
             "No valid Email Address. This Email already exists.");
 
       }
@@ -98,14 +98,14 @@ public class LoginController {
    */
   void handleForgotPass() {
     if (view.getUserNameLogin().isEmpty()) {
-      view.alert(AlertType.ERROR, "Error Message", "Please fill the username field");
+      AlertText.alert(AlertType.ERROR, "Error Message", "Please fill the username field");
     } else if (DataBaseModel.checkUserName(view.getUserNameLogin())) {
       currentUsername = view.getUserNameLogin();
       view.switchForgotPass(DataBaseModel.getUsersQuestion(currentUsername));
 
 
     } else {
-      view.alert(AlertType.ERROR, "Registration Error",
+      AlertText.alert(AlertType.ERROR, "Registration Error",
           "No valid Email Address. This Email does not exists.");
     }
 
@@ -116,14 +116,14 @@ public class LoginController {
    */
   void handleAnswer() {
     if (view.getSnswerChangePassword().isEmpty()) {
-      view.alert(AlertType.ERROR, "Error Message", "Please fill the answer in the fields");
+      AlertText.alert(AlertType.ERROR, "Error Message", "Please fill the answer in the fields");
     } else if (DataBaseModel.checkAnswer(currentUsername, view.getSnswerChangePassword())) {
       view.switchChangePassword();
 
 
 
     } else {
-      view.alert(AlertType.ERROR, "Error Message", "The answer was wrong");
+      AlertText.alert(AlertType.ERROR, "Error Message", "The answer was wrong");
     }
 
 
@@ -137,19 +137,19 @@ public class LoginController {
 
     // if feal are empty pop up txt is empty.
     if (view.getNewPassword().isEmpty() || view.getConfirmationNewPassword().isEmpty()) {
-      view.alert(AlertType.ERROR, "Error Message",
+      AlertText.alert(AlertType.ERROR, "Error Message",
           "Please fill the new password and confirm new password in the fields");
       // two password are equal.
     } else if (view.getNewPassword().equals(view.getConfirmationNewPassword())) {
 
 
       DataBaseModel.overridePassword(currentUsername, view.getNewPassword());
-      view.alert(AlertType.INFORMATION, "Information Message",
+      AlertText.alert(AlertType.INFORMATION, "Information Message",
           "Password has been succeffuly Update");
       view.backLoginFormFromChangePasswordForm();
 
     } else {
-      view.alert(AlertType.ERROR, "Error Message", "Please insert the same password");
+      AlertText.alert(AlertType.ERROR, "Error Message", "Please insert the same password");
     }
 
 

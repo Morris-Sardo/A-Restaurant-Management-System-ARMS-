@@ -358,14 +358,14 @@ public class InventoryView {
     int num = inventoryTable.getSelectionModel().getSelectedIndex();
 
     if ((num - 1) < -1) {
-      Driver.alert(AlertType.ERROR, "Error Message", "No item selected");
+      AlertText.alert(AlertType.ERROR, "Error Message", "No item selected");
 
     } else {
 
       if (InventoryModel.deleteItems(getSelectedTableItem().getProduct_ID())) {
-        Driver.alert(AlertType.ERROR, "Error Message", "Item has been deleted");
         setAllFieldClean();
         steTableItems(InventoryModel.getInventoryTable());
+        AlertText.alert(AlertType.ERROR, "Error Message", "Item has been deleted");
 
       } else {
         return;
