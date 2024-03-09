@@ -30,7 +30,11 @@ public class Inventory {
    * @return id.
    */
   public Integer getProduct_ID() {
-    return product_ID().get();
+    if (product_ID() == null) {
+      return -1;
+    } else {
+      return product_ID().get();
+    }
   }
 
   /**

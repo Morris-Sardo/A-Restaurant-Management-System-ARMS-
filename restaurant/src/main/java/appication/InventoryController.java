@@ -11,9 +11,9 @@ import javafx.scene.control.Alert.AlertType;
 public class InventoryController {
 
   private InventoryView viewI;
-  private MyView view = new MyView();
-  private InventoryModel inventoryModel = new InventoryModel();
-  private Object inventoryTable;
+  // private MyView view;
+  // private LoginController loginPageController;
+
 
 
   /**
@@ -23,7 +23,7 @@ public class InventoryController {
    */
   public InventoryController(InventoryView viewI) {
     this.viewI = viewI;
-
+    // this.view = new MyView();
 
   }
 
@@ -32,7 +32,6 @@ public class InventoryController {
    */
   void handleSignOut() {
     MyView view = new MyView();
-    LoginController loginPageController = new LoginController(view);
     Driver.setScene(view.start(), TitlePage.LOGIN_PAGE);
 
 
@@ -84,16 +83,20 @@ public class InventoryController {
       Driver.alert(AlertType.ERROR, "Error message", "Stock no valid");
     } else {
 
-      Driver.alert(AlertType.INFORMATION, "Successfully data Insert into dataBase",
-          "Data added into Inventory Table");
-      inventoryModel.handleSubmitButtonClicked(viewI.getProductIdField(),
+      if (InventoryModel.handleSubmitButtonClicked(viewI.getProductIdField(),
           viewI.getProductNameField(), viewI.getProductType(), viewI.getStockField(),
-          viewI.getPrizeField());
-      viewI.setAllFieldClean();
-      viewI.steTableItems(InventoryModel.getInventoryTable());
+          viewI.getPrizeField())) {
+        viewI.setAllFieldClean();
+        viewI.steTableItems(InventoryModel.getInventoryTable());
+        Driver.alert(AlertType.INFORMATION, "Successfully data Insert into dataBase",
+            "Data added into Inventory Table");
 
+      } else {
+        Driver.alert(AlertType.ERROR, "Update Error",
+            "No valid Product Id. This prpduct Id already exist.");
+
+      }
     }
-
   }
 
   /**
@@ -117,15 +120,18 @@ public class InventoryController {
     } else {
 
 
-      inventoryModel.handleUpdate(viewI.getProductIdField(), viewI.getProductNameField(),
+      InventoryModel.handleUpdate(viewI.getProductIdField(), viewI.getProductNameField(),
           viewI.getProductType(), viewI.getStockField(), viewI.getPrizeField());
       Driver.alert(AlertType.INFORMATION, "Successfully Update data into dataBase",
           "Data added into Inventory Table");
       viewI.setAllFieldClean();
       viewI.steTableItems(InventoryModel.getInventoryTable());
 
+
     }
+
   }
+
 
   /**
    * This method hanlde the delete button.
@@ -133,9 +139,16 @@ public class InventoryController {
    * @param produtID is the item(PK of database) selected on the table.
    */
   void handleDeleteItems(Integer produtID) {
-
-    if (!InventoryModel.deleteItems(produtID)) {
+    // Inventory selectedItem = viewI.getSelectedTableItem();
+    // if (selectedItem == null) {
+    // Driver.alert(AlertType.ERROR, "Error Message", "Item has not been deleted");
+    //Inventory in = new Inventory();
+    // Integer productId = viewI.selectedItem().getProduct_ID();
+    if (InventoryModel.deleteItems(produtID)) {
       Driver.alert(AlertType.ERROR, "Error Message", "Item has not been deleted");
+      viewI.setAllFieldClean();
+      viewI.steTableItems(InventoryModel.getInventoryTable());
+
     } else {
       viewI.setAllFieldClean();
       viewI.steTableItems(InventoryModel.getInventoryTable());

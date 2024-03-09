@@ -1,30 +1,26 @@
 package appication;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.util.converter.FloatStringConverter;
-import javafx.util.converter.IntegerStringConverter;
 
 /**
- * This class is the Gui of inventory form.
+ * This class is the GUI interface of inventory page. This class inizialize all the feature of the
+ * invenotry page.
  * 
  * @author papap
  *
@@ -114,8 +110,8 @@ public class InventoryView {
 
 
 
-  @SuppressWarnings("rawtypes")
-  private ObservableList<?> listData;
+  // @SuppressWarnings("rawtypes")
+  // private ObservableList<?> listData;
   private String type1 = "Drink";
   private String type2 = "Pasta";
   private String type3 = "Caffe";
@@ -159,9 +155,9 @@ public class InventoryView {
     });
 
     inventoryClearBtn.setOnAction(event -> setAllFieldCleanButton());
-
-    inventoryDeleteBnt.setOnAction(event -> inventoryController
-        .handleDeleteItems(inventoryTable.getSelectionModel().getSelectedItem().getProduct_ID()));
+    inventoryDeleteBnt.setOnAction(event -> handleDelete());
+    // inventoryDeleteBnt.setOnAction(
+    // event -> inventoryController.handleDeleteItems(getSelectedTableItem().getProduct_ID()));
     // inizialize the column of the table.
     tableColProdId.setCellValueFactory(new PropertyValueFactory<>("product_ID"));
     tableColProdName.setCellValueFactory(new PropertyValueFactory<>("product_name"));
@@ -179,7 +175,7 @@ public class InventoryView {
   }
 
   /**
-   * This method clean up all the the field after used. //
+   * This method clean up all the the field after used.
    */
   public void setAllFieldClean() {
     productIdField.setText("");
@@ -200,17 +196,22 @@ public class InventoryView {
   }
 
   /**
-   * Test Observable list..
+   * This method is used when uesr selelct items from table GUI.
    * 
-   * @return table.
+   * @return table list.
    */
   public Inventory getSelectedTableItem() {
-    return inventoryTable.getSelectionModel().getSelectedItem();
+    if (inventoryTable.getSelectionModel().getSelectedItem() == null) {
+      return null;
+
+    } else {
+      return inventoryTable.getSelectionModel().getSelectedItem();
+    }
   }
 
 
   /**
-   * Test the table.
+   * This method return the list of table.
    * 
    * @return table.
    */
@@ -219,9 +220,9 @@ public class InventoryView {
   }
 
   /**
-   * This method return product_ID form field.
+   * This method is user to get the Product Id typed in the GUI field.
    * 
-   * @return priduct_ID.
+   * @return product_ID.
    */
 
   public Integer getProductIdField() {
@@ -238,9 +239,9 @@ public class InventoryView {
 
 
   /**
-   * This method return product_ID form field.
+   * This method is user to get the Product Name typed in the GUI field.
    * 
-   * @return priduct_Name.
+   * @return product_Name.
    */
 
   public String getProductNameField() {
@@ -253,7 +254,9 @@ public class InventoryView {
   }
 
   /**
-   * This method is use to get products' type from cubox.
+   * This method is user to get the type of product using cumbox in the GUI.
+   * 
+   * @return type of food.
    */
   public String getProductType() {
 
@@ -262,7 +265,7 @@ public class InventoryView {
   }
 
   /**
-   * This method return stock form field.
+   * This method is user to get the product stock typed in the GUI field.
    * 
    * @return stock.
    */
@@ -282,9 +285,9 @@ public class InventoryView {
   }
 
   /**
-   * This method return products' prize form field.
+   * This method is user to get the prize of the product typed in the GUI field.
    * 
-   * @return prixze hold hold by field.
+   * @return prize.
    */
 
   public float getPrizeField() {
@@ -300,10 +303,11 @@ public class InventoryView {
   }
 
   /**
-   * This method used to store the list that will printout by GUI.
+   * This method used to story into combox list, the list of type of product that then will be
+   * showed by the GUI interface every time the user click on the combox field.
    *
    */
-  @SuppressWarnings("unchecked") // his supper the warming coused by ObservableList.
+  // @SuppressWarnings("unchecked") // his supper the warming coused by ObservableList.
   public void regTypeList() {
 
 
@@ -314,13 +318,15 @@ public class InventoryView {
     }
 
 
-    productTypeField.setItems(listQ); // press button typeList it will appear the questions.
+    productTypeField.setItems(listQ);
 
   }
 
 
   /**
-   * This method update table.
+   * This method is used when the user click into table GUI to selet a particolare item. This method
+   * will retrieve from the table all specification of that items into the field such that the user
+   * can update the quantity, prize etc.
    */
   @FXML
   public void handleSelect() {
@@ -332,7 +338,7 @@ public class InventoryView {
     }
 
     productIdField.setText("" + selectedItem.getProduct_ID());
-    productIdField.setDisable(true);
+    productIdField.setDisable(true); // no possible to change the product ID field.
     productNameField.setText(selectedItem.getName());
     stockField.setText("" + selectedItem.getStock());
     prizeField.setText("" + selectedItem.getPrize());
@@ -342,9 +348,35 @@ public class InventoryView {
 
   }
 
+  /**
+   * This method is a test.
+   */
+  @FXML
+  public void handleDelete() {
+    // Inventory selectedItem = inventoryTable.getSelectionModel().getSelectedItem();
+    int num = inventoryTable.getSelectionModel().getSelectedIndex();
+
+    if ((num - 1) < -1) {
+      Driver.alert(AlertType.ERROR, "Error Message", "No item selected");
+
+    } else {
+
+      if (InventoryModel.deleteItems(getSelectedTableItem().getProduct_ID())) {
+        Driver.alert(AlertType.ERROR, "Error Message", "Item has been deleted");
+        setAllFieldClean();
+        steTableItems(InventoryModel.getInventoryTable());
+
+      } else {
+        return;
+
+      }
+    }
+
+  }
 
   /**
-   * This method clean up all the the field after used. //
+   * This method is used whwn user change mind to update of add new item so will will clean up the
+   * flelds and set product Id changebla again..
    */
   public void setAllFieldCleanButton() {
     productIdField.setDisable(false);

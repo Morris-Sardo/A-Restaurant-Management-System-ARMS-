@@ -8,7 +8,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- * This is the interaction with database.
+ * This class interact with inventory database and GUI. When user manimpulate data on GUI interface
+ * will be sent to database.
  * 
  * @author papap
  *
@@ -26,7 +27,7 @@ public class InventoryModel {
   private static Float Price;
 
   /**
-   * This method create Inventory tabe into Database.
+   * This method create Inventory table into Database.
    * 
    * @throws SQLException if there is not conection.
    */
@@ -46,7 +47,7 @@ public class InventoryModel {
 
 
   /**
-   * This method create Inventory tabe into Database.
+   * This method Inventory table into Database. this method is just for purpose testing.
    * 
    * @throws SQLException if there is not conection.
    */
@@ -64,7 +65,8 @@ public class InventoryModel {
   }
 
   /**
-   * This method drop a primary key into into Database.
+   * This method drop a primary key Database. It will be use every timec user want delet an item
+   * into table.
    * 
    * @throws SQLException if there is not conection.
    */
@@ -76,7 +78,7 @@ public class InventoryModel {
 
     try (Connection connection = DataBaseModel.connectToDatabase();
         PreparedStatement statement = connection.prepareStatement(query)) {
-      
+
       statement.setInt(1, productId);
       statement.executeUpdate();
       return true;
@@ -91,28 +93,40 @@ public class InventoryModel {
 
 
   /**
-   * This mehod connect add into invnetory database an items.
+   * This mehod connect add into inventory database an items. This method is used when user want add
+   * a new items in invenotry table.
    */
-  public boolean handleSubmitButtonClicked(Integer productID, String productName,
+  public static boolean handleSubmitButtonClicked(Integer productID, String productName,
       Object productType, Integer productStock, Float productPrize) {
 
+
+    // Check if ID already exist in database.
+    String checkProductID = "SELECT COUNT(*) FROM inventory WHERE product_id = ?";
     String insertQuery =
         "INSERT INTO inventory (product_id,product_name,type,stock,prize) VALUES (?, ?, ?, ?, ?)";
 
 
-
+    // Prepare and ecxcecute the checkID.
     try {
-      connection = DataBaseModel.connectToDatabase();
-      prepare = connection.prepareStatement(insertQuery);
-      prepare.setInt(1, productID);
-      prepare.setString(2, productName);
-      prepare.setString(3, (String) productType);
-      prepare.setInt(4, productStock);
-      prepare.setFloat(5, productPrize);
-      prepare.execute();
+      connection = DataBaseModel.connectToDatabase(); // moved here.
+      prepare = connection.prepareStatement(checkProductID); // add this
+      prepare.setInt(1, productID); // add this.
+      result = prepare.executeQuery(); //
 
-      return true;
+      // if result is equal 0 means that produt id in not present into database.
+      if (result.next() && result.getInt(1) == 0) {
 
+        prepare = connection.prepareStatement(insertQuery);
+        prepare.setInt(1, productID);
+        prepare.setString(2, productName);
+        prepare.setString(3, (String) productType);
+        prepare.setInt(4, productStock);
+        prepare.setFloat(5, productPrize);
+        prepare.executeUpdate();
+        return true;
+      } else {
+        return false;
+      }
 
     } catch (SQLException e) {
       e.printStackTrace();
@@ -125,7 +139,7 @@ public class InventoryModel {
 
   /**
    * This method is use to get all data of inventory table from database to populate the interface
-   * inventory table.s
+   * inventory table.
    * 
    * @return table with column populated.
    */
@@ -164,14 +178,14 @@ public class InventoryModel {
 
 
   /**
-   * This is the new method able to udate the column.
+   * This method is used to update the items. In default the product ID wont be possible to update.
    * 
-   * @param productId product id.
-   * @param newName is product name.
-   * @return update the name.
+   * @param productId is id of product.
+   * @param newName is name of product.
+   * @return update is result od updating od product name, type, stock and prize.
    */
-  public boolean handleUpdate(Integer productId, String newName, String newType, Integer newStock,
-      Float newPrize) {
+  public static boolean handleUpdate(Integer productId, String newName, String newType,
+      Integer newStock, Float newPrize) {
     // Define the SQL query to update the product name
     String sql = "UPDATE Inventory SET Product_Name = ?, type = ?, stock = ?,  "
         + "prize = ? WHERE Product_ID = ?";
@@ -201,7 +215,7 @@ public class InventoryModel {
 
 
   /**
-   * This main run the class indiviadually such that create table.
+   * This main run the class as individual. It is used just for testing.
    * 
    * @param args string.
    */
