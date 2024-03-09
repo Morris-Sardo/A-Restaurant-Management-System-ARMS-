@@ -349,7 +349,8 @@ public class InventoryView {
   }
 
   /**
-   * This method is a test.
+   * This method is used when user want delete a items from Inventory table. The method check before
+   * if items has been selected otherwise pop hp a allert text.
    */
   @FXML
   public void handleDelete() {

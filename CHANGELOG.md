@@ -30,3 +30,6 @@ public static void createLoginTable(Connection connection) throws SQLException {
 
 the bug was couse in hnadleChangePasswrd() the overridepassword used to get has argument the paramenter from the view but the fielad was alredy cleaned ehen i type forgot password in Login form. to fixed i used a viariable used ot save the username in loging form such the when the system cuold use the variable to match the new password with the user 
 
+#Fixed two bugs in inventory page.
+  first bug was coused by handleDelete(). this mathod was unable to handle exception if delete button was pressed without selecting any item. now it will pop a alert txt.
+  second bug was coused by  handleUpdate(). this method could handle the update items with same product id. now it wll pop up a alert text.
