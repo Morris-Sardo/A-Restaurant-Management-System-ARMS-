@@ -110,8 +110,6 @@ public class InventoryView {
 
 
 
-  // @SuppressWarnings("rawtypes")
-  // private ObservableList<?> listData;
   private String type1 = "Drink";
   private String type2 = "Pasta";
   private String type3 = "Caffe";
@@ -155,10 +153,7 @@ public class InventoryView {
     });
 
     inventoryClearBtn.setOnAction(event -> setAllFieldCleanButton());
-    inventoryDeleteBnt.setOnAction(event -> handleDelete());
-    // inventoryDeleteBnt.setOnAction(
-    // event -> inventoryController.handleDeleteItems(getSelectedTableItem().getProduct_ID()));
-    // inizialize the column of the table.
+    inventoryDeleteBnt.setOnAction(event -> inventoryController.handleDelete());
     tableColProdId.setCellValueFactory(new PropertyValueFactory<>("product_ID"));
     tableColProdName.setCellValueFactory(new PropertyValueFactory<>("product_name"));
     tableColType.setCellValueFactory(new PropertyValueFactory<>("type"));
@@ -201,14 +196,19 @@ public class InventoryView {
    * @return table list.
    */
   public Inventory getSelectedTableItem() {
-    if (inventoryTable.getSelectionModel().getSelectedItem() == null) {
-      return null;
 
-    } else {
-      return inventoryTable.getSelectionModel().getSelectedItem();
-    }
+    return inventoryTable.getSelectionModel().getSelectedItem();
   }
 
+  /**
+   * This method is used to get the row of the table.
+   * 
+   * @return the row of the table.
+   */
+  public Integer getTableIndex() {
+
+    return inventoryTable.getSelectionModel().getSelectedIndex();
+  }
 
   /**
    * This method return the list of table.
@@ -307,7 +307,7 @@ public class InventoryView {
    * showed by the GUI interface every time the user click on the combox field.
    *
    */
-  // @SuppressWarnings("unchecked") // his supper the warming coused by ObservableList.
+
   public void regTypeList() {
 
 
@@ -348,32 +348,7 @@ public class InventoryView {
 
   }
 
-  /**
-   * This method is used when user want delete a items from Inventory table. The method check before
-   * if items has been selected otherwise pop hp a allert text.
-   */
-  @FXML
-  public void handleDelete() {
-    // Inventory selectedItem = inventoryTable.getSelectionModel().getSelectedItem();
-    int num = inventoryTable.getSelectionModel().getSelectedIndex();
 
-    if ((num - 1) < -1) {
-      AlertText.alert(AlertType.ERROR, "Error Message", "No item selected");
-
-    } else {
-
-      if (InventoryModel.deleteItems(getSelectedTableItem().getProduct_ID())) {
-        setAllFieldClean();
-        steTableItems(InventoryModel.getInventoryTable());
-        AlertText.alert(AlertType.ERROR, "Error Message", "Item has been deleted");
-
-      } else {
-        return;
-
-      }
-    }
-
-  }
 
   /**
    * This method is used whwn user change mind to update of add new item so will will clean up the
@@ -386,6 +361,7 @@ public class InventoryView {
     productTypeField.getSelectionModel().clearSelection();
     stockField.setText("");
     prizeField.setText("");
+    inventoryTable.getSelectionModel().clearSelection();
 
   }
 

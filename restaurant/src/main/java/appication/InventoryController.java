@@ -1,5 +1,6 @@
 package appication;
 
+import javafx.fxml.FXML;
 import javafx.scene.control.Alert.AlertType;
 
 /**
@@ -11,7 +12,6 @@ import javafx.scene.control.Alert.AlertType;
 public class InventoryController {
 
   private InventoryView viewI;
-  
 
 
 
@@ -22,7 +22,7 @@ public class InventoryController {
    */
   public InventoryController(InventoryView viewI) {
     this.viewI = viewI;
-    
+
 
   }
 
@@ -132,28 +132,30 @@ public class InventoryController {
   }
 
 
+
   /**
-   * This method hanlde the delete button.
-   * 
-   * @param produtID is the item(PK of database) selected on the table.
+   * This method is used when user want delete a items from Inventory table. The method check before
+   * if items has been selected otherwise pop hp a alert text.
    */
-  void handleDeleteItems(Integer produtID) {
-    // Inventory selectedItem = viewI.getSelectedTableItem();
-    // if (selectedItem == null) {
-    // Driver.alert(AlertType.ERROR, "Error Message", "Item has not been deleted");
-    //Inventory in = new Inventory();
-    // Integer productId = viewI.selectedItem().getProduct_ID();
-    if (InventoryModel.deleteItems(produtID)) {
-      Driver.alert(AlertType.ERROR, "Error Message", "Item has not been deleted");
-      viewI.setAllFieldClean();
-      viewI.steTableItems(InventoryModel.getInventoryTable());
+  @FXML
+  public void handleDelete() {
+
+    int num = viewI.getTableIndex();
+
+    if ((num - 1) < -1) {
+      AlertText.alert(AlertType.ERROR, "Error Message", "No item selected");
 
     } else {
-      viewI.setAllFieldClean();
-      viewI.steTableItems(InventoryModel.getInventoryTable());
-      Driver.alert(AlertType.INFORMATION, "Successfully action",
-          "The Items has been delete successfully");
 
+      if (InventoryModel.deleteItems(viewI.getSelectedTableItem().getProduct_ID())) {
+        viewI.setAllFieldClean();
+        viewI.steTableItems(InventoryModel.getInventoryTable());
+        AlertText.alert(AlertType.ERROR, "Error Message", "Item has been deleted");
+
+      } else {
+        return;
+
+      }
     }
 
   }
