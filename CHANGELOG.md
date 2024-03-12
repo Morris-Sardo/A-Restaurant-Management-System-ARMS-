@@ -33,3 +33,6 @@ the bug was couse in hnadleChangePasswrd() the overridepassword used to get has 
 #Fixed two bugs in inventory page.
   first bug was coused by handleDelete(). this mathod was unable to handle exception if delete button was pressed without selecting any item. now it will pop a alert txt.
   second bug was coused by  handleUpdate(). this method could handle the update items with same product id. now it wll pop up a alert text.
+
+#Fixed bug in review page interface.
+  The bugs was that a text never continued in a new line. 
