@@ -59,7 +59,7 @@ public class ReviewListViewStaff {
 
     try {
       root = FXMLLoader.load(getClass().getResource("ReviewListStaff.fxml"));
-      Scene scene = new Scene(root, 600, 400);
+      Scene scene = new Scene(root, 1100, 600);
       return scene;
     } catch (IOException e) {
       e.printStackTrace();
