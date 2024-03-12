@@ -58,7 +58,7 @@ public class ReviewListViewStaff {
     Parent root;
 
     try {
-      root = FXMLLoader.load(getClass().getResource("reviewListViewStaff.fxml"));
+      root = FXMLLoader.load(getClass().getResource("ReviewListStaff.fxml"));
       Scene scene = new Scene(root, 600, 400);
       return scene;
     } catch (IOException e) {

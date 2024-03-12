@@ -9,7 +9,8 @@ package appication;
  */
 public class ReviewListControllerStaff {
   /**
-   * Costructor controller between GUI and Model.
+   * Costructor controller between GUI and Model. In the constructor we keeping the parameter just
+   * in case we will develop more feature.
    * 
    * @param reviewListViewStaff object of review list from staff.
    */

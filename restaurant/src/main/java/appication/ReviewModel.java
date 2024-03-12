@@ -23,7 +23,7 @@ public class ReviewModel {
     float stars = Float.parseFloat(star);
 
     // Split the comment into multiple lines after every 10 characters
-    String formattedReview = insertNewLines(review, 30);
+    String formattedReview = insertNewLines(review, 65);
 
     String insertQuery = "INSERT INTO rating1 (username, rating, comment) VALUES (?, ?, ?)";
 

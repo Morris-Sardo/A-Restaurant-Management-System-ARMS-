@@ -38,7 +38,7 @@ public class ReviewListView {
   private Button signOutBtn;
 
   @FXML
-  private Button mewnuCostumerBtn;
+  private Button menuCostumerBtn;
   //
   @FXML
   private TableColumn<Review, Integer> starsTable;
@@ -56,8 +56,8 @@ public class ReviewListView {
   public Scene start() {
     Parent root;
     try {
-      root = FXMLLoader.load(getClass().getResource("reviewListView.fxml"));
-      Scene scene = new Scene(root, 600, 400);
+      root = FXMLLoader.load(getClass().getResource("ReviewListCostumer.fxml"));
+      Scene scene = new Scene(root, 1100, 600);
       return scene;
     } catch (IOException e) {
       e.printStackTrace();
@@ -72,7 +72,7 @@ public class ReviewListView {
   public void initialize() {
     ReviewListController reviewListController = new ReviewListController(this);
     signOutBtn.setOnAction(event -> reviewListController.handleSignOut());
-    mewnuCostumerBtn.setOnAction(event -> reviewListController.handleMenuCostumer());
+    menuCostumerBtn.setOnAction(event -> reviewListController.handleMenuCostumer());
     makeReviewBtn.setOnAction(event -> reviewListController.handleMakeReview());
     idTable.setCellValueFactory(new PropertyValueFactory<>("ID"));
     nameTable.setCellValueFactory(new PropertyValueFactory<>("name"));
