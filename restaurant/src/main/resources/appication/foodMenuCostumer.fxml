@@ -243,7 +243,7 @@
                <left>
                   <AnchorPane minHeight="-Infinity" prefHeight="650.0" prefWidth="150.0" styleClass="nav-form" stylesheets="@MenuDesign.css" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane prefHeight="87.0" prefWidth="222.0" styleClass="header" stylesheets="@MenuDesign.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane prefHeight="87.0" prefWidth="222.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <Label layoutX="4.0" layoutY="32.0" prefHeight="19.0" prefWidth="216.0" text="Mex Eat Managment System" textAlignment="JUSTIFY" textFill="WHITE">
                                  <font>
@@ -262,8 +262,8 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Button fx:id="seeReviewBtn" layoutX="6.0" layoutY="223.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="REVIEWLIST" textFill="WHITE" />
-                        <Button fx:id="makeReviewBtn" layoutX="6.0" layoutY="287.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MAKEREVIEW" textFill="WHITE" />
+                        <Button fx:id="seeReviewBtn" layoutX="6.0" layoutY="223.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="REVIEWLIST" textFill="WHITE" />
+                        <Button fx:id="makeReviewBtn" layoutX="6.0" layoutY="287.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MAKEREVIEW" textFill="WHITE" />
                         <Button fx:id="signuotBtn" layoutX="14.0" layoutY="549.0" mnemonicParsing="false" stylesheets="@MenuDesign.css" textFill="#ebddd7" AnchorPane.bottomAnchor="12.0">
                            <graphic>
                               <ImageView fx:id="outBtn" fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
@@ -286,7 +286,7 @@
                   </AnchorPane>
                </left>
             </BorderPane>
-            <AnchorPane layoutX="664.0" prefHeight="650.0" prefWidth="342.0" style="-fx-background-color: linear-gradient(to bottom right, #d7aa84, #8b4513)linear-gradient(to bottom right, #d7aa84, #8b4513); -fx-border-color: linear-gradient(to bottom right, #d7aa84, #8b4513); -fx-border-radius: 5px; -fx-border-width: 1.5px;">
+            <AnchorPane layoutX="664.0" prefHeight="650.0" prefWidth="342.0" style="-fx-border-color: linear-gradient(to bottom right, #d7aa84, #8b4513); -fx-border-radius: 5px; -fx-border-width: 1.5px;" styleClass="gradient" stylesheets="@myView.css">
                <children>
                   <TableView layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="304.0">
                     <columns>
