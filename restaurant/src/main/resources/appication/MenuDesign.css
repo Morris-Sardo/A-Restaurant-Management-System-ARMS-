@@ -1,10 +1,10 @@
 
 .header{
-	-fx-background-color: linear-gradient(to bottom right, #d7aa84, #a75109);
+	-fx-background-color: linear-gradient(to bottom right,#cf431c,rgb(3, 2, 15));
 }
 
 .nav-form{
-	-fx-background-color: linear-gradient(to bottom right, #d7aa84, #8b4513);
+	-fx-background-color: linear-gradient(to bottom right,#cf431c,rgb(3, 2, 15));
 	
 }
 
@@ -47,7 +47,6 @@
 .table-design{
 	-fx-backgorund-color: transparent;
 	-fx-padding: 0;
-	-fx-border-color: linear-gradient(to bottom right, #d7aa84, #8b4513);
 	-fx-border-radius: 5px;
 	-fx-border-width: 1.5px;
 	
@@ -55,7 +54,7 @@
 
 .table-design .column-header-background{
 	
-	-fx-background-color: linear-gradient(to bottom right, #d7aa84, #8b4513);
+	-fx-background-color: linear-gradient(to bottom right,#cf431c,rgb(3, 2, 15));
 	-fx-background: 5px 5px 0 0 ;
 	-fx-background-insets: 0 0 0 0;
 	
@@ -71,7 +70,7 @@
 }
 
 .invt-btn{
-	-fx-background-color: linear-gradient(to bottom right, #d7aa84, #8b4513);
+	-fx-background-color: linear-gradient(to bottom right,#cf431c,rgb(3, 2, 15));
 	-fx-cursor: hand;
 	-fx-text-fill: #fff;
 	-fx-font-size: 14px;
