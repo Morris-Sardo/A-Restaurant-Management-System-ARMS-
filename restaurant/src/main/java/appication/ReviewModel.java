@@ -2,11 +2,10 @@ package appication;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * This class is the logic part of the review page. It comunicate with databese and consntroller.
+ * This class is the logic part of the review page. It comunicates with database and controller.
  * 
  * @author papap, Zain Akhtar.
  *
@@ -15,10 +14,10 @@ public class ReviewModel {
 
   private static Connection connection;
   private static PreparedStatement prepare;
-  private static ResultSet result;
+
 
   /**
-   * This mehod connect add the review into database.
+   * This method is used to add a new review into database.
    */
   public boolean handleSubmitButtonClicked(String username, String star, String review) {
     float stars = Float.parseFloat(star);
@@ -49,7 +48,7 @@ public class ReviewModel {
   }
 
   /**
-   * Inserts new line characters into a string after every N characters.
+   * Inserts a new line of characters into a string after every N characters.
    * 
    * @param text The original text to be formatted.
    * @param interval The interval (number of characters) after which to insert a new line.
@@ -70,10 +69,7 @@ public class ReviewModel {
 
 
   /**
-   * Create the login table for test.
-   * 
-   * 
-   * 
+   * Create the login table. This method is here just for testing.
    */
   public static void createLoginTable() throws SQLException {
     System.out.println("Creating rating1 table");
@@ -90,7 +86,7 @@ public class ReviewModel {
   }
 
   /**
-   * This main method create table.
+   * This main method is used every time we want wipe the table. It is used for testing.
    * 
    * @param args comand line arguments.
    */

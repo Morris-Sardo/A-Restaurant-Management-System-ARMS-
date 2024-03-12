@@ -8,13 +8,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- * This class retrieve retrive and set data from and to the database table.
+ * This class retrieves and sets data from and to the database table.
  * 
  * @author papap
  *
  */
 public class ReviewListModelStaff {
-  
+
   private static Connection connect;
   private static PreparedStatement prepare;
   private static ResultSet result;
@@ -22,9 +22,9 @@ public class ReviewListModelStaff {
   private static String NickName;
   private static int Stars;
   private static String Comment;
-  
+
   /**
-   * This methods list observabe filled by the elements got from the database.
+   * This method lists observabe filled by the elements from the database.
    * 
    * @return return list observable.
    */

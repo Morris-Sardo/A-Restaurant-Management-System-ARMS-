@@ -2,7 +2,7 @@ package appication;
 
 
 /**
- * This clas is the constroller the change pages between review list staff, dashboard, inventory.
+ * This class is the controller that changes pages between review list staff, dashboard, inventory.
  * 
  * @author papap
  *
@@ -11,7 +11,7 @@ public class ReviewListControllerStaff {
   /**
    * Costructor controller between GUI and Model.
    * 
-   * @param reviewListViewStaff object of review list fro staff.
+   * @param reviewListViewStaff object of review list from staff.
    */
   public ReviewListControllerStaff(ReviewListViewStaff reviewListViewStaff) {
 
@@ -20,7 +20,7 @@ public class ReviewListControllerStaff {
   }
 
   /**
-   * This method signout the user.
+   * This method signsout the user and switching to the login page.
    */
   void handleSignOut() {
     MyView view = new MyView();
@@ -29,7 +29,7 @@ public class ReviewListControllerStaff {
   }
 
   /**
-   * This method send bach the usert to the dashboard page.
+   * This method sends back the user to the dashboard page.
    */
   void handleDashboard() {
     DashBoardMyView viewD = new DashBoardMyView();
@@ -38,7 +38,7 @@ public class ReviewListControllerStaff {
   }
 
   /**
-   * This method send bach the user to the invetory page.
+   * This method sends back the user to the invetory page.
    */
   void handleInventory() {
     InventoryView viewI = new InventoryView();
@@ -47,7 +47,7 @@ public class ReviewListControllerStaff {
   }
 
   /**
-   * This method send bach the user to the menu staff page.
+   * This method send back the user to the menu staff page.
    */
   void handleMenuStaff() {
     MenuView viewMS = new MenuView();

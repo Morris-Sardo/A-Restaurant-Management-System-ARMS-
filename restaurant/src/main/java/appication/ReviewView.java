@@ -12,7 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
- * This this class.
+ * This class is used to start the scene and inizialize all the button of the page. Moreover, we can
+ * get all the values in the field.
  * 
  * @author papap, Zain Akhtar.
  *
@@ -21,7 +22,7 @@ public class ReviewView {
 
   @FXML
   private Button reviewListBtn;
-  
+
   @FXML
   private TextField nickName;
 
@@ -49,7 +50,7 @@ public class ReviewView {
 
 
   /**
-   * This is another.
+   * This method starts the scene review scene.
    * 
    * @throws Exception this will throw exception.
    */
@@ -70,7 +71,7 @@ public class ReviewView {
   }
 
   /**
-   * This methos initilaize all the button.
+   * This method initilaizes all the buttons.
    */
   @FXML
   public void initialize() {
@@ -84,7 +85,7 @@ public class ReviewView {
 
 
   /**
-   * This method clean up all the the fielad after used.
+   * This method cleans up all the the fields after use.
    */
   public void setAllFieldReviewClean() {
     stratField.setText("");
@@ -94,7 +95,7 @@ public class ReviewView {
 
 
   /**
-   * This method return starts form the field.
+   * This method is used to get the nickname typed into the name's field.
    * 
    * @return nickname.
    */
@@ -108,7 +109,7 @@ public class ReviewView {
   }
 
   /**
-   * This method return starts form the field.
+   * This method return starts from the field.
    * 
    * @return starts.
    */
@@ -122,12 +123,12 @@ public class ReviewView {
       } catch (Exception e) {
         return -1;
       }
-      
+
     }
   }
 
   /**
-   * This method retrive the review text field.
+   * This method retrives the review text field.
    * 
    * @return text.
    */

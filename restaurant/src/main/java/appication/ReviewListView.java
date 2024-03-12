@@ -12,7 +12,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
- * This class is the view of review list page.
+ * This class is the view of review list page. This class start the scene review list page and
+ * initialize all the buttons. This review list has less privilage of the staff one.
  * 
  * @author papap
  *
@@ -48,7 +49,7 @@ public class ReviewListView {
 
 
   /**
-   * This method start the ReviewListPage.
+   * This method start the ReviewListPage scene.
    * 
    * @return The reviewList scene.
    */

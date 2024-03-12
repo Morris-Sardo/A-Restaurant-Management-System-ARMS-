@@ -4,7 +4,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 /**
- * This class it will the controlloer between GUI review page the model and the other page.
+ * This class is used as a controller between GUI review page the model and the other page.
  * 
  * @author papap Zain Akhtar.
  *
@@ -32,7 +32,7 @@ public class ReviewController {
   }
 
   /**
-   * This methos handle sign out button.
+   * This method handles the sign out button. This switches to the login page.
    */
   void handleSignOut() {
     MyView view = new MyView();
@@ -40,7 +40,7 @@ public class ReviewController {
   }
 
   /**
-   * This method handle menu costumer button.
+   * This method handles menu costumer button. This switches to the menu costumer page.
    */
   void handleMenuCostument() {
     MenuCostumerView viewMC = new MenuCostumerView();
@@ -48,13 +48,15 @@ public class ReviewController {
   }
 
   /**
-   * This method handle the submission button for the review.
+   * This method handles the submission button for the review. This updates the database with new
+   * reviews.
    */
   void handleSubmissionButton() {
     if (viewR.getTextReview().isEmpty() || viewR.getNickNameTextField().isEmpty()) {
       AlertText.alert(Alert.AlertType.ERROR, "Error Message", "Please fill all the blank fields");
     } else if (viewR.getTextReview().length() > 500) {
-      AlertText.alert(Alert.AlertType.ERROR, "Error Message", "Text must be maximum 10 characters");
+      AlertText.alert(Alert.AlertType.ERROR, "Error Message",
+          "Text must be maximum 500 characters");
     } else if (viewR.getStarTestField() > 5 || viewR.getStarTestField() < 0) {
       AlertText.alert(Alert.AlertType.ERROR, "Error Message", "Insert a correct stars");
     } else {
@@ -71,7 +73,7 @@ public class ReviewController {
   }
 
   /**
-   * This method handle the event to switch at review List page.
+   * This method handles the event to switch at the review List page.
    */
   void handleReviewListButton() {
     ReviewListView viewRL = new ReviewListView();
