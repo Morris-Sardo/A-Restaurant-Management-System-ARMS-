@@ -95,6 +95,29 @@ public class Customer {
     order.add(item);
   }
 
+  /**
+   * Removes an item from the current order.
+   * 
+   * @param item the item id being removed from the order
+   * @return returns false if the item was not present in the order
+   * 
+   */
+  public boolean removeItem(int item) {
+    if (order.contains(item)) {
+      order.remove(item);
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  /**
+   * Resets the items in the current order.
+   */
+  public void clearItems() {
+    order.clear();
+  }
+
   /*
    * Figure out how to generate custom id Yeet tablenumber from the top get items from int order sum
    * price with a for loop, looking in the arraylist of items order time: get current time status:
