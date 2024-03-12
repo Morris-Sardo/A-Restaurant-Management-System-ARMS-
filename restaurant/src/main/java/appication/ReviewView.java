@@ -57,7 +57,7 @@ public class ReviewView {
   public Scene start() {
     Parent root;
     try {
-      root = FXMLLoader.load(getClass().getResource("ReviewPage.fxml"));
+      root = FXMLLoader.load(getClass().getResource("ReviewPageListVersion.fxml"));
       scene = new Scene(root, 1100, 600);
 
       return scene;
