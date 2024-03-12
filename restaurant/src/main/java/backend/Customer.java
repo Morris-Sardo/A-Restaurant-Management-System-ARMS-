@@ -21,7 +21,7 @@ import org.postgresql.util.PSQLException;
 public class Customer {
   private int tableNumber;
   private int customerID = 999;
-  private int[] order = {};
+  private ArrayList<Integer> order = new ArrayList<Integer>();
   private Connection connection = null;
   private ArrayList<Item> items = null;
 
@@ -37,7 +37,7 @@ public class Customer {
     return connection;
   }
 
-  public int[] getOrder() {
+  public ArrayList<Integer> getOrder() {
     return order;
   }
 
@@ -92,9 +92,7 @@ public class Customer {
    * 
    */
   public void addItem(int item) {
-    int[] newOrder = Arrays.copyOf(order, order.length + 1);
-    newOrder[newOrder.length - 1] = item;
-    order = newOrder;
+    order.add(item);
   }
 
   /*

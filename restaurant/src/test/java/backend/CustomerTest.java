@@ -1,7 +1,7 @@
 package backend;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.api.AfterAll;
@@ -70,11 +70,14 @@ class CustomerTest {
   @Tag("ConnectionNeeded")
   void testAddItem() throws Exception {
     testCustomer.addItem(1);
-    int[] expectedOrder1 = {1};
-    assertArrayEquals(expectedOrder1, testCustomer.getOrder());
+    ArrayList<Integer> expectedOrder1 = new ArrayList<Integer>();
+    expectedOrder1.add(1);
+    assertEquals(expectedOrder1.get(0), testCustomer.getOrder().get(0));
     testCustomer.addItem(2);
-    int[] expectedOrder2 = {1, 2};
-    assertArrayEquals(expectedOrder2, testCustomer.getOrder());
+    ArrayList<Integer> expectedOrder2 = new ArrayList<Integer>();
+    expectedOrder2.add(1);
+    expectedOrder2.add(2);
+    assertEquals(expectedOrder2, testCustomer.getOrder());
   }
   
   @Test
