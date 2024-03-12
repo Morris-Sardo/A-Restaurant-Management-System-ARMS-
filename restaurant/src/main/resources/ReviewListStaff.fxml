@@ -118,17 +118,19 @@
 									</font>
 								</Text>
 								<TableView id="TablaView" fx:id="tableView"
-									layoutX="89.0" layoutY="137.0" prefHeight="400.0"
-									prefWidth="700.0">
-									<columns>
-										<TableColumn fx:id="nameTable"
-											prefWidth="149.5999755859375" text="Name" />
-										<TableColumn fx:id="starsTable"
-											prefWidth="146.40003967285156" text="Stars" />
-										<TableColumn fx:id="commentTable" minWidth="0.0"
-											prefWidth="389.0" text="Comment" />
-									</columns>
-								</TableView>
+                                    layoutX="56.0" layoutY="123.0" prefHeight="439.0"
+                                    prefWidth="768.0">
+                                    <columns>
+                                        <TableColumn fx:id="idTable" prefWidth="64.0"
+                                            text="ID" />
+                                        <TableColumn fx:id="nameTable" prefWidth="175.0"
+                                            text="Name" />
+                                        <TableColumn fx:id="starsTable" prefWidth="70.0"
+                                            text="Stars" />
+                                        <TableColumn fx:id="commentTable" minWidth="0.0"
+                                            prefWidth="527.0" text="Comment" />
+                                    </columns>
+                                </TableView>
 							</children>
 						</AnchorPane>
 					</center>
