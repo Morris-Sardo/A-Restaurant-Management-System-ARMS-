@@ -53,6 +53,23 @@ public class KitchenOrderView {
   
   @FXML
   private TableView<KitchenOrder> kitchenOrderTable;
+  
+  /**
+   * This method start the Kitchen Order scene.
+   * 
+   * @return The Kitchen Order scene.
+   */
+  public Scene start() {
+    Parent root;
+    try {
+      root = FXMLLoader.load(getClass().getResource("kitchenOrder2.fxml"));
+      Scene scene = new Scene(root, 1100, 600);
+      return scene;
+    } catch (IOException e) {
+      e.printStackTrace();
+      return null;
+    }
+  }
 
 
 }

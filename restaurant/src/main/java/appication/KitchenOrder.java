@@ -194,7 +194,7 @@ public class KitchenOrder {
    * 
    * @return property that holds the value of the status.
    */
-  public StringProperty status() {
+  public StringProperty statusProperty() {
     if (status == null) {
       status = new SimpleStringProperty(this, "status");
     }
