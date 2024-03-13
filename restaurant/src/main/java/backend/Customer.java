@@ -217,11 +217,12 @@ public class Customer {
           }
         }
       }
-      String addition = "INSERT INTO bills VALUES(" + Integer.toString(customerID) + ", "
-          + Integer.toString(tableNumber) + ","
-          + result.toString().replace("[", "").replace("]", "") + "," + Integer.toString(sum)
-          + ",'Requested')";
+      String addition = "INSERT INTO bills VALUES ( ?, ?, ?, ?, 'Requested')";
       try (PreparedStatement write = connection.prepareStatement(addition);) {
+        write.setInt(1, customerID);
+        write.setInt(2,  tableNumber);
+        write.setString(3, result.toString().replace("[", "").replace("]", ""));
+        write.setInt(4, sum);
         write.executeUpdate();
       }
     } else {
