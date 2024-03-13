@@ -79,14 +79,14 @@
                         <Button layoutX="743.0" layoutY="200.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="DELIVERED" textFill="#f8f8f8" />
                         <Button layoutX="743.0" layoutY="254.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="ACCEPT ORDER" textFill="#f8f8f8" />
                         <Button layoutX="743.0" layoutY="308.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="CANCEL ORDER" textFill="#f8f8f8" />
-                        <TableView layoutX="39.0" layoutY="140.0" prefHeight="431.0" prefWidth="683.0">
+                        <TableView fx:id="kitchenOrderTable" layoutX="39.0" layoutY="140.0" prefHeight="431.0" prefWidth="683.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="Order n." />
-                            <TableColumn prefWidth="119.0" text="Table n." />
-                              <TableColumn prefWidth="129.0" text="Items" />
-                              <TableColumn prefWidth="124.0" text="Price (£)" />
-                              <TableColumn prefWidth="122.0" text="Order Time" />
-                              <TableColumn prefWidth="113.0" text="Status" />
+                            <TableColumn fx:id="orderNums" prefWidth="75.0" text="Order n." />
+                            <TableColumn fx:id="tableNums" prefWidth="119.0" text="Table n." />
+                              <TableColumn fx:id="items" prefWidth="129.0" text="Items" />
+                              <TableColumn fx:id="prices" prefWidth="124.0" text="Price (£)" />
+                              <TableColumn fx:id="orderTime" prefWidth="122.0" text="Order Time" />
+                              <TableColumn fx:id="status" prefWidth="113.0" text="Status" />
                           </columns>
                         </TableView>
               </children>
