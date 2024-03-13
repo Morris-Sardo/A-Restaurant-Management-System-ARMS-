@@ -36,3 +36,25 @@ the bug was couse in hnadleChangePasswrd() the overridepassword used to get has 
 
 #Fixed bug in review page interface.
   The bugs was that a text never continued in a new line. 
+
+#Added dipendencies for testing Interface.
+  <dependency>
+    		<groupId>org.testfx</groupId>
+    		<artifactId>testfx-core</artifactId>
+    		<version>4.0.16-alpha</version>
+    		<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>3.13.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testfx</groupId>
+			<artifactId>testfx-junit5</artifactId>
+			<version>4.0.18</version>
+			<scope>test</scope>
+		</dependency>
+	
+  The interface it could have been tested due the poor documentation. Whe nthe test runned  the methods colled the the Driver call to create the scene, however i could figured out to cleanup the scene after having userd. the library provided wwere not cleared. 
