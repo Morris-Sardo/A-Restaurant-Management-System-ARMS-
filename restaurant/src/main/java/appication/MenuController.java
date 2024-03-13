@@ -1,14 +1,15 @@
 package appication;
 
 /**
- * This is calss does of controller of all button event between beteen GUI and MODEL.
+ * This is class does of controller of all button event between beteen GUI and MODEL.
  * 
  * @author papap
  *
  */
 public class MenuController {
   /**
-   * This constructor.
+   * This constructor. Is user to inizialise ther contrloller ogject. It will be used by menu staff
+   * view class.
    * 
    * @param menuView object menuView.
    */
@@ -17,9 +18,7 @@ public class MenuController {
   }
 
   /**
-   * This method handle the SignOut page.
-   * 
-   * 
+   * This method handle the SignOut page and switch to login page.
    */
   void handleSignOut() {
     MyView viewL = new MyView();
@@ -27,7 +26,7 @@ public class MenuController {
   }
 
   /**
-   * This method handle the inventory page.
+   * This method handle switching the page to inventory page.
    */
   void handleInventory() {
     InventoryView viewI = new InventoryView();
@@ -37,15 +36,15 @@ public class MenuController {
 
 
   /**
-   * This method handle the review list page.
+   * This method handle switching the review list page.
    */
   void handleReviewList() {
     ReviewListViewStaff viewLRS = new ReviewListViewStaff();
     Driver.setScene(viewLRS.start(), TitlePage.REVIEW_PAGE);
   }
-  
+
   /**
-   * This method handle the dashboard page.
+   * This method handle switching the dashboard page.
    */
   void handledashboard() {
     DashBoardMyView viewD = new DashBoardMyView();

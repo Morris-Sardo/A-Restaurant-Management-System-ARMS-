@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 /**
- * Thic class is menu page interface and interact with the user.
+ * Thic class is menu page for staff. This page has has more privilage of menu costumenr page.
  * 
  * @author papap
  *
@@ -99,7 +99,7 @@ public class MenuView {
   /**
    * Creates & returns the scene to be used for this page.
    * 
-   * @return The dashboard scene.
+   * @return menu staff page scene.
    */
   public Scene start() {
     Parent root;

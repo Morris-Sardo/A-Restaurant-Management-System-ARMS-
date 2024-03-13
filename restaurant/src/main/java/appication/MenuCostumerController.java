@@ -12,7 +12,9 @@ public class MenuCostumerController {
   private DataBaseModel connection;
 
   /**
-   * The controller for the customer's menu.
+   * The controller for the customer's menu. THE INITIALIZATION OF THE MENUCOSTUMERVIEW AND
+   * CONNETION has been kept even theey are not used as in a future development of the project they
+   * could be needed.
    * 
    * @param menuCostumerView The customer's menu.
    */
@@ -23,7 +25,7 @@ public class MenuCostumerController {
   }
 
   /**
-   * This method handle the button to make a review.
+   * This method handle the button to switch to the review page.
    */
   void handleMakeReview() {
     ReviewView viewR = new ReviewView();
@@ -31,7 +33,7 @@ public class MenuCostumerController {
   }
 
   /**
-   * This method handle the button to go to see all the review done.
+   * This method handle the button to switch to the reviwlist page.
    */
   void handleReviewList() {
     ReviewListView viewLR = new ReviewListView();

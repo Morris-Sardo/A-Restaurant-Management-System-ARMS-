@@ -10,13 +10,14 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 /**
- * This page is the view of menu page for only costumer.
+ * This page is the view of menu page for only costumer. This class has less privilege of the menu
+ * staff.
  * 
  * @author papap
  *
  */
 public class MenuCostumerView {
-  
+
 
   @FXML
   private Button deacreaes;
@@ -94,7 +95,7 @@ public class MenuCostumerView {
   /**
    * This method create and start scene of menu for costumer.
    * 
-   * @return the menu page scene.
+   * @return the menu page costumer scene.
    */
   public Scene start() {
     Parent root;
@@ -107,13 +108,13 @@ public class MenuCostumerView {
       return null;
     }
   }
-  
+
   /**
    * This method initialize all the buttons.
    */
   @FXML
   public void initialize() {
-    MenuCostumerController  menuCostrumerController = new MenuCostumerController(this);
+    MenuCostumerController menuCostrumerController = new MenuCostumerController(this);
     makeReviewBtn.setOnAction(event -> menuCostrumerController.handleMakeReview());
     seeReviewBtn.setOnAction(event -> menuCostrumerController.handleReviewList());
     signuotBtn.setOnAction(event -> menuCostrumerController.handleSignOut());
