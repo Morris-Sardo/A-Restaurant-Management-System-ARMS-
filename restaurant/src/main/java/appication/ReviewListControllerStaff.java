@@ -8,6 +8,9 @@ package appication;
  *
  */
 public class ReviewListControllerStaff {
+
+  ReviewListViewStaff reviewListViewStaff;
+
   /**
    * Costructor controller between GUI and Model. In the constructor we keeping the parameter just
    * in case we will develop more feature.
@@ -15,7 +18,7 @@ public class ReviewListControllerStaff {
    * @param reviewListViewStaff object of review list from staff.
    */
   public ReviewListControllerStaff(ReviewListViewStaff reviewListViewStaff) {
-
+    this.reviewListViewStaff = reviewListViewStaff;
 
 
   }

@@ -7,14 +7,17 @@ package appication;
  *
  */
 public class MenuController {
+
+  private MenuView menuView;
+
   /**
-   * This constructor. Is user to inizialise ther contrloller ogject. It will be used by menu staff
+   * This constructor. Is user to inizialise ther controller ogject. It will be used by menu staff
    * view class.
    * 
    * @param menuView object menuView.
    */
   public MenuController(MenuView menuView) {
-
+    this.menuView = menuView;
   }
 
   /**

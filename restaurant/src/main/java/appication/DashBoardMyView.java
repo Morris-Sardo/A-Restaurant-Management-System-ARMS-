@@ -8,7 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
 /**
- * This class is the view of the main page application.
+ * This class is the view of the dashboard page application. this page connect all to the all pages
+ * of the staff.
  * 
  * @author papap
  *
@@ -29,10 +30,6 @@ public class DashBoardMyView {
   private Button signOutBtn;
 
 
-
-  private Scene scene;
-  private Parent root;
-  private MyView view;
 
   /**
    * Creates & returns the scene to be used for this page.

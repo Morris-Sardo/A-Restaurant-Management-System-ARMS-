@@ -9,7 +9,7 @@ package appication;
 public class MenuCostumerController {
 
   private MenuCostumerView menuCostumerView;
-  private DataBaseModel connection;
+  //private DataBaseModel connection;
 
   /**
    * The controller for the customer's menu. THE INITIALIZATION OF THE MENUCOSTUMERVIEW AND
@@ -20,7 +20,7 @@ public class MenuCostumerController {
    */
   public MenuCostumerController(MenuCostumerView menuCostumerView) {
     this.menuCostumerView = menuCostumerView;
-    this.connection = Driver.getDBconnection();
+    //this.connection = Driver.getDBconnection();
 
   }
 

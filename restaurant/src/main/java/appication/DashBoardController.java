@@ -1,7 +1,7 @@
 package appication;
 
 /**
- * This in the controller for the main page.
+ * This in the controller for the main page. this page handle all event releated to the button.
  * 
  * @author papap
  *
@@ -10,24 +10,21 @@ public class DashBoardController {
 
 
   private DashBoardMyView view;
-  @SuppressWarnings("unused") // suppress wamrming about not use.
-  private DataBaseModel connection;
 
 
 
   /**
    * This is the constructor is controlloer between GUI nad Model.
    * 
-   * @param view the objected form view that handle the loginBtn.
+   * @param view is the dashboard view ogject.
    */
   public DashBoardController(DashBoardMyView view) {
     this.view = view;
-    this.connection = Driver.getDBconnection(); /// added
+
   }
 
   /**
-   * This method handle the SignOut page.
-   * 
+   * This method handle the SignOut page and switch to the login page.
    * 
    */
   void handleSignOut() {
@@ -37,7 +34,7 @@ public class DashBoardController {
 
 
   /**
-   * This methods handle inventory page.
+   * This method handles switching to the inventory page.
    */
   void handleInventory() {
     InventoryView viewI = new InventoryView();
@@ -46,7 +43,7 @@ public class DashBoardController {
   }
 
   /**
-   * This method handle menu page.
+   * This method handles switching to the menu page.
    */
   void handleMenu() {
     MenuView viewM = new MenuView();
@@ -54,7 +51,7 @@ public class DashBoardController {
   }
 
   /**
-   * This methos handle review list page.
+   * This method handles switching to the review page.
    */
   void handleReview() {
     ReviewListViewStaff viewLRS = new ReviewListViewStaff();
