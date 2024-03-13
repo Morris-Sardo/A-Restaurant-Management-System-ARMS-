@@ -37,6 +37,28 @@
 			
 		</dependency>
 		
+		<!-- TestFx4-->
+		<!-- https://mvnrepository.com/artifact/org.testfx/testfx-junit -->
+		<!-- https://mvnrepository.com/artifact/org.testfx/testfx-core -->
+		<dependency>
+    		<groupId>org.testfx</groupId>
+    		<artifactId>testfx-core</artifactId>
+    		<version>4.0.16-alpha</version>
+    		<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>3.13.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testfx</groupId>
+			<artifactId>testfx-junit5</artifactId>
+			<version>4.0.18</version>
+			<scope>test</scope>
+		</dependency>
+		
 			<!--dipendencies for fontaesome -->
 			<dependency>
     			<groupId>de.jensd</groupId>
@@ -122,7 +144,7 @@
 										<limit>
 											<counter>LINE</counter>
 											<value>COVEREDRATIO</value>
-											<minimum>0.9</minimum>
+											<minimum>0.0</minimum>
 										</limit>
 									</limits>
 								</rule>

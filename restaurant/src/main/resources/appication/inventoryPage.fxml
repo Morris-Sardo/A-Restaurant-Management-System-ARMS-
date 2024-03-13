@@ -44,9 +44,9 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="reviewBtn" layoutX="6.0" layoutY="223.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="REVIEW" textFill="WHITE" />
-                              <Button fx:id="dashboardBtn" layoutX="6.0" layoutY="287.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="DASHBOARD" textFill="WHITE" />
-                              <Button fx:id="menuBtn" layoutX="6.0" layoutY="346.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MENU" textFill="#f8f8f8" />
+                              <Button fx:id="reviewBtn" layoutX="6.0" layoutY="223.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="REVIEW" textFill="WHITE" />
+                              <Button fx:id="dashboardBtn" layoutX="6.0" layoutY="287.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="DASHBOARD" textFill="WHITE" />
+                              <Button fx:id="menuBtn" layoutX="6.0" layoutY="346.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MENU" textFill="#f8f8f8" />
                               <Button fx:id="signOutBtn" layoutX="14.0" layoutY="549.0" mnemonicParsing="false" stylesheets="@MenuDesign.css" textFill="#ebddd7" AnchorPane.bottomAnchor="12.0">
                                  <graphic>
                                     <ImageView fx:id="outImage" fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">

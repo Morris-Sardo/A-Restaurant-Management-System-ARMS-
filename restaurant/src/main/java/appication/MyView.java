@@ -30,7 +30,7 @@ import javafx.util.Duration;
  * @author papap
  *
  */
-public class MyView implements ViewInterface {
+public class MyView {
 
   /**
    * Creates & returns the scene to be used for this page.
