@@ -1,6 +1,5 @@
 package appication;
 
-// import javafx.collections.ObservableList;
 
 /**
  * This class is the controller the change pages between review list and menu costumer and sign out.
@@ -32,15 +31,7 @@ public class ReviewListController {
     Driver.setScene(view.start(), TitlePage.LOGIN_PAGE);
   }
 
-  /*
-   * This method is used to return the values from the database table.
-   * 
-   * @return list create filled from table.
-   */
-  // static ObservableList<Review> handleList() {
-  //
-  // return ReviewListModel.getRating1Table();
-  // }
+
 
   /**
    * This method link back to menu page costumer.
