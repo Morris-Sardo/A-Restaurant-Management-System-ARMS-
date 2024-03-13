@@ -8,7 +8,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- * This class is thr model of the reviewListPage which repear the data froem table.
+ * This class is the model of the reviewListPage which retrive the data from database table and add
+ * the data into Observable list which used by list review page table.
  * 
  * @author papap
  *
@@ -24,7 +25,7 @@ public class ReviewListModel {
   private static String Comment;
 
   /**
-   * This methods list observabe filled by the elements got from the database.
+   * This methods list observable filled by the elements got from the database.
    * 
    * @return return list observable.
    */
