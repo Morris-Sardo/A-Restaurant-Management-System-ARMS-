@@ -25,7 +25,8 @@ import javafx.util.Duration;
 
 
 /**
- * This is class is the GUI interface and interact with the user.
+ * This is class is the GUI login interface that user use to login or register if a staff member an
+ * if a costumer it can go straight to manu page.
  *
  * @author papap
  *
@@ -55,7 +56,6 @@ public class MyView {
   @FXML
   public void initialize() {
     LoginController loginController = new LoginController(this);
-    // replacements for observers - assumes controller has the relevant methods
     siLoginBtn.setOnAction(event -> loginController.hanldeLogin());
     suSignupBtn.setOnAction(event -> loginController.handleSignUp());
     siForgotPass.setOnAction(event -> loginController.handleForgotPass());
@@ -186,7 +186,7 @@ public class MyView {
   private String[] questionList = {question1, question2, question3};
 
   /**
-   * Controls the visibility of the Password field.
+   * This method is use to make ther password in login page visible or invisible.
    * 
    * @param event When the user wants to see their password
    */
@@ -205,7 +205,7 @@ public class MyView {
 
 
   /**
-   * Controls the visibility of the Password field.
+   * This method is used to make visible or invisible the password in sign up form.
    * 
    * @param event When the user wants to see their password
    */
@@ -224,7 +224,7 @@ public class MyView {
 
 
   /**
-   * Controls the visibility of the Password field.
+   * This method is used to make visible or invisible change password field in change password form.
    * 
    * @param event When the user wants to see their password
    */
@@ -242,7 +242,7 @@ public class MyView {
   }
 
   /**
-   * Used to swapt the Scene when the button login is pressed.
+   * This method is used to swapt the Scene when the button login is pressed.
    * 
    * @return button.
    */
@@ -253,7 +253,8 @@ public class MyView {
   }
 
   /**
-   * Controls the visibility of the Password field.
+   * This method is used to make visible or invisible confirm change password field in change
+   * password form.
    * 
    * @param event When the user wants to see their password
    */
@@ -272,9 +273,9 @@ public class MyView {
 
 
   /**
-   * Controls the visibility of the Password field.
+   * This method is used to make visible or invisible the secret answer field in sign up form.
    * 
-   * @param event When the user wants to see their password
+   * @param event When the user wants to see their secret answer
    */
   @FXML
   public void togglevisibleAnswer(ActionEvent event) {
@@ -290,9 +291,9 @@ public class MyView {
   }
 
   /**
-   * This method return password insert in the field newPasswrod.
+   * This method is used to get thew new password in new password field.
    * 
-   * @return new passwrd.
+   * @return new password.
    */
   public String getNewPassword() {
     if (npNewPassword == null) {
@@ -303,9 +304,9 @@ public class MyView {
   }
 
   /**
-   * This method return password insert in the field newConfimationPasswrod.
+   * This method is used to get the password confirm new password field.
    * 
-   * @return new password.
+   * @return confirmation new password.
    */
   public String getConfirmationNewPassword() {
     if (npNewPassConfimation == null) {
@@ -317,7 +318,7 @@ public class MyView {
   }
 
   /**
-   * This class it return the username.
+   * This method is used to get the username in username field.
    * 
    * @return username.
    */
@@ -331,7 +332,7 @@ public class MyView {
   }
 
   /**
-   * This methods return password.
+   * This methods is used gto get the password in login form.
    * 
    * @return password.
    */
@@ -342,9 +343,11 @@ public class MyView {
     return siPassword.getText();
   }
 
+  //////////////////////////////////////////////////////////////////////////////////////
+  // FROM HERE.
 
   /**
-   * This method the username for registration.
+   * This method is used tto get the unsernam in Sign up form.
    * 
    * @return username
    */
@@ -358,7 +361,7 @@ public class MyView {
 
 
   /**
-   * This method the password for registration.
+   * This method is used to get the password for sign up form.
    * 
    * @return password.
    */
@@ -370,7 +373,7 @@ public class MyView {
   }
 
   /**
-   * Setup the enstry to empty.
+   * This method is used to set up all fields in sign up when application start.
    */
   public void emptyRegistrationFields() {
 
@@ -378,10 +381,15 @@ public class MyView {
     suPassword.setText("");
     suQuestion.getSelectionModel().clearSelection();
     suAnswer.setText("");
+
+    suPassword.setVisible(true);
+    suAnswer.setVisible(true);
+    passToggleSu.setSelected(false);
+    passToggleSecAns.setSelected(false);
   }
 
   /**
-   * Setup the enstry to empty.
+   * This method it used to set up all fields in logi page when application start.
    */
   public void emptyLoginFields() {
 
@@ -391,22 +399,13 @@ public class MyView {
     npNewPassword.setText("");
     npNewPassConfimation.setText("");
 
+    passToggle.setSelected(false);
+    siPassword.setVisible(true);
 
 
-  }
-
-
-  /**
-   * Setup new question, password, confirm password and answer .
-   */
-  public void emptyForgotPasswordFields() {
-
-    fpAnswer.setText("");
-    npNewPassword.setText("");
-    npNewPassConfimation.setText("");
-    suQuestion.getSelectionModel().clearSelection();
 
   }
+
 
 
   /**
@@ -438,7 +437,7 @@ public class MyView {
   }
 
   /**
-   * This method is use to get the answer in the regiastration.
+   * This method is used to get the answer in the registration form and used.
    * 
    * @return the answer.
    */
@@ -460,7 +459,7 @@ public class MyView {
       return "";
 
     } else {
-      // System.out.println(fpAnswer.getText());
+
       return fpAnswer.getText();
     }
 
@@ -489,8 +488,6 @@ public class MyView {
     siLoginForm.setVisible(false);
     fpquestionForm.setVisible(true);
 
-    passToggle.setSelected(false);
-    siPassword.setVisible(true);
 
 
     regQuestionList();
@@ -499,7 +496,7 @@ public class MyView {
   }
 
   /**
-   * This swap the from.
+   * This methosd is useed to switch the form from login page to forgot password form.
    */
   public void switchChangePassword() {
 
@@ -516,8 +513,6 @@ public class MyView {
     fpquestionForm.setVisible(false);
     siLoginForm.setVisible(true);
     fpAnswer.setText("");
-    // passToggle.setSelected(false);
-    // siPassword.setVisible(true);
 
 
   }
@@ -554,22 +549,22 @@ public class MyView {
       slider.setNode(sideForm);
       slider.setToX(300); // slideTox in px.
       slider.setDuration(Duration.seconds(.5)); // how long the translate act.
-      
+
       passToggle.setSelected(false);
       siPassword.setVisible(true);
-      
+
       passToggleSecAns.setSelected(false);
       passToggleSu.setSelected(false);
       suPassword.setVisible(true);
       suAnswer.setVisible(true);
-      
+
 
       // Change visibility buttons "create account" "Already have account".
       slider.setOnFinished((ActionEvent e) -> {
         sideCreateBtnAlreadyHave.setVisible(true);
         sideCreateBtn.setVisible(false);
-        
-        
+
+
         regQuestionList();
       });
       slider.play();

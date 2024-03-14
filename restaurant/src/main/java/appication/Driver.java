@@ -2,12 +2,11 @@ package appication;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 /**
- * This class run use to run application.
+ * This clasS is used has strat of apllication. When application start the scene the start as
+ * default it login page.
  * 
  * @author papap
  *
@@ -18,7 +17,10 @@ public class Driver extends Application {
   private static DataBaseModel connection;
 
 
-
+  /**
+   * This method start trhe scene and the method is override everytime the the application start new
+   * scene(switch page).
+   */
   @Override
   public void start(Stage stage) throws Exception {
     this.stage = stage;
@@ -30,7 +32,7 @@ public class Driver extends Application {
   }
 
   /**
-   * This method set new scene.
+   * This method set title of all scene.
    * 
    * @param scene new scene.
    * @param title of the the scene
@@ -41,27 +43,21 @@ public class Driver extends Application {
     stage.centerOnScreen();
   }
 
+
+  /**
+   * Thjis method is usecd to goet the coonnction from the database. This methods is use from all
+   * classes the need to connect coonnect to datasbase.
+   * 
+   * @return connection.
+   */
   public static DataBaseModel getDBconnection() {
     return connection;
   }
 
-  /**
-   * Method for all aler.
-   * 
-   * @param type of dialogue.
-   * @param title of the window.
-   * @param contentText content of alert.
-   */
-  public static void alert(AlertType type, String title, String contentText) {
-    Alert alert = new Alert(type);
-    alert.setTitle(title);
-    alert.setHeaderText(null);
-    alert.setContentText(contentText);
-    alert.showAndWait();
-  }
+
 
   /**
-   * Thisd tis main method.
+   * This method is the main method use to lanch the application .
    * 
    * @param args argument main.
    */

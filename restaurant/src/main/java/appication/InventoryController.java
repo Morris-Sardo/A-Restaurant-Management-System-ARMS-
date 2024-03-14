@@ -109,7 +109,7 @@ public class InventoryController {
         || viewI.getPrizeField() == -1) {
       AlertText.alert(AlertType.ERROR, "Error Message", "Please fill insert a valids input");
     } else if (viewI.getPrizeField() > 9999999.99 || viewI.getPrizeField() < 0) {
-      Driver.alert(AlertType.ERROR, "Error message", "Prize no  correct");
+      AlertText.alert(AlertType.ERROR, "Error message", "Prize no  correct");
       viewI.setAllFieldClean();
 
     } else if (viewI.getProductIdField() < 0) {

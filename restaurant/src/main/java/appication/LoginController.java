@@ -1,11 +1,10 @@
 package appication;
 
-// import java.sql.SQLException;
-// import javafx.event.ActionEvent;
+
 import javafx.scene.control.Alert.AlertType;
 
 /**
- * This class is used has controller for the login page sign up and foforta passeword.
+ * This class is used has controller for the login page sign up and forgot and change passeword.
  * 
  * @author papap
  *
@@ -33,7 +32,8 @@ public class LoginController {
   }
 
   /**
-   * This method will handle the login.
+   * Handles the login, if the user enters incorrect login information (Username or Password) it
+   * will pop up an error message otherwise it will log the user in.
    */
   public void hanldeLogin() {
     if (view.getUserNameLogin().isEmpty() || view.getPassowrdLogin().isEmpty()) {
@@ -65,7 +65,8 @@ public class LoginController {
 
 
   /**
-   * This method will handle the signup.
+   * This method will handle sign up for a new user. the method it will pop a error message is the
+   * user insert a invalid usermame or the new username is already exist.
    */
   void handleSignUp() {
     if (view.getUserNameRegistration().isEmpty() || view.getPassowrdRegistration().isEmpty()
@@ -94,7 +95,9 @@ public class LoginController {
 
 
   /**
-   * This method swapt form Login form to security answer form. .
+   * This method swapt the user from Login page to security answer form. The method I will set up to
+   * default state the login page fields and pop up error message if ther user try chanhe password
+   * without having insert the unsername or the username to not exist.
    */
   void handleForgotPass() {
     if (view.getUserNameLogin().isEmpty()) {
@@ -102,6 +105,7 @@ public class LoginController {
     } else if (DataBaseModel.checkUserName(view.getUserNameLogin())) {
       currentUsername = view.getUserNameLogin();
       view.switchForgotPass(DataBaseModel.getUsersQuestion(currentUsername));
+      view.emptyLoginFields();
 
 
     } else {
@@ -112,7 +116,8 @@ public class LoginController {
   }
 
   /**
-   * This method swap from security answer to change password.
+   * This method swap from security answer to change password. The method will pop up error messages
+   * if user do no insert the right answer. the method switch the user to change password form.
    */
   void handleAnswer() {
     if (view.getSnswerChangePassword().isEmpty()) {
@@ -130,7 +135,8 @@ public class LoginController {
   }
 
   /**
-   * This method change the password.
+   * This method handle the change password form. The method will pop up error message if user do
+   * not type the same password. The method it will switch the user to login page as well.
    */
 
   void handleChangePassword() {
@@ -157,7 +163,7 @@ public class LoginController {
   }
 
   /**
-   * This method handle menu button for customer.
+   * This method handle the Dashboard scene. This method is call when login is gone successfully.
    */
   void handleCusotmerMenu() {
     MenuCostumerView viewMC = new MenuCostumerView();
