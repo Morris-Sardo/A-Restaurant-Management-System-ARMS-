@@ -6,6 +6,9 @@ import java.sql.SQLException;
 
 public class menuModelDatabase {
 
+  /**
+   * This class allows me to connect to the database, to ensure everything is connnected.
+   */
   private static Connection connect;
   private static PreparedStatement prepare;
   private static ResultSet result;
