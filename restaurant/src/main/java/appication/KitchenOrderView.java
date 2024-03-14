@@ -80,11 +80,11 @@ public class KitchenOrderView {
   @FXML
   public void initialize() {
     KitchenOrderController kitchenOrderController = new KitchenOrderController(this);
-    signOutBtn.setOnAction(event -> KitchenOrderController.handleSignOut());
-    dashboard.setOnAction(event -> KitchenOrderController.handleDashboard());
-    menu.setOnAction(event -> KitchenOrderController.handleMenu());
-    inventory.setOnAction(event -> KitchenOrderController.handleInventory());
-    reviewList.setOnAction(event -> KitchenOrderController.handleReviewList());
+    signOutBtn.setOnAction(event -> kitchenOrderController.handleSignOut());
+    dashboard.setOnAction(event -> kitchenOrderController.handleDashboard());
+    menu.setOnAction(event -> kitchenOrderController.handleMenuStaff());
+    inventory.setOnAction(event -> kitchenOrderController.handleInventory());
+    reviewList.setOnAction(event -> kitchenOrderController.handleReviewList());
     
     orderNums.setCellValueFactory(new PropertyValueFactory<>("orderNums"));
     tableNums.setCellValueFactory(new PropertyValueFactory<>("tableNums"));

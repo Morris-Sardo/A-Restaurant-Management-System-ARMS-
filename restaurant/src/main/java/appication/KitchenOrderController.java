@@ -17,28 +17,33 @@ public class KitchenOrderController {
    * This method links back to dashboard.
    */
   void handleDashboard() {
-    
+   // DashBoardMyView viewD = new DashBoardMyView();
+   // Driver.setScene(viewD.start(), TitlePage.DASHBOARD_PAGE);
   }
   
   /**
    * This method links back to menu page.
    */
-  void handleMenu() {
-    
+  void handleMenuStaff() {
+   // MenuView viewMS = new MenuView();
+   // Driver.setScene(viewMS.start(), TitlePage.MENU_PAGE);
+
   }
   
   /**
    * This method links back to the inventory page.
    */
   void handleInventory() {
-
+   // InventoryView viewI = new InventoryView();
+   // Driver.setScene(viewI.start(), TitlePage.INVENTROY_PAGE);
   }
   
   /**
    * This method links back to the review list page.
    */
   void handleReviewList() {
-
+   // ReviewListViewStaff viewLRS = new ReviewListViewStaff();
+   // Driver.setScene(viewLRS.start(), TitlePage.REVIEW_PAGE);
   }
   
   /**
