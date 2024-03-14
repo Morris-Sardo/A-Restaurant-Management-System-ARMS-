@@ -47,7 +47,7 @@
                               <Button fx:id="review_btn" layoutX="6.0" layoutY="223.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="REVIEW LIST" textFill="WHITE" />
                               <Button fx:id="inventory_btn" layoutX="6.0" layoutY="287.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="DASHBOARD" textFill="WHITE" />
                               <Button fx:id="menu_btn" layoutX="6.0" layoutY="346.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MENU" textFill="#f8f8f8" />
-                              <Button layoutX="14.0" layoutY="549.0" mnemonicParsing="false" stylesheets="@MenuDesign.css" textFill="#ebddd7" AnchorPane.bottomAnchor="12.0">
+                              <Button layoutX="14.0" layoutY="549.0" mnemonicParsing="false" stylesheets="@MenuDesign.css" textFill="#b5544d" AnchorPane.bottomAnchor="12.0">
                                  <graphic>
                                     <ImageView fx:id="out_btn" fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
