@@ -459,7 +459,7 @@ public class MyView {
       return "";
 
     } else {
-      System.out.println(fpAnswer.getText());
+      //System.out.println(fpAnswer.getText());
       return fpAnswer.getText();
     }
 
@@ -521,8 +521,14 @@ public class MyView {
 
     npNewPassForm.setVisible(false);
     siLoginForm.setVisible(true);
-
-
+    
+    passTextConfPass.setText("");
+    passTextNewPass.setText("");
+    passToggleNewPass.setSelected(false);
+    npNewPassword.setVisible(true);
+    passToggleConfPass.setSelected(false);
+    npNewPassConfimation.setVisible(true);
+    
   }
 
 

@@ -101,9 +101,9 @@
                      </font>
                   </Button>
                   <Button fx:id="npBack" layoutX="130.0" layoutY="336.0" mnemonicParsing="false" onAction="#backLoginFormFromChangePasswordForm" text="Back" />
-			<TextField fx:id="passTextNewPass" layoutX="44.0" layoutY="143.0" prefHeight="26.0" prefWidth="210.0" />
+			<TextField fx:id="passTextNewPass" layoutX="44.0" layoutY="143.0" prefHeight="26.0" prefWidth="210.0" promptText="New Password" />
                   <PasswordField fx:id="npNewPassword" layoutX="44.0" layoutY="143.0" prefHeight="26.0" prefWidth="210.0" promptText="New Password" />
-			<TextField fx:id="passTextConfPass" layoutX="44.0" layoutY="187.0" prefHeight="26.0" prefWidth="210.0" />
+			<TextField fx:id="passTextConfPass" layoutX="44.0" layoutY="187.0" prefHeight="26.0" prefWidth="210.0" promptText="Confirmation Password" />
                   <PasswordField fx:id="npNewPassConfimation" layoutX="44.0" layoutY="187.0" prefHeight="26.0" prefWidth="210.0" promptText="Confirmation Password" />
                   <CheckBox fx:id="passToggleNewPass" layoutX="262.0" layoutY="147.0" mnemonicParsing="false" onAction="#togglevisiblePasswordChangeNewPass" />
                   <CheckBox fx:id="passToggleConfPass" layoutX="262.0" layoutY="192.0" mnemonicParsing="false" onAction="#togglevisiblePasswordConfirmChangeNewPass" />
