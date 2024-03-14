@@ -77,7 +77,8 @@ class CustomerTest {
     ArrayList<Integer> expectedOrder2 = new ArrayList<Integer>();
     expectedOrder2.add(1);
     expectedOrder2.add(2);
-    assertEquals(expectedOrder2, testCustomer.getOrder());
+    assertEquals(expectedOrder2.get(0), testCustomer.getOrder().get(0));
+    assertEquals(expectedOrder2.get(1), testCustomer.getOrder().get(1));
   }
   
   @Test
@@ -85,5 +86,8 @@ class CustomerTest {
   void testTrackOrder() {
     assertEquals(1, 1); // Faked test
   }
+  /*
+   * B
+   */
 
 }

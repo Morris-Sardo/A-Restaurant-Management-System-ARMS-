@@ -154,25 +154,18 @@ public class Customer {
 
   }
 
-  private int calculateTotalPrice() throws SQLException {
-    ArrayList<String> result = new ArrayList<String>();
-    int sum = 0;
-    String query = "SELECT items FROM orders WHERE table_number = " + Integer.toString(customerID)
-        + "AND status != 'Canceled' OR 'Paid' OR 'Requested'";
+  private float calculateTotalPrice() throws SQLException {
+    float result = 0;
+    String query = "SELECT SUM(price) FROM orders WHERE table_number ="
+        + Integer.toString(customerID) + "AND status != 'Canceled' OR 'Paid' OR 'Requested'";
     try (PreparedStatement selection = connection.prepareStatement(query)) {
       ResultSet resultSet = selection.executeQuery();
       while (resultSet.next()) {
-        result.addAll(Arrays.asList(resultSet.getString(3).trim().split(",")));
+        result = resultSet.getFloat(1);
       }
     }
-    for (String item : result) {
-      for (Item menuItem : items) {
-        if (Integer.toString(menuItem.getItemNumber()).equals(item)) {
-          sum += Math.round(menuItem.getPrice());
-        }
-      }
-    }
-    return sum; // Re-used code from request bill method
+    
+    return result; 
   }
 
   private static String getCurrentTime() {
@@ -183,10 +176,6 @@ public class Customer {
     return formattedTime;
   }
 
-  /*
-   * Get find all orders where table matches foreach item in orders find the corresponding item in
-   * local add the price to the price sum send it
-   */
   /**
    * Adds a request for a bill to the database.
    */
@@ -220,7 +209,7 @@ public class Customer {
       String addition = "INSERT INTO bills VALUES ( ?, ?, ?, ?, 'Requested')";
       try (PreparedStatement write = connection.prepareStatement(addition);) {
         write.setInt(1, customerID);
-        write.setInt(2,  tableNumber);
+        write.setInt(2, tableNumber);
         write.setString(3, result.toString().replace("[", "").replace("]", ""));
         write.setInt(4, sum);
         write.executeUpdate();
