@@ -82,16 +82,7 @@ public void allocateTable(int tableNum) throws DatabaseInformationException {
 }
 }
 }
-//custom  exception class
-public class DatabaseInformationException extends Exception {
-    public DatabaseInformationException(String) {
-    super(message);
-    }
-    
-public DatabaseInformationException(String message) {
-        super(message);
-}
-}
+
 
 
 
