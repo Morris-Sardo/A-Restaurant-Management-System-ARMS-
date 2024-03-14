@@ -57,4 +57,8 @@ the bug was couse in hnadleChangePasswrd() the overridepassword used to get has 
 			<scope>test</scope>
 		</dependency>
 	
-  The interface it could have been tested due the poor documentation. Whe nthe test runned  the methods colled the the Driver call to create the scene, however i could figured out to cleanup the scene after having userd. the library provided wwere not cleared. 
+  	The interface it could have been tested due the poor documentation. Whe nthe test runned  the methods colled the the Driver call to create the scene, however i could figured out to cleanup the scene after having userd. the library provided wwere not cleared. 
+#Fixed  bug in change password form. 
+	the passwrod field did not reset to default state after navigated away.
+	When the text of the confirm password field is visible, you could not change password. 
+
