@@ -62,3 +62,8 @@ the bug was couse in hnadleChangePasswrd() the overridepassword used to get has 
 	the passwrod field did not reset to default state after navigated away.
 	When the text of the confirm password field is visible, you could not change password. 
 
+#Fixed all bugs coused by the field password and secret answer.
+	In login page the bug fixed was the when  want change form if passward was visible the field used don come back into default state. this happened when use come back from every pages.
+	In change pasword form the all the field wase the used not come back in default state when do not commplite the action of update password.
+	In registered form the field used not come bka in dafeult state if the secrets field were visible. 
+
