@@ -11,7 +11,7 @@ public class KitchenOrder {
   private IntegerProperty tableID;
   private StringProperty items;
   private IntegerProperty price;
-  private IntegerProperty orderTime;
+  private StringProperty orderTime;
   private StringProperty status;
   
   /**
@@ -144,8 +144,8 @@ public class KitchenOrder {
    * 
    * @param value orderTime.
    */
-  public void setOrderTime(Integer value) {
-    orderTime_().set(value);
+  public void setOrderTime(String value) {
+    orderTime().set(value);
   }
 
   /**
@@ -153,8 +153,8 @@ public class KitchenOrder {
    * 
    * @return orderTime.
    */
-  public Integer getOrderTime() {
-    return orderTime_().get();
+  public String getOrderTime() {
+    return orderTime().get();
   }
 
   /**
@@ -162,9 +162,9 @@ public class KitchenOrder {
    * 
    * @return return orderTime.
    */
-  public IntegerProperty orderTime_() {
+  public StringProperty orderTime() {
     if (orderTime == null) {
-      orderTime = new SimpleIntegerProperty(this, "orderTime");
+      orderTime = new SimpleStringProperty(this, "orderTime");
     }
     return orderTime;
 
