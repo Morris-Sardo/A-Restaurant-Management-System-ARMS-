@@ -13,14 +13,14 @@ import javafx.stage.Stage;
 
 public class menuView extends Application {
 
-/*
- * This class is made to create what the user will see upon launching the application.
- */
-  
   /*
-   * This creates all the buttons that will be interacted with in the menu. 
+   * This class is made to create what the user will see upon launching the application.
    */
-  
+
+  /*
+   * This creates all the buttons that will be interacted with in the menu.
+   */
+
   @FXML
   private Button Deacreaes;
 
@@ -98,11 +98,15 @@ public class menuView extends Application {
 
 
 
-
   private Alert alert;
 
   public void increasePasta() {}
 
+  /*
+   * @param primaryStage. this method is done to start up the program and using a given file, loads
+   * up the data from the fxml file.
+   * 
+   */
   @Override
   public void start(Stage primaryStage) throws Exception {
     Parent root = FXMLLoader.load(getClass().getResource("foodMenu.fxml"));
@@ -145,6 +149,10 @@ public class menuView extends Application {
     IncreasePasta = increasePasta;
   }
 
+  /*
+   * This method works, when interacting with the button, it causes an event to run, which manipulates the value.
+   */
+  
   public void HandleIncreases(Runnable f) {
     IncreasePasta.setOnAction(event -> f.run());
   }
