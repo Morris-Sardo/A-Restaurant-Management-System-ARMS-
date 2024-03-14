@@ -73,10 +73,19 @@ public void allocateTable(int tableNum) throws DatabaseInformationException {
 
       pstmt.setInt(1, tableNum);
       int affectedRows = pstmt.executeUpdate();
-  }
+     
+      if (affectedRows == 0) {
+        throw new DatabaseInformationException("Error updating table status. table may not exist.");
+    }
+} catch (Exception e) {
+    throw new DatabaseInformationException("Database error: " + e.getMessage());
 }
 }
 }
+
+
+
+
 
 
   
