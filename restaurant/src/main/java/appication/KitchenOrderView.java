@@ -52,6 +52,9 @@ public class KitchenOrderView {
   private Button dashboard;
   
   @FXML
+  private Button signOutBtn;
+  
+  @FXML
   private TableView<KitchenOrder> kitchenOrderTable;
   
   /**
@@ -70,6 +73,29 @@ public class KitchenOrderView {
       return null;
     }
   }
+  
+  /**
+   * This method initialises the buttons to handle the events.
+   */
+  @FXML
+  public void initialize() {
+    KitchenOrderController kitchenOrderController = new KitchenOrderController(this);
+    signOutBtn.setOnAction(event -> KitchenOrderController.handleSignOut());
+    dashboard.setOnAction(event -> KitchenOrderController.handleDashboard());
+    menu.setOnAction(event -> KitchenOrderController.handleMenu());
+    inventory.setOnAction(event -> KitchenOrderController.handleInventory());
+    reviewList.setOnAction(event -> KitchenOrderController.handleReviewList());
+    
+    orderNums.setCellValueFactory(new PropertyValueFactory<>("orderNums"));
+    tableNums.setCellValueFactory(new PropertyValueFactory<>("tableNums"));
+    items.setCellValueFactory(new PropertyValueFactory<>("items"));
+    prices.setCellValueFactory(new PropertyValueFactory<>("prices"));
+    orderTime.setCellValueFactory(new PropertyValueFactory<>("orderTime"));
+    status.setCellValueFactory(new PropertyValueFactory<>("status"));
+    
+    kitchenOrderTable.setItems(KitchenOrderModel.getKitchenOrders()); //table name 
+  }
+
 
 
 }
