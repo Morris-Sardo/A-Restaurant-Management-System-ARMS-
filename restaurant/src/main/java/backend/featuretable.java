@@ -62,7 +62,23 @@ public class featuretable {
         exception.printStackTrace();
     }
 }
+
+// customer constructor method 
+
+public void allocateTable(int tableNum) throws DatabaseInformationException {
+  String SQL = "update tables SET available = false where table_number = ?";
+
+  try (Connection conn = connect();
+       PreparedStatement pstmt = conn.prepareStatement(SQL)) {
+
+      pstmt.setInt(1, tableNum);
+      int affectedRows = pstmt.executeUpdate();
+  }
 }
+}
+}
+
+
   
 
     
