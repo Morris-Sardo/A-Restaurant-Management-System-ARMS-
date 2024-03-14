@@ -82,7 +82,7 @@ class CustomerTest {
   @Test
   @Tag("ConnectionNeeded")
   void testMarkAsPaid() {
-    customer.markAsPaid(1);
+    testCustomer.markAsPaid(1);
     String status = trackOrder(1);
     assertEquals(Status.PAID.toString(), status);
   }
