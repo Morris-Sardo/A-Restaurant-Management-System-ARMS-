@@ -13,6 +13,14 @@ import javafx.stage.Stage;
 
 public class menuView extends Application {
 
+/*
+ * This class is made to create what the user will see upon launching the application.
+ */
+  
+  /*
+   * This creates all the buttons that will be interacted with in the menu. 
+   */
+  
   @FXML
   private Button Deacreaes;
 
