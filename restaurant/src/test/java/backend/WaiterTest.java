@@ -22,4 +22,5 @@ public class WaiterTest {
       testWaiter.getConnection().close();
     }
   }
+}
 

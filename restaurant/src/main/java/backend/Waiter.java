@@ -33,6 +33,10 @@ public class Waiter {
       e.printStackTrace();
     }
   }
+  
+  public Connection getConnection() {
+    return connection;
+  }
 
   /**
    * Finds all items on the menu.
