@@ -395,6 +395,7 @@ public class MyView {
 
   }
 
+
   /**
    * Setup new question, password, confirm password and answer .
    */
@@ -459,7 +460,7 @@ public class MyView {
       return "";
 
     } else {
-      //System.out.println(fpAnswer.getText());
+      // System.out.println(fpAnswer.getText());
       return fpAnswer.getText();
     }
 
@@ -478,6 +479,7 @@ public class MyView {
 
   }
 
+
   /**
    * this method will switch form when forgot password will press.
    */
@@ -486,6 +488,10 @@ public class MyView {
     askSecurityQuestion.setText(question);
     siLoginForm.setVisible(false);
     fpquestionForm.setVisible(true);
+
+    passToggle.setSelected(false);
+    siPassword.setVisible(true);
+
 
     regQuestionList();
 
@@ -510,6 +516,8 @@ public class MyView {
     fpquestionForm.setVisible(false);
     siLoginForm.setVisible(true);
     fpAnswer.setText("");
+    // passToggle.setSelected(false);
+    // siPassword.setVisible(true);
 
 
   }
@@ -521,14 +529,14 @@ public class MyView {
 
     npNewPassForm.setVisible(false);
     siLoginForm.setVisible(true);
-    
+
     passTextConfPass.setText("");
     passTextNewPass.setText("");
     passToggleNewPass.setSelected(false);
     npNewPassword.setVisible(true);
     passToggleConfPass.setSelected(false);
     npNewPassConfimation.setVisible(true);
-    
+
   }
 
 
@@ -546,12 +554,22 @@ public class MyView {
       slider.setNode(sideForm);
       slider.setToX(300); // slideTox in px.
       slider.setDuration(Duration.seconds(.5)); // how long the translate act.
+      
+      passToggle.setSelected(false);
+      siPassword.setVisible(true);
+      
+      passToggleSecAns.setSelected(false);
+      passToggleSu.setSelected(false);
+      suPassword.setVisible(true);
+      suAnswer.setVisible(true);
+      
 
       // Change visibility buttons "create account" "Already have account".
       slider.setOnFinished((ActionEvent e) -> {
         sideCreateBtnAlreadyHave.setVisible(true);
         sideCreateBtn.setVisible(false);
-
+        
+        
         regQuestionList();
       });
       slider.play();
