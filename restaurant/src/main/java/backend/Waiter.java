@@ -218,23 +218,19 @@ public class Waiter {
       update.executeUpdate();
     }
   }
-  
+
   /**
    * Inserts card information - Reused from customer class.
    */
-  public void insertCardInformation(int orderNumber, String nameOnCard, String cardNumber,
-      String expiryDate, String securityPin) throws SQLException {
-    String insertQuery =
-        "INSERT INTO cardInformation (order_number, name_on_card, card_number, "
-        + "expiry_date, security_pin) VALUES (?, ?, ?, ?, ?)";
-    try (PreparedStatement statement = connection.prepareStatement(insertQuery)) {
-      statement.setInt(1, orderNumber);
-      statement.setString(2, nameOnCard);
-      statement.setString(3, cardNumber);
-      statement.setString(4, expiryDate);
-      statement.setString(5, securityPin);
-
-      statement.executeUpdate();
+  public void paymentInformation() throws SQLException {
+    Waiter waiter = new Waiter(connection, "waiterUsername");
+    try {
+       waiter.insertCardInformation(orderNumber, nameOnCard, cardNumber,
+        expiryDate, securityPin)
+       System.out.println("Card information inserted succesfull.");
+    } catch (SQLException e) {
+      e.printStackTrace();
     }
+ 
   }
 }
