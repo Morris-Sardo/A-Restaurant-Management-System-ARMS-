@@ -20,13 +20,13 @@ public class KitchenOrderView {
 
   @FXML
   private TableColumn<KitchenOrder, String> items;
-  
+
   @FXML
   private TableColumn<KitchenOrder, Integer> prices;
 
   @FXML
   private TableColumn<KitchenOrder, Integer> orderTime;
-  
+
   @FXML
   private TableColumn<KitchenOrder, String> status;
 
@@ -44,19 +44,19 @@ public class KitchenOrderView {
 
   @FXML
   private Button inventory;
-  
+
   @FXML
   private Button menu;
-  
+
   @FXML
   private Button dashboard;
-  
+
   @FXML
   private Button signOutBtn;
-  
+
   @FXML
   private TableView<KitchenOrder> kitchenOrderTable;
-  
+
   /**
    * This method start the Kitchen Order scene.
    * 
@@ -73,7 +73,7 @@ public class KitchenOrderView {
       return null;
     }
   }
-  
+
   /**
    * This method initialises the buttons to handle the events.
    */
@@ -85,15 +85,15 @@ public class KitchenOrderView {
     menu.setOnAction(event -> kitchenOrderController.handleMenuStaff());
     inventory.setOnAction(event -> kitchenOrderController.handleInventory());
     reviewList.setOnAction(event -> kitchenOrderController.handleReviewList());
-    
+
     orderNums.setCellValueFactory(new PropertyValueFactory<>("orderNums"));
     tableNums.setCellValueFactory(new PropertyValueFactory<>("tableNums"));
     items.setCellValueFactory(new PropertyValueFactory<>("items"));
     prices.setCellValueFactory(new PropertyValueFactory<>("prices"));
     orderTime.setCellValueFactory(new PropertyValueFactory<>("orderTime"));
     status.setCellValueFactory(new PropertyValueFactory<>("status"));
-    
-    kitchenOrderTable.setItems(KitchenOrderModel.getKitchenOrders()); //table name 
+
+    kitchenOrderTable.setItems(KitchenOrderModel.getKitchenOrders()); // table name
   }
 
 

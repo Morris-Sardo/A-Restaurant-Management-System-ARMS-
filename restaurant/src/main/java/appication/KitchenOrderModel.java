@@ -8,7 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class KitchenOrderModel {
-  
+
   private static Connection connect;
   private static PreparedStatement prepare;
   private static ResultSet result;

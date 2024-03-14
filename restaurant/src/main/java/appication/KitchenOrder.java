@@ -6,14 +6,14 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class KitchenOrder {
-  
+
   private IntegerProperty orderID;
   private IntegerProperty tableID;
   private StringProperty items;
   private IntegerProperty price;
   private StringProperty orderTime;
   private StringProperty status;
-  
+
   /**
    * This method sets the values orderID in orderID_Property.
    * 
@@ -44,7 +44,7 @@ public class KitchenOrder {
     return orderID;
 
   }
-  
+
   /**
    * This method sets the values tableID in tableID_Property.
    * 
@@ -75,7 +75,7 @@ public class KitchenOrder {
     return tableID;
 
   }
-  
+
   /**
    * This method set items in items_Property.
    * 
@@ -138,7 +138,7 @@ public class KitchenOrder {
     return price;
 
   }
-  
+
   /**
    * This method sets the values price in orderTime_Property.
    * 
@@ -169,7 +169,7 @@ public class KitchenOrder {
     return orderTime;
 
   }
-  
+
   /**
    * This method set status in status_Property.
    * 
