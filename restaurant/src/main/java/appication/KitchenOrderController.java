@@ -53,6 +53,27 @@ public class KitchenOrderController {
     // MyView view = new MyView();
     // Driver.setScene(view.start(), TitlePage.LOGIN_PAGE);
   }
+  
+  /**
+   * This method handles the order by changing its status.
+   */
+  void handleDelivered() {
+    
+  }
+  
+  /**
+   * This method signs-out the user and switches to the login page.
+   */
+  void handleAcceptOrder() {
+    
+  }
+  
+  /**
+   * This method signs-out the user and switches to the login page.
+   */
+  void handleCancelOrder() {
+    
+  }
 
 
 
