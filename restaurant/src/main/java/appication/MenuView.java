@@ -7,7 +7,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
+// import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+
+
 
 /**
  * Thic class is menu page for staff. This page has has more privilage of menu costumenr page.
@@ -16,6 +19,28 @@ import javafx.scene.image.ImageView;
  *
  */
 public class MenuView {
+
+
+  @FXML
+  private AnchorPane bread;
+
+  @FXML
+  private AnchorPane chickenFajitas;
+
+  @FXML
+  private AnchorPane chickenTaqiotos;
+
+  @FXML
+  private AnchorPane chilliConCarne;
+
+  @FXML
+  private AnchorPane churros;
+
+  @FXML
+  private AnchorPane coke;
+
+  @FXML
+  private Button dashboardBtn;
 
   @FXML
   private Button deacreaes;
@@ -37,6 +62,24 @@ public class MenuView {
 
   @FXML
   private Button deacreaes6;
+
+  @FXML
+  private Button decreasePasta;
+
+  @FXML
+  private Button dessertSelctionFilterBtn;
+
+  @FXML
+  private Button dessertUnselectFilterBtn;
+
+  @FXML
+  private AnchorPane halloumi;
+
+  @FXML
+  private AnchorPane horchata;
+
+  @FXML
+  private AnchorPane hotChoccolate;
 
   @FXML
   private Button increasePasta;
@@ -63,22 +106,28 @@ public class MenuView {
   private Button increases3;
 
   @FXML
-  private Button payButton;
-
-  @FXML
-  private Button customer;
-
-  @FXML
-  private Button dashboardBtn;
-
-  @FXML
-  private Button decreasePasta;
-
-  @FXML
   private Button inventoryBtn;
 
   @FXML
-  private ImageView outBtn;
+  private AnchorPane jalapenos;
+
+  @FXML
+  private AnchorPane jarritos;
+
+  @FXML
+  private Button kitchenBtn;
+
+  @FXML
+  private AnchorPane margaritaPie;
+
+  @FXML
+  private AnchorPane mexicanCornDip; //
+
+  @FXML
+  private AnchorPane mexicanRice;
+
+  @FXML
+  private Button payBtn;
 
   @FXML
   private Button receiptButton;
@@ -90,10 +139,29 @@ public class MenuView {
   private Button reviewListBtn;
 
   @FXML
+  private AnchorPane salsaVerde;
+
+  @FXML
   private Button signuotBtn;
 
   @FXML
+  private AnchorPane tepache;
+
+  @FXML
   private Label username;
+
+  @FXML
+  private Button veganSelectFilterBtn;
+
+  @FXML
+  private Button veganUnselectFilterBtn;
+
+  @FXML
+  private Button vegetarianSelectFilterBtn;
+
+  @FXML
+  private Button vegetarianUnselectFilterBtn;
+
 
 
   /**
@@ -105,7 +173,7 @@ public class MenuView {
     Parent root;
     try {
       root = FXMLLoader.load(getClass().getResource("foodMenuStaff.fxml"));
-      Scene scene = new Scene(root, 1000, 650);
+      Scene scene = new Scene(root, 1009.6, 650);
       return scene;
     } catch (IOException e) {
       e.printStackTrace();
@@ -123,5 +191,182 @@ public class MenuView {
     inventoryBtn.setOnAction(event -> menuController.handleInventory());
     reviewListBtn.setOnAction(event -> menuController.handleReviewList());
     dashboardBtn.setOnAction(event -> menuController.handledashboard());
+    kitchenBtn.setOnAction(event -> menuController.handleKitchen());
+    payBtn.setOnAction(event -> menuController.handlePayBillPage());
+    vegetarianSelectFilterBtn.setOnAction(event -> handleVetarianSelectFilterFood());
+    vegetarianUnselectFilterBtn.setOnAction(event -> handleVegetarianUnselectFilterFood());
+    veganSelectFilterBtn.setOnAction(event -> handleVeganSelectFilterFood());
+    veganUnselectFilterBtn.setOnAction(event -> handleVeganUnselectFilterFood());
+    dessertSelctionFilterBtn.setOnAction(event -> handleDessertSelectFilterFood());
+    dessertUnselectFilterBtn.setOnAction(event -> handleDessertUnselectFilterFood());
+
+
   }
+
+  /**
+   * This method is used to group all food that vegetarian will not eat.
+   */
+  public void vegetarianFilter() {
+    chickenFajitas.setVisible(false);
+    chickenTaqiotos.setVisible(false);
+    chilliConCarne.setVisible(false);
+    coke.setVisible(false);
+    tepache.setVisible(false);
+    hotChoccolate.setVisible(false);
+    churros.setVisible(false);
+    jarritos.setVisible(false);
+    horchata.setVisible(false);
+    mexicanRice.setVisible(false);
+  }
+
+  /**
+   * This method is used to uselect vegeratian filter.
+   */
+  public void vegetarianUnfilter() {
+    chickenFajitas.setVisible(true);
+    chickenTaqiotos.setVisible(true);
+    chilliConCarne.setVisible(true);
+    coke.setVisible(true);
+    tepache.setVisible(true);
+    hotChoccolate.setVisible(true);
+    churros.setVisible(true);
+    jarritos.setVisible(true);
+    horchata.setVisible(true);
+    mexicanRice.setVisible(true);
+  }
+
+  /**
+   * This method is used to group all food that vegan will not eat.
+   */
+  public void veganFilter() {
+    chickenFajitas.setVisible(false);
+    chickenTaqiotos.setVisible(false);
+    chilliConCarne.setVisible(false);
+    coke.setVisible(false);
+    tepache.setVisible(false);
+    hotChoccolate.setVisible(false);
+    churros.setVisible(false);
+    jarritos.setVisible(false);
+    horchata.setVisible(false);
+  }
+
+  /**
+   * This method is used to uselect vegan filter.
+   */
+  public void veganUnfilter() {
+    chickenFajitas.setVisible(true);
+    chickenTaqiotos.setVisible(true);
+    chilliConCarne.setVisible(true);
+    coke.setVisible(true);
+    tepache.setVisible(true);
+    hotChoccolate.setVisible(true);
+    churros.setVisible(true);
+    jarritos.setVisible(true);
+    horchata.setVisible(true);
+  }
+
+
+  /**
+   * This method is used to filter dessert dishes.
+   */
+  public void dessertFilter() {
+    chickenFajitas.setVisible(false);
+    chickenTaqiotos.setVisible(false);
+    chilliConCarne.setVisible(false);
+    coke.setVisible(false);
+    tepache.setVisible(false);
+    // hotChoccolate.setVisible(false);
+    // churros.setVisible(false);
+    jarritos.setVisible(false);
+    horchata.setVisible(false);
+    salsaVerde.setVisible(false);
+    bread.setVisible(false);
+    mexicanCornDip.setVisible(false);
+    halloumi.setVisible(false);
+    mexicanRice.setVisible(false);
+    jalapenos.setVisible(false);
+  }
+
+  /**
+   * This method is used to unfilter dessert dishes.
+   */
+  public void dessertUnfilter() {
+    chickenFajitas.setVisible(true);
+    chickenTaqiotos.setVisible(true);
+    chilliConCarne.setVisible(true);
+    coke.setVisible(true);
+    tepache.setVisible(true);
+    // hotChoccolate.setVisible(false);
+    // churros.setVisible(false);
+    jarritos.setVisible(true);
+    horchata.setVisible(true);
+    salsaVerde.setVisible(true);
+    bread.setVisible(true);
+    mexicanCornDip.setVisible(true);
+    halloumi.setVisible(true);
+    mexicanRice.setVisible(true);
+    jalapenos.setVisible(true);
+  }
+
+  /**
+   * This methos used to apply vegetarian filter in menu page staff.
+   */
+  private void handleVetarianSelectFilterFood() {
+    vegetarianSelectFilterBtn.setVisible(false);
+    vegetarianUnselectFilterBtn.setVisible(true);
+    vegetarianFilter();
+
+  }
+
+  /**
+   * This methos used to unapply vegetarian filter in menu page staff.
+   */
+  private void handleVegetarianUnselectFilterFood() {
+    vegetarianUnselectFilterBtn.setVisible(false);
+    vegetarianSelectFilterBtn.setVisible(true);
+    vegetarianUnfilter();
+
+  }
+
+
+  /**
+   * This methos used to apply vegan filter in menu page staff.
+   */
+  private void handleVeganSelectFilterFood() {
+    veganSelectFilterBtn.setVisible(false);
+    veganUnselectFilterBtn.setVisible(true);
+    veganFilter();
+
+  }
+
+  /**
+   * This methos used to unapply vegan filter in menu page staff.
+   */
+  private void handleVeganUnselectFilterFood() {
+    veganUnselectFilterBtn.setVisible(false);
+    veganSelectFilterBtn.setVisible(true);
+    veganUnfilter();
+
+  }
+
+  /**
+   * This methos used to apply dessert filter in menu page staff.
+   */
+  private void handleDessertSelectFilterFood() {
+    dessertSelctionFilterBtn.setVisible(false);
+    dessertUnselectFilterBtn.setVisible(true);
+    dessertFilter();
+  }
+
+  /**
+   * This methos used to unapply dessert filter in menu page staff.
+   */
+  private void handleDessertUnselectFilterFood() {
+    dessertUnselectFilterBtn.setVisible(false);
+    dessertSelctionFilterBtn.setVisible(true);
+    dessertUnfilter();
+
+  }
+
+
 }
