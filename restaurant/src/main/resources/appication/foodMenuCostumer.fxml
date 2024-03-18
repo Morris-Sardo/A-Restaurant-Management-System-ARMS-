@@ -24,211 +24,217 @@
                      <content>
                         <AnchorPane prefHeight="600.0" prefWidth="503.0">
                            <children>
-                              <AnchorPane layoutX="-3.0" layoutY="-41.0" prefHeight="630.0" prefWidth="479.0">
+                              <AnchorPane layoutX="-9.0" layoutY="3.0" prefHeight="630.0" prefWidth="479.0">
                                  <children>
-                                    <AnchorPane layoutX="14.0" layoutY="40.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane fx:id="salsaVerde" layoutX="14.0" layoutY="40.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button fx:id="increases1" layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <Button fx:id="deacreaes1" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                           <Label layoutX="56.0" layoutY="7.0" prefHeight="17.0" prefWidth="66.0" text="Salsa Verde" />
-                                          <ImageView fitHeight="75.0" fitWidth="111.0" layoutX="64.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                                          <TextField layoutX="49.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                                          <ImageView fitHeight="71.0" fitWidth="141.0" layoutX="15.0" layoutY="25.0">
                                              <image>
-                                                <Image url="@image/a798de51cb27b7b16b7a242ef691d856.jpg" />
+                                                <Image url="@image/menuPic/a798de51cb27b7b16b7a242ef691d856.jpg" />
                                              </image>
                                           </ImageView>
-                                          <TextField layoutX="49.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="14.0" layoutY="205.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane fx:id="jalapenos" layoutX="14.0" layoutY="205.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button fx:id="increases2" layoutX="120.0" layoutY="105.0" mnemonicParsing="false" text="+" />
                                           <Button fx:id="deacreaes2" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                           <Label layoutX="38.0" layoutY="6.0" prefHeight="17.0" prefWidth="103.0" text="Jalapenos Poppers" />
                                           <TextField layoutX="49.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-                                          <ImageView fitHeight="75.0" fitWidth="111.0" layoutX="40.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="83.0" fitWidth="136.0" layoutX="15.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fitHeight="72.0" fitWidth="150.0" layoutX="10.0" layoutY="28.0">
                                              <image>
-                                                <Image url="@image/20858-best-ever-jalapeno-poppers-DDMFS-4x3-69772a3d60cd4a63b6dfac0ff415db51.jpg" />
+                                                <Image url="@image/menuPic/jalapenoFried.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="14.0" layoutY="370.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane fx:id="chilliConCarne" layoutX="14.0" layoutY="370.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button fx:id="increases21" layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <Button fx:id="deacreaes5" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
-                                          <TextField layoutX="49.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-                                          <ImageView fitHeight="75.0" fitWidth="111.0" layoutX="34.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                                          <TextField layoutX="46.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                                          <Label layoutX="39.0" layoutY="6.0" prefHeight="17.0" prefWidth="101.0" text="Chilli Con Carne" />
+                                          <ImageView fitHeight="68.0" fitWidth="150.0" layoutX="9.0" layoutY="24.0">
                                              <image>
-                                                <Image url="@image/89993-award-winning-chili-con-carne-ddmfs-3x4-4e3a48f5505a4c998415c261507b0a76.jpg" />
+                                                <Image url="@image/menuPic/89993-award-winning-chili-con-carne-ddmfs-3x4-4e3a48f5505a4c998415c261507b0a76.jpg" />
                                              </image>
                                           </ImageView>
-                                          <Label layoutX="39.0" layoutY="6.0" prefHeight="17.0" prefWidth="101.0" text="Chilli Con Carne" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="244.0" layoutY="40.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane fx:id="chickenTaqiotos" layoutX="244.0" layoutY="40.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button fx:id="deacreaes" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                           <Button fx:id="increases" layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <TextField layoutX="49.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-                                          <ImageView fitHeight="75.0" fitWidth="111.0" layoutX="40.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                                          <Label layoutX="42.0" layoutY="6.0" prefHeight="17.0" prefWidth="94.0" text="Chicken Taquitos" />
+                                          <ImageView fitHeight="74.0" fitWidth="122.0" layoutX="18.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fitHeight="75.0" fitWidth="150.0" layoutX="10.0" layoutY="25.0">
                                              <image>
-                                                <Image url="@image/Chicken-Taquitos-Recipe-Card.jpg" />
+                                                <Image url="@image/menuPic/Chicken-Taquitos-Recipe-Card.jpg" />
                                              </image>
                                           </ImageView>
-                                          <Label layoutX="42.0" layoutY="6.0" prefHeight="17.0" prefWidth="94.0" text="Chicken Taquitos" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="244.0" layoutY="205.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane fx:id="mexicanCornDip" layoutX="244.0" layoutY="205.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button fx:id="increases3" layoutX="120.0" layoutY="105.0" mnemonicParsing="false" text="+" />
                                           <Button fx:id="deacreaes3" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                           <Label layoutX="39.0" layoutY="6.0" prefHeight="17.0" prefWidth="101.0" text="Mexican Corn Dip" />
                                           <TextField layoutX="49.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-                                          <ImageView fitHeight="75.0" fitWidth="111.0" layoutX="34.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="74.0" fitWidth="150.0" layoutX="6.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fitHeight="77.0" fitWidth="157.0" layoutX="5.0" layoutY="24.0">
                                              <image>
-                                                <Image url="@image/16816corn-dipfabeveryday4x3-4c3afb98dbd44ca69c272f9a89a3180f.jpg" />
+                                                <Image url="@image/menuPic/corn.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="244.0" layoutY="370.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane fx:id="chickenFajitas" layoutX="244.0" layoutY="370.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button fx:id="increases22" layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <Button fx:id="deacreaes4" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                           <TextField layoutX="49.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-                                          <ImageView fitHeight="75.0" fitWidth="111.0" layoutX="34.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                                          <Label layoutX="39.0" layoutY="6.0" prefHeight="17.0" prefWidth="101.0" text="Chicken Fajitas" />
+                                          <ImageView fitHeight="78.0" fitWidth="150.0" layoutX="6.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fitHeight="68.0" fitWidth="150.0" layoutX="10.0" layoutY="27.0">
                                              <image>
-                                                <Image url="@image/chicken-fajitas-index-649de79db2265.jpg" />
+                                                <Image url="@image/menuPic/chicken-fajitas-index-649de79db2265.jpg" />
                                              </image>
                                           </ImageView>
-                                          <Label layoutX="39.0" layoutY="6.0" prefHeight="17.0" prefWidth="101.0" text="Chicken Fajitas" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="14.0" layoutY="535.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane fx:id="halloumi" layoutX="14.0" layoutY="535.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button fx:id="increases11" layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <Button fx:id="deacreaes6" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                           <TextField layoutX="49.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-                                          <ImageView fitHeight="75.0" fitWidth="88.0" layoutX="52.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                                          <Label layoutX="39.0" layoutY="6.0" text="Halloumi Tacos" />
+                                          <ImageView fitHeight="73.0" fitWidth="150.0" layoutX="8.0" layoutY="26.0">
                                              <image>
-                                                <Image url="@image/grilled-halloumi-tacos-for-camping-sq.jpg" />
+                                                <Image url="@image/menuPic/grilled-halloumi-tacos-for-camping-sq.jpg" />
                                              </image>
                                           </ImageView>
-                                          <Label layoutX="39.0" layoutY="6.0" text="Halloumi Tacos" />
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="244.0" layoutY="535.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane fx:id="mexicanRice" layoutX="244.0" layoutY="535.0" prefHeight="117.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button fx:id="increasePasta" layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <Button fx:id="decreasePasta" layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
-                                          <ImageView fitHeight="75.0" fitWidth="111.0" layoutX="52.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@image/easy-mexican-rice-recipe.jpg" />
-                                             </image></ImageView>
                                           <TextField layoutX="50.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
                                           <Label layoutX="40.0" layoutY="6.0" text="Mexican Style Rice" />
+                                          <ImageView fitHeight="74.0" fitWidth="141.0" layoutX="14.0" layoutY="23.0">
+                                             <image>
+                                                <Image url="@image/menuPic/mex_rice.jpg" />
+                                             </image>
+                                          </ImageView>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="14.0" layoutY="700.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane fx:id="churros" layoutX="14.0" layoutY="700.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <Button layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                           <TextField layoutX="49.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
                                           <Label layoutX="58.0" layoutY="6.0" prefHeight="17.0" prefWidth="47.0" text="Churros" />
-                                          <ImageView fitHeight="75.0" fitWidth="111.0" layoutX="34.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="77.0" fitWidth="140.0" layoutX="10.0" layoutY="23.0">
                                              <image>
-                                                <Image url="@image/churros-small-10-500x375.jpg" />
+                                                <Image url="@image/menuPic/churros.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="14.0" layoutY="865.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane fx:id="margaritaPie" layoutX="14.0" layoutY="865.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                           <Button layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <TextField layoutX="49.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
                                           <Label layoutX="40.0" layoutY="6.0" text="Margarita Pie" />
-                                          <ImageView fitHeight="74.0" fitWidth="111.0" layoutX="34.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="73.0" fitWidth="150.0" layoutX="10.0" layoutY="23.0">
                                              <image>
-                                                <Image url="@image/download.jpg" />
+                                                <Image url="@image/menuPic/chakeSalad.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="244.0" layoutY="700.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane fx:id="bread" layoutX="244.0" layoutY="700.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <Button layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                           <TextField layoutX="49.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
                                           <Label layoutX="39.0" layoutY="6.0" text="Pan De Muerto" />
-                                          <ImageView fitHeight="75.0" fitWidth="111.0" layoutX="34.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="68.0" fitWidth="150.0" layoutX="10.0" layoutY="29.0">
                                              <image>
-                                                <Image url="@image/pan-de-muerto-2343007-hero-05-be64f16c65ab45db930710009b7c8fff.jpg" />
+                                                <Image url="@image/menuPic/bread_mex.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="244.0" layoutY="865.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane fx:id="hotChoccolate" layoutX="244.0" layoutY="865.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <Button layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                           <TextField layoutX="49.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
                                           <Label layoutX="40.0" layoutY="6.0" text="Hot Chocolate Pie" />
-                                          <ImageView fitHeight="75.0" fitWidth="111.0" layoutX="26.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="72.0" fitWidth="150.0" layoutX="9.0" layoutY="25.0">
                                              <image>
-                                                <Image url="@image/Mexican-Chocolate-Pie-Recipe-on-One-Sweet-Appetite.jpg" />
+                                                <Image url="@image/menuPic/mex_cioccolate.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="14.0" layoutY="1030.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane fx:id="tepache" layoutX="14.0" layoutY="1030.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                           <Button layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <TextField layoutX="49.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
                                           <Label layoutX="57.0" layoutY="6.0" prefHeight="17.0" prefWidth="66.0" text="Tepache" />
-                                          <ImageView fitHeight="74.0" fitWidth="111.0" layoutX="64.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="66.0" fitWidth="124.0" layoutX="28.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fitHeight="74.0" fitWidth="39.0" layoutX="62.0" layoutY="23.0">
                                              <image>
-                                                <Image url="@image/TepacheStraw.JPG" />
+                                                <Image url="@image/menuPic/TepacheStraw.JPG" />
                                              </image>
                                           </ImageView>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="244.0" layoutY="1030.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane fx:id="coke" layoutX="244.0" layoutY="1030.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <Button layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                           <TextField layoutX="49.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
                                           <Label layoutX="68.0" layoutY="6.0" text="Coke" />
-                                          <ImageView fitHeight="74.0" fitWidth="111.0" layoutX="70.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="68.0" fitWidth="40.0" layoutX="61.0" layoutY="26.0">
                                              <image>
-                                                <Image url="@image/images.jpg" />
+                                                <Image url="@image/menuPic/cocacola.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="244.0" layoutY="1195.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane fx:id="jarritos" layoutX="244.0" layoutY="1195.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Label layoutX="62.0" layoutY="6.0" text="Jarritos" />
                                           <Button layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <Button layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                           <TextField layoutX="49.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-                                          <ImageView fitHeight="74.0" fitWidth="111.0" layoutX="53.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="77.0" fitWidth="149.0" layoutX="7.0" layoutY="22.0">
                                              <image>
-                                                <Image url="@image/download1.jpg" />
+                                                <Image url="@image/menuPic/download1.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane layoutX="14.0" layoutY="1195.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                                    <AnchorPane fx:id="horchata" layoutX="14.0" layoutY="1195.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
                                        <children>
                                           <Button layoutX="120.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" />
                                           <Button layoutX="20.0" layoutY="105.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="-" />
                                           <TextField layoutX="49.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
                                           <Label layoutX="57.0" layoutY="6.0" text="Horchata" />
-                                          <ImageView fitHeight="75.0" fitWidth="111.0" layoutX="46.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="79.0" fitWidth="142.0" layoutX="12.0" layoutY="21.0">
                                              <image>
-                                                <Image url="@image/Horchata-Thumbnail.jpg" />
+                                                <Image url="@image/menuPic/Horchata-Thumbnail.jpg" />
                                              </image>
                                           </ImageView>
                                        </children>
@@ -304,6 +310,12 @@
                         <Label layoutX="57.0" layoutY="27.0" prefHeight="16.0" prefWidth="47.0" text="Total" />
                      </children>
                   </AnchorPane>
+                  <Button fx:id="dessertSelctionFilterBtn" layoutX="60.0" layoutY="493.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Select Desserts" />
+                  <Button fx:id="vegetarianUnselectFilterBtn" layoutX="62.0" layoutY="534.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Unselect Vegetarian" visible="false" />
+                  <Button fx:id="veganSelectFilterBtn" layoutX="62.0" layoutY="572.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Select Vegan" />
+                  <Button fx:id="dessertUnselectFilterBtn" layoutX="60.0" layoutY="493.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Unselect Desserts" visible="false" />
+                  <Button fx:id="vegetarianSelectFilterBtn" layoutX="62.0" layoutY="534.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Select Vegetarian" />
+                  <Button fx:id="veganUnselectFilterBtn" layoutX="62.0" layoutY="572.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Uselect Vegan" visible="false" />
                </children>
             </AnchorPane>
          </children>
