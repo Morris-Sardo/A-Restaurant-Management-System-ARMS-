@@ -9,7 +9,7 @@ package appication;
 public class MenuCostumerController {
 
   private MenuCostumerView menuCostumerView;
-  //private DataBaseModel connection;
+  // private DataBaseModel connection;
 
   /**
    * The controller for the customer's menu. THE INITIALIZATION OF THE MENUCOSTUMERVIEW AND
@@ -20,7 +20,7 @@ public class MenuCostumerController {
    */
   public MenuCostumerController(MenuCostumerView menuCostumerView) {
     this.menuCostumerView = menuCostumerView;
-    //this.connection = Driver.getDBconnection();
+    // this.connection = Driver.getDBconnection();
 
   }
 
@@ -46,6 +46,16 @@ public class MenuCostumerController {
   void handleSignOut() {
     MyView view = new MyView();
     Driver.setScene(view.start(), TitlePage.LOGIN_PAGE);
+  }
+
+  /**
+   * This method handle pay bills for the costumer. Thime method get the amount to pay from database
+   * and update the pay table database.
+   */
+  public void handlePayBills() {
+    PayCostumerView viewPC = new PayCostumerView();
+    Driver.setScene(viewPC.start(), TitlePage.PAY_BILLS_PAGE);
+
   }
 
 }
