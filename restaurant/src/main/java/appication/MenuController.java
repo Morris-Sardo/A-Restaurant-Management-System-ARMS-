@@ -54,6 +54,25 @@ public class MenuController {
     Driver.setScene(viewD.start(), TitlePage.DASHBOARD_PAGE);
   }
 
+  /**
+   * This method handle switching the kitchen page.
+   */
+  void handleKitchen() {
+    KitchenView viewK = new KitchenView();
+    Driver.setScene(viewK.start(), TitlePage.KITCHEN_PAGE);
+  }
+
+  /**
+   * This method handle switching to the Pay Bill page.
+   */
+  void handlePayBillPage() {
+    PayView viewP = new PayView();
+    Driver.setScene(viewP.start(), TitlePage.PAY_BILLS_PAGE);
+
+
+    ;
+  }
+
 
 
 }

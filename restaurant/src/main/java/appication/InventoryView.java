@@ -27,7 +27,9 @@ import javafx.scene.layout.AnchorPane;
  */
 public class InventoryView {
 
-
+  @FXML
+  private Button kitchenBtn;
+  
   @FXML
   private Button dashboardBtn;
 
@@ -143,6 +145,7 @@ public class InventoryView {
     InventoryController inventoryController = new InventoryController(this);
     signOutBtn.setOnAction(event -> inventoryController.handleSignOut());
     menuBtn.setOnAction(event -> inventoryController.handleMenu());
+    kitchenBtn.setOnAction(event -> inventoryController.handleKitchen());
     reviewBtn.setOnAction(event -> inventoryController.handleReview());
     dashboardBtn.setOnAction(event -> inventoryController.handledashboard());
     inventoryAddBtn.setOnAction(event -> inventoryController.handleAddInvetory());

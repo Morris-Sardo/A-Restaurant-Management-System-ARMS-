@@ -63,6 +63,7 @@
 										<Button fx:id="dashboardBtn" layoutX="6.0" layoutY="225.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="Dashboard" textFill="WHITE" />
 										<Button fx:id="menuStaffBtn" layoutX="6.0" layoutY="300.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="Menu" textFill="WHITE" />
 										<Button fx:id="inventroyBtn" layoutX="6.0" layoutY="375.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="Inventory" textFill="WHITE" />
+                              <Button fx:id="kitchenBtn" layoutX="6.0" layoutY="439.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="kitchen" textFill="WHITE" />
 									</children>
 								</AnchorPane>
 							</children>

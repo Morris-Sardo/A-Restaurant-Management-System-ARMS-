@@ -18,6 +18,9 @@ import javafx.scene.control.Button;
 public class DashBoardMyView {
 
   @FXML
+  private Button kitchencBtn;
+
+  @FXML
   private Button inventoryBtn;
 
   @FXML
@@ -58,6 +61,8 @@ public class DashBoardMyView {
     menuBtn.setOnAction(event -> dashController.handleMenu());
     inventoryBtn.setOnAction(event -> dashController.handleInventory());
     reviewBtn.setOnAction(event -> dashController.handleReview());
+    kitchencBtn.setOnAction(event -> dashController.handleKitchen());
+
 
 
   }

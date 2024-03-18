@@ -141,6 +141,12 @@
                                     <String fx:value="shadow-drop" />
                                  </styleClass>
                               </Button>
+                              <Button fx:id="kitchencBtn" layoutX="665.0" layoutY="43.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" styleClass="nav-btn" text="KITCHEN" textFill="WHITE">
+                                 <stylesheets>
+                                    <URL value="@MenuDesign.css" />
+                                    <URL value="@dash.css" />
+                                 </stylesheets>
+                              </Button>
                            </children>
                         </AnchorPane>
                      </children></AnchorPane>

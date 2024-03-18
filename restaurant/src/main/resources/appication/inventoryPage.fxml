@@ -64,6 +64,7 @@
                                     <Font size="15.0" />
                                  </font>
                               </Label>
+                              <Button fx:id="kitchenBtn" layoutX="6.0" layoutY="399.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="KITCHEN" textFill="#f8f8f8" />
                            </children>
                         </AnchorPane>
                      </children>

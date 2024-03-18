@@ -19,6 +19,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
  */
 
 public class ReviewListViewStaff {
+  
+  @FXML
+  private Button kitchenBtn;
 
   @FXML
   private Button dashboardBtn;
@@ -78,11 +81,13 @@ public class ReviewListViewStaff {
     dashboardBtn.setOnAction(event -> reviewListControllerStaff.handleDashboard());
     inventroyBtn.setOnAction(event -> reviewListControllerStaff.handleInventory());
     menuStaffBtn.setOnAction(event -> reviewListControllerStaff.handleMenuStaff());
+    kitchenBtn.setOnAction(event -> reviewListControllerStaff.handleKitchen());
 
     idTable.setCellValueFactory(new PropertyValueFactory<>("ID"));
     nameTable.setCellValueFactory(new PropertyValueFactory<>("name"));
     starsTable.setCellValueFactory(new PropertyValueFactory<>("stars"));
     commentTable.setCellValueFactory(new PropertyValueFactory<>("comment"));
+    
 
     tableView.setItems(ReviewListModel.getRating1Table());
   }

@@ -34,15 +34,6 @@ public class DashBoardController {
 
 
   /**
-   * This method handles switching to the inventory page.
-   */
-  void handleInventory() {
-    InventoryView viewI = new InventoryView();
-    Driver.setScene(viewI.start(), TitlePage.INVENTROY_PAGE);
-
-  }
-
-  /**
    * This method handles switching to the menu page.
    */
   void handleMenu() {
@@ -59,6 +50,23 @@ public class DashBoardController {
 
   }
 
+  /**
+   * This method handle switch to kitchen page.
+   */
+  void handleKitchen() {
+    KitchenView viewK = new KitchenView();
+    Driver.setScene(viewK.start(), TitlePage.KITCHEN_PAGE);
 
 
+  }
+
+  /**
+   * This method handle switch to Inventory page.
+   */
+  void handleInventory() {
+    InventoryView viewI = new InventoryView();
+    Driver.setScene(viewI.start(), TitlePage.INVENTROY_PAGE);
+  }
 }
+
+
