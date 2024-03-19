@@ -89,6 +89,9 @@
                                           <Font size="33.0" />
                                        </font>
                                     </TextField>
+                                    <TextField fx:id="tableNumberField" alignment="CENTER" layoutX="35.0" layoutY="126.0" promptText=" Table Number" />
+                                    <Button fx:id="numTableBtn" layoutX="36.0" layoutY="181.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="147.0" styleClass="invt-btn" text="TABLE" />
+                                    <Button fx:id="cleanBillsFields" layoutX="36.0" layoutY="216.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="146.0" styleClass="invt-btn" text="CLEAN" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane layoutX="14.0" layoutY="356.0" prefHeight="230.0" prefWidth="845.0" stylesheets="@MenuDesign.css" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="350.0">
