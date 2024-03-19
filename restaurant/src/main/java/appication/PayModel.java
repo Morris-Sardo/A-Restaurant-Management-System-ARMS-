@@ -57,10 +57,10 @@ public class PayModel {
   }
 
   /**
-   * This is dvuinvu9fdvn.
+   * This method is used to get the the bills from the database.
    * 
-   * @param tableNumber weidnewoidnew.
-   * @return dfdoewocbce.
+   * @param tableNumber is the number of table used to get the money owed by the table.
+   * @return the bill to pay.
    */
   public static Float getPrizeFormTable(int tableNumber) {
     String query = "SELECT Prize FROM Pay WHERE Table_Number = ?";
@@ -81,8 +81,7 @@ public class PayModel {
 
 
   /**
-   * This method drop a primary key Database. It will be happen everytime the user submit a paymen
-   * and it goes successfully.
+   * This method resets the prize when the transaction is complited.
    * 
    * @throws SQLException if there is not conection.
    */
@@ -99,7 +98,6 @@ public class PayModel {
       statement.executeUpdate();
       return true;
     } catch (SQLException e) {
-      e.printStackTrace();
       return false;
     }
 
