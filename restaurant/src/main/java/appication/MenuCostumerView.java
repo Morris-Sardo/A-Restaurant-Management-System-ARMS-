@@ -7,6 +7,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
@@ -158,6 +162,12 @@ public class MenuCostumerView {
   @FXML
   private Button vegetarianUnselectFilterBtn;
 
+  @FXML
+  private TableView<MenuItem> tableView;
+
+  @FXML
+  private TextField quantityTextField;
+
 
   /**
    * This method create and start scene of menu for costumer.
@@ -179,6 +189,7 @@ public class MenuCostumerView {
   /**
    * This method initialize all the buttons.
    */
+  @SuppressWarnings("unchecked")
   @FXML
   public void initialize() {
     MenuCostumerController menuCostrumerController = new MenuCostumerController(this);
@@ -193,6 +204,15 @@ public class MenuCostumerView {
     veganUnselectFilterBtn.setOnAction(event -> handleVeganUnselectFilterFood());
     dessertSelctionFilterBtn.setOnAction(event -> handleDessertSelectFilterFood());
     dessertUnselectFilterBtn.setOnAction(event -> handleDessertUnselectFilterFood());
+
+    TableColumn<MenuItem, String> productColumn = new TableColumn<>("Product");
+    productColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+    TableColumn<MenuItem, Integer> quantityColumn = new TableColumn<>("Quantity");
+    quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+    TableColumn<MenuItem, Double> priceColumn = new TableColumn<>("Price");
+    priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+    tableView.getColumns().addAll(productColumn, quantityColumn, priceColumn);
+
 
   }
 
@@ -360,6 +380,22 @@ public class MenuCostumerView {
     dessertSelctionFilterBtn.setVisible(true);
     dessertUnfilter();
 
+  }
+
+  @FXML
+  private void handleSalsaVerde() {
+    String dishName = "Salsa Verde";
+    double price = 5;
+
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(quantityTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+
+
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
 
 }
