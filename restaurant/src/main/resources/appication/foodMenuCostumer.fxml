@@ -116,7 +116,7 @@
 														<Button fx:id="increases" layoutX="120.0"
 															layoutY="105.0" mnemonicParsing="false" prefHeight="26.0"
 															prefWidth="26.0" text="+" onAction = "#handleChicken"/>
-														<TextField layoutX="49.0" layoutY="105.0"
+														<TextField fx:id = "chickenTextField" layoutX="49.0" layoutY="105.0"
 															prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
 														<Label layoutX="42.0" layoutY="6.0"
 															prefHeight="17.0" prefWidth="94.0"
