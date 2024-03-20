@@ -210,6 +210,9 @@ public class MenuCostumerView {
   @FXML
   private TextField jarritosTextField;
   
+  @FXML
+  private TextField horchataTextField;
+  
   
   /**
    * This method create and start scene of menu for costumer.
@@ -634,5 +637,18 @@ public class MenuCostumerView {
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
   
+  @FXML
+  private void handleHorchata() {
+    String dishName = "Horchata";
+    double baseprice = 6.50;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(horchataTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+  }
   
 }
