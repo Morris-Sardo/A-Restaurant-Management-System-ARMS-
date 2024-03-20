@@ -201,6 +201,15 @@ public class MenuCostumerView {
   @FXML
   private TextField chocolateTextField;
   
+  @FXML
+  private TextField tepacheTextField;
+  
+  @FXML
+  private TextField cokeTextField;
+  
+  @FXML
+  private TextField jarritosTextField;
+  
   
   /**
    * This method create and start scene of menu for costumer.
@@ -582,4 +591,48 @@ public class MenuCostumerView {
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
+  
+  @FXML
+  private void handleTepache() {
+    String dishName = "Tepache";
+    double baseprice = 7;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(tepacheTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+  }
+  
+  @FXML
+  private void handleCoke() {
+    String dishName = "Coke";
+    double baseprice = 2;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(cokeTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+  }
+  
+  @FXML
+  private void handleJarritos() {
+    String dishName = "Jarritos";
+    double baseprice = 3.20;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(jarritosTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+  }
+  
+  
 }
