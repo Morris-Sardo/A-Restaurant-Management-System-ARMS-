@@ -192,6 +192,10 @@ public class MenuCostumerView {
   @FXML
   private TextField churrosTextField;
 
+  @FXML
+  private TextField margaritaTextField;
+  
+  
   /**
    * This method create and start scene of menu for costumer.
    * 
@@ -524,6 +528,20 @@ public class MenuCostumerView {
     int quantity = 0;
     try {
       quantity = Integer.parseInt(churrosTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+  }
+  
+  @FXML
+  private void handleMargarita() {
+    String dishName = "Margarita Pie";
+    double baseprice = 7.50;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(margaritaTextField.getText());
     } catch (NumberFormatException e) {
       return;
     }
