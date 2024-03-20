@@ -177,6 +177,9 @@ public class MenuCostumerView {
   @FXML
   private TextField chickenTextField;
   
+  @FXML
+  private TextField cornTextField;
+  
 
   /**
    * This method create and start scene of menu for costumer.
@@ -440,6 +443,20 @@ public class MenuCostumerView {
     int quantity = 0;
     try {
       quantity = Integer.parseInt(chickenTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+  }
+  
+  @FXML
+  private void handleCorn() {
+    String dishName = "Mexican Corn Dip";
+    double baseprice = 3;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(cornTextField.getText());
     } catch (NumberFormatException e) {
       return;
     }
