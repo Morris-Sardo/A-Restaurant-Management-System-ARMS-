@@ -388,26 +388,28 @@ public class MenuCostumerView {
   @FXML
   private void handleSalsaVerde() {
     String dishName = "Salsa Verde";
-    double price = 5;
+    double baseprice = 5;
     int quantity = 0;
     try {
       quantity = Integer.parseInt(salsaTextField.getText());
     } catch (NumberFormatException e) {
       return;
     }
+    double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
 
   @FXML
   private void handleJalapenos() {
     String dishName = "Jalapeno Poppers";
-    double price = 1;
+    double baseprice = 1;
     int quantity = 0;
     try {
       quantity = Integer.parseInt(jalapenosTextField.getText());
     } catch (NumberFormatException e) {
       return;
     }
+    double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
 
