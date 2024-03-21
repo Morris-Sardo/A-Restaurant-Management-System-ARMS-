@@ -1,5 +1,11 @@
 package appication;
 
+import java.io.IOException;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert.AlertType;
+
 /**
  * This class is the controller of menu page for costumer.
  * 
@@ -8,19 +14,29 @@ package appication;
  */
 public class MenuCostumerController {
 
-  private MenuCostumerView menuCostumerView;
+  private MenuCostumerView viewCM;
   // private DataBaseModel connection;
+
+  //private Float prize;
+
+
+
+  public MenuCostumerController() {
+
+  }
+
 
   /**
    * The controller for the customer's menu. THE INITIALIZATION OF THE MENUCOSTUMERVIEW AND
    * CONNETION has been kept even theey are not used as in a future development of the project they
    * could be needed.
    * 
-   * @param menuCostumerView The customer's menu.
+   * @param viewCM is a total bills.
    */
-  public MenuCostumerController(MenuCostumerView menuCostumerView) {
-    this.menuCostumerView = menuCostumerView;
+  public MenuCostumerController(MenuCostumerView viewCM) {
+    this.viewCM = viewCM;
     // this.connection = Driver.getDBconnection();
+
 
   }
 
@@ -49,13 +65,34 @@ public class MenuCostumerController {
   }
 
   /**
-   * This method handle pay bills for the costumer. Thime method get the amount to pay from database
-   * and update the pay table database.
+   * Method gets the amount to pay from database and sends it to the pay page for the customer,
+   * while redirecting them there.
    */
   public void handlePayBills() {
-    PayCostumerView viewPC = new PayCostumerView();
-    Driver.setScene(viewPC.start(), TitlePage.PAY_BILLS_PAGE);
 
+
+
+    if (viewCM.getTableNumber() == -1
+        || PayCostumerModel.getPrizeFormTable(viewCM.getTableNumber()) == null) {
+      AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
+    } else {
+      // load the fxml file (does not have a FX controller)
+      FXMLLoader loader = new FXMLLoader(getClass().getResource("payCostumerPage.fxml"));
+      // Give the Controller to be, the table number
+      PayCostumerView viewPC = new PayCostumerView(viewCM.getTableNumber());
+      // Finish loading by giving the Parent a FX controller (the view class)
+      loader.setController(viewPC);
+      Parent root;
+      try {
+        // Load the page.
+        root = loader.load();
+        Driver.setScene(new Scene(root, 1100, 600), TitlePage.PAY_BILLS_PAGE);
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
   }
+
+
 
 }
