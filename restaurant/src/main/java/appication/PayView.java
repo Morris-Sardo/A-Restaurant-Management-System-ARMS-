@@ -1,6 +1,8 @@
 package appication;
 
 import java.io.IOException;
+import java.time.YearMonth;
+import java.time.format.DateTimeFormatter;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -134,7 +136,7 @@ public class PayView {
    */
   public Long getNumberCard() {
     try {
-      
+
       return Long.parseLong(cardNumberField.getText());
     } catch (NumberFormatException e) {
       return (long) -1;
@@ -158,6 +160,32 @@ public class PayView {
   public String getExpairedDate() {
 
     return expairedField.getText();
+  }
+
+
+  /**
+   * The method is used to get the expaired date costumer card.
+   */
+  public Integer getExpDate() {
+    String expDateStr = expairedField.getText(); // Assuming expairedField is accessible here
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/yy");
+
+    try {
+      YearMonth expDate = YearMonth.parse(expDateStr, formatter);
+      YearMonth currentDate = YearMonth.now();
+
+      // Check if the expiration date is before the current date (meaning the card has expired)
+      if (expDate.isBefore(currentDate)) {
+        expairedField.setText("");
+        return -1; // Card is expired
+      } else {
+        return 1; // Card is valid
+      }
+    } catch (Exception e) {
+      // If parsing fails or any other error occurs, return -1 indicating an invalid or expired card
+      expairedField.setText("");
+      return -1;
+    }
   }
 
   /**
@@ -249,6 +277,22 @@ public class PayView {
     lastNameField.setText("");
     ccvField.setText("");
     expairedField.setText("");
+  }
+
+
+
+  /**
+   * This method is used to clear all the field if the user change mind.
+   */
+  public void handleClearCCVFiled() {
+    ccvField.setText("");
+  }
+
+  /**
+   * This method is used to clear all the field if the user change mind.
+   */
+  public void handleClearCreditCardNumberFiled() {
+    cardNumberField.setText("");
   }
 
 

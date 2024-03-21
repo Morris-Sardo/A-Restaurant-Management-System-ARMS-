@@ -57,34 +57,30 @@ public class PayController {
    */
   public void handlePaymentSubmission() {
 
-    String[] arr = viewP.getExpairedDate().split("/");
-    int count = 0;
-    try {
-      if (arr[0].length() == 2) {
-        count++;
-      }
-
-      if (arr[1].length() == 2) {
-        count++;
-      }
-    } catch (ArrayIndexOutOfBoundsException e) {
-      AlertText.alert(AlertType.ERROR, "Error Message", "Please check information in all fields");
-      return;
-    }
 
 
     Float bills = PayModel.getPrizeFormTable(viewP.getTableNumber());
-
-    if (count != 2 || viewP.getTableNumber() == -1 || bills == null
-        || (viewP.getCCV() + "").length() != 3 || viewP.getCCV() == -1
-        || viewP.getExpairedDate().isEmpty() || viewP.getFirstName().isEmpty()
+    // check if all fields are filled and true. otherwise pop up error message.
+    if (viewP.getTableNumber() == -1 || bills == null || (viewP.getCCV() + "").length() != 3
+        || viewP.getCCV() == -1 || viewP.getExpDate() == -1 || viewP.getFirstName().isEmpty()
         || viewP.getLastName().isEmpty() || (viewP.getNumberCard() + "").length() != 16
         || viewP.getNumberCard() == -1) {
       AlertText.alert(AlertType.ERROR, "Error Message", "Please check information in all fields");
-
+      // check if CCV has the 3 number. otherwise pop up text's alert.
+      if ((viewP.getCCV() + "").length() != 3 || viewP.getCCV() == -1) {
+        viewP.handleClearCCVFiled();
+      }
+      // check if numbercard are numer and long 16 digits. other pop up text's alert.
+      if ((viewP.getNumberCard() + "").length() != 16 || viewP.getNumberCard() == -1) {
+        viewP.handleClearCreditCardNumberFiled();
+      }
 
     } else {
-      if (PayModel.completeTransaction(viewP.getTableNumber())) {
+      // This check if bills is equal to 0. if so it will pop up text and the clean all field.
+      if (bills == 0.0) {
+        AlertText.alert(AlertType.INFORMATION, "Infrmation Message", "There is not bills to pay");
+        viewP.handleClearFiled();
+      } else if (PayModel.completeTransaction(viewP.getTableNumber())) {
         AlertText.alert(AlertType.INFORMATION, "Successfull payement", "Successfully made payment");
         viewP.handleCleanBillsFields();
         viewP.handleClearFiled();
