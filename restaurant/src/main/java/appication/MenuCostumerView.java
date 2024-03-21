@@ -2,6 +2,7 @@ package appication;
 
 
 import java.io.IOException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -171,53 +172,56 @@ public class MenuCostumerView {
 
   @FXML
   private TextField salsaTextField;
-  
+
   @FXML
   private TextField jalapenosTextField;
-  
+
   @FXML
   private TextField chilliTextField;
-  
+
   @FXML
   private TextField chickenTextField;
-  
+
   @FXML
   private TextField cornTextField;
-  
+
   @FXML
   private TextField chickenFajitasTextField;
-  
+
   @FXML
   private TextField halloumiTextField;
-  
+
   @FXML
   private TextField riceTextField;
-  
+
   @FXML
   private TextField churrosTextField;
 
   @FXML
   private TextField margaritaTextField;
-  
+
   @FXML
   private TextField breadTextField;
-  
+
   @FXML
   private TextField chocolateTextField;
-  
+
   @FXML
   private TextField tepacheTextField;
-  
+
   @FXML
   private TextField cokeTextField;
-  
+
   @FXML
   private TextField jarritosTextField;
-  
+
   @FXML
   private TextField horchataTextField;
-  
-  
+
+  @FXML
+  private TextField totalLabel;
+
+
   /**
    * This method create and start scene of menu for costumer.
    * 
@@ -460,6 +464,7 @@ public class MenuCostumerView {
     }
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
   }
 
   @FXML
@@ -489,7 +494,7 @@ public class MenuCostumerView {
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
-  
+
   @FXML
   private void handleChicken() {
     String dishName = "Chicken Taquitos";
@@ -503,7 +508,7 @@ public class MenuCostumerView {
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
-  
+
   @FXML
   private void handleCorn() {
     String dishName = "Mexican Corn Dip";
@@ -517,7 +522,7 @@ public class MenuCostumerView {
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
-  
+
   @FXML
   private void handleChickenFajitas() {
     String dishName = "Chicken Fajitas";
@@ -531,7 +536,7 @@ public class MenuCostumerView {
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
-  
+
   @FXML
   private void handleHalloumi() {
     String dishName = "Halloumi Tacos";
@@ -545,7 +550,7 @@ public class MenuCostumerView {
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
-  
+
   @FXML
   private void handleRice() {
     String dishName = "Mexcian Style Rice";
@@ -559,7 +564,7 @@ public class MenuCostumerView {
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
-  
+
   @FXML
   private void handleChurros() {
     String dishName = "Churros";
@@ -573,7 +578,7 @@ public class MenuCostumerView {
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
-  
+
   @FXML
   private void handleMargarita() {
     String dishName = "Margarita Pie";
@@ -587,7 +592,7 @@ public class MenuCostumerView {
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
-  
+
   @FXML
   private void handleBread() {
     String dishName = "Pan de Muerto";
@@ -601,7 +606,7 @@ public class MenuCostumerView {
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
-  
+
   @FXML
   private void handleChocolate() {
     String dishName = "Hot Chocolate Pie";
@@ -615,7 +620,7 @@ public class MenuCostumerView {
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
-  
+
   @FXML
   private void handleTepache() {
     String dishName = "Tepache";
@@ -629,7 +634,7 @@ public class MenuCostumerView {
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
-  
+
   @FXML
   private void handleCoke() {
     String dishName = "Coke";
@@ -643,7 +648,7 @@ public class MenuCostumerView {
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
-  
+
   @FXML
   private void handleJarritos() {
     String dishName = "Jarritos";
@@ -657,7 +662,7 @@ public class MenuCostumerView {
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
-  
+
   @FXML
   private void handleHorchata() {
     String dishName = "Horchata";
@@ -671,5 +676,31 @@ public class MenuCostumerView {
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
   }
-  
+
+  @FXML
+  void handleRemove(ActionEvent event) {
+    int selectedIndex = tableView.getSelectionModel().getSelectedIndex();
+    if (selectedIndex >= 0) {
+      tableView.getItems().remove(selectedIndex);
+      updateTotalAmount();
+    } else {
+      System.out.println("No row selected to remove.");
+    }
+  }
+
+  @FXML
+  private void updateTotalAmount() {
+    double total = calculateTotalAmount();
+    totalLabel.setText("£" + String.format("%.2f", total));
+  }
+
+
+  private double calculateTotalAmount() {
+    double total = 0.0;
+    for (MenuItem item : tableView.getItems()) {
+      total += item.getPrice();
+    }
+    return total;
+  }
+
 }

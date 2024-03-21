@@ -467,8 +467,8 @@
 					style="-fx-border-color: linear-gradient(to bottom right, #d7aa84, #8b4513); -fx-border-radius: 5px; -fx-border-width: 1.5px;"
 					styleClass="gradient" stylesheets="@myView.css">
 					<children>
-						<TableView fx:id="tableView" layoutX="21.0" layoutY="84.0"
-							prefHeight="200.0" prefWidth="304.0">
+						<TableView fx:id="tableView" layoutX="21.0"
+							layoutY="84.0" prefHeight="200.0" prefWidth="304.0">
 							<columns>
 							</columns>
 						</TableView>
@@ -476,15 +476,17 @@
 							prefHeight="170.0" prefWidth="324.0">
 							<children>
 								<Button fx:id="removeButton" layoutX="53.0"
-									layoutY="124.0" mnemonicParsing="false" text="remove" />
+									layoutY="124.0" mnemonicParsing="false" text="remove"
+									onAction="#handleRemove" />
 								<Button fx:id="receiptButton" layoutX="218.0"
 									layoutY="124.0" mnemonicParsing="false" text="receipt" />
 								<Button fx:id="payButton" layoutX="50.0" layoutY="72.0"
 									mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0"
 									text="Pay" />
-								<TextField layoutX="111.0" layoutY="22.0" />
-								<Label layoutX="57.0" layoutY="27.0" prefHeight="16.0"
-									prefWidth="47.0" text="Total" textFill="WHITE" />
+								<TextField fx:id="totalLabel" layoutX="111.0" layoutY="22.0" />
+								<Label layoutX="57.0" layoutY="27.0"
+									prefHeight="16.0" prefWidth="47.0" text="Total"
+									textFill="WHITE" />
 							</children>
 						</AnchorPane>
 						<Button fx:id="dessertSelctionFilterBtn" layoutX="60.0"
