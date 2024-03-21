@@ -1,5 +1,6 @@
 package appication;
 
+
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
@@ -19,6 +21,9 @@ import javafx.scene.layout.AnchorPane;
  */
 public class MenuCostumerView {
 
+
+  @FXML
+  private TextField tableNumberField;
 
   @FXML
   private AnchorPane bread;
@@ -194,6 +199,23 @@ public class MenuCostumerView {
     dessertSelctionFilterBtn.setOnAction(event -> handleDessertSelectFilterFood());
     dessertUnselectFilterBtn.setOnAction(event -> handleDessertUnselectFilterFood());
 
+  }
+
+
+
+  /**
+   * This method get value from field. This method is also used from moel class to virified is the
+   * table exist.
+   *
+   * @return values is number of table.
+   */
+  public Integer getTableNumber() {
+    try {
+      return Integer.parseInt(tableNumberField.getText());
+    } catch (NumberFormatException e) {
+      // Handle invalid input or just return a default value
+      return -1;
+    }
   }
 
 
