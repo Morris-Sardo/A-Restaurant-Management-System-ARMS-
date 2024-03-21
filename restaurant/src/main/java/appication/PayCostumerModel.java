@@ -32,7 +32,7 @@ public class PayCostumerModel {
 
 
     try (PreparedStatement statement = connection.prepareStatement(
-        "Create Table Pay (\n" + " Table_Number Integer PRIMARY KEY," + "Prize Numeric(10,2));");) {
+        "Create Table Pay (\n" + " Table_Number Integer PRIMARY KEY," + "Price Numeric(10,2));" + "nameOnCard VARCHAR(100)," + "cardNumber VARCHAR(20))," + "expiryDate DATE," + "securityPin VARCHAR(10);")) {
       statement.execute();
     }
   }
@@ -62,7 +62,7 @@ public class PayCostumerModel {
    * @return the bill to pay.
    */
   public static Float getPrizeFormTable(int tableNumber) {
-    String query = "SELECT Prize FROM Pay WHERE Table_Number = ?";
+    String query = "SELECT Price FROM Pay WHERE Table_Number = ?";
     try {
       connection = DataBaseModel.connectToDatabase();
       prepare = connection.prepareStatement(query);
@@ -84,11 +84,11 @@ public class PayCostumerModel {
    * 
    * @throws SQLException if there is not conection.
    */
-  public static boolean completeTransaction(Integer tableNumber) {
+  public static boolean completeTransaction(Integer tableNumber, String nameOnCard, String cardNumber, String expiryDate, String securityPin) {
 
 
 
-    String query = "Update pay Set prize = 0.0 Where table_number = ?";
+    String query = "Update pay Set Price = 0.0 Where table_number = ?";
 
     try (Connection connection = DataBaseModel.connectToDatabase();
         PreparedStatement statement = connection.prepareStatement(query)) {
@@ -99,7 +99,19 @@ public class PayCostumerModel {
     } catch (SQLException e) {
       return false;
     }
-
+    
+    String insertQuery = "INSET INTO Pay(table_number, nameOnCard, cardNumber, expiryDate, securityPin) VALUES (?, ?, ?, ?, ?)";
+    
+    try (Connection connection = DataBaseModel.connectToDatabase();
+        PreparedStatement statement = connection.prepareStatement(insertQuery)) {
+      statement.setInt(1,  tableNumber);
+      statement.setString(2, nameOnCard);
+      statement.setString(3, cardNumber);
+      statement.setString(4, expiryDate);
+      statement.setString(5, securityPin);
+      
+      statement.executeUpdate();
+    }
 
   }
 
