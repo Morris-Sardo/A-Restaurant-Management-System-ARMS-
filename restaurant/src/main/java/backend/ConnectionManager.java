@@ -24,8 +24,7 @@ public class ConnectionManager {
    * @return connection.
    * @throws SQLException is excetpion throws if there is not connection.
    */
-  public static Connection connectToDatabase() // MAKE SURE TO CLOSE THE CONNECTION.
-      throws SQLException {
+  public static Connection connectToDatabase() throws SQLException {
     Connection connection = null;
     connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/teamproject15",
         "teamproject15", "quogai");
