@@ -17,7 +17,18 @@ public class ReviewModel {
 
 
   /**
-   * This method is used to add a new review into database.
+   * This a default constructor.
+   */
+  public ReviewModel() {}
+
+
+  /**
+   * This method is uss to add a review into the database.
+   * 
+   * @param username of the user.
+   * @param star rating.
+   * @param review text.
+   * @return true if the review has been gone well.
    */
   public boolean handleSubmitButtonClicked(String username, String star, String review) {
     float stars = Float.parseFloat(star);
@@ -67,9 +78,10 @@ public class ReviewModel {
   }
 
 
-
   /**
-   * Create the login table. This method is here just for testing.
+   * This method is used only for test.
+   * 
+   * @throws SQLException is accour if there is not connection.
    */
   public static void createLoginTable() throws SQLException {
     System.out.println("Creating rating1 table");
