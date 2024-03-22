@@ -163,16 +163,16 @@
                         <Button fx:id="stockClear" layoutX="369.0" layoutY="526.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="CLEAR" textFill="#f8f8f8" />
                         <Button fx:id="stockUpdate" layoutX="203.0" layoutY="526.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="UPDATE " textFill="#f8f8f8" />
                         <Button fx:id="stockSelect" layoutX="40.0" layoutY="526.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="SELECT" textFill="#f8f8f8" />
-                        <TableView fx:id="kitchenOrderTable1" layoutX="39.0" layoutY="140.0" prefHeight="265.0" prefWidth="784.0">
+                        <TableView fx:id="kitchenOrderTable1" layoutX="10.0" layoutY="140.0" prefHeight="265.0" prefWidth="856.0">
                            <columns>
                               <TableColumn fx:id="orderNums1" prefWidth="69.0" text="Item Num." />
-                              <TableColumn fx:id="orderName" prefWidth="94.0" text="Item Name" />
-                              <TableColumn fx:id="colPrice" prefWidth="56.0" text="Price" />
-                              <TableColumn fx:id="colAllergies" minWidth="0.0" prefWidth="172.0" text="Allergies" />
-                              <TableColumn fx:id="colCalories" prefWidth="66.0" text="Calories" />
-                              <TableColumn fx:id="colAvailable" prefWidth="73.0" text="Available" />
-                              <TableColumn fx:id="colTags" prefWidth="192.0" text="Tags" />
-                              <TableColumn fx:id="colStock" prefWidth="61.0" text="Stock" />
+                              <TableColumn fx:id="orderName" prefWidth="113.0" text="Item Name" />
+                              <TableColumn fx:id="colPrice" prefWidth="66.0" text="Price" />
+                              <TableColumn fx:id="colAllergies" minWidth="0.0" prefWidth="156.0" text="Allergies" />
+                              <TableColumn fx:id="colCalories" prefWidth="73.0" text="Calories" />
+                              <TableColumn fx:id="colAvailable" prefWidth="87.0" text="Available" />
+                              <TableColumn fx:id="colTags" prefWidth="240.0" text="Tags" />
+                              <TableColumn fx:id="colStock" prefWidth="51.0" text="Stock" />
                            </columns>
                         </TableView>
                         <TextField layoutX="40.0" layoutY="444.0" prefHeight="26.0" prefWidth="106.0" promptText="Quantity" />
