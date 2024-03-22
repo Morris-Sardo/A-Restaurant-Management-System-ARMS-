@@ -17,10 +17,12 @@ import org.postgresql.util.PSQLException;
 
 public class ConnectionManager {
 
+
   /**
-   * Creates a new connection to the database.
+   * This method create a connection eith database.
    * 
-   * @return the connection created
+   * @return connection.
+   * @throws SQLException is excetpion throws if there is not connection.
    */
   public static Connection connectToDatabase() // MAKE SURE TO CLOSE THE CONNECTION.
       throws SQLException {
@@ -31,12 +33,15 @@ public class ConnectionManager {
 
   }
 
+
   /**
-   * Creates an ArrayList of Item objects corresponding to every item in the item table of the
-   * database.
+   * This method select all the items in the item table.
    * 
-   * @param connection the connection to the database
-   * @return the ArrayList of Item objects
+   * @param connection with database.
+   * @return a table.
+   * @throws SQLException exception trhoew if there is not connection.
+   * @throws PSQLException exception throw is there is not connection.
+   * @throws DatabaseInformationException exception throw is some method does not work properly.
    */
   public static ArrayList<Item> loadItems(Connection connection)
       throws SQLException, PSQLException, DatabaseInformationException {
