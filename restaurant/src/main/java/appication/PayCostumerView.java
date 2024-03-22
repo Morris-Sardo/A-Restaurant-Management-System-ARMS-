@@ -153,7 +153,7 @@ public class PayCostumerView {
 
       // Check if the expiration date is before the current date (meaning the card has expired)
       if (expDate.isBefore(currentDate)) {
-        expairedField.setText("");
+
         return -1; // Card is expired
       } else {
         return 1; // Card is valid
@@ -199,6 +199,13 @@ public class PayCostumerView {
     cardNumberField.setText("");
     lastNameField.setText("");
     ccvField.setText("");
+    expairedField.setText("");
+  }
+
+  /**
+   * This method is used to clear all the field for expired date.
+   */
+  public void handleClearExpiredDateFiled() {
     expairedField.setText("");
   }
 

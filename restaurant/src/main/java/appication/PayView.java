@@ -176,7 +176,7 @@ public class PayView {
 
       // Check if the expiration date is before the current date (meaning the card has expired)
       if (expDate.isBefore(currentDate)) {
-        expairedField.setText("");
+
         return -1; // Card is expired
       } else {
         return 1; // Card is valid
@@ -279,7 +279,12 @@ public class PayView {
     expairedField.setText("");
   }
 
-
+  /**
+   * This method is used to clear all the field for expired date.
+   */
+  public void handleClearExpiredDateFiled() {
+    expairedField.setText("");
+  }
 
   /**
    * This method is used to clear all the field if the user change mind.
