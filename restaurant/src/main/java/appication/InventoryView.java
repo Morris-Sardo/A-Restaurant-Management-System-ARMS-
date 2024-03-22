@@ -29,7 +29,7 @@ public class InventoryView {
 
   @FXML
   private Button kitchenBtn;
-  
+
   @FXML
   private Button dashboardBtn;
 
@@ -115,8 +115,10 @@ public class InventoryView {
   private String type1 = "Drink";
   private String type2 = "Pasta";
   private String type3 = "Caffe";
+  private String type4 = "Sauce";
+  private String type5 = "Spize";
 
-  private String[] typeProductList = {type1, type2, type3};
+  private String[] typeProductList = {type1, type2, type3, type4, type5};
 
 
 
