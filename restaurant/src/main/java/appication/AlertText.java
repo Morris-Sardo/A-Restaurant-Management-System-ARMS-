@@ -14,6 +14,12 @@ public class AlertText {
   private static Alert alert;
 
 
+  /**
+   * This constructor is a default one.
+   */
+  public AlertText() {}
+
+
 
   /**
    * This method it will set up the alert used every time an alert is going to be used.
