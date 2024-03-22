@@ -12,18 +12,15 @@ import javafx.scene.control.Alert.AlertType;
 public class AlertText {
 
   private static Alert alert;
-  private static AlertType type;
-  private static String title;
-  private static String contentText;
 
 
 
   /**
-   * This method.
+   * This method it will set up the alert used every time an alert is going to be used.
    * 
-   * @param type fofo.
-   * @param title fifnif.
-   * @param contentText fifnf.
+   * @param type iss the type of alert.
+   * @param title is the title shows on the tpo of the windows of alert.
+   * @param contentText is the text that say what the alter is about.
    */
   public static void alert(AlertType type, String title, String contentText) {
     alert = new Alert(type);
