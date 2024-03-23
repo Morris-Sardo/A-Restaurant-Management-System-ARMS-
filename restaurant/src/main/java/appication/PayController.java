@@ -75,6 +75,10 @@ public class PayController {
         viewP.handleClearCreditCardNumberFiled();
       }
 
+      // check if expired date is valid.
+      if (viewP.getExpDate() == -1) {
+        viewP.handleClearExpiredDateFiled();
+      }
     } else {
       // This check if bills is equal to 0. if so it will pop up text and the clean all field.
       if (bills == 0.0) {

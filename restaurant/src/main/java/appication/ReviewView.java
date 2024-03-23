@@ -50,9 +50,9 @@ public class ReviewView {
 
 
   /**
-   * This method starts the scene review scene.
+   * This method is used to start the Reviw pagescene.
    * 
-   * @throws Exception this will throw exception.
+   * @return the scene.
    */
   public Scene start() {
     Parent root;
@@ -69,6 +69,11 @@ public class ReviewView {
     }
 
   }
+
+  /**
+   * This is an deafault constructor.
+   */
+  public ReviewView() {}
 
   /**
    * This method initilaizes all the buttons.

@@ -9,6 +9,7 @@ package appication;
 public class DashBoardController {
 
 
+  @SuppressWarnings("unused")
   private DashBoardMyView view;
 
 

@@ -33,8 +33,10 @@ import javafx.util.Duration;
  */
 public class MyView {
 
+
+
   /**
-   * Creates & returns the scene to be used for this page.
+   * Creates and returns the scene to be used for this page.
    * 
    * @return The Login scene.
    */
@@ -50,8 +52,14 @@ public class MyView {
     }
   }
 
+
   /**
-   * Creates the relevant controller & sets up button actions.
+   * This is a deafault cosnstructor.
+   */
+  public MyView() {}
+
+  /**
+   * Creates the relevant controller and sets up button actions.
    */
   @FXML
   public void initialize() {
@@ -428,7 +436,9 @@ public class MyView {
   }
 
   /**
-   * This method is use to get the question from form cubox.
+   * This Method is used to get the secret question.
+   * 
+   * @return the question.
    */
   public Object getSelectedQuestion() {
 
@@ -466,7 +476,11 @@ public class MyView {
   }
 
   /**
-   * This methos pup up the Blank field login.
+   * This methodi is used to pop up a alert text.
+   * 
+   * @param type of alert.
+   * @param title used has head line of alert.
+   * @param contentText tis the text message.
    */
   public void alert(AlertType type, String title, String contentText) {
 
