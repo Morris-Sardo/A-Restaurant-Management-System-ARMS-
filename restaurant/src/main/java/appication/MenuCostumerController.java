@@ -9,7 +9,7 @@ import javafx.scene.control.Alert.AlertType;
 /**
  * This class is the controller of menu page for costumer.
  * 
- * @author papap
+ * @author papap and Zain
  *
  */
 public class MenuCostumerController {

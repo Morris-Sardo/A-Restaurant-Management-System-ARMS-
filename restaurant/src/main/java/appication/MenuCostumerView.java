@@ -20,7 +20,7 @@ import javafx.scene.layout.AnchorPane;
  * This page is the view of menu page for only costumer. This class has less privilege of the menu
  * staff.
  * 
- * @author papap
+ * @author papap and Zain 
  *
  */
 public class MenuCostumerView {
@@ -479,6 +479,7 @@ public class MenuCostumerView {
     }
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
   }
 
   @FXML
@@ -493,6 +494,7 @@ public class MenuCostumerView {
     }
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
   }
 
   @FXML
@@ -507,6 +509,7 @@ public class MenuCostumerView {
     }
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
   }
 
   @FXML
@@ -521,6 +524,7 @@ public class MenuCostumerView {
     }
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
   }
 
   @FXML
@@ -535,6 +539,7 @@ public class MenuCostumerView {
     }
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
   }
 
   @FXML
@@ -549,6 +554,7 @@ public class MenuCostumerView {
     }
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
   }
 
   @FXML
@@ -563,6 +569,7 @@ public class MenuCostumerView {
     }
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
   }
 
   @FXML
@@ -577,6 +584,7 @@ public class MenuCostumerView {
     }
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
   }
 
   @FXML
@@ -591,6 +599,7 @@ public class MenuCostumerView {
     }
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
   }
 
   @FXML
@@ -605,6 +614,7 @@ public class MenuCostumerView {
     }
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
   }
 
   @FXML
@@ -619,6 +629,7 @@ public class MenuCostumerView {
     }
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
   }
 
   @FXML
@@ -633,6 +644,7 @@ public class MenuCostumerView {
     }
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
   }
 
   @FXML
@@ -647,6 +659,7 @@ public class MenuCostumerView {
     }
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
   }
 
   @FXML
@@ -661,6 +674,7 @@ public class MenuCostumerView {
     }
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
   }
 
   @FXML
@@ -675,6 +689,7 @@ public class MenuCostumerView {
     }
     double price = baseprice * quantity;
     tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
   }
 
   @FXML
