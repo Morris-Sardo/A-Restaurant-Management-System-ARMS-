@@ -40,4 +40,44 @@ public class MenuCostumerModel {
     return null;
   }
 
+  /**
+   * This method inserts total amount and table number into the SQL table.
+   * 
+   * @param totalAmount the total amount to be inserted.
+   * @param tableNumber the table number to be inserted.
+   */
+  public static void insertIntoSQLPriceTable(double totalAmount, int tableNumber) {
+    // SQL query to insert values
+    String insertQuery = "INSERT INTO pay (table_number, prize) VALUES (?, ?)";
+    // SQL query to update prices
+    String updateQuery = "UPDATE pay SET prize = ? WHERE table_number = ?";
+
+    try {
+      connection = DataBaseModel.connectToDatabase();
+
+      // Insert total amount
+      prepare = connection.prepareStatement(insertQuery);
+      prepare.setDouble(1, tableNumber);
+      prepare.setDouble(2, totalAmount);
+      final int rowsInserted = prepare.executeUpdate();
+
+      // Update prices
+      prepare = connection.prepareStatement(updateQuery);
+      prepare.setDouble(1, totalAmount); // Assuming totalAmount is the new price
+      prepare.setInt(2, tableNumber);
+      int rowsUpdated = prepare.executeUpdate();
+
+      if (rowsInserted > 0) {
+        System.out.println("Total amount inserted into SQL table successfully!");
+      }
+      if (rowsUpdated > 0) {
+        System.out.println("Prices updated successfully!");
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+    }
+  }
+
+
 }

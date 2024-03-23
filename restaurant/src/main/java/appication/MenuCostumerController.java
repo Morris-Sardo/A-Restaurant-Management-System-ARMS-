@@ -17,7 +17,7 @@ public class MenuCostumerController {
   private MenuCostumerView viewCM;
   // private DataBaseModel connection;
 
-  //private Float prize;
+  // private Float prize;
 
 
 
@@ -70,9 +70,10 @@ public class MenuCostumerController {
    */
   public void handlePayBills() {
 
-
-
-    if (viewCM.getTableNumber() == -1
+    double totalAmount = viewCM.calculateTotalAmount();
+    int tableNumber = viewCM.getTableNumber();
+    MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
+    if (viewCM.getTableNumber() == 0
         || PayCostumerModel.getPrizeFormTable(viewCM.getTableNumber()) == null) {
       AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
     } else {

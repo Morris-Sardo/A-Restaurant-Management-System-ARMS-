@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -20,7 +21,7 @@ import javafx.scene.layout.AnchorPane;
  * This page is the view of menu page for only costumer. This class has less privilege of the menu
  * staff.
  * 
- * @author papap and Zain 
+ * @author papap and Zain
  *
  */
 public class MenuCostumerView {
@@ -710,7 +711,7 @@ public class MenuCostumerView {
   }
 
 
-  private double calculateTotalAmount() {
+  double calculateTotalAmount() {
     double total = 0.0;
     for (MenuItem item : tableView.getItems()) {
       total += item.getPrice();
@@ -718,4 +719,18 @@ public class MenuCostumerView {
     return total;
   }
 
+  @FXML
+  private void handlePayButton() {
+
+    double totalAmount = calculateTotalAmount();
+    Integer tableNumber = getTableNumber();
+    if (totalAmount <= 0 || tableNumber == -1) {
+      AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
+      return;
+    }
+
+    // Insert the values into the SQL database
+    MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
+
+  }
 }
