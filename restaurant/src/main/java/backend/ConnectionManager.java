@@ -19,6 +19,12 @@ public class ConnectionManager {
 
 
   /**
+   * This is a default contructor.
+   */
+  public ConnectionManager() {}
+
+
+  /**
    * This method create a connection eith database.
    * 
    * @return connection.

@@ -10,7 +10,7 @@ import java.sql.SQLException;
  * display by the GUI.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class PayCostumerModel {
 
@@ -18,6 +18,11 @@ public class PayCostumerModel {
   private static Connection connection;
   private static PreparedStatement prepare;
   private static ResultSet result;
+
+  /**
+   * This is a default constructor.
+   */
+  public PayCostumerModel() {}
 
   /**
    * This method create Pay table into Database. This table is just for tesing.
@@ -83,7 +88,7 @@ public class PayCostumerModel {
    * This method resets the prize when the transaction is complited.
    *
    * @param tableNumber a {@link java.lang.Integer} object
-   * @return a boolean
+   * @return a boolean values.
    */
   public static boolean completeTransaction(Integer tableNumber) {
 

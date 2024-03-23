@@ -7,7 +7,7 @@ import javafx.scene.control.Alert.AlertType;
  * This class is used as a controller between GUI review page the model and the other page.
  *
  * @author papap Zain Akhtar.
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class ReviewController {
 

@@ -7,7 +7,7 @@ import javafx.scene.control.Alert.AlertType;
  * This class is used has controller for the login page sign up and forgot and change passeword.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class LoginController {
 

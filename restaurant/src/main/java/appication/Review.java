@@ -9,7 +9,7 @@ import javafx.beans.property.StringProperty;
  * This class hold the data for review to display on the table.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: $Team Project 15.
  */
 public class Review {
 
@@ -17,6 +17,11 @@ public class Review {
   private StringProperty name;
   private IntegerProperty stars;
   private StringProperty comment;
+
+  /**
+   * This is a default constructor.
+   */
+  public Review() {}
 
   /**
    * This method set values id in id_Property.

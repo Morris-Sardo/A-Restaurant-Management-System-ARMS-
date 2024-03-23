@@ -5,7 +5,7 @@ package appication;
  * This class is the controller the change pages between review list and menu costumer and sign out.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class ReviewListController {
 

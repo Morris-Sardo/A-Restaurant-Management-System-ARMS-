@@ -7,7 +7,7 @@ import javafx.scene.control.Alert.AlertType;
  * This is controller for inventry page.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class InventoryController {
 

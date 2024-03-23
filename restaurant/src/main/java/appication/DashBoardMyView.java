@@ -12,7 +12,7 @@ import javafx.scene.control.Button;
  * of the staff.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class DashBoardMyView {
 
@@ -34,7 +34,12 @@ public class DashBoardMyView {
 
 
   /**
-   * Creates & returns the scene to be used for this page.
+   * This is a default contructor.
+   */
+  public DashBoardMyView() {}
+
+  /**
+   * Creates and returns the scene to be used for this page.
    *
    * @return The dashboard scene.
    */

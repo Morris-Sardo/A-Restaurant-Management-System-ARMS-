@@ -5,7 +5,7 @@ package appication;
  * This class is the controller that changes pages between review list staff, dashboard, inventory.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class ReviewListControllerStaff {
 

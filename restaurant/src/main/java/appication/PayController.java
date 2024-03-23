@@ -8,7 +8,7 @@ import javafx.scene.control.Alert.AlertType;
  * well.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class PayController {
 

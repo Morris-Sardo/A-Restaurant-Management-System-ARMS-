@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -23,7 +22,7 @@ import javafx.scene.layout.AnchorPane;
  * invenotry page.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class InventoryView {
 
@@ -121,6 +120,11 @@ public class InventoryView {
   private String[] typeProductList = {type1, type2, type3, type4, type5};
 
 
+
+  /**
+   * This is a default constructor.
+   */
+  public InventoryView() {}
 
   /**
    * This method start the inventoryPage.

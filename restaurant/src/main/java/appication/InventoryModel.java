@@ -12,7 +12,7 @@ import javafx.collections.ObservableList;
  * will be sent to database.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class InventoryModel {
 
@@ -26,10 +26,16 @@ public class InventoryModel {
   private static Integer Stock;
   private static Float Price;
 
+
+  /**
+   * This is a default construct.
+   */
+  public InventoryModel() {}
+
   /**
    * This method create Inventory table into Database.
    *
-   * @throws java.sql.SQLException if there is not conection.
+   * @throws SQLException if there is not conection.
    */
   public static void createInventoryTable() throws SQLException {
 
@@ -49,7 +55,7 @@ public class InventoryModel {
   /**
    * This method Inventory table into Database. this method is just for purpose testing.
    *
-   * @throws java.sql.SQLException if there is not conection.
+   * @throws SQLException if there is not conection.
    */
   public static void dropTable() throws SQLException {
 
@@ -69,7 +75,7 @@ public class InventoryModel {
    * into table.
    *
    * @param productId a {@link java.lang.Integer} object
-   * @return a boolean
+   * @return a boolean values.
    */
   public static boolean deleteItems(Integer productId) {
 
@@ -102,7 +108,7 @@ public class InventoryModel {
    * @param productType a {@link java.lang.Object} object
    * @param productStock a {@link java.lang.Integer} object
    * @param productPrize a {@link java.lang.Float} object
-   * @return a boolean
+   * @return a boolean boolean values.
    */
   public static boolean handleSubmitButtonClicked(Integer productID, String productName,
       Object productType, Integer productStock, Float productPrize) {

@@ -14,29 +14,29 @@ import javafx.scene.layout.AnchorPane;
  * This class is used to connnect the view to the controller.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class KitchenView {
 
-  
+
 
   @FXML
   private Button dashboardSotckFormBtn;
-  
+
   @FXML
   private Button inventoryStockFormBtn;
-  
+
 
   @FXML
   private Button menuStockFormBtn;
-  
+
   @FXML
   private Button reviewListStockFormBtn;
-  
+
   @FXML
   private Button signOutStockFormBtn;
-  
-  
+
+
   @FXML
   private AnchorPane stockForm;
 
@@ -89,6 +89,11 @@ public class KitchenView {
 
 
   /**
+   * This is a default constructor.
+   */
+  public KitchenView() {}
+
+  /**
    * This method start the kitchen.
    *
    * @return The inventoy scene.
@@ -117,12 +122,12 @@ public class KitchenView {
     menuBtn.setOnAction(event -> kitchenController.handleMenu());
     stockBtn.setOnAction(event -> switchToStockPage());
     kitchenBackOrderBtn.setOnAction(event -> switchToKitchenOrderPage());
-    
+
     dashboardSotckFormBtn.setOnAction(event -> kitchenController.handleDashboardFromStockForm());
     inventoryStockFormBtn.setOnAction(event -> kitchenController.handleInventoryFromStockForm());
     menuStockFormBtn.setOnAction(event -> kitchenController.handleMenuFromStockForm());
     signOutStockFormBtn.setOnAction(event -> kitchenController.handleSigOutFromStockForm());
-    reviewListStockFormBtn.setOnAction(event ->kitchenController.handleReviewListFromStockForm());
+    reviewListStockFormBtn.setOnAction(event -> kitchenController.handleReviewListFromStockForm());
   }
 
 
@@ -132,7 +137,7 @@ public class KitchenView {
   public void switchToStockPage() {
     kitchenForm.setVisible(false);
     stockForm.setVisible(true);
-    //orderForm.setVisible(false);
+    // orderForm.setVisible(false);
   }
 
   /**

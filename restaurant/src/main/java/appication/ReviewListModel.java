@@ -12,7 +12,7 @@ import javafx.collections.ObservableList;
  * the data into Observable list which used by list review page table.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class ReviewListModel {
 
@@ -23,6 +23,12 @@ public class ReviewListModel {
   private static String NickName;
   private static int Stars;
   private static String Comment;
+  
+  
+  /**
+   * This is a default constructor.
+   */
+  public ReviewListModel() {}
 
   /**
    * This methods list observable filled by the elements got from the database.

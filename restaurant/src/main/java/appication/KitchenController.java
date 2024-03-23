@@ -4,14 +4,14 @@ package appication;
  * This class is used to to connected the view with the model.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class KitchenController {
 
   KitchenView viewK;
 
   /**
-   * <p>Constructor for KitchenController.</p>
+   * Constructor for KitchenController.
    *
    * @param viewK a {@link appication.KitchenView} object
    */

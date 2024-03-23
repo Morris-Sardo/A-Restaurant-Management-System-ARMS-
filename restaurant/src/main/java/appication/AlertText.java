@@ -7,7 +7,7 @@ import javafx.scene.control.Alert.AlertType;
  * This class is used to hanlde the Alert meassage.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class AlertText {
 

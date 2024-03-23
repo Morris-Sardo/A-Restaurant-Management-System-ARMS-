@@ -16,7 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
  * initialize all the buttons. This review list has less privilage of the staff one.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class ReviewListView {
 
@@ -47,6 +47,11 @@ public class ReviewListView {
   private TableView<Review> tableView;
 
 
+
+  /**
+   * This is default constructor.
+   */
+  public ReviewListView() {}
 
   /**
    * This method start the ReviewListPage scene.

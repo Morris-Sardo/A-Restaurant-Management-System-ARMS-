@@ -23,14 +23,30 @@ public class Customer {
   private Connection connection = null;
   private ArrayList<Item> items = null;
 
+  /**
+   * This method is used to get the costumer ID used for all transation requirend into the
+   * ristorant.
+   * 
+   * @return unic id number of costumer.
+   */
   public int getCustomerID() {
     return customerID;
   }
 
+  /**
+   * This method to set an unic constuemr id.
+   * 
+   * @param customerID unic number.
+   */
   public void setCustomerID(int customerID) {
     this.customerID = customerID;
   }
 
+  /**
+   * This methos is used to start a connection with the datadase.
+   * 
+   * @return connection.
+   */
   public Connection getConnection() {
     return connection;
   }
@@ -52,9 +68,12 @@ public class Customer {
   }
 
   /**
-   * Finds all items on the menu marked as available.
+   * This meethos is used to get imtems from table items.
    * 
-   * @return the IDs corresponding to the menu items available
+   * @return item available.
+   * @throws PSQLException is connection attempt is failed.
+   * @throws SQLException is connection attempted is failed.
+   * @throws DatabaseInformationException is the data get from database is no the one suppose to be.
    */
   public ArrayList<Integer> viewMenu()
       throws PSQLException, SQLException, DatabaseInformationException {
@@ -91,12 +110,9 @@ public class Customer {
   }
 
   /*
-   * Figure out how to generate custom id
-   * Yeet tablenumber from the top
-   * get items from int order
-   * sum price with a for loop, looking in the arraylist of items
-   * order time: get current time
-   * status: set status to requested
+   * Figure out how to generate custom id Yeet tablenumber from the top get items from int order sum
+   * price with a for loop, looking in the arraylist of items order time: get current time status:
+   * set status to requested
    */
   /**
    * Adds the order to the database.
@@ -110,7 +126,11 @@ public class Customer {
    * local add the price to the price sum send it
    */
   /**
-   * Adds a request for a bill to the database.
+   * This method is used to get the bills from database.
+   * 
+   * @throws PSQLException is connection attempt is failed.
+   * @throws SQLException is connection attempted is failed.
+   * @throws DatabaseInformationException is the data get from database is no the one suppose to be
    */
   public void requestBill() throws PSQLException, SQLException, DatabaseInformationException {
     ArrayList<String> result = new ArrayList<String>();
@@ -127,7 +147,7 @@ public class Customer {
     if (!result.isEmpty()) {
       String cancel =
           "UPDATE orders SET status = 'Canceled' WHERE(status ='Requested' OR status ='Confirmed') "
-          + "AND table_number = " + Integer.toString(customerID);
+              + "AND table_number = " + Integer.toString(customerID);
       try (PreparedStatement cancelation = connection.prepareStatement(cancel)) {
         cancelation.executeUpdate();
       }
@@ -151,7 +171,10 @@ public class Customer {
   }
 
   /**
-   * Adds a complaint to the database.
+   * This method is used when insert database table a request of help by a costumer.
+   * 
+   * @throws PSQLException is connection attempt is failed.
+   * @throws SQLException is connection attempted is failed.
    */
   public void requestHelp() throws PSQLException, SQLException {
     String addition = "INSERT INTO complaints VALUES(" + Integer.toString(customerID) + ", "

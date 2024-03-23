@@ -4,7 +4,7 @@ package appication;
  * This in the controller for the main page. this page handle all event releated to the button.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class DashBoardController {
 

@@ -9,13 +9,19 @@ import java.sql.SQLException;
  * This class is been used to connect the application with the database. The class is not finished
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class MenuCostumerModel {
 
   private static Connection connection;
   private static PreparedStatement prepare;
   private static ResultSet result;
+
+
+  /**
+   * This is a dafault constructor.
+   */
+  public MenuCostumerModel() {}
 
   /**
    * This method is used to get the the bills from the database.

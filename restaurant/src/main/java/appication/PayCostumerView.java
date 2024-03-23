@@ -12,7 +12,7 @@ import javafx.scene.image.ImageView;
  * This class is used as interaction with the user.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class PayCostumerView {
 

@@ -29,7 +29,7 @@ import javafx.util.Duration;
  * if a costumer it can go straight to manu page.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class MyView {
 
@@ -350,8 +350,6 @@ public class MyView {
     return siPassword.getText();
   }
 
-  //////////////////////////////////////////////////////////////////////////////////////
-  // FROM HERE.
 
   /**
    * This method is used tto get the unsernam in Sign up form.

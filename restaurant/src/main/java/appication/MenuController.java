@@ -4,7 +4,7 @@ package appication;
  * This is class does of controller of all button event between beteen GUI and MODEL.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class MenuController {
 

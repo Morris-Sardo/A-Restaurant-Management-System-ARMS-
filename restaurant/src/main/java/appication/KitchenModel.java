@@ -1,17 +1,19 @@
 package appication;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+
 
 /**
  * This class is used to interact with database.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id:Team Project 15.
  */
 public class KitchenModel {
 
+  /**
+   * This is a default constructor.
+   */
+  public KitchenModel() {}
   // private static Connection connection;
   // private static PreparedStatement prepare;
   //

@@ -9,14 +9,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+
 
 /**
  * This class is used to start the scene and inizialize all the button of the page. Moreover, we can
  * get all the values in the field.
  *
  * @author papap, Zain Akhtar.
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class ReviewView {
 

@@ -10,13 +10,18 @@ import java.sql.SQLException;
  * display by the GUI.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class PayModel {
 
   private static Connection connection;
   private static PreparedStatement prepare;
   private static ResultSet result;
+
+  /**
+   * This is a dafault constructor.
+   */
+  public PayModel() {}
 
   /**
    * This method create Pay table into Database. This tesbel is just for tesing.
@@ -84,7 +89,7 @@ public class PayModel {
    * This method resets the prize when the transaction is complited.
    *
    * @param tableNumber a {@link java.lang.Integer} object
-   * @return a boolean
+   * @return a boolean values.
    */
   public static boolean completeTransaction(Integer tableNumber) {
 

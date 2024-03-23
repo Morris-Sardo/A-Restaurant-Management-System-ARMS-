@@ -15,7 +15,7 @@ import org.postgresql.util.PSQLException;
  * Contains the methods for managing the connection to the database.
  *
  * @author xaviernoel, jonathanmartin, morris
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class DataBaseModel {
 
@@ -42,10 +42,10 @@ public class DataBaseModel {
   }
 
   /**
-   * Creates a new connection to the database.
+   * This method is done is the configuration of the connection with database.
    *
-   * @return the connection created.
-   * @throws java.sql.SQLException if any.
+   * @return connection with database.
+   * @throws SQLException is the exception threw if connection is not gone well.
    */
   public static Connection connectToDatabase() throws SQLException {
     Connection connection = null;
@@ -61,7 +61,7 @@ public class DataBaseModel {
    * @param username name of user.
    * @param userpassword password of user.
    * @return and true if usename(primary key) if exist.
-   * @throws java.sql.SQLException exception if connection is not established.
+   * @throws SQLException exception if connection is not established.
    */
   public static boolean getRightLogin(String username, String userpassword) throws SQLException {
 
@@ -128,7 +128,7 @@ public class DataBaseModel {
   /**
    * Create the login table.
    *
-   * @throws java.sql.SQLException if any.
+   * @throws SQLException exception if connection is not established.
    */
   public static void createLoginTable() throws SQLException {
     System.out.println("Creating login table");
@@ -146,9 +146,9 @@ public class DataBaseModel {
 
 
   /**
-   * drops table. This method has been used only in delepment stage
+   * drops table. This method has been used only in delepment stage.
    *
-   * @throws java.sql.SQLException Exception is thrown
+   * @throws SQLException exception if connection is not established.
    */
   public static void dropUserTable() throws SQLException {
     System.out.println("Dropping login table");
@@ -294,35 +294,6 @@ public class DataBaseModel {
 
 
   }
-
-  //////////////////////////////////////////////////////////////////////////////////////////
-  // /**
-  // * Creates an ArrayList of Item objects corresponding to every item in the item table of the
-  // * database.
-  // *
-  // * @param connection the connection to the database
-  // * @return the ArrayList of Item objects
-  // */
-  // public static ArrayList<Item> loadItems(Connection connection)
-  // throws SQLException, PSQLException, DatabaseInformationException {
-  // ArrayList<Item> results = new ArrayList<Item>();
-  // if (connection != null) {
-  // String query = "SELECT * FROM items";
-  // try (PreparedStatement statement = connection.prepareStatement(query);) {
-  // ResultSet resultSet = statement.executeQuery();
-  // while (resultSet.next()) {
-  // results.add(
-  // new Item(resultSet.getInt(1), resultSet.getString(2).trim(), resultSet.getFloat(3),
-  // resultSet.getString(4).trim(), resultSet.getFloat(5), resultSet.getBoolean(6)));
-  // }
-  // }
-  // if (results.isEmpty()) {
-  // throw new DatabaseInformationException("No menu items found in database");
-  // }
-  // }
-  // return results;
-  // }
-  ///////////////////////////////////////////////////////////////////////////////////////
 
   /**
    * Main method has made only for testing. this method erase all date from login table.

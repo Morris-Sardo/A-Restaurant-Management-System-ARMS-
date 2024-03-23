@@ -8,7 +8,7 @@ import java.sql.SQLException;
  * This class is the logic part of the review page. It comunicates with database and controller.
  *
  * @author papap, Zain Akhtar.
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class ReviewModel {
 

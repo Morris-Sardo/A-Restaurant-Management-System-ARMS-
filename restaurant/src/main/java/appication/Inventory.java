@@ -12,7 +12,7 @@ import javafx.beans.property.StringProperty;
  * This class will implement all the property methos for the table inventory.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class Inventory {
 
@@ -23,6 +23,10 @@ public class Inventory {
   private FloatProperty prize;
 
 
+  /**
+   * This is a default constructor.
+   */
+  public Inventory() {}
 
   /**
    * This method get value stored into the Product_id_Property.

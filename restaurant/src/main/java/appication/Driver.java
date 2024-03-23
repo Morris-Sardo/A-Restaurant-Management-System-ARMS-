@@ -9,12 +9,20 @@ import javafx.stage.Stage;
  * default it login page.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class Driver extends Application {
 
   private static Stage stage;
   private static DataBaseModel connection;
+
+
+  /**
+   * This is a default contructor.
+   */
+  public Driver() {
+    super();
+  }
 
 
   /**

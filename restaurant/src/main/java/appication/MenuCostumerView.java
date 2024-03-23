@@ -17,7 +17,7 @@ import javafx.scene.layout.AnchorPane;
  * staff.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class MenuCostumerView {
 
@@ -163,6 +163,12 @@ public class MenuCostumerView {
   @FXML
   private Button vegetarianUnselectFilterBtn;
 
+
+
+  /**
+   * This si a default constructor.
+   */
+  public MenuCostumerView() {}
 
   /**
    * This method create and start scene of menu for costumer.

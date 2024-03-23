@@ -15,10 +15,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
  * list the costumer is the staff has more access then a costumer.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class ReviewListViewStaff {
-  
+
   @FXML
   private Button kitchenBtn;
 
@@ -50,6 +50,11 @@ public class ReviewListViewStaff {
   @FXML
   private TableView<Review> tableView;
 
+
+  /**
+   * This is a deafault constructor.
+   */
+  public ReviewListViewStaff() {}
 
   /**
    * This method starts the scene of reviewListPage for staff.
@@ -86,7 +91,7 @@ public class ReviewListViewStaff {
     nameTable.setCellValueFactory(new PropertyValueFactory<>("name"));
     starsTable.setCellValueFactory(new PropertyValueFactory<>("stars"));
     commentTable.setCellValueFactory(new PropertyValueFactory<>("comment"));
-    
+
 
     tableView.setItems(ReviewListModel.getRating1Table());
   }

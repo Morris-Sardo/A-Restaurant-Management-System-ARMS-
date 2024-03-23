@@ -19,7 +19,7 @@ import javafx.scene.control.TextField;
  * pages.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class PayView {
 
@@ -74,6 +74,10 @@ public class PayView {
   @FXML
   private TextField tableNumberField;
 
+  /**
+   * This is a default constructor.
+   */
+  public PayView() {}
 
   /**
    * This method start the the pay page scene.

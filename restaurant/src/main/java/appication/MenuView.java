@@ -7,7 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-// import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 
@@ -16,7 +15,7 @@ import javafx.scene.layout.AnchorPane;
  * Thic class is menu page for staff. This page has has more privilage of menu costumenr page.
  *
  * @author papap
- * @version $Id: $Id
+ * @version $Id: Team Project 15.
  */
 public class MenuView {
 
@@ -163,9 +162,13 @@ public class MenuView {
   private Button vegetarianUnselectFilterBtn;
 
 
+  /**
+   * This is a default constructor.
+   */
+  public MenuView() {}
 
   /**
-   * Creates & returns the scene to be used for this page.
+   * Creates and returns the scene to be used for this page.
    *
    * @return menu staff page scene.
    */
