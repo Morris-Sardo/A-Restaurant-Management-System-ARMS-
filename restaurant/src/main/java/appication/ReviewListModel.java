@@ -10,9 +10,9 @@ import javafx.collections.ObservableList;
 /**
  * This class is the model of the reviewListPage which retrive the data from database table and add
  * the data into Observable list which used by list review page table.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: Team Project 15.
  */
 public class ReviewListModel {
 
@@ -23,13 +23,18 @@ public class ReviewListModel {
   private static String NickName;
   private static int Stars;
   private static String Comment;
+  
+  
+  /**
+   * This is a default constructor.
+   */
+  public ReviewListModel() {}
 
   /**
    * This methods list observable filled by the elements got from the database.
-   * 
+   *
    * @return return list observable.
    */
-
   public static ObservableList<Review> getRating1Table() {
     ObservableList<Review> membersTable = FXCollections.observableArrayList();
     try {

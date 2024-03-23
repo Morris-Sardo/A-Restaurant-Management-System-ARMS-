@@ -8,9 +8,9 @@ import java.sql.SQLException;
 /**
  * This class is usd to interact with database. The class will get the amount of bill to pay to
  * display by the GUI.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: Team Project 15.
  */
 public class PayModel {
 
@@ -19,9 +19,14 @@ public class PayModel {
   private static ResultSet result;
 
   /**
+   * This is a dafault constructor.
+   */
+  public PayModel() {}
+
+  /**
    * This method create Pay table into Database. This tesbel is just for tesing.
-   * 
-   * @throws SQLException if there is not conection.
+   *
+   * @throws java.sql.SQLException if there is not conection.
    */
   public static void createPayTable() throws SQLException {
 
@@ -40,8 +45,8 @@ public class PayModel {
 
   /**
    * This method dopr Pat table. This method is just for purpose testing.
-   * 
-   * @throws SQLException if there is not conection.
+   *
+   * @throws java.sql.SQLException if there is not conection.
    */
   public static void dropTable() throws SQLException {
 
@@ -58,7 +63,7 @@ public class PayModel {
 
   /**
    * This method is used to get the the bills from the database.
-   * 
+   *
    * @param tableNumber is the number of table used to get the money owed by the table.
    * @return the bill to pay.
    */
@@ -82,8 +87,9 @@ public class PayModel {
 
   /**
    * This method resets the prize when the transaction is complited.
-   * 
-   * @throws SQLException if there is not conection.
+   *
+   * @param tableNumber a {@link java.lang.Integer} object
+   * @return a boolean values.
    */
   public static boolean completeTransaction(Integer tableNumber) {
 
@@ -106,7 +112,7 @@ public class PayModel {
 
   /**
    * This main run the class as individual. It is used just for testing.
-   * 
+   *
    * @param args string.
    */
   public static void main(String[] args) {

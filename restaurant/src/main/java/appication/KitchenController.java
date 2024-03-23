@@ -2,14 +2,19 @@ package appication;
 
 /**
  * This class is used to to connected the view with the model.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: Team Project 15.
  */
 public class KitchenController {
 
   KitchenView viewK;
 
+  /**
+   * Constructor for KitchenController.
+   *
+   * @param viewK a {@link appication.KitchenView} object
+   */
   public KitchenController(KitchenView viewK) {
 
     this.viewK = viewK;
@@ -17,7 +22,6 @@ public class KitchenController {
 
   /**
    * This method switch user back to Dashboard page.
-   *
    */
   public void handleDashBoard() {
     DashBoardMyView viewD = new DashBoardMyView();

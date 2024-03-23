@@ -5,9 +5,9 @@ import javafx.scene.control.Alert.AlertType;
 
 /**
  * This is controller for inventry page.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: Team Project 15.
  */
 public class InventoryController {
 
@@ -17,7 +17,7 @@ public class InventoryController {
 
   /**
    * This is the constructor controller between Gui and Model.
-   * 
+   *
    * @param viewI is the object of.
    */
   public InventoryController(InventoryView viewI) {

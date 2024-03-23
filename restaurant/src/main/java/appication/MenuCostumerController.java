@@ -8,9 +8,14 @@ import javafx.scene.control.Alert.AlertType;
 
 /**
  * This class is the controller of menu page for costumer.
+<<<<<<< HEAD
  * 
  * @author papap and Zain
+=======
+>>>>>>> main
  *
+ * @author papap
+ * @version $Id: Team Project 15.
  */
 public class MenuCostumerController {
 
@@ -21,6 +26,9 @@ public class MenuCostumerController {
 
 
 
+  /**
+   * <p>Constructor for MenuCostumerController.</p>
+   */
   public MenuCostumerController() {
 
   }
@@ -30,7 +38,7 @@ public class MenuCostumerController {
    * The controller for the customer's menu. THE INITIALIZATION OF THE MENUCOSTUMERVIEW AND
    * CONNETION has been kept even theey are not used as in a future development of the project they
    * could be needed.
-   * 
+   *
    * @param viewCM is a total bills.
    */
   public MenuCostumerController(MenuCostumerView viewCM) {

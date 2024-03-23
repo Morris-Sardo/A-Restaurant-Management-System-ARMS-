@@ -22,7 +22,7 @@ import javafx.scene.layout.AnchorPane;
  * staff.
  * 
  * @author papap and Zain
- *
+ * @version $Id: Team Project 15.
  */
 public class MenuCostumerView {
 
@@ -223,9 +223,15 @@ public class MenuCostumerView {
   private TextField totalLabel;
 
 
+
+  /**
+   * This si a default constructor.
+   */
+  public MenuCostumerView() {}
+
   /**
    * This method create and start scene of menu for costumer.
-   * 
+   *
    * @return the menu page costumer scene.
    */
   public Scene start() {
