@@ -175,8 +175,8 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!-- configured javadoc warmings
 			<plugin>
-				<!--configured javadoc warmings-->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>3.3.1</version>
@@ -191,8 +191,8 @@
 						</configuration>
 					</execution>
 				</executions>
-				<!-- -->
 			</plugin>
+			-->
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>3.3.0</version>
