@@ -1,12 +1,17 @@
 package appication;
 
 import java.io.IOException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 
@@ -160,6 +165,64 @@ public class MenuView {
 
   @FXML
   private Button vegetarianUnselectFilterBtn;
+  
+  @FXML
+  private TableView<MenuItem> tableView;
+
+  @FXML
+  private TextField salsaTextField;
+
+  @FXML
+  private TextField jalapenosTextField;
+
+  @FXML
+  private TextField chilliTextField;
+
+  @FXML
+  private TextField chickenTextField;
+
+  @FXML
+  private TextField cornTextField;
+
+  @FXML
+  private TextField chickenFajitasTextField;
+
+  @FXML
+  private TextField halloumiTextField;
+
+  @FXML
+  private TextField riceTextField;
+
+  @FXML
+  private TextField churrosTextField;
+
+  @FXML
+  private TextField margaritaTextField;
+
+  @FXML
+  private TextField breadTextField;
+
+  @FXML
+  private TextField chocolateTextField;
+
+  @FXML
+  private TextField tepacheTextField;
+
+  @FXML
+  private TextField cokeTextField;
+
+  @FXML
+  private TextField jarritosTextField;
+
+  @FXML
+  private TextField horchataTextField;
+
+  @FXML
+  private TextField totalLabel;
+  
+  @FXML
+  private TextField tableNumberField;
+
 
 
   /**
@@ -203,8 +266,32 @@ public class MenuView {
     dessertSelctionFilterBtn.setOnAction(event -> handleDessertSelectFilterFood());
     dessertUnselectFilterBtn.setOnAction(event -> handleDessertUnselectFilterFood());
 
+    TableColumn<MenuItem, String> productColumn = new TableColumn<>("Product");
+    productColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+    TableColumn<MenuItem, Integer> quantityColumn = new TableColumn<>("Quantity");
+    quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+    TableColumn<MenuItem, Double> priceColumn = new TableColumn<>("Price");
+    priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+    tableView.getColumns().addAll(productColumn, quantityColumn, priceColumn);
 
   }
+
+
+  /**
+   * This method get value from field. This method is also used from moel class to virified is the
+   * table exist.
+   *
+   * @return values is number of table.
+   */
+  public Integer getTableNumber() {
+    try {
+      return Integer.parseInt(tableNumberField.getText());
+    } catch (NumberFormatException e) {
+      // Handle invalid input or just return a default value
+      return -1;
+    }
+  }
+
 
   /**
    * This method is used to group all food that vegetarian will not eat.
@@ -371,5 +458,270 @@ public class MenuView {
 
   }
 
+  @FXML
+  private void handleSalsaVerde() {
+    String dishName = "Salsa Verde";
+    double baseprice = 5;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(salsaTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
+  }
+
+  @FXML
+  private void handleJalapenos() {
+    String dishName = "Jalapeno Poppers";
+    double baseprice = 1;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(jalapenosTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
+  }
+
+  @FXML
+  private void handleChilli() {
+    String dishName = "Chilli con Carne";
+    double baseprice = 10;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(chilliTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
+  }
+
+  @FXML
+  private void handleChicken() {
+    String dishName = "Chicken Taquitos";
+    double baseprice = 5;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(chickenTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
+  }
+
+  @FXML
+  private void handleCorn() {
+    String dishName = "Mexican Corn Dip";
+    double baseprice = 3;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(cornTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
+  }
+
+  @FXML
+  private void handleChickenFajitas() {
+    String dishName = "Chicken Fajitas";
+    double baseprice = 5.50;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(chickenFajitasTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
+  }
+
+  @FXML
+  private void handleHalloumi() {
+    String dishName = "Halloumi Tacos";
+    double baseprice = 5.50;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(halloumiTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
+  }
+
+  @FXML
+  private void handleRice() {
+    String dishName = "Mexcian Style Rice";
+    double baseprice = 3.30;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(riceTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
+  }
+
+  @FXML
+  private void handleChurros() {
+    String dishName = "Churros";
+    double baseprice = 7;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(churrosTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
+  }
+
+  @FXML
+  private void handleMargarita() {
+    String dishName = "Margarita Pie";
+    double baseprice = 7.50;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(margaritaTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
+  }
+
+  @FXML
+  private void handleBread() {
+    String dishName = "Pan de Muerto";
+    double baseprice = 3.50;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(breadTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
+  }
+
+  @FXML
+  private void handleChocolate() {
+    String dishName = "Hot Chocolate Pie";
+    double baseprice = 5.50;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(chocolateTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
+  }
+
+  @FXML
+  private void handleTepache() {
+    String dishName = "Tepache";
+    double baseprice = 7;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(tepacheTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
+  }
+
+  @FXML
+  private void handleCoke() {
+    String dishName = "Coke";
+    double baseprice = 2;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(cokeTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
+  }
+
+  @FXML
+  private void handleJarritos() {
+    String dishName = "Jarritos";
+    double baseprice = 3.20;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(jarritosTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
+  }
+
+  @FXML
+  private void handleHorchata() {
+    String dishName = "Horchata";
+    double baseprice = 6.50;
+    int quantity = 0;
+    try {
+      quantity = Integer.parseInt(horchataTextField.getText());
+    } catch (NumberFormatException e) {
+      return;
+    }
+    double price = baseprice * quantity;
+    tableView.getItems().add(new MenuItem(dishName, quantity, price));
+    updateTotalAmount();
+  }
+
+  @FXML
+  void handleRemove(ActionEvent event) {
+    int selectedIndex = tableView.getSelectionModel().getSelectedIndex();
+    if (selectedIndex >= 0) {
+      tableView.getItems().remove(selectedIndex);
+      updateTotalAmount();
+    } else {
+      System.out.println("No row selected to remove.");
+    }
+  }
+
+  @FXML
+  private void updateTotalAmount() {
+    double total = calculateTotalAmount();
+    totalLabel.setText("£" + String.format("%.2f", total));
+  }
+
+
+  double calculateTotalAmount() {
+    double total = 0.0;
+    for (MenuItem item : tableView.getItems()) {
+      total += item.getPrice();
+    }
+    return total;
+  }
 
 }

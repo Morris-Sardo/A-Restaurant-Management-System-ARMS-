@@ -36,21 +36,17 @@
 													layoutY="40.0" prefHeight="141.0" prefWidth="178.0"
 													styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button fx:id="increases1" layoutX="120.0"
-															layoutY="105.0" mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="+" />
-														<Button fx:id="deacreaes1" layoutX="20.0"
-															layoutY="105.0" mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="-" />
+														<Button fx:id="increases1" layoutX="103.0"
+															layoutY="105.0" mnemonicParsing="false"
+															onAction="#handleSalsaVerde" prefHeight="26.0"
+															prefWidth="50.0" text="☑" />
 														<Label layoutX="56.0" layoutY="7.0"
 															prefHeight="17.0" prefWidth="66.0" text="Salsa Verde" />
-														<TextField layoutX="49.0" layoutY="105.0"
-															prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<ImageView fitHeight="74.0" fitWidth="150.0"
-															layoutX="12.0" layoutY="24.0" pickOnBounds="true"
-															preserveRatio="true" />
-														<ImageView fitHeight="74.0" fitWidth="150.0"
-															layoutX="10.0" layoutY="26.0">
+														<TextField fx:id="salsaTextField" layoutX="15.0"
+															layoutY="105.0" prefHeight="26.0" prefWidth="64.0"
+															promptText="Quantity" />
+														<ImageView fitHeight="71.0" fitWidth="141.0"
+															layoutX="15.0" layoutY="25.0">
 															<image>
 																<Image
 																	url="@image/menuPic/a798de51cb27b7b16b7a242ef691d856.jpg" />
@@ -62,21 +58,20 @@
 													layoutY="205.0" prefHeight="141.0" prefWidth="178.0"
 													styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button fx:id="increases2" layoutX="120.0"
-															layoutY="105.0" mnemonicParsing="false" text="+" />
-														<Button fx:id="deacreaes2" layoutX="20.0"
-															layoutY="105.0" mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="-" />
+														<Button fx:id="increases2" layoutX="101.0"
+															layoutY="106.0" mnemonicParsing="false"
+															onAction="#handleJalapenos" prefWidth="50.0" text="☑" />
 														<Label layoutX="38.0" layoutY="6.0"
 															prefHeight="17.0" prefWidth="103.0"
 															text="Jalapenos Poppers" />
-														<TextField layoutX="49.0" layoutY="105.0"
-															prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<ImageView fitHeight="79.0" fitWidth="150.0"
-															layoutX="8.0" layoutY="20.0" pickOnBounds="true"
+														<TextField fx:id="jalapenosTextField"
+															layoutX="14.0" layoutY="105.0" prefHeight="26.0"
+															prefWidth="64.0" promptText="Quantity" />
+														<ImageView fitHeight="83.0" fitWidth="136.0"
+															layoutX="15.0" layoutY="22.0" pickOnBounds="true"
 															preserveRatio="true" />
-														<ImageView fitHeight="71.0" fitWidth="156.0"
-															layoutX="4.0" layoutY="29.0">
+														<ImageView fitHeight="72.0" fitWidth="150.0"
+															layoutX="10.0" layoutY="28.0">
 															<image>
 																<Image url="@image/menuPic/jalapenoFried.jpg" />
 															</image>
@@ -87,22 +82,18 @@
 													layoutY="370.0" prefHeight="141.0" prefWidth="178.0"
 													styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button fx:id="increases21" layoutX="120.0"
-															layoutY="105.0" mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="+" />
-														<Button fx:id="deacreaes5" layoutX="20.0"
-															layoutY="105.0" mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="-" />
-														<TextField layoutX="49.0" layoutY="105.0"
-															prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+														<Button fx:id="increases21" layoutX="109.0"
+															layoutY="101.0" mnemonicParsing="false"
+															onAction="#handleChilli" prefHeight="26.0"
+															prefWidth="50.0" text="☑" />
+														<TextField fx:id="chilliTextField"
+															layoutX="14.0" layoutY="101.0" prefHeight="26.0"
+															prefWidth="64.0" promptText="Quantity" />
 														<Label layoutX="39.0" layoutY="6.0"
 															prefHeight="17.0" prefWidth="101.0"
 															text="Chilli Con Carne" />
-														<ImageView fitHeight="78.0" fitWidth="165.0"
-															layoutX="4.0" layoutY="21.0" pickOnBounds="true"
-															preserveRatio="true" />
-														<ImageView fitHeight="73.0" fitWidth="156.0"
-															layoutX="10.0" layoutY="28.0">
+														<ImageView fitHeight="68.0" fitWidth="150.0"
+															layoutX="9.0" layoutY="24.0">
 															<image>
 																<Image
 																	url="@image/menuPic/89993-award-winning-chili-con-carne-ddmfs-3x4-4e3a48f5505a4c998415c261507b0a76.jpg" />
@@ -115,22 +106,21 @@
 													prefWidth="178.0" styleClass="table-design"
 													stylesheets="@MenuDesign.css">
 													<children>
-														<Button fx:id="deacreaes" layoutX="20.0"
-															layoutY="105.0" mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="-" />
-														<Button fx:id="increases" layoutX="120.0"
-															layoutY="105.0" mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="+" />
-														<TextField layoutX="49.0" layoutY="105.0"
-															prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+														<Button fx:id="increases" layoutX="111.0"
+															layoutY="105.0" mnemonicParsing="false"
+															onAction="#handleChicken" prefHeight="26.0"
+															prefWidth="50.0" text="☑" />
+														<TextField fx:id="chickenTextField"
+															layoutX="10.0" layoutY="105.0" prefHeight="26.0"
+															prefWidth="64.0" promptText="Quantity" />
 														<Label layoutX="42.0" layoutY="6.0"
 															prefHeight="17.0" prefWidth="94.0"
 															text="Chicken Taquitos" />
-														<ImageView fitHeight="79.0" fitWidth="167.0"
-															layoutX="6.0" layoutY="27.0" pickOnBounds="true"
+														<ImageView fitHeight="74.0" fitWidth="122.0"
+															layoutX="18.0" layoutY="26.0" pickOnBounds="true"
 															preserveRatio="true" />
-														<ImageView fitHeight="72.0" fitWidth="158.0"
-															layoutX="2.0" layoutY="28.0">
+														<ImageView fitHeight="75.0" fitWidth="150.0"
+															layoutX="10.0" layoutY="25.0">
 															<image>
 																<Image
 																	url="@image/menuPic/Chicken-Taquitos-Recipe-Card.jpg" />
@@ -143,21 +133,20 @@
 													prefWidth="178.0" styleClass="table-design"
 													stylesheets="@MenuDesign.css">
 													<children>
-														<Button fx:id="increases3" layoutX="120.0"
-															layoutY="105.0" mnemonicParsing="false" text="+" />
-														<Button fx:id="deacreaes3" layoutX="20.0"
-															layoutY="105.0" mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="-" />
+														<Button fx:id="increases3" layoutX="112.0"
+															layoutY="106.0" mnemonicParsing="false"
+															onAction="#handleCorn" prefWidth="50.0" text="☑" />
 														<Label layoutX="39.0" layoutY="6.0"
 															prefHeight="17.0" prefWidth="101.0"
 															text="Mexican Corn Dip" />
-														<TextField layoutX="49.0" layoutY="105.0"
-															prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<ImageView fitHeight="76.0" fitWidth="158.0"
-															layoutX="6.0" layoutY="23.0" pickOnBounds="true"
+														<TextField fx:id="cornTextField" layoutX="7.0"
+															layoutY="105.0" prefHeight="26.0" prefWidth="64.0"
+															promptText="Quantity" />
+														<ImageView fitHeight="74.0" fitWidth="150.0"
+															layoutX="6.0" layoutY="24.0" pickOnBounds="true"
 															preserveRatio="true" />
-														<ImageView fitHeight="72.0" fitWidth="158.0"
-															layoutX="8.0" layoutY="28.0">
+														<ImageView fitHeight="77.0" fitWidth="157.0"
+															layoutX="5.0" layoutY="24.0">
 															<image>
 																<Image url="@image/menuPic/corn.jpg" />
 															</image>
@@ -169,22 +158,21 @@
 													prefWidth="178.0" styleClass="table-design"
 													stylesheets="@MenuDesign.css">
 													<children>
-														<Button fx:id="increases22" layoutX="120.0"
-															layoutY="105.0" mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="+" />
-														<Button fx:id="deacreaes4" layoutX="20.0"
-															layoutY="105.0" mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="-" />
-														<TextField layoutX="49.0" layoutY="105.0"
-															prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+														<Button fx:id="increases22" layoutX="110.0"
+															layoutY="105.0" mnemonicParsing="false"
+															onAction="#handleChickenFajitas" prefHeight="26.0"
+															prefWidth="50.0" text="☑" />
+														<TextField fx:id="chickenFajitasTextField"
+															layoutX="14.0" layoutY="105.0" prefHeight="26.0"
+															prefWidth="64.0" promptText="Quantity" />
 														<Label layoutX="39.0" layoutY="6.0"
 															prefHeight="17.0" prefWidth="101.0"
 															text="Chicken Fajitas" />
-														<ImageView fitHeight="75.0" fitWidth="159.0"
-															layoutX="12.0" layoutY="24.0" pickOnBounds="true"
+														<ImageView fitHeight="78.0" fitWidth="150.0"
+															layoutX="6.0" layoutY="24.0" pickOnBounds="true"
 															preserveRatio="true" />
-														<ImageView fitHeight="73.0" fitWidth="160.0"
-															layoutX="5.0" layoutY="28.0">
+														<ImageView fitHeight="68.0" fitWidth="150.0"
+															layoutX="10.0" layoutY="27.0">
 															<image>
 																<Image
 																	url="@image/menuPic/chicken-fajitas-index-649de79db2265.jpg" />
@@ -196,21 +184,17 @@
 													layoutY="535.0" prefHeight="141.0" prefWidth="178.0"
 													styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button fx:id="increases11" layoutX="120.0"
-															layoutY="105.0" mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="+" />
-														<Button fx:id="deacreaes6" layoutX="20.0"
-															layoutY="105.0" mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="-" />
-														<TextField layoutX="49.0" layoutY="105.0"
-															prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+														<Button fx:id="increases11" layoutX="114.0"
+															layoutY="105.0" mnemonicParsing="false"
+															onAction="#handleHalloumi" prefHeight="26.0"
+															prefWidth="50.0" text="☑" />
+														<TextField fx:id="halloumiTextField"
+															layoutX="7.0" layoutY="105.0" prefHeight="26.0"
+															prefWidth="64.0" promptText="Quantity" />
 														<Label layoutX="39.0" layoutY="6.0"
 															text="Halloumi Tacos" />
-														<ImageView fitHeight="73.0" fitWidth="157.0"
-															layoutX="6.0" layoutY="25.0" pickOnBounds="true"
-															preserveRatio="true" />
-														<ImageView fitHeight="67.0" fitWidth="162.0"
-															layoutX="11.0" layoutY="28.0">
+														<ImageView fitHeight="73.0" fitWidth="150.0"
+															layoutX="8.0" layoutY="26.0">
 															<image>
 																<Image
 																	url="@image/menuPic/grilled-halloumi-tacos-for-camping-sq.jpg" />
@@ -219,24 +203,20 @@
 													</children>
 												</AnchorPane>
 												<AnchorPane fx:id="mexicanRice" layoutX="244.0"
-													layoutY="535.0" prefHeight="141.0" prefWidth="178.0"
+													layoutY="535.0" prefHeight="117.0" prefWidth="178.0"
 													styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button fx:id="increasePasta" layoutX="120.0"
-															layoutY="105.0" mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="+" />
-														<Button fx:id="decreasePasta" layoutX="20.0"
-															layoutY="105.0" mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="-" />
-														<TextField layoutX="50.0" layoutY="105.0"
-															prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+														<Button fx:id="increasePasta" layoutX="105.0"
+															layoutY="104.0" mnemonicParsing="false"
+															onAction="#handleRice" prefHeight="26.0" prefWidth="50.0"
+															text="☑" />
+														<TextField fx:id="riceTextField" layoutX="14.0"
+															layoutY="104.0" prefHeight="26.0" prefWidth="64.0"
+															promptText="Quantity" />
 														<Label layoutX="40.0" layoutY="6.0"
 															text="Mexican Style Rice" />
-														<ImageView fitHeight="73.0" fitWidth="161.0"
-															layoutX="7.0" layoutY="25.0" pickOnBounds="true"
-															preserveRatio="true" />
-														<ImageView fitHeight="64.0" fitWidth="162.0"
-															layoutX="7.0" layoutY="29.0">
+														<ImageView fitHeight="74.0" fitWidth="141.0"
+															layoutX="14.0" layoutY="23.0">
 															<image>
 																<Image url="@image/menuPic/mex_rice.jpg" />
 															</image>
@@ -247,21 +227,16 @@
 													layoutY="700.0" prefHeight="141.0" prefWidth="178.0"
 													styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button layoutX="120.0" layoutY="105.0"
-															mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="+" />
-														<Button layoutX="20.0" layoutY="105.0"
-															mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="-" />
-														<TextField layoutX="49.0" layoutY="105.0"
-															prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+														<Button layoutX="114.0" layoutY="105.0"
+															mnemonicParsing="false" onAction="#handleChurros"
+															prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<TextField fx:id="churrosTextField"
+															layoutX="14.0" layoutY="105.0" prefHeight="26.0"
+															prefWidth="64.0" promptText="Quantity" />
 														<Label layoutX="58.0" layoutY="6.0"
 															prefHeight="17.0" prefWidth="47.0" text="Churros" />
-														<ImageView fitHeight="74.0" fitWidth="157.0"
-															layoutX="5.0" layoutY="24.0" pickOnBounds="true"
-															preserveRatio="true" />
-														<ImageView fitHeight="76.0" fitWidth="172.0"
-															layoutX="7.0" layoutY="24.0">
+														<ImageView fitHeight="77.0" fitWidth="140.0"
+															layoutX="10.0" layoutY="23.0">
 															<image>
 																<Image url="@image/menuPic/churros.jpg" />
 															</image>
@@ -272,21 +247,16 @@
 													layoutY="865.0" prefHeight="141.0" prefWidth="178.0"
 													styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button layoutX="20.0" layoutY="105.0"
-															mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="-" />
-														<Button layoutX="120.0" layoutY="105.0"
-															mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="+" />
-														<TextField layoutX="49.0" layoutY="105.0"
-															prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+														<Button layoutX="111.0" layoutY="105.0"
+															mnemonicParsing="false" onAction="#handleMargarita"
+															prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<TextField fx:id="margaritaTextField"
+															layoutX="14.0" layoutY="105.0" prefHeight="26.0"
+															prefWidth="64.0" promptText="Quantity" />
 														<Label layoutX="40.0" layoutY="6.0"
 															text="Margarita Pie" />
-														<ImageView fitHeight="73.0" fitWidth="160.0"
-															layoutX="6.0" layoutY="26.0" pickOnBounds="true"
-															preserveRatio="true" />
-														<ImageView fitHeight="74.0" fitWidth="168.0"
-															layoutX="8.0" layoutY="23.0">
+														<ImageView fitHeight="73.0" fitWidth="150.0"
+															layoutX="10.0" layoutY="23.0">
 															<image>
 																<Image url="@image/menuPic/chakeSalad.jpg" />
 															</image>
@@ -297,21 +267,16 @@
 													layoutY="700.0" prefHeight="141.0" prefWidth="178.0"
 													styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button layoutX="120.0" layoutY="105.0"
-															mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="+" />
-														<Button layoutX="20.0" layoutY="105.0"
-															mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="-" />
-														<TextField layoutX="49.0" layoutY="105.0"
-															prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+														<Button layoutX="110.0" layoutY="105.0"
+															mnemonicParsing="false" onAction="#handleBread"
+															prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<TextField fx:id="breadTextField" layoutX="14.0"
+															layoutY="105.0" prefHeight="26.0" prefWidth="64.0"
+															promptText="Quantity" />
 														<Label layoutX="39.0" layoutY="6.0"
 															text="Pan De Muerto" />
-														<ImageView fitHeight="75.0" fitWidth="156.0"
-															layoutX="7.0" layoutY="24.0" pickOnBounds="true"
-															preserveRatio="true" />
-														<ImageView fitHeight="73.0" fitWidth="165.0"
-															layoutX="7.0" layoutY="25.0">
+														<ImageView fitHeight="68.0" fitWidth="150.0"
+															layoutX="10.0" layoutY="29.0">
 															<image>
 																<Image url="@image/menuPic/bread_mex.jpg" />
 															</image>
@@ -322,21 +287,16 @@
 													layoutY="865.0" prefHeight="141.0" prefWidth="178.0"
 													styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button layoutX="120.0" layoutY="105.0"
-															mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="+" />
-														<Button layoutX="20.0" layoutY="105.0"
-															mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="-" />
-														<TextField layoutX="49.0" layoutY="105.0"
-															prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+														<Button layoutX="111.0" layoutY="105.0"
+															mnemonicParsing="false" onAction="#handleChocolate"
+															prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<TextField fx:id="chocolateTextField"
+															layoutX="14.0" layoutY="105.0" prefHeight="26.0"
+															prefWidth="64.0" promptText="Quantity" />
 														<Label layoutX="40.0" layoutY="6.0"
 															text="Hot Chocolate Pie" />
-														<ImageView fitHeight="76.0" fitWidth="150.0"
-															layoutX="13.0" layoutY="22.0" pickOnBounds="true"
-															preserveRatio="true" />
-														<ImageView fitHeight="69.0" fitWidth="163.0"
-															layoutX="8.0" layoutY="30.0">
+														<ImageView fitHeight="72.0" fitWidth="150.0"
+															layoutX="9.0" layoutY="25.0">
 															<image>
 																<Image url="@image/menuPic/mex_cioccolate.jpg" />
 															</image>
@@ -347,21 +307,19 @@
 													layoutY="1030.0" prefHeight="141.0" prefWidth="178.0"
 													styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button layoutX="20.0" layoutY="105.0"
-															mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="-" />
-														<Button layoutX="120.0" layoutY="105.0"
-															mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="+" />
-														<TextField layoutX="49.0" layoutY="105.0"
-															prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+														<Button layoutX="114.0" layoutY="105.0"
+															mnemonicParsing="false" onAction="#handleTepache"
+															prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<TextField fx:id="tepacheTextField"
+															layoutX="14.0" layoutY="105.0" prefHeight="26.0"
+															prefWidth="64.0" promptText="Quantity" />
 														<Label layoutX="57.0" layoutY="6.0"
 															prefHeight="17.0" prefWidth="66.0" text="Tepache" />
-														<ImageView fitHeight="72.0" fitWidth="150.0"
-															layoutX="9.0" layoutY="26.0" pickOnBounds="true"
+														<ImageView fitHeight="66.0" fitWidth="124.0"
+															layoutX="28.0" layoutY="27.0" pickOnBounds="true"
 															preserveRatio="true" />
-														<ImageView fitHeight="73.0" fitWidth="56.0"
-															layoutX="53.0" layoutY="26.0">
+														<ImageView fitHeight="74.0" fitWidth="39.0"
+															layoutX="62.0" layoutY="23.0">
 															<image>
 																<Image url="@image/menuPic/TepacheStraw.JPG" />
 															</image>
@@ -372,20 +330,15 @@
 													layoutY="1030.0" prefHeight="141.0" prefWidth="178.0"
 													styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button layoutX="120.0" layoutY="105.0"
-															mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="+" />
-														<Button layoutX="20.0" layoutY="105.0"
-															mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="-" />
-														<TextField layoutX="49.0" layoutY="105.0"
-															prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+														<Button layoutX="114.0" layoutY="105.0"
+															mnemonicParsing="false" onAction="#handleCoke"
+															prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<TextField fx:id="cokeTextField" layoutX="14.0"
+															layoutY="105.0" prefHeight="26.0" prefWidth="64.0"
+															promptText="Quantity" />
 														<Label layoutX="68.0" layoutY="6.0" text="Coke" />
-														<ImageView fitHeight="75.0" fitWidth="150.0"
-															layoutX="14.0" layoutY="24.0" pickOnBounds="true"
-															preserveRatio="true" />
-														<ImageView fitHeight="76.0" fitWidth="41.0"
-															layoutX="65.0" layoutY="23.0">
+														<ImageView fitHeight="68.0" fitWidth="40.0"
+															layoutX="61.0" layoutY="26.0">
 															<image>
 																<Image url="@image/menuPic/cocacola.jpg" />
 															</image>
@@ -397,19 +350,14 @@
 													styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
 														<Label layoutX="62.0" layoutY="6.0" text="Jarritos" />
-														<Button layoutX="120.0" layoutY="105.0"
-															mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="+" />
-														<Button layoutX="20.0" layoutY="105.0"
-															mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="-" />
-														<TextField layoutX="49.0" layoutY="105.0"
-															prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<ImageView fitHeight="69.0" fitWidth="142.0"
-															layoutX="10.0" layoutY="30.0" pickOnBounds="true"
-															preserveRatio="true" />
-														<ImageView fitHeight="73.0" fitWidth="157.0"
-															layoutX="7.0" layoutY="25.0">
+														<Button layoutX="114.0" layoutY="105.0"
+															mnemonicParsing="false" onAction="#handleJarritos"
+															prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<TextField fx:id="jarritosTextField"
+															layoutX="14.0" layoutY="105.0" prefHeight="26.0"
+															prefWidth="64.0" promptText="Quantity" />
+														<ImageView fitHeight="77.0" fitWidth="149.0"
+															layoutX="7.0" layoutY="22.0">
 															<image>
 																<Image url="@image/menuPic/download1.jpg" />
 															</image>
@@ -420,20 +368,15 @@
 													layoutY="1195.0" prefHeight="141.0" prefWidth="178.0"
 													styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button layoutX="120.0" layoutY="105.0"
-															mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="+" />
-														<Button layoutX="20.0" layoutY="105.0"
-															mnemonicParsing="false" prefHeight="26.0"
-															prefWidth="26.0" text="-" />
-														<TextField layoutX="49.0" layoutY="105.0"
-															prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+														<Button layoutX="114.0" layoutY="105.0"
+															mnemonicParsing="false" onAction="#handleHorchata"
+															prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<TextField fx:id="horchataTextField"
+															layoutX="14.0" layoutY="105.0" prefHeight="26.0"
+															prefWidth="64.0" promptText="Quantity" />
 														<Label layoutX="57.0" layoutY="6.0" text="Horchata" />
-														<ImageView fitHeight="65.0" fitWidth="150.0"
-															layoutX="14.0" layoutY="38.0" pickOnBounds="true"
-															preserveRatio="true" />
-														<ImageView fitHeight="73.0" fitWidth="161.0"
-															layoutX="5.0" layoutY="26.0">
+														<ImageView fitHeight="79.0" fitWidth="142.0"
+															layoutX="12.0" layoutY="21.0">
 															<image>
 																<Image url="@image/menuPic/Horchata-Thumbnail.jpg" />
 															</image>
@@ -536,9 +479,6 @@
 						<TableView layoutX="14.0" layoutY="14.0"
 							prefHeight="200.0" prefWidth="304.0">
 							<columns>
-								<TableColumn prefWidth="100.0" text="Product" />
-								<TableColumn prefWidth="116.0" text="Quantity" />
-								<TableColumn prefWidth="107.0" text="Price" />
 							</columns>
 						</TableView>
 						<AnchorPane layoutX="4.0" layoutY="258.0"
@@ -551,7 +491,8 @@
 								<Button fx:id="payBtn" layoutX="50.0" layoutY="72.0"
 									mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0"
 									text="Pay" />
-								<TextField layoutX="111.0" layoutY="22.0" />
+								<TextField fx:id="totalLabel" layoutX="111.0"
+									layoutY="22.0" />
 								<Label layoutX="57.0" layoutY="27.0" prefHeight="16.0"
 									prefWidth="47.0" text="Total" />
 							</children>
@@ -574,6 +515,14 @@
 						<Button fx:id="veganUnselectFilterBtn" layoutX="58.0"
 							layoutY="568.0" mnemonicParsing="false" prefHeight="26.0"
 							prefWidth="231.0" text="Unselect Vegan " visible="false" />
+						<TextField fx:id="tableNumberField" layoutX="187.0"
+							layoutY="31.0" prefHeight="34.0" prefWidth="78.0" />
+						<Label layoutX="87.0" layoutY="39.0" text="Table Number:"
+							textFill="WHITE">
+							<font>
+								<Font name="System Bold" size="12.0" />
+							</font>
+						</Label>
 					</children>
 				</AnchorPane>
 			</children>
