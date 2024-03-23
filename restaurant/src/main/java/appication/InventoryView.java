@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -21,9 +20,9 @@ import javafx.scene.layout.AnchorPane;
 /**
  * This class is the GUI interface of inventory page. This class inizialize all the feature of the
  * invenotry page.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: Team Project 15.
  */
 public class InventoryView {
 
@@ -123,8 +122,13 @@ public class InventoryView {
 
 
   /**
+   * This is a default constructor.
+   */
+  public InventoryView() {}
+
+  /**
    * This method start the inventoryPage.
-   * 
+   *
    * @return The inventoy scene.
    */
   public Scene start() {
@@ -188,7 +192,7 @@ public class InventoryView {
 
   /**
    * This method set the table with new items.
-   * 
+   *
    * @param list inventory table.
    */
   public void steTableItems(ObservableList<Inventory> list) {
@@ -197,7 +201,7 @@ public class InventoryView {
 
   /**
    * This method is used when uesr selelct items from table GUI.
-   * 
+   *
    * @return table list.
    */
   public Inventory getSelectedTableItem() {
@@ -207,7 +211,7 @@ public class InventoryView {
 
   /**
    * This method is used to get the row of the table.
-   * 
+   *
    * @return the row of the table.
    */
   public Integer getTableIndex() {
@@ -217,7 +221,7 @@ public class InventoryView {
 
   /**
    * This method return the list of table.
-   * 
+   *
    * @return table.
    */
   public ObservableList<Inventory> getListTable() {
@@ -226,10 +230,9 @@ public class InventoryView {
 
   /**
    * This method is user to get the Product Id typed in the GUI field.
-   * 
+   *
    * @return product_ID.
    */
-
   public Integer getProductIdField() {
     if (productIdField == null) {
       return -1;
@@ -245,10 +248,9 @@ public class InventoryView {
 
   /**
    * This method is user to get the Product Name typed in the GUI field.
-   * 
+   *
    * @return product_Name.
    */
-
   public String getProductNameField() {
     if (productNameField == null) {
       return "";
@@ -260,7 +262,7 @@ public class InventoryView {
 
   /**
    * This method is user to get the type of product using cumbox in the GUI.
-   * 
+   *
    * @return type of food.
    */
   public String getProductType() {
@@ -271,10 +273,9 @@ public class InventoryView {
 
   /**
    * This method is user to get the product stock typed in the GUI field.
-   * 
+   *
    * @return stock.
    */
-
   public Integer getStockField() {
     if (stockField == null) {
 
@@ -291,10 +292,9 @@ public class InventoryView {
 
   /**
    * This method is user to get the prize of the product typed in the GUI field.
-   * 
+   *
    * @return prize.
    */
-
   public float getPrizeField() {
     if (prizeField == null) {
       return -1;
@@ -310,9 +310,7 @@ public class InventoryView {
   /**
    * This method used to story into combox list, the list of type of product that then will be
    * showed by the GUI interface every time the user click on the combox field.
-   *
    */
-
   public void regTypeList() {
 
 

@@ -37,26 +37,56 @@ public class Item {
     this.available = available;
   }
 
+  /**
+   * This methos is used to the the ID number of items.
+   * 
+   * @return unique iD.
+   */
   public int getItemNumber() {
     return itemNumber;
   }
 
+  /**
+   * This method is used to het the name of items.
+   * 
+   * @return a name of items.
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * This method is used the the price of the items.
+   * 
+   * @return the price of items.
+   */
   public float getPrice() {
     return price;
   }
 
+  /**
+   * This method is used the the allergies of the items.
+   * 
+   * @return the allergies of items.
+   */
   public String[] getAllergies() {
     return allergies;
   }
 
+  /**
+   * This method is used the get the calories of the items.
+   * 
+   * @return the calories of items.
+   */
   public float getCalories() {
     return calories;
   }
 
+  /**
+   * This method is used to give the Availability of the items.
+   * 
+   * @return the avaibility of the items.
+   */
   public boolean isAvailable() {
     return available;
   }

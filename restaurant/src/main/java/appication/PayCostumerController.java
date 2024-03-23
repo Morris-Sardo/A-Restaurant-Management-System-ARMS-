@@ -5,18 +5,18 @@ import javafx.scene.control.Alert.AlertType;
 /**
  * This class is used to initeract beteween view and model. It get data from the view and send them
  * to the database. this happen in both direction. This class will handle the exception as well.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: Team Project 15.
  */
 public class PayCostumerController {
 
   private PayCostumerView viewPC;
-  // private MenuCostumerView viewMC;
+
 
   /**
    * This method is used to initialize the costumer pay page.
-   * 
+   *
    * @param viewPC object that hold costumer pay values.
    */
   public PayCostumerController(PayCostumerView viewPC) {

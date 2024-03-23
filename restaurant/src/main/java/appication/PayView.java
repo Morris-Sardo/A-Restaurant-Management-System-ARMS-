@@ -17,9 +17,9 @@ import javafx.scene.control.TextField;
  * the personal detail about credit card and full name. the page print the amount that must be paid.
  * Thew page is for staff so the page has been include all the button include in the alther staff
  * pages.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: Team Project 15.
  */
 public class PayView {
 
@@ -74,10 +74,14 @@ public class PayView {
   @FXML
   private TextField tableNumberField;
 
+  /**
+   * This is a default constructor.
+   */
+  public PayView() {}
 
   /**
    * This method start the the pay page scene.
-   * 
+   *
    * @return The inventoy scene.
    */
   public Scene start() {
@@ -117,6 +121,8 @@ public class PayView {
 
   /**
    * The method is used to get the first name of the costumer.
+   *
+   * @return a {@link java.lang.String} object
    */
   public String getFirstName() {
 
@@ -125,6 +131,8 @@ public class PayView {
 
   /**
    * The method is used to get the last name of the costumer.
+   *
+   * @return a {@link java.lang.String} object
    */
   public String getLastName() {
 
@@ -133,6 +141,8 @@ public class PayView {
 
   /**
    * The method is used to get the number costumer card.
+   *
+   * @return a {@link java.lang.Long} object
    */
   public Long getNumberCard() {
     try {
@@ -145,6 +155,8 @@ public class PayView {
 
   /**
    * The method is used to get the CCV number costumer card.
+   *
+   * @return a {@link java.lang.Integer} object
    */
   public Integer getCCV() {
     try {
@@ -156,6 +168,8 @@ public class PayView {
 
   /**
    * The method is used to get the expaired date costumer card.
+   *
+   * @return a {@link java.lang.String} object
    */
   public String getExpairedDate() {
 
@@ -165,6 +179,8 @@ public class PayView {
 
   /**
    * The method is used to get the expaired date costumer card.
+   *
+   * @return a {@link java.lang.Integer} object
    */
   public Integer getExpDate() {
     String expDateStr = expairedField.getText(); // Assuming expairedField is accessible here
@@ -191,7 +207,7 @@ public class PayView {
   /**
    * This method get value from field. This method is also used from moel class to virified is the
    * table exist.
-   * 
+   *
    * @return values is number of table.
    */
   public Integer getTableNumber() {
@@ -205,7 +221,7 @@ public class PayView {
 
   /**
    * This method is used to set the prize into text field.
-   * 
+   *
    * @param prizeP is a total bills.
    */
   public void setPrize(Float prizeP) {

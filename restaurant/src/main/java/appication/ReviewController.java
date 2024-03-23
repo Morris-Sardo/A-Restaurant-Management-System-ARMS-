@@ -5,11 +5,10 @@ import javafx.scene.control.Alert.AlertType;
 
 /**
  * This class is used as a controller between GUI review page the model and the other page.
- * 
- * @author papap Zain Akhtar.
  *
+ * @author papap Zain Akhtar.
+ * @version $Id: Team Project 15.
  */
-
 public class ReviewController {
 
   private ReviewView viewR;
@@ -19,7 +18,7 @@ public class ReviewController {
 
   /**
    * This method is the constructor controller between Giu adn Model.
-   * 
+   *
    * @param viewR is the object ReviewView.
    */
   public ReviewController(ReviewView viewR) {
