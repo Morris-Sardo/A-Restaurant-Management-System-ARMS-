@@ -718,19 +718,4 @@ public class MenuCostumerView {
     }
     return total;
   }
-
-  @FXML
-  private void handlePayButton() {
-
-    double totalAmount = calculateTotalAmount();
-    Integer tableNumber = getTableNumber();
-    if (totalAmount <= 0 || tableNumber == -1) {
-      AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
-      return;
-    }
-
-    // Insert the values into the SQL database
-    MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
-
-  }
 }

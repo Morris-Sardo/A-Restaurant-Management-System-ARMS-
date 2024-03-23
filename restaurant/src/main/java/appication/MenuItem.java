@@ -3,7 +3,7 @@ package appication;
 /**
  * Constructor the for the menu table.
  * 
- * @author Zain Ak
+ * @author Zain
  */
 public class MenuItem {
 

@@ -8,7 +8,7 @@ import java.sql.SQLException;
 /**
  * This class is been used to connect the application with the database. The class is not finished
  * 
- * @author papap
+ * @author papap and Zain 
  *
  */
 public class MenuCostumerModel {
@@ -78,6 +78,4 @@ public class MenuCostumerModel {
     } finally {
     }
   }
-
-
 }
