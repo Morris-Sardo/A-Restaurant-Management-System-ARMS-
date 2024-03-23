@@ -2,9 +2,9 @@ package appication;
 
 /**
  * This class containt all the title page use by all fdifferent pages.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: $Id
  */
 public enum TitlePage {
   /**
@@ -28,6 +28,7 @@ public enum TitlePage {
     this.string = string;
   }
 
+  /** {@inheritDoc} */
   @Override
   public String toString() {
 

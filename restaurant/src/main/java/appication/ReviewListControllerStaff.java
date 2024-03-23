@@ -3,9 +3,9 @@ package appication;
 
 /**
  * This class is the controller that changes pages between review list staff, dashboard, inventory.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: $Id
  */
 public class ReviewListControllerStaff {
 
@@ -14,7 +14,7 @@ public class ReviewListControllerStaff {
   /**
    * Costructor controller between GUI and Model. In the constructor we keeping the parameter just
    * in case we will develop more feature.
-   * 
+   *
    * @param reviewListViewStaff object of review list from staff.
    */
   public ReviewListControllerStaff(ReviewListViewStaff reviewListViewStaff) {

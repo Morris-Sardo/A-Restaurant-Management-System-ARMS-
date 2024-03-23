@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 /**
  * This class is used to interact with database.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: $Id
  */
 public class KitchenModel {
 

@@ -13,11 +13,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 /**
  * This class is view of review list page aviable for the staff. The main difference of the review
  * list the costumer is the staff has more access then a costumer.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: $Id
  */
-
 public class ReviewListViewStaff {
   
   @FXML
@@ -54,7 +53,7 @@ public class ReviewListViewStaff {
 
   /**
    * This method starts the scene of reviewListPage for staff.
-   * 
+   *
    * @return the revie list scene.
    */
   public Scene start() {

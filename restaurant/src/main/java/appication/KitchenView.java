@@ -12,11 +12,10 @@ import javafx.scene.layout.AnchorPane;
 
 /**
  * This class is used to connnect the view to the controller.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: $Id
  */
-
 public class KitchenView {
 
   
@@ -91,7 +90,7 @@ public class KitchenView {
 
   /**
    * This method start the kitchen.
-   * 
+   *
    * @return The inventoy scene.
    */
   public Scene start() {

@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 /**
  * This class is the logic part of the review page. It comunicates with database and controller.
- * 
- * @author papap, Zain Akhtar.
  *
+ * @author papap, Zain Akhtar.
+ * @version $Id: $Id
  */
 public class ReviewModel {
 
@@ -24,7 +24,7 @@ public class ReviewModel {
 
   /**
    * This method is uss to add a review into the database.
-   * 
+   *
    * @param username of the user.
    * @param star rating.
    * @param review text.
@@ -80,8 +80,8 @@ public class ReviewModel {
 
   /**
    * This method is used only for test.
-   * 
-   * @throws SQLException is accour if there is not connection.
+   *
+   * @throws java.sql.SQLException is accour if there is not connection.
    */
   public static void createLoginTable() throws SQLException {
     System.out.println("Creating rating1 table");
@@ -99,7 +99,7 @@ public class ReviewModel {
 
   /**
    * This main method is used every time we want wipe the table. It is used for testing.
-   * 
+   *
    * @param args comand line arguments.
    */
   public static void main(String[] args) {

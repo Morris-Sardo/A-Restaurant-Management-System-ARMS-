@@ -10,9 +10,9 @@ import javafx.beans.property.StringProperty;
 
 /**
  * This class will implement all the property methos for the table inventory.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: $Id
  */
 public class Inventory {
 
@@ -26,7 +26,7 @@ public class Inventory {
 
   /**
    * This method get value stored into the Product_id_Property.
-   * 
+   *
    * @return id.
    */
   public Integer getProduct_ID() {
@@ -39,7 +39,7 @@ public class Inventory {
 
   /**
    * This method set values product_ID.
-   * 
+   *
    * @param value id.
    */
   public void setProduct_ID(Integer value) {
@@ -49,7 +49,7 @@ public class Inventory {
 
   /**
    * This method create istantiate a simpleintegerProperty Product_ID.
-   * 
+   *
    * @return return product_ID.
    */
   public IntegerProperty product_ID() {
@@ -62,7 +62,7 @@ public class Inventory {
 
   /**
    * This method set values product name in name_Property.
-   * 
+   *
    * @param value is the product name.
    */
   public void setName(String value) {
@@ -71,7 +71,7 @@ public class Inventory {
 
   /**
    * This methods get valuse name/niclname store onto name_Proprety..
-   * 
+   *
    * @return string of product name.
    */
   public String getName() {
@@ -81,7 +81,7 @@ public class Inventory {
 
   /**
    * This methods istantiate object name that has all the product name propertys.
-   * 
+   *
    * @return property the hold the value of the product name.
    */
   public StringProperty product_nameProperty() {
@@ -94,7 +94,7 @@ public class Inventory {
 
   /**
    * This method set values product type..
-   * 
+   *
    * @param value is type.
    */
   public void setType(String value) {
@@ -103,7 +103,7 @@ public class Inventory {
 
   /**
    * This methods get the type of the product.
-   * 
+   *
    * @return type of product.
    */
   public String getType() {
@@ -113,7 +113,7 @@ public class Inventory {
 
   /**
    * This methods istantiate object type that has type propertys.
-   * 
+   *
    * @return property the hold the value in type.
    */
   public StringProperty type() {
@@ -126,7 +126,7 @@ public class Inventory {
 
   /**
    * This method set values Stock.
-   * 
+   *
    * @param value stock.
    */
   public void setStock(Integer value) {
@@ -135,7 +135,7 @@ public class Inventory {
 
   /**
    * This method get value stored into the Stock.
-   * 
+   *
    * @return stock.
    */
   public Integer getStock() {
@@ -145,7 +145,7 @@ public class Inventory {
 
   /**
    * This method create istantiate a simpleFloatProperty Stock.
-   * 
+   *
    * @return return vlaue hold in stock.
    */
   public IntegerProperty stock() {
@@ -158,7 +158,7 @@ public class Inventory {
 
   /**
    * This method set values prize.
-   * 
+   *
    * @param value is the product name.
    */
   public void setPrize(Float value) {
@@ -167,7 +167,7 @@ public class Inventory {
 
   /**
    * This methods get value prize store onto prize Proprety.
-   * 
+   *
    * @return valuse hold in prize.
    */
   public Float getPrize() {
@@ -177,7 +177,7 @@ public class Inventory {
 
   /**
    * This methods istantiate object name that has all the product name propertys.
-   * 
+   *
    * @return property the hold the value of the product name.
    */
   public FloatProperty prize() {

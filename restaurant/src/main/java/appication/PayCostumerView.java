@@ -10,9 +10,9 @@ import javafx.scene.image.ImageView;
 
 /**
  * This class is used as interaction with the user.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: $Id
  */
 public class PayCostumerView {
 
@@ -61,6 +61,11 @@ public class PayCostumerView {
 
 
 
+  /**
+   * <p>Constructor for PayCostumerView.</p>
+   *
+   * @param tableNumber a int
+   */
   public PayCostumerView(int tableNumber) {
     this.tableNumber = tableNumber;
   }
@@ -89,7 +94,7 @@ public class PayCostumerView {
 
   /**
    * This method is used to get the first name of the costumer.
-   * 
+   *
    * @return first name.
    */
   public String getFirstName() {
@@ -99,7 +104,7 @@ public class PayCostumerView {
 
   /**
    * This method is used to get the lasr name of the costumer.
-   * 
+   *
    * @return last name.
    */
   public String getLastName() {
@@ -109,7 +114,7 @@ public class PayCostumerView {
 
   /**
    * This method is used to get the 16 digit number of the credit card.
-   * 
+   *
    * @return the number of credit card.
    */
   public Long getNumberCard() {
@@ -122,6 +127,8 @@ public class PayCostumerView {
 
   /**
    * The method is used to get the CCV number costumer card.
+   *
+   * @return a {@link java.lang.Integer} object
    */
   public Integer getCCV() {
     try {
@@ -133,6 +140,8 @@ public class PayCostumerView {
 
   /**
    * The method is used to get the expaired date costumer card.
+   *
+   * @return a {@link java.lang.String} object
    */
   public String getExpairedDate() {
 
@@ -142,6 +151,8 @@ public class PayCostumerView {
 
   /**
    * The method is used to get the expaired date costumer card.
+   *
+   * @return a {@link java.lang.Integer} object
    */
   public Integer getExpDate() {
     String expDateStr = expairedField.getText(); // Assuming expairedField is accessible here
@@ -167,7 +178,7 @@ public class PayCostumerView {
 
   /**
    * This method is used to get the number of the table that will be use to to get the prise.
-   * 
+   *
    * @return the number of table.
    */
   public Integer getTable() {
@@ -182,7 +193,7 @@ public class PayCostumerView {
 
   /**
    * This method is used to set the prize into text field.
-   * 
+   *
    * @param bills is a total bills.
    */
   public void setPrize(Float bills) {

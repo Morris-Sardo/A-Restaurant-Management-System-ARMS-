@@ -15,9 +15,8 @@ import org.postgresql.util.PSQLException;
  * Contains the methods for managing the connection to the database.
  *
  * @author xaviernoel, jonathanmartin, morris
- *
+ * @version $Id: $Id
  */
-
 public class DataBaseModel {
 
 
@@ -30,8 +29,6 @@ public class DataBaseModel {
 
   /**
    * Create a connection.
-   * 
-   * @throws SQLException if connection is not exstabilizated.
    */
   public DataBaseModel() {
 
@@ -46,8 +43,9 @@ public class DataBaseModel {
 
   /**
    * Creates a new connection to the database.
-   * 
+   *
    * @return the connection created.
+   * @throws java.sql.SQLException if any.
    */
   public static Connection connectToDatabase() throws SQLException {
     Connection connection = null;
@@ -59,11 +57,11 @@ public class DataBaseModel {
 
   /**
    * This method get access to login.
-   * 
+   *
    * @param username name of user.
    * @param userpassword password of user.
    * @return and true if usename(primary key) if exist.
-   * @throws SQLException exception if connection is not established.
+   * @throws java.sql.SQLException exception if connection is not established.
    */
   public static boolean getRightLogin(String username, String userpassword) throws SQLException {
 
@@ -80,13 +78,12 @@ public class DataBaseModel {
 
   /**
    * This method add a new user at the database.
-   * 
+   *
    * @param username name of user.
    * @param usernamepassword password of user.
    * @param question security question.
    * @param answer for security question.
    * @return result true if grantyed no otherwirse.
-   * @throws SQLException this through ex.
    */
   public static boolean registerUser(String username, String usernamepassword, Object question,
       String answer) {
@@ -130,9 +127,8 @@ public class DataBaseModel {
 
   /**
    * Create the login table.
-   * 
-   * 
-   * 
+   *
+   * @throws java.sql.SQLException if any.
    */
   public static void createLoginTable() throws SQLException {
     System.out.println("Creating login table");
@@ -151,9 +147,8 @@ public class DataBaseModel {
 
   /**
    * drops table. This method has been used only in delepment stage
-   * 
-   * 
-   * @throws SQLException Exception is thrown
+   *
+   * @throws java.sql.SQLException Exception is thrown
    */
   public static void dropUserTable() throws SQLException {
     System.out.println("Dropping login table");
@@ -170,7 +165,7 @@ public class DataBaseModel {
    * This method get the question from the table. This method is used during the changing password
    * face. The user before to able to get access to the change passwrod form he/she must to pass the
    * secury answer. This method get the question chose by user from the database.
-   * 
+   *
    * @param username is is the primary key of tha table. it used to get the question match to the
    *        user.
    * @return the question matched to the user. The method throw exceptipon that will be handled by
@@ -201,7 +196,7 @@ public class DataBaseModel {
    * This method check if the asnwer if same to the one insert. If the answer is different of the
    * one saved onto database the will return false. if answer is false the handle controller it will
    * pop up error text.
-   * 
+   *
    * @param username login username.
    * @param answer is security answer.
    * @return true is the answer match whith one in the system.
@@ -234,7 +229,7 @@ public class DataBaseModel {
   /**
    * This method check if the username is in the table. This method is used by loging page and sign
    * up page. the sign up and login page use this method to check if a user already exist or not.
-   * 
+   *
    * @param username login username.
    * @return true is user deas not exisit.
    */
@@ -271,7 +266,7 @@ public class DataBaseModel {
    * This method check is username exist if so it will update the password. This method is use by
    * change password form to verfied it a user exist or not. if so, it will update the database with
    * the new password.
-   * 
+   *
    * @param username the primary key used check if username exist and then used to update password
    *        releated to the username.
    * @param password is the password update.
@@ -331,7 +326,7 @@ public class DataBaseModel {
 
   /**
    * Main method has made only for testing. this method erase all date from login table.
-   * 
+   *
    * @param args args
    */
   public static void main(String[] args) {

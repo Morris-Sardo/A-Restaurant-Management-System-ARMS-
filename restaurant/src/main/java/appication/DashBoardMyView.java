@@ -10,11 +10,10 @@ import javafx.scene.control.Button;
 /**
  * This class is the view of the dashboard page application. this page connect all to the all pages
  * of the staff.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: $Id
  */
-
 public class DashBoardMyView {
 
   @FXML
@@ -36,7 +35,7 @@ public class DashBoardMyView {
 
   /**
    * Creates & returns the scene to be used for this page.
-   * 
+   *
    * @return The dashboard scene.
    */
   public Scene start() {

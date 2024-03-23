@@ -3,9 +3,9 @@ package appication;
 
 /**
  * This class is the controller the change pages between review list and menu costumer and sign out.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: $Id
  */
 public class ReviewListController {
 
@@ -13,7 +13,7 @@ public class ReviewListController {
 
   /**
    * Constructor controller between GUI and Model.
-   * 
+   *
    * @param viewRL object of review list.
    */
   public ReviewListController(ReviewListView viewRL) {

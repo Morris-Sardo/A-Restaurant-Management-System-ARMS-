@@ -14,9 +14,9 @@ import javafx.scene.layout.AnchorPane;
 
 /**
  * Thic class is menu page for staff. This page has has more privilage of menu costumenr page.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: $Id
  */
 public class MenuView {
 
@@ -166,7 +166,7 @@ public class MenuView {
 
   /**
    * Creates & returns the scene to be used for this page.
-   * 
+   *
    * @return menu staff page scene.
    */
   public Scene start() {

@@ -9,9 +9,9 @@ import javafx.collections.ObservableList;
 
 /**
  * This class retrieves and sets data from and to the database table.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: $Id
  */
 public class ReviewListModelStaff {
 
@@ -25,10 +25,9 @@ public class ReviewListModelStaff {
 
   /**
    * This method lists observabe filled by the elements from the database.
-   * 
+   *
    * @return return list observable.
    */
-
   public static ObservableList<Review> getRating1Table() {
     ObservableList<Review> membersTable = FXCollections.observableArrayList();
     try {

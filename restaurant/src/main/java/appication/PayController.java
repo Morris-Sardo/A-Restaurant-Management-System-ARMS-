@@ -6,9 +6,9 @@ import javafx.scene.control.Alert.AlertType;
 /**
  * This class is used to initeract beteween view and model. This class will handle the exception as
  * well.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: $Id
  */
 public class PayController {
 
@@ -16,7 +16,7 @@ public class PayController {
 
   /**
    * This costrunctor used to initialize a view object class.
-   * 
+   *
    * @param viewP is the object of pay view class.
    */
   public PayController(PayView viewP) {

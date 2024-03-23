@@ -15,9 +15,9 @@ import javafx.scene.layout.AnchorPane;
 /**
  * This page is the view of menu page for only costumer. This class has less privilege of the menu
  * staff.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: $Id
  */
 public class MenuCostumerView {
 
@@ -166,7 +166,7 @@ public class MenuCostumerView {
 
   /**
    * This method create and start scene of menu for costumer.
-   * 
+   *
    * @return the menu page costumer scene.
    */
   public Scene start() {

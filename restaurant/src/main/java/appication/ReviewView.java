@@ -14,9 +14,9 @@ import javafx.stage.Stage;
 /**
  * This class is used to start the scene and inizialize all the button of the page. Moreover, we can
  * get all the values in the field.
- * 
- * @author papap, Zain Akhtar.
  *
+ * @author papap, Zain Akhtar.
+ * @version $Id: $Id
  */
 public class ReviewView {
 
@@ -51,7 +51,7 @@ public class ReviewView {
 
   /**
    * This method is used to start the Reviw pagescene.
-   * 
+   *
    * @return the scene.
    */
   public Scene start() {
@@ -101,10 +101,9 @@ public class ReviewView {
 
   /**
    * This method is used to get the nickname typed into the name's field.
-   * 
+   *
    * @return nickname.
    */
-
   public String getNickNameTextField() {
     if (nickName == null) {
       return "";
@@ -115,10 +114,9 @@ public class ReviewView {
 
   /**
    * This method return starts from the field.
-   * 
+   *
    * @return starts.
    */
-
   public int getStarTestField() {
     if (stratField == null) {
       return -1;
@@ -134,10 +132,9 @@ public class ReviewView {
 
   /**
    * This method retrives the review text field.
-   * 
+   *
    * @return text.
    */
-
   public String getTextReview() {
     if (textReview == null) {
       return "";

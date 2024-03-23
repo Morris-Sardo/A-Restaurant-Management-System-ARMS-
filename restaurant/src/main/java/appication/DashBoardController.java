@@ -2,9 +2,9 @@ package appication;
 
 /**
  * This in the controller for the main page. this page handle all event releated to the button.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: $Id
  */
 public class DashBoardController {
 
@@ -16,7 +16,7 @@ public class DashBoardController {
 
   /**
    * This is the constructor is controlloer between GUI nad Model.
-   * 
+   *
    * @param view is the dashboard view ogject.
    */
   public DashBoardController(DashBoardMyView view) {

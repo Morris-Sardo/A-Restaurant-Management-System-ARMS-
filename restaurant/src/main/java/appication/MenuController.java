@@ -2,9 +2,9 @@ package appication;
 
 /**
  * This is class does of controller of all button event between beteen GUI and MODEL.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: $Id
  */
 public class MenuController {
 
@@ -13,7 +13,7 @@ public class MenuController {
   /**
    * This constructor. Is user to inizialise ther controller ogject. It will be used by menu staff
    * view class.
-   * 
+   *
    * @param menuView object menuView.
    */
   public MenuController(MenuView menuView) {

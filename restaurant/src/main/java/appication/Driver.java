@@ -7,9 +7,9 @@ import javafx.stage.Stage;
 /**
  * This clasS is used has strat of apllication. When application start the scene the start as
  * default it login page.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: $Id
  */
 public class Driver extends Application {
 
@@ -18,8 +18,10 @@ public class Driver extends Application {
 
 
   /**
-   * This method start trhe scene and the method is override everytime the the application start new
-   * scene(switch page).
+   * {@inheritDoc}
+   *
+   * <p>This method start trhe scene and the method is override everytime the the application
+   * start new scene(switch page).
    */
   @Override
   public void start(Stage stage) throws Exception {
@@ -33,7 +35,7 @@ public class Driver extends Application {
 
   /**
    * This method set title of all scene.
-   * 
+   *
    * @param scene new scene.
    * @param title of the the scene
    */
@@ -47,7 +49,7 @@ public class Driver extends Application {
   /**
    * Thjis method is usecd to goet the coonnction from the database. This methods is use from all
    * classes the need to connect coonnect to datasbase.
-   * 
+   *
    * @return connection.
    */
   public static DataBaseModel getDBconnection() {
@@ -58,7 +60,7 @@ public class Driver extends Application {
 
   /**
    * This method is the main method use to lanch the application .
-   * 
+   *
    * @param args argument main.
    */
   public static void main(String[] args) {

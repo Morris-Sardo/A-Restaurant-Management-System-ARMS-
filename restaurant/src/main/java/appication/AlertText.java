@@ -5,9 +5,9 @@ import javafx.scene.control.Alert.AlertType;
 
 /**
  * This class is used to hanlde the Alert meassage.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: $Id
  */
 public class AlertText {
 
@@ -23,7 +23,7 @@ public class AlertText {
 
   /**
    * This method it will set up the alert used every time an alert is going to be used.
-   * 
+   *
    * @param type iss the type of alert.
    * @param title is the title shows on the tpo of the windows of alert.
    * @param contentText is the text that say what the alter is about.

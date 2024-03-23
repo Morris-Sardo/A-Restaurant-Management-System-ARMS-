@@ -7,9 +7,9 @@ import java.sql.SQLException;
 
 /**
  * This class is been used to connect the application with the database. The class is not finished
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: $Id
  */
 public class MenuCostumerModel {
 
@@ -19,7 +19,7 @@ public class MenuCostumerModel {
 
   /**
    * This method is used to get the the bills from the database.
-   * 
+   *
    * @param tableNumber is the number of table used to get the money owed by the table.
    * @return the bill to pay.
    */
