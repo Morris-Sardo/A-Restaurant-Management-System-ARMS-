@@ -230,7 +230,7 @@ public class KitchenView {
 
   }
 
-  public void steTableItems(ObservableList<Stock> list) {
+  public void setTableItems(ObservableList<Stock> list) {
     kitchenOrderTable1.setItems(list);
   }
 
