@@ -1,5 +1,6 @@
 package appication;
 
+import java.awt.TextField;
 import java.io.IOException;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -16,12 +17,36 @@ import javafx.scene.layout.AnchorPane;
  * This class is the GUI interface of the kitchen orders and stock page. This class initialises all
  * the features of the kitchen order and stock page.
  * 
- * @author papap, jonathan
+ * @author papap, jonathan, michael
  *
  */
 
 public class KitchenView {
+	
+	@FXML
+    private TextField StockAllergy;
 
+    @FXML
+    private TextField StockAvailable;
+
+    @FXML
+    private TextField StockCal;
+
+    @FXML
+    private TextField StockItmName;
+
+    @FXML
+    private TextField StockItmNum;
+
+    @FXML
+    private TextField StockPrice;
+
+    @FXML
+    private TextField StockQuantity;
+
+    @FXML
+    private TextField StockTags;
+    
   @FXML
   private Button signOutStockFormBtn;
 
@@ -120,6 +145,8 @@ public class KitchenView {
 
   @FXML
   private Button stockUpdate;
+  
+  
 
   private ObservableList<Stock> list = StockModel.getStockTable();
   
@@ -200,6 +227,30 @@ public class KitchenView {
     kitchenForm.setVisible(true);
 
   }
+  
+  public void steTableItems(ObservableList<Stock> list) {
+	    kitchenOrderTable1.setItems(list);
+	  }
+
+	  /**
+	   * This method is used when uesr selelct items from table GUI.
+	   * 
+	   * @return table list.
+	   */
+	  public Stock getSelectedTableItem() {
+
+	    return kitchenOrderTable1.getSelectionModel().getSelectedItem();
+	  }
+
+	  /**
+	   * This method is used to get the row of the table.
+	   * 
+	   * @return the row of the table.
+	   */
+	  public Integer getTableIndex() {
+
+	    return kitchenOrderTable1.getSelectionModel().getSelectedIndex();
+	  }
 
   /**
    * This method return the list of table.
@@ -209,6 +260,140 @@ public class KitchenView {
   public ObservableList<Stock> getListTable() {
     return list;
   }
+  
+  public Integer getStockItmNum() {
+	    if (StockItmNum == null) {
+	      return -1;
+	    } else {
+	      try {
+	        return Integer.parseInt(StockItmNum.getText());
+	      } catch (Exception e) {
+	        return -1;
+	      }
+	    }
+	  }
+
+
+	  /**
+	   * This method is user to get the Product Name typed in the GUI field.
+	   * 
+	   * @return product_Name.
+	   */
+
+	  public String getStockItmName() {
+	    if (StockItmName == null) {
+	      return "";
+	    } else {
+
+	      return StockItmName.getText();
+	    }
+	  }
+	  
+	  public String getStockAllergy() {
+		    if (StockAllergy == null) {
+		      return "";
+		    } else {
+
+		      return StockAllergy.getText();
+		    }
+		  }
+	  
+	  public String getStockTags() {
+		    if (StockTags == null) {
+		      return "";
+		    } else {
+
+		      return StockTags.getText();
+		    }
+		  }
+
+	  /**
+	   * This method is user to get the type of product using cumbox in the GUI.
+	   * 
+	   * @return type of food.
+	   */
+	  public String getStockAvailable() {
+		  if (StockAvailable == null) {
+		      return "";
+		    } else {
+
+		      return StockAvailable.getText();
+		    }
+	  }
+
+	  /**
+	   * This method is user to get the product stock typed in the GUI field.
+	   * 
+	   * @return stock.
+	   */
+
+	  public Integer getStockQuantity() {
+	    if (StockQuantity == null) {
+
+	      return -1;
+	    } else {
+	      try {
+
+	        return Integer.parseInt(StockQuantity.getText());
+	      } catch (Exception e) {
+	        return -1;
+	      }
+	    }
+	  }
+
+	  /**
+	   * This method is user to get the prize of the product typed in the GUI field.
+	   * 
+	   * @return prize.
+	   */
+
+	  public float getStockPrice() {
+	    if (StockPrice == null) {
+	      return -1;
+	    } else {
+	      try {
+	        return Float.parseFloat(StockPrice.getText());
+	      } catch (Exception e) {
+	        return -1;
+	      }
+	    }
+	  }
+	  
+	  public float getStockCal() {
+		    if (StockCal == null) {
+		      return -1;
+		    } else {
+		      try {
+		        return Float.parseFloat(StockCal.getText());
+		      } catch (Exception e) {
+		        return -1;
+		      }
+		    }
+		  }
+
+
+
+
+@FXML
+public void StockSelect() {
+  Stock selectedItem = kitchenOrderTable1.getSelectionModel().getSelectedItem();
+  int num = kitchenOrderTable1.getSelectionModel().getSelectedIndex();
+
+  if ((num - 1) < -1) {
+    return;
+  }
+
+  StockItmNum.setText("" + selectedItem.getItemNum());
+  //StockItmNum.setDisable(true); // no possible to change the product ID field.
+  StockItmName.setText(selectedItem.getItemName());
+  StockQuantity.setText("" + selectedItem.getStock());
+  StockAllergy.setText("" + selectedItem.getAllergies());
+  StockCal.setText("" + selectedItem.getCalories());
+  StockAvailable.setText("" + selectedItem.isAvailable());
+  StockTags.setText("" + selectedItem.getTags());
+
+  
+}
 
 
 }
