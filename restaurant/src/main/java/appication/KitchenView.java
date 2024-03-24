@@ -53,7 +53,7 @@ public class KitchenView {
   private TableColumn<?, ?> items;
 
   @FXML
-  private TableView<?> kitchenOrderTable;
+  private TableView<Kitchen> kitchenOrderTable;
 
   @FXML
   private TableView<Stock> kitchenOrderTable1;
@@ -122,6 +122,8 @@ public class KitchenView {
   private Button stockUpdate;
 
   private ObservableList<Stock> list = StockModel.getStockTable();
+  
+  private ObservableList<Kitchen> list2 = KitchenModel.getOrdersTable();
 
   /**
    * This method start the kitchen.
@@ -167,7 +169,16 @@ public class KitchenView {
     colAvailable.setCellValueFactory(new PropertyValueFactory<>("available"));
     colTags.setCellValueFactory(new PropertyValueFactory<>("tags"));
     colStock.setCellValueFactory(new PropertyValueFactory<>("stock"));
+    
+    orderNums.setCellValueFactory(new PropertyValueFactory<>("orderNum"));
+    tableNums.setCellValueFactory(new PropertyValueFactory<>("tableNum"));
+    items.setCellValueFactory(new PropertyValueFactory<>("items"));
+    prices.setCellValueFactory(new PropertyValueFactory<>("price"));
+    orderTime.setCellValueFactory(new PropertyValueFactory<>("orderTime"));
+    status.setCellValueFactory(new PropertyValueFactory<>("status"));
 
+
+    kitchenOrderTable.setItems(list2);
     kitchenOrderTable1.setItems(list);
   }
 
