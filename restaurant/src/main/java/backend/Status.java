@@ -1,7 +1,10 @@
 package backend;
 
 /**
- * A set of values for different possible states of an order.
+ * This class is used to store the different status of the orders.
+ * 
+ * @author papap
+ *
  */
 public enum Status {
   REQUESTED("Requested"), CONFIRMED("Confirmed"), READY("Ready"), COMPLETED("Completed"), PAID(

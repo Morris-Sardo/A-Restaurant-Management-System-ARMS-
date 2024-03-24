@@ -1,9 +1,9 @@
 package appication;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.animation.TranslateTransition;
-import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -21,20 +21,62 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 
 /**
- * This is class is the GUI interface and interact with the user.
+ * This is class is the GUI login interface that user use to login or register if a staff member an
+ * if a costumer it can go straight to manu page.
  *
  * @author papap
  *
  */
-public class MyView extends Application implements ViewInterface {
+public class MyView {
+
+
+
+  /**
+   * Creates and returns the scene to be used for this page.
+   * 
+   * @return The Login scene.
+   */
+  public Scene start() {
+    Parent root;
+    try {
+      root = FXMLLoader.load(getClass().getResource("MyView.fxml"));
+      Scene scene = new Scene(root, 600, 400);
+      return scene;
+    } catch (IOException e) {
+      e.printStackTrace();
+      return null;
+    }
+  }
+
+
+  /**
+   * This is a deafault cosnstructor.
+   */
+  public MyView() {}
+
+  /**
+   * Creates the relevant controller and sets up button actions.
+   */
+  @FXML
+  public void initialize() {
+    LoginController loginController = new LoginController(this);
+    siLoginBtn.setOnAction(event -> loginController.hanldeLogin());
+    suSignupBtn.setOnAction(event -> loginController.handleSignUp());
+    siForgotPass.setOnAction(event -> loginController.handleForgotPass());
+    fpProceedBtn.setOnAction(event -> loginController.handleAnswer());
+    npChangePassBtn.setOnAction(event -> loginController.handleChangePassword());
+    customerBtn.setOnAction(event -> loginController.handleCusotmerMenu());
+  }
 
   @FXML
   private Label askSecurityQuestion;
+
+  @FXML
+  private Button customerBtn;
 
   @FXML
   private TextField fpAnswer;
@@ -151,34 +193,8 @@ public class MyView extends Application implements ViewInterface {
   // array use to store the questions.
   private String[] questionList = {question1, question2, question3};
 
-
-
-  // private String sUsername;
-
-  // All those follwing methods act has obsever.
-  // observeing the input from the user and connect with the model and reverse.
-  public void addRegistrationObserver(Runnable f) {
-    suSignupBtn.setOnAction(event -> f.run());
-  }
-
-  public void addLoginObserver(Runnable f) {
-    siLoginBtn.setOnAction(event -> f.run());
-  }
-
-  public void addForgotPasswordObserver(Runnable f) {
-    siForgotPass.setOnAction(event -> f.run());
-  }
-
-  public void addChangePasswordObserver(Runnable f) {
-    fpProceedBtn.setOnAction(event -> f.run());
-  }
-
-  public void addConfirmNewPasswordObserver(Runnable f) {
-    npChangePassBtn.setOnAction(event -> f.run());
-  }
-
   /**
-   * Controls the visibility of the Password field.
+   * This method is use to make ther password in login page visible or invisible.
    * 
    * @param event When the user wants to see their password
    */
@@ -197,7 +213,7 @@ public class MyView extends Application implements ViewInterface {
 
 
   /**
-   * Controls the visibility of the Password field.
+   * This method is used to make visible or invisible the password in sign up form.
    * 
    * @param event When the user wants to see their password
    */
@@ -216,7 +232,7 @@ public class MyView extends Application implements ViewInterface {
 
 
   /**
-   * Controls the visibility of the Password field.
+   * This method is used to make visible or invisible change password field in change password form.
    * 
    * @param event When the user wants to see their password
    */
@@ -234,7 +250,7 @@ public class MyView extends Application implements ViewInterface {
   }
 
   /**
-   * Used to swapt the Scene when the button login is pressed.
+   * This method is used to swapt the Scene when the button login is pressed.
    * 
    * @return button.
    */
@@ -245,7 +261,8 @@ public class MyView extends Application implements ViewInterface {
   }
 
   /**
-   * Controls the visibility of the Password field.
+   * This method is used to make visible or invisible confirm change password field in change
+   * password form.
    * 
    * @param event When the user wants to see their password
    */
@@ -264,9 +281,9 @@ public class MyView extends Application implements ViewInterface {
 
 
   /**
-   * Controls the visibility of the Password field.
+   * This method is used to make visible or invisible the secret answer field in sign up form.
    * 
-   * @param event When the user wants to see their password
+   * @param event When the user wants to see their secret answer
    */
   @FXML
   public void togglevisibleAnswer(ActionEvent event) {
@@ -282,9 +299,9 @@ public class MyView extends Application implements ViewInterface {
   }
 
   /**
-   * This method return password insert in the field newPasswrod.
+   * This method is used to get thew new password in new password field.
    * 
-   * @return new passwrd.
+   * @return new password.
    */
   public String getNewPassword() {
     if (npNewPassword == null) {
@@ -295,9 +312,9 @@ public class MyView extends Application implements ViewInterface {
   }
 
   /**
-   * This method return password insert in the field newConfimationPasswrod.
+   * This method is used to get the password confirm new password field.
    * 
-   * @return new password.
+   * @return confirmation new password.
    */
   public String getConfirmationNewPassword() {
     if (npNewPassConfimation == null) {
@@ -309,7 +326,7 @@ public class MyView extends Application implements ViewInterface {
   }
 
   /**
-   * This class it return the username.
+   * This method is used to get the username in username field.
    * 
    * @return username.
    */
@@ -323,7 +340,7 @@ public class MyView extends Application implements ViewInterface {
   }
 
   /**
-   * This methods return password.
+   * This methods is used gto get the password in login form.
    * 
    * @return password.
    */
@@ -334,9 +351,11 @@ public class MyView extends Application implements ViewInterface {
     return siPassword.getText();
   }
 
+  //////////////////////////////////////////////////////////////////////////////////////
+  // FROM HERE.
 
   /**
-   * This method the username for registration.
+   * This method is used tto get the unsernam in Sign up form.
    * 
    * @return username
    */
@@ -350,7 +369,7 @@ public class MyView extends Application implements ViewInterface {
 
 
   /**
-   * This method the password for registration.
+   * This method is used to get the password for sign up form.
    * 
    * @return password.
    */
@@ -362,7 +381,7 @@ public class MyView extends Application implements ViewInterface {
   }
 
   /**
-   * Setup the enstry to empty.
+   * This method is used to set up all fields in sign up when application start.
    */
   public void emptyRegistrationFields() {
 
@@ -370,10 +389,15 @@ public class MyView extends Application implements ViewInterface {
     suPassword.setText("");
     suQuestion.getSelectionModel().clearSelection();
     suAnswer.setText("");
+
+    suPassword.setVisible(true);
+    suAnswer.setVisible(true);
+    passToggleSu.setSelected(false);
+    passToggleSecAns.setSelected(false);
   }
 
   /**
-   * Setup the enstry to empty.
+   * This method it used to set up all fields in logi page when application start.
    */
   public void emptyLoginFields() {
 
@@ -383,21 +407,13 @@ public class MyView extends Application implements ViewInterface {
     npNewPassword.setText("");
     npNewPassConfimation.setText("");
 
+    passToggle.setSelected(false);
+    siPassword.setVisible(true);
 
 
-  }
-
-  /**
-   * Setup new question, password, confirm password and answer .
-   */
-  public void emptyForgotPasswordFields() {
-
-    fpAnswer.setText("");
-    npNewPassword.setText("");
-    npNewPassConfimation.setText("");
-    suQuestion.getSelectionModel().clearSelection();
 
   }
+
 
 
   /**
@@ -420,7 +436,9 @@ public class MyView extends Application implements ViewInterface {
   }
 
   /**
-   * This method is use to get the question from form cubox.
+   * This Method is used to get the secret question.
+   * 
+   * @return the question.
    */
   public Object getSelectedQuestion() {
 
@@ -429,7 +447,7 @@ public class MyView extends Application implements ViewInterface {
   }
 
   /**
-   * This method is use to get the answer in the regiastration.
+   * This method is used to get the answer in the registration form and used.
    * 
    * @return the answer.
    */
@@ -451,14 +469,18 @@ public class MyView extends Application implements ViewInterface {
       return "";
 
     } else {
-      System.out.println(fpAnswer.getText());
+
       return fpAnswer.getText();
     }
 
   }
 
   /**
-   * This methos pup up the Blank field login.
+   * This methodi is used to pop up a alert text.
+   * 
+   * @param type of alert.
+   * @param title used has head line of alert.
+   * @param contentText tis the text message.
    */
   public void alert(AlertType type, String title, String contentText) {
 
@@ -470,6 +492,7 @@ public class MyView extends Application implements ViewInterface {
 
   }
 
+
   /**
    * this method will switch form when forgot password will press.
    */
@@ -479,13 +502,15 @@ public class MyView extends Application implements ViewInterface {
     siLoginForm.setVisible(false);
     fpquestionForm.setVisible(true);
 
+
+
     regQuestionList();
 
 
   }
 
   /**
-   * This swap the from.
+   * This methosd is useed to switch the form from login page to forgot password form.
    */
   public void switchChangePassword() {
 
@@ -514,6 +539,12 @@ public class MyView extends Application implements ViewInterface {
     npNewPassForm.setVisible(false);
     siLoginForm.setVisible(true);
 
+    passTextConfPass.setText("");
+    passTextNewPass.setText("");
+    passToggleNewPass.setSelected(false);
+    npNewPassword.setVisible(true);
+    passToggleConfPass.setSelected(false);
+    npNewPassConfimation.setVisible(true);
 
   }
 
@@ -533,10 +564,20 @@ public class MyView extends Application implements ViewInterface {
       slider.setToX(300); // slideTox in px.
       slider.setDuration(Duration.seconds(.5)); // how long the translate act.
 
+      passToggle.setSelected(false);
+      siPassword.setVisible(true);
+
+      passToggleSecAns.setSelected(false);
+      passToggleSu.setSelected(false);
+      suPassword.setVisible(true);
+      suAnswer.setVisible(true);
+
+
       // Change visibility buttons "create account" "Already have account".
       slider.setOnFinished((ActionEvent e) -> {
         sideCreateBtnAlreadyHave.setVisible(true);
         sideCreateBtn.setVisible(false);
+
 
         regQuestionList();
       });
@@ -574,64 +615,14 @@ public class MyView extends Application implements ViewInterface {
     slider.setNode(sideForm);
     slider.setToX(0);
     slider.setDuration(Duration.seconds(.5));
-    
+
     slider.setOnFinished((ActionEvent e) -> {
       sideCreateBtnAlreadyHave.setVisible(false);
       sideCreateBtn.setVisible(true);
-      
+
     });
     slider.play();
 
   }
-
-
-  @Override
-  public void start(Stage primaryStage) throws Exception {
-
-    Parent root = FXMLLoader.load(getClass().getResource("myView.fxml"));
-
-
-    Scene scene = new Scene(root, 600, 400);
-
-    primaryStage.setTitle("Login  Interface");
-
-    primaryStage.setScene(scene);
-    primaryStage.show();
-
-
-  }
-
-  // DO NOT CHANGE ANYTHING BELOW THIS COMMENT
-  /////////////////////////////////////////////////////////////////////////////////
-  // Block for creating an instance variable for others to use.
-  //
-  // Make it a JavaFX singleton. Instance is set by the javafx "initialize" method
-  private static volatile MyView instance = null;
-
-  @FXML
-  void initialize() {
-    instance = this;
-  }
-
-  /**
-   * This is a Singleton View constructed by the JavaaFX Thread and made available through this
-   * method.
-   * 
-   * @return the single object representing this view
-   */
-  public static synchronized MyView getInstance() {
-    if (instance == null) {
-      new Thread(() -> Application.launch(MyView.class)).start();
-      // Wait until the instance is ready since initialize has executed.
-      while (instance == null) {// empty body
-      }
-    }
-
-    return instance;
-  }
-  // End of special block
-  /////////////////////////////////////////////////////////////////////////////////
-
-
 
 }

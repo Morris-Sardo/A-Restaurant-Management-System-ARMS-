@@ -13,3 +13,8 @@ refactor code to make the security higher.
 15/02/2024
 merge into login branch to keep save the project.
 Use loginTest branch to implement test and adding the backend database. 
+
+
+
+17/03/2024
+Add in stock table calories allergene... find way to pop up these pspecifics when mouse or click or pass on pic menu 

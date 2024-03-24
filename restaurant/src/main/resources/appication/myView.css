@@ -4,7 +4,8 @@
 }
 */
 .gradient {
-    -fx-background-color: linear-gradient(to bottom left,#cf431c, rgb(3, 2, 15));
+    -fx-background-color: linear-gradient(to bottom right,#cf431c,rgb(3, 2, 15));
+    
 }
 
 .white-from{
@@ -12,7 +13,7 @@
 }
 
 .root {
-    -fx-background-image: url('./image/MexicanCuisine.jpg');
+    -fx-background-image: url('./image/DarkBackground.png');
     -fx-background-size: cover;
   }
   

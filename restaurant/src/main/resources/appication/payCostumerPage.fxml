@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="137.0" layoutY="72.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="600.0" prefWidth="222.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="600.0" prefWidth="231.0" styleClass="gradient" stylesheets="@myView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane prefHeight="87.0" prefWidth="222.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label layoutX="4.0" layoutY="32.0" prefHeight="19.0" prefWidth="216.0" text="Mex Eat Managment System" textAlignment="JUSTIFY" textFill="WHITE">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="14.0" layoutY="100.0" text="Welcome," textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="username" layoutX="111.0" layoutY="100.0" prefHeight="23.0" prefWidth="86.0" text="Mex Eat" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="menuBtn" layoutX="6.0" layoutY="346.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MENU COSTTUMER" textFill="#f8f8f8" />
+                              <Button fx:id="signOutBtn" layoutX="14.0" layoutY="549.0" mnemonicParsing="false" stylesheets="@MenuDesign.css" textFill="#ebddd7" AnchorPane.bottomAnchor="12.0">
+                                 <graphic>
+                                    <ImageView fx:id="outImage" fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../../../Downloads/sign-out.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="logout" />
+                                    <String fx:value="shadow-drop" />
+                                 </styleClass></Button>
+                              <Label layoutX="61.0" layoutY="559.0" text="Sign Out" textFill="WHITE" AnchorPane.bottomAnchor="22.0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="22.0" layoutY="14.0" prefHeight="600.0" prefWidth="878.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="311.0" prefWidth="845.0" stylesheets="@MenuDesign.css" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0">
+                                 <styleClass>
+                                    <String fx:value="shadow-drop" />
+                                    <String fx:value="radius" />
+                                    <String fx:value="white-background" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="304.0" layoutY="64.0" prefHeight="30.0" prefWidth="181.0" text="Total of Bill to Pay:">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="totalBillToPayField" alignment="CENTER" layoutX="191.0" layoutY="126.0" prefHeight="120.0" prefWidth="427.0" promptText="£0.00">
+                                       <font>
+                                          <Font size="33.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="tableNum" editable="false" layoutX="23.0" layoutY="126.0" prefHeight="32.0" prefWidth="150.0" promptText="Table Number" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="14.0" layoutY="356.0" prefHeight="230.0" prefWidth="845.0" stylesheets="@MenuDesign.css" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="350.0">
+                                 <styleClass>
+                                    <String fx:value="shadow-drop" />
+                                    <String fx:value="radius" />
+                                    <String fx:value="white-background" />
+                                 </styleClass>
+                                 <children>
+                                    <TextField fx:id="firstNameField" layoutX="114.0" layoutY="21.0" prefHeight="26.0" prefWidth="194.0" promptText="First name" />
+                                    <TextField fx:id="cardNumberField" layoutX="114.0" layoutY="58.0" prefHeight="26.0" prefWidth="269.0" promptText="Card number" />
+                                    <TextField fx:id="lastNameField" layoutX="495.0" layoutY="22.0" prefHeight="26.0" prefWidth="194.0" promptText="Last name" />
+                                    <TextField fx:id="ccvField" layoutX="592.0" layoutY="58.0" prefHeight="26.0" prefWidth="98.0" promptText="CCV" />
+                                    <Button fx:id="submitPaymentBtn" layoutX="110.0" layoutY="165.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="589.0" styleClass="invt-btn" text="SUBMINT PAYMENT" AnchorPane.bottomAnchor="25.0" />
+                                    <Button fx:id="clearFieldBtn" layoutX="716.0" layoutY="23.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="122.0" styleClass="invt-btn" text="Clear" AnchorPane.bottomAnchor="181.0" />
+                                    <TextField fx:id="expairedField" layoutX="593.0" layoutY="102.0" prefHeight="26.0" prefWidth="99.0" promptText="MM/YY" />
+                                 </children>
+                              </AnchorPane>
+                              <Separator layoutX="15.0" layoutY="336.0" prefHeight="2.0" prefWidth="848.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
