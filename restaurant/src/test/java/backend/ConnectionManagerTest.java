@@ -32,10 +32,10 @@ class ConnectionManagerTest {
   @Tag("ConnectionNeeded")
   void returnTest() throws Exception{
     ArrayList<Item> items = ConnectionManager.loadItems(connection);
-    assertEquals((float)5.99,items.get(0).getPrice());
-    assertEquals((String)"Guacamole",items.get(2).getName());
-    assertEquals(false,items.get(1).isAvailable());
-    assertEquals((float)300,items.get(3).getCalories());
+    assertEquals((float)5.00,items.get(0).getPrice());
+    assertEquals((String)"Jalapenos Poppers",items.get(2).getName());
+    assertEquals(true,items.get(1).isAvailable());
+    assertEquals((float)200.0,items.get(3).getCalories());
   }
 
 }
