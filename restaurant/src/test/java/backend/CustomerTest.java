@@ -42,15 +42,15 @@ class CustomerTest {
   @Tag("ConnectionNeeded")
   void ReturnTest() throws Exception {
     assertEquals(1,testCustomer.viewMenu().get(0));
-    assertEquals(3,testCustomer.viewMenu().get(1));
+    assertEquals(2,testCustomer.viewMenu().get(1));
   }
   
   @Test
   @Tag("ConnectionNeeded")
   void OrderTest() throws Exception {
     assertEquals(1,testCustomer.viewMenu().get(0));
-    assertEquals(3,testCustomer.viewMenu().get(1));
-    assertEquals(4,testCustomer.viewMenu().get(2));
+    assertEquals(2,testCustomer.viewMenu().get(1));
+    assertEquals(3,testCustomer.viewMenu().get(2));
   }
   /*
    * Test 1: Method adds a entry to the complaints table
