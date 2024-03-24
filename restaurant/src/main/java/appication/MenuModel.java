@@ -53,7 +53,7 @@ public class MenuModel {
    * @param totalAmount the total amount to be inserted.
    * @param tableNumber the table number to be inserted.
    */
-  public static void insertIntoSQLPriceTable(double totalAmount, int tableNumber) {
+  public static void insertIntoSQLPriceTableStaff(double totalAmount, int tableNumber) {
     // SQL query to insert values
     String insertQuery = "INSERT INTO pay (table_number, prize) VALUES (?, ?)";
     // SQL query to update prices
@@ -64,18 +64,21 @@ public class MenuModel {
 
       // Insert total amount
       prepare = connection.prepareStatement(insertQuery);
-      prepare.setDouble(1, tableNumber);
+      prepare.setInt(1, tableNumber);
       prepare.setDouble(2, totalAmount);
       final int rowsInserted = prepare.executeUpdate();
 
       // Update prices
       prepare = connection.prepareStatement(updateQuery);
-      prepare.setDouble(1, totalAmount); // Assuming totalAmount is the new price
+      prepare.setDouble(1, totalAmount);
       prepare.setInt(2, tableNumber);
       int rowsUpdated = prepare.executeUpdate();
 
       if (rowsInserted > 0) {
         System.out.println("Total amount inserted into SQL table successfully!");
+      } else {
+        System.out.println("Total amount failed to insert into SQL table successfully!");
+
       }
       if (rowsUpdated > 0) {
         System.out.println("Prices updated successfully!");
@@ -83,6 +86,17 @@ public class MenuModel {
     } catch (SQLException e) {
       e.printStackTrace();
     } finally {
+      try {
+        if (prepare != null) {
+          prepare.close();
+        }
+        if (connection != null) {
+          connection.close();
+        }
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
     }
+
   }
 }

@@ -74,10 +74,26 @@ public class PayView {
   @FXML
   private TextField tableNumberField;
 
+
+  private int tableNumber;
+
   /**
    * This is a default constructor.
    */
   public PayView() {}
+
+
+  /**
+   * <p>
+   * Constructor for PayCostumerView.
+   * </p>
+   *
+   * @param tableNumber a int
+   */
+  public PayView(int tableNumber) {
+    this.tableNumber = tableNumber;
+  }
+
 
   /**
    * This method start the the pay page scene.
@@ -115,8 +131,6 @@ public class PayView {
     totalBillToPayField.setEditable(false);
     totalBillToPayField.setMouseTransparent(true);
     totalBillToPayField.setFocusTraversable(false);
-
-
   }
 
   /**

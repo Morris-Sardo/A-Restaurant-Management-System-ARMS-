@@ -69,7 +69,7 @@ public class MenuCostumerModel {
 
       // Update prices
       prepare = connection.prepareStatement(updateQuery);
-      prepare.setDouble(1, totalAmount); // Assuming totalAmount is the new price
+      prepare.setDouble(1, totalAmount); 
       prepare.setInt(2, tableNumber);
       int rowsUpdated = prepare.executeUpdate();
 

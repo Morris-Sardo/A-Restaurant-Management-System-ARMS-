@@ -17,6 +17,15 @@ public class MenuController {
   private MenuView menuView;
 
   /**
+   * <p>
+   * Constructor for MenuCostumerController.
+   * </p>
+   */
+  public MenuController() {
+
+  }
+
+  /**
    * This constructor. Is user to inizialise ther controller ogject. It will be used by menu staff
    * view class.
    *
@@ -75,7 +84,7 @@ public class MenuController {
     PayView viewP = new PayView();
     Driver.setScene(viewP.start(), TitlePage.PAY_BILLS_PAGE);
   }
-  
+
   /**
    * Method gets the amount to pay from database and sends it to the pay page for the customer,
    * while redirecting them there.
@@ -83,6 +92,7 @@ public class MenuController {
   public void handlePayBills() {
 
     double totalAmount = menuView.calculateTotalAmount();
+    // System.out.print(menuView.calculateTotalAmount());
     int tableNumber = menuView.getTableNumber();
     MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
     if (menuView.getTableNumber() == 0

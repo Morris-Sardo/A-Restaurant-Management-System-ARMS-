@@ -165,7 +165,7 @@ public class MenuView {
 
   @FXML
   private Button vegetarianUnselectFilterBtn;
-  
+
   @FXML
   private TableView<MenuItem> tableView;
 
@@ -219,7 +219,7 @@ public class MenuView {
 
   @FXML
   private TextField totalLabel;
-  
+
   @FXML
   private TextField tableNumberField;
 
@@ -250,6 +250,7 @@ public class MenuView {
   /**
    * this isniziliaze all button.
    */
+  @SuppressWarnings("unchecked")
   @FXML
   public void initialize() {
     MenuController menuController = new MenuController(this);
@@ -258,7 +259,8 @@ public class MenuView {
     reviewListBtn.setOnAction(event -> menuController.handleReviewList());
     dashboardBtn.setOnAction(event -> menuController.handledashboard());
     kitchenBtn.setOnAction(event -> menuController.handleKitchen());
-    payBtn.setOnAction(event -> menuController.handlePayBillPage());
+    payBtn.setOnAction(event -> menuController.handlePayBills());
+
     vegetarianSelectFilterBtn.setOnAction(event -> handleVetarianSelectFilterFood());
     vegetarianUnselectFilterBtn.setOnAction(event -> handleVegetarianUnselectFilterFood());
     veganSelectFilterBtn.setOnAction(event -> handleVeganSelectFilterFood());
@@ -721,6 +723,7 @@ public class MenuView {
     for (MenuItem item : tableView.getItems()) {
       total += item.getPrice();
     }
+    System.out.print(total);
     return total;
   }
 
