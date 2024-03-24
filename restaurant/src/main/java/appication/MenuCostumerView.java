@@ -2,6 +2,7 @@ package appication;
 
 
 import java.io.IOException;
+import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -222,6 +223,10 @@ public class MenuCostumerView {
   @FXML
   private TextField totalLabel;
 
+  @FXML
+  private Button orderButton;
+
+  private MenuCostumerView viewCM;
 
 
   /**
@@ -273,6 +278,7 @@ public class MenuCostumerView {
     priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
     tableView.getColumns().addAll(productColumn, quantityColumn, priceColumn);
 
+    viewCM = this;
 
   }
 
@@ -477,7 +483,7 @@ public class MenuCostumerView {
   @FXML
   private void handleJalapenos() {
     String dishName = "Jalapeno Poppers";
-    double baseprice = 1;
+    double baseprice = 6.30;
     int quantity = 0;
     try {
       quantity = Integer.parseInt(jalapenosTextField.getText());
@@ -492,7 +498,7 @@ public class MenuCostumerView {
   @FXML
   private void handleChilli() {
     String dishName = "Chilli con Carne";
-    double baseprice = 10;
+    double baseprice = 15;
     int quantity = 0;
     try {
       quantity = Integer.parseInt(chilliTextField.getText());
@@ -507,7 +513,7 @@ public class MenuCostumerView {
   @FXML
   private void handleChicken() {
     String dishName = "Chicken Taquitos";
-    double baseprice = 5;
+    double baseprice = 10;
     int quantity = 0;
     try {
       quantity = Integer.parseInt(chickenTextField.getText());
@@ -522,7 +528,7 @@ public class MenuCostumerView {
   @FXML
   private void handleCorn() {
     String dishName = "Mexican Corn Dip";
-    double baseprice = 3;
+    double baseprice = 9.99;
     int quantity = 0;
     try {
       quantity = Integer.parseInt(cornTextField.getText());
@@ -537,7 +543,7 @@ public class MenuCostumerView {
   @FXML
   private void handleChickenFajitas() {
     String dishName = "Chicken Fajitas";
-    double baseprice = 5.50;
+    double baseprice = 11.11;
     int quantity = 0;
     try {
       quantity = Integer.parseInt(chickenFajitasTextField.getText());
@@ -552,7 +558,7 @@ public class MenuCostumerView {
   @FXML
   private void handleHalloumi() {
     String dishName = "Halloumi Tacos";
-    double baseprice = 5.50;
+    double baseprice = 10.90;
     int quantity = 0;
     try {
       quantity = Integer.parseInt(halloumiTextField.getText());
@@ -567,7 +573,7 @@ public class MenuCostumerView {
   @FXML
   private void handleRice() {
     String dishName = "Mexcian Style Rice";
-    double baseprice = 3.30;
+    double baseprice = 6.10;
     int quantity = 0;
     try {
       quantity = Integer.parseInt(riceTextField.getText());
@@ -582,7 +588,7 @@ public class MenuCostumerView {
   @FXML
   private void handleChurros() {
     String dishName = "Churros";
-    double baseprice = 7;
+    double baseprice = 4.30;
     int quantity = 0;
     try {
       quantity = Integer.parseInt(churrosTextField.getText());
@@ -597,7 +603,7 @@ public class MenuCostumerView {
   @FXML
   private void handleMargarita() {
     String dishName = "Margarita Pie";
-    double baseprice = 7.50;
+    double baseprice = 10.50;
     int quantity = 0;
     try {
       quantity = Integer.parseInt(margaritaTextField.getText());
@@ -612,7 +618,7 @@ public class MenuCostumerView {
   @FXML
   private void handleBread() {
     String dishName = "Pan de Muerto";
-    double baseprice = 3.50;
+    double baseprice = 7;
     int quantity = 0;
     try {
       quantity = Integer.parseInt(breadTextField.getText());
@@ -627,7 +633,7 @@ public class MenuCostumerView {
   @FXML
   private void handleChocolate() {
     String dishName = "Hot Chocolate Pie";
-    double baseprice = 5.50;
+    double baseprice = 6;
     int quantity = 0;
     try {
       quantity = Integer.parseInt(chocolateTextField.getText());
@@ -642,7 +648,7 @@ public class MenuCostumerView {
   @FXML
   private void handleTepache() {
     String dishName = "Tepache";
-    double baseprice = 7;
+    double baseprice = 3;
     int quantity = 0;
     try {
       quantity = Integer.parseInt(tepacheTextField.getText());
@@ -657,7 +663,7 @@ public class MenuCostumerView {
   @FXML
   private void handleCoke() {
     String dishName = "Coke";
-    double baseprice = 2;
+    double baseprice = 1.99;
     int quantity = 0;
     try {
       quantity = Integer.parseInt(cokeTextField.getText());
@@ -672,7 +678,7 @@ public class MenuCostumerView {
   @FXML
   private void handleJarritos() {
     String dishName = "Jarritos";
-    double baseprice = 3.20;
+    double baseprice = 1.50;
     int quantity = 0;
     try {
       quantity = Integer.parseInt(jarritosTextField.getText());
@@ -687,7 +693,7 @@ public class MenuCostumerView {
   @FXML
   private void handleHorchata() {
     String dishName = "Horchata";
-    double baseprice = 6.50;
+    double baseprice = 2.55;
     int quantity = 0;
     try {
       quantity = Integer.parseInt(horchataTextField.getText());
@@ -723,5 +729,87 @@ public class MenuCostumerView {
       total += item.getPrice();
     }
     return total;
+  }
+
+
+  private String getItemNumbers(List<MenuItem> items) {
+    StringBuilder itemNumbers = new StringBuilder();
+    for (MenuItem item : items) {
+      String itemName = item.getName();
+      int quantity = item.getQuantity();
+      for (int i = 0; i < quantity; i++) {
+        switch (itemName) {
+          case "Salsa Verde":
+            itemNumbers.append("1,");
+            break;
+          case "Jalapeno Poppers":
+            itemNumbers.append("3,");
+            break;
+          case "Chilli con Carne":
+            itemNumbers.append("5,");
+            break;
+          case "Chicken Taquitos":
+            itemNumbers.append("2,");
+            break;
+          case "Mexican Corn Dip":
+            itemNumbers.append("4,");
+            break;
+          case "Chicken Fajitas":
+            itemNumbers.append("6,");
+            break;
+          case "Halloumi Tacos":
+            itemNumbers.append("7,");
+            break;
+          case "Mexican Style Rice":
+            itemNumbers.append("8,");
+            break;
+          case "Churros":
+            itemNumbers.append("9,");
+            break;
+          case "Margarita Pie":
+            itemNumbers.append("11,");
+            break;
+          case "Pan de Muerto":
+            itemNumbers.append("10,");
+            break;
+          case "Hot Chocolate Pie":
+            itemNumbers.append("12,");
+            break;
+          case "Tepache":
+            itemNumbers.append("13,");
+            break;
+          case "Coke":
+            itemNumbers.append("14,");
+            break;
+          case "Jarritos":
+            itemNumbers.append("16,");
+            break;
+          case "Horchata":
+            itemNumbers.append("15,");
+            break;
+          default:
+            break;
+        }
+      }
+    }
+    if (itemNumbers.length() > 0) {
+      itemNumbers.deleteCharAt(itemNumbers.length() - 1);
+    }
+    return itemNumbers.toString();
+  }
+
+
+
+  @FXML
+  private void handleOrder() {
+
+    int tableNumber = viewCM.getTableNumber();
+    double totalAmount = viewCM.calculateTotalAmount();
+
+    List<MenuItem> items = tableView.getItems();
+    String itemNumbers = viewCM.getItemNumbers(items);
+
+    MenuCostumerModel.insertIntoOrderTable(tableNumber, itemNumbers, totalAmount);
+
   }
 }

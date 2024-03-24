@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 /**
  * This class is been used to connect the application with the database. The class is not finished
@@ -85,6 +89,69 @@ public class MenuCostumerModel {
           System.out.println("Prices updated successfully!");
         }
       }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      // Close resources
+      try {
+        if (prepare != null) {
+          prepare.close();
+        }
+        if (connection != null) {
+          connection.close();
+        }
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+
+
+  /**
+   * Method to insert into the kitchen order table.
+   * 
+   * @param tableNumber number for the table.
+   * @param items the food items.
+   * @param price the bill.
+   */
+  public static void insertIntoOrderTable(int tableNumber, String items, double price) {
+
+    String insertOrderQuery =
+        "INSERT INTO orders (order_number, table_number, items, price, order_time, status) "
+            + "VALUES (?, ?, ?, ?, ?, ?)";
+
+    String orderSize = "SELECT count(*) FROM orders;";
+
+    // Get the current time
+    LocalTime currentTime = LocalTime.now();
+
+    // Define a custom time formatter
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+
+    // Format the current time using the formatter
+    String orderTime = currentTime.format(formatter);
+
+    int orderNumber = 0;
+
+    try {
+      connection = DataBaseModel.connectToDatabase();
+
+      ResultSet result = connection.prepareStatement(orderSize).executeQuery();
+      while (result.next()) {
+        orderNumber = result.getInt(1) + 1;
+      }
+
+
+      prepare = connection.prepareStatement(insertOrderQuery);
+      prepare.setInt(1, orderNumber);
+      prepare.setInt(2, tableNumber);
+      prepare.setString(3, items);
+      prepare.setDouble(4, price);
+      prepare.setString(5, orderTime);
+      prepare.setString(6, "Requested");
+      prepare.executeUpdate();
+
+      System.out.println("Values inserted into Orders successfully!");
     } catch (SQLException e) {
       e.printStackTrace();
     } finally {
