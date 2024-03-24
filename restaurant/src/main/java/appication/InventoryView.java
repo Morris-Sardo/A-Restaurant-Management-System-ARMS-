@@ -123,7 +123,7 @@ public class InventoryView {
   /**
    * This method start the inventoryPage.
    * 
-   * @return The inventoy scene.
+   * @return The inventory scene.
    */
   public Scene start() {
     Parent root;
