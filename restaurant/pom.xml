@@ -1,24 +1,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>cs2810</groupId>
-  <artifactId>restaurant</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
-  
-  <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
-    </properties>
-
-    <dependencies>
-        <!-- TODO - add a dependency on the PostgreSQL JDBC driver here -->
-        <dependency>
-          <groupId>org.postgresql</groupId>
-          <artifactId>postgresql</artifactId>
-           <version>42.6.0</version>
-         </dependency>
-	<dependency>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>cs2810</groupId>
+	<artifactId>restaurant</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+	</properties>
+	<dependencies>
+		<!-- TODO - add a dependency on the PostgreSQL JDBC driver here -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.6.0</version>
+		</dependency>
+		<!-- New configuration-->
+		<dependency>
+    		<groupId>mysql</groupId>
+    		<artifactId>mysql-connector-java</artifactId>
+   			 <version>8.0.22</version>
+		</dependency>
+		<!--End new Dependency-->
+		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
 			<version>5.10.0</version>
@@ -33,18 +37,15 @@
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-fxml</artifactId>
 			<version>13</version>
-			
-			
 		</dependency>
-		
 		<!-- TestFx4-->
 		<!-- https://mvnrepository.com/artifact/org.testfx/testfx-junit -->
 		<!-- https://mvnrepository.com/artifact/org.testfx/testfx-core -->
 		<dependency>
-    		<groupId>org.testfx</groupId>
-    		<artifactId>testfx-core</artifactId>
-    		<version>4.0.16-alpha</version>
-    		<scope>test</scope>
+			<groupId>org.testfx</groupId>
+			<artifactId>testfx-core</artifactId>
+			<version>4.0.16-alpha</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.assertj</groupId>
@@ -58,16 +59,15 @@
 			<version>4.0.18</version>
 			<scope>test</scope>
 		</dependency>
-		
-			<!--dipendencies for fontaesome -->
-			<dependency>
-    			<groupId>de.jensd</groupId>
-    			<artifactId>fontawesomefx</artifactId>
-    			<version>8.2</version>
-			</dependency>
-			<!--dipendencies for fontaesome -->
-    </dependencies>
-    <build>
+		<!--dipendencies for fontaesome -->
+		<dependency>
+			<groupId>de.jensd</groupId>
+			<artifactId>fontawesomefx</artifactId>
+			<version>8.2</version>
+		</dependency>
+		<!--dipendencies for fontaesome -->
+	</dependencies>
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -161,7 +161,6 @@
 					<release>11</release>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.openjfx</groupId>
 				<artifactId>javafx-maven-plugin</artifactId>
@@ -183,6 +182,24 @@
 					</execution>
 				</executions>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.3.1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>javadoc</goal>
+						</goals>
+						<configuration>
+							<failOnWarnings>false</failOnWarnings>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>3.3.0</version>
@@ -208,6 +225,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-  
 </project>

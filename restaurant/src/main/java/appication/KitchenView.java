@@ -20,9 +20,8 @@ import javafx.scene.layout.AnchorPane;
  * the features of the kitchen order and stock page.
  * 
  * @author papap, jonathan, michael
- *
+ * @version $Id: Team Project 15.
  */
-
 public class KitchenView {
 
   @FXML
@@ -153,6 +152,11 @@ public class KitchenView {
   private ObservableList<Stock> list = StockModel.getStockTable();
 
   private ObservableList<Kitchen> list2 = KitchenModel.getOrdersTable();
+
+  /**
+   * This is a default constructor.
+   */
+  public KitchenView() {}
 
   /**
    * This method start the kitchen.

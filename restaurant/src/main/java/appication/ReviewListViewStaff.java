@@ -13,13 +13,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 /**
  * This class is view of review list page aviable for the staff. The main difference of the review
  * list the costumer is the staff has more access then a costumer.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: Team Project 15.
  */
-
 public class ReviewListViewStaff {
-  
+
   @FXML
   private Button kitchenBtn;
 
@@ -53,8 +52,13 @@ public class ReviewListViewStaff {
 
 
   /**
+   * This is a deafault constructor.
+   */
+  public ReviewListViewStaff() {}
+
+  /**
    * This method starts the scene of reviewListPage for staff.
-   * 
+   *
    * @return the revie list scene.
    */
   public Scene start() {
@@ -87,7 +91,7 @@ public class ReviewListViewStaff {
     nameTable.setCellValueFactory(new PropertyValueFactory<>("name"));
     starsTable.setCellValueFactory(new PropertyValueFactory<>("stars"));
     commentTable.setCellValueFactory(new PropertyValueFactory<>("comment"));
-    
+
 
     tableView.setItems(ReviewListModel.getRating1Table());
   }

@@ -29,13 +29,15 @@ import javafx.util.Duration;
  * if a costumer it can go straight to manu page.
  *
  * @author papap
- *
+ * @version $Id: Team Project 15.
  */
 public class MyView {
 
+
+
   /**
-   * Creates & returns the scene to be used for this page.
-   * 
+   * Creates and returns the scene to be used for this page.
+   *
    * @return The Login scene.
    */
   public Scene start() {
@@ -50,8 +52,14 @@ public class MyView {
     }
   }
 
+
   /**
-   * Creates the relevant controller & sets up button actions.
+   * This is a deafault cosnstructor.
+   */
+  public MyView() {}
+
+  /**
+   * Creates the relevant controller and sets up button actions.
    */
   @FXML
   public void initialize() {
@@ -187,7 +195,7 @@ public class MyView {
 
   /**
    * This method is use to make ther password in login page visible or invisible.
-   * 
+   *
    * @param event When the user wants to see their password
    */
   @FXML
@@ -206,7 +214,7 @@ public class MyView {
 
   /**
    * This method is used to make visible or invisible the password in sign up form.
-   * 
+   *
    * @param event When the user wants to see their password
    */
   @FXML
@@ -225,7 +233,7 @@ public class MyView {
 
   /**
    * This method is used to make visible or invisible change password field in change password form.
-   * 
+   *
    * @param event When the user wants to see their password
    */
   @FXML
@@ -243,7 +251,7 @@ public class MyView {
 
   /**
    * This method is used to swapt the Scene when the button login is pressed.
-   * 
+   *
    * @return button.
    */
   public Button getSiButton() {
@@ -255,7 +263,7 @@ public class MyView {
   /**
    * This method is used to make visible or invisible confirm change password field in change
    * password form.
-   * 
+   *
    * @param event When the user wants to see their password
    */
   @FXML
@@ -274,7 +282,7 @@ public class MyView {
 
   /**
    * This method is used to make visible or invisible the secret answer field in sign up form.
-   * 
+   *
    * @param event When the user wants to see their secret answer
    */
   @FXML
@@ -292,7 +300,7 @@ public class MyView {
 
   /**
    * This method is used to get thew new password in new password field.
-   * 
+   *
    * @return new password.
    */
   public String getNewPassword() {
@@ -305,7 +313,7 @@ public class MyView {
 
   /**
    * This method is used to get the password confirm new password field.
-   * 
+   *
    * @return confirmation new password.
    */
   public String getConfirmationNewPassword() {
@@ -319,10 +327,9 @@ public class MyView {
 
   /**
    * This method is used to get the username in username field.
-   * 
+   *
    * @return username.
    */
-
   public String getUserNameLogin() {
     if (siUsername == null) {
       return "";
@@ -333,7 +340,7 @@ public class MyView {
 
   /**
    * This methods is used gto get the password in login form.
-   * 
+   *
    * @return password.
    */
   public String getPassowrdLogin() {
@@ -343,12 +350,10 @@ public class MyView {
     return siPassword.getText();
   }
 
-  //////////////////////////////////////////////////////////////////////////////////////
-  // FROM HERE.
 
   /**
    * This method is used tto get the unsernam in Sign up form.
-   * 
+   *
    * @return username
    */
   public String getUserNameRegistration() {
@@ -362,7 +367,7 @@ public class MyView {
 
   /**
    * This method is used to get the password for sign up form.
-   * 
+   *
    * @return password.
    */
   public String getPassowrdRegistration() {
@@ -410,7 +415,6 @@ public class MyView {
 
   /**
    * This method used to store the question list that will printout by GUI.
-   * 
    */
   @SuppressWarnings("unchecked") // his supper the warming coused by ObservableList.
   public void regQuestionList() {
@@ -428,7 +432,9 @@ public class MyView {
   }
 
   /**
-   * This method is use to get the question from form cubox.
+   * This Method is used to get the secret question.
+   *
+   * @return the question.
    */
   public Object getSelectedQuestion() {
 
@@ -438,7 +444,7 @@ public class MyView {
 
   /**
    * This method is used to get the answer in the registration form and used.
-   * 
+   *
    * @return the answer.
    */
   public String getAnswer() {
@@ -451,7 +457,7 @@ public class MyView {
 
   /**
    * This method is use to get the answer typed into feald ForgotPass form.
-   * 
+   *
    * @return answer.
    */
   public String getSnswerChangePassword() {
@@ -466,7 +472,11 @@ public class MyView {
   }
 
   /**
-   * This methos pup up the Blank field login.
+   * This methodi is used to pop up a alert text.
+   *
+   * @param type of alert.
+   * @param title used has head line of alert.
+   * @param contentText tis the text message.
    */
   public void alert(AlertType type, String title, String contentText) {
 
@@ -481,6 +491,8 @@ public class MyView {
 
   /**
    * this method will switch form when forgot password will press.
+   *
+   * @param question a {@link java.lang.String} object
    */
   public void switchForgotPass(String question) {
     emptyLoginFields();
@@ -537,7 +549,7 @@ public class MyView {
 
   /**
    * This method is responsible of translate the windows between login and register.
-   * 
+   *
    * @param event start the movement of sliding window.
    */
   public void switchForm(ActionEvent event) {
@@ -593,8 +605,6 @@ public class MyView {
 
   /**
    * This method move the sideForm to the defauld side after confimed a new user.
-   * 
-   * 
    */
   public void switFormAfterSignUp() {
     TranslateTransition slider = new TranslateTransition();

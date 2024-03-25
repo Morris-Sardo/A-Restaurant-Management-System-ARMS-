@@ -5,9 +5,9 @@ import javafx.scene.control.Alert.AlertType;
 
 /**
  * This class is used has controller for the login page sign up and forgot and change passeword.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: Team Project 15.
  */
 public class LoginController {
 
@@ -23,7 +23,7 @@ public class LoginController {
 
   /**
    * This is the constructor is controlloer between GUI nad Model.
-   * 
+   *
    * @param view the objected form view that handle all the buttons' event.
    */
   public LoginController(MyView view) {
