@@ -13,7 +13,7 @@ import javafx.beans.property.StringProperty;
  * This class is used to implement the the table view of the stock page.
  * 
  * @author papap, jonathan
- *
+ * @version $Id: Team Project 15.
  */
 public class Stock {
 

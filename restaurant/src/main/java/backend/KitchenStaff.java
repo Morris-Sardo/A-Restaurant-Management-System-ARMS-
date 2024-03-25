@@ -16,10 +16,21 @@ public class KitchenStaff {
   int kitchenID;
   @SuppressWarnings("unused")
   private Connection connection = null;
-  
+
+
   /**
-   * Finds the list of orders marked as confirmed, based on how long ago they were made.
-   * @return the list of the information for orders
+   * This is a default constructor.
+   */
+  public KitchenStaff() {}
+
+  /**
+   * This method is used to to get the order into database after the status of oreder change to
+   * confirmed.
+   * 
+   * @return the order.
+   * @throws PSQLException is used ot handle no connection in SQL.
+   * @throws SQLException is used to handle exception in postgresql.
+   * @throws DatabaseInformationException is used to handle mismatch with data.
    */
   // Will also need refactoring and talking with frontend in the future
   public ArrayList<String> viewOrders()
@@ -36,12 +47,13 @@ public class KitchenStaff {
     }
     return results;
   }
-  
+
   /**
    * Sets an order as ready to collect.
-   * @param orderNumber the ID number of the order 
+   * 
+   * @param orderNumber the ID number of the order
    */
   public void readyOrder(int orderNumber) {
-    
+
   }
 }

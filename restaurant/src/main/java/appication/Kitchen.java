@@ -14,7 +14,7 @@ import javafx.beans.property.StringProperty;
  * This class is used to show the table of the list of orders in the kitchen page.
  * 
  * @author papap, jonathan
- *
+ * @version $Id: Team Project 15.
  */
 public class Kitchen {
 

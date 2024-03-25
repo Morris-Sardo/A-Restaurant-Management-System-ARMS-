@@ -16,7 +16,7 @@ import javafx.collections.ObservableList;
  * This class is used to interact with database.
  * 
  * @author papap, jonathan
- *
+ * @version $Id:Team Project 15.
  */
 public class KitchenModel {
 

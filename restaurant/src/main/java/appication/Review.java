@@ -7,20 +7,29 @@ import javafx.beans.property.StringProperty;
 
 /**
  * This class hold the data for review to display on the table.
- * 
- * @author papap
  *
+ * @author papap,Zain
+ * @version $Id: $Team Project 15.
  */
 public class Review {
 
-  private IntegerProperty id;
-  private StringProperty name;
-  private IntegerProperty stars;
+  /** ID. */
+  private IntegerProperty id; 
+  /** name. */
+  private StringProperty name; 
+  /** stars. */
+  private IntegerProperty stars; 
+  /** comment. */
   private StringProperty comment;
 
   /**
+   * This is a default constructor.
+   */
+  public Review() {}
+
+  /**
    * This method set values id in id_Property.
-   * 
+   *
    * @param value id.
    */
   public void setID(Integer value) {
@@ -29,7 +38,7 @@ public class Review {
 
   /**
    * This method get value stored into the id_Property.
-   * 
+   *
    * @return id.
    */
   public Integer getID() {
@@ -38,7 +47,7 @@ public class Review {
 
   /**
    * This method create istantiate a simpleintegerProperty id.
-   * 
+   *
    * @return return id.
    */
   public IntegerProperty id_() {
@@ -51,7 +60,7 @@ public class Review {
 
   /**
    * This method set values name/nickname in name_Property.
-   * 
+   *
    * @param value is the name/nickname.
    */
   public void setName(String value) {
@@ -61,7 +70,7 @@ public class Review {
 
   /**
    * This methods get valuse name/niclname store onto name_Proprety..
-   * 
+   *
    * @return string name costumer.
    */
   public String getName() {
@@ -70,7 +79,7 @@ public class Review {
 
   /**
    * This methods istantiate object name that has all the name propertys.
-   * 
+   *
    * @return property the hold the value of the name.
    */
   public StringProperty nameProperty() {
@@ -83,7 +92,7 @@ public class Review {
 
   /**
    * This methods set start that costumer give in they review.
-   * 
+   *
    * @param value is the starts.
    */
   public void setStars(Integer value) {
@@ -92,7 +101,7 @@ public class Review {
 
   /**
    * This method get start sotred into startsproperty.
-   * 
+   *
    * @return the value that hold starts.
    */
   public int getSars() {
@@ -101,7 +110,7 @@ public class Review {
 
   /**
    * This methods has stored the stars into property.
-   * 
+   *
    * @return value that hold starts.
    */
   public IntegerProperty starsProperty() {
@@ -114,7 +123,7 @@ public class Review {
 
   /**
    * This method set comment done onto commmentporperty.
-   * 
+   *
    * @param value hold the comment.
    */
   public void setComment(String value) {
@@ -123,7 +132,7 @@ public class Review {
 
   /**
    * This methods.
-   * 
+   *
    * @return methods.
    */
   public String getComment() {
@@ -132,7 +141,7 @@ public class Review {
 
   /**
    * This methods return the the comment sotred into property.
-   * 
+   *
    * @return value that hold the cooment.
    */
   public StringProperty commentProperty() {

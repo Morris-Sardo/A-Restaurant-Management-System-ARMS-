@@ -11,7 +11,7 @@ import org.postgresql.util.PSQLException;
 /**
  * Contains the methods needed for the 'Customer' role.
  * 
- * @author xaviernoel
+ * @author xaviernoel, papa.
  */
 public class Waiter {
   int waiterID;
@@ -20,6 +20,7 @@ public class Waiter {
 
   /**
    * The constructor for the Waiter object.
+   * 
    * @param connection the connection to the database that will be used
    * @param waiterID the ID number of the Waiter
    */
@@ -34,9 +35,12 @@ public class Waiter {
   }
 
   /**
-   * Finds all items on the menu.
+   * This method is used get the menu of point of the waiter.
    * 
-   * @return the IDs of all items on the menu
+   * @return the items food.
+   * @throws PSQLException is check if there is connection.
+   * @throws SQLException is check if there is connection.
+   * @throws DatabaseInformationException the check if date match with the one into the database.
    */
   public ArrayList<Integer> viewMenu()
       throws PSQLException, SQLException, DatabaseInformationException {
@@ -57,7 +61,8 @@ public class Waiter {
   /**
    * Toggles the availability of the item.
    * 
-   * @param item the item to be changed
+   * @param item the item to be changed.
+   * @throws SQLException is check if there is connection.
    */
   public void changeMenu(int item) throws SQLException {
     Predicate<Item> findItem = p -> item == p.getItemNumber();
@@ -72,7 +77,10 @@ public class Waiter {
   /**
    * Finds all orders with 'Requested' status.
    * 
-   * @return the list of the information for orders
+   * @return the list of the information for orders.
+   * @throws PSQLException is check if there is connection.
+   * @throws SQLException is check if there is connection.
+   * @throws DatabaseInformationException the check if date match with the one into the database.
    */
   // Temporary, final version will need an agreement on how data should be communicated.
   public ArrayList<String> viewOrders()
@@ -95,6 +103,9 @@ public class Waiter {
    * Changes the status of the order to 'Confirmed'.
    * 
    * @param orderNumber the number of the order to be changed
+   * @throws PSQLException is check if there is connection.
+   * @throws SQLException is check if there is connection.
+   * @throws DatabaseInformationException the check if date match with the one into the database.
    */
   public void confirmOrder(int orderNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
@@ -106,10 +117,14 @@ public class Waiter {
   }
 
   /**
-   * Changes the status of the order to 'Completed'.
+   * /** Changes the status of the order to 'Completed'.
    * 
-   * @param orderNumber the number of the order to be changed
+   * @param orderNumber the number of the order to be changed.
+   * @throws PSQLException is check if there is connection.
+   * @throws SQLException is check if there is connection.
+   * @throws DatabaseInformationException the check if date match with the one into the database.
    */
+
   public void deliveredOrder(int orderNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
     String change = "UPDATE orders SET STATUS = 'Completed' WHERE order_number = "
@@ -122,7 +137,10 @@ public class Waiter {
   /**
    * Changes the status of this order to 'Canceled'.
    * 
-   * @param orderNumber the number of the order to be changed
+   * @param orderNumber the number of the order to be changed.
+   * @throws PSQLException is check if there is connection.
+   * @throws SQLException is check if there is connection.
+   * @throws DatabaseInformationException the check if date match with the one into the database.
    */
   public void cancelOrder(int orderNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
@@ -136,7 +154,10 @@ public class Waiter {
   /**
    * Finds all orders with 'Ready' status.
    * 
-   * @return the list of the information for orders
+   * @return the list of the information for orders.
+   * @throws PSQLException is check if there is connection.
+   * @throws SQLException is check if there is connection.
+   * @throws DatabaseInformationException the check if date match with the one into the database.
    */
   public ArrayList<String> readyOrders()
       throws PSQLException, SQLException, DatabaseInformationException {
@@ -156,7 +177,10 @@ public class Waiter {
   /**
    * Finds all bill requests.
    * 
-   * @return the list of the information for bill requests
+   * @return the list of the information for bill requests.
+   * @throws PSQLException is check if there is connection.
+   * @throws SQLException is check if there is connection.
+   * @throws DatabaseInformationException the check if date match with the one into the database.
    */
   public ArrayList<String> viewBillRequests()
       throws PSQLException, SQLException, DatabaseInformationException {
@@ -175,7 +199,10 @@ public class Waiter {
   /**
    * Finds all complaints.
    * 
-   * @return the list of table numbers with a current complaint
+   * @return the list of table numbers with a current complaint.
+   * @throws PSQLException is check if there is connection.
+   * @throws SQLException is check if there is connection.
+   * @throws DatabaseInformationException the check if date match with the one into the database.
    */
   public ArrayList<Integer> viewComplaints()
       throws PSQLException, SQLException, DatabaseInformationException {
@@ -191,11 +218,14 @@ public class Waiter {
   }
 
   /**
-   * Sets the status of a bill to 'Completed'.
+   * * Sets the status of a bill to 'Completed'.
    * 
    * @param tableNumber the table number of the bill to be changed
+   * @throws PSQLException is check if there is connection.
+   * @throws SQLException is check if there is connection.
+   * @throws DatabaseInformationException the check if date match with the one into the database.
    */
-  public void concludeBill(int tableNumber) 
+  public void concludeBill(int tableNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
     String change = "UPDATE bills SET status = 'Completed' WHERE (table_number = "
         + Integer.toString(tableNumber) + " AND status == 'Requested'";
@@ -208,8 +238,11 @@ public class Waiter {
    * Sets the status of a complaint to 'Completed'.
    * 
    * @param tableNumber the table number of the complaint to be changed
+   * @throws PSQLException is check if there is connection.
+   * @throws SQLException is check if there is connection.
+   * @throws DatabaseInformationException the check if date match with the one into the database.
    */
-  public void concludeComplaint(int tableNumber) 
+  public void concludeComplaint(int tableNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
     String change = "UPDATE complaints SET status = 'Completed' WHERE (table_number = "
         + Integer.toString(tableNumber) + " AND status == 'Requested'";

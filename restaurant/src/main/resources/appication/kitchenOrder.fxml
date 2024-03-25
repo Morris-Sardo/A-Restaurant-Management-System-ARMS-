@@ -97,7 +97,7 @@
         </BorderPane>
       </children>
     </AnchorPane>
-      <AnchorPane fx:id="stockForm" prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane fx:id="stockForm" prefHeight="200.0" prefWidth="200.0" visible="false">
          <children>
             <BorderPane layoutX="137.0" layoutY="72.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <left>

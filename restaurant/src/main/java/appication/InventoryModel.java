@@ -10,9 +10,9 @@ import javafx.collections.ObservableList;
 /**
  * This class interact with inventory database and GUI. When user manimpulate data on GUI interface
  * will be sent to database.
- * 
- * @author papap
  *
+ * @author papap
+ * @version $Id: Team Project 15.
  */
 public class InventoryModel {
 
@@ -26,9 +26,15 @@ public class InventoryModel {
   private static Integer Stock;
   private static Float Price;
 
+
+  /**
+   * This is a default construct.
+   */
+  public InventoryModel() {}
+
   /**
    * This method create Inventory table into Database.
-   * 
+   *
    * @throws SQLException if there is not conection.
    */
   public static void createInventoryTable() throws SQLException {
@@ -48,7 +54,7 @@ public class InventoryModel {
 
   /**
    * This method Inventory table into Database. this method is just for purpose testing.
-   * 
+   *
    * @throws SQLException if there is not conection.
    */
   public static void dropTable() throws SQLException {
@@ -67,8 +73,9 @@ public class InventoryModel {
   /**
    * This method drop a primary key Database. It will be use every timec user want delet an item
    * into table.
-   * 
-   * @throws SQLException if there is not conection.
+   *
+   * @param productId a {@link java.lang.Integer} object
+   * @return a boolean values.
    */
   public static boolean deleteItems(Integer productId) {
 
@@ -95,6 +102,13 @@ public class InventoryModel {
   /**
    * This mehod connect add into inventory database an items. This method is used when user want add
    * a new items in invenotry table.
+   *
+   * @param productID a {@link java.lang.Integer} object
+   * @param productName a {@link java.lang.String} object
+   * @param productType a {@link java.lang.Object} object
+   * @param productStock a {@link java.lang.Integer} object
+   * @param productPrize a {@link java.lang.Float} object
+   * @return a boolean boolean values.
    */
   public static boolean handleSubmitButtonClicked(Integer productID, String productName,
       Object productType, Integer productStock, Float productPrize) {
@@ -140,7 +154,7 @@ public class InventoryModel {
   /**
    * This method is use to get all data of inventory table from database to populate the interface
    * inventory table.
-   * 
+   *
    * @return table with column populated.
    */
   public static ObservableList<Inventory> getInventoryTable() {
@@ -179,9 +193,12 @@ public class InventoryModel {
 
   /**
    * This method is used to update the items. In default the product ID wont be possible to update.
-   * 
+   *
    * @param productId is id of product.
    * @param newName is name of product.
+   * @param newType a {@link java.lang.String} object
+   * @param newStock a {@link java.lang.Integer} object
+   * @param newPrize a {@link java.lang.Float} object
    * @return update is result od updating od product name, type, stock and prize.
    */
   public static boolean handleUpdate(Integer productId, String newName, String newType,
@@ -216,7 +233,7 @@ public class InventoryModel {
 
   /**
    * This main run the class as individual. It is used just for testing.
-   * 
+   *
    * @param args string.
    */
   public static void main(String[] args) {
