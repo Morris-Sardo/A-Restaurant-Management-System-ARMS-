@@ -86,34 +86,29 @@ public class PayCostumerModel {
    */
   public static boolean completeTransaction(Integer tableNumber, String nameOnCard, String cardNumber, String expiryDate, String securityPin) {
 
-
-
     String query = "Update pay Set Price = 0.0 Where table_number = ?";
+    String insertQuery = "INSERT INTO Pay(table_number, nameOnCard, cardNumber, expiryDate, securityPin) VALUES (?, ?, ?, ?, ?)";
 
     try (Connection connection = DataBaseModel.connectToDatabase();
-        PreparedStatement statement = connection.prepareStatement(query)) {
+        PreparedStatement updateStatement = connection.prepareStatement(query); 
+        PreparedStatement insertStatement = connection.prepareStatement(insertQuery)) {
 
-      statement.setInt(1, tableNumber);
-      statement.executeUpdate();
+      updateStatement.setInt(1, tableNumber);
+      updateStatement.executeUpdate();
+      
+      insertStatement.setInt(1,  tableNumber);
+      insertStatement.setString(2, nameOnCard);
+      insertStatement.setString(3, cardNumber);
+      insertStatement.setString(4, expiryDate);
+      insertStatement.setString(5, securityPin);
+      insertStatement.executeUpdate();
+      
       return true;
     } catch (SQLException e) {
       return false;
     }
-    
-    String insertQuery = "INSET INTO Pay(table_number, nameOnCard, cardNumber, expiryDate, securityPin) VALUES (?, ?, ?, ?, ?)";
-    
-    try (Connection connection = DataBaseModel.connectToDatabase();
-        PreparedStatement statement = connection.prepareStatement(insertQuery)) {
-      statement.setInt(1,  tableNumber);
-      statement.setString(2, nameOnCard);
-      statement.setString(3, cardNumber);
-      statement.setString(4, expiryDate);
-      statement.setString(5, securityPin);
-      
-      statement.executeUpdate();
-    }
+ }
 
-  }
 
 
   /**
