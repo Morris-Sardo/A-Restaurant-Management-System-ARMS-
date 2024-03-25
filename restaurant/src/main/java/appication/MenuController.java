@@ -9,7 +9,7 @@ import javafx.scene.control.Alert.AlertType;
 /**
  * This is class does of controller of all button event between beteen GUI and MODEL.
  *
- * @author papap
+ * @author papap, Zain
  * @version $Id: Team Project 15.
  */
 public class MenuController {

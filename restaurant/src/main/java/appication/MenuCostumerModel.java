@@ -12,7 +12,7 @@ import java.util.Date;
 /**
  * This class is been used to connect the application with the database. The class is not finished
  * 
- * @author papap and Zain
+ * @author papap, Zain
  * @version $Id: Team Project 15.
  */
 public class MenuCostumerModel {

@@ -22,7 +22,7 @@ import javafx.scene.layout.AnchorPane;
  * This page is the view of menu page for only costumer. This class has less privilege of the menu
  * staff.
  * 
- * @author papap and Zain
+ * @author papap, Zain
  * @version $Id: Team Project 15.
  */
 public class MenuCostumerView {

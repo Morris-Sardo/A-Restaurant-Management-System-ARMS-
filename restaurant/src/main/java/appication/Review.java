@@ -8,7 +8,7 @@ import javafx.beans.property.StringProperty;
 /**
  * This class hold the data for review to display on the table.
  *
- * @author papap
+ * @author papap,Zain
  * @version $Id: $Team Project 15.
  */
 public class Review {
