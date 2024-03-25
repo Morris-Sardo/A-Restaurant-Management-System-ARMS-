@@ -234,6 +234,11 @@ public class KitchenView {
 
   }
 
+  /**
+   * Set table items in the ui.
+   * 
+   * @param list yo.
+   */
   public void setTableItems(ObservableList<Stock> list) {
     kitchenOrderTable1.setItems(list);
   }

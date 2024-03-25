@@ -13,9 +13,13 @@ import javafx.beans.property.StringProperty;
  */
 public class Review {
 
-  private IntegerProperty id;
-  private StringProperty name;
-  private IntegerProperty stars;
+  /** ID. */
+  private IntegerProperty id; 
+  /** name. */
+  private StringProperty name; 
+  /** stars. */
+  private IntegerProperty stars; 
+  /** comment. */
   private StringProperty comment;
 
   /**
