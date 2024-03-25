@@ -1,6 +1,7 @@
 package appication;
 
 import java.io.IOException;
+import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -223,7 +224,10 @@ public class MenuView {
   @FXML
   private TextField tableNumberField;
 
+  @FXML
+  private Button orderButton;
 
+  private MenuView viewSM;
 
   /**
    * This is a default constructor.
@@ -276,6 +280,7 @@ public class MenuView {
     priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
     tableView.getColumns().addAll(productColumn, quantityColumn, priceColumn);
 
+    viewSM = this;
   }
 
 
@@ -726,5 +731,85 @@ public class MenuView {
     System.out.print(total);
     return total;
   }
+
+  private String getItemNumbersStaff(List<MenuItem> items) {
+    StringBuilder itemNumbers = new StringBuilder();
+    for (MenuItem item : items) {
+      String itemName = item.getName();
+      int quantity = item.getQuantity();
+      for (int i = 0; i < quantity; i++) {
+        switch (itemName) {
+          case "Salsa Verde":
+            itemNumbers.append("1,");
+            break;
+          case "Jalapeno Poppers":
+            itemNumbers.append("3,");
+            break;
+          case "Chilli con Carne":
+            itemNumbers.append("5,");
+            break;
+          case "Chicken Taquitos":
+            itemNumbers.append("2,");
+            break;
+          case "Mexican Corn Dip":
+            itemNumbers.append("4,");
+            break;
+          case "Chicken Fajitas":
+            itemNumbers.append("6,");
+            break;
+          case "Halloumi Tacos":
+            itemNumbers.append("7,");
+            break;
+          case "Mexican Style Rice":
+            itemNumbers.append("8,");
+            break;
+          case "Churros":
+            itemNumbers.append("9,");
+            break;
+          case "Margarita Pie":
+            itemNumbers.append("11,");
+            break;
+          case "Pan de Muerto":
+            itemNumbers.append("10,");
+            break;
+          case "Hot Chocolate Pie":
+            itemNumbers.append("12,");
+            break;
+          case "Tepache":
+            itemNumbers.append("13,");
+            break;
+          case "Coke":
+            itemNumbers.append("14,");
+            break;
+          case "Jarritos":
+            itemNumbers.append("16,");
+            break;
+          case "Horchata":
+            itemNumbers.append("15,");
+            break;
+          default:
+            break;
+        }
+      }
+    }
+    if (itemNumbers.length() > 0) {
+      itemNumbers.deleteCharAt(itemNumbers.length() - 1);
+    }
+    return itemNumbers.toString();
+  }
+
+  @FXML
+  private void handleOrder() {
+
+    int tableNumber = viewSM.getTableNumber();
+    double totalAmount = viewSM.calculateTotalAmount();
+
+    List<MenuItem> items = tableView.getItems();
+    String itemNumbers = viewSM.getItemNumbersStaff(items);
+
+    MenuCostumerModel.insertIntoOrderTable(tableNumber, itemNumbers, totalAmount);
+
+  }
+
 
 }

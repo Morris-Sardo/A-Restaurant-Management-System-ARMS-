@@ -484,18 +484,21 @@
 						<AnchorPane layoutX="14.0" layoutY="277.0"
 							prefHeight="170.0" prefWidth="324.0">
 							<children>
-								<Button fx:id="removeButton" layoutX="53.0"
-									layoutY="124.0" mnemonicParsing="false" text="remove"
-									onAction="#handleRemove" />
-								<Button fx:id="receiptButton" layoutX="218.0"
-									layoutY="124.0" mnemonicParsing="false" text="receipt" />
-								<Button fx:id="payBtn" layoutX="50.0" layoutY="72.0"
-									mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0"
-									text="Pay" />
-								<TextField fx:id="totalLabel" layoutX="111.0"
-									layoutY="22.0" />
-								<Label layoutX="57.0" layoutY="27.0" prefHeight="16.0"
-									prefWidth="47.0" text="Total" />
+								<Button fx:id="removeButton" layoutX="50.0"
+                                    layoutY="137.0" mnemonicParsing="false"
+                                    onAction="#handleRemove" text="remove" />
+                                <Button fx:id="receiptButton" layoutX="228.0"
+                                    layoutY="137.0" mnemonicParsing="false" text="receipt" />
+                                <Button fx:id="payBtn" layoutX="47.0" layoutY="97.0"
+                                    mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0"
+                                    text="Pay" />
+                                <TextField fx:id="totalLabel" layoutX="111.0"
+                                    layoutY="22.0" />
+                                <Label layoutX="57.0" layoutY="27.0" prefHeight="16.0"
+                                    prefWidth="47.0" text="Total" textFill="WHITE" />
+                                <Button fx:id="orderButton" layoutX="47.0" layoutY="59.0"
+                                    mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0"
+                                    text="Order" onAction = "#handleOrder"/>
 							</children>
 						</AnchorPane>
 						<Button fx:id="veganSelectFilterBtn" layoutX="58.0"
