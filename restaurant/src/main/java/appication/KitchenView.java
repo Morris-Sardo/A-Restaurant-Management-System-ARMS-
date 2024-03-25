@@ -311,7 +311,7 @@ public class KitchenView {
   }
 
   /**
-   * 
+   * aa.
    * 
    * @return tags for food.
    */
@@ -419,19 +419,22 @@ public class KitchenView {
 
 
   }
-  
-  public void stockClearBtn() {
-	    //.setDisable(false);
-	    stockItmNum.setText("");
-	    stockItmName.setText("");
-	    stockQuantity.setText("");
-	    stockAllergy.setText("");
-	    stockCal.setText("");
-	    stockAvailable.setText("");
-	    stockTags.setText("");
-	    stockPrice.setText("");
 
-	  }
+  /**
+   * Clears all the text fields if populated with table rows.
+   */
+  public void stockClearBtn() {
+    // .setDisable(false);
+    stockItmNum.setText("");
+    stockItmName.setText("");
+    stockQuantity.setText("");
+    stockAllergy.setText("");
+    stockCal.setText("");
+    stockAvailable.setText("");
+    stockTags.setText("");
+    stockPrice.setText("");
+
+  }
 
 
 }
