@@ -82,17 +82,16 @@
 					<dependency>
 						<groupId>com.puppycrawl.tools</groupId>
 						<artifactId>checkstyle</artifactId>
-						<!-- Specify version to match that used by Eclipse
-						2023-03 -->
-						<version>10.9.3</version>
-					</dependency>
-				</dependencies>
-				<configuration>
-					<violationSeverity>warning</violationSeverity>
-					<failsOnError>True</failsOnError>
-					<configLocation>/src/main/resources/googlePlus.xml</configLocation>
-				</configuration>
-				<!-- We need to run the checkstyle:check goal in the validate
+						<!-- Specify version to match that used by Eclipse 2023-03 -->
+            <version>10.9.3</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <violationSeverity>warning</violationSeverity>
+          <failsOnError>True</failsOnError>
+          <configLocation>/src/main/resources/googlePlus.xml</configLocation>
+        </configuration>
+        <!-- We need to run the checkstyle:check goal in the validate
 				phase as
         the 
           default phase is verify which is run after test
@@ -100,20 +99,20 @@
             if developers generally just use "mvn test" prior to pushing changes, 
             checkstyle would not run as verify occurs after the test phase 
         -->
-				<executions>
-					<execution>
-						<id>validate</id>
-						<phase>validate</phase>
-						<goals>
-							<goal>check</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<!-- eclEmma 3.17 (Jacoco for Eclipse) uses version 0.8.10, so
+        <executions>
+          <execution>
+            <id>validate</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <!-- eclEmma 3.17 (Jacoco for Eclipse) uses version 0.8.10, so
 				we should as well -->
 				<version>0.8.10</version>
 				<executions>

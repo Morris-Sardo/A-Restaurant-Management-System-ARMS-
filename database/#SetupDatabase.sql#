@@ -14,8 +14,7 @@ price float(24) NOT NULL,
 allergies nchar(100) NOT NULL,
 calories float(24) NOT NULL,
 available boolean NOT NULL,
-tags nchar(100) NOT NULL,
-stock int NOT NULL);
+tags nchar(100) NOT NULL);
 
 CREATE TABLE complaints
 (customer_id int,
@@ -32,13 +31,5 @@ status nchar(20) NOT NULL);
 CREATE TABLE tables
 (table_number int PRIMARY KEY,
 available boolean NOT NULL);
-
-CREATE TABLE Pay (
-Table_Number INTEGER PRIMARY KEY, 
-Price NUMERIC(10,2),
-nameOnCard VARCHAR(100),
-cardNumber VARCHAR(20),
-expiryDate DATE,
-securityPin VARCHAR(10));
 
 

@@ -14,7 +14,6 @@ public class LoginController {
 
 
   private MyView view;
-  @SuppressWarnings("unused") // suppress wamrming about not use.
   private DataBaseModel connection;
 
   private String currentUsername;
@@ -29,13 +28,14 @@ public class LoginController {
   public LoginController(MyView view) {
     this.view = view;
     this.connection = Driver.getDBconnection();
+
   }
 
   /**
    * Handles the login, if the user enters incorrect login information (Username or Password) it
    * will pop up an error message otherwise it will log the user in.
    */
-  public void hanldeLogin() {
+  public void handleLogin() {
     if (view.getUserNameLogin().isEmpty() || view.getPassowrdLogin().isEmpty()) {
       AlertText.alert(AlertType.ERROR, "Error Message", "Please fill all the blank fields");
 
@@ -44,8 +44,6 @@ public class LoginController {
     } else {
       try {
         if (DataBaseModel.getRightLogin(view.getUserNameLogin(), view.getPassowrdLogin())) {
-
-
           DashBoardMyView mainPage = new DashBoardMyView();
           DashBoardController mainPageController = new DashBoardController(mainPage);
           Driver.setScene(mainPage.start(), TitlePage.DASHBOARD_PAGE);
