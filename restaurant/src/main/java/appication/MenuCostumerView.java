@@ -810,6 +810,7 @@ public class MenuCostumerView {
     String itemNumbers = viewCM.getItemNumbers(items);
 
     MenuCostumerModel.insertIntoOrderTable(tableNumber, itemNumbers, totalAmount);
+    AlertText.alert(AlertType.INFORMATION, "SUCCESS", "Order Placed!");
 
   }
 }
