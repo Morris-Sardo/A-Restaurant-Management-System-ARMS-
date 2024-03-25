@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appication.KitchenView">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appication.KitchenView">
   <children>
     <AnchorPane fx:id="kitchenForm" prefHeight="200.0" prefWidth="200.0">
       <children>
@@ -160,9 +160,9 @@
                               <Font name="French Script MT" size="75.0" />
                            </font>
                         </Label>
-                        <Button fx:id="stockClear" layoutX="369.0" layoutY="526.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="CLEAR" textFill="#f8f8f8" />
+                        <Button fx:id="stockClear" layoutX="369.0" layoutY="526.0" mnemonicParsing="false" onAction="#stockClearBtn" prefHeight="40.0" prefWidth="121.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="CLEAR" textFill="#f8f8f8" />
                         <Button fx:id="stockUpdate" layoutX="203.0" layoutY="526.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="UPDATE " textFill="#f8f8f8" />
-                        <Button fx:id="stockSelect" layoutX="40.0" layoutY="526.0" mnemonicParsing="false" onAction="#stockSelect" prefHeight="40.0" prefWidth="121.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="SELECT" textFill="#f8f8f8" />
+                        <Button fx:id="stockSelect" layoutX="40.0" layoutY="526.0" mnemonicParsing="false" onAction="#handleSelect" prefHeight="40.0" prefWidth="121.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="SELECT" textFill="#f8f8f8" />
                         <TableView fx:id="kitchenOrderTable1" layoutX="10.0" layoutY="140.0" prefHeight="265.0" prefWidth="856.0">
                            <columns>
                               <TableColumn fx:id="orderNums1" prefWidth="69.0" text="Item Num." />
@@ -175,14 +175,14 @@
                               <TableColumn fx:id="colStock" prefWidth="51.0" text="Stock" />
                            </columns>
                         </TableView>
-                        <TextField fx:id="stockItmNum" layoutX="20.0" layoutY="444.0" prefHeight="26.0" prefWidth="68.0" promptText="Item No." />
-                        <TextField fx:id="stockItmName" layoutX="101.0" layoutY="444.0" prefHeight="26.0" prefWidth="106.0" promptText="Item Name" />
-                        <TextField fx:id="stockAllergy" layoutX="295.0" layoutY="444.0" prefHeight="26.0" prefWidth="122.0" promptText="Allergies" />
-                        <TextField fx:id="stockCal" layoutX="422.0" layoutY="444.0" prefHeight="26.0" prefWidth="106.0" promptText="Callories" />
-                        <TextField fx:id="stockAvailable" layoutX="536.0" layoutY="444.0" prefHeight="26.0" prefWidth="106.0" promptText="Available" />
-                        <TextField fx:id="stockTags" layoutX="652.0" layoutY="444.0" prefHeight="26.0" prefWidth="151.0" promptText="Tags" />
-                        <TextField fx:id="stockQuantity" layoutX="810.0" layoutY="444.0" prefHeight="26.0" prefWidth="54.0" promptText="Stock" />
-                        <TextField fx:id="stockPrice" layoutX="217.0" layoutY="444.0" prefHeight="26.0" prefWidth="72.0" promptText="(£) Price" />
+                        <TextField fx:id="StockItmNum" layoutX="20.0" layoutY="444.0" prefHeight="26.0" prefWidth="68.0" promptText="Item No." />
+                        <TextField fx:id="StockItmName" layoutX="101.0" layoutY="444.0" prefHeight="26.0" prefWidth="106.0" promptText="Item Name" />
+                        <TextField fx:id="StockAllergy" layoutX="295.0" layoutY="444.0" prefHeight="26.0" prefWidth="122.0" promptText="Allergies" />
+                        <TextField fx:id="StockCal" layoutX="422.0" layoutY="444.0" prefHeight="26.0" prefWidth="106.0" promptText="Callories" />
+                        <TextField fx:id="StockAvailable" layoutX="536.0" layoutY="444.0" prefHeight="26.0" prefWidth="106.0" promptText="Available" />
+                        <TextField fx:id="StockTags" layoutX="652.0" layoutY="444.0" prefHeight="26.0" prefWidth="151.0" promptText="Tags" />
+                        <TextField fx:id="StockQuantity" layoutX="810.0" layoutY="444.0" prefHeight="26.0" prefWidth="54.0" promptText="Stock" />
+                        <TextField fx:id="StockPrice" layoutX="217.0" layoutY="444.0" prefHeight="26.0" prefWidth="72.0" promptText="(£) Price" />
                      </children>
                   </AnchorPane>
                </center>

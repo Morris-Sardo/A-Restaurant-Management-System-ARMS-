@@ -235,7 +235,7 @@ public class KitchenView {
   }
 
   /**
-   * This method is used when uesr selelct items from table GUI.
+   * This method is used when user select items from table GUI.
    * 
    * @return table list.
    */
@@ -311,7 +311,7 @@ public class KitchenView {
   }
 
   /**
-   * ff.
+   * 
    * 
    * @return tags for food.
    */
@@ -325,7 +325,7 @@ public class KitchenView {
   }
 
   /**
-   * This method is user to get the type of product using cumbox in the GUI.
+   * This method is user to get the type of product using combobox in the GUI.
    * 
    * @return type of food.
    */
@@ -396,7 +396,7 @@ public class KitchenView {
 
 
   /**
-   * abc.
+   * This method handles the stock select button functionality.
    */
   @FXML
   public void stockSelect() {
@@ -419,6 +419,19 @@ public class KitchenView {
 
 
   }
+  
+  public void stockClearBtn() {
+	    //.setDisable(false);
+	    stockItmNum.setText("");
+	    stockItmName.setText("");
+	    stockQuantity.setText("");
+	    stockAllergy.setText("");
+	    stockCal.setText("");
+	    stockAvailable.setText("");
+	    stockTags.setText("");
+	    stockPrice.setText("");
+
+	  }
 
 
 }
