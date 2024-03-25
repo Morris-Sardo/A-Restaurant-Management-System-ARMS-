@@ -22,7 +22,9 @@ public class MenuCostumerController {
 
 
   /**
-   * <p>Constructor for MenuCostumerController.</p>
+   * <p>
+   * Constructor for MenuCostumerController.
+   * </p>
    */
   public MenuCostumerController() {
 
@@ -74,12 +76,14 @@ public class MenuCostumerController {
   public void handlePayBills() {
 
     double totalAmount = viewCM.calculateTotalAmount();
-    int tableNumber = viewCM.getTableNumber();
-    MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
-    if (viewCM.getTableNumber() == 0
+    // int tableNumber = viewCM.getTableNumber();
+    // MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
+    if (viewCM.getTableNumber() == -1
         || PayCostumerModel.getPrizeFormTable(viewCM.getTableNumber()) == null) {
       AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
     } else {
+      int tableNumber = viewCM.getTableNumber();
+      MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
       // load the fxml file (does not have a FX controller)
       FXMLLoader loader = new FXMLLoader(getClass().getResource("payCostumerPage.fxml"));
       // Give the Controller to be, the table number

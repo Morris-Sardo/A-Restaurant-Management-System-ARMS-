@@ -93,12 +93,14 @@ public class MenuController {
 
     double totalAmount = menuView.calculateTotalAmount();
     // System.out.print(menuView.calculateTotalAmount());
-    int tableNumber = menuView.getTableNumber();
-    MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
+    // int tableNumber = menuView.getTableNumber();
+    // MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
     if (menuView.getTableNumber() == 0
         || PayCostumerModel.getPrizeFormTable(menuView.getTableNumber()) == null) {
       AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
     } else {
+      int tableNumber = menuView.getTableNumber();
+      MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
       // load the fxml file (does not have a FX controller)
       FXMLLoader loader = new FXMLLoader(getClass().getResource("payCostumerPage.fxml"));
       // Give the Controller to be, the table number
