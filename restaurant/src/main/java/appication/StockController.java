@@ -8,13 +8,6 @@ import javafx.scene.control.Alert.AlertType;
  * @author jonathan, micheal
  */
 public class StockController {
-  private KitchenView viewK;
-
-  public StockController(KitchenView viewK) {
-    this.viewK = viewK;
-
-
-  }
 
 }
 
