@@ -723,6 +723,11 @@ public class MenuCostumerView {
   }
 
 
+  /**
+   * Calculates the totalAmount.
+   * 
+   * @return the bill.
+   */
   double calculateTotalAmount() {
     double total = 0.0;
     for (MenuItem item : tableView.getItems()) {
@@ -732,6 +737,12 @@ public class MenuCostumerView {
   }
 
 
+  /**
+   * Getter for the ItemNumbers.
+   * 
+   * @param items Menu Order.
+   * @return ItemNumbers.
+   */
   private String getItemNumbers(List<MenuItem> items) {
     StringBuilder itemNumbers = new StringBuilder();
     for (MenuItem item : items) {
