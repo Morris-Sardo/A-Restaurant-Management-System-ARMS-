@@ -12,8 +12,8 @@ import javafx.beans.property.StringProperty;
 /**
  * This class is used to implement the the table view of the stock page.
  * 
- * @author papap, jonathan
- * @version $Id: Team Project 15.
+ * @author papap, jonathan, michael
+ *
  */
 public class Stock {
 
@@ -22,7 +22,7 @@ public class Stock {
   private FloatProperty price;
   private StringProperty allergies;
   private IntegerProperty calories;
-  private BooleanProperty available;
+  private StringProperty available;
   private StringProperty tags;
   private IntegerProperty stock;
 
@@ -190,8 +190,8 @@ public class Stock {
    * 
    * @return The value of available
    */
-  public boolean isAvailable() {
-    return (available != null) && available.get();
+  public String isAvailable() {
+	  return (available == null) ? null : available.get();
   }
 
   /**
@@ -199,7 +199,7 @@ public class Stock {
    * 
    * @param value The value to set.
    */
-  public void setAvailable(boolean value) {
+  public void setAvailable(String value) {
     available().set(value);
   }
 
@@ -209,9 +209,9 @@ public class Stock {
    * 
    * @return The available property.
    */
-  public BooleanProperty available() {
+  public StringProperty available() {
     if (available == null) {
-      available = new SimpleBooleanProperty(this, "available");
+      available = new SimpleStringProperty(this, "available");
     }
     return available;
   }

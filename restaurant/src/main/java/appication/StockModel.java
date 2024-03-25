@@ -11,7 +11,7 @@ import javafx.collections.ObservableList;
  * This class interacts with the stock database and GUI. When a user manipulates data on the GUI
  * interface, it will be sent to the database.
  * 
- * @author jonathan
+ * @author jonathan, michael
  */
 public class StockModel {
 
@@ -25,7 +25,7 @@ public class StockModel {
   private static Float price;
   private static String allergies;
   private static Integer calories;
-  private static Boolean available;
+  private static String available;
   private static String tags;
   private static Integer stock;
 
@@ -50,7 +50,7 @@ public class StockModel {
         price = result.getFloat("price");
         allergies = result.getString("allergies");
         calories = result.getInt("calories");
-        available = result.getBoolean("available");
+        available = result.getString("available");
         tags = result.getString("tags");
         stock = result.getInt("stock");
 
@@ -73,5 +73,36 @@ public class StockModel {
     }
     return membersTable;
   }
+  
+  public static boolean stockUpdate(String itemName, Float price, String allergies, Integer calories,
+		  String available, String tags, Integer stock, Integer itemNum) {
+	    // Define the SQL query to update the product name
+	    String sql = "UPDATE items SET item_name = ?, price = ?,  "
+	        + "allergies = ?, calories = ?, available = ?, tags = ?, stock = ? WHERE item_number = ?";
 
+	    // Try-with-resources statement to auto-close resources
+	    try (Connection conn = DataBaseModel.connectToDatabase();
+	        PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+	      // Set the parameters for the prepared statement
+	      pstmt.setString(1, itemName);
+	      pstmt.setFloat(2, price);
+	      pstmt.setString(3, allergies);
+	      pstmt.setInt(4, calories);
+	      pstmt.setString(5, available);
+	      pstmt.setString(6, tags);
+	      pstmt.setInt(7, stock);
+	      pstmt.setInt(8, itemNum);
+
+	      // Execute the update
+	      int affectedRows = pstmt.executeUpdate();
+
+	      // Return true if the update was successful (one row affected)
+	      return affectedRows == 1;
+	    } catch (SQLException e) {
+	      System.err.println("Update failed: " + e.getMessage());
+	      return false;
+	    }
+	  }
 }
+

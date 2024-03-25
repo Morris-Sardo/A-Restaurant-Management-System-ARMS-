@@ -20,8 +20,9 @@ import javafx.scene.layout.AnchorPane;
  * the features of the kitchen order and stock page.
  * 
  * @author papap, jonathan, michael
- * @version $Id: Team Project 15.
+ *
  */
+
 public class KitchenView {
 
   @FXML
@@ -154,11 +155,6 @@ public class KitchenView {
   private ObservableList<Kitchen> list2 = KitchenModel.getOrdersTable();
 
   /**
-   * This is a default constructor.
-   */
-  public KitchenView() {}
-
-  /**
    * This method start the kitchen.
    * 
    * @return The kitchen scene.
@@ -234,11 +230,6 @@ public class KitchenView {
 
   }
 
-  /**
-   * Set table items in the ui.
-   * 
-   * @param list yo.
-   */
   public void setTableItems(ObservableList<Stock> list) {
     kitchenOrderTable1.setItems(list);
   }
@@ -320,7 +311,7 @@ public class KitchenView {
   }
 
   /**
-   * aa.
+   * 
    * 
    * @return tags for food.
    */
@@ -373,14 +364,14 @@ public class KitchenView {
    * @return prize.
    */
 
-  public float getstockPrice() {
+  public Float getstockPrice() {
     if (stockPrice == null) {
-      return -1;
+      return -1f;
     } else {
       try {
         return Float.parseFloat(stockPrice.getText());
       } catch (Exception e) {
-        return -1;
+        return -1f;
       }
     }
   }
@@ -390,12 +381,12 @@ public class KitchenView {
    * 
    * @return calories
    */
-  public float getstockCal() {
+  public Integer getstockCal() {
     if (stockCal == null) {
       return -1;
     } else {
       try {
-        return Float.parseFloat(stockCal.getText());
+        return Integer.parseInt(stockCal.getText());
       } catch (Exception e) {
         return -1;
       }
@@ -428,22 +419,19 @@ public class KitchenView {
 
 
   }
-
-  /**
-   * Clears all the text fields if populated with table rows.
-   */
+  
   public void stockClearBtn() {
-    // .setDisable(false);
-    stockItmNum.setText("");
-    stockItmName.setText("");
-    stockQuantity.setText("");
-    stockAllergy.setText("");
-    stockCal.setText("");
-    stockAvailable.setText("");
-    stockTags.setText("");
-    stockPrice.setText("");
+	    //.setDisable(false);
+	    stockItmNum.setText("");
+	    stockItmName.setText("");
+	    stockQuantity.setText("");
+	    stockAllergy.setText("");
+	    stockCal.setText("");
+	    stockAvailable.setText("");
+	    stockTags.setText("");
+	    stockPrice.setText("");
 
-  }
+	  }
 
 
 }
