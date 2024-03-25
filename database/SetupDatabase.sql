@@ -32,4 +32,12 @@ CREATE TABLE tables
 (table_number int PRIMARY KEY,
 available boolean NOT NULL);
 
+CREATE TABLE Pay (
+Table_Number INTEGER PRIMARY KEY, 
+Price NUMERIC(10,2),
+nameOnCard VARCHAR(100),
+cardNumber VARCHAR(20),
+expiryDate DATE,
+securityPin VARCHAR(10));
+
 
