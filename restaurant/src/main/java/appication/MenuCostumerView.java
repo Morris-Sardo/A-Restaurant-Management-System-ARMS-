@@ -814,15 +814,15 @@ public class MenuCostumerView {
   @FXML
   private void handleOrder() {
     // Integer tableNumber = viewCM.getTableNumber();
+
+    Integer tableNumber = viewCM.getTableNumber();
+    double totalAmount = viewCM.calculateTotalAmount();
+    List<MenuItem> items = tableView.getItems();
+    String itemNumbers = viewCM.getItemNumbers(items);
     if (viewCM.getTableNumber() == -1
         || PayCostumerModel.getPrizeFormTable(viewCM.getTableNumber()) == null) {
       AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
     } else {
-      Integer tableNumber = viewCM.getTableNumber();
-      double totalAmount = viewCM.calculateTotalAmount();
-      List<MenuItem> items = tableView.getItems();
-      String itemNumbers = viewCM.getItemNumbers(items);
-
       MenuCostumerModel.insertIntoOrderTable(tableNumber, itemNumbers, totalAmount);
 
       AlertText.alert(AlertType.INFORMATION, "SUCCESS", "Order Placed!");

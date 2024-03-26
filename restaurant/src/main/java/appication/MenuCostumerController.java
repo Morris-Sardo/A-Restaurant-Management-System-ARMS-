@@ -84,23 +84,9 @@ public class MenuCostumerController {
     } else {
       int tableNumber = viewCM.getTableNumber();
       MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
-      // load the fxml file (does not have a FX controller)
-      FXMLLoader loader = new FXMLLoader(getClass().getResource("payCostumerPage.fxml"));
-      // Give the Controller to be, the table number
-      PayCostumerView viewPC = new PayCostumerView(viewCM.getTableNumber());
-      // Finish loading by giving the Parent a FX controller (the view class)
-      loader.setController(viewPC);
-      Parent root;
-      try {
-        // Load the page.
-        root = loader.load();
-        Driver.setScene(new Scene(root, 1100, 600), TitlePage.PAY_BILLS_PAGE);
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
+
     }
   }
-
 
 
 }
