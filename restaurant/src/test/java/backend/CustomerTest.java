@@ -14,8 +14,8 @@ class CustomerTest {
 
   @BeforeAll
   static void setUpBeforeClass() throws Exception {
-    testCustomer = new Customer(1, ConnectionManager.connectToDatabase());
-  }
+    testCustomer = new Customer(ConnectionManager.connectToDatabase());
+    testCustomer.setCustomerID(1);  }
   
   @AfterAll
   static void runAfterAll() throws Exception {

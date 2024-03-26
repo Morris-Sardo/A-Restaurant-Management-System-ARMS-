@@ -17,20 +17,13 @@ import org.postgresql.util.PSQLException;
 
 public class ConnectionManager {
 
-
   /**
-   * This is a default contructor.
-   */
-  public ConnectionManager() {}
-
-
-  /**
-   * This method create a connection eith database.
+   * Creates a new connection to the database.
    * 
-   * @return connection.
-   * @throws SQLException is excetpion throws if there is not connection.
+   * @return the connection created
    */
-  public static Connection connectToDatabase() throws SQLException {
+  public static Connection connectToDatabase()
+      throws SQLException {
     Connection connection = null;
     connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/teamproject15",
         "teamproject15", "quogai");
@@ -38,15 +31,12 @@ public class ConnectionManager {
 
   }
 
-
   /**
-   * This method select all the items in the item table.
+   * Creates an ArrayList of Item objects corresponding to every item in the item table of the
+   * database.
    * 
-   * @param connection with database.
-   * @return a table.
-   * @throws SQLException exception trhoew if there is not connection.
-   * @throws PSQLException exception throw is there is not connection.
-   * @throws DatabaseInformationException exception throw is some method does not work properly.
+   * @param connection the connection to the database
+   * @return the ArrayList of Item objects
    */
   public static ArrayList<Item> loadItems(Connection connection)
       throws SQLException, PSQLException, DatabaseInformationException {
@@ -68,3 +58,4 @@ public class ConnectionManager {
     return results;
   }
 }
+
