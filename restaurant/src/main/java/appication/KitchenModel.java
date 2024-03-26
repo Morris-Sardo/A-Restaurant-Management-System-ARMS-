@@ -1,126 +1,110 @@
 package appication;
 
-
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
+import javafx.beans.property.FloatProperty;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  * This class is used to interact with database.
- *
- * @author papap
+ * 
+ * @author papap, jonathan
  * @version $Id:Team Project 15.
  */
 public class KitchenModel {
 
-  /**
-   * This is a default constructor.
-   */
-  public KitchenModel() {}
-  // private static Connection connection;
-  // private static PreparedStatement prepare;
-  //
-  //
-  // /**
-  // * Create the Food table.
-  // *
-  // */
-  // public static void createFoodTable() throws SQLException {
-  // System.out.println("Creating login table");
-  //
-  // connection = DataBaseModel.connectToDatabase();
-  //
-  //
-  //
-  // try (PreparedStatement statement = connection.prepareStatement(
-  // "CREATE TABLE Food (\n" + "nameFood varchar(20) PRIMARY KEY, \n" + "calories int, \n"
-  // + "allergies varchar(50)," + "prize Numeric(10,2)," + "stock Integer);");) {
-  // statement.execute();
-  // }
-  // }
-  //
-  //
-  // /**
-  // * This method Drop Food table into Database. this method is just for purpose testing.
-  // *
-  // * @throws SQLException if there is not conection.
-  // */
-  // public static void dropTable() throws SQLException {
-  //
-  // System.out.println("Drop table");
-  //
-  // connection = DataBaseModel.connectToDatabase();
-  //
-  //
-  // try (PreparedStatement statement = connection.prepareStatement("Drop Table Food");) {
-  // statement.executeUpdate();
-  // }
-  //
-  // }
-  //
-  //
-  // /**
-  // * Inserts a new line of characters into a string after every N characters.
-  // *
-  // * @param text The original text to be formatted.
-  // * @param interval The interval (number of characters) after which to insert a new line.
-  // * @return The formatted text with new lines.
-  // */
-  // private static String insertNewLines(String text, int interval) {
-  // StringBuilder sb = new StringBuilder(text);
-  //
-  // int i = interval;
-  // while (i < sb.length()) {
-  // sb.insert(i, "\n");
-  // i += interval + 1; // Move past the inserted newline character
-  // }
-  //
-  // return sb.toString();
-  // }
-  //
-  // /**
-  // * This method is used to add a new review into database.
-  // */
-  // public static void populateTable(String nameFood, Integer calories, String allergies, Float
-  // prize,
-  // Integer stock) {
-  //
-  //
-  // // Split the comment into multiple lines after every 10 characters
-  // String formattedReview = insertNewLines(allergies, 10);
-  //
-  // String insertQuery =
-  // "INSERT INTO Food (nameFood, calories, allergies, prize, stock ) VALUES (?, ?, ?, ?, ?)";
-  //
-  //
-  //
-  // try {
-  // connection = DataBaseModel.connectToDatabase();
-  // prepare = connection.prepareStatement(insertQuery);
-  // prepare.setString(1, nameFood);
-  // prepare.setInt(2, calories);
-  //
-  // prepare.setString(3, formattedReview);
-  // prepare.setFloat(4, prize);
-  // prepare.setInt(5, stock);
-  // prepare.execute();
-  //
-  //
-  //
-  // } catch (SQLException e) {
-  // e.printStackTrace();
-  //
-  //
-  // }
-  // }
-  //
-  // /**
-  // * This main run the class as individual. It is used just for testing.
-  // *
-  // * @param args string.
-  // */
-  // public static void main(String[] args) {
-  // // dropTable();
-  // // createFoodTable();
-  // populateTable("Pizza", 250, "Cheese, Tomato, Dough", 12.99f, 20);
-  // populateTable("Burger", 300, "Beef, Lettuce, Bun", 9.99f, 15);
-  // }
+  private static Connection connection;
+  private static PreparedStatement prepare;
 
+  private static ResultSet result;
+
+  private static Integer orderNum;
+  private static Integer tableNum;
+  private static String orderTime;
+  private static Float price;
+  private static String items;
+  private static String status;
+
+  /**
+   * This method is used to get all the data of the orders table from the database to populate the
+   * interface Kitchen Orders page table.
+   * 
+   * @return table with all the columns populated.
+   */
+  public static ObservableList<Kitchen> getOrdersTable() {
+
+    ObservableList<Kitchen> membersTable = FXCollections.observableArrayList();
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      String query = "SELECT * FROM orders;";
+      prepare = connection.prepareStatement(query);
+      result = prepare.executeQuery();
+
+      while (result.next()) {
+        orderNum = result.getInt("order_number");
+        tableNum = result.getInt("table_number");
+        orderTime = result.getString("order_time");
+        price = result.getFloat("price");
+        items = result.getString("items");
+        status = result.getString("status");
+
+        Kitchen kitchenP = new Kitchen();
+        kitchenP.setOrderNum(orderNum);
+        kitchenP.setTableNum(tableNum);
+        kitchenP.setOrderTime(orderTime);
+        kitchenP.setPrice(price);
+        kitchenP.setItems(items);
+        kitchenP.setStatus(status);
+
+        membersTable.add(kitchenP);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+
+    }
+    return membersTable;
+  }
+
+  /**
+   * This updates the data (status) for the row.
+   * 
+   * @param status c.
+   * @param orderNumber this.
+   * @return ee.
+   */
+  public static boolean kitchenUpdate(Integer orderNumber, String status) {
+    // Define the SQL query to update the product name
+    String sql = "UPDATE orders SET status = ? " + "WHERE order_number = ?";
+
+    // Try-with-resources statement to auto-close resources
+    try (Connection conn = DataBaseModel.connectToDatabase();
+        PreparedStatement pstmt = conn.prepareStatement(sql)) {
+      
+      System.out.println(orderNumber);
+      System.out.println(status);
+
+      // Set the parameters for the prepared statement
+      pstmt.setString(1, status);
+      pstmt.setInt(2, orderNumber);
+
+      // Execute the update
+      int affectedRows = pstmt.executeUpdate();
+
+      // Return true if the update was successful (one row affected)
+      return affectedRows == 1;
+    } catch (SQLException e) {
+      System.err.println("Update failed: " + e.getMessage());
+      return false;
+    }
+  }
 }
+
+

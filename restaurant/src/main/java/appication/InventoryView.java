@@ -18,8 +18,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 /**
- * This class is the GUI interface of inventory page. This class inizialize all the feature of the
- * invenotry page.
+ * This class is the GUI interface of inventory page. This class initialise all the feature of the
+ * inventory page.
  *
  * @author papap
  * @version $Id: Team Project 15.
@@ -119,17 +119,10 @@ public class InventoryView {
 
   private String[] typeProductList = {type1, type2, type3, type4, type5};
 
-
-
   /**
-   * This is a default constructor.
-   */
-  public InventoryView() {}
-
-  /**
-   * This method start the inventoryPage.
-   *
-   * @return The inventoy scene.
+   * Returns the scene.
+   * 
+   * @return scene
    */
   public Scene start() {
     Parent root;
@@ -354,8 +347,8 @@ public class InventoryView {
 
 
   /**
-   * This method is used whwn user change mind to update of add new item so will will clean up the
-   * flelds and set product Id changebla again..
+   * This method is used when user change mind to update of add new item so will will clean up the
+   * fields and set product Id changebla again..
    */
   public void setAllFieldCleanButton() {
     productIdField.setDisable(false);
