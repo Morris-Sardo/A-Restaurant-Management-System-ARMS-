@@ -1,5 +1,11 @@
 package appication;
 
+import java.io.IOException;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert.AlertType;
+
 /**
  * This is class does of controller of all button event between beteen GUI and MODEL.
  *
@@ -9,6 +15,15 @@ package appication;
 public class MenuController {
 
   private MenuView menuView;
+
+  /**
+   * <p>
+   * Constructor for MenuCostumerController.
+   * </p>
+   */
+  public MenuController() {
+
+  }
 
   /**
    * This constructor. Is user to inizialise ther controller ogject. It will be used by menu staff
@@ -68,11 +83,26 @@ public class MenuController {
   void handlePayBillPage() {
     PayView viewP = new PayView();
     Driver.setScene(viewP.start(), TitlePage.PAY_BILLS_PAGE);
-
-
-    ;
   }
 
+  /**
+   * Method gets the amount to pay from database and sends it to the pay page for the customer,
+   * while redirecting them there.
+   */
+  public void handlePayBills() {
 
+    double totalAmount = menuView.calculateTotalAmount();
+    // System.out.print(menuView.calculateTotalAmount());
+    int tableNumber = menuView.getTableNumber();
+    MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
+    if (menuView.getTableNumber() == 0
+        || PayCostumerModel.getPrizeFormTable(menuView.getTableNumber()) == null) {
+      AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
+    } else {
+      PayCostumerView viewPC = new PayCostumerView(menuView.getTableNumber());
+      MenuModel.insertIntoSQLPriceTableStaff(totalAmount, tableNumber);
+    }
+
+  }
 
 }

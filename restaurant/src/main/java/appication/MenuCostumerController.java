@@ -8,8 +8,8 @@ import javafx.scene.control.Alert.AlertType;
 
 /**
  * This class is the controller of menu page for costumer.
- *
- * @author papap
+ * 
+ * @author papap, Zain
  * @version $Id: Team Project 15.
  */
 public class MenuCostumerController {
@@ -17,12 +17,14 @@ public class MenuCostumerController {
   private MenuCostumerView viewCM;
   // private DataBaseModel connection;
 
-  //private Float prize;
+  // private Float prize;
 
 
 
   /**
-   * <p>Constructor for MenuCostumerController.</p>
+   * <p>
+   * Constructor for MenuCostumerController.
+   * </p>
    */
   public MenuCostumerController() {
 
@@ -73,12 +75,16 @@ public class MenuCostumerController {
    */
   public void handlePayBills() {
 
-
-
+    double totalAmount = viewCM.calculateTotalAmount();
+    // int tableNumber = viewCM.getTableNumber();
+    // MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
     if (viewCM.getTableNumber() == -1
         || PayCostumerModel.getPrizeFormTable(viewCM.getTableNumber()) == null) {
       AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
     } else {
+      int tableNumber = viewCM.getTableNumber();
+      
+      MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
       // load the fxml file (does not have a FX controller)
       FXMLLoader loader = new FXMLLoader(getClass().getResource("payCostumerPage.fxml"));
       // Give the Controller to be, the table number
