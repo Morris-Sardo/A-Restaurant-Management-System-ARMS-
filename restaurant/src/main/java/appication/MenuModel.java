@@ -55,6 +55,7 @@ public class MenuModel {
    * @return Boolean value.
    */
   public static Boolean setAvailable() {
+    // this.
     String query = "SELECT available FROM items WHERE item_number = 1";
     try {
       connection = DataBaseModel.connectToDatabase();
