@@ -77,9 +77,9 @@
                     <Font name="French Script MT" size="75.0" />
                   </font>
                 </Label>
-                        <Button layoutX="743.0" layoutY="200.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="DELIVERED" textFill="#f8f8f8" />
-                        <Button layoutX="743.0" layoutY="254.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="ACCEPT ORDER" textFill="#f8f8f8" />
-                        <Button layoutX="743.0" layoutY="308.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="CANCEL ORDER" textFill="#f8f8f8" />
+                        <Button fx:id="kitchenUpdate" layoutX="732.0" layoutY="200.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="132.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="UPDATE STATUS" textFill="#f8f8f8" />
+                        <Button fx:id="kitchenSelect" layoutX="735.0" layoutY="254.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="SELECT" textFill="#f8f8f8" />
+                        <Button fx:id="kitchenClear" layoutX="735.0" layoutY="308.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="CLEAR" textFill="#f8f8f8" />
                         <TableView fx:id="kitchenOrderTable" layoutX="39.0" layoutY="140.0" prefHeight="431.0" prefWidth="683.0">
                           <columns>
                             <TableColumn fx:id="orderNums" prefWidth="75.0" text="Order n." />
@@ -90,7 +90,9 @@
                               <TableColumn fx:id="status" prefWidth="113.0" text="Status" />
                           </columns>
                         </TableView>
-                        <Button fx:id="stockBtn" layoutX="743.0" layoutY="364.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="122.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="STOCK " textFill="#f8f8f8" />
+                        <Button fx:id="stockBtn" layoutX="735.0" layoutY="364.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="STOCK " textFill="#f8f8f8" />
+                        <TextField fx:id="kitchenField" layoutX="738.0" layoutY="160.0" prefHeight="25.0" prefWidth="124.0" promptText="Status" />
+                        <TextField fx:id="orderNum" layoutX="738.0" layoutY="128.0" prefHeight="25.0" prefWidth="124.0" promptText="Order n." />
               </children>
             </AnchorPane>
           </center>
