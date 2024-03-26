@@ -57,7 +57,20 @@ public class FeatureTableTest {
     }
   }
 
+  @Test
+  public void testAllocateTable() throws SQLException, DatabaseInformationException {
+    // Assuming table 3 is initially available, attempt to allocate it
+    featureTable.allocateTable(3);
 
+    // Verification: Check if table 3 is now marked as not available
+    String checkTableAvailableSQL = "SELECT available FROM tables WHERE table_number = 3";
+    try (var pstmt = connection.prepareStatement(checkTableAvailableSQL)) {
+      try (var rs = pstmt.executeQuery()) {
+        assertTrue(rs.next(), "Table 3 not found.");
+        assertFalse(rs.getBoolean("available"), "Table 3 should be marked as not available.");
+      }
+    }
+  }
 
   @AfterEach
   void tearDown() throws SQLException {
