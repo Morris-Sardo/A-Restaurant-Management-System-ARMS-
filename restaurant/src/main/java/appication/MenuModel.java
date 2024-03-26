@@ -56,6 +56,8 @@ public class MenuModel {
    * @param tableNumber the table number to be inserted.
    */
   public static void insertIntoSQLPriceTableStaff(double totalAmount, int tableNumber) {
+    // SQL query to check if row exists
+    String selectQuery = "SELECT * FROM pay WHERE table_number = ?";
     // SQL query to insert values
     String insertQuery = "INSERT INTO pay (table_number, prize) VALUES (?, ?)";
     // SQL query to update prices
@@ -64,30 +66,32 @@ public class MenuModel {
     try {
       connection = DataBaseModel.connectToDatabase();
 
-      // Insert total amount
-      prepare = connection.prepareStatement(insertQuery);
+      // Check if row exists
+      prepare = connection.prepareStatement(selectQuery);
       prepare.setInt(1, tableNumber);
-      prepare.setDouble(2, totalAmount);
-      final int rowsInserted = prepare.executeUpdate();
+      ResultSet resultSet = prepare.executeQuery();
 
-      // Update prices
-      prepare = connection.prepareStatement(updateQuery);
-      prepare.setDouble(1, totalAmount);
-      prepare.setInt(2, tableNumber);
-      int rowsUpdated = prepare.executeUpdate();
-
-      if (rowsInserted > 0) {
+      if (!resultSet.next()) {
+        // If row doesn't exist, insert
+        prepare = connection.prepareStatement(insertQuery);
+        prepare.setInt(1, tableNumber);
+        prepare.setDouble(2, totalAmount);
+        prepare.executeUpdate();
         System.out.println("Total amount inserted into SQL table successfully!");
       } else {
-        System.out.println("Total amount failed to insert into SQL table successfully!");
-
-      }
-      if (rowsUpdated > 0) {
-        System.out.println("Prices updated successfully!");
+        // If row exists, update
+        prepare = connection.prepareStatement(updateQuery);
+        prepare.setDouble(1, totalAmount);
+        prepare.setInt(2, tableNumber);
+        int rowsUpdated = prepare.executeUpdate();
+        if (rowsUpdated > 0) {
+          System.out.println("Prices updated successfully!");
+        }
       }
     } catch (SQLException e) {
       e.printStackTrace();
     } finally {
+      // Close resources
       try {
         if (prepare != null) {
           prepare.close();

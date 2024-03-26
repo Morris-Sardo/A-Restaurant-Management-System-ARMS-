@@ -21,7 +21,7 @@ import javafx.scene.layout.AnchorPane;
 /**
  * Thic class is menu page for staff. This page has has more privilage of menu costumenr page.
  *
- * @author papap, Zain
+ * @author papap
  * @version $Id: Team Project 15.
  */
 public class MenuView {
@@ -813,19 +813,15 @@ public class MenuView {
   @FXML
   private void handleOrder() {
 
-    if (viewSM.getTableNumber() == -1
-        || PayCostumerModel.getPrizeFormTable(viewSM.getTableNumber()) == null) {
-      AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
-    } else {
-      int tableNumber = viewSM.getTableNumber();
-      double totalAmount = viewSM.calculateTotalAmount();
+    int tableNumber = viewSM.getTableNumber();
+    double totalAmount = viewSM.calculateTotalAmount();
 
-      List<MenuItem> items = tableView.getItems();
-      String itemNumbers = viewSM.getItemNumbersStaff(items);
+    List<MenuItem> items = tableView.getItems();
+    String itemNumbers = viewSM.getItemNumbersStaff(items);
 
-      MenuCostumerModel.insertIntoOrderTable(tableNumber, itemNumbers, totalAmount);
-      AlertText.alert(AlertType.INFORMATION, "SUCCESS", "Order Placed!");
-    }
+    MenuCostumerModel.insertIntoOrderTable(tableNumber, itemNumbers, totalAmount);
+    AlertText.alert(AlertType.INFORMATION, "SUCCESS", "Order Placed!");
+
   }
 
 

@@ -9,7 +9,7 @@ import javafx.scene.control.Alert.AlertType;
 /**
  * This is class does of controller of all button event between beteen GUI and MODEL.
  *
- * @author papap, Zain
+ * @author papap
  * @version $Id: Team Project 15.
  */
 public class MenuController {
@@ -93,15 +93,16 @@ public class MenuController {
 
     double totalAmount = menuView.calculateTotalAmount();
     // System.out.print(menuView.calculateTotalAmount());
-    // int tableNumber = menuView.getTableNumber();
-    // MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
-    if (menuView.getTableNumber() == -1
+    int tableNumber = menuView.getTableNumber();
+    MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
+    if (menuView.getTableNumber() == 0
         || PayCostumerModel.getPrizeFormTable(menuView.getTableNumber()) == null) {
       AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
     } else {
-      PayView viewP = new PayView();
-      Driver.setScene(viewP.start(), TitlePage.PAY_BILLS_PAGE);
+      PayCostumerView viewPC = new PayCostumerView(menuView.getTableNumber());
+      MenuModel.insertIntoSQLPriceTableStaff(totalAmount, tableNumber);
     }
+
   }
 
 
