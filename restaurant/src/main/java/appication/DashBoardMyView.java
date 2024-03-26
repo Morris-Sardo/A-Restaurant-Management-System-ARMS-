@@ -31,6 +31,9 @@ public class DashBoardMyView {
   @FXML
   private Button signOutBtn;
 
+  @FXML
+  private Button staffPay;
+
 
 
   /**
@@ -66,6 +69,7 @@ public class DashBoardMyView {
     inventoryBtn.setOnAction(event -> dashController.handleInventory());
     reviewBtn.setOnAction(event -> dashController.handleReview());
     kitchencBtn.setOnAction(event -> dashController.handleKitchen());
+    staffPay.setOnAction(event -> dashController.handlePay());
 
 
 
