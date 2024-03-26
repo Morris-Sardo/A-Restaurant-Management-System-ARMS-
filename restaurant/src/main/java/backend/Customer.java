@@ -76,15 +76,6 @@ public class Customer {
   }
 
   /**
-   * Finds all items on the menu marked as available that fulfill the filter criteria.
-   * 
-   * @return the IDs corresponding to the menu items available
-   */
-  public int[] filterMenu() { // Not being worked on for this sprint
-    return null;
-  }
-
-  /**
    * Adds a new item to the current order.
    * 
    * @param item the item being added to the order

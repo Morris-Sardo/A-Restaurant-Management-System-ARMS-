@@ -62,7 +62,27 @@ class CustomerTest {
     assertDoesNotThrow(() -> testCustomer.requestHelp());
   }
   
- 
+ /*
+  * Item addition and removal tests
+  * Test 1: Item ids can be added and removed from customer array
+  * Test 2: Item ids are added are included in order when SubmitOrder is called
+  * Test 3: CalculateTotalPrice returns the price of items added, and increases when a new order is made
+  * Test 4: CalculateTotalPrice returns the same value as RequestBill, and RequestBill sucessfully marks all orders as paid.
+  * Test 5: TrackOrder returns the status of any orders, and stops returning order statuses once they are marked as paid.
+  */
+  @Test
+  @Tag("ConnectionNeeded")
+  void Add_RemoveItem() throws Exception {
+	  assertEquals(0, testCustomer.getOrder().size());
+	  testCustomer.addItem(4);
+	  testCustomer.addItem(5);
+	  assertEquals(2, testCustomer.getOrder().size());
+	  assertEquals(5, testCustomer.getOrder().get(1));
+	  testCustomer.removeItem(4);
+	  assertEquals(1, testCustomer.getOrder().size());
+	  assertEquals(4, testCustomer.getOrder().get(0));
+	  assertEquals(false, testCustomer.removeItem(99));
+  }
   
 
 }
