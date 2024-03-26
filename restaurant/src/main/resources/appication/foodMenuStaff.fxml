@@ -23,11 +23,11 @@
 							<content>
 								<AnchorPane prefHeight="600.0" prefWidth="503.0">
 									<children>
-										<AnchorPane layoutY="-18.0" prefHeight="600.0" prefWidth="479.0">
+										<AnchorPane layoutY="-205.0" prefHeight="600.0" prefWidth="479.0">
 											<children>
 												<AnchorPane fx:id="salsaVerde" layoutX="14.0" layoutY="40.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button fx:id="increases1" layoutX="106.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleSalsaVerde" prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<Button fx:id="increaseSalsaVerde" layoutX="106.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleSalsaVerde" prefHeight="26.0" prefWidth="50.0" text="☑" />
 														<Label layoutX="56.0" layoutY="7.0" prefHeight="17.0" prefWidth="66.0" text="Salsa Verde" />
 														<TextField fx:id="salsaTextField" layoutX="15.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
 														<ImageView fitHeight="71.0" fitWidth="141.0" layoutX="15.0" layoutY="25.0">
@@ -39,7 +39,7 @@
 												</AnchorPane>
 												<AnchorPane fx:id="jalapenos" layoutX="14.0" layoutY="205.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button fx:id="increases2" layoutX="101.0" layoutY="106.0" mnemonicParsing="false" onAction="#handleJalapenos" prefWidth="50.0" text="☑" />
+														<Button fx:id="increaseJalapenesPoppers" layoutX="101.0" layoutY="106.0" mnemonicParsing="false" onAction="#handleJalapenos" prefWidth="50.0" text="☑" />
 														<Label layoutX="38.0" layoutY="6.0" prefHeight="17.0" prefWidth="103.0" text="Jalapenos Poppers" />
 														<TextField fx:id="jalapenosTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
 														<ImageView fitHeight="83.0" fitWidth="136.0" layoutX="15.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
@@ -64,7 +64,7 @@
 												</AnchorPane>
 												<AnchorPane fx:id="chickenTaqiotos" layoutX="244.0" layoutY="40.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button fx:id="increases" layoutX="111.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleChicken" prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<Button fx:id="increaseChickenTaqiotos" layoutX="111.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleChicken" prefHeight="26.0" prefWidth="50.0" text="☑" />
 														<TextField fx:id="chickenTextField" layoutX="10.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
 														<Label layoutX="42.0" layoutY="6.0" prefHeight="17.0" prefWidth="94.0" text="Chicken Taquitos" />
 														<ImageView fitHeight="74.0" fitWidth="122.0" layoutX="18.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" />
@@ -127,7 +127,7 @@
 												</AnchorPane>
 												<AnchorPane fx:id="churros" layoutX="14.0" layoutY="700.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleChurros" prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<Button fx:id="increaseCurros" layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleChurros" prefHeight="26.0" prefWidth="50.0" text="☑" />
 														<TextField fx:id="churrosTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
 														<Label layoutX="58.0" layoutY="6.0" prefHeight="17.0" prefWidth="47.0" text="Churros" />
 														<ImageView fitHeight="77.0" fitWidth="140.0" layoutX="10.0" layoutY="23.0">
@@ -139,7 +139,7 @@
 												</AnchorPane>
 												<AnchorPane fx:id="margaritaPie" layoutX="14.0" layoutY="865.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button layoutX="111.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleMargarita" prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<Button fx:id="increaseMargaritaPie" layoutX="111.0" layoutY="114.0" mnemonicParsing="false" onAction="#handleMargarita" prefHeight="26.0" prefWidth="50.0" text="☑" />
 														<TextField fx:id="margaritaTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
 														<Label layoutX="40.0" layoutY="6.0" text="Margarita Pie" />
 														<ImageView fitHeight="73.0" fitWidth="150.0" layoutX="10.0" layoutY="23.0">
@@ -151,7 +151,7 @@
 												</AnchorPane>
 												<AnchorPane fx:id="bread" layoutX="244.0" layoutY="700.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button layoutX="110.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleBread" prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<Button fx:id="increasePanMuerto" layoutX="110.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleBread" prefHeight="26.0" prefWidth="50.0" text="☑" />
 														<TextField fx:id="breadTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
 														<Label layoutX="39.0" layoutY="6.0" text="Pan De Muerto" />
 														<ImageView fitHeight="68.0" fitWidth="150.0" layoutX="10.0" layoutY="29.0">
@@ -163,7 +163,7 @@
 												</AnchorPane>
 												<AnchorPane fx:id="hotChoccolate" layoutX="244.0" layoutY="865.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button layoutX="111.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleChocolate" prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<Button fx:id="increaeCoccolatePie" layoutX="111.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleChocolate" prefHeight="26.0" prefWidth="50.0" text="☑" />
 														<TextField fx:id="chocolateTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
 														<Label layoutX="40.0" layoutY="6.0" text="Hot Chocolate Pie" />
 														<ImageView fitHeight="72.0" fitWidth="150.0" layoutX="9.0" layoutY="25.0">
@@ -175,7 +175,7 @@
 												</AnchorPane>
 												<AnchorPane fx:id="tepache" layoutX="14.0" layoutY="1030.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleTepache" prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<Button fx:id="increaseTepache" layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleTepache" prefHeight="26.0" prefWidth="50.0" text="☑" />
 														<TextField fx:id="tepacheTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
 														<Label layoutX="57.0" layoutY="6.0" prefHeight="17.0" prefWidth="66.0" text="Tepache" />
 														<ImageView fitHeight="66.0" fitWidth="124.0" layoutX="28.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
@@ -188,7 +188,7 @@
 												</AnchorPane>
 												<AnchorPane fx:id="coke" layoutX="244.0" layoutY="1030.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleCoke" prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<Button fx:id="increaseCoke" layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleCoke" prefHeight="26.0" prefWidth="50.0" text="☑" />
 														<TextField fx:id="cokeTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
 														<Label layoutX="68.0" layoutY="6.0" text="Coke" />
 														<ImageView fitHeight="68.0" fitWidth="40.0" layoutX="61.0" layoutY="26.0">
@@ -201,7 +201,7 @@
 												<AnchorPane fx:id="jarritos" layoutX="244.0" layoutY="1195.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
 														<Label layoutX="62.0" layoutY="6.0" text="Jarritos" />
-														<Button layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleJarritos" prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<Button fx:id="increaseJarritos" layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleJarritos" prefHeight="26.0" prefWidth="50.0" text="☑" />
 														<TextField fx:id="jarritosTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
 														<ImageView fitHeight="77.0" fitWidth="149.0" layoutX="7.0" layoutY="22.0">
 															<image>
@@ -212,7 +212,7 @@
 												</AnchorPane>
 												<AnchorPane fx:id="horchata" layoutX="14.0" layoutY="1195.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleHorchata" prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<Button fx:id="increaseHorchata" layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleHorchata" prefHeight="26.0" prefWidth="50.0" text="☑" />
 														<TextField fx:id="horchataTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
 														<Label layoutX="57.0" layoutY="6.0" text="Horchata" />
 														<ImageView fitHeight="79.0" fitWidth="142.0" layoutX="12.0" layoutY="21.0">
