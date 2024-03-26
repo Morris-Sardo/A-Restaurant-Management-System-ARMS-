@@ -148,6 +148,21 @@ public class KitchenView {
   @FXML
   private Button stockUpdate;
 
+  @FXML
+  private Button kitchenClear;
+
+  @FXML
+  private Button kitchenUpdate;
+
+  @FXML
+  private Button kitchenSelect;
+
+  @FXML
+  private TextField kitchenField;
+  
+  @FXML
+  private TextField orderNum;
+
 
 
   private ObservableList<Stock> list = StockModel.getStockTable();
@@ -183,7 +198,9 @@ public class KitchenView {
     menuBtn.setOnAction(event -> kitchenController.handleMenu());
     stockBtn.setOnAction(event -> switchToStockPage());
     kitchenBackOrderBtn.setOnAction(event -> switchToKitchenOrderPage());
-
+    kitchenClear.setOnAction(event -> clearFieldStatus());
+    kitchenSelect.setOnAction(event -> kitchenSelect());
+    kitchenUpdate.setOnAction(event -> kitchenController.kitchenStatusUpdate());
     stockUpdate.setOnAction(event -> kitchenController.stockUpdate());
 
     dashboardSotckFormBtn.setOnAction(event -> kitchenController.handleDashboardFromStockForm());
@@ -208,11 +225,51 @@ public class KitchenView {
     orderTime.setCellValueFactory(new PropertyValueFactory<>("orderTime"));
     status.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-
+    orderNum.setDisable(true);
+    stockItmNum.setDisable(true);
     kitchenOrderTable.setItems(list2);
     kitchenOrderTable1.setItems(list);
   }
 
+
+  /**
+   * This method clears the text field on the kitchen orders page when populated.
+   */
+  public void clearFieldStatus() {
+    orderNum.setText("");
+    kitchenField.setText("");
+  }
+
+  /**
+   * This will populate the text field with the status of the selected row.
+   */
+  @FXML
+  public void kitchenSelect() {
+    Kitchen selectedItem = kitchenOrderTable.getSelectionModel().getSelectedItem();
+    int num = kitchenOrderTable.getSelectionModel().getSelectedIndex();
+
+    if ((num - 1) < -1) {
+      return;
+    }
+    
+    orderNum.setText("" + selectedItem.getOrderNum());
+    kitchenField.setText("" + selectedItem.getStatus());
+  }
+
+  /**
+   * This method is user to get the status typed in the GUI field.
+   * 
+   * @return kitchen Field String.
+   */
+
+  public String getKitchenStatus() {
+    if (kitchenField == null) {
+      return "";
+    } else {
+
+      return kitchenField.getText();
+    }
+  }
 
   /**
    * This method is used to switch the form from kitchen order page to stock page.
@@ -234,6 +291,10 @@ public class KitchenView {
 
   public void setTableItems(ObservableList<Stock> list) {
     kitchenOrderTable1.setItems(list);
+  }
+  
+  public void setTableItems1(ObservableList<Kitchen> list) {
+    kitchenOrderTable.setItems(list);
   }
 
   /**
@@ -437,5 +498,21 @@ public class KitchenView {
 
   }
 
+  /**
+   * This method will return calories in its appropriate text box.
+   * 
+   * @return calories
+   */
+  public Integer getOrderNum() {
+    if (orderNum == null) {
+      return -1;
+    } else {
+      try {
+        return Integer.parseInt(orderNum.getText());
+      } catch (Exception e) {
+        return -1;
+      }
+    }
+  }
 
 }

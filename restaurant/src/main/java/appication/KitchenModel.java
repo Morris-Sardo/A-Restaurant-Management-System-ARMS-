@@ -73,4 +73,38 @@ public class KitchenModel {
     return membersTable;
   }
 
+  /**
+   * This updates the data (status) for the row.
+   * 
+   * @param status c.
+   * @param orderNumber this.
+   * @return ee.
+   */
+  public static boolean kitchenUpdate(Integer orderNumber, String status) {
+    // Define the SQL query to update the product name
+    String sql = "UPDATE orders SET status = ? " + "WHERE order_number = ?";
+
+    // Try-with-resources statement to auto-close resources
+    try (Connection conn = DataBaseModel.connectToDatabase();
+        PreparedStatement pstmt = conn.prepareStatement(sql)) {
+      
+      System.out.println(orderNumber);
+      System.out.println(status);
+
+      // Set the parameters for the prepared statement
+      pstmt.setString(1, status);
+      pstmt.setInt(2, orderNumber);
+
+      // Execute the update
+      int affectedRows = pstmt.executeUpdate();
+
+      // Return true if the update was successful (one row affected)
+      return affectedRows == 1;
+    } catch (SQLException e) {
+      System.err.println("Update failed: " + e.getMessage());
+      return false;
+    }
+  }
 }
+
+

@@ -164,4 +164,25 @@ public class KitchenController {
 
   }
 
+  /**
+   * This will update the status on a selected row.
+   */
+  public void kitchenStatusUpdate() {
+    Kitchen k = new Kitchen();
+
+    if (viewK.getKitchenStatus() == null || viewK.getOrderNum() == -1) {
+      AlertText.alert(AlertType.ERROR, "Error Message", "Please fill the fields with valid inputs");
+      viewK.clearFieldStatus();
+    } else {
+
+      KitchenModel.kitchenUpdate(viewK.getOrderNum(), viewK.getKitchenStatus());
+      AlertText.alert(AlertType.INFORMATION, "Successfully Update data into dataBase",
+          "Data added into Kitchen Table");
+      viewK.clearFieldStatus();
+      viewK.setTableItems1(KitchenModel.getOrdersTable());
+
+    }
+
+  }
+
 }
