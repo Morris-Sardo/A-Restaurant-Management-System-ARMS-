@@ -64,7 +64,7 @@ public class MyView {
   @FXML
   public void initialize() {
     LoginController loginController = new LoginController(this);
-    siLoginBtn.setOnAction(event -> loginController.hanldeLogin());
+    siLoginBtn.setOnAction(event -> loginController.handleLogin());
     suSignupBtn.setOnAction(event -> loginController.handleSignUp());
     siForgotPass.setOnAction(event -> loginController.handleForgotPass());
     fpProceedBtn.setOnAction(event -> loginController.handleAnswer());

@@ -1,6 +1,5 @@
 package backend;
 
-import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -52,7 +51,11 @@ public class Customer {
   public Connection getConnection() {
     return connection;
   }
-
+  
+  /**
+   * Getter for orders.
+   * @return Returns order
+   */
   public ArrayList<Integer> getOrder() {
     return order;
   }
@@ -142,8 +145,12 @@ public class Customer {
    * price with a for loop, looking in the arraylist of items order time: get current time status:
    * set status to requested
    */
+
   /**
-   * Adds the order to the database.
+   * Adds order to the database.
+   * 
+   * @param tableNumber The number of the table the customer is sitting at
+   * @throws SQLException if connection attempt fails
    */
   public void submitOrder(int tableNumber) throws SQLException {
     this.tableNumber = tableNumber;
@@ -183,8 +190,8 @@ public class Customer {
         result = resultSet.getFloat(1);
       }
     }
-    
-    return result; 
+
+    return result;
   }
 
   private static String getCurrentTime() {
@@ -198,9 +205,11 @@ public class Customer {
   /**
    * This method is used to get the bills from database.
    * 
+   * @return Returns bill
    * @throws PSQLException is connection attempt is failed.
    * @throws SQLException is connection attempted is failed.
    * @throws DatabaseInformationException is the data get from database is no the one suppose to be
+   * 
    */
   public ArrayList<String> requestBill()
       throws PSQLException, SQLException, DatabaseInformationException {
@@ -265,7 +274,9 @@ public class Customer {
   /**
    * Returns order status.
    * 
-   * @throws SQLException if statement fails
+   * @param orderNumber The number of the order
+   * @return Returns status
+   * @throws SQLException if connection fails
    */
   public String trackOrder(int orderNumber) throws SQLException {
     String status = null;

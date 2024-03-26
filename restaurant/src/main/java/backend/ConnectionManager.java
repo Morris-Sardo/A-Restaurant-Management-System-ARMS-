@@ -32,7 +32,8 @@ public class ConnectionManager {
    */
   public static Connection connectToDatabase() throws SQLException {
     Connection connection = null;
-    connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/teamproject15",
+    connection = DriverManager
+        .getConnection("jdbc:postgresql://teachdb.cs.rhul.ac.uk:5432/teamproject15",
         "teamproject15", "quogai");
     return connection;
 

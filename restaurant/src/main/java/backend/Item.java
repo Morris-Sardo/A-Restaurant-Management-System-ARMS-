@@ -16,9 +16,8 @@ public class Item {
   private float calories;
   private boolean available;
 
-
   /**
-   * The constructor for a new item.
+   * Constructor for a new item.
    * 
    * @param itemNumber the unique identifying number for the item
    * @param name the displayed name for the item
@@ -26,6 +25,7 @@ public class Item {
    * @param allergies the allergies related to this item
    * @param calories the calories for this item
    * @param available the availability status of the item
+   * @param stock the stock of the item
    */
   public Item(int itemNumber, String name, float price, String allergies, float calories,
       boolean available) {

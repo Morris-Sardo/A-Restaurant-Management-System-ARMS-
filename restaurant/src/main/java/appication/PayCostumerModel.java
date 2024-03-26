@@ -87,10 +87,13 @@ public class PayCostumerModel {
 
 
   /**
-   * This method resets the prize when the transaction is complited.
-   *
-   * @param tableNumber a {@link java.lang.Integer} object
-   * @return a boolean values.
+   * This method resets the price when the transaction is completed.
+   * @param tableNumber The number of the table the customer is sitting at
+   * @param nameOnCard The name on the card
+   * @param cardNumber The card number
+   * @param expiryDate The expiry date
+   * @param securityPin The security pin
+   * @return false if the statement fails
    */
   public static boolean completeTransaction(Integer tableNumber, String nameOnCard,
       String cardNumber, String expiryDate, String securityPin) {
