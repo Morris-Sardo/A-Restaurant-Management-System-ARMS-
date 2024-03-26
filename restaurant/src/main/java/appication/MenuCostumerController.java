@@ -83,6 +83,7 @@ public class MenuCostumerController {
       AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
     } else {
       int tableNumber = viewCM.getTableNumber();
+      
       MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
       // load the fxml file (does not have a FX controller)
       FXMLLoader loader = new FXMLLoader(getClass().getResource("payCostumerPage.fxml"));
