@@ -25,7 +25,6 @@ public class Item {
    * @param allergies the allergies related to this item
    * @param calories the calories for this item
    * @param available the availability status of the item
-   * @param stock the stock of the item
    */
   public Item(int itemNumber, String name, float price, String allergies, float calories,
       boolean available) {
