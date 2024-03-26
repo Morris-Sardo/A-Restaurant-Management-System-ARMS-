@@ -78,7 +78,7 @@ public class Customer {
   public ArrayList<Integer> viewMenu()
       throws PSQLException, SQLException, DatabaseInformationException {
     ArrayList<Integer> results = new ArrayList<Integer>();
-    String query = "SELECT item_number FROM items WHERE available = 'True'";
+    String query = "SELECT item_number FROM items WHERE available = true";
     try (PreparedStatement statement = connection.prepareStatement(query);) {
       ResultSet resultSet = statement.executeQuery();
       while (resultSet.next()) {

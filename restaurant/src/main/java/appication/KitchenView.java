@@ -184,6 +184,8 @@ public class KitchenView {
     stockBtn.setOnAction(event -> switchToStockPage());
     kitchenBackOrderBtn.setOnAction(event -> switchToKitchenOrderPage());
 
+    stockUpdate.setOnAction(event -> kitchenController.stockUpdate());
+
     dashboardSotckFormBtn.setOnAction(event -> kitchenController.handleDashboardFromStockForm());
     inventoryStockFormBtn.setOnAction(event -> kitchenController.handleInventoryFromStockForm());
     menuStockFormBtn.setOnAction(event -> kitchenController.handleMenuFromStockForm());
@@ -311,7 +313,7 @@ public class KitchenView {
   }
 
   /**
-   * 
+   * recieves the description.
    * 
    * @return tags for food.
    */
@@ -319,22 +321,21 @@ public class KitchenView {
     if (stockTags == null) {
       return "";
     } else {
-
       return stockTags.getText();
     }
   }
 
   /**
-   * This method is user to get the type of product using combobox in the GUI.
+   * This method is user to get the boolean available.
    * 
    * @return type of food.
    */
   public String getstockAvailable() {
-    if (stockAvailable == null) {
-      return "";
-    } else {
-
+    String test = stockAvailable.getText();
+    if (test.equals("false") || test.equals("true")) {
       return stockAvailable.getText();
+    } else {
+      return "";
     }
   }
 
@@ -419,19 +420,22 @@ public class KitchenView {
 
 
   }
-  
-  public void stockClearBtn() {
-	    //.setDisable(false);
-	    stockItmNum.setText("");
-	    stockItmName.setText("");
-	    stockQuantity.setText("");
-	    stockAllergy.setText("");
-	    stockCal.setText("");
-	    stockAvailable.setText("");
-	    stockTags.setText("");
-	    stockPrice.setText("");
 
-	  }
+  /**
+   * clears the fields.
+   */
+  public void stockClearBtn() {
+    // .setDisable(false);
+    stockItmNum.setText("");
+    stockItmName.setText("");
+    stockQuantity.setText("");
+    stockAllergy.setText("");
+    stockCal.setText("");
+    stockAvailable.setText("");
+    stockTags.setText("");
+    stockPrice.setText("");
+
+  }
 
 
 }

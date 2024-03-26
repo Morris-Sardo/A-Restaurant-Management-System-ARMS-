@@ -191,7 +191,7 @@ public class Stock {
    * @return The value of available
    */
   public String isAvailable() {
-	  return (available == null) ? null : available.get();
+    return available.get();
   }
 
   /**
