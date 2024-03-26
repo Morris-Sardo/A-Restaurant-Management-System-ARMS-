@@ -29,6 +29,8 @@ public class StockModel {
   private static String tags;
   private static Integer stock;
 
+ 
+
   /**
    * This method is used to get all the data of the stock table from the database to populate the
    * interface stock page table.
@@ -92,6 +94,9 @@ public class StockModel {
     // Define the SQL query to update the product name
     String sql = "UPDATE items SET item_name = ?, price = ?,  "
         + "allergies = ?, calories = ?, available = ?, tags = ?, stock = ? WHERE item_number = ?";
+
+  
+
 
     // Try-with-resources statement to auto-close resources
     try (Connection conn = DataBaseModel.connectToDatabase();

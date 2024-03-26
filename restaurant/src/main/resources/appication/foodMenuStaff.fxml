@@ -27,7 +27,7 @@
 											<children>
 												<AnchorPane fx:id="salsaVerde" layoutX="14.0" layoutY="40.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
 													<children>
-														<Button fx:id="increases1" layoutX="103.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleSalsaVerde" prefHeight="26.0" prefWidth="50.0" text="☑" />
+														<Button fx:id="increases1" layoutX="106.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleSalsaVerde" prefHeight="26.0" prefWidth="50.0" text="☑" />
 														<Label layoutX="56.0" layoutY="7.0" prefHeight="17.0" prefWidth="66.0" text="Salsa Verde" />
 														<TextField fx:id="salsaTextField" layoutX="15.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
 														<ImageView fitHeight="71.0" fitWidth="141.0" layoutX="15.0" layoutY="25.0">

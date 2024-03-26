@@ -50,6 +50,29 @@ public class MenuModel {
   }
 
   /**
+   * This method is used to get the the bills from the database.
+   * 
+   * @return Boolean value.
+   */
+  public static Boolean setAvailable() {
+    String query = "SELECT available FROM items WHERE item_number = 1";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    return null;
+  }
+
+
+
+  /**
    * This method inserts total amount and table number into the SQL table.
    * 
    * @param totalAmount the total amount to be inserted.

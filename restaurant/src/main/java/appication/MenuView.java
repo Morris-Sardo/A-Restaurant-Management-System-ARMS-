@@ -233,7 +233,9 @@ public class MenuView {
   /**
    * This is a default constructor.
    */
-  public MenuView() {}
+  public MenuView() {
+    this.increases1 = increases1;
+  }
 
   /**
    * Creates and returns the scene to be used for this page.
@@ -259,6 +261,7 @@ public class MenuView {
   @FXML
   public void initialize() {
     MenuController menuController = new MenuController(this);
+    setAvai();
     signuotBtn.setOnAction(event -> menuController.handleSignOut());
     inventoryBtn.setOnAction(event -> menuController.handleInventory());
     reviewListBtn.setOnAction(event -> menuController.handleReviewList());
@@ -280,7 +283,6 @@ public class MenuView {
     TableColumn<MenuItem, Double> priceColumn = new TableColumn<>("Price");
     priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
     tableView.getColumns().addAll(productColumn, quantityColumn, priceColumn);
-
     viewSM = this;
   }
 
@@ -297,6 +299,32 @@ public class MenuView {
     } catch (NumberFormatException e) {
       // Handle invalid input or just return a default value
       return -1;
+    }
+  }
+
+  // /**
+  // * Hides the button option to order the food.
+  // */
+  // public void salsaVerdeInvisible() {
+  // increases1.setVisible(false);
+  // }
+  //
+  // /**
+  // * Shows the button option to order the food.
+  // */
+  // public void salsaVerdeVisible() {
+  // increases1.setVisible(true);
+  // }
+
+  /**
+   * This would hide the appropriate menu items.
+   */
+  public void setAvai() {
+    System.out.println(MenuModel.setAvailable());
+    if (MenuModel.setAvailable().toString() == "false") {
+      increases1.setVisible(false);
+    } else {
+      increases1.setVisible(true);
     }
   }
 
