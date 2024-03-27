@@ -168,4 +168,391 @@ public class MenuCostumerModel {
       }
     }
   }
+
+  /**
+   * This method is used to get the the bills from the database.
+   *
+   * @return Boolean value.
+   */
+  public static Boolean setAvailableSalsaVerde() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 1";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to get the the bills from the database.
+   *
+   * @return Boolean value.
+   */
+  public static Boolean setAvailableChickenTaquitos() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 2";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to get the the bills from the database.
+   *
+   * @return Boolean value.
+   */
+  public static Boolean setAvailableJalapenosPoppers() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 3";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to get the the bills from the database.
+   *
+   * @return Boolean value.
+   */
+  public static Boolean setAvailableMexicanCornDip() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 4";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to get the the bills from the database.
+   *
+   * @return Boolean value.
+   */
+  public static Boolean setAvailableChiliConCarne() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 5";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to get the the bills from the database.
+   *
+   * @return Boolean value.
+   */
+  public static Boolean setAvailableChickenFajitas() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 6";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to get the the bills from the database.
+   *
+   * @return Boolean value.
+   */
+  public static Boolean setAvailableHalloumiTacos() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 7";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to get the the bills from the database.
+   *
+   * @return Boolean value.
+   */
+  public static Boolean setAvailableMexicanStyleRice() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 8";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to get the the bills from the database.
+   *
+   * @return Boolean value.
+   */
+  public static Boolean setAvailableChurros() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 9";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to get the the bills from the database.
+   *
+   * @return Boolean value.
+   */
+  public static Boolean setAvailablePandeMuerto() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 10";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to get the the bills from the database.
+   *
+   * @return Boolean value.
+   */
+  public static Boolean setAvailableMargaritaPie() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 11";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to get the the bills from the database.
+   *
+   * @return Boolean value.
+   */
+  public static Boolean setAvailableHotChocolatePie() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 12";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to get the the bills from the database.
+   *
+   * @return Boolean value.
+   */
+  public static Boolean setAvailableTepache() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 13";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to get the the bills from the database.
+   *
+   * @return Boolean value.
+   */
+  public static Boolean setAvailableCoke() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 14";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to get the the bills from the database.
+   *
+   * @return Boolean value.
+   */
+  public static Boolean setAvailableHorchata() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 15";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+
+  /**
+   * This method is used to get the the bills from the database.
+   *
+   * @return Boolean value.
+   */
+  public static Boolean setAvailableJarritos() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 16";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+
 }

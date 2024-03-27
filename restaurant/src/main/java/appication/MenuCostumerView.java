@@ -49,26 +49,26 @@ public class MenuCostumerView {
   @FXML
   private AnchorPane coke;
 
-  @FXML
-  private Button deacreaes;
-
-  @FXML
-  private Button deacreaes1;
-
-  @FXML
-  private Button deacreaes2;
-
-  @FXML
-  private Button deacreaes3;
-
-  @FXML
-  private Button deacreaes4;
-
-  @FXML
-  private Button deacreaes5;
-
-  @FXML
-  private Button deacreaes6;
+  // @FXML
+  // private Button deacreaes;
+  //
+  // @FXML
+  // private Button deacreaes1;
+  //
+  // @FXML
+  // private Button deacreaes2;
+  //
+  // @FXML
+  // private Button deacreaes3;
+  //
+  // @FXML
+  // private Button deacreaes4;
+  //
+  // @FXML
+  // private Button deacreaes5;
+  //
+  // @FXML
+  // private Button deacreaes6;
 
   @FXML
   private Button decreasePasta;
@@ -92,25 +92,69 @@ public class MenuCostumerView {
   private Button increasePasta;
 
   @FXML
-  private Button increases;
+  private Button increasesSalsaVerde;
 
   @FXML
-  private Button increases1;
+  private Button increasesChickenTaquitos;
 
   @FXML
-  private Button increases11;
+  private Button increasesJalapenos;
 
   @FXML
-  private Button increases2;
+  private Button increasesMexicanConDip;
 
   @FXML
-  private Button increases21;
+  private Button increasesChilliConCarne;
 
   @FXML
-  private Button increases22;
+  private Button increasesChickenFajitas;
 
   @FXML
-  private Button increases3;
+  private Button increaseChurros;
+
+  @FXML
+  private Button increaseHalloumi;
+
+  @FXML
+  private Button increaseBread;
+
+  @FXML
+  private Button increaseMargarita;
+
+  @FXML
+  private Button increaseChocolate;
+
+  @FXML
+  private Button increaseTepache;
+
+  @FXML
+  private Button increaseCoke;
+
+  @FXML
+  private Button increaseHorchata;
+
+  @FXML
+  private Button increaseJarritos;
+  // @FXML
+  // private Button increases;
+  //
+  // @FXML
+  // private Button increases1;
+  //
+  // @FXML
+  // private Button increases11;
+  //
+  // @FXML
+  // private Button increases2;
+  //
+  // @FXML
+  // private Button increases21;
+  //
+  // @FXML
+  // private Button increases22;
+  //
+  // @FXML
+  // private Button increases3;
 
   @FXML
   private AnchorPane jalapenos;
@@ -257,6 +301,24 @@ public class MenuCostumerView {
   @SuppressWarnings("unchecked")
   @FXML
   public void initialize() {
+
+    setAvaibleSalsaVerde();
+    setAvaibleChickenTaquitos();
+    setAvailableJalapenosPoppers();
+    setAvailableMexicanCornDip();
+    setAvailableChiliConCarne();
+    setAvailableChickenFajitas();
+    setAvailableHalloumiTacos();
+    setAvailableMexicanStyleRice();
+    setAvailableChurros();
+    setAvailablePandeMuerto();
+    setAvailableMargaritaPie();
+    setAvailableHotChocolatePie();
+    setAvailableTepache();
+    setAvailableCoke();
+    setAvailableHorchata();
+    setAvailableJarritos();
+
     MenuCostumerController menuCostrumerController = new MenuCostumerController(this);
     makeReviewBtn.setOnAction(event -> menuCostrumerController.handleMakeReview());
     seeReviewBtn.setOnAction(event -> menuCostrumerController.handleReviewList());
@@ -298,6 +360,269 @@ public class MenuCostumerView {
       return -1;
     }
   }
+
+
+  /**
+   * This would hide the appropriate menu items.
+   */
+  public void setAvaibleSalsaVerde() {
+    System.out.println(MenuModel.setAvailableSalsaVerde());
+    if (MenuModel.setAvailableSalsaVerde().toString() == "false") {
+      System.out.println("SalsaVerde");
+      increasesSalsaVerde.setVisible(false);
+      salsaTextField.setDisable(true);
+    } else {
+      increasesSalsaVerde.setVisible(true);
+      salsaTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items.
+   */
+  public void setAvaibleChickenTaquitos() {
+
+    System.out.println(MenuModel.setAvailableChickenTaquitos());
+    if (MenuModel.setAvailableChickenTaquitos().toString() == "false") {
+      System.out.println("Chicken Taquitos");
+      increasesChickenTaquitos.setVisible(false);
+      chickenTextField.setDisable(true);
+    } else {
+      increasesChickenTaquitos.setVisible(true);
+      chickenTextField.setDisable(false);
+    }
+  }
+
+
+  /**
+   * This would hide the appropriate menu items.
+   */
+  public void setAvailableJalapenosPoppers() {
+
+    System.out.println(MenuModel.setAvailableJalapenosPoppers());
+    if (MenuModel.setAvailableJalapenosPoppers().toString() == "false") {
+      System.out.println("Halapeno Popper ");
+      increasesJalapenos.setVisible(false);
+      jalapenosTextField.setDisable(true);
+    } else {
+      increasesJalapenos.setVisible(true);
+      jalapenosTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items.
+   */
+  public void setAvailableMexicanCornDip() {
+
+    System.out.println(MenuModel.setAvailableMexicanCornDip());
+    if (MenuModel.setAvailableMexicanCornDip().toString() == "false") {
+      System.out.println("MexicanConDip");
+      increasesMexicanConDip.setVisible(false);
+      cornTextField.setDisable(true);
+    } else {
+      increasesMexicanConDip.setVisible(true);
+      cornTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items.
+   */
+  public void setAvailableChiliConCarne() {
+
+    System.out.println(MenuModel.setAvailableChiliConCarne());
+    if (MenuModel.setAvailableChiliConCarne().toString() == "false") {
+      System.out.println("Chilly Con Carne");
+      increasesChilliConCarne.setVisible(false);
+      chilliTextField.setDisable(true);
+    } else {
+      increasesChilliConCarne.setVisible(true);
+      chilliTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items.
+   */
+  public void setAvailableChickenFajitas() {
+
+    System.out.println(MenuModel.setAvailableChickenFajitas());
+    if (MenuModel.setAvailableChickenFajitas().toString() == "false") {
+      System.out.println("ChickenFajitas");
+      increasesChickenFajitas.setVisible(false);
+      chickenFajitasTextField.setDisable(true);
+    } else {
+      increasesChickenFajitas.setVisible(true);
+      chickenFajitasTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items.
+   */
+  public void setAvailableHalloumiTacos() {
+
+    System.out.println(MenuModel.setAvailableHalloumiTacos());
+    if (MenuModel.setAvailableHalloumiTacos().toString() == "false") {
+      System.out.println("HalloumiTacos");
+      increaseHalloumi.setVisible(false);
+      halloumiTextField.setDisable(true);
+    } else {
+      increaseHalloumi.setVisible(true);
+      halloumiTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items.
+   */
+  public void setAvailableMexicanStyleRice() {
+
+    System.out.println(MenuModel.setAvailableMexicanStyleRice());
+    if (MenuModel.setAvailableMexicanStyleRice().toString() == "false") {
+      System.out.println("MexicanStyleRice");
+      increasePasta.setVisible(false);
+      riceTextField.setDisable(true);
+    } else {
+      increasePasta.setVisible(true);
+      riceTextField.setDisable(false);
+
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items.
+   */
+  public void setAvailableChurros() {
+
+    System.out.println(MenuModel.setAvailableChurros());
+    if (MenuModel.setAvailableChurros().toString() == "false") {
+      System.out.println("Curros");
+      increaseChurros.setVisible(false);
+      churrosTextField.setDisable(true);
+    } else {
+      increaseChurros.setVisible(true);
+      churrosTextField.setDisable(false);
+
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items.
+   */
+  public void setAvailablePandeMuerto() {
+
+    System.out.println(MenuModel.setAvailablePandeMuerto());
+    if (MenuModel.setAvailablePandeMuerto().toString() == "false") {
+      System.out.println("Pan muerto");
+      increaseBread.setVisible(false);
+      breadTextField.setDisable(true);
+    } else {
+      increaseBread.setVisible(true);
+      breadTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items.
+   */
+  public void setAvailableMargaritaPie() {
+
+    System.out.println(MenuModel.setAvailableMargaritaPie());
+    if (MenuModel.setAvailableMargaritaPie().toString() == "false") {
+      System.out.println("Margarita Pie");
+      increaseMargarita.setVisible(false);
+      margaritaTextField.setDisable(true);
+    } else {
+      increaseMargarita.setVisible(true);
+      margaritaTextField.setDisable(false);
+
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items.
+   */
+  public void setAvailableHotChocolatePie() {
+
+    System.out.println(MenuModel.setAvailableHotChocolatePie());
+    if (MenuModel.setAvailableHotChocolatePie().toString() == "false") {
+      System.out.println("HotChocolate Pie");
+      increaseChocolate.setVisible(false);
+      chocolateTextField.setDisable(true);
+    } else {
+      increaseChocolate.setVisible(true);
+      chocolateTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items.
+   */
+  public void setAvailableTepache() {
+
+    System.out.println(MenuModel.setAvailableTepache());
+    if (MenuModel.setAvailableTepache().toString() == "false") {
+      System.out.println("Tepache");
+      increaseTepache.setVisible(false);
+      tepacheTextField.setDisable(true);
+    } else {
+      increaseTepache.setVisible(true);
+      tepacheTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items.
+   */
+  public void setAvailableCoke() {
+
+    System.out.println(MenuModel.setAvailableCoke());
+    if (MenuModel.setAvailableCoke().toString() == "false") {
+      System.out.println("Coke");
+      increaseCoke.setVisible(false);
+      cokeTextField.setDisable(true);
+    } else {
+      increaseCoke.setVisible(true);
+      cokeTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items.
+   */
+  public void setAvailableHorchata() {
+
+    System.out.println(MenuModel.setAvailableHorchata());
+    if (MenuModel.setAvailableHorchata().toString() == "false") {
+      System.out.println("Horchata");
+      increaseHorchata.setVisible(false);
+      horchataTextField.setDisable(true);
+    } else {
+      increaseHorchata.setVisible(true);
+      horchataTextField.setDisable(false);
+    }
+  }
+
+
+  /**
+   * This would hide the appropriate menu items.
+   */
+  public void setAvailableJarritos() {
+
+    System.out.println(MenuModel.setAvailableJarritos());
+    if (MenuModel.setAvailableJarritos().toString() == "false") {
+      System.out.println("Jarritos");
+      increaseJarritos.setVisible(false);
+      jarritosTextField.setDisable(true);
+    } else {
+      increaseJarritos.setVisible(true);
+      jarritosTextField.setDisable(false);
+
+    }
+  }
+
 
 
   /**

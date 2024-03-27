@@ -404,7 +404,7 @@ public class MenuView {
       cornTextField.setDisable(true);
     } else {
       increases3.setVisible(true);
-      cornTextField.setDisable(true);
+      cornTextField.setDisable(false);
     }
   }
 
@@ -452,7 +452,7 @@ public class MenuView {
       halloumiTextField.setDisable(true);
     } else {
       increases11.setVisible(true);
-      halloumiTextField.setDisable(true);
+      halloumiTextField.setDisable(false);
     }
   }
 
@@ -502,7 +502,7 @@ public class MenuView {
       breadTextField.setDisable(true);
     } else {
       increasePanMuerto.setVisible(true);
-      breadTextField.setDisable(true);
+      breadTextField.setDisable(false);
     }
   }
 
