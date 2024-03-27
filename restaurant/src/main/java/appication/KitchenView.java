@@ -22,7 +22,6 @@ import javafx.scene.layout.AnchorPane;
  * @author papap, jonathan, michael
  *
  */
-
 public class KitchenView {
 
   @FXML
@@ -159,7 +158,7 @@ public class KitchenView {
 
   @FXML
   private TextField kitchenField;
-  
+
   @FXML
   private TextField orderNum;
 
@@ -168,6 +167,12 @@ public class KitchenView {
   private ObservableList<Stock> list = StockModel.getStockTable();
 
   private ObservableList<Kitchen> list2 = KitchenModel.getOrdersTable();
+
+
+  /**
+   * This is a default constructor.
+   */
+  public KitchenView() {}
 
   /**
    * This method start the kitchen.
@@ -251,7 +256,7 @@ public class KitchenView {
     if ((num - 1) < -1) {
       return;
     }
-    
+
     orderNum.setText("" + selectedItem.getOrderNum());
     kitchenField.setText("" + selectedItem.getStatus());
   }
@@ -261,7 +266,6 @@ public class KitchenView {
    * 
    * @return kitchen Field String.
    */
-
   public String getKitchenStatus() {
     if (kitchenField == null) {
       return "";
@@ -289,10 +293,22 @@ public class KitchenView {
 
   }
 
+  /**
+   * This sets the table items in kitchen order.
+   * 
+   * @param list table values.
+   */
   public void setTableItems(ObservableList<Stock> list) {
     kitchenOrderTable1.setItems(list);
   }
-  
+
+
+
+  /**
+   * This sets the table items in stock.
+   * 
+   * @param list table values.
+   */
   public void setTableItems1(ObservableList<Kitchen> list) {
     kitchenOrderTable.setItems(list);
   }
@@ -327,7 +343,7 @@ public class KitchenView {
   }
 
   /**
-   * cc.
+   * This gets the item number of each row.
    * 
    * @return item number.
    */
@@ -360,7 +376,7 @@ public class KitchenView {
   }
 
   /**
-   * aa.
+   * This method gets the allergy of a row.
    * 
    * @return allergies.
    */

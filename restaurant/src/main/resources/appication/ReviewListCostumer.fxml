@@ -25,7 +25,7 @@
 									<children>
 										<AnchorPane prefHeight="87.0" prefWidth="222.0" stylesheets="@myView.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 											<children>
-												<Label layoutX="4.0" layoutY="5.0" prefHeight="70.0" prefWidth="216.0" text="Mex Eat Managment System" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+												<Label layoutX="4.0" layoutY="5.0" prefHeight="70.0" prefWidth="216.0" text="Mex Eat Management System" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
 													<font>
 														<Font name="System Bold" size="17.0" />
 													</font>
@@ -60,8 +60,8 @@
 												<Font size="15.0" />
 											</font>
 										</Label>
-										<Button fx:id="menuCostumerBtn" layoutX="6.0" layoutY="226.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="Menu" textFill="WHITE" />
-										<Button fx:id="makeReviewBtn" layoutX="6.0" layoutY="300.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="Make a Review" textFill="WHITE" />
+										<Button fx:id="menuCostumerBtn" layoutX="6.0" layoutY="226.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MENU" textFill="WHITE" />
+										<Button fx:id="makeReviewBtn" layoutX="6.0" layoutY="300.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MAKE A REVIEW" textFill="WHITE" />
 									</children>
 								</AnchorPane>
 							</children>

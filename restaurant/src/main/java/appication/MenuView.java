@@ -88,19 +88,38 @@ public class MenuView {
   private AnchorPane hotChoccolate;
 
   @FXML
+  private Button increaeCoccolatePie;
+
+  @FXML
+  private Button increaseCurros;
+
+
+  @FXML
+  private Button increaseMargaritaPie;
+
+  @FXML
+  private Button increasePanMuerto;
+
+  @FXML
   private Button increasePasta;
 
   @FXML
-  private Button increases;
+  private Button increaseChickenTaqiotos;
 
   @FXML
-  private Button increases1;
+  private Button increaseSalsaVerde;
 
   @FXML
   private Button increases11;
 
   @FXML
-  private Button increases2;
+  private Button increaseJalapenesPoppers;
+
+  @FXML
+  private Button increaseHorchata;
+
+  @FXML
+  private Button increaseJarritos;
 
   @FXML
   private Button increases21;
@@ -110,6 +129,12 @@ public class MenuView {
 
   @FXML
   private Button increases3;
+
+  @FXML
+  private Button increaseTepache;
+
+  @FXML
+  private Button increaseCoke;
 
   @FXML
   private Button inventoryBtn;
@@ -258,8 +283,24 @@ public class MenuView {
   @SuppressWarnings("unchecked")
   @FXML
   public void initialize() {
+    // MenuController menuController = new MenuController(this);
+    setAvaibleSalsaVerde();
+    setAvaibleChickenTaquitos();
+    setAvailableJalapenosPoppers();
+    setAvailableMexicanCornDip();
+    setAvailableChiliConCarne();
+    setAvailableChickenFajitas();
+    setAvailableHalloumiTacos();
+    setAvailableMexicanStyleRice();
+    setAvailableChurros();
+    setAvailablePandeMuerto();
+    setAvailableMargaritaPie();
+    setAvailableHotChocolatePie();
+    setAvailableTepache();
+    setAvailableCoke();
+    setAvailableHorchata();
+    setAvailableJarritos();
     MenuController menuController = new MenuController(this);
-    setAvai();
     signuotBtn.setOnAction(event -> menuController.handleSignOut());
     inventoryBtn.setOnAction(event -> menuController.handleInventory());
     reviewListBtn.setOnAction(event -> menuController.handleReviewList());
@@ -285,6 +326,7 @@ public class MenuView {
   }
 
 
+
   /**
    * This method get value from field. This method is also used from moel class to virified is the
    * table exist.
@@ -301,15 +343,282 @@ public class MenuView {
   }
 
 
+
   /**
-   * This would hide the appropriate menu items.
+   * This would hide the appropriate menu items. This method changes the visability of salsa verde
+   * the menu page
    */
-  public void setAvai() {
-    System.out.println(MenuModel.setAvailable());
-    if (MenuModel.setAvailable().toString() == "false") {
-      increases1.setVisible(false);
+  public void setAvaibleSalsaVerde() {
+    System.out.println(MenuModel.setAvailableSalsaVerde());
+    if (MenuModel.setAvailableSalsaVerde().toString() == "false") {
+      System.out.println("SalsaVerde");
+      increaseSalsaVerde.setVisible(false);
+      salsaTextField.setDisable(true);
     } else {
-      increases1.setVisible(true);
+      increaseSalsaVerde.setVisible(true);
+      salsaTextField.setDisable(false);
+    }
+  }
+
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Chicken
+   * Taquitos the menu page.
+   */
+  public void setAvaibleChickenTaquitos() {
+
+    System.out.println(MenuModel.setAvailableChickenTaquitos());
+    if (MenuModel.setAvailableChickenTaquitos().toString() == "false") {
+      System.out.println("Chicken Taquitos");
+      increaseChickenTaqiotos.setVisible(false);
+      chickenTextField.setDisable(true);
+    } else {
+      increaseChickenTaqiotos.setVisible(true);
+      chickenTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Jalapenos
+   * Poppers the menu page.
+   */
+  public void setAvailableJalapenosPoppers() {
+
+    System.out.println(MenuModel.setAvailableJalapenosPoppers());
+    if (MenuModel.setAvailableJalapenosPoppers().toString() == "false") {
+      System.out.println("Halapeno Popper ");
+      increaseJalapenesPoppers.setVisible(false);
+      jalapenosTextField.setDisable(true);
+    } else {
+      increaseJalapenesPoppers.setVisible(true);
+      jalapenosTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Mexican Corn
+   * Dip the menu page.
+   */
+  public void setAvailableMexicanCornDip() {
+
+    System.out.println(MenuModel.setAvailableMexicanCornDip());
+    if (MenuModel.setAvailableMexicanCornDip().toString() == "false") {
+      System.out.println("MexicanConDip");
+      increases3.setVisible(false);
+      cornTextField.setDisable(true);
+    } else {
+      increases3.setVisible(true);
+      cornTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Chilli Con
+   * Carne the menu page.
+   */
+  public void setAvailableChiliConCarne() {
+
+    System.out.println(MenuModel.setAvailableChiliConCarne());
+    if (MenuModel.setAvailableChiliConCarne().toString() == "false") {
+      System.out.println("Chilly Con Carne");
+      increases21.setVisible(false);
+      chilliTextField.setDisable(true);
+    } else {
+      increases21.setVisible(true);
+      chilliTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Chicken
+   * Fajitas the menu page.
+   */
+  public void setAvailableChickenFajitas() {
+
+    System.out.println(MenuModel.setAvailableChickenFajitas());
+    if (MenuModel.setAvailableChickenFajitas().toString() == "false") {
+      System.out.println("ChickenFajitas");
+      increases22.setVisible(false);
+      chickenFajitasTextField.setDisable(true);
+    } else {
+      increases22.setVisible(true);
+      chickenFajitasTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Halloumi
+   * Tacos the menu page.
+   */
+  public void setAvailableHalloumiTacos() {
+
+    System.out.println(MenuModel.setAvailableHalloumiTacos());
+    if (MenuModel.setAvailableHalloumiTacos().toString() == "false") {
+      System.out.println("HalloumiTacos");
+      increases11.setVisible(false);
+      halloumiTextField.setDisable(true);
+    } else {
+      increases11.setVisible(true);
+      halloumiTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Mexican Style
+   * Rice the menu page.
+   */
+  public void setAvailableMexicanStyleRice() {
+
+    System.out.println(MenuModel.setAvailableMexicanStyleRice());
+    if (MenuModel.setAvailableMexicanStyleRice().toString() == "false") {
+      System.out.println("MexicanStyleRice");
+      increasePasta.setVisible(false);
+      riceTextField.setDisable(true);
+    } else {
+      increasePasta.setVisible(true);
+      riceTextField.setDisable(false);
+
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Churros the
+   * menu page.
+   */
+  public void setAvailableChurros() {
+
+    System.out.println(MenuModel.setAvailableChurros());
+    if (MenuModel.setAvailableChurros().toString() == "false") {
+      System.out.println("Curros");
+      increaseCurros.setVisible(false);
+      churrosTextField.setDisable(true);
+    } else {
+      increaseCurros.setVisible(true);
+      churrosTextField.setDisable(false);
+
+    }
+  }
+
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Pande Muerto
+   * the menu page.
+   */
+  public void setAvailablePandeMuerto() {
+
+    System.out.println(MenuModel.setAvailablePandeMuerto());
+    if (MenuModel.setAvailablePandeMuerto().toString() == "false") {
+      System.out.println("Pan muerto");
+      increasePanMuerto.setVisible(false);
+      breadTextField.setDisable(true);
+    } else {
+      increasePanMuerto.setVisible(true);
+      breadTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Margarita Pie
+   * the menu page.
+   */
+  public void setAvailableMargaritaPie() {
+
+    System.out.println(MenuModel.setAvailableMargaritaPie());
+    if (MenuModel.setAvailableMargaritaPie().toString() == "false") {
+      System.out.println("Margarita Pie");
+      increaseMargaritaPie.setVisible(false);
+      margaritaTextField.setDisable(true);
+    } else {
+      increaseMargaritaPie.setVisible(true);
+      margaritaTextField.setDisable(false);
+
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Hot Chocolate
+   * Pie the menu page.
+   */
+  public void setAvailableHotChocolatePie() {
+
+    System.out.println(MenuModel.setAvailableHotChocolatePie());
+    if (MenuModel.setAvailableHotChocolatePie().toString() == "false") {
+      System.out.println("HotChocolate Pie");
+      increaeCoccolatePie.setVisible(false);
+      chocolateTextField.setDisable(true);
+    } else {
+      increaeCoccolatePie.setVisible(true);
+      chocolateTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Tepache the
+   * menu page.
+   */
+  public void setAvailableTepache() {
+
+    System.out.println(MenuModel.setAvailableTepache());
+    if (MenuModel.setAvailableTepache().toString() == "false") {
+      System.out.println("Tepache");
+      increaseTepache.setVisible(false);
+      tepacheTextField.setDisable(true);
+    } else {
+      increaseTepache.setVisible(true);
+      tepacheTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Coke the menu
+   * page.
+   */
+  public void setAvailableCoke() {
+
+    System.out.println(MenuModel.setAvailableCoke());
+    if (MenuModel.setAvailableCoke().toString() == "false") {
+      System.out.println("Coke");
+      increaseCoke.setVisible(false);
+      cokeTextField.setDisable(true);
+    } else {
+      increaseCoke.setVisible(true);
+      cokeTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Horchata the
+   * menu page.
+   */
+  public void setAvailableHorchata() {
+
+    System.out.println(MenuModel.setAvailableHorchata());
+    if (MenuModel.setAvailableHorchata().toString() == "false") {
+      System.out.println("Horchata");
+      increaseHorchata.setVisible(false);
+      horchataTextField.setDisable(true);
+    } else {
+      increaseHorchata.setVisible(true);
+      horchataTextField.setDisable(false);
+    }
+  }
+
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Jarritos the
+   * menu page.
+   */
+  public void setAvailableJarritos() {
+
+    System.out.println(MenuModel.setAvailableJarritos());
+    if (MenuModel.setAvailableJarritos().toString() == "false") {
+      System.out.println("Jarritos");
+      increaseJarritos.setVisible(false);
+      jarritosTextField.setDisable(true);
+    } else {
+      increaseJarritos.setVisible(true);
+      jarritosTextField.setDisable(false);
+
     }
   }
 

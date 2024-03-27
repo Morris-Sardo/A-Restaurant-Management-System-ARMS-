@@ -50,11 +50,11 @@ public class MenuModel {
   }
 
   /**
-   * This method is used to get the the bills from the database.
-   * 
-   * @return Boolean value.
+   * This method is used to set Salsa Verde available however if it says false its not available .
+   *
+   * @return Boolean the availablity of the product.
    */
-  public static Boolean setAvailable() {
+  public static Boolean setAvailableSalsaVerde() {
     // this.
     String query = "SELECT available FROM items WHERE item_number = 1";
     try {
@@ -67,8 +67,378 @@ public class MenuModel {
       }
     } catch (SQLException e) {
       e.printStackTrace();
+
     }
     return null;
+
+  }
+
+  /**
+   * This method is used to set Chicken Taquitos available however if it says false its not
+   * available .
+   *
+   * @return Boolean the availablity of the product.
+   */
+  public static Boolean setAvailableChickenTaquitos() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 2";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to set Jalapenos Poppers available however if it says false its not
+   * available .
+   *
+   * @return Boolean the availablity of the product.
+   */
+
+  public static Boolean setAvailableJalapenosPoppers() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 3";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to set available Mexican Dip however if it says false its not available.
+   *
+   * @return Boolean the availablity of the product.
+   */
+  public static Boolean setAvailableMexicanCornDip() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 4";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to set available Chilli con Carne however if it says false its not
+   * available.
+   *
+   * @return Boolean the availablity of the product.
+   */
+  public static Boolean setAvailableChiliConCarne() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 5";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to set available Chicken Fajitas however if it says false its not
+   * available.
+   *
+   * @return Boolean the availablity of the product.
+   */
+  public static Boolean setAvailableChickenFajitas() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 6";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to set available Halloumi Tacos however if it says false its not available.
+   *
+   * @return Boolean the availablity of the product.
+   */
+  public static Boolean setAvailableHalloumiTacos() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 7";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to set available Mexican Style Rice however if it says false its not
+   * available.
+   *
+   * @return Boolean the availablity of the product.
+   */
+  public static Boolean setAvailableMexicanStyleRice() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 8";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to set available Churros however if it says false its not available.
+   *
+   * @return Boolean the availablity of the product.
+   */
+  public static Boolean setAvailableChurros() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 9";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to set available pane Muerto however if it says false its not available.
+   *
+   * @return Boolean the availablity of the product.
+   */
+  public static Boolean setAvailablePandeMuerto() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 10";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to set available Margarite Pie however if it says false its not available.
+   *
+   * @return Boolean the availablity of the product.
+   */
+  public static Boolean setAvailableMargaritaPie() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 11";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to set available Hot Chocolate Pie however if it says false its not
+   * available.
+   *
+   * @return Boolean the availablity of the product.
+   */
+  public static Boolean setAvailableHotChocolatePie() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 12";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to set available Tepache however if it says false its not available.
+   *
+   * @return Boolean the availablity of the product.
+   */
+  public static Boolean setAvailableTepache() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 13";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to set available Coke however if it says false its not available.
+   *
+   * @return Boolean the availablity of the product.
+   */
+  public static Boolean setAvailableCoke() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 14";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+  /**
+   * This method is used to set available Horchata however if it says false its not available.
+   *
+   * @return Boolean the availablity of the product.
+   */
+  public static Boolean setAvailableHorchata() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 15";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
+  }
+
+
+  /**
+   * This method is used to set available Jarritos however if it says false its not available.
+   *
+   * @return Boolean the availablity of the product.
+   */
+  public static Boolean setAvailableJarritos() {
+    // this.
+    String query = "SELECT available FROM items WHERE item_number = 16";
+    try {
+      connection = DataBaseModel.connectToDatabase();
+      prepare = connection.prepareStatement(query);
+
+      result = prepare.executeQuery();
+      if (result.next()) {
+        return result.getBoolean(1);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+
+    }
+    return null;
+
   }
 
 
