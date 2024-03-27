@@ -233,9 +233,7 @@ public class MenuView {
   /**
    * This is a default constructor.
    */
-  public MenuView() {
-    this.increases1 = increases1;
-  }
+  public MenuView() {}
 
   /**
    * Creates and returns the scene to be used for this page.
@@ -267,7 +265,7 @@ public class MenuView {
     reviewListBtn.setOnAction(event -> menuController.handleReviewList());
     dashboardBtn.setOnAction(event -> menuController.handledashboard());
     kitchenBtn.setOnAction(event -> menuController.handleKitchen());
-    payBtn.setOnAction(event -> menuController.handlePayBills());
+    // payBtn.setOnAction(event -> menuController.handlePayBills());
 
     vegetarianSelectFilterBtn.setOnAction(event -> handleVetarianSelectFilterFood());
     vegetarianUnselectFilterBtn.setOnAction(event -> handleVegetarianUnselectFilterFood());
@@ -302,19 +300,6 @@ public class MenuView {
     }
   }
 
-  // /**
-  // * Hides the button option to order the food.
-  // */
-  // public void salsaVerdeInvisible() {
-  // increases1.setVisible(false);
-  // }
-  //
-  // /**
-  // * Shows the button option to order the food.
-  // */
-  // public void salsaVerdeVisible() {
-  // increases1.setVisible(true);
-  // }
 
   /**
    * This would hide the appropriate menu items.
@@ -492,6 +477,36 @@ public class MenuView {
     dessertSelctionFilterBtn.setVisible(true);
     dessertUnfilter();
 
+
+  }
+
+  /**
+   * This method is used clean up table number field.
+   */
+  public void cleanTableFiel() {
+    tableNumberField.setText("");
+  }
+
+  /**
+   * This method is used to clean all quantity field after order.
+   */
+  public void cleanQuantityField() {
+    salsaTextField.setText("");
+    jalapenosTextField.setText("");
+    chilliTextField.setText("");
+    chickenTextField.setText("");
+    cornTextField.setText("");
+    chickenFajitasTextField.setText("");
+    halloumiTextField.setText("");
+    riceTextField.setText("");
+    churrosTextField.setText("");
+    margaritaTextField.setText("");
+    margaritaTextField.setText("");
+    breadTextField.setText("");
+    chocolateTextField.setText("");
+    tepacheTextField.setText("");
+    cokeTextField.setText("");
+    jarritosTextField.setText("");
   }
 
   @FXML
@@ -840,17 +855,30 @@ public class MenuView {
 
   @FXML
   private void handleOrder() {
+    if (getTableNumber() == -1) {
+      AlertText.alert(AlertType.ERROR, "Message Error", "Insert Table");
 
-    int tableNumber = viewSM.getTableNumber();
-    double totalAmount = viewSM.calculateTotalAmount();
+    } else if (getTableNumber() > 10 || getTableNumber() < 1) {
+      AlertText.alert(AlertType.ERROR, "Message Error", "Table number must be within 10 and 1");
+    } else {
+      // MenuController handlePay = new MenuController();
+      int tableNumber = viewSM.getTableNumber();
 
-    List<MenuItem> items = tableView.getItems();
-    String itemNumbers = viewSM.getItemNumbersStaff(items);
+      double totalAmount = viewSM.calculateTotalAmount();
 
-    MenuCostumerModel.insertIntoOrderTable(tableNumber, itemNumbers, totalAmount);
-    AlertText.alert(AlertType.INFORMATION, "SUCCESS", "Order Placed!");
+      List<MenuItem> items = tableView.getItems();
+      String itemNumbers = viewSM.getItemNumbersStaff(items);
+      MenuModel.insertIntoSQLPriceTableStaff(totalAmount, tableNumber);
+      MenuCostumerModel.insertIntoOrderTable(tableNumber, itemNumbers, totalAmount);
+      AlertText.alert(AlertType.INFORMATION, "SUCCESS", "Order Placed!");
+
+      cleanQuantityField();
+      cleanTableFiel();
+      totalLabel.setText("");
+      items.clear();
+
+
+    }
 
   }
-
-
 }
