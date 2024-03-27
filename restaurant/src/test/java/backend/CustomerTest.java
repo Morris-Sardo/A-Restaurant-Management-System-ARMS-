@@ -12,11 +12,11 @@ import org.junit.jupiter.api.Tag;
 class CustomerTest {
   //private static Customer testCustomer = null;
 
-//  @BeforeAll
-//  static void setUpBeforeClass() throws Exception {
-//    testCustomer = new Customer(ConnectionManager.connectToDatabase());
-//    testCustomer.setCustomerID(1);  }
-//  
+  //@BeforeAll
+  //static void setUpBeforeClass() throws Exception {
+  //  testCustomer = new Customer(1, ConnectionManager.connectToDatabase());
+  //}
+  
   //@AfterAll
   //static void runAfterAll() throws Exception {
   //  if (testCustomer != null) {

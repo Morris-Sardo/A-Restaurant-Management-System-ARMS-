@@ -507,7 +507,8 @@ public class MenuModel {
    * @param price the bill.
    */
   public static void insertIntoOrderTable(int tableNumber, String items, double price) {
-
+    String formattedItems = insertNewLines(items, 20);
+    System.out.println("\n\n\n\n\n" + formattedItems + "cfvghjkl");
     String insertOrderQuery =
         "INSERT INTO orders (order_number, table_number, items, price, order_time, status) "
             + "VALUES (?, ?, ?, ?, ?, ?)";
@@ -525,6 +526,8 @@ public class MenuModel {
 
     int orderNumber = 0;
 
+
+
     try {
       connection = DataBaseModel.connectToDatabase();
 
@@ -537,7 +540,7 @@ public class MenuModel {
       prepare = connection.prepareStatement(insertOrderQuery);
       prepare.setInt(1, orderNumber);
       prepare.setInt(2, tableNumber);
-      prepare.setString(3, items);
+      prepare.setString(3, formattedItems);
       prepare.setDouble(4, price);
       prepare.setString(5, orderTime);
       prepare.setString(6, "Requested");
@@ -559,5 +562,24 @@ public class MenuModel {
         e.printStackTrace();
       }
     }
+  }
+
+  /**
+   * Inserts a new line of characters into a string after every N characters.
+   * 
+   * @param text The original text to be formatted.
+   * @param interval The interval (number of characters) after which to insert a new line.
+   * @return The formatted text with new lines.
+   */
+  private static String insertNewLines(String text, int interval) {
+    StringBuilder sb = new StringBuilder(text);
+
+    int i = interval;
+    while (i < sb.length()) {
+      sb.insert(i, "\n");
+      i += interval + 1; // Move past the inserted newline character
+    }
+
+    return sb.toString();
   }
 }

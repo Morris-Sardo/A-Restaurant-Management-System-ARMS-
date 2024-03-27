@@ -1154,14 +1154,18 @@ public class MenuCostumerView {
 
   @FXML
   private void handleOrder() {
+    List<MenuItem> items = tableView.getItems();
     // Integer tableNumber = viewCM.getTableNumber();
     if (viewCM.getTableNumber() == -1
         || PayCostumerModel.getPrizeFormTable(viewCM.getTableNumber()) == null) {
-      AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
+      AlertText.alert(AlertType.ERROR, "Error Message", "Insert a Valid Table Number");
+    } else if (getTableNumber() > 10 || getTableNumber() < 1) {
+      AlertText.alert(AlertType.ERROR, "Message Error", "Table number must be within 10 and 1");
+    } else if (items.toString().equals("[]")) {
+      AlertText.alert(AlertType.ERROR, "Message Error", "Please order something.");
     } else {
       Integer tableNumber = viewCM.getTableNumber();
       double totalAmount = viewCM.calculateTotalAmount();
-      List<MenuItem> items = tableView.getItems();
       String itemNumbers = viewCM.getItemNumbers(items);
 
       MenuCostumerModel.insertIntoOrderTable(tableNumber, itemNumbers, totalAmount);
