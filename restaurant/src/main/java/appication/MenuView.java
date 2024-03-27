@@ -855,19 +855,22 @@ public class MenuView {
 
   @FXML
   private void handleOrder() {
+    List<MenuItem> items = tableView.getItems();
+    String itemNumbers = viewSM.getItemNumbersStaff(items);
     if (getTableNumber() == -1) {
-      AlertText.alert(AlertType.ERROR, "Message Error", "Insert Table");
-
+      AlertText.alert(AlertType.ERROR, "Message Error", "Insert a Valid Table Number");
     } else if (getTableNumber() > 10 || getTableNumber() < 1) {
       AlertText.alert(AlertType.ERROR, "Message Error", "Table number must be within 10 and 1");
+    } else if (items.toString().equals("[]")) {
+      AlertText.alert(AlertType.ERROR, "Message Error", "Please order something.");
     } else {
       // MenuController handlePay = new MenuController();
       int tableNumber = viewSM.getTableNumber();
 
       double totalAmount = viewSM.calculateTotalAmount();
-
-      List<MenuItem> items = tableView.getItems();
-      String itemNumbers = viewSM.getItemNumbersStaff(items);
+      
+      System.out.println("----");
+      System.out.println(items.toString());
       MenuModel.insertIntoSQLPriceTableStaff(totalAmount, tableNumber);
       MenuCostumerModel.insertIntoOrderTable(tableNumber, itemNumbers, totalAmount);
       AlertText.alert(AlertType.INFORMATION, "SUCCESS", "Order Placed!");
