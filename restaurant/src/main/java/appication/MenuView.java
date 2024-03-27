@@ -345,7 +345,8 @@ public class MenuView {
 
 
   /**
-   * This would hide the appropriate menu items.
+   * This would hide the appropriate menu items. This method changes the visability of salsa verde
+   * the menu page
    */
   public void setAvaibleSalsaVerde() {
     System.out.println(MenuModel.setAvailableSalsaVerde());
@@ -359,8 +360,10 @@ public class MenuView {
     }
   }
 
+
   /**
-   * This would hide the appropriate menu items.
+   * This would hide the appropriate menu items. This method changes the visability of Chicken
+   * Taquitos the menu page.
    */
   public void setAvaibleChickenTaquitos() {
 
@@ -375,9 +378,9 @@ public class MenuView {
     }
   }
 
-
   /**
-   * This would hide the appropriate menu items.
+   * This would hide the appropriate menu items. This method changes the visability of Jalapenos
+   * Poppers the menu page.
    */
   public void setAvailableJalapenosPoppers() {
 
@@ -393,7 +396,8 @@ public class MenuView {
   }
 
   /**
-   * This would hide the appropriate menu items.
+   * This would hide the appropriate menu items. This method changes the visability of Mexican Corn
+   * Dip the menu page.
    */
   public void setAvailableMexicanCornDip() {
 
@@ -409,7 +413,8 @@ public class MenuView {
   }
 
   /**
-   * This would hide the appropriate menu items.
+   * This would hide the appropriate menu items. This method changes the visability of Chilli Con
+   * Carne the menu page.
    */
   public void setAvailableChiliConCarne() {
 
@@ -425,7 +430,8 @@ public class MenuView {
   }
 
   /**
-   * This would hide the appropriate menu items.
+   * This would hide the appropriate menu items. This method changes the visability of Chicken
+   * Fajitas the menu page.
    */
   public void setAvailableChickenFajitas() {
 
@@ -441,7 +447,8 @@ public class MenuView {
   }
 
   /**
-   * This would hide the appropriate menu items.
+   * This would hide the appropriate menu items. This method changes the visability of Halloumi
+   * Tacos the menu page.
    */
   public void setAvailableHalloumiTacos() {
 
@@ -457,7 +464,8 @@ public class MenuView {
   }
 
   /**
-   * This would hide the appropriate menu items.
+   * This would hide the appropriate menu items. This method changes the visability of Mexican Style
+   * Rice the menu page.
    */
   public void setAvailableMexicanStyleRice() {
 
@@ -474,7 +482,8 @@ public class MenuView {
   }
 
   /**
-   * This would hide the appropriate menu items.
+   * This would hide the appropriate menu items. This method changes the visability of Churros the
+   * menu page.
    */
   public void setAvailableChurros() {
 
@@ -490,8 +499,10 @@ public class MenuView {
     }
   }
 
+
   /**
-   * This would hide the appropriate menu items.
+   * This would hide the appropriate menu items. This method changes the visability of Pande Muerto
+   * the menu page.
    */
   public void setAvailablePandeMuerto() {
 
@@ -507,7 +518,8 @@ public class MenuView {
   }
 
   /**
-   * This would hide the appropriate menu items.
+   * This would hide the appropriate menu items. This method changes the visability of Margarita Pie
+   * the menu page.
    */
   public void setAvailableMargaritaPie() {
 
@@ -524,7 +536,8 @@ public class MenuView {
   }
 
   /**
-   * This would hide the appropriate menu items.
+   * This would hide the appropriate menu items. This method changes the visability of Hot Chocolate
+   * Pie the menu page.
    */
   public void setAvailableHotChocolatePie() {
 
@@ -540,7 +553,8 @@ public class MenuView {
   }
 
   /**
-   * This would hide the appropriate menu items.
+   * This would hide the appropriate menu items. This method changes the visability of Tepache the
+   * menu page.
    */
   public void setAvailableTepache() {
 
@@ -556,7 +570,8 @@ public class MenuView {
   }
 
   /**
-   * This would hide the appropriate menu items.
+   * This would hide the appropriate menu items. This method changes the visability of Coke the menu
+   * page.
    */
   public void setAvailableCoke() {
 
@@ -572,7 +587,8 @@ public class MenuView {
   }
 
   /**
-   * This would hide the appropriate menu items.
+   * This would hide the appropriate menu items. This method changes the visability of Horchata the
+   * menu page.
    */
   public void setAvailableHorchata() {
 
@@ -589,7 +605,8 @@ public class MenuView {
 
 
   /**
-   * This would hide the appropriate menu items.
+   * This would hide the appropriate menu items. This method changes the visability of Jarritos the
+   * menu page.
    */
   public void setAvailableJarritos() {
 
@@ -601,7 +618,7 @@ public class MenuView {
     } else {
       increaseJarritos.setVisible(true);
       jarritosTextField.setDisable(false);
-      
+
     }
   }
 

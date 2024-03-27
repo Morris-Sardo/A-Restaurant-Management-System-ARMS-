@@ -29,7 +29,12 @@ public class StockModel {
   private static String tags;
   private static Integer stock;
 
- 
+  /**
+   * This is a default constructor.
+   */
+  public StockModel() {}
+
+
 
   /**
    * This method is used to get all the data of the stock table from the database to populate the
@@ -95,7 +100,6 @@ public class StockModel {
     String sql = "UPDATE items SET item_name = ?, price = ?,  "
         + "allergies = ?, calories = ?, available = ?, tags = ?, stock = ? WHERE item_number = ?";
 
-  
 
 
     // Try-with-resources statement to auto-close resources

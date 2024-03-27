@@ -37,26 +37,56 @@ public class Item {
     this.available = available;
   }
 
+  /**
+   * This retruns the item number of the order.
+   * 
+   * @return Id.
+   */
   public int getItemNumber() {
     return itemNumber;
   }
 
+  /**
+   * This returns the name of the order.
+   * 
+   * @return name.
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * This returns the price of the order.
+   * 
+   * @return price.
+   */
   public float getPrice() {
     return price;
   }
 
+  /**
+   * This returns the allergies of the order.
+   * 
+   * @return allergies.
+   */
   public String[] getAllergies() {
     return allergies;
   }
 
+  /**
+   * This returns the calories of the order.
+   * 
+   * @return calories.
+   */
   public float getCalories() {
     return calories;
   }
 
+  /**
+   * This returns the status of the order.
+   * 
+   * @return the status.
+   */
   public boolean isAvailable() {
     return available;
   }

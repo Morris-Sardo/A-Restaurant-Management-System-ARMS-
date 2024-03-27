@@ -14,16 +14,21 @@ import org.postgresql.util.PSQLException;
  * @author xaviernoel
  *
  */
-
 public class ConnectionManager {
+  
+  
+  /**
+   * Default constructor. 
+   */
+  public ConnectionManager() {}
 
   /**
    * Creates a new connection to the database.
    * 
    * @return the connection created
+   * @throws SQLException Exception thrown.
    */
-  public static Connection connectToDatabase()
-      throws SQLException {
+  public static Connection connectToDatabase() throws SQLException {
     Connection connection = null;
     connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/teamproject15",
         "teamproject15", "quogai");
@@ -37,6 +42,10 @@ public class ConnectionManager {
    * 
    * @param connection the connection to the database
    * @return the ArrayList of Item objects
+   * @throws SQLException It throws this.
+   * @throws PSQLException It throws this.
+   * @throws DatabaseInformationException Throws this returning aswell that no menu items were
+   *         found.
    */
   public static ArrayList<Item> loadItems(Connection connection)
       throws SQLException, PSQLException, DatabaseInformationException {

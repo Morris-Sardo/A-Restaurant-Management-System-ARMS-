@@ -149,6 +149,7 @@ public class MenuCostumerModel {
       prepare.setDouble(4, price);
       prepare.setString(5, orderTime);
       prepare.setString(6, "Requested");
+      System.out.println(prepare.toString());
       prepare.executeUpdate();
 
       System.out.println("Values inserted into Orders successfully!");
@@ -170,9 +171,9 @@ public class MenuCostumerModel {
   }
 
   /**
-   * This method is used to get the the bills from the database.
+   * This method is used to set Salsa Verde available however if it says false its not available .
    *
-   * @return Boolean value.
+   * @return Boolean the availablity of the product.
    */
   public static Boolean setAvailableSalsaVerde() {
     // this.
@@ -194,9 +195,10 @@ public class MenuCostumerModel {
   }
 
   /**
-   * This method is used to get the the bills from the database.
+   * This method is used to set Chicken Taquitos available however if it says false its not
+   * available .
    *
-   * @return Boolean value.
+   * @return Boolean the availablity of the product.
    */
   public static Boolean setAvailableChickenTaquitos() {
     // this.
@@ -218,9 +220,10 @@ public class MenuCostumerModel {
   }
 
   /**
-   * This method is used to get the the bills from the database.
+   * This method is used to set Chicken Taquitos available however if it says false its not
+   * available .
    *
-   * @return Boolean value.
+   * @return Boolean the availablity of the product.
    */
   public static Boolean setAvailableJalapenosPoppers() {
     // this.
@@ -242,9 +245,9 @@ public class MenuCostumerModel {
   }
 
   /**
-   * This method is used to get the the bills from the database.
+   * This method is used to set available Mexican Dip however if it says false its not available.
    *
-   * @return Boolean value.
+   * @return Boolean the availablity of the product.
    */
   public static Boolean setAvailableMexicanCornDip() {
     // this.
@@ -266,9 +269,10 @@ public class MenuCostumerModel {
   }
 
   /**
-   * This method is used to get the the bills from the database.
+   * This method is used to set available Chilli con Carne however if it says false its not
+   * available.
    *
-   * @return Boolean value.
+   * @return Boolean the availablity of the product.
    */
   public static Boolean setAvailableChiliConCarne() {
     // this.
@@ -290,9 +294,10 @@ public class MenuCostumerModel {
   }
 
   /**
-   * This method is used to get the the bills from the database.
+   * This method is used to set available Chicken Fajitas however if it says false its not
+   * available.
    *
-   * @return Boolean value.
+   * @return Boolean the availablity of the product.
    */
   public static Boolean setAvailableChickenFajitas() {
     // this.
@@ -314,9 +319,10 @@ public class MenuCostumerModel {
   }
 
   /**
-   * This method is used to get the the bills from the database.
+   * This method is used to set available Halloumi Tacos however if it says false its not
+   * available.
    *
-   * @return Boolean value.
+   * @return Boolean the availablity of the product.
    */
   public static Boolean setAvailableHalloumiTacos() {
     // this.
@@ -338,9 +344,10 @@ public class MenuCostumerModel {
   }
 
   /**
-   * This method is used to get the the bills from the database.
+   * This method is used to set available Mexican Style Rice however if it says false its not
+   * available.
    *
-   * @return Boolean value.
+   * @return Boolean the availablity of the product.
    */
   public static Boolean setAvailableMexicanStyleRice() {
     // this.
@@ -362,9 +369,9 @@ public class MenuCostumerModel {
   }
 
   /**
-   * This method is used to get the the bills from the database.
+   * This method is used to set available Churros however if it says false its not available.
    *
-   * @return Boolean value.
+   * @return Boolean the availablity of the product.
    */
   public static Boolean setAvailableChurros() {
     // this.
@@ -385,10 +392,11 @@ public class MenuCostumerModel {
 
   }
 
+
   /**
-   * This method is used to get the the bills from the database.
+   * This method is used to set available pane Muerto however if it says false its not available.
    *
-   * @return Boolean value.
+   * @return Boolean the availablity of the product.
    */
   public static Boolean setAvailablePandeMuerto() {
     // this.
@@ -410,9 +418,9 @@ public class MenuCostumerModel {
   }
 
   /**
-   * This method is used to get the the bills from the database.
+   * This method is used to set available Margarite Pie however if it says false its not available.
    *
-   * @return Boolean value.
+   * @return Boolean the availablity of the product.
    */
   public static Boolean setAvailableMargaritaPie() {
     // this.
@@ -434,9 +442,10 @@ public class MenuCostumerModel {
   }
 
   /**
-   * This method is used to get the the bills from the database.
+   * This method is used to set available Hot Chocolate Pie however if it says false its not
+   * available.
    *
-   * @return Boolean value.
+   * @return Boolean the availablity of the product.
    */
   public static Boolean setAvailableHotChocolatePie() {
     // this.
@@ -458,9 +467,9 @@ public class MenuCostumerModel {
   }
 
   /**
-   * This method is used to get the the bills from the database.
+   * This method is used to set available Tepache however if it says false its not available.
    *
-   * @return Boolean value.
+   * @return Boolean the availablity of the product.
    */
   public static Boolean setAvailableTepache() {
     // this.
@@ -482,9 +491,9 @@ public class MenuCostumerModel {
   }
 
   /**
-   * This method is used to get the the bills from the database.
+   * This method is used to set available Coke however if it says false its not available.
    *
-   * @return Boolean value.
+   * @return Boolean the availablity of the product.
    */
   public static Boolean setAvailableCoke() {
     // this.
@@ -506,9 +515,9 @@ public class MenuCostumerModel {
   }
 
   /**
-   * This method is used to get the the bills from the database.
+   * This method is used to set available Horchata however if it says false its not available.
    *
-   * @return Boolean value.
+   * @return Boolean the availablity of the product.
    */
   public static Boolean setAvailableHorchata() {
     // this.
@@ -531,9 +540,9 @@ public class MenuCostumerModel {
 
 
   /**
-   * This method is used to get the the bills from the database.
+   * This method is used to set available Jarritos however if it says false its not available.
    *
-   * @return Boolean value.
+   * @return Boolean the availablity of the product.
    */
   public static Boolean setAvailableJarritos() {
     // this.

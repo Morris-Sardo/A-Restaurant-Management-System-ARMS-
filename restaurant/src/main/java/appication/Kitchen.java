@@ -25,6 +25,12 @@ public class Kitchen {
   private StringProperty orderTime;
   private StringProperty status;
 
+
+  /**
+   * This is a default contructor.
+   */
+  public Kitchen() {}
+
   /**
    * This getter method returns the value stored in the orderNum property.
    * 

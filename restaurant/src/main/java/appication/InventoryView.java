@@ -119,6 +119,13 @@ public class InventoryView {
 
   private String[] typeProductList = {type1, type2, type3, type4, type5};
 
+
+  /**
+   * This is a default constructor.
+   */
+  public InventoryView() {}
+
+
   /**
    * Returns the scene.
    * 

@@ -24,9 +24,9 @@
 									<children>
 										<AnchorPane prefHeight="87.0" prefWidth="222.0" styleClass="header" stylesheets="@myView.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 											<children>
-												<Label layoutX="4.0" layoutY="32.0" prefHeight="19.0" prefWidth="216.0" text="Mex Eat Managment System" textAlignment="CENTER" textFill="WHITE">
+												<Label layoutX="4.0" layoutY="32.0" prefHeight="19.0" prefWidth="216.0" text="Mex Eat Management System" textAlignment="CENTER" textFill="WHITE">
 													<font>
-														<Font size="17.0" />
+														<Font size="16.0" />
 													</font>
 												</Label>
 											</children>
@@ -59,8 +59,8 @@
 												<Font size="15.0" />
 											</font>
 										</Label>
-										<Button fx:id="menuCostumerBtn" layoutX="6.0" layoutY="226.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="Menu" textFill="WHITE" />
-										<Button fx:id="reviewListBtn" layoutX="6.0" layoutY="300.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="Previous Reviews" textFill="WHITE" />
+										<Button fx:id="menuCostumerBtn" layoutX="6.0" layoutY="226.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MENU" textFill="WHITE" />
+										<Button fx:id="reviewListBtn" layoutX="6.0" layoutY="300.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="REVIEW LIST" textFill="WHITE" />
 									</children>
 								</AnchorPane>
 							</children>

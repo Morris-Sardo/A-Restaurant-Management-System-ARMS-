@@ -32,6 +32,12 @@ public class KitchenModel {
   private static String items;
   private static String status;
 
+
+  /**
+   * This is a default constructor.
+   */
+  public KitchenModel() {}
+
   /**
    * This method is used to get all the data of the orders table from the database to populate the
    * interface Kitchen Orders page table.
@@ -87,7 +93,7 @@ public class KitchenModel {
     // Try-with-resources statement to auto-close resources
     try (Connection conn = DataBaseModel.connectToDatabase();
         PreparedStatement pstmt = conn.prepareStatement(sql)) {
-      
+
       System.out.println(orderNumber);
       System.out.println(status);
 

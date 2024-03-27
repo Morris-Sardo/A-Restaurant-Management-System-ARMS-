@@ -13,13 +13,9 @@ import javafx.beans.property.StringProperty;
  */
 public class Review {
 
-  /** ID. */
-  private IntegerProperty id; 
-  /** name. */
-  private StringProperty name; 
-  /** stars. */
-  private IntegerProperty stars; 
-  /** comment. */
+  private IntegerProperty id;
+  private StringProperty name;
+  private IntegerProperty stars;
   private StringProperty comment;
 
   /**
@@ -28,7 +24,7 @@ public class Review {
   public Review() {}
 
   /**
-   * This method set values id in id_Property.
+   * This method set values id in id Property.
    *
    * @param value id.
    */
@@ -37,7 +33,7 @@ public class Review {
   }
 
   /**
-   * This method get value stored into the id_Property.
+   * This method get value stored into the id Property.
    *
    * @return id.
    */
@@ -46,7 +42,7 @@ public class Review {
   }
 
   /**
-   * This method create istantiate a simpleintegerProperty id.
+   * This method create istantiate a simpleinteger Property id.
    *
    * @return return id.
    */
@@ -69,7 +65,7 @@ public class Review {
 
 
   /**
-   * This methods get valuse name/niclname store onto name_Proprety..
+   * This methods get valuse name/niclname store onto name_Property.
    *
    * @return string name costumer.
    */
@@ -100,7 +96,7 @@ public class Review {
   }
 
   /**
-   * This method get start sotred into startsproperty.
+   * This get the thev value hold into the start.
    *
    * @return the value that hold starts.
    */
@@ -109,9 +105,9 @@ public class Review {
   }
 
   /**
-   * This methods has stored the stars into property.
-   *
-   * @return value that hold starts.
+   * This method initialize the start object.
+   * 
+   * @return the valules hold into stars.
    */
   public IntegerProperty starsProperty() {
     if (stars == null) {
@@ -122,7 +118,7 @@ public class Review {
   }
 
   /**
-   * This method set comment done onto commmentporperty.
+   * This method set comment done onto commment property.
    *
    * @param value hold the comment.
    */
@@ -131,7 +127,7 @@ public class Review {
   }
 
   /**
-   * This methods.
+   * This methods tget comment create into review.
    *
    * @return methods.
    */
@@ -139,10 +135,11 @@ public class Review {
     return commentProperty().get();
   }
 
+
   /**
    * This methods return the the comment sotred into property.
-   *
-   * @return value that hold the cooment.
+   * 
+   * @return the value hold in the comment.
    */
   public StringProperty commentProperty() {
     if (comment == null) {
