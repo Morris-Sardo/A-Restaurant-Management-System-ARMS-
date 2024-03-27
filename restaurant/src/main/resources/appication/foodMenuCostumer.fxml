@@ -14,297 +14,297 @@
 <?import javafx.scene.text.Font?>
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appication.MenuCostumerView">
-	<children>
-		<AnchorPane prefHeight="600.0" prefWidth="600.0">
-			<children>
-				<BorderPane prefHeight="600.0" prefWidth="667.0">
-					<center>
-						<ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="650.0" prefWidth="467.0" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">
-							<content>
-								<AnchorPane prefHeight="600.0" prefWidth="503.0">
-									<children>
-										<AnchorPane layoutX="-9.0" layoutY="3.0" prefHeight="630.0" prefWidth="479.0">
-											<children>
-												<AnchorPane fx:id="salsaVerde" layoutX="14.0" layoutY="40.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
-													<children>
-														<Button fx:id="increases1" layoutX="103.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleSalsaVerde" prefHeight="26.0" prefWidth="50.0" text="☑" />
-														<Label layoutX="56.0" layoutY="7.0" prefHeight="17.0" prefWidth="66.0" text="Salsa Verde" />
-														<TextField fx:id="salsaTextField" layoutX="15.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<ImageView fitHeight="71.0" fitWidth="141.0" layoutX="15.0" layoutY="25.0">
-															<image>
-																<Image url="@image/menuPic/a798de51cb27b7b16b7a242ef691d856.jpg" />
-															</image>
-														</ImageView>
-													</children>
-												</AnchorPane>
-												<AnchorPane fx:id="jalapenos" layoutX="14.0" layoutY="205.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
-													<children>
-														<Button fx:id="increases2" layoutX="101.0" layoutY="106.0" mnemonicParsing="false" onAction="#handleJalapenos" prefWidth="50.0" text="☑" />
-														<Label layoutX="38.0" layoutY="6.0" prefHeight="17.0" prefWidth="103.0" text="Jalapenos Poppers" />
-														<TextField fx:id="jalapenosTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<ImageView fitHeight="83.0" fitWidth="136.0" layoutX="15.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
-														<ImageView fitHeight="72.0" fitWidth="150.0" layoutX="10.0" layoutY="28.0">
-															<image>
-																<Image url="@image/menuPic/jalapenoFried.jpg" />
-															</image>
-														</ImageView>
-													</children>
-												</AnchorPane>
-												<AnchorPane fx:id="chilliConCarne" layoutX="14.0" layoutY="370.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
-													<children>
-														<Button fx:id="increases21" layoutX="109.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleChilli" prefHeight="26.0" prefWidth="50.0" text="☑" />
-														<TextField fx:id="chilliTextField" layoutX="14.0" layoutY="101.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<Label layoutX="39.0" layoutY="6.0" prefHeight="17.0" prefWidth="101.0" text="Chilli Con Carne" />
-														<ImageView fitHeight="68.0" fitWidth="150.0" layoutX="9.0" layoutY="24.0">
-															<image>
-																<Image url="@image/menuPic/89993-award-winning-chili-con-carne-ddmfs-3x4-4e3a48f5505a4c998415c261507b0a76.jpg" />
-															</image>
-														</ImageView>
-													</children>
-												</AnchorPane>
-												<AnchorPane fx:id="chickenTaqiotos" layoutX="244.0" layoutY="40.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
-													<children>
-														<Button fx:id="increases" layoutX="111.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleChicken" prefHeight="26.0" prefWidth="50.0" text="☑" />
-														<TextField fx:id="chickenTextField" layoutX="10.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<Label layoutX="42.0" layoutY="6.0" prefHeight="17.0" prefWidth="94.0" text="Chicken Taquitos" />
-														<ImageView fitHeight="74.0" fitWidth="122.0" layoutX="18.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" />
-														<ImageView fitHeight="75.0" fitWidth="150.0" layoutX="10.0" layoutY="25.0">
-															<image>
-																<Image url="@image/menuPic/Chicken-Taquitos-Recipe-Card.jpg" />
-															</image>
-														</ImageView>
-													</children>
-												</AnchorPane>
-												<AnchorPane fx:id="mexicanCornDip" layoutX="244.0" layoutY="205.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
-													<children>
-														<Button fx:id="increases3" layoutX="112.0" layoutY="106.0" mnemonicParsing="false" onAction="#handleCorn" prefWidth="50.0" text="☑" />
-														<Label layoutX="39.0" layoutY="6.0" prefHeight="17.0" prefWidth="101.0" text="Mexican Corn Dip" />
-														<TextField fx:id="cornTextField" layoutX="7.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<ImageView fitHeight="74.0" fitWidth="150.0" layoutX="6.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
-														<ImageView fitHeight="77.0" fitWidth="157.0" layoutX="5.0" layoutY="24.0">
-															<image>
-																<Image url="@image/menuPic/corn.jpg" />
-															</image>
-														</ImageView>
-													</children>
-												</AnchorPane>
-												<AnchorPane fx:id="chickenFajitas" layoutX="244.0" layoutY="370.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
-													<children>
-														<Button fx:id="increases22" layoutX="110.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleChickenFajitas" prefHeight="26.0" prefWidth="50.0" text="☑" />
-														<TextField fx:id="chickenFajitasTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<Label layoutX="39.0" layoutY="6.0" prefHeight="17.0" prefWidth="101.0" text="Chicken Fajitas" />
-														<ImageView fitHeight="78.0" fitWidth="150.0" layoutX="6.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
-														<ImageView fitHeight="68.0" fitWidth="150.0" layoutX="10.0" layoutY="27.0">
-															<image>
-																<Image url="@image/menuPic/chicken-fajitas-index-649de79db2265.jpg" />
-															</image>
-														</ImageView>
-													</children>
-												</AnchorPane>
-												<AnchorPane fx:id="halloumi" layoutX="14.0" layoutY="535.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
-													<children>
-														<Button fx:id="increases11" layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleHalloumi" prefHeight="26.0" prefWidth="50.0" text="☑" />
-														<TextField fx:id="halloumiTextField" layoutX="7.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<Label layoutX="39.0" layoutY="6.0" text="Halloumi Tacos" />
-														<ImageView fitHeight="73.0" fitWidth="150.0" layoutX="8.0" layoutY="26.0">
-															<image>
-																<Image url="@image/menuPic/grilled-halloumi-tacos-for-camping-sq.jpg" />
-															</image>
-														</ImageView>
-													</children>
-												</AnchorPane>
-												<AnchorPane fx:id="mexicanRice" layoutX="244.0" layoutY="535.0" prefHeight="117.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
-													<children>
-														<Button fx:id="increasePasta" layoutX="105.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleRice" prefHeight="26.0" prefWidth="50.0" text="☑" />
-														<TextField fx:id="riceTextField" layoutX="14.0" layoutY="104.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<Label layoutX="40.0" layoutY="6.0" text="Mexican Style Rice" />
-														<ImageView fitHeight="74.0" fitWidth="141.0" layoutX="14.0" layoutY="23.0">
-															<image>
-																<Image url="@image/menuPic/mex_rice.jpg" />
-															</image>
-														</ImageView>
-													</children>
-												</AnchorPane>
-												<AnchorPane fx:id="churros" layoutX="14.0" layoutY="700.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
-													<children>
-														<Button layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleChurros" prefHeight="26.0" prefWidth="50.0" text="☑" />
-														<TextField fx:id="churrosTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<Label layoutX="58.0" layoutY="6.0" prefHeight="17.0" prefWidth="47.0" text="Churros" />
-														<ImageView fitHeight="77.0" fitWidth="140.0" layoutX="10.0" layoutY="23.0">
-															<image>
-																<Image url="@image/menuPic/churros.jpg" />
-															</image>
-														</ImageView>
-													</children>
-												</AnchorPane>
-												<AnchorPane fx:id="margaritaPie" layoutX="14.0" layoutY="865.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
-													<children>
-														<Button layoutX="111.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleMargarita" prefHeight="26.0" prefWidth="50.0" text="☑" />
-														<TextField fx:id="margaritaTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<Label layoutX="40.0" layoutY="6.0" text="Margarita Pie" />
-														<ImageView fitHeight="73.0" fitWidth="150.0" layoutX="10.0" layoutY="23.0">
-															<image>
-																<Image url="@image/menuPic/chakeSalad.jpg" />
-															</image>
-														</ImageView>
-													</children>
-												</AnchorPane>
-												<AnchorPane fx:id="bread" layoutX="244.0" layoutY="700.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
-													<children>
-														<Button layoutX="110.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleBread" prefHeight="26.0" prefWidth="50.0" text="☑" />
-														<TextField fx:id="breadTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<Label layoutX="39.0" layoutY="6.0" text="Pan De Muerto" />
-														<ImageView fitHeight="68.0" fitWidth="150.0" layoutX="10.0" layoutY="29.0">
-															<image>
-																<Image url="@image/menuPic/bread_mex.jpg" />
-															</image>
-														</ImageView>
-													</children>
-												</AnchorPane>
-												<AnchorPane fx:id="hotChoccolate" layoutX="244.0" layoutY="865.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
-													<children>
-														<Button layoutX="111.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleChocolate" prefHeight="26.0" prefWidth="50.0" text="☑" />
-														<TextField fx:id="chocolateTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<Label layoutX="40.0" layoutY="6.0" text="Hot Chocolate Pie" />
-														<ImageView fitHeight="72.0" fitWidth="150.0" layoutX="9.0" layoutY="25.0">
-															<image>
-																<Image url="@image/menuPic/mex_cioccolate.jpg" />
-															</image>
-														</ImageView>
-													</children>
-												</AnchorPane>
-												<AnchorPane fx:id="tepache" layoutX="14.0" layoutY="1030.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
-													<children>
-														<Button layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleTepache" prefHeight="26.0" prefWidth="50.0" text="☑" />
-														<TextField fx:id="tepacheTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<Label layoutX="57.0" layoutY="6.0" prefHeight="17.0" prefWidth="66.0" text="Tepache" />
-														<ImageView fitHeight="66.0" fitWidth="124.0" layoutX="28.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
-														<ImageView fitHeight="74.0" fitWidth="39.0" layoutX="62.0" layoutY="23.0">
-															<image>
-																<Image url="@image/menuPic/TepacheStraw.JPG" />
-															</image>
-														</ImageView>
-													</children>
-												</AnchorPane>
-												<AnchorPane fx:id="coke" layoutX="244.0" layoutY="1030.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
-													<children>
-														<Button layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleCoke" prefHeight="26.0" prefWidth="50.0" text="☑" />
-														<TextField fx:id="cokeTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<Label layoutX="68.0" layoutY="6.0" text="Coke" />
-														<ImageView fitHeight="68.0" fitWidth="40.0" layoutX="61.0" layoutY="26.0">
-															<image>
-																<Image url="@image/menuPic/cocacola.jpg" />
-															</image>
-														</ImageView>
-													</children>
-												</AnchorPane>
-												<AnchorPane fx:id="jarritos" layoutX="244.0" layoutY="1195.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
-													<children>
-														<Label layoutX="62.0" layoutY="6.0" text="Jarritos" />
-														<Button layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleJarritos" prefHeight="26.0" prefWidth="50.0" text="☑" />
-														<TextField fx:id="jarritosTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<ImageView fitHeight="77.0" fitWidth="149.0" layoutX="7.0" layoutY="22.0">
-															<image>
-																<Image url="@image/menuPic/download1.jpg" />
-															</image>
-														</ImageView>
-													</children>
-												</AnchorPane>
-												<AnchorPane fx:id="horchata" layoutX="14.0" layoutY="1195.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
-													<children>
-														<Button layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleHorchata" prefHeight="26.0" prefWidth="50.0" text="☑" />
-														<TextField fx:id="horchataTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
-														<Label layoutX="57.0" layoutY="6.0" text="Horchata" />
-														<ImageView fitHeight="79.0" fitWidth="142.0" layoutX="12.0" layoutY="21.0">
-															<image>
-																<Image url="@image/menuPic/Horchata-Thumbnail.jpg" />
-															</image>
-														</ImageView>
-													</children>
-												</AnchorPane>
-											</children>
-										</AnchorPane>
-									</children>
-								</AnchorPane>
-							</content>
-						</ScrollPane>
-					</center>
-					<left>
-						<AnchorPane minHeight="-Infinity" prefHeight="650.0" prefWidth="150.0" styleClass="nav-form" stylesheets="@MenuDesign.css" BorderPane.alignment="CENTER">
-							<children>
-								<AnchorPane prefHeight="87.0" prefWidth="222.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-									<children>
-										<Label layoutX="4.0" layoutY="32.0" prefHeight="19.0" prefWidth="216.0" text="Mex Eat Managment System" textAlignment="JUSTIFY" textFill="WHITE">
-											<font>
-												<Font size="17.0" />
-											</font>
-										</Label>
-									</children>
-								</AnchorPane>
-								<Label layoutX="14.0" layoutY="100.0" text="Welcome," textFill="WHITE">
-									<font>
-										<Font size="18.0" />
-									</font>
-								</Label>
-								<Label fx:id="username" layoutX="111.0" layoutY="100.0" prefHeight="23.0" prefWidth="86.0" text="Mex Eat" textFill="WHITE">
-									<font>
-										<Font size="18.0" />
-									</font>
-								</Label>
-								<Button fx:id="seeReviewBtn" layoutX="6.0" layoutY="223.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="REVIEWLIST" textFill="WHITE" />
-								<Button fx:id="makeReviewBtn" layoutX="6.0" layoutY="287.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MAKEREVIEW" textFill="WHITE" />
-								<Button fx:id="signuotBtn" layoutX="14.0" layoutY="549.0" mnemonicParsing="false" stylesheets="@MenuDesign.css" textFill="#ebddd7" AnchorPane.bottomAnchor="12.0">
-									<graphic>
-										<ImageView fx:id="outBtn" fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
-											<image>
-												<Image url="@../../../../../../../Downloads/sign-out.png" />
-											</image>
-										</ImageView>
-									</graphic>
-									<styleClass>
-										<String fx:value="logout" />
-										<String fx:value="shadow-drop" />
-									</styleClass>
-								</Button>
-								<Label layoutX="61.0" layoutY="559.0" text="Sign Out" textFill="WHITE" AnchorPane.bottomAnchor="22.0">
-									<font>
-										<Font size="15.0" />
-									</font>
-								</Label>
-							</children>
-						</AnchorPane>
-					</left>
-				</BorderPane>
-				<AnchorPane layoutX="664.0" prefHeight="650.0" prefWidth="342.0" style="-fx-border-color: linear-gradient(to bottom right, #d7aa84, #8b4513); -fx-border-radius: 5px; -fx-border-width: 1.5px;" styleClass="gradient" stylesheets="@myView.css">
-					<children>
-						<TableView fx:id="tableView" layoutX="21.0" layoutY="84.0" prefHeight="200.0" prefWidth="304.0">
-							<columns>
-							</columns>
-						</TableView>
-						<AnchorPane layoutX="14.0" layoutY="277.0" prefHeight="170.0" prefWidth="324.0">
-							<children>
-								<Button fx:id="removeButton" layoutX="50.0" layoutY="137.0" mnemonicParsing="false" onAction="#handleRemove" text="remove" />
-								<Button fx:id="payButton" layoutX="47.0" layoutY="97.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Pay" />
-								<TextField fx:id="totalLabel" layoutX="111.0" layoutY="22.0" />
-								<Label layoutX="57.0" layoutY="27.0" prefHeight="16.0" prefWidth="47.0" text="Total" textFill="WHITE" />
-								<Button fx:id="orderButton" layoutX="47.0" layoutY="59.0" mnemonicParsing="false" onAction="#handleOrder" prefHeight="26.0" prefWidth="231.0" text="Order" />
-							</children>
-						</AnchorPane>
-						<Button fx:id="dessertSelctionFilterBtn" layoutX="60.0" layoutY="493.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Select Desserts" />
-						<Button fx:id="vegetarianUnselectFilterBtn" layoutX="62.0" layoutY="534.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Unselect Vegetarian" visible="false" />
-						<Button fx:id="veganSelectFilterBtn" layoutX="62.0" layoutY="572.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Select Vegan" />
-						<Button fx:id="dessertUnselectFilterBtn" layoutX="60.0" layoutY="493.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Unselect Desserts" visible="false" />
-						<Button fx:id="vegetarianSelectFilterBtn" layoutX="62.0" layoutY="534.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Select Vegetarian" />
-						<Button fx:id="veganUnselectFilterBtn" layoutX="62.0" layoutY="572.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Uselect Vegan" visible="false" />
-						<TextField fx:id="tableNumberField" layoutX="187.0" layoutY="31.0" prefHeight="34.0" prefWidth="78.0" />
-						<Label layoutX="87.0" layoutY="39.0" text="Table Number:" textFill="WHITE">
-							<font>
-								<Font name="System Bold" size="12.0" />
-							</font>
-						</Label>
-					</children>
-				</AnchorPane>
-			</children>
-		</AnchorPane>
-	</children>
+  <children>
+    <AnchorPane prefHeight="600.0" prefWidth="600.0">
+      <children>
+        <BorderPane prefHeight="600.0" prefWidth="667.0">
+          <center>
+            <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="650.0" prefWidth="467.0" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">
+              <content>
+                <AnchorPane prefHeight="600.0" prefWidth="503.0">
+                  <children>
+                    <AnchorPane layoutX="-9.0" layoutY="3.0" prefHeight="630.0" prefWidth="479.0">
+                      <children>
+                        <AnchorPane fx:id="salsaVerde" layoutX="14.0" layoutY="40.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                          <children>
+                            <Button fx:id="increases1" layoutX="103.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleSalsaVerde" prefHeight="26.0" prefWidth="50.0" text="☑" />
+                            <Label layoutX="56.0" layoutY="7.0" prefHeight="17.0" prefWidth="66.0" text="Salsa Verde" />
+                            <TextField fx:id="salsaTextField" layoutX="15.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                            <ImageView fitHeight="71.0" fitWidth="141.0" layoutX="15.0" layoutY="25.0">
+                              <image>
+                                <Image url="@image/menuPic/a798de51cb27b7b16b7a242ef691d856.jpg" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="jalapenos" layoutX="14.0" layoutY="205.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                          <children>
+                            <Button fx:id="increases2" layoutX="101.0" layoutY="106.0" mnemonicParsing="false" onAction="#handleJalapenos" prefWidth="50.0" text="☑" />
+                            <Label layoutX="38.0" layoutY="6.0" prefHeight="17.0" prefWidth="103.0" text="Jalapenos Poppers" />
+                            <TextField fx:id="jalapenosTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                            <ImageView fitHeight="83.0" fitWidth="136.0" layoutX="15.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fitHeight="72.0" fitWidth="150.0" layoutX="10.0" layoutY="28.0">
+                              <image>
+                                <Image url="@image/menuPic/jalapenoFried.jpg" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="chilliConCarne" layoutX="14.0" layoutY="370.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                          <children>
+                            <Button fx:id="increases21" layoutX="109.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleChilli" prefHeight="26.0" prefWidth="50.0" text="☑" />
+                            <TextField fx:id="chilliTextField" layoutX="14.0" layoutY="101.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                            <Label layoutX="39.0" layoutY="6.0" prefHeight="17.0" prefWidth="101.0" text="Chilli Con Carne" />
+                            <ImageView fitHeight="68.0" fitWidth="150.0" layoutX="9.0" layoutY="24.0">
+                              <image>
+                                <Image url="@image/menuPic/89993-award-winning-chili-con-carne-ddmfs-3x4-4e3a48f5505a4c998415c261507b0a76.jpg" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="chickenTaqiotos" layoutX="244.0" layoutY="40.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                          <children>
+                            <Button fx:id="increases" layoutX="111.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleChicken" prefHeight="26.0" prefWidth="50.0" text="☑" />
+                            <TextField fx:id="chickenTextField" layoutX="10.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                            <Label layoutX="42.0" layoutY="6.0" prefHeight="17.0" prefWidth="94.0" text="Chicken Taquitos" />
+                            <ImageView fitHeight="74.0" fitWidth="122.0" layoutX="18.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fitHeight="75.0" fitWidth="150.0" layoutX="10.0" layoutY="25.0">
+                              <image>
+                                <Image url="@image/menuPic/Chicken-Taquitos-Recipe-Card.jpg" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="mexicanCornDip" layoutX="244.0" layoutY="205.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                          <children>
+                            <Button fx:id="increases3" layoutX="112.0" layoutY="106.0" mnemonicParsing="false" onAction="#handleCorn" prefWidth="50.0" text="☑" />
+                            <Label layoutX="39.0" layoutY="6.0" prefHeight="17.0" prefWidth="101.0" text="Mexican Corn Dip" />
+                            <TextField fx:id="cornTextField" layoutX="7.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                            <ImageView fitHeight="74.0" fitWidth="150.0" layoutX="6.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fitHeight="77.0" fitWidth="157.0" layoutX="5.0" layoutY="24.0">
+                              <image>
+                                <Image url="@image/menuPic/corn.jpg" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="chickenFajitas" layoutX="244.0" layoutY="370.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                          <children>
+                            <Button fx:id="increases22" layoutX="110.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleChickenFajitas" prefHeight="26.0" prefWidth="50.0" text="☑" />
+                            <TextField fx:id="chickenFajitasTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                            <Label layoutX="39.0" layoutY="6.0" prefHeight="17.0" prefWidth="101.0" text="Chicken Fajitas" />
+                            <ImageView fitHeight="78.0" fitWidth="150.0" layoutX="6.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fitHeight="68.0" fitWidth="150.0" layoutX="10.0" layoutY="27.0">
+                              <image>
+                                <Image url="@image/menuPic/chicken-fajitas-index-649de79db2265.jpg" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="halloumi" layoutX="14.0" layoutY="535.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                          <children>
+                            <Button fx:id="increases11" layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleHalloumi" prefHeight="26.0" prefWidth="50.0" text="☑" />
+                            <TextField fx:id="halloumiTextField" layoutX="7.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                            <Label layoutX="39.0" layoutY="6.0" text="Halloumi Tacos" />
+                            <ImageView fitHeight="73.0" fitWidth="150.0" layoutX="8.0" layoutY="26.0">
+                              <image>
+                                <Image url="@image/menuPic/grilled-halloumi-tacos-for-camping-sq.jpg" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="mexicanRice" layoutX="244.0" layoutY="535.0" prefHeight="117.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                          <children>
+                            <Button fx:id="increasePasta" layoutX="105.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleRice" prefHeight="26.0" prefWidth="50.0" text="☑" />
+                            <TextField fx:id="riceTextField" layoutX="14.0" layoutY="104.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                            <Label layoutX="40.0" layoutY="6.0" text="Mexican Style Rice" />
+                            <ImageView fitHeight="74.0" fitWidth="141.0" layoutX="14.0" layoutY="23.0">
+                              <image>
+                                <Image url="@image/menuPic/mex_rice.jpg" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="churros" layoutX="14.0" layoutY="700.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                          <children>
+                            <Button layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleChurros" prefHeight="26.0" prefWidth="50.0" text="☑" />
+                            <TextField fx:id="churrosTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                            <Label layoutX="58.0" layoutY="6.0" prefHeight="17.0" prefWidth="47.0" text="Churros" />
+                            <ImageView fitHeight="77.0" fitWidth="140.0" layoutX="10.0" layoutY="23.0">
+                              <image>
+                                <Image url="@image/menuPic/churros.jpg" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="margaritaPie" layoutX="14.0" layoutY="865.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                          <children>
+                            <Button layoutX="111.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleMargarita" prefHeight="26.0" prefWidth="50.0" text="☑" />
+                            <TextField fx:id="margaritaTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                            <Label layoutX="40.0" layoutY="6.0" text="Margarita Pie" />
+                            <ImageView fitHeight="73.0" fitWidth="150.0" layoutX="10.0" layoutY="23.0">
+                              <image>
+                                <Image url="@image/menuPic/chakeSalad.jpg" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="bread" layoutX="244.0" layoutY="700.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                          <children>
+                            <Button layoutX="110.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleBread" prefHeight="26.0" prefWidth="50.0" text="☑" />
+                            <TextField fx:id="breadTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                            <Label layoutX="39.0" layoutY="6.0" text="Pan De Muerto" />
+                            <ImageView fitHeight="68.0" fitWidth="150.0" layoutX="10.0" layoutY="29.0">
+                              <image>
+                                <Image url="@image/menuPic/bread_mex.jpg" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="hotChoccolate" layoutX="244.0" layoutY="865.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                          <children>
+                            <Button layoutX="111.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleChocolate" prefHeight="26.0" prefWidth="50.0" text="☑" />
+                            <TextField fx:id="chocolateTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                            <Label layoutX="40.0" layoutY="6.0" text="Hot Chocolate Pie" />
+                            <ImageView fitHeight="72.0" fitWidth="150.0" layoutX="9.0" layoutY="25.0">
+                              <image>
+                                <Image url="@image/menuPic/mex_cioccolate.jpg" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="tepache" layoutX="14.0" layoutY="1030.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                          <children>
+                            <Button layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleTepache" prefHeight="26.0" prefWidth="50.0" text="☑" />
+                            <TextField fx:id="tepacheTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                            <Label layoutX="57.0" layoutY="6.0" prefHeight="17.0" prefWidth="66.0" text="Tepache" />
+                            <ImageView fitHeight="66.0" fitWidth="124.0" layoutX="28.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fitHeight="74.0" fitWidth="39.0" layoutX="62.0" layoutY="23.0">
+                              <image>
+                                <Image url="@image/menuPic/TepacheStraw.JPG" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="coke" layoutX="244.0" layoutY="1030.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                          <children>
+                            <Button layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleCoke" prefHeight="26.0" prefWidth="50.0" text="☑" />
+                            <TextField fx:id="cokeTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                            <Label layoutX="68.0" layoutY="6.0" text="Coke" />
+                            <ImageView fitHeight="68.0" fitWidth="40.0" layoutX="61.0" layoutY="26.0">
+                              <image>
+                                <Image url="@image/menuPic/cocacola.jpg" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="jarritos" layoutX="244.0" layoutY="1195.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                          <children>
+                            <Label layoutX="62.0" layoutY="6.0" text="Jarritos" />
+                            <Button layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleJarritos" prefHeight="26.0" prefWidth="50.0" text="☑" />
+                            <TextField fx:id="jarritosTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                            <ImageView fitHeight="77.0" fitWidth="149.0" layoutX="7.0" layoutY="22.0">
+                              <image>
+                                <Image url="@image/menuPic/download1.jpg" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="horchata" layoutX="14.0" layoutY="1195.0" prefHeight="141.0" prefWidth="178.0" styleClass="table-design" stylesheets="@MenuDesign.css">
+                          <children>
+                            <Button layoutX="114.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleHorchata" prefHeight="26.0" prefWidth="50.0" text="☑" />
+                            <TextField fx:id="horchataTextField" layoutX="14.0" layoutY="105.0" prefHeight="26.0" prefWidth="64.0" promptText="Quantity" />
+                            <Label layoutX="57.0" layoutY="6.0" text="Horchata" />
+                            <ImageView fitHeight="79.0" fitWidth="142.0" layoutX="12.0" layoutY="21.0">
+                              <image>
+                                <Image url="@image/menuPic/Horchata-Thumbnail.jpg" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </AnchorPane>
+                      </children>
+                    </AnchorPane>
+                  </children>
+                </AnchorPane>
+              </content>
+            </ScrollPane>
+          </center>
+          <left>
+            <AnchorPane minHeight="-Infinity" prefHeight="650.0" prefWidth="150.0" styleClass="nav-form" stylesheets="@MenuDesign.css" BorderPane.alignment="CENTER">
+              <children>
+                <AnchorPane prefHeight="87.0" prefWidth="222.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                    <Label layoutX="4.0" layoutY="32.0" prefHeight="19.0" prefWidth="216.0" text="Mex Eat Management System" textAlignment="JUSTIFY" textFill="WHITE">
+                      <font>
+                        <Font size="16.0" />
+                      </font>
+                    </Label>
+                  </children>
+                </AnchorPane>
+                <Label layoutX="14.0" layoutY="100.0" text="Welcome," textFill="WHITE">
+                  <font>
+                    <Font size="18.0" />
+                  </font>
+                </Label>
+                <Label fx:id="username" layoutX="111.0" layoutY="100.0" prefHeight="23.0" prefWidth="86.0" text="Mex Eat" textFill="WHITE">
+                  <font>
+                    <Font size="18.0" />
+                  </font>
+                </Label>
+                <Button fx:id="seeReviewBtn" layoutX="6.0" layoutY="223.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="REVIEW LIST" textFill="WHITE" />
+                <Button fx:id="makeReviewBtn" layoutX="6.0" layoutY="287.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: linear-gradient(to bottom, #cf431c, #000000);" styleClass="nav-btn" stylesheets="@MenuDesign.css" text="MAKE REVIEW" textFill="WHITE" />
+                <Button fx:id="signuotBtn" layoutX="14.0" layoutY="549.0" mnemonicParsing="false" stylesheets="@MenuDesign.css" textFill="#ebddd7" AnchorPane.bottomAnchor="12.0">
+                  <graphic>
+                    <ImageView fx:id="outBtn" fitHeight="30.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../../../../../../../Downloads/sign-out.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                  <styleClass>
+                    <String fx:value="logout" />
+                    <String fx:value="shadow-drop" />
+                  </styleClass>
+                </Button>
+                <Label layoutX="61.0" layoutY="559.0" text="Sign Out" textFill="WHITE" AnchorPane.bottomAnchor="22.0">
+                  <font>
+                    <Font size="15.0" />
+                  </font>
+                </Label>
+              </children>
+            </AnchorPane>
+          </left>
+        </BorderPane>
+        <AnchorPane layoutX="664.0" prefHeight="650.0" prefWidth="342.0" style="-fx-border-color: linear-gradient(to bottom right, #d7aa84, #8b4513); -fx-border-radius: 5px; -fx-border-width: 1.5px;" styleClass="gradient" stylesheets="@myView.css">
+          <children>
+            <TableView fx:id="tableView" layoutX="21.0" layoutY="84.0" prefHeight="200.0" prefWidth="304.0">
+              <columns>
+              </columns>
+            </TableView>
+            <AnchorPane layoutX="14.0" layoutY="277.0" prefHeight="170.0" prefWidth="324.0">
+              <children>
+                <Button fx:id="removeButton" layoutX="50.0" layoutY="137.0" mnemonicParsing="false" onAction="#handleRemove" text="remove" />
+                <Button fx:id="payButton" layoutX="47.0" layoutY="97.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Pay" />
+                <TextField fx:id="totalLabel" layoutX="111.0" layoutY="22.0" />
+                <Label layoutX="57.0" layoutY="27.0" prefHeight="16.0" prefWidth="47.0" text="Total" textFill="WHITE" />
+                <Button fx:id="orderButton" layoutX="47.0" layoutY="59.0" mnemonicParsing="false" onAction="#handleOrder" prefHeight="26.0" prefWidth="231.0" text="Order" />
+              </children>
+            </AnchorPane>
+            <Button fx:id="dessertSelctionFilterBtn" layoutX="60.0" layoutY="493.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Select Desserts" />
+            <Button fx:id="vegetarianUnselectFilterBtn" layoutX="62.0" layoutY="534.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Unselect Vegetarian" visible="false" />
+            <Button fx:id="veganSelectFilterBtn" layoutX="62.0" layoutY="572.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Select Vegan" />
+            <Button fx:id="dessertUnselectFilterBtn" layoutX="60.0" layoutY="493.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Unselect Desserts" visible="false" />
+            <Button fx:id="vegetarianSelectFilterBtn" layoutX="62.0" layoutY="534.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Select Vegetarian" />
+            <Button fx:id="veganUnselectFilterBtn" layoutX="62.0" layoutY="572.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="231.0" text="Uselect Vegan" visible="false" />
+            <TextField fx:id="tableNumberField" layoutX="187.0" layoutY="31.0" prefHeight="34.0" prefWidth="78.0" />
+            <Label layoutX="87.0" layoutY="39.0" text="Table Number:" textFill="WHITE">
+              <font>
+                <Font name="System Bold" size="12.0" />
+              </font>
+            </Label>
+          </children>
+        </AnchorPane>
+      </children>
+    </AnchorPane>
+  </children>
 </StackPane>
