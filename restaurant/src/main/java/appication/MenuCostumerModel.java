@@ -150,7 +150,6 @@ public class MenuCostumerModel {
       prepare.setDouble(4, price);
       prepare.setString(5, orderTime);
       prepare.setString(6, "Requested");
-      System.out.println(prepare.toString());
       prepare.executeUpdate();
 
       System.out.println("Values inserted into Orders successfully!");
