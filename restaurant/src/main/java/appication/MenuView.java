@@ -349,9 +349,9 @@ public class MenuView {
    * the menu page
    */
   public void setAvaibleSalsaVerde() {
-    System.out.println(MenuModel.setAvailableSalsaVerde());
+   
     if (MenuModel.setAvailableSalsaVerde().toString() == "false") {
-      System.out.println("SalsaVerde");
+      
       increaseSalsaVerde.setVisible(false);
       salsaTextField.setDisable(true);
     } else {
@@ -367,9 +367,9 @@ public class MenuView {
    */
   public void setAvaibleChickenTaquitos() {
 
-    System.out.println(MenuModel.setAvailableChickenTaquitos());
+    
     if (MenuModel.setAvailableChickenTaquitos().toString() == "false") {
-      System.out.println("Chicken Taquitos");
+      
       increaseChickenTaqiotos.setVisible(false);
       chickenTextField.setDisable(true);
     } else {
@@ -384,9 +384,9 @@ public class MenuView {
    */
   public void setAvailableJalapenosPoppers() {
 
-    System.out.println(MenuModel.setAvailableJalapenosPoppers());
+    
     if (MenuModel.setAvailableJalapenosPoppers().toString() == "false") {
-      System.out.println("Halapeno Popper ");
+      
       increaseJalapenesPoppers.setVisible(false);
       jalapenosTextField.setDisable(true);
     } else {
@@ -401,9 +401,9 @@ public class MenuView {
    */
   public void setAvailableMexicanCornDip() {
 
-    System.out.println(MenuModel.setAvailableMexicanCornDip());
+    
     if (MenuModel.setAvailableMexicanCornDip().toString() == "false") {
-      System.out.println("MexicanConDip");
+      
       increases3.setVisible(false);
       cornTextField.setDisable(true);
     } else {
@@ -418,9 +418,9 @@ public class MenuView {
    */
   public void setAvailableChiliConCarne() {
 
-    System.out.println(MenuModel.setAvailableChiliConCarne());
+    
     if (MenuModel.setAvailableChiliConCarne().toString() == "false") {
-      System.out.println("Chilly Con Carne");
+      
       increases21.setVisible(false);
       chilliTextField.setDisable(true);
     } else {
@@ -435,9 +435,9 @@ public class MenuView {
    */
   public void setAvailableChickenFajitas() {
 
-    System.out.println(MenuModel.setAvailableChickenFajitas());
+    
     if (MenuModel.setAvailableChickenFajitas().toString() == "false") {
-      System.out.println("ChickenFajitas");
+      
       increases22.setVisible(false);
       chickenFajitasTextField.setDisable(true);
     } else {
@@ -452,9 +452,9 @@ public class MenuView {
    */
   public void setAvailableHalloumiTacos() {
 
-    System.out.println(MenuModel.setAvailableHalloumiTacos());
+    
     if (MenuModel.setAvailableHalloumiTacos().toString() == "false") {
-      System.out.println("HalloumiTacos");
+      
       increases11.setVisible(false);
       halloumiTextField.setDisable(true);
     } else {
@@ -469,9 +469,9 @@ public class MenuView {
    */
   public void setAvailableMexicanStyleRice() {
 
-    System.out.println(MenuModel.setAvailableMexicanStyleRice());
+    
     if (MenuModel.setAvailableMexicanStyleRice().toString() == "false") {
-      System.out.println("MexicanStyleRice");
+      
       increasePasta.setVisible(false);
       riceTextField.setDisable(true);
     } else {
@@ -487,9 +487,9 @@ public class MenuView {
    */
   public void setAvailableChurros() {
 
-    System.out.println(MenuModel.setAvailableChurros());
+    
     if (MenuModel.setAvailableChurros().toString() == "false") {
-      System.out.println("Curros");
+      
       increaseCurros.setVisible(false);
       churrosTextField.setDisable(true);
     } else {
@@ -506,9 +506,9 @@ public class MenuView {
    */
   public void setAvailablePandeMuerto() {
 
-    System.out.println(MenuModel.setAvailablePandeMuerto());
+    
     if (MenuModel.setAvailablePandeMuerto().toString() == "false") {
-      System.out.println("Pan muerto");
+      
       increasePanMuerto.setVisible(false);
       breadTextField.setDisable(true);
     } else {
@@ -523,9 +523,9 @@ public class MenuView {
    */
   public void setAvailableMargaritaPie() {
 
-    System.out.println(MenuModel.setAvailableMargaritaPie());
+    
     if (MenuModel.setAvailableMargaritaPie().toString() == "false") {
-      System.out.println("Margarita Pie");
+      
       increaseMargaritaPie.setVisible(false);
       margaritaTextField.setDisable(true);
     } else {
@@ -541,9 +541,9 @@ public class MenuView {
    */
   public void setAvailableHotChocolatePie() {
 
-    System.out.println(MenuModel.setAvailableHotChocolatePie());
+    
     if (MenuModel.setAvailableHotChocolatePie().toString() == "false") {
-      System.out.println("HotChocolate Pie");
+      
       increaeCoccolatePie.setVisible(false);
       chocolateTextField.setDisable(true);
     } else {
@@ -558,9 +558,9 @@ public class MenuView {
    */
   public void setAvailableTepache() {
 
-    System.out.println(MenuModel.setAvailableTepache());
+    
     if (MenuModel.setAvailableTepache().toString() == "false") {
-      System.out.println("Tepache");
+      
       increaseTepache.setVisible(false);
       tepacheTextField.setDisable(true);
     } else {
@@ -575,9 +575,9 @@ public class MenuView {
    */
   public void setAvailableCoke() {
 
-    System.out.println(MenuModel.setAvailableCoke());
+    
     if (MenuModel.setAvailableCoke().toString() == "false") {
-      System.out.println("Coke");
+      
       increaseCoke.setVisible(false);
       cokeTextField.setDisable(true);
     } else {
@@ -592,9 +592,9 @@ public class MenuView {
    */
   public void setAvailableHorchata() {
 
-    System.out.println(MenuModel.setAvailableHorchata());
+    
     if (MenuModel.setAvailableHorchata().toString() == "false") {
-      System.out.println("Horchata");
+      
       increaseHorchata.setVisible(false);
       horchataTextField.setDisable(true);
     } else {
@@ -610,9 +610,9 @@ public class MenuView {
    */
   public void setAvailableJarritos() {
 
-    System.out.println(MenuModel.setAvailableJarritos());
+    
     if (MenuModel.setAvailableJarritos().toString() == "false") {
-      System.out.println("Jarritos");
+      
       increaseJarritos.setVisible(false);
       jarritosTextField.setDisable(true);
     } else {
@@ -1178,8 +1178,8 @@ public class MenuView {
 
       double totalAmount = viewSM.calculateTotalAmount();
       
-      System.out.println("----");
-      System.out.println(items.toString());
+      
+      
       MenuModel.insertIntoSQLPriceTableStaff(totalAmount, tableNumber);
       MenuCostumerModel.insertIntoOrderTable(tableNumber, itemNumbers, totalAmount);
       AlertText.alert(AlertType.INFORMATION, "SUCCESS", "Order Placed!");

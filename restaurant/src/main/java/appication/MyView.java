@@ -184,9 +184,9 @@ public class MyView {
 
   @SuppressWarnings("rawtypes") // his supper the warming coused by ObservableList.
   private ObservableList listData; // use to add list of questions at combox question.
-  private String question1 = "What is your favorite color?"; // secret question.
-  private String question2 = "What is your favory food?"; // secret question.
-  private String question3 = "What is your birth date?"; // secret question.
+  private String question1 = "What is your favourite color?"; // secret question.
+  private String question2 = "What is your favourite food?"; // secret question.
+  private String question3 = "What is your birth day?"; // secret question.
   private Alert alert; // use to pop up and warming.
 
 

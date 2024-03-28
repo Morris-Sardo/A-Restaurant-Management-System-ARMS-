@@ -94,8 +94,6 @@ public class KitchenModel {
     try (Connection conn = DataBaseModel.connectToDatabase();
         PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-      System.out.println(orderNumber);
-      System.out.println(status);
 
       // Set the parameters for the prepared statement
       pstmt.setString(1, status);
