@@ -367,9 +367,9 @@ public class MenuCostumerView {
    * the menu page
    */
   public void setAvaibleSalsaVerde() {
-    System.out.println(MenuModel.setAvailableSalsaVerde());
+    
     if (MenuModel.setAvailableSalsaVerde().toString() == "false") {
-      System.out.println("SalsaVerde");
+     
       increasesSalsaVerde.setVisible(false);
       salsaTextField.setDisable(true);
     } else {
@@ -384,9 +384,9 @@ public class MenuCostumerView {
    */
   public void setAvaibleChickenTaquitos() {
 
-    System.out.println(MenuModel.setAvailableChickenTaquitos());
+    
     if (MenuModel.setAvailableChickenTaquitos().toString() == "false") {
-      System.out.println("Chicken Taquitos");
+      
       increasesChickenTaquitos.setVisible(false);
       chickenTextField.setDisable(true);
     } else {
@@ -402,9 +402,9 @@ public class MenuCostumerView {
    */
   public void setAvailableJalapenosPoppers() {
 
-    System.out.println(MenuModel.setAvailableJalapenosPoppers());
+    
     if (MenuModel.setAvailableJalapenosPoppers().toString() == "false") {
-      System.out.println("Halapeno Popper ");
+      
       increasesJalapenos.setVisible(false);
       jalapenosTextField.setDisable(true);
     } else {
@@ -419,9 +419,9 @@ public class MenuCostumerView {
    */
   public void setAvailableMexicanCornDip() {
 
-    System.out.println(MenuModel.setAvailableMexicanCornDip());
+    
     if (MenuModel.setAvailableMexicanCornDip().toString() == "false") {
-      System.out.println("MexicanConDip");
+      
       increasesMexicanConDip.setVisible(false);
       cornTextField.setDisable(true);
     } else {
@@ -436,9 +436,9 @@ public class MenuCostumerView {
    */
   public void setAvailableChiliConCarne() {
 
-    System.out.println(MenuModel.setAvailableChiliConCarne());
+    
     if (MenuModel.setAvailableChiliConCarne().toString() == "false") {
-      System.out.println("Chilly Con Carne");
+      
       increasesChilliConCarne.setVisible(false);
       chilliTextField.setDisable(true);
     } else {
@@ -453,9 +453,9 @@ public class MenuCostumerView {
    */
   public void setAvailableChickenFajitas() {
 
-    System.out.println(MenuModel.setAvailableChickenFajitas());
+    
     if (MenuModel.setAvailableChickenFajitas().toString() == "false") {
-      System.out.println("ChickenFajitas");
+      
       increasesChickenFajitas.setVisible(false);
       chickenFajitasTextField.setDisable(true);
     } else {
@@ -470,9 +470,9 @@ public class MenuCostumerView {
    */
   public void setAvailableHalloumiTacos() {
 
-    System.out.println(MenuModel.setAvailableHalloumiTacos());
+    
     if (MenuModel.setAvailableHalloumiTacos().toString() == "false") {
-      System.out.println("HalloumiTacos");
+      
       increaseHalloumi.setVisible(false);
       halloumiTextField.setDisable(true);
     } else {
@@ -487,9 +487,9 @@ public class MenuCostumerView {
    */
   public void setAvailableMexicanStyleRice() {
 
-    System.out.println(MenuModel.setAvailableMexicanStyleRice());
+    
     if (MenuModel.setAvailableMexicanStyleRice().toString() == "false") {
-      System.out.println("MexicanStyleRice");
+      
       increasePasta.setVisible(false);
       riceTextField.setDisable(true);
     } else {
@@ -505,9 +505,9 @@ public class MenuCostumerView {
    */
   public void setAvailableChurros() {
 
-    System.out.println(MenuModel.setAvailableChurros());
+    
     if (MenuModel.setAvailableChurros().toString() == "false") {
-      System.out.println("Curros");
+      
       increaseChurros.setVisible(false);
       churrosTextField.setDisable(true);
     } else {
@@ -523,9 +523,9 @@ public class MenuCostumerView {
    */
   public void setAvailablePandeMuerto() {
 
-    System.out.println(MenuModel.setAvailablePandeMuerto());
+    
     if (MenuModel.setAvailablePandeMuerto().toString() == "false") {
-      System.out.println("Pan muerto");
+      
       increaseBread.setVisible(false);
       breadTextField.setDisable(true);
     } else {
@@ -540,9 +540,9 @@ public class MenuCostumerView {
    */
   public void setAvailableMargaritaPie() {
 
-    System.out.println(MenuModel.setAvailableMargaritaPie());
+    
     if (MenuModel.setAvailableMargaritaPie().toString() == "false") {
-      System.out.println("Margarita Pie");
+      
       increaseMargarita.setVisible(false);
       margaritaTextField.setDisable(true);
     } else {
@@ -558,9 +558,9 @@ public class MenuCostumerView {
    */
   public void setAvailableHotChocolatePie() {
 
-    System.out.println(MenuModel.setAvailableHotChocolatePie());
+    
     if (MenuModel.setAvailableHotChocolatePie().toString() == "false") {
-      System.out.println("HotChocolate Pie");
+      
       increaseChocolate.setVisible(false);
       chocolateTextField.setDisable(true);
     } else {
@@ -575,9 +575,9 @@ public class MenuCostumerView {
    */
   public void setAvailableTepache() {
 
-    System.out.println(MenuModel.setAvailableTepache());
+    
     if (MenuModel.setAvailableTepache().toString() == "false") {
-      System.out.println("Tepache");
+      
       increaseTepache.setVisible(false);
       tepacheTextField.setDisable(true);
     } else {
@@ -592,9 +592,9 @@ public class MenuCostumerView {
    */
   public void setAvailableCoke() {
 
-    System.out.println(MenuModel.setAvailableCoke());
+    
     if (MenuModel.setAvailableCoke().toString() == "false") {
-      System.out.println("Coke");
+      
       increaseCoke.setVisible(false);
       cokeTextField.setDisable(true);
     } else {
@@ -609,9 +609,9 @@ public class MenuCostumerView {
    */
   public void setAvailableHorchata() {
 
-    System.out.println(MenuModel.setAvailableHorchata());
+    
     if (MenuModel.setAvailableHorchata().toString() == "false") {
-      System.out.println("Horchata");
+      
       increaseHorchata.setVisible(false);
       horchataTextField.setDisable(true);
     } else {
@@ -627,9 +627,9 @@ public class MenuCostumerView {
    */
   public void setAvailableJarritos() {
 
-    System.out.println(MenuModel.setAvailableJarritos());
+    
     if (MenuModel.setAvailableJarritos().toString() == "false") {
-      System.out.println("Jarritos");
+      
       increaseJarritos.setVisible(false);
       jarritosTextField.setDisable(true);
     } else {

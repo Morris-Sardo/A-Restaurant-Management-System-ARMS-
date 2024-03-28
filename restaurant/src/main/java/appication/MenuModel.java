@@ -508,7 +508,7 @@ public class MenuModel {
    */
   public static void insertIntoOrderTable(int tableNumber, String items, double price) {
     String formattedItems = insertNewLines(items, 20);
-    System.out.println("\n\n\n\n\n" + formattedItems + "cfvghjkl");
+    
     String insertOrderQuery =
         "INSERT INTO orders (order_number, table_number, items, price, order_time, status) "
             + "VALUES (?, ?, ?, ?, ?, ?)";

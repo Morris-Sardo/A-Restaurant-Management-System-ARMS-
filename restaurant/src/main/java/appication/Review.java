@@ -14,8 +14,17 @@ import javafx.beans.property.StringProperty;
 public class Review {
 
   private IntegerProperty id;
+  /**
+   * The instance of the name of the person giving a review.
+   */
   private StringProperty name;
+  /**
+   * The instance of the amount of stars given in the review.
+   */
   private IntegerProperty stars;
+  /**
+   * The instance of the comment given in the review.
+   */
   private StringProperty comment;
 
   /**

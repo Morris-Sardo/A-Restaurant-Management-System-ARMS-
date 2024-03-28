@@ -285,7 +285,7 @@
 						</TableView>
 						<AnchorPane layoutX="14.0" layoutY="277.0" prefHeight="170.0" prefWidth="324.0">
 							<children>
-								<Button fx:id="removeButton" layoutX="47.0" layoutY="107.0" mnemonicParsing="false" onAction="#handleRemove" text="remove" />
+								<Button fx:id="removeButton" layoutX="47.0" layoutY="99.0" mnemonicParsing="false" onAction="#handleRemove" text="remove" />
                                 <TextField fx:id="totalLabel" layoutX="111.0" layoutY="22.0" />
                                 <Label layoutX="57.0" layoutY="27.0" prefHeight="16.0" prefWidth="47.0" text="Total" textFill="WHITE" />
                                 <Button fx:id="orderButton" layoutX="47.0" layoutY="59.0" mnemonicParsing="false" onAction="#handleOrder" prefHeight="26.0" prefWidth="231.0" text="Order" />
