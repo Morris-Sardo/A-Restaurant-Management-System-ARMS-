@@ -275,8 +275,8 @@ public class MenuView {
     chilliConCarne.setVisible(false);
     coke.setVisible(false);
     tepache.setVisible(false);
-    // hotChoccolate.setVisible(false);
-    // churros.setVisible(false);
+    //hotChoccolate.setVisible(false);
+    //churros.setVisible(false);
     jarritos.setVisible(false);
     horchata.setVisible(false);
     salsaVerde.setVisible(false);
