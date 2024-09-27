@@ -5,27 +5,29 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.function.Predicate;
 import org.postgresql.util.PSQLException;
 
 /**
- * Contains the methods needed for the 'Customer' role.
+ * Contains the methods needed for the 'Staff' role.
  * 
  * @author xaviernoel
  */
-public class Waiter {
-  int waiterID;
+public class Staff {
+  int staffUsername;
   Connection connection = null;
   ArrayList<Item> items;
 
   /**
-   * The constructor for the Waiter object.
+   * The constructor for the Staff object.
+   * 
    * @param connection the connection to the database that will be used
-   * @param waiterID the ID number of the Waiter
+   * @param staffUsername the username of the Staff
    */
-  public Waiter(Connection connection, int waiterID) {
+  public Staff(Connection connection, int staffUsername) {
     this.connection = connection;
-    this.waiterID = waiterID;
+    this.staffUsername = staffUsername;
     try {
       items = ConnectionManager.loadItems(connection);
     } catch (Exception e) {
@@ -78,7 +80,7 @@ public class Waiter {
   public ArrayList<String> viewOrders()
       throws PSQLException, SQLException, DatabaseInformationException {
     ArrayList<String> results = new ArrayList<String>();
-    String query = "SELECT * FROM orders WHERE status = 'Requested' ";
+    String query = "SELECT * FROM orders WHERE (status != 'Complete' or status != 'Canceled')";
     try (PreparedStatement statement = connection.prepareStatement(query);) {
       ResultSet resultSet = statement.executeQuery();
       while (resultSet.next()) {
@@ -126,8 +128,24 @@ public class Waiter {
    */
   public void cancelOrder(int orderNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
-    String change = "UPDATE orders SET STATUS = 'Canceled' WHERE order_number = "
-        + Integer.toString(orderNumber);
+    String findOrder = "SELECT items FROM orders WHERE order_number = " + orderNumber;
+    ArrayList<String> items = new ArrayList<String>();
+    try (PreparedStatement find = connection.prepareStatement(findOrder);) {
+      ResultSet resultSet = find.executeQuery();
+      if (resultSet.next()) {
+        items.addAll(Arrays.asList(resultSet.getString(3).trim().split(",")));
+      }
+    }
+    if (!items.isEmpty()) {
+      String updateStock = "UPDATE items SET stock = stock -1 WHERE item_number = ?";
+      try (PreparedStatement update = connection.prepareStatement(updateStock);) {
+        for (String item : items) {
+          update.setInt(1, Integer.parseInt(item));
+          update.executeUpdate();
+        }
+      }
+    }
+    String change = "UPDATE orders SET STATUS = 'Canceled' WHERE order_number = " + orderNumber;
     try (PreparedStatement update = connection.prepareStatement(change);) {
       update.executeUpdate();
     }
@@ -195,7 +213,7 @@ public class Waiter {
    * 
    * @param tableNumber the table number of the bill to be changed
    */
-  public void concludeBill(int tableNumber) 
+  public void concludeBill(int tableNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
     String change = "UPDATE bills SET status = 'Completed' WHERE (table_number = "
         + Integer.toString(tableNumber) + " AND status == 'Requested'";
@@ -209,7 +227,7 @@ public class Waiter {
    * 
    * @param tableNumber the table number of the complaint to be changed
    */
-  public void concludeComplaint(int tableNumber) 
+  public void concludeComplaint(int tableNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
     String change = "UPDATE complaints SET status = 'Completed' WHERE (table_number = "
         + Integer.toString(tableNumber) + " AND status == 'Requested'";
@@ -217,4 +235,108 @@ public class Waiter {
       update.executeUpdate();
     }
   }
+
+  /**
+   * Sets an order as ready to collect.
+   * 
+   * @param orderNumber the ID number of the order
+   * @throws SQLException when unable to executeUpdate
+   */
+  public void readyOrder(int orderNumber) throws SQLException {
+    String readyOrderQuery = "UPDATE orders SET status = ? WHERE order_number = ?";
+    try (PreparedStatement statement = connection.prepareStatement(readyOrderQuery)) {
+      statement.setString(1, "Ready");
+      statement.setInt(2, orderNumber);
+
+      statement.executeUpdate();
+    }
+  }
+
+  /**
+   * Adds a new item to the database.
+   * 
+   * @param itemNumber the unique ID number of the item
+   * @param item the name of the item
+   * @param price the price of the item
+   * @param allergies the possible allergies of the item
+   * @param calories the calories of the item
+   * @param tags any features of the item to be searcheds
+   * @param stock the number of items preparable
+   * @throws SQLException when an error with insertion occurs
+   */
+  public void addItem(int itemNumber, String item, float price, String allergies, float calories,
+      String tags, int stock) throws SQLException {
+    String newItem = "INSERT INTO items VALUES (?, '?', ?, '?', ?, ?, '?', ?)";
+    try (PreparedStatement insertion = connection.prepareStatement(newItem)) {
+      insertion.setInt(1, itemNumber);
+      insertion.setString(2, item);
+      insertion.setFloat(3, price);
+      insertion.setString(4, allergies);
+      insertion.setFloat(5, calories);
+      insertion.setString(6, tags);
+      insertion.setInt(7, stock);
+
+      insertion.executeUpdate();
+    }
+  }
+
+  /**
+   * Deletes an item from the database.
+   * 
+   * @param itemNumber the unique ID number of the item to be deleted
+   * @throws SQLException when an error with deletion occurs
+   */
+  public void deleteItem(int itemNumber) throws SQLException {
+    String deletedItem = "DELETE FROM items WHERE item_number = " + Integer.toString(itemNumber);
+    try (PreparedStatement deletion = connection.prepareStatement(deletedItem)) {
+      deletion.executeUpdate();
+    }
+  }
+
+  /**
+   * Updates the information for an intem in the database.
+   * 
+   * @param itemNumber the unique ID number of the item to be updated
+   * @param item the new name for the item
+   * @param price the new price for the item
+   * @param allergies the new allergies for the item
+   * @param calories the new amount of calories for the item
+   * @param tags the new tags for the item
+   * @param stock the new amount of stock for the item
+   * @throws SQLException when an error with updating the database occurs
+   */
+  public void updateItem(int itemNumber, String item, float price, String allergies, float calories,
+      String tags, int stock) throws SQLException {
+    String updatedItem =
+        "UPDATE items SET item_number = ?, item_name = ?, price = ?, allergies = ?, calories = ?, "
+            + "tags = ?, stock = ? WHERE item_number = " + Integer.toString(itemNumber);
+    try (PreparedStatement update = connection.prepareStatement(updatedItem)) {
+      update.setInt(1, itemNumber);
+      update.setString(2, item);
+      update.setFloat(3, price);
+      update.setString(4, allergies);
+      update.setFloat(5, calories);
+      update.setString(6, tags);
+      update.setInt(7, stock);
+
+      update.executeUpdate();
+    }
+  }
+
+  /**
+   * Finds if an item with the itemNumber already exists.
+   * 
+   * @param itemNumber the unique ID number of the item
+   * @return whether the item is already in the database
+   * @throws SQLException when an error with searching occurs
+   */
+  public Boolean itemCheck(int itemNumber) throws SQLException {
+    String itemSearch =
+        "SELECT item_number FROM items WHERE item_number =" + Integer.toString(itemNumber);
+    try (PreparedStatement search = connection.prepareStatement(itemSearch)) {
+      ResultSet resultSet = search.executeQuery();
+      return resultSet.isBeforeFirst();
+    }
+  }
+
 }

@@ -14,6 +14,7 @@ public class Item {
   private String[] allergies;
   private float calories;
   private boolean available;
+  private int stock;
 
 
   /**
@@ -27,13 +28,14 @@ public class Item {
    * @param available the availability status of the item
    */
   public Item(int itemNumber, String name, float price, String allergies, float calories,
-      boolean available) {
+      boolean available, int stock) {
     this.itemNumber = itemNumber;
     this.name = name;
     this.price = (float) (Math.round(price * 100.0) / 100.0);
     this.allergies = allergies.split(",");
     this.calories = (float) (Math.round(calories * 100.0) / 100.0);
     this.available = available;
+    this.stock = stock;
   }
 
   public int getItemNumber() {
@@ -58,6 +60,10 @@ public class Item {
 
   public boolean isAvailable() {
     return available;
+  }
+  
+  public int getStock() {
+    return stock;
   }
 }
 
