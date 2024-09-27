@@ -1,7 +1,16 @@
 # Team Project
+Created during the 2023-2024 CS2810 module 'Team Project' at Royal Holloway University of London.
+The specification ofr the project was provided externally though our customer.
 
-This repository has been created to store your Team Project.
+# Setup project
+ - Install java.
+ - Install maven.
+ - Install javaFx.
+ - Setup postgresql.
+ - In DataBaseModel.java edit the connection URL.
 
-You may edit it as you like, but please do not remove the default topics or the project members list. These need to stay as currently defined in order for your lecturer to be able to find and mark your work.
+# Run project
+  -cd restaurant 
+  -mvn clean compile javafx:run
 
 
