@@ -1,6 +1,5 @@
-# Team Project
-Created during the 2023-2024 CS2810 module 'Team Project' at Royal Holloway University of London.
-The specification ofr the project was provided externally though our customer.
+# Descripition
+Restaurant System for taltking to customers, taking orders, using the till and communicating with kitchen staff.
 
 ## Setup project
  - Install java.
