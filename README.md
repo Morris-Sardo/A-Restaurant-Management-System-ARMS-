@@ -11,7 +11,7 @@ Restaurant System for taltking to customers, taking orders, using the till and c
 
 # Command line
 
-mvn install
-mvn clean 
-mvn run
+* mvn install
+* mvn clean 
+* mvn run
 
