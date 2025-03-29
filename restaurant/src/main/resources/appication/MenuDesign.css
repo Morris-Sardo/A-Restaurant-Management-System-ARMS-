@@ -1,6 +1,7 @@
 
 .header{
 
+
 	-fx-background-color: linear-gradient(to bottom right,#cf431c,rgb(3, 2, 15));
 }
 
@@ -86,3 +87,4 @@
 	-fx-font-size: 14px;
 	
 }
+
