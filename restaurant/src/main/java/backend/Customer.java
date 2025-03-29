@@ -1,5 +1,6 @@
 package backend;
 
+import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -51,6 +52,10 @@ public class Customer {
     return connection;
   }
 
+  public ArrayList<Integer> getOrder() {
+    return order;
+  }
+
   /**
    * This method is used to get the list of orders.
    * 
@@ -85,8 +90,12 @@ public class Customer {
   public ArrayList<Integer> viewMenu()
       throws PSQLException, SQLException, DatabaseInformationException {
     ArrayList<Integer> results = new ArrayList<Integer>();
+<<<<<<< HEAD
+    String query = "SELECT item_number FROM items WHERE (available = 'True' AND stock >= 0)";
+=======
     String query = "SELECT item_number FROM items WHERE available = true";
     
+>>>>>>> main
     try (PreparedStatement statement = connection.prepareStatement(query);) {
       ResultSet resultSet = statement.executeQuery();
       while (resultSet.next()) {
@@ -107,6 +116,7 @@ public class Customer {
    */
   public void addItem(int item) {
     order.add(item);
+<<<<<<< HEAD
   }
 
   /**
@@ -115,6 +125,37 @@ public class Customer {
    * @param item the item id being removed from the order
    * @return returns false if the item was not present in the order
    * 
+   */
+  public boolean removeItem(int item) {
+    if (order.contains(item)) {
+      order.remove(item);
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  /**
+   * Resets the items in the current order.
+   */
+  public void clearItems() {
+    order.clear();
+  }
+
+  /*
+   * Figure out how to generate custom id Yeet tablenumber from the top get items from int order sum
+   * price with a for loop, looking in the arraylist of items order time: get current time status:
+   * set status to requested
+=======
+  }
+
+  /**
+   * Removes an item from the current order.
+   * 
+   * @param item the item id being removed from the order
+   * @return returns false if the item was not present in the order
+   * 
+>>>>>>> main
    */
   public boolean removeItem(int item) {
     if (order.contains(item)) {
@@ -166,12 +207,15 @@ public class Customer {
 
   }
 
+<<<<<<< HEAD
+=======
   /**
    * This method computes the total price by adding all the values.
    * 
    * @return the total price.
    * @throws SQLException If this arrises.
    */
+>>>>>>> main
   private float calculateTotalPrice() throws SQLException {
     float result = 0;
     String query = "SELECT SUM(price) FROM orders WHERE table_number ="
@@ -182,6 +226,12 @@ public class Customer {
         result = resultSet.getFloat(1);
       }
     }
+<<<<<<< HEAD
+    
+    return result; 
+  }
+
+=======
 
     return result;
   }
@@ -191,6 +241,7 @@ public class Customer {
    * 
    * @return the time.
    */
+>>>>>>> main
   private static String getCurrentTime() {
     LocalTime currentTime = LocalTime.now();
     DateTimeFormatter format = DateTimeFormatter.ofPattern("HH:mm");
@@ -270,9 +321,13 @@ public class Customer {
   /**
    * Returns order status.
    * 
+<<<<<<< HEAD
+   * @throws SQLException if statement fails
+=======
    * @param orderNumber The ID of the order.
    * @return the status.
    * @throws SQLException if statement fails.
+>>>>>>> main
    */
   public String trackOrder(int orderNumber) throws SQLException {
     String status = null;

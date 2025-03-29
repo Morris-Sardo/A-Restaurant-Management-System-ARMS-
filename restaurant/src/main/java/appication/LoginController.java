@@ -17,7 +17,6 @@ public class LoginController {
 
 
   private MyView view;
-  @SuppressWarnings("unused") // suppress wamrming about not use.
   private DataBaseModel connection;
 
   private String currentUsername;
@@ -30,14 +29,26 @@ public class LoginController {
    */
   public LoginController(MyView view) {
     this.view = view;
+<<<<<<< HEAD
+    this.connection = con; /// added
+    
+
+    view.addLoginObserver(this::handleLogin);
+    view.addRegistrationObserver(this::handleSignUp);
+    view.addForgotPasswordObserver(this::handleForgotPass);
+    view.addChangePasswordObserver(this::handleAnswer);
+    view.addConfirmNewPasswordObserver(this::handleChangePassword);
+
+=======
     this.connection = Driver.getDBconnection();
+>>>>>>> main
   }
 
   /**
    * Handles the login, if the user enters incorrect login information (Username or Password) it
    * will pop up an error message otherwise it will log the user in.
    */
-  public void hanldeLogin() {
+  public void handleLogin() {
     if (view.getUserNameLogin().isEmpty() || view.getPassowrdLogin().isEmpty()) {
       AlertText.alert(AlertType.ERROR, "Error Message", "Please fill all the blank fields");
 
@@ -49,9 +60,17 @@ public class LoginController {
         if (DataBaseModel.getRightLogin(view.getUserNameLogin(), view.getPassowrdLogin())) {
 
 
+<<<<<<< HEAD
+          MyViewMainPage mainPage = new MyViewMainPage();
+          mainPage.start();
+          @SuppressWarnings("unused")
+          MainPageController mainPageController = new MainPageController(mainPage, connection);
+          view.getSiButton().getScene().getWindow().hide();
+=======
           DashBoardMyView mainPage = new DashBoardMyView();
           DashBoardController mainPageController = new DashBoardController(mainPage);
           Driver.setScene(mainPage.start(), TitlePage.DASHBOARD_PAGE);
+>>>>>>> main
 
         } else {
           AlertText.alert(AlertType.ERROR, "Error Message", "Incorrect Email Adderss/password!");

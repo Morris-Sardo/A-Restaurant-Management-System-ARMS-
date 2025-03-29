@@ -34,14 +34,21 @@ public class Staff {
       e.printStackTrace();
     }
   }
+<<<<<<< HEAD
+
+=======
   
+>>>>>>> main
   /**
    * Finds all items on the menu.
    * 
    * @return the IDs of all items on the menu
+<<<<<<< HEAD
+=======
    * @throws PSQLException Exception thrown.
    * @throws SQLException Exception thrown.
    * @throws DatabaseInformationException Exception thrown.
+>>>>>>> main
    */
   public ArrayList<Integer> viewMenu()
       throws PSQLException, SQLException, DatabaseInformationException {
@@ -62,8 +69,12 @@ public class Staff {
   /**
    * Toggles the availability of the item.
    * 
+<<<<<<< HEAD
+   * @param item the item to be changed
+=======
    * @param item item the item to be changed
    * @throws SQLException Exception thrown.
+>>>>>>> main
    */
   public void changeMenu(int item) throws SQLException {
     Predicate<Item> findItem = p -> item == p.getItemNumber();
@@ -75,15 +86,23 @@ public class Staff {
     }
   }
 
+<<<<<<< HEAD
+=======
   // Temporary, final version will need an agreement on how data should be communicated.
+>>>>>>> main
   /**
    * Finds all orders with 'Requested' status.
    * 
    * @return the list of the information for orders
+<<<<<<< HEAD
+   */
+  // Temporary, final version will need an agreement on how data should be communicated.
+=======
    * @throws PSQLException Exception thrown.
    * @throws SQLException Exception thrown.
    * @throws DatabaseInformationException Exception thrown.
    */
+>>>>>>> main
   public ArrayList<String> viewOrders()
       throws PSQLException, SQLException, DatabaseInformationException {
     ArrayList<String> results = new ArrayList<String>();
@@ -103,10 +122,14 @@ public class Staff {
   /**
    * Changes the status of the order to 'Confirmed'.
    * 
+<<<<<<< HEAD
+   * @param orderNumber the number of the order to be changed
+=======
    * @param orderNumber Exception thrown.
    * @throws PSQLException Exception thrown.
    * @throws SQLException Exception thrown.
    * @throws DatabaseInformationException Exception thrown.
+>>>>>>> main
    */
   public void confirmOrder(int orderNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
@@ -120,10 +143,14 @@ public class Staff {
   /**
    * Changes the status of the order to 'Completed'.
    * 
+<<<<<<< HEAD
+   * @param orderNumber the number of the order to be changed
+=======
    * @param orderNumber orderNumber the number of the order to be changed
    * @throws PSQLException Exception thrown.
    * @throws SQLException Exception thrown.
    * @throws DatabaseInformationException Exception thrown.
+>>>>>>> main
    */
   public void deliveredOrder(int orderNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
@@ -137,10 +164,14 @@ public class Staff {
   /**
    * Changes the status of this order to 'Canceled'.
    * 
+<<<<<<< HEAD
+   * @param orderNumber the number of the order to be changed
+=======
    * @param orderNumber orderNumber the number of the order to be changed
    * @throws PSQLException Exception thrown.
    * @throws SQLException Exception thrown.
    * @throws DatabaseInformationException Exception thrown.
+>>>>>>> main
    */
   public void cancelOrder(int orderNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
@@ -171,9 +202,12 @@ public class Staff {
    * Finds all orders with 'Ready' status.
    * 
    * @return the list of the information for orders
+<<<<<<< HEAD
+=======
    * @throws PSQLException Exception thrown.
    * @throws SQLException Exception thrown.
    * @throws DatabaseInformationException Exception thrown.
+>>>>>>> main
    */
   public ArrayList<String> readyOrders()
       throws PSQLException, SQLException, DatabaseInformationException {
@@ -194,9 +228,12 @@ public class Staff {
    * Finds all bill requests.
    * 
    * @return the list of the information for bill requests
+<<<<<<< HEAD
+=======
    * @throws PSQLException Exception thrown.
    * @throws SQLException Exception thrown.
    * @throws DatabaseInformationException Exception thrown.
+>>>>>>> main
    */
   public ArrayList<String> viewBillRequests()
       throws PSQLException, SQLException, DatabaseInformationException {
@@ -215,10 +252,14 @@ public class Staff {
   /**
    * Finds all complaints.
    * 
+<<<<<<< HEAD
+   * @return the list of table numbers with a current complaint
+=======
    * @return the list of table numbers with a current complaint.
    * @throws PSQLException Exception thrown.
    * @throws SQLException Exception thrown.
    * @throws DatabaseInformationException Exception thrown.
+>>>>>>> main
    */
   public ArrayList<Integer> viewComplaints()
       throws PSQLException, SQLException, DatabaseInformationException {
@@ -237,9 +278,12 @@ public class Staff {
    * Sets the status of a bill to 'Completed'.
    * 
    * @param tableNumber the table number of the bill to be changed
+<<<<<<< HEAD
+=======
    * @throws PSQLException Exception thrown.
    * @throws SQLException Exception thrown.
    * @throws DatabaseInformationException Exception thrown.
+>>>>>>> main
    */
   public void concludeBill(int tableNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
@@ -254,9 +298,12 @@ public class Staff {
    * Sets the status of a complaint to 'Completed'.
    * 
    * @param tableNumber the table number of the complaint to be changed
+<<<<<<< HEAD
+=======
    * @throws PSQLException Exception thrown.
    * @throws SQLException Exception thrown.
    * @throws DatabaseInformationException Exception thrown.
+>>>>>>> main
    */
   public void concludeComplaint(int tableNumber)
       throws PSQLException, SQLException, DatabaseInformationException {
@@ -371,4 +418,7 @@ public class Staff {
   }
 
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> main

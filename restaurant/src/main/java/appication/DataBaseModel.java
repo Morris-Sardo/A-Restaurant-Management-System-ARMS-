@@ -293,6 +293,7 @@ public class DataBaseModel {
 
         prepare.setString(1, password);
         prepare.setString(2, username);
+        @SuppressWarnings("unused")
         int result = prepare.executeUpdate();
 
       } catch (SQLException e) {
@@ -306,6 +307,35 @@ public class DataBaseModel {
 
 
 
+<<<<<<< HEAD
+
+  /**
+   * Creates an ArrayList of Item objects corresponding to every item in the item table of the
+   * database.
+   * 
+   * @param connection the connection to the database
+   * @return the ArrayList of Item objects
+   */
+  public static ArrayList<Item> loadItems(Connection connection)
+      throws SQLException, PSQLException, DatabaseInformationException {
+    ArrayList<Item> results = new ArrayList<Item>();
+    if (connection != null) {
+      String query = "SELECT * FROM items";
+      try (PreparedStatement statement = connection.prepareStatement(query);) {
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()) {
+          results.add(new Item(resultSet.getInt(1), resultSet.getString(2).trim(),
+              resultSet.getFloat(3), resultSet.getString(4).trim(), resultSet.getFloat(5),
+              resultSet.getBoolean(6), resultSet.getInt(7)));
+        }
+      }
+      if (results.isEmpty()) {
+        throw new DatabaseInformationException("No menu items found in database");
+      }
+    }
+    return results;
+=======
+>>>>>>> main
   }
 
   /**

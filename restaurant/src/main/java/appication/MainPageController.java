@@ -9,8 +9,10 @@ package appication;
 public class MainPageController {
 
 
+  @SuppressWarnings("unused")
   private MyViewMainPage view;
-  @SuppressWarnings("unused") // suppress wamrming about not use.
+  // suppress wamrming about not use.
+  @SuppressWarnings("unused")
   private DataBaseModel connection;
 
 
