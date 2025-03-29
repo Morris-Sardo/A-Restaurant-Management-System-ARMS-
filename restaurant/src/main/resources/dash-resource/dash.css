@@ -1,6 +1,20 @@
 .root {
-  -fx-background-image:url('file:///C:/Users/jonat/OneDrive/Desktop/random/Uni%20Work/Team%20Project/NEW/TeamProject15/restaurant/src/main/resources/MexicanCuisine.jpg');
+  -fx-background-image:url('file:///C:/Users/jonat/OneDrive/Desktop/random/Uni%20Work/Team%20Project/NEW/TeamProject15/restaurant/src/main/resources/dash-resource/DarkBackground.png');
   -fx-background-size:cover;
+}
+
+.nav-btn{
+  -fx-background-color: transparent;
+  -fx-border-color: #fff;
+  -fx-border-width: 0.4px;
+  -fx-cursor: hand;
+  -fx-font-size: 14px;
+}
+
+.nav-btn:hover{
+  -fx-border-color: #000;
+  -fx-background-color: #fff;
+  -fx-text-fill: #ff7f00;
 }
 
 
