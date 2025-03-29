@@ -1164,6 +1164,18 @@ public class MenuView {
 
   @FXML
   private void handleOrder() {
+
+
+    int tableNumber = viewSM.getTableNumber();
+    double totalAmount = viewSM.calculateTotalAmount();
+
+    List<MenuItem> items = tableView.getItems();
+    String itemNumbers = viewSM.getItemNumbersStaff(items);
+    if (getTableNumber() == -1
+        || PayCostumerModel.getPrizeFormTable(getTableNumber()) == null) {
+      AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
+    } else {
+
     List<MenuItem> items = tableView.getItems();
     String itemNumbers = viewSM.getItemNumbersStaff(items);
     if (getTableNumber() == -1) {
@@ -1175,6 +1187,7 @@ public class MenuView {
     } else {
       // MenuController handlePay = new MenuController();
       int tableNumber = viewSM.getTableNumber();
+
 
       double totalAmount = viewSM.calculateTotalAmount();
       

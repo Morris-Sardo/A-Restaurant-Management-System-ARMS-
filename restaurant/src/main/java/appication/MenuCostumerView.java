@@ -1156,6 +1156,11 @@ public class MenuCostumerView {
   private void handleOrder() {
     List<MenuItem> items = tableView.getItems();
     // Integer tableNumber = viewCM.getTableNumber();
+
+    Integer tableNumber = viewCM.getTableNumber();
+    double totalAmount = viewCM.calculateTotalAmount();
+    List<MenuItem> items = tableView.getItems();
+    String itemNumbers = viewCM.getItemNumbers(items);
     if (viewCM.getTableNumber() == -1
         || PayCostumerModel.getPrizeFormTable(viewCM.getTableNumber()) == null) {
       AlertText.alert(AlertType.ERROR, "Error Message", "Insert a Valid Table Number");
@@ -1164,6 +1169,7 @@ public class MenuCostumerView {
     } else if (items.toString().equals("[]")) {
       AlertText.alert(AlertType.ERROR, "Message Error", "Please order something.");
     } else {
+
       Integer tableNumber = viewCM.getTableNumber();
       double totalAmount = viewCM.calculateTotalAmount();
       String itemNumbers = viewCM.getItemNumbers(items);
