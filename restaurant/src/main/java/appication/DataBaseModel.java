@@ -6,8 +6,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import java.util.ArrayList;
 import org.postgresql.util.PSQLException;
+
 
 
 
@@ -15,6 +17,7 @@ import org.postgresql.util.PSQLException;
  * Contains the methods for managing the connection to the database.
  *
  * @author xaviernoel, jonathanmartin, morris
+
  * @version $Id: Team Project 15.
  */
 public class DataBaseModel {
@@ -29,6 +32,8 @@ public class DataBaseModel {
 
   /**
    * Create a connection.
+
+
    */
   public DataBaseModel() {
 
@@ -42,12 +47,14 @@ public class DataBaseModel {
   }
 
   /**
+
    * This method is done is the configuration of the connection with database.
    *
    * @return connection with database.
    * @throws SQLException is the exception threw if connection is not gone well.
    */
   public static Connection connectToDatabase() throws SQLException {
+
     Connection connection = null;
     connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/teamproject15",
         "teamproject15", "quogai");
@@ -78,6 +85,7 @@ public class DataBaseModel {
 
   /**
    * This method add a new user at the database.
+
    *
    * @param username name of user.
    * @param usernamepassword password of user.
@@ -146,6 +154,7 @@ public class DataBaseModel {
 
 
   /**
+
    * drops table. This method has been used only in delepment stage.
    *
    * @throws SQLException exception if connection is not established.
@@ -193,6 +202,7 @@ public class DataBaseModel {
 
   // check the if the answatre if provide is the same saved in the databese.
   /**
+
    * This method check if the asnwer if same to the one insert. If the answer is different of the
    * one saved onto database the will return false. if answer is false the handle controller it will
    * pop up error text.
@@ -227,6 +237,7 @@ public class DataBaseModel {
 
 
   /**
+
    * This method check if the username is in the table. This method is used by loging page and sign
    * up page. the sign up and login page use this method to check if a user already exist or not.
    *
@@ -263,6 +274,7 @@ public class DataBaseModel {
   }
 
   /**
+
    * This method check is username exist if so it will update the password. This method is use by
    * change password form to verfied it a user exist or not. if so, it will update the database with
    * the new password.
@@ -291,6 +303,7 @@ public class DataBaseModel {
       System.out.println("Error");
 
     }
+
 
 
   }

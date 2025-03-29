@@ -16,20 +16,16 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@myView.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appication.MyView">
    <children>
-
-      <AnchorPane styleClass="white-from" stylesheets="@myView.css" StackPane.alignment="CENTER">
+      <AnchorPane StackPane.alignment="CENTER">
          <children>
-            <AnchorPane fx:id="suSignupForm" prefHeight="400.0" prefWidth="300.0" styleClass="white-from" stylesheets="@myView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="0.0">
-
+            <AnchorPane fx:id="suSignupForm" prefHeight="400.0" prefWidth="300.0" stylesheets="@myView.css">
                <children>
                   <Label layoutX="72.0" layoutY="55.0" prefHeight="34.0" prefWidth="194.0" text="Register Account" textFill="#10100f">
                      <font>
                         <Font name="System Bold" size="23.0" />
                      </font>
                   </Label>
-
-                  <TextField fx:id="suUsername" layoutX="57.0" layoutY="131.0" prefHeight="26.0" prefWidth="210.0" promptText="Email Address" />
-
+                  <TextField fx:id="suUsername" layoutX="57.0" layoutY="131.0" prefHeight="26.0" prefWidth="210.0" promptText="Username" />
 <TextField fx:id="passTextSu" layoutX="57.0" layoutY="175.0" prefHeight="26.0" prefWidth="210.0" promptText="Password" />
                   <PasswordField fx:id="suPassword" layoutX="57.0" layoutY="175.0" prefHeight="26.0" prefWidth="210.0" promptText="Password" />
                   <Button fx:id="suSignupBtn" layoutX="57.0" layoutY="335.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="210.0" text="Sign Up">
@@ -44,18 +40,14 @@
                   <CheckBox fx:id="passToggleSu" layoutX="275.0" layoutY="179.0" mnemonicParsing="false" onAction="#togglevisiblePasswordSignUp" />
                   <CheckBox fx:id="passToggleSecAns" layoutX="275.0" layoutY="276.0" mnemonicParsing="false" onAction="#togglevisibleAnswer" />
                </children></AnchorPane>
-
-            <AnchorPane fx:id="siLoginForm" layoutX="304.0" layoutY="-8.0" prefHeight="400.0" prefWidth="300.0" styleClass="white-from" stylesheets="@myView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="siLoginForm" layoutX="304.0" layoutY="1.0" prefHeight="400.0" prefWidth="300.0" styleClass="white-from">
                <children>
-                  <TextField fx:id="siUsername" layoutX="57.0" layoutY="131.0" prefHeight="26.0" prefWidth="210.0" promptText="Email Address">
-
+                  <TextField fx:id="siUsername" layoutX="57.0" layoutY="131.0" prefHeight="26.0" prefWidth="210.0" promptText="Username" AnchorPane.bottomAnchor="242.6" AnchorPane.leftAnchor="56.99999999999997" AnchorPane.rightAnchor="32.599999999999994" AnchorPane.topAnchor="131.0">
                      <font>
                         <Font name="Arial" size="12.0" />
                      </font>
                   </TextField>
-
-                  <Label layoutX="72.0" layoutY="54.0" text="Login Account" textFill="#232222">
-
+                  <Label layoutX="72.0" layoutY="54.0" text="Login Account" textFill="#232222" AnchorPane.bottomAnchor="311.6" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="72.0" AnchorPane.topAnchor="54.0">
                      <font>
                         <Font name="System Bold" size="23.0" />
                      </font>
@@ -69,16 +61,9 @@
                   </Button>
                   <Hyperlink fx:id="siForgotPass" layoutX="45.0" layoutY="238.0" text="Forgot Password?" />
                   <CheckBox fx:id="passToggle" layoutX="273.0" layoutY="178.0" mnemonicParsing="false" onAction="#togglevisiblePassword" />
-
-                  <Button fx:id="customerBtn" layoutX="45.0" layoutY="360.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="210.0" text="Customer">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Button>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="fpquestionForm" layoutX="304.0" prefHeight="400.0" prefWidth="300.0" styleClass="white-from" stylesheets="@myView.css" visible="false">
-
+            <AnchorPane fx:id="fpquestionForm" layoutX="304.0" prefHeight="400.0" prefWidth="300.0" styleClass="white-from" visible="false">
                <children>
                   <Label layoutX="44.0" layoutY="54.0" prefHeight="64.0" prefWidth="194.0" text="Forgot Password" textFill="#232222" AnchorPane.bottomAnchor="282.0" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="62.0" AnchorPane.topAnchor="54.0">
                      <font>
@@ -98,9 +83,7 @@
                   <Insets bottom="400.0" left="300.0" right="600.0" />
                </opaqueInsets>
             </AnchorPane>
-
-            <AnchorPane fx:id="npNewPassForm" layoutX="304.0" layoutY="5.0" prefHeight="400.0" prefWidth="300.0" styleClass="white-from" stylesheets="@myView.css" visible="false">
-
+            <AnchorPane fx:id="npNewPassForm" layoutX="304.0" layoutY="5.0" prefHeight="400.0" prefWidth="300.0" styleClass="white-from" visible="false">
                <children>
                   <Label layoutX="44.0" layoutY="54.0" prefHeight="64.0" prefWidth="194.0" text="Forgot Password" textFill="#232222" AnchorPane.bottomAnchor="282.0" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="62.0" AnchorPane.topAnchor="54.0">
                      <font>
@@ -113,11 +96,9 @@
                      </font>
                   </Button>
                   <Button fx:id="npBack" layoutX="130.0" layoutY="336.0" mnemonicParsing="false" onAction="#backLoginFormFromChangePasswordForm" text="Back" />
-
-			<TextField fx:id="passTextNewPass" layoutX="44.0" layoutY="143.0" prefHeight="26.0" prefWidth="210.0" promptText="New Password" />
+			<TextField fx:id="passTextNewPass" layoutX="44.0" layoutY="143.0" prefHeight="26.0" prefWidth="210.0" />
                   <PasswordField fx:id="npNewPassword" layoutX="44.0" layoutY="143.0" prefHeight="26.0" prefWidth="210.0" promptText="New Password" />
-			<TextField fx:id="passTextConfPass" layoutX="44.0" layoutY="187.0" prefHeight="26.0" prefWidth="210.0" promptText="Confirmation Password" />
-
+			<TextField fx:id="passTextConfPass" layoutX="44.0" layoutY="187.0" prefHeight="26.0" prefWidth="210.0" />
                   <PasswordField fx:id="npNewPassConfimation" layoutX="44.0" layoutY="187.0" prefHeight="26.0" prefWidth="210.0" promptText="Confirmation Password" />
                   <CheckBox fx:id="passToggleNewPass" layoutX="262.0" layoutY="147.0" mnemonicParsing="false" onAction="#togglevisiblePasswordChangeNewPass" />
                   <CheckBox fx:id="passToggleConfPass" layoutX="262.0" layoutY="192.0" mnemonicParsing="false" onAction="#togglevisiblePasswordConfirmChangeNewPass" />

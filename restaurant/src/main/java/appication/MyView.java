@@ -1,9 +1,11 @@
 package appication;
 
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.animation.TranslateTransition;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -21,10 +23,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+
+
 import javafx.util.Duration;
 
 
 /**
+
  * This is class is the GUI login interface that user use to login or register if a staff member an
  * if a costumer it can go straight to manu page.
  *
@@ -72,13 +77,16 @@ public class MyView {
     customerBtn.setOnAction(event -> loginController.handleCusotmerMenu());
   }
 
+
   @FXML
   private Label askSecurityQuestion;
 
   @FXML
+
   private Button customerBtn;
 
   @FXML
+
   private TextField fpAnswer;
 
   @FXML
@@ -184,18 +192,22 @@ public class MyView {
 
   @SuppressWarnings("rawtypes") // his supper the warming coused by ObservableList.
   private ObservableList listData; // use to add list of questions at combox question.
+
   private String question1 = "What is your favourite color?"; // secret question.
   private String question2 = "What is your favourite food?"; // secret question.
   private String question3 = "What is your birth day?"; // secret question.
+
   private Alert alert; // use to pop up and warming.
 
 
   // array use to store the questions.
   private String[] questionList = {question1, question2, question3};
 
+
   /**
    * This method is use to make ther password in login page visible or invisible.
    *
+
    * @param event When the user wants to see their password
    */
   @FXML
@@ -213,8 +225,10 @@ public class MyView {
 
 
   /**
+
    * This method is used to make visible or invisible the password in sign up form.
    *
+
    * @param event When the user wants to see their password
    */
   @FXML
@@ -232,8 +246,10 @@ public class MyView {
 
 
   /**
+
    * This method is used to make visible or invisible change password field in change password form.
    *
+
    * @param event When the user wants to see their password
    */
   @FXML
@@ -250,8 +266,10 @@ public class MyView {
   }
 
   /**
+
    * This method is used to swapt the Scene when the button login is pressed.
    *
+
    * @return button.
    */
   public Button getSiButton() {
@@ -261,9 +279,11 @@ public class MyView {
   }
 
   /**
+
    * This method is used to make visible or invisible confirm change password field in change
    * password form.
    *
+
    * @param event When the user wants to see their password
    */
   @FXML
@@ -281,9 +301,11 @@ public class MyView {
 
 
   /**
+
    * This method is used to make visible or invisible the secret answer field in sign up form.
    *
    * @param event When the user wants to see their secret answer
+
    */
   @FXML
   public void togglevisibleAnswer(ActionEvent event) {
@@ -299,6 +321,7 @@ public class MyView {
   }
 
   /**
+
    * This method is used to get thew new password in new password field.
    *
    * @return new password.
@@ -312,9 +335,11 @@ public class MyView {
   }
 
   /**
+
    * This method is used to get the password confirm new password field.
    *
    * @return confirmation new password.
+
    */
   public String getConfirmationNewPassword() {
     if (npNewPassConfimation == null) {
@@ -326,10 +351,12 @@ public class MyView {
   }
 
   /**
+
    * This method is used to get the username in username field.
    *
    * @return username.
    */
+
   public String getUserNameLogin() {
     if (siUsername == null) {
       return "";
@@ -339,8 +366,10 @@ public class MyView {
   }
 
   /**
+
    * This methods is used gto get the password in login form.
    *
+
    * @return password.
    */
   public String getPassowrdLogin() {
@@ -352,8 +381,10 @@ public class MyView {
 
 
   /**
+
    * This method is used tto get the unsernam in Sign up form.
    *
+
    * @return username
    */
   public String getUserNameRegistration() {
@@ -366,8 +397,10 @@ public class MyView {
 
 
   /**
+
    * This method is used to get the password for sign up form.
    *
+
    * @return password.
    */
   public String getPassowrdRegistration() {
@@ -378,7 +411,9 @@ public class MyView {
   }
 
   /**
+
    * This method is used to set up all fields in sign up when application start.
+
    */
   public void emptyRegistrationFields() {
 
@@ -386,6 +421,7 @@ public class MyView {
     suPassword.setText("");
     suQuestion.getSelectionModel().clearSelection();
     suAnswer.setText("");
+
 
     suPassword.setVisible(true);
     suAnswer.setVisible(true);
@@ -395,6 +431,7 @@ public class MyView {
 
   /**
    * This method it used to set up all fields in logi page when application start.
+
    */
   public void emptyLoginFields() {
 
@@ -403,6 +440,7 @@ public class MyView {
     fpAnswer.setText("");
     npNewPassword.setText("");
     npNewPassConfimation.setText("");
+
 
     passToggle.setSelected(false);
     siPassword.setVisible(true);
@@ -415,6 +453,7 @@ public class MyView {
 
   /**
    * This method used to store the question list that will printout by GUI.
+
    */
   @SuppressWarnings("unchecked") // his supper the warming coused by ObservableList.
   public void regQuestionList() {
@@ -432,9 +471,11 @@ public class MyView {
   }
 
   /**
+
    * This Method is used to get the secret question.
    *
    * @return the question.
+
    */
   public Object getSelectedQuestion() {
 
@@ -443,8 +484,10 @@ public class MyView {
   }
 
   /**
+
    * This method is used to get the answer in the registration form and used.
    *
+
    * @return the answer.
    */
   public String getAnswer() {
@@ -457,7 +500,9 @@ public class MyView {
 
   /**
    * This method is use to get the answer typed into feald ForgotPass form.
+
    *
+
    * @return answer.
    */
   public String getSnswerChangePassword() {
@@ -466,17 +511,21 @@ public class MyView {
 
     } else {
 
+
+
       return fpAnswer.getText();
     }
 
   }
 
   /**
+
    * This methodi is used to pop up a alert text.
    *
    * @param type of alert.
    * @param title used has head line of alert.
    * @param contentText tis the text message.
+
    */
   public void alert(AlertType type, String title, String contentText) {
 
@@ -489,10 +538,12 @@ public class MyView {
   }
 
 
+
   /**
    * this method will switch form when forgot password will press.
    *
    * @param question a {@link java.lang.String} object
+
    */
   public void switchForgotPass(String question) {
     emptyLoginFields();
@@ -502,13 +553,16 @@ public class MyView {
 
 
 
+
     regQuestionList();
 
 
   }
 
   /**
+
    * This methosd is useed to switch the form from login page to forgot password form.
+
    */
   public void switchChangePassword() {
 
@@ -537,6 +591,7 @@ public class MyView {
     npNewPassForm.setVisible(false);
     siLoginForm.setVisible(true);
 
+
     passTextConfPass.setText("");
     passTextNewPass.setText("");
     passToggleNewPass.setSelected(false);
@@ -549,7 +604,9 @@ public class MyView {
 
   /**
    * This method is responsible of translate the windows between login and register.
+
    *
+
    * @param event start the movement of sliding window.
    */
   public void switchForm(ActionEvent event) {
@@ -562,6 +619,7 @@ public class MyView {
       slider.setToX(300); // slideTox in px.
       slider.setDuration(Duration.seconds(.5)); // how long the translate act.
 
+
       passToggle.setSelected(false);
       siPassword.setVisible(true);
 
@@ -571,10 +629,13 @@ public class MyView {
       suAnswer.setVisible(true);
 
 
+
       // Change visibility buttons "create account" "Already have account".
       slider.setOnFinished((ActionEvent e) -> {
         sideCreateBtnAlreadyHave.setVisible(true);
         sideCreateBtn.setVisible(false);
+
+
 
 
         regQuestionList();
@@ -605,6 +666,8 @@ public class MyView {
 
   /**
    * This method move the sideForm to the defauld side after confimed a new user.
+
+
    */
   public void switFormAfterSignUp() {
     TranslateTransition slider = new TranslateTransition();
@@ -612,13 +675,17 @@ public class MyView {
     slider.setToX(0);
     slider.setDuration(Duration.seconds(.5));
 
+
     slider.setOnFinished((ActionEvent e) -> {
       sideCreateBtnAlreadyHave.setVisible(false);
       sideCreateBtn.setVisible(true);
+
 
     });
     slider.play();
 
   }
+
+
 
 }

@@ -8,8 +8,11 @@ import javafx.scene.control.Alert.AlertType;
  *
  * @author papap
  * @version $Id: Team Project 15.
+
  */
 public class LoginController {
+
+
 
 
 
@@ -18,7 +21,6 @@ public class LoginController {
   private DataBaseModel connection;
 
   private String currentUsername;
-
 
 
   /**
@@ -41,6 +43,7 @@ public class LoginController {
 
     } else if (!view.getUserNameLogin().contains("@")) {
       AlertText.alert(AlertType.ERROR, "Error Message", "Please type a valid Email");
+
     } else {
       try {
         if (DataBaseModel.getRightLogin(view.getUserNameLogin(), view.getPassowrdLogin())) {
@@ -54,6 +57,7 @@ public class LoginController {
           AlertText.alert(AlertType.ERROR, "Error Message", "Incorrect Email Adderss/password!");
 
 
+
         }
 
 
@@ -65,21 +69,26 @@ public class LoginController {
 
 
   /**
+
    * This method will handle sign up for a new user. the method it will pop a error message is the
    * user insert a invalid usermame or the new username is already exist.
+
    */
   void handleSignUp() {
     if (view.getUserNameRegistration().isEmpty() || view.getPassowrdRegistration().isEmpty()
         || view.getSelectedQuestion() == null || view.getAnswer().isEmpty()) {
+
       AlertText.alert(AlertType.ERROR, "Error Message", "Please fill all the blank fields");
 
     } else if (!view.getUserNameRegistration().contains("@")) {
       AlertText.alert(AlertType.ERROR, "Error Message", "Please type a valid email");
+
     } else {
 
 
       if (DataBaseModel.registerUser(view.getUserNameRegistration(), view.getPassowrdRegistration(),
           view.getSelectedQuestion(), view.getAnswer())) {
+
         AlertText.alert(AlertType.INFORMATION, "Information Message",
             "Successfully registered Account!");
         view.switFormAfterSignUp();
@@ -122,12 +131,14 @@ public class LoginController {
   void handleAnswer() {
     if (view.getSnswerChangePassword().isEmpty()) {
       AlertText.alert(AlertType.ERROR, "Error Message", "Please fill the answer in the fields");
+
     } else if (DataBaseModel.checkAnswer(currentUsername, view.getSnswerChangePassword())) {
       view.switchChangePassword();
 
 
 
     } else {
+
       AlertText.alert(AlertType.ERROR, "Error Message", "The answer was wrong");
     }
 
@@ -137,24 +148,30 @@ public class LoginController {
   /**
    * This method handle the change password form. The method will pop up error message if user do
    * not type the same password. The method it will switch the user to login page as well.
+
    */
 
   void handleChangePassword() {
 
     // if feal are empty pop up txt is empty.
     if (view.getNewPassword().isEmpty() || view.getConfirmationNewPassword().isEmpty()) {
+
       AlertText.alert(AlertType.ERROR, "Error Message",
+
           "Please fill the new password and confirm new password in the fields");
       // two password are equal.
     } else if (view.getNewPassword().equals(view.getConfirmationNewPassword())) {
 
 
       DataBaseModel.overridePassword(currentUsername, view.getNewPassword());
+
       AlertText.alert(AlertType.INFORMATION, "Information Message",
+
           "Password has been succeffuly Update");
       view.backLoginFormFromChangePasswordForm();
 
     } else {
+
       AlertText.alert(AlertType.ERROR, "Error Message", "Please insert the same password");
     }
 
@@ -171,6 +188,7 @@ public class LoginController {
 
 
   }
+
 
 
 
