@@ -1,9 +1,5 @@
 package appication;
 
-import java.io.IOException;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
 
 /**
@@ -93,6 +89,18 @@ public class MenuController {
 
     double totalAmount = menuView.calculateTotalAmount();
     // System.out.print(menuView.calculateTotalAmount());
+
+    // int tableNumber = menuView.getTableNumber();
+    // MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
+    if (menuView.getTableNumber() == -1
+        || PayCostumerModel.getPrizeFormTable(menuView.getTableNumber()) == null) {
+      AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
+    } else {
+      int tableNumber = menuView.getTableNumber();
+      MenuModel.insertIntoSQLPriceTableStaff(totalAmount, tableNumber);
+      
+
+
     int tableNumber = menuView.getTableNumber();
     MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
     if (menuView.getTableNumber() == 0
@@ -101,8 +109,10 @@ public class MenuController {
     } else {
       PayCostumerView viewPC = new PayCostumerView(menuView.getTableNumber());
       MenuModel.insertIntoSQLPriceTableStaff(totalAmount, tableNumber);
+
     }
 
   }
 
 }
+

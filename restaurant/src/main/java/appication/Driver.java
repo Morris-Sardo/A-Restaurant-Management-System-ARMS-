@@ -1,10 +1,12 @@
 package appication;
 
 import javafx.application.Application;
+
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
+
  * This clasS is used has strat of apllication. When application start the scene the start as
  * default it login page.
  *
@@ -80,3 +82,4 @@ public class Driver extends Application {
   }
 
 }
+

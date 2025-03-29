@@ -13,7 +13,7 @@
 
 <StackPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appication.DashBoardMyView">
    <children>
-      <AnchorPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" opacity="0.75" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@myView.css" />
+      <AnchorPane maxHeight="600.0" maxWidth="900.0" minHeight="600.0" minWidth="900.0" opacity="0.75" prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@../dash-resource/dash.css" />
       <AnchorPane prefHeight="600.0" prefWidth="900.0">
          <children>
             <BorderPane prefHeight="600.0" prefWidth="900.0">
@@ -30,7 +30,9 @@
                               <String fx:value="white-background" />
                            </styleClass>
                            <children>
+
                               <Label layoutX="131.0" layoutY="523.0" text="Sign Out" textFill="WHITE">
+
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -44,10 +46,12 @@
                                     <String fx:value="restaurant-title" />
                                  </styleClass>
                               </Label>
+
                               <Label alignment="TOP_CENTER" layoutX="53.0" layoutY="277.0" prefHeight="34.0" prefWidth="799.0" text="traditional dishes that celebrate the rich culinary heritage of Mexico. We're thrilled to introduce" textFill="WHITE">
                                  <font>
                                     <Font name="Humnst777 BT Roman" size="18.0" />
                                  </font>
+
                                  <styleClass>
                                     <String fx:value="restaurant-title" />
                                     <String fx:value="restaurant-title" />
