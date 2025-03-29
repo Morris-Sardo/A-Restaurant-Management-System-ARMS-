@@ -51,7 +51,7 @@ public class LoginController {
           Driver.setScene(mainPage.start(), TitlePage.DASHBOARD_PAGE);
 
         } else {
-          AlertText.alert(AlertType.ERROR, "Error Message", "Incorrect Email Adderss/passowrd!");
+          AlertText.alert(AlertType.ERROR, "Error Message", "Incorrect Email Adderss/password!");
 
 
         }

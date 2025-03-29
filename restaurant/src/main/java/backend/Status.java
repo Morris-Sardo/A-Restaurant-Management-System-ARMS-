@@ -1,46 +1,63 @@
 package backend;
 
 /**
- * This is enum used to change the status of an order.
+ * A set of values for different possible states of an order.
  * 
- * @author papap
- *
+ * @author xaviernoel
  */
 public enum Status {
+  
   /**
-   * This enum is used when order is requested.
+   * Requested Status.
    */
   REQUESTED("Requested"),
+  
   /**
-   * This enum is used when order is confirmed.
+   * Confirmed Status.
    */
   CONFIRMED("Confirmed"),
+  
   /**
-   * This enum is used when order is ready.
+   * Ready Status.
    */
   READY("Ready"),
+ 
   /**
-   * This enum is used when order is complited.
+   * Completed Status.
    */
   COMPLETED("Completed"),
+  
   /**
-   * This enum is used when order has been paid.
+   * Paid Status.
    */
   PAID("Paid"),
+  
   /**
-   * This enum is used when order is cancelled.
+   * Cancelled Status.
    */
   CANCELED("Canceled");
 
-
+  /**
+   * This is the Status of orders.
+   */
   private String status;
 
+  /**
+   * Constructor for the status.
+   * 
+   * @param value to update the status.
+   */
   private Status(String value) {
     this.status = value;
   }
 
+
+  /**
+   * This sets the status to string.
+   */
   @Override
   public String toString() {
     return status;
   }
 }
+

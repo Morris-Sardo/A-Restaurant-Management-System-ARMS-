@@ -144,9 +144,7 @@ public class InventoryController {
 
     if ((num - 1) < -1) {
       AlertText.alert(AlertType.ERROR, "Error Message", "No item selected");
-
     } else {
-
       if (InventoryModel.deleteItems(viewI.getSelectedTableItem().getProduct_ID())) {
         viewI.setAllFieldClean();
         viewI.steTableItems(InventoryModel.getInventoryTable());

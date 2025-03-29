@@ -22,7 +22,7 @@ import javafx.scene.layout.AnchorPane;
  * This page is the view of menu page for only costumer. This class has less privilege of the menu
  * staff.
  * 
- * @author papap and Zain
+ * @author papap, Zain
  * @version $Id: Team Project 15.
  */
 public class MenuCostumerView {
@@ -49,26 +49,26 @@ public class MenuCostumerView {
   @FXML
   private AnchorPane coke;
 
-  @FXML
-  private Button deacreaes;
-
-  @FXML
-  private Button deacreaes1;
-
-  @FXML
-  private Button deacreaes2;
-
-  @FXML
-  private Button deacreaes3;
-
-  @FXML
-  private Button deacreaes4;
-
-  @FXML
-  private Button deacreaes5;
-
-  @FXML
-  private Button deacreaes6;
+  // @FXML
+  // private Button deacreaes;
+  //
+  // @FXML
+  // private Button deacreaes1;
+  //
+  // @FXML
+  // private Button deacreaes2;
+  //
+  // @FXML
+  // private Button deacreaes3;
+  //
+  // @FXML
+  // private Button deacreaes4;
+  //
+  // @FXML
+  // private Button deacreaes5;
+  //
+  // @FXML
+  // private Button deacreaes6;
 
   @FXML
   private Button decreasePasta;
@@ -92,25 +92,69 @@ public class MenuCostumerView {
   private Button increasePasta;
 
   @FXML
-  private Button increases;
+  private Button increasesSalsaVerde;
 
   @FXML
-  private Button increases1;
+  private Button increasesChickenTaquitos;
 
   @FXML
-  private Button increases11;
+  private Button increasesJalapenos;
 
   @FXML
-  private Button increases2;
+  private Button increasesMexicanConDip;
 
   @FXML
-  private Button increases21;
+  private Button increasesChilliConCarne;
 
   @FXML
-  private Button increases22;
+  private Button increasesChickenFajitas;
 
   @FXML
-  private Button increases3;
+  private Button increaseChurros;
+
+  @FXML
+  private Button increaseHalloumi;
+
+  @FXML
+  private Button increaseBread;
+
+  @FXML
+  private Button increaseMargarita;
+
+  @FXML
+  private Button increaseChocolate;
+
+  @FXML
+  private Button increaseTepache;
+
+  @FXML
+  private Button increaseCoke;
+
+  @FXML
+  private Button increaseHorchata;
+
+  @FXML
+  private Button increaseJarritos;
+  // @FXML
+  // private Button increases;
+  //
+  // @FXML
+  // private Button increases1;
+  //
+  // @FXML
+  // private Button increases11;
+  //
+  // @FXML
+  // private Button increases2;
+  //
+  // @FXML
+  // private Button increases21;
+  //
+  // @FXML
+  // private Button increases22;
+  //
+  // @FXML
+  // private Button increases3;
 
   @FXML
   private AnchorPane jalapenos;
@@ -257,6 +301,24 @@ public class MenuCostumerView {
   @SuppressWarnings("unchecked")
   @FXML
   public void initialize() {
+
+    setAvaibleSalsaVerde();
+    setAvaibleChickenTaquitos();
+    setAvailableJalapenosPoppers();
+    setAvailableMexicanCornDip();
+    setAvailableChiliConCarne();
+    setAvailableChickenFajitas();
+    setAvailableHalloumiTacos();
+    setAvailableMexicanStyleRice();
+    setAvailableChurros();
+    setAvailablePandeMuerto();
+    setAvailableMargaritaPie();
+    setAvailableHotChocolatePie();
+    setAvailableTepache();
+    setAvailableCoke();
+    setAvailableHorchata();
+    setAvailableJarritos();
+
     MenuCostumerController menuCostrumerController = new MenuCostumerController(this);
     makeReviewBtn.setOnAction(event -> menuCostrumerController.handleMakeReview());
     seeReviewBtn.setOnAction(event -> menuCostrumerController.handleReviewList());
@@ -298,6 +360,285 @@ public class MenuCostumerView {
       return -1;
     }
   }
+
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of salsa verde
+   * the menu page
+   */
+  public void setAvaibleSalsaVerde() {
+    
+    if (MenuModel.setAvailableSalsaVerde().toString() == "false") {
+     
+      increasesSalsaVerde.setVisible(false);
+      salsaTextField.setDisable(true);
+    } else {
+      increasesSalsaVerde.setVisible(true);
+      salsaTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Chicken
+   * Taquitos the menu page.
+   */
+  public void setAvaibleChickenTaquitos() {
+
+    
+    if (MenuModel.setAvailableChickenTaquitos().toString() == "false") {
+      
+      increasesChickenTaquitos.setVisible(false);
+      chickenTextField.setDisable(true);
+    } else {
+      increasesChickenTaquitos.setVisible(true);
+      chickenTextField.setDisable(false);
+    }
+  }
+
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Jalapenos
+   * Poppers the menu page.
+   */
+  public void setAvailableJalapenosPoppers() {
+
+    
+    if (MenuModel.setAvailableJalapenosPoppers().toString() == "false") {
+      
+      increasesJalapenos.setVisible(false);
+      jalapenosTextField.setDisable(true);
+    } else {
+      increasesJalapenos.setVisible(true);
+      jalapenosTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Mexican Corn
+   * Dip the menu page.
+   */
+  public void setAvailableMexicanCornDip() {
+
+    
+    if (MenuModel.setAvailableMexicanCornDip().toString() == "false") {
+      
+      increasesMexicanConDip.setVisible(false);
+      cornTextField.setDisable(true);
+    } else {
+      increasesMexicanConDip.setVisible(true);
+      cornTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Chilli Con
+   * Carne the menu page.
+   */
+  public void setAvailableChiliConCarne() {
+
+    
+    if (MenuModel.setAvailableChiliConCarne().toString() == "false") {
+      
+      increasesChilliConCarne.setVisible(false);
+      chilliTextField.setDisable(true);
+    } else {
+      increasesChilliConCarne.setVisible(true);
+      chilliTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Chicken
+   * Fajitas the menu page.
+   */
+  public void setAvailableChickenFajitas() {
+
+    
+    if (MenuModel.setAvailableChickenFajitas().toString() == "false") {
+      
+      increasesChickenFajitas.setVisible(false);
+      chickenFajitasTextField.setDisable(true);
+    } else {
+      increasesChickenFajitas.setVisible(true);
+      chickenFajitasTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Halloumi
+   * Tacos the menu page.
+   */
+  public void setAvailableHalloumiTacos() {
+
+    
+    if (MenuModel.setAvailableHalloumiTacos().toString() == "false") {
+      
+      increaseHalloumi.setVisible(false);
+      halloumiTextField.setDisable(true);
+    } else {
+      increaseHalloumi.setVisible(true);
+      halloumiTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Mexican Style
+   * Rice the menu page.
+   */
+  public void setAvailableMexicanStyleRice() {
+
+    
+    if (MenuModel.setAvailableMexicanStyleRice().toString() == "false") {
+      
+      increasePasta.setVisible(false);
+      riceTextField.setDisable(true);
+    } else {
+      increasePasta.setVisible(true);
+      riceTextField.setDisable(false);
+
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Churros the
+   * menu page.
+   */
+  public void setAvailableChurros() {
+
+    
+    if (MenuModel.setAvailableChurros().toString() == "false") {
+      
+      increaseChurros.setVisible(false);
+      churrosTextField.setDisable(true);
+    } else {
+      increaseChurros.setVisible(true);
+      churrosTextField.setDisable(false);
+
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Pande Muerto
+   * the menu page.
+   */
+  public void setAvailablePandeMuerto() {
+
+    
+    if (MenuModel.setAvailablePandeMuerto().toString() == "false") {
+      
+      increaseBread.setVisible(false);
+      breadTextField.setDisable(true);
+    } else {
+      increaseBread.setVisible(true);
+      breadTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Margarita Pie
+   * the menu page.
+   */
+  public void setAvailableMargaritaPie() {
+
+    
+    if (MenuModel.setAvailableMargaritaPie().toString() == "false") {
+      
+      increaseMargarita.setVisible(false);
+      margaritaTextField.setDisable(true);
+    } else {
+      increaseMargarita.setVisible(true);
+      margaritaTextField.setDisable(false);
+
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Hot Chocolate
+   * Pie the menu page.
+   */
+  public void setAvailableHotChocolatePie() {
+
+    
+    if (MenuModel.setAvailableHotChocolatePie().toString() == "false") {
+      
+      increaseChocolate.setVisible(false);
+      chocolateTextField.setDisable(true);
+    } else {
+      increaseChocolate.setVisible(true);
+      chocolateTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Tepache the
+   * menu page.
+   */
+  public void setAvailableTepache() {
+
+    
+    if (MenuModel.setAvailableTepache().toString() == "false") {
+      
+      increaseTepache.setVisible(false);
+      tepacheTextField.setDisable(true);
+    } else {
+      increaseTepache.setVisible(true);
+      tepacheTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Coke the menu
+   * page.
+   */
+  public void setAvailableCoke() {
+
+    
+    if (MenuModel.setAvailableCoke().toString() == "false") {
+      
+      increaseCoke.setVisible(false);
+      cokeTextField.setDisable(true);
+    } else {
+      increaseCoke.setVisible(true);
+      cokeTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Horchata the
+   * menu page.
+   */
+  public void setAvailableHorchata() {
+
+    
+    if (MenuModel.setAvailableHorchata().toString() == "false") {
+      
+      increaseHorchata.setVisible(false);
+      horchataTextField.setDisable(true);
+    } else {
+      increaseHorchata.setVisible(true);
+      horchataTextField.setDisable(false);
+    }
+  }
+
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Jarritos the
+   * menu page.
+   */
+  public void setAvailableJarritos() {
+
+    
+    if (MenuModel.setAvailableJarritos().toString() == "false") {
+      
+      increaseJarritos.setVisible(false);
+      jarritosTextField.setDisable(true);
+    } else {
+      increaseJarritos.setVisible(true);
+      jarritosTextField.setDisable(false);
+
+    }
+  }
+
 
 
   /**
@@ -813,14 +1154,18 @@ public class MenuCostumerView {
 
   @FXML
   private void handleOrder() {
+    List<MenuItem> items = tableView.getItems();
     // Integer tableNumber = viewCM.getTableNumber();
     if (viewCM.getTableNumber() == -1
         || PayCostumerModel.getPrizeFormTable(viewCM.getTableNumber()) == null) {
-      AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
+      AlertText.alert(AlertType.ERROR, "Error Message", "Insert a Valid Table Number");
+    } else if (getTableNumber() > 10 || getTableNumber() < 1) {
+      AlertText.alert(AlertType.ERROR, "Message Error", "Table number must be within 10 and 1");
+    } else if (items.toString().equals("[]")) {
+      AlertText.alert(AlertType.ERROR, "Message Error", "Please order something.");
     } else {
       Integer tableNumber = viewCM.getTableNumber();
       double totalAmount = viewCM.calculateTotalAmount();
-      List<MenuItem> items = tableView.getItems();
       String itemNumbers = viewCM.getItemNumbers(items);
 
       MenuCostumerModel.insertIntoOrderTable(tableNumber, itemNumbers, totalAmount);

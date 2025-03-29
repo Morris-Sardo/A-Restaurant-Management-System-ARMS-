@@ -9,7 +9,7 @@ import javafx.scene.control.Alert.AlertType;
 /**
  * This class is the controller of menu page for costumer.
  * 
- * @author papap and Zain
+ * @author papap, Zain
  * @version $Id: Team Project 15.
  */
 public class MenuCostumerController {
@@ -83,6 +83,7 @@ public class MenuCostumerController {
       AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
     } else {
       int tableNumber = viewCM.getTableNumber();
+      
       MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
       // load the fxml file (does not have a FX controller)
       FXMLLoader loader = new FXMLLoader(getClass().getResource("payCostumerPage.fxml"));

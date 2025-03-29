@@ -88,19 +88,38 @@ public class MenuView {
   private AnchorPane hotChoccolate;
 
   @FXML
+  private Button increaeCoccolatePie;
+
+  @FXML
+  private Button increaseCurros;
+
+
+  @FXML
+  private Button increaseMargaritaPie;
+
+  @FXML
+  private Button increasePanMuerto;
+
+  @FXML
   private Button increasePasta;
 
   @FXML
-  private Button increases;
+  private Button increaseChickenTaqiotos;
 
   @FXML
-  private Button increases1;
+  private Button increaseSalsaVerde;
 
   @FXML
   private Button increases11;
 
   @FXML
-  private Button increases2;
+  private Button increaseJalapenesPoppers;
+
+  @FXML
+  private Button increaseHorchata;
+
+  @FXML
+  private Button increaseJarritos;
 
   @FXML
   private Button increases21;
@@ -110,6 +129,12 @@ public class MenuView {
 
   @FXML
   private Button increases3;
+
+  @FXML
+  private Button increaseTepache;
+
+  @FXML
+  private Button increaseCoke;
 
   @FXML
   private Button inventoryBtn;
@@ -258,13 +283,30 @@ public class MenuView {
   @SuppressWarnings("unchecked")
   @FXML
   public void initialize() {
+    // MenuController menuController = new MenuController(this);
+    setAvaibleSalsaVerde();
+    setAvaibleChickenTaquitos();
+    setAvailableJalapenosPoppers();
+    setAvailableMexicanCornDip();
+    setAvailableChiliConCarne();
+    setAvailableChickenFajitas();
+    setAvailableHalloumiTacos();
+    setAvailableMexicanStyleRice();
+    setAvailableChurros();
+    setAvailablePandeMuerto();
+    setAvailableMargaritaPie();
+    setAvailableHotChocolatePie();
+    setAvailableTepache();
+    setAvailableCoke();
+    setAvailableHorchata();
+    setAvailableJarritos();
     MenuController menuController = new MenuController(this);
     signuotBtn.setOnAction(event -> menuController.handleSignOut());
     inventoryBtn.setOnAction(event -> menuController.handleInventory());
     reviewListBtn.setOnAction(event -> menuController.handleReviewList());
     dashboardBtn.setOnAction(event -> menuController.handledashboard());
     kitchenBtn.setOnAction(event -> menuController.handleKitchen());
-    payBtn.setOnAction(event -> menuController.handlePayBills());
+    // payBtn.setOnAction(event -> menuController.handlePayBills());
 
     vegetarianSelectFilterBtn.setOnAction(event -> handleVetarianSelectFilterFood());
     vegetarianUnselectFilterBtn.setOnAction(event -> handleVegetarianUnselectFilterFood());
@@ -280,9 +322,9 @@ public class MenuView {
     TableColumn<MenuItem, Double> priceColumn = new TableColumn<>("Price");
     priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
     tableView.getColumns().addAll(productColumn, quantityColumn, priceColumn);
-
     viewSM = this;
   }
+
 
 
   /**
@@ -297,6 +339,286 @@ public class MenuView {
     } catch (NumberFormatException e) {
       // Handle invalid input or just return a default value
       return -1;
+    }
+  }
+
+
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of salsa verde
+   * the menu page
+   */
+  public void setAvaibleSalsaVerde() {
+   
+    if (MenuModel.setAvailableSalsaVerde().toString() == "false") {
+      
+      increaseSalsaVerde.setVisible(false);
+      salsaTextField.setDisable(true);
+    } else {
+      increaseSalsaVerde.setVisible(true);
+      salsaTextField.setDisable(false);
+    }
+  }
+
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Chicken
+   * Taquitos the menu page.
+   */
+  public void setAvaibleChickenTaquitos() {
+
+    
+    if (MenuModel.setAvailableChickenTaquitos().toString() == "false") {
+      
+      increaseChickenTaqiotos.setVisible(false);
+      chickenTextField.setDisable(true);
+    } else {
+      increaseChickenTaqiotos.setVisible(true);
+      chickenTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Jalapenos
+   * Poppers the menu page.
+   */
+  public void setAvailableJalapenosPoppers() {
+
+    
+    if (MenuModel.setAvailableJalapenosPoppers().toString() == "false") {
+      
+      increaseJalapenesPoppers.setVisible(false);
+      jalapenosTextField.setDisable(true);
+    } else {
+      increaseJalapenesPoppers.setVisible(true);
+      jalapenosTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Mexican Corn
+   * Dip the menu page.
+   */
+  public void setAvailableMexicanCornDip() {
+
+    
+    if (MenuModel.setAvailableMexicanCornDip().toString() == "false") {
+      
+      increases3.setVisible(false);
+      cornTextField.setDisable(true);
+    } else {
+      increases3.setVisible(true);
+      cornTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Chilli Con
+   * Carne the menu page.
+   */
+  public void setAvailableChiliConCarne() {
+
+    
+    if (MenuModel.setAvailableChiliConCarne().toString() == "false") {
+      
+      increases21.setVisible(false);
+      chilliTextField.setDisable(true);
+    } else {
+      increases21.setVisible(true);
+      chilliTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Chicken
+   * Fajitas the menu page.
+   */
+  public void setAvailableChickenFajitas() {
+
+    
+    if (MenuModel.setAvailableChickenFajitas().toString() == "false") {
+      
+      increases22.setVisible(false);
+      chickenFajitasTextField.setDisable(true);
+    } else {
+      increases22.setVisible(true);
+      chickenFajitasTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Halloumi
+   * Tacos the menu page.
+   */
+  public void setAvailableHalloumiTacos() {
+
+    
+    if (MenuModel.setAvailableHalloumiTacos().toString() == "false") {
+      
+      increases11.setVisible(false);
+      halloumiTextField.setDisable(true);
+    } else {
+      increases11.setVisible(true);
+      halloumiTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Mexican Style
+   * Rice the menu page.
+   */
+  public void setAvailableMexicanStyleRice() {
+
+    
+    if (MenuModel.setAvailableMexicanStyleRice().toString() == "false") {
+      
+      increasePasta.setVisible(false);
+      riceTextField.setDisable(true);
+    } else {
+      increasePasta.setVisible(true);
+      riceTextField.setDisable(false);
+
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Churros the
+   * menu page.
+   */
+  public void setAvailableChurros() {
+
+    
+    if (MenuModel.setAvailableChurros().toString() == "false") {
+      
+      increaseCurros.setVisible(false);
+      churrosTextField.setDisable(true);
+    } else {
+      increaseCurros.setVisible(true);
+      churrosTextField.setDisable(false);
+
+    }
+  }
+
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Pande Muerto
+   * the menu page.
+   */
+  public void setAvailablePandeMuerto() {
+
+    
+    if (MenuModel.setAvailablePandeMuerto().toString() == "false") {
+      
+      increasePanMuerto.setVisible(false);
+      breadTextField.setDisable(true);
+    } else {
+      increasePanMuerto.setVisible(true);
+      breadTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Margarita Pie
+   * the menu page.
+   */
+  public void setAvailableMargaritaPie() {
+
+    
+    if (MenuModel.setAvailableMargaritaPie().toString() == "false") {
+      
+      increaseMargaritaPie.setVisible(false);
+      margaritaTextField.setDisable(true);
+    } else {
+      increaseMargaritaPie.setVisible(true);
+      margaritaTextField.setDisable(false);
+
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Hot Chocolate
+   * Pie the menu page.
+   */
+  public void setAvailableHotChocolatePie() {
+
+    
+    if (MenuModel.setAvailableHotChocolatePie().toString() == "false") {
+      
+      increaeCoccolatePie.setVisible(false);
+      chocolateTextField.setDisable(true);
+    } else {
+      increaeCoccolatePie.setVisible(true);
+      chocolateTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Tepache the
+   * menu page.
+   */
+  public void setAvailableTepache() {
+
+    
+    if (MenuModel.setAvailableTepache().toString() == "false") {
+      
+      increaseTepache.setVisible(false);
+      tepacheTextField.setDisable(true);
+    } else {
+      increaseTepache.setVisible(true);
+      tepacheTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Coke the menu
+   * page.
+   */
+  public void setAvailableCoke() {
+
+    
+    if (MenuModel.setAvailableCoke().toString() == "false") {
+      
+      increaseCoke.setVisible(false);
+      cokeTextField.setDisable(true);
+    } else {
+      increaseCoke.setVisible(true);
+      cokeTextField.setDisable(false);
+    }
+  }
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Horchata the
+   * menu page.
+   */
+  public void setAvailableHorchata() {
+
+    
+    if (MenuModel.setAvailableHorchata().toString() == "false") {
+      
+      increaseHorchata.setVisible(false);
+      horchataTextField.setDisable(true);
+    } else {
+      increaseHorchata.setVisible(true);
+      horchataTextField.setDisable(false);
+    }
+  }
+
+
+  /**
+   * This would hide the appropriate menu items. This method changes the visability of Jarritos the
+   * menu page.
+   */
+  public void setAvailableJarritos() {
+
+    
+    if (MenuModel.setAvailableJarritos().toString() == "false") {
+      
+      increaseJarritos.setVisible(false);
+      jarritosTextField.setDisable(true);
+    } else {
+      increaseJarritos.setVisible(true);
+      jarritosTextField.setDisable(false);
+
     }
   }
 
@@ -464,6 +786,36 @@ public class MenuView {
     dessertSelctionFilterBtn.setVisible(true);
     dessertUnfilter();
 
+
+  }
+
+  /**
+   * This method is used clean up table number field.
+   */
+  public void cleanTableFiel() {
+    tableNumberField.setText("");
+  }
+
+  /**
+   * This method is used to clean all quantity field after order.
+   */
+  public void cleanQuantityField() {
+    salsaTextField.setText("");
+    jalapenosTextField.setText("");
+    chilliTextField.setText("");
+    chickenTextField.setText("");
+    cornTextField.setText("");
+    chickenFajitasTextField.setText("");
+    halloumiTextField.setText("");
+    riceTextField.setText("");
+    churrosTextField.setText("");
+    margaritaTextField.setText("");
+    margaritaTextField.setText("");
+    breadTextField.setText("");
+    chocolateTextField.setText("");
+    tepacheTextField.setText("");
+    cokeTextField.setText("");
+    jarritosTextField.setText("");
   }
 
   @FXML
@@ -812,21 +1164,34 @@ public class MenuView {
 
   @FXML
   private void handleOrder() {
-
-    if (viewSM.getTableNumber() == -1
-        || PayCostumerModel.getPrizeFormTable(viewSM.getTableNumber()) == null) {
-      AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
+    List<MenuItem> items = tableView.getItems();
+    String itemNumbers = viewSM.getItemNumbersStaff(items);
+    if (getTableNumber() == -1) {
+      AlertText.alert(AlertType.ERROR, "Message Error", "Insert a Valid Table Number");
+    } else if (getTableNumber() > 10 || getTableNumber() < 1) {
+      AlertText.alert(AlertType.ERROR, "Message Error", "Table number must be within 10 and 1");
+    } else if (items.toString().equals("[]")) {
+      AlertText.alert(AlertType.ERROR, "Message Error", "Please order something.");
     } else {
+      // MenuController handlePay = new MenuController();
       int tableNumber = viewSM.getTableNumber();
+
       double totalAmount = viewSM.calculateTotalAmount();
-
-      List<MenuItem> items = tableView.getItems();
-      String itemNumbers = viewSM.getItemNumbersStaff(items);
-
+      
+      
+      
+      MenuModel.insertIntoSQLPriceTableStaff(totalAmount, tableNumber);
       MenuCostumerModel.insertIntoOrderTable(tableNumber, itemNumbers, totalAmount);
       AlertText.alert(AlertType.INFORMATION, "SUCCESS", "Order Placed!");
+
+      cleanQuantityField();
+      cleanTableFiel();
+      totalLabel.setText("");
+      items.clear();
+
+
     }
+
   }
-
-
 }
+
