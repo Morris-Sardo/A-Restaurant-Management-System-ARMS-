@@ -1,10 +1,12 @@
 
 .header{
-	-fx-background-color: linear-gradient(to bottom left,#cf431c, rgb(3, 2, 15));
+
+	-fx-background-color: linear-gradient(to bottom right,#cf431c,rgb(3, 2, 15));
 }
 
 .nav-form{
-	-fx-background-color: linear-gradient(to bottom left,#cf431c, rgb(3, 2, 15));
+	-fx-background-color: linear-gradient(to bottom right,#cf431c,rgb(3, 2, 15));
+
 	
 }
 
@@ -22,7 +24,9 @@
 }
 
 .logout{
-	-fx-background-color: #b5544d;
+
+	-fx-background-color: #ebddd7;
+
 	-fx-padding: 5px;
 	-fx-cursor: hand;
 	-fx-background-radius: 50px;
@@ -47,7 +51,8 @@
 .table-design{
 	-fx-backgorund-color: transparent;
 	-fx-padding: 0;
-	-fx-border-color: linear-gradient(to bottom left,#cf431c, rgb(3, 2, 15));
+
+
 	-fx-border-radius: 5px;
 	-fx-border-width: 1.5px;
 	
@@ -55,7 +60,9 @@
 
 .table-design .column-header-background{
 	
-	-fx-background-color: linear-gradient(to bottom right,#cf431c, rgb(3, 2, 15));
+
+	-fx-background-color: linear-gradient(to bottom right,#cf431c,rgb(3, 2, 15));
+
 	-fx-background: 5px 5px 0 0 ;
 	-fx-background-insets: 0 0 0 0;
 	
@@ -71,7 +78,9 @@
 }
 
 .invt-btn{
-	-fx-background-color: linear-gradient(to bottom left,#cf431c, rgb(3, 2, 15));
+
+	-fx-background-color: linear-gradient(to bottom right,#cf431c,rgb(3, 2, 15));
+
 	-fx-cursor: hand;
 	-fx-text-fill: #fff;
 	-fx-font-size: 14px;

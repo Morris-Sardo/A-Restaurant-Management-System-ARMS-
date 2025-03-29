@@ -4,9 +4,18 @@
 }
 */
 .gradient {
-    -fx-background-color: linear-gradient(to bottom left,#cf431c, rgb(3, 2, 15));
+
+    -fx-background-color: linear-gradient(to bottom right,#cf431c,rgb(3, 2, 15));
+    
 }
 
 .white-from{
-    -fx-backgrounf-color: #fff;
+    -fx-background-color: #fff;
 }
+
+.root {
+    -fx-background-image: url('./image/DarkBackground.png');
+    -fx-background-size: cover;
+  }
+  
+

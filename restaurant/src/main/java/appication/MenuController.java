@@ -1,86 +1,118 @@
 package appication;
 
+import javafx.scene.control.Alert.AlertType;
 
-public class MenuController implements Initializable{
-	import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-	import javafx.scene.control.Label;
-	import javafx.scene.control.TableColumn;
-	import javafx.scene.control.TableView;
-	import javafx.scene.image.ImageView;
-	import javafx.scene.layout.AnchorPane;
+/**
+ * This is class does of controller of all button event between beteen GUI and MODEL.
+ *
+ * @author papap
+ * @version $Id: Team Project 15.
+ */
+public class MenuController {
 
-	public class PleaseProvideControllerClassName {
+  private MenuView menuView;
 
-	    @FXML
-	    private AnchorPane Inventory_page;
+  /**
+   * <p>
+   * Constructor for MenuCostumerController.
+   * </p>
+   */
+  public MenuController() {
 
-	    @FXML
-	    private Button customer_btn;
+  }
 
-	    @FXML
-	    private Button inventory_add_btn;
+  /**
+   * This constructor. Is user to inizialise ther controller ogject. It will be used by menu staff
+   * view class.
+   *
+   * @param menuView object menuView.
+   */
+  public MenuController(MenuView menuView) {
+    this.menuView = menuView;
+  }
 
-	    @FXML
-	    private Button inventory_btn;
+  /**
+   * This method handle the SignOut page and switch to login page.
+   */
+  void handleSignOut() {
+    MyView viewL = new MyView();
+    Driver.setScene(viewL.start(), TitlePage.LOGIN_PAGE);
+  }
 
-	    @FXML
-	    private Button inventory_clear_btn;
+  /**
+   * This method handle switching the page to inventory page.
+   */
+  void handleInventory() {
+    InventoryView viewI = new InventoryView();
+    Driver.setScene(viewI.start(), TitlePage.INVENTROY_PAGE);
 
-	    @FXML
-	    private Button inventory_delete_bnt;
+  }
 
-	    @FXML
-	    private ImageView inventory_image_view;
 
-	    @FXML
-	    private Button inventory_import_btn;
+  /**
+   * This method handle switching the review list page.
+   */
+  void handleReviewList() {
+    ReviewListViewStaff viewLRS = new ReviewListViewStaff();
+    Driver.setScene(viewLRS.start(), TitlePage.REVIEW_PAGE);
+  }
 
-	    @FXML
-	    private TableView<?> inventory_table;
+  /**
+   * This method handle switching the dashboard page.
+   */
+  void handledashboard() {
+    DashBoardMyView viewD = new DashBoardMyView();
+    Driver.setScene(viewD.start(), TitlePage.DASHBOARD_PAGE);
+  }
 
-	    @FXML
-	    private Button inventory_update_btn;
+  /**
+   * This method handle switching the kitchen page.
+   */
+  void handleKitchen() {
+    KitchenView viewK = new KitchenView();
+    Driver.setScene(viewK.start(), TitlePage.KITCHEN_PAGE);
+  }
 
-	    @FXML
-	    private AnchorPane main_form;
+  /**
+   * This method handle switching to the Pay Bill page.
+   */
+  void handlePayBillPage() {
+    PayView viewP = new PayView();
+    Driver.setScene(viewP.start(), TitlePage.PAY_BILLS_PAGE);
+  }
 
-	    @FXML
-	    private Button menu_btn;
+  /**
+   * Method gets the amount to pay from database and sends it to the pay page for the customer,
+   * while redirecting them there.
+   */
+  public void handlePayBills() {
 
-	    @FXML
-	    private ImageView out_btn;
+    double totalAmount = menuView.calculateTotalAmount();
+    // System.out.print(menuView.calculateTotalAmount());
 
-	    @FXML
-	    private Button review_btn;
+    // int tableNumber = menuView.getTableNumber();
+    // MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
+    if (menuView.getTableNumber() == -1
+        || PayCostumerModel.getPrizeFormTable(menuView.getTableNumber()) == null) {
+      AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
+    } else {
+      int tableNumber = menuView.getTableNumber();
+      MenuModel.insertIntoSQLPriceTableStaff(totalAmount, tableNumber);
+      
 
-	    @FXML
-	    private TableColumn<?, ?> table_col_price;
 
-	    @FXML
-	    private TableColumn<?, ?> table_col_prod_id;
+    int tableNumber = menuView.getTableNumber();
+    MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
+    if (menuView.getTableNumber() == 0
+        || PayCostumerModel.getPrizeFormTable(menuView.getTableNumber()) == null) {
+      AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
+    } else {
+      PayCostumerView viewPC = new PayCostumerView(menuView.getTableNumber());
+      MenuModel.insertIntoSQLPriceTableStaff(totalAmount, tableNumber);
 
-	    @FXML
-	    private TableColumn<?, ?> table_col_prod_name;
+    }
 
-	    @FXML
-	    private TableColumn<?, ?> table_col_stock;
+  }
 
-	    @FXML
-	    private TableColumn<?, ?> table_col_type;
-
-	    @FXML
-	    private Label username;
-	    
-	    public void displayUsername() {
-	    	
-	    	String user = data.username;
-	    	user = user.substring(0, 1).toUpperCase() + user.substring(1);
-	    	username.setText(user);
-	    	
-	    }
-
-	}
-
+}
 
