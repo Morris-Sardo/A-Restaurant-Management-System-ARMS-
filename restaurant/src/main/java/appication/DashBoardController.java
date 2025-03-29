@@ -68,6 +68,14 @@ public class DashBoardController {
     InventoryView viewI = new InventoryView();
     Driver.setScene(viewI.start(), TitlePage.INVENTROY_PAGE);
   }
+
+  /**
+   * This method will switch to the staff Pay page.
+   */
+  void handlePay() {
+    PayView viewP = new PayView();
+    Driver.setScene(viewP.start(), TitlePage.PAY_BILLS_PAGE);
+  }
 }
 
 

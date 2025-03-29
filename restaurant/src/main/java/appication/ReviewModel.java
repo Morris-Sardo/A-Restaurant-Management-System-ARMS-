@@ -81,7 +81,7 @@ public class ReviewModel {
   /**
    * This method is used only for test.
    *
-   * @throws java.sql.SQLException is accour if there is not connection.
+   * @throws java.sql.SQLException accour if there is not connection.
    */
   public static void createLoginTable() throws SQLException {
     System.out.println("Creating rating1 table");

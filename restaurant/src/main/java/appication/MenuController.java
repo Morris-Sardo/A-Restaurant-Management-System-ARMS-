@@ -89,6 +89,7 @@ public class MenuController {
 
     double totalAmount = menuView.calculateTotalAmount();
     // System.out.print(menuView.calculateTotalAmount());
+
     // int tableNumber = menuView.getTableNumber();
     // MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
     if (menuView.getTableNumber() == -1
@@ -99,9 +100,18 @@ public class MenuController {
       MenuModel.insertIntoSQLPriceTableStaff(totalAmount, tableNumber);
       
 
+
+    int tableNumber = menuView.getTableNumber();
+    MenuCostumerModel.insertIntoSQLPriceTable(totalAmount, tableNumber);
+    if (menuView.getTableNumber() == 0
+        || PayCostumerModel.getPrizeFormTable(menuView.getTableNumber()) == null) {
+      AlertText.alert(AlertType.ERROR, "Error Message", "Please Enter a valid number of table");
+    } else {
+      PayCostumerView viewPC = new PayCostumerView(menuView.getTableNumber());
+      MenuModel.insertIntoSQLPriceTableStaff(totalAmount, tableNumber);
+
     }
+
   }
-
-
 
 }

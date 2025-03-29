@@ -58,7 +58,7 @@ public class PayCostumerController {
   public void handlePaymentSubmission() {
 
     Float bills = PayModel.getPrizeFormTable(viewPC.getTable());
-    System.out.println(viewPC.getExpDate());
+    
     // check if all fields are filled and true. otherwise pop up error message.
     if (viewPC.getTable() == -1 || bills == null || (viewPC.getCCV() + "").length() != 3
         || viewPC.getCCV() == -1 || viewPC.getExpDate() == -1 || viewPC.getFirstName().isEmpty()

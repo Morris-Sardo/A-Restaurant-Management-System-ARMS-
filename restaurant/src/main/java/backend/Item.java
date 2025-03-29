@@ -38,56 +38,57 @@ public class Item {
   }
 
   /**
-   * This methos is used to the the ID number of items.
+   * This retruns the item number of the order.
    * 
-   * @return unique iD.
+   * @return Id.
    */
   public int getItemNumber() {
     return itemNumber;
   }
 
   /**
-   * This method is used to het the name of items.
+   * This returns the name of the order.
    * 
-   * @return a name of items.
+   * @return name.
    */
   public String getName() {
     return name;
   }
 
   /**
-   * This method is used the the price of the items.
+   * This returns the price of the order.
    * 
-   * @return the price of items.
+   * @return price.
    */
   public float getPrice() {
     return price;
   }
 
   /**
-   * This method is used the the allergies of the items.
+   * This returns the allergies of the order.
    * 
-   * @return the allergies of items.
+   * @return allergies.
    */
   public String[] getAllergies() {
     return allergies;
   }
 
   /**
-   * This method is used the get the calories of the items.
+   * This returns the calories of the order.
    * 
-   * @return the calories of items.
+   * @return calories.
    */
   public float getCalories() {
     return calories;
   }
 
   /**
-   * This method is used to give the Availability of the items.
+   * This returns the status of the order.
    * 
-   * @return the avaibility of the items.
+   * @return the status.
    */
   public boolean isAvailable() {
     return available;
   }
 }
+

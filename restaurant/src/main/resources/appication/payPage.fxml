@@ -24,9 +24,9 @@
                            <children>
                               <AnchorPane prefHeight="87.0" prefWidth="222.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <Label layoutX="4.0" layoutY="32.0" prefHeight="19.0" prefWidth="216.0" text="Mex Eat Managment System" textAlignment="JUSTIFY" textFill="WHITE">
+                                    <Label layoutX="4.0" layoutY="32.0" prefHeight="19.0" prefWidth="216.0" text="Mex Eat Management System" textAlignment="JUSTIFY" textFill="WHITE">
                                        <font>
-                                          <Font size="17.0" />
+                                          <Font size="16.0" />
                                        </font>
                                     </Label>
                                  </children>
@@ -105,7 +105,7 @@
                                     <TextField fx:id="cardNumberField" layoutX="114.0" layoutY="58.0" prefHeight="26.0" prefWidth="269.0" promptText="Card number" />
                                     <TextField fx:id="lastNameField" layoutX="495.0" layoutY="22.0" prefHeight="26.0" prefWidth="194.0" promptText="Last name" />
                                     <TextField fx:id="ccvField" layoutX="592.0" layoutY="58.0" prefHeight="26.0" prefWidth="98.0" promptText="CCV" />
-                                    <Button fx:id="submitPaymentBtn" layoutX="110.0" layoutY="165.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="589.0" styleClass="invt-btn" text="SUBMINT PAYMENT" AnchorPane.bottomAnchor="25.0" />
+                                    <Button fx:id="submitPaymentBtn" layoutX="110.0" layoutY="165.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="589.0" styleClass="invt-btn" text="SUBMIT PAYMENT" AnchorPane.bottomAnchor="25.0" />
                                     <Button fx:id="clearFieldBtn" layoutX="716.0" layoutY="23.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="122.0" styleClass="invt-btn" text="Clear" AnchorPane.bottomAnchor="181.0" />
                                     <TextField fx:id="expairedField" layoutX="593.0" layoutY="102.0" prefHeight="26.0" prefWidth="99.0" promptText="MM/YY" />
                                  </children>

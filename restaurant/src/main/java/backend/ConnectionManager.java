@@ -14,21 +14,19 @@ import org.postgresql.util.PSQLException;
  * @author xaviernoel
  *
  */
-
 public class ConnectionManager {
-
-
+  
+  
   /**
-   * This is a default contructor.
+   * Default constructor. 
    */
   public ConnectionManager() {}
 
-
   /**
-   * This method create a connection eith database.
+   * Creates a new connection to the database.
    * 
-   * @return connection.
-   * @throws SQLException is excetpion throws if there is not connection.
+   * @return the connection created
+   * @throws SQLException Exception thrown.
    */
   public static Connection connectToDatabase() throws SQLException {
     Connection connection = null;
@@ -38,15 +36,16 @@ public class ConnectionManager {
 
   }
 
-
   /**
-   * This method select all the items in the item table.
+   * Creates an ArrayList of Item objects corresponding to every item in the item table of the
+   * database.
    * 
-   * @param connection with database.
-   * @return a table.
-   * @throws SQLException exception trhoew if there is not connection.
-   * @throws PSQLException exception throw is there is not connection.
-   * @throws DatabaseInformationException exception throw is some method does not work properly.
+   * @param connection the connection to the database
+   * @return the ArrayList of Item objects
+   * @throws SQLException It throws this.
+   * @throws PSQLException It throws this.
+   * @throws DatabaseInformationException Throws this returning aswell that no menu items were
+   *         found.
    */
   public static ArrayList<Item> loadItems(Connection connection)
       throws SQLException, PSQLException, DatabaseInformationException {
@@ -68,3 +67,4 @@ public class ConnectionManager {
     return results;
   }
 }
+
