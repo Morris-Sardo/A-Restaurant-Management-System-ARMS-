@@ -25,18 +25,42 @@ public class Customer {
   private Connection connection = null;
   private ArrayList<Item> items = null;
 
+  /**
+   * This gets the customer ID.
+   * 
+   * @return Customer.
+   */
   public int getCustomerID() {
     return customerID;
   }
 
+  /**
+   * This sets the customer ID.
+   * 
+   * @param customerID ID.
+   */
   public void setCustomerID(int customerID) {
     this.customerID = customerID;
   }
 
+  /**
+   * This method gets the connection to the database.
+   * 
+   * @return the connection to the database.
+   */
   public Connection getConnection() {
     return connection;
   }
 
+  public ArrayList<Integer> getOrder() {
+    return order;
+  }
+
+  /**
+   * This method is used to get the list of orders.
+   * 
+   * @return the order list;
+   */
   public ArrayList<Integer> getOrder() {
     return order;
   }
@@ -54,16 +78,24 @@ public class Customer {
       e.printStackTrace();
     }
   }
-
+  
   /**
    * Finds all items on the menu marked as available and that have a stock over 0.
    * 
    * @return the IDs corresponding to the menu items available
+   * @throws PSQLException Exception if thrown.
+   * @throws SQLException Exception if thrown.
+   * @throws DatabaseInformationException Exception if thrown.
    */
   public ArrayList<Integer> viewMenu()
       throws PSQLException, SQLException, DatabaseInformationException {
     ArrayList<Integer> results = new ArrayList<Integer>();
+<<<<<<< HEAD
     String query = "SELECT item_number FROM items WHERE (available = 'True' AND stock >= 0)";
+=======
+    String query = "SELECT item_number FROM items WHERE available = true";
+    
+>>>>>>> main
     try (PreparedStatement statement = connection.prepareStatement(query);) {
       ResultSet resultSet = statement.executeQuery();
       while (resultSet.next()) {
@@ -77,15 +109,6 @@ public class Customer {
   }
 
   /**
-   * Finds all items on the menu marked as available that fulfill the filter criteria.
-   * 
-   * @return the IDs corresponding to the menu items available
-   */
-  public int[] filterMenu() { // Not being worked on for this sprint
-    return null;
-  }
-
-  /**
    * Adds a new item to the current order.
    * 
    * @param item the item being added to the order
@@ -93,6 +116,7 @@ public class Customer {
    */
   public void addItem(int item) {
     order.add(item);
+<<<<<<< HEAD
   }
 
   /**
@@ -122,9 +146,38 @@ public class Customer {
    * Figure out how to generate custom id Yeet tablenumber from the top get items from int order sum
    * price with a for loop, looking in the arraylist of items order time: get current time status:
    * set status to requested
+=======
+  }
+
+  /**
+   * Removes an item from the current order.
+   * 
+   * @param item the item id being removed from the order
+   * @return returns false if the item was not present in the order
+   * 
+>>>>>>> main
    */
+  public boolean removeItem(int item) {
+    if (order.contains(item)) {
+      order.remove(item);
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  /**
+   * Resets the items in the current order.
+   */
+  public void clearItems() {
+    order.clear();
+  }
+  
   /**
    * Adds the order to the database.
+   * 
+   * @param tableNumber The table number.
+   * @throws SQLException if thrown.
    */
   public void submitOrder(int tableNumber) throws SQLException {
     this.tableNumber = tableNumber;
@@ -154,6 +207,15 @@ public class Customer {
 
   }
 
+<<<<<<< HEAD
+=======
+  /**
+   * This method computes the total price by adding all the values.
+   * 
+   * @return the total price.
+   * @throws SQLException If this arrises.
+   */
+>>>>>>> main
   private float calculateTotalPrice() throws SQLException {
     float result = 0;
     String query = "SELECT SUM(price) FROM orders WHERE table_number ="
@@ -164,10 +226,22 @@ public class Customer {
         result = resultSet.getFloat(1);
       }
     }
+<<<<<<< HEAD
     
     return result; 
   }
 
+=======
+
+    return result;
+  }
+
+  /**
+   * This method takes a time stamp and returns it to store in the system.
+   * 
+   * @return the time.
+   */
+>>>>>>> main
   private static String getCurrentTime() {
     LocalTime currentTime = LocalTime.now();
     DateTimeFormatter format = DateTimeFormatter.ofPattern("HH:mm");
@@ -178,6 +252,11 @@ public class Customer {
 
   /**
    * Adds a request for a bill to the database.
+   * 
+   * @return the bill.
+   * @throws PSQLException if statement fails.
+   * @throws SQLException if statement fails.
+   * @throws DatabaseInformationException if statement fails.
    */
   public ArrayList<String> requestBill()
       throws PSQLException, SQLException, DatabaseInformationException {
@@ -227,6 +306,9 @@ public class Customer {
 
   /**
    * Adds a complaint to the database.
+   * 
+   * @throws PSQLException if statement fails.
+   * @throws SQLException if statement fails.
    */
   public void requestHelp() throws PSQLException, SQLException {
     String addition = "INSERT INTO complaints VALUES(" + Integer.toString(customerID) + ", "
@@ -239,7 +321,13 @@ public class Customer {
   /**
    * Returns order status.
    * 
+<<<<<<< HEAD
    * @throws SQLException if statement fails
+=======
+   * @param orderNumber The ID of the order.
+   * @return the status.
+   * @throws SQLException if statement fails.
+>>>>>>> main
    */
   public String trackOrder(int orderNumber) throws SQLException {
     String status = null;
@@ -255,3 +343,4 @@ public class Customer {
   }
 
 }
+
